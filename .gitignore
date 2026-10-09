@@ -1,0 +1,40 @@
+# Build output and local assembly references
+**/bin/
+**/obj/
+mod/refs/
+*.dll
+*.pdb
+*.exe
+**/test-data/
+
+# Python and editors
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+.vs/
+.idea/
+.DS_Store
+
+# Local runtime state, credentials, and generated seeds
+.env
+.env.*
+*.log
+*.cfg
+*.lock
+*.lock.*
+*.hold
+*.tmp
+*.bak
+*.approval-used
+**/craftopia_bridge_ledger_*.json
+**/craftopia-archipelago-enrollment-*.json
+**/craftopia-archipelago-grants-*.json
+**/craftopia-archipelago-entitlement-*.json*
+**/craftopia-archipelago-intent-*.json
+*.archipelago
+*.apsave
+AP_*.zip
+AP_*_Spoiler.txt
+backups/
+saves/

@@ -1,0 +1,1160 @@
+{
+  "catalog_version": "20261007_r1",
+  "distinct_classes": 30,
+  "id_allocation": {
+    "base": 1000,
+    "count": 125,
+    "frozen": true,
+    "note": "AP IDs are immutable. New catalog versions use new ID ranges; never reuse or renumber.",
+    "range": "1000-1124"
+  },
+  "limitations": [
+    "From GetMissionLists on one loaded character/world; not all missions in build.",
+    "Does not establish future-age missions, dependencies, or availability on other saves.",
+    "Does not establish stable IDs across game versions.",
+    "30 observed classes does not mean other statically discovered classes don't exist.",
+    "Requirements/crafting resources/age prerequisites NOT collected.",
+    "No skill, item, production-recipe, or age-value data in this catalog."
+  ],
+  "mission_count": 125,
+  "missions": [
+    {
+      "ap_location_id": 1000,
+      "ap_location_name": "Mission 7: Do a jump-slash",
+      "category": 5,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 7,
+      "observed": true,
+      "title": "Do a jump-slash"
+    },
+    {
+      "ap_location_id": 1001,
+      "ap_location_name": "Mission 10: Make a glider on the stone workbench",
+      "category": 4,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 10,
+      "observed": true,
+      "title": "Make a glider on the stone workbench"
+    },
+    {
+      "ap_location_id": 1002,
+      "ap_location_name": "Mission 15: Let's make 5 wheat fields",
+      "category": 14,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 15,
+      "observed": true,
+      "title": "Let's make 5 wheat fields"
+    },
+    {
+      "ap_location_id": 1003,
+      "ap_location_name": "Mission 16: Make 100G from selling on the market",
+      "category": 7,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 16,
+      "observed": true,
+      "title": "Make 100G from selling on the market"
+    },
+    {
+      "ap_location_id": 1004,
+      "ap_location_name": "Mission 28: Set an enemy on fire",
+      "category": 29,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 28,
+      "observed": true,
+      "title": "Set an enemy on fire"
+    },
+    {
+      "ap_location_id": 1005,
+      "ap_location_name": "Mission 30: Equip a stone workbench and place it",
+      "category": 152,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 30,
+      "observed": true,
+      "title": "Equip a stone workbench and place it"
+    },
+    {
+      "ap_location_id": 1006,
+      "ap_location_name": "Mission 34: Defeat a cow with a headshot",
+      "category": 153,
+      "class": "Oc.Missions.HeadShotTargetMission",
+      "id": 34,
+      "observed": true,
+      "title": "Defeat a cow with a headshot"
+    },
+    {
+      "ap_location_id": 1007,
+      "ap_location_name": "Mission 36: Set up a market",
+      "category": 7,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 36,
+      "observed": true,
+      "title": "Set up a market"
+    },
+    {
+      "ap_location_id": 1008,
+      "ap_location_name": "Mission 37: Place 5 Rotating Saws",
+      "category": 26,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 37,
+      "observed": true,
+      "title": "Place 5 Rotating Saws"
+    },
+    {
+      "ap_location_id": 1009,
+      "ap_location_name": "Mission 38: Place 5 Excavator",
+      "category": 26,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 38,
+      "observed": true,
+      "title": "Place 5 Excavator"
+    },
+    {
+      "ap_location_id": 1010,
+      "ap_location_name": "Mission 46: Obtain 3 Mana potion",
+      "category": 29,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 46,
+      "observed": true,
+      "title": "Obtain 3 Mana potion"
+    },
+    {
+      "ap_location_id": 1011,
+      "ap_location_name": "Mission 47: Use 110 Mana within 10 seconds",
+      "category": 29,
+      "class": "Oc.Missions.ManaCostRaseMission",
+      "id": 47,
+      "observed": true,
+      "title": "Use 110 Mana within 10 seconds"
+    },
+    {
+      "ap_location_id": 1012,
+      "ap_location_name": "Mission 50: Punch trees 5 times",
+      "category": 2,
+      "class": "Oc.Missions.ObjectHitMission",
+      "id": 50,
+      "observed": true,
+      "title": "Punch trees 5 times"
+    },
+    {
+      "ap_location_id": 1013,
+      "ap_location_name": "Mission 51: Make a Stone Axe",
+      "category": 2,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 51,
+      "observed": true,
+      "title": "Make a Stone Axe"
+    },
+    {
+      "ap_location_id": 1014,
+      "ap_location_name": "Mission 52: Equip a Stone Axe",
+      "category": 2,
+      "class": "Oc.Missions.ItemEquipMission",
+      "id": 52,
+      "observed": true,
+      "title": "Equip a Stone Axe"
+    },
+    {
+      "ap_location_id": 1015,
+      "ap_location_name": "Mission 53: Obtain 30 numbers of Log",
+      "category": 2,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 53,
+      "observed": true,
+      "title": "Obtain 30 numbers of Log"
+    },
+    {
+      "ap_location_id": 1016,
+      "ap_location_name": "Mission 54: Punch rocks 5 times",
+      "category": 3,
+      "class": "Oc.Missions.ObjectHitMission",
+      "id": 54,
+      "observed": true,
+      "title": "Punch rocks 5 times"
+    },
+    {
+      "ap_location_id": 1017,
+      "ap_location_name": "Mission 55: Make a stone pickaxe",
+      "category": 3,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 55,
+      "observed": true,
+      "title": "Make a stone pickaxe"
+    },
+    {
+      "ap_location_id": 1018,
+      "ap_location_name": "Mission 56: Equip a stone pickaxe",
+      "category": 3,
+      "class": "Oc.Missions.ItemEquipMission",
+      "id": 56,
+      "observed": true,
+      "title": "Equip a stone pickaxe"
+    },
+    {
+      "ap_location_id": 1019,
+      "ap_location_name": "Mission 57: Collect 30 stones",
+      "category": 3,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 57,
+      "observed": true,
+      "title": "Collect 30 stones"
+    },
+    {
+      "ap_location_id": 1020,
+      "ap_location_name": "Mission 58: Make a stone workbench",
+      "category": 152,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 58,
+      "observed": true,
+      "title": "Make a stone workbench"
+    },
+    {
+      "ap_location_id": 1021,
+      "ap_location_name": "Mission 59: Fly through the sky with a glider",
+      "category": 4,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 59,
+      "observed": true,
+      "title": "Fly through the sky with a glider"
+    },
+    {
+      "ap_location_id": 1022,
+      "ap_location_name": "Mission 60: Craft Stone One-Handed Sword",
+      "category": 5,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 60,
+      "observed": true,
+      "title": "Craft Stone One-Handed Sword"
+    },
+    {
+      "ap_location_id": 1023,
+      "ap_location_name": "Mission 61: Knock out an animal and get 3 pieces of raw meat",
+      "category": 153,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 61,
+      "observed": true,
+      "title": "Knock out an animal and get 3 pieces of raw meat"
+    },
+    {
+      "ap_location_id": 1024,
+      "ap_location_name": "Mission 63: Craft a campfire",
+      "category": 4,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 63,
+      "observed": true,
+      "title": "Craft a campfire"
+    },
+    {
+      "ap_location_id": 1025,
+      "ap_location_name": "Mission 67: Ride the updraft from a campfire to fly high into the sky",
+      "category": 4,
+      "class": "Oc.Missions.GliderWindZoneMission",
+      "id": 67,
+      "observed": true,
+      "title": "Ride the updraft from a campfire to fly high into the sky"
+    },
+    {
+      "ap_location_id": 1026,
+      "ap_location_name": "Mission 70: Craft Cooking Pot",
+      "category": 154,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 70,
+      "observed": true,
+      "title": "Craft Cooking Pot"
+    },
+    {
+      "ap_location_id": 1027,
+      "ap_location_name": "Mission 72: Craft a Stone Furnace",
+      "category": 154,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 72,
+      "observed": true,
+      "title": "Craft a Stone Furnace"
+    },
+    {
+      "ap_location_id": 1028,
+      "ap_location_name": "Mission 73: Smelt ores with a furnace to Craft 20 ingots",
+      "category": 11,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 73,
+      "observed": true,
+      "title": "Smelt ores with a furnace to Craft 20 ingots"
+    },
+    {
+      "ap_location_id": 1029,
+      "ap_location_name": "Mission 78: Craft Blacksmith",
+      "category": 154,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 78,
+      "observed": true,
+      "title": "Craft Blacksmith"
+    },
+    {
+      "ap_location_id": 1030,
+      "ap_location_name": "Mission 79: Equip a Glider",
+      "category": 4,
+      "class": "Oc.Missions.ItemEquipMission",
+      "id": 79,
+      "observed": true,
+      "title": "Equip a Glider"
+    },
+    {
+      "ap_location_id": 1031,
+      "ap_location_name": "Mission 80: Craft Branch Bow on Workbench",
+      "category": 153,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 80,
+      "observed": true,
+      "title": "Craft Branch Bow on Workbench"
+    },
+    {
+      "ap_location_id": 1032,
+      "ap_location_name": "Mission 81: Craft Branch Arrow on Workbench",
+      "category": 153,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 81,
+      "observed": true,
+      "title": "Craft Branch Arrow on Workbench"
+    },
+    {
+      "ap_location_id": 1033,
+      "ap_location_name": "Mission 82: Use Blacksmith to craft a copper shield",
+      "category": 11,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 82,
+      "observed": true,
+      "title": "Use Blacksmith to craft a copper shield"
+    },
+    {
+      "ap_location_id": 1034,
+      "ap_location_name": "Mission 85: Craft a detector",
+      "category": 12,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 85,
+      "observed": true,
+      "title": "Craft a detector"
+    },
+    {
+      "ap_location_id": 1035,
+      "ap_location_name": "Mission 86: Equip a detector",
+      "category": 12,
+      "class": "Oc.Missions.ItemEquipMission",
+      "id": 86,
+      "observed": true,
+      "title": "Equip a detector"
+    },
+    {
+      "ap_location_id": 1036,
+      "ap_location_name": "Mission 87: Explore the island and find a dungeon",
+      "category": 12,
+      "class": "Oc.Missions.DiscoverDungeonMission",
+      "id": 87,
+      "observed": true,
+      "title": "Explore the island and find a dungeon"
+    },
+    {
+      "ap_location_id": 1037,
+      "ap_location_name": "Mission 88: Defeat the boss inside the dungeon",
+      "category": 12,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 88,
+      "observed": true,
+      "title": "Defeat the boss inside the dungeon"
+    },
+    {
+      "ap_location_id": 1038,
+      "ap_location_name": "Mission 93: Open the map",
+      "category": 12,
+      "class": "Oc.Missions.OpenFullMapMission",
+      "id": 93,
+      "observed": true,
+      "title": "Open the map"
+    },
+    {
+      "ap_location_id": 1039,
+      "ap_location_name": "Mission 95: Craft Wooden Slope",
+      "category": 8,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 95,
+      "observed": true,
+      "title": "Craft Wooden Slope"
+    },
+    {
+      "ap_location_id": 1040,
+      "ap_location_name": "Mission 96: Deploy Wooden Slope",
+      "category": 8,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 96,
+      "observed": true,
+      "title": "Deploy Wooden Slope"
+    },
+    {
+      "ap_location_id": 1041,
+      "ap_location_name": "Mission 97: Rotate Wooden Slope",
+      "category": 8,
+      "class": "Oc.Missions.RotateBuildingMission",
+      "id": 97,
+      "observed": true,
+      "title": "Rotate Wooden Slope"
+    },
+    {
+      "ap_location_id": 1042,
+      "ap_location_name": "Mission 98: Collect the buildings you've set up",
+      "category": 8,
+      "class": "Oc.Missions.DismantlingMission",
+      "id": 98,
+      "observed": true,
+      "title": "Collect the buildings you've set up"
+    },
+    {
+      "ap_location_id": 1043,
+      "ap_location_name": "Mission 99: Use the skill points to learn a skill",
+      "category": 9,
+      "class": "Oc.Missions.SkillLevelUpMission",
+      "id": 99,
+      "observed": true,
+      "title": "Use the skill points to learn a skill"
+    },
+    {
+      "ap_location_id": 1044,
+      "ap_location_name": "Mission 100: Meet the God of Sky Island (Anubis)",
+      "category": 9,
+      "class": "Oc.Missions.TalkToAnubisMission",
+      "id": 100,
+      "observed": true,
+      "title": "Meet the God of Sky Island (Anubis)"
+    },
+    {
+      "ap_location_id": 1045,
+      "ap_location_name": "Mission 101: Give Slate of Growth to Anubis to increase your stats",
+      "category": 9,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 101,
+      "observed": true,
+      "title": "Give Slate of Growth to Anubis to increase your stats"
+    },
+    {
+      "ap_location_id": 1046,
+      "ap_location_name": "Mission 105: Obtain a bucket of water from the well",
+      "category": 14,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 105,
+      "observed": true,
+      "title": "Obtain a bucket of water from the well"
+    },
+    {
+      "ap_location_id": 1047,
+      "ap_location_name": "Mission 106: Water the wheat field",
+      "category": 14,
+      "class": "Oc.Missions.WateringMission",
+      "id": 106,
+      "observed": true,
+      "title": "Water the wheat field"
+    },
+    {
+      "ap_location_id": 1048,
+      "ap_location_name": "Mission 107: Harvest 1 counts of wheat from the grown wheat field",
+      "category": 14,
+      "class": "Oc.Missions.HervestMission",
+      "id": 107,
+      "observed": true,
+      "title": "Harvest 1 counts of wheat from the grown wheat field"
+    },
+    {
+      "ap_location_id": 1049,
+      "ap_location_name": "Mission 512: Check the mission screen",
+      "category": 141,
+      "class": "Oc.Missions.MissionPageMission",
+      "id": 512,
+      "observed": true,
+      "title": "Check the mission screen"
+    },
+    {
+      "ap_location_id": 1050,
+      "ap_location_name": "Mission 513: Receive a reward by completing all missions of a mission category",
+      "category": 141,
+      "class": "Oc.Missions.MissionCategroyClearMission",
+      "id": 513,
+      "observed": true,
+      "title": "Receive a reward by completing all missions of a mission category"
+    },
+    {
+      "ap_location_id": 1051,
+      "ap_location_name": "Mission 514: Obtain 20 Straw by destoying bushes in the field",
+      "category": 2,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 514,
+      "observed": true,
+      "title": "Obtain 20 Straw by destoying bushes in the field"
+    },
+    {
+      "ap_location_id": 1052,
+      "ap_location_name": "Mission 516: Craft Market on Workbench",
+      "category": 7,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 516,
+      "observed": true,
+      "title": "Craft Market on Workbench"
+    },
+    {
+      "ap_location_id": 1053,
+      "ap_location_name": "Mission 519: Craft Old Rag on Workbench",
+      "category": 11,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 519,
+      "observed": true,
+      "title": "Craft Old Rag on Workbench"
+    },
+    {
+      "ap_location_id": 1054,
+      "ap_location_name": "Mission 521: Harvest 5 Wild Berry",
+      "category": 143,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 521,
+      "observed": true,
+      "title": "Harvest 5 Wild Berry"
+    },
+    {
+      "ap_location_id": 1055,
+      "ap_location_name": "Mission 522: Craft Medicinal Herb",
+      "category": 143,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 522,
+      "observed": true,
+      "title": "Craft Medicinal Herb"
+    },
+    {
+      "ap_location_id": 1056,
+      "ap_location_name": "Mission 523: Gather 3 Red Herb",
+      "category": 143,
+      "class": "Oc.Missions.ItemCollectMission",
+      "id": 523,
+      "observed": true,
+      "title": "Gather 3 Red Herb"
+    },
+    {
+      "ap_location_id": 1057,
+      "ap_location_name": "Mission 524: Craft Potion Brewing Stand on Workbench",
+      "category": 143,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 524,
+      "observed": true,
+      "title": "Craft Potion Brewing Stand on Workbench"
+    },
+    {
+      "ap_location_id": 1058,
+      "ap_location_name": "Mission 525: Craft Small Life Potion on Potion Brewing Stand",
+      "category": 143,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 525,
+      "observed": true,
+      "title": "Craft Small Life Potion on Potion Brewing Stand"
+    },
+    {
+      "ap_location_id": 1059,
+      "ap_location_name": "Mission 529: Craft Wheat Flour on Cooking Pot",
+      "category": 28,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 529,
+      "observed": true,
+      "title": "Craft Wheat Flour on Cooking Pot"
+    },
+    {
+      "ap_location_id": 1060,
+      "ap_location_name": "Mission 530: Craft Bread on Cooking Pot",
+      "category": 28,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 530,
+      "observed": true,
+      "title": "Craft Bread on Cooking Pot"
+    },
+    {
+      "ap_location_id": 1061,
+      "ap_location_name": "Mission 531: Craft Rotating Saws on Workbench",
+      "category": 26,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 531,
+      "observed": true,
+      "title": "Craft Rotating Saws on Workbench"
+    },
+    {
+      "ap_location_id": 1062,
+      "ap_location_name": "Mission 532: Craft Excavator on Workbench",
+      "category": 26,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 532,
+      "observed": true,
+      "title": "Craft Excavator on Workbench"
+    },
+    {
+      "ap_location_id": 1063,
+      "ap_location_name": "Mission 533: Craft Monster Prism on Workbench",
+      "category": 20,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 533,
+      "observed": true,
+      "title": "Craft Monster Prism on Workbench"
+    },
+    {
+      "ap_location_id": 1064,
+      "ap_location_name": "Mission 539: Craft Refinery on Workbench",
+      "category": 147,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 539,
+      "observed": true,
+      "title": "Craft Refinery on Workbench"
+    },
+    {
+      "ap_location_id": 1065,
+      "ap_location_name": "Mission 540: Craft Refining Scrap Bench on Workbench",
+      "category": 147,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 540,
+      "observed": true,
+      "title": "Craft Refining Scrap Bench on Workbench"
+    },
+    {
+      "ap_location_id": 1066,
+      "ap_location_name": "Mission 541: Generate Refining Stone III on Refining Scrap Bench",
+      "category": 147,
+      "class": "Oc.Missions.ChestRefineMaterialMission",
+      "id": 541,
+      "observed": true,
+      "title": "Generate Refining Stone III on Refining Scrap Bench"
+    },
+    {
+      "ap_location_id": 1067,
+      "ap_location_name": "Mission 542: Put Iron One-Handed Sword into Refinery's Chest for Refining Material Weapon",
+      "category": 147,
+      "class": "Oc.Missions.ChestRefineTargetMission",
+      "id": 542,
+      "observed": true,
+      "title": "Put Iron One-Handed Sword into Refinery's Chest for Refining Material Weapon"
+    },
+    {
+      "ap_location_id": 1068,
+      "ap_location_name": "Mission 543: Put Refining Stone III into Refinery's Chest for Refining Stone",
+      "category": 147,
+      "class": "Oc.Missions.ChestRefineStoneMission",
+      "id": 543,
+      "observed": true,
+      "title": "Put Refining Stone III into Refinery's Chest for Refining Stone"
+    },
+    {
+      "ap_location_id": 1069,
+      "ap_location_name": "Mission 544: Learn Heal and use it",
+      "category": 29,
+      "class": "Oc.Missions.SkillHealMission",
+      "id": 544,
+      "observed": true,
+      "title": "Learn Heal and use it"
+    },
+    {
+      "ap_location_id": 1070,
+      "ap_location_name": "Mission 556: Use Hatter to make capes",
+      "category": 11,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 556,
+      "observed": true,
+      "title": "Use Hatter to make capes"
+    },
+    {
+      "ap_location_id": 1071,
+      "ap_location_name": "Mission 557: Use Hatter to craft Red Beret",
+      "category": 11,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 557,
+      "observed": true,
+      "title": "Use Hatter to craft Red Beret"
+    },
+    {
+      "ap_location_id": 1072,
+      "ap_location_name": "Mission 560: Craft Pet Management Machine on a Workbench",
+      "category": 20,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 560,
+      "observed": true,
+      "title": "Craft Pet Management Machine on a Workbench"
+    },
+    {
+      "ap_location_id": 1073,
+      "ap_location_name": "Mission 561: Capture Mono",
+      "category": 20,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 561,
+      "observed": true,
+      "title": "Capture Mono"
+    },
+    {
+      "ap_location_id": 1074,
+      "ap_location_name": "Mission 562: Capture Cow",
+      "category": 20,
+      "class": "Oc.Missions.StaticalDataMission",
+      "id": 562,
+      "observed": true,
+      "title": "Capture Cow"
+    },
+    {
+      "ap_location_id": 1075,
+      "ap_location_name": "Mission 563: Equip and Deploy Bed",
+      "category": 152,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 563,
+      "observed": true,
+      "title": "Equip and Deploy Bed"
+    },
+    {
+      "ap_location_id": 1076,
+      "ap_location_name": "Mission 564: Equip and Deploy Chest",
+      "category": 152,
+      "class": "Oc.Missions.BuildingMission",
+      "id": 564,
+      "observed": true,
+      "title": "Equip and Deploy Chest"
+    },
+    {
+      "ap_location_id": 1077,
+      "ap_location_name": "Mission 565: Equip Stone One-Handed Sword",
+      "category": 5,
+      "class": "Oc.Missions.ItemEquipMission",
+      "id": 565,
+      "observed": true,
+      "title": "Equip Stone One-Handed Sword"
+    },
+    {
+      "ap_location_id": 1078,
+      "ap_location_name": "Mission 566: Defeat 1 Goblin",
+      "category": 5,
+      "class": "Oc.Missions.EnemyKillMission",
+      "id": 566,
+      "observed": true,
+      "title": "Defeat 1 Goblin"
+    },
+    {
+      "ap_location_id": 1079,
+      "ap_location_name": "Mission 567: Give Soul Orb to Anubis to exchange them with rewards",
+      "category": 9,
+      "class": "Oc.Missions.SoulOrbExchangeMission",
+      "id": 567,
+      "observed": true,
+      "title": "Give Soul Orb to Anubis to exchange them with rewards"
+    },
+    {
+      "ap_location_id": 1080,
+      "ap_location_name": "Mission 568: Defeat 1 Deer",
+      "category": 153,
+      "class": "Oc.Missions.EnemyKillMission",
+      "id": 568,
+      "observed": true,
+      "title": "Defeat 1 Deer"
+    },
+    {
+      "ap_location_id": 1081,
+      "ap_location_name": "Mission 570: Tame Mono as a pet",
+      "category": 20,
+      "class": "Oc.Missions.PetMonoMission",
+      "id": 570,
+      "observed": true,
+      "title": "Tame Mono as a pet"
+    },
+    {
+      "ap_location_id": 1082,
+      "ap_location_name": "Mission 571: Craft Enchanting Table",
+      "category": 155,
+      "class": "Oc.Missions.ItemCraftMission",
+      "id": 571,
+      "observed": true,
+      "title": "Craft Enchanting Table"
+    },
+    {
+      "ap_location_id": 1083,
+      "ap_location_name": "Mission 572: Obtain Enchanting Fragment",
+      "category": 155,
+      "class": "Oc.Missions.EnchantFragmentMission",
+      "id": 572,
+      "observed": true,
+      "title": "Obtain Enchanting Fragment"
+    },
+    {
+      "ap_location_id": 1084,
+      "ap_location_name": "Mission 573: Apply Enchantment to Iron One-Handed Sword",
+      "category": 155,
+      "class": "Oc.Missions.WeaponEnchantMission",
+      "id": 573,
+      "observed": true,
+      "title": "Apply Enchantment to Iron One-Handed Sword"
+    },
+    {
+      "ap_location_id": 1085,
+      "ap_location_name": "Mission 574: Apply \"Good Cook's\" Enchantment to Cooking Pot",
+      "category": 155,
+      "class": "Oc.Missions.WeaponEnchantMission",
+      "id": 574,
+      "observed": true,
+      "title": "Apply \"Good Cook's\" Enchantment to Cooking Pot"
+    },
+    {
+      "ap_location_id": 1086,
+      "ap_location_name": "Mission 575: Craft Bread with Enchantments",
+      "category": 155,
+      "class": "Oc.Missions.BreadMission",
+      "id": 575,
+      "observed": true,
+      "title": "Craft Bread with Enchantments"
+    },
+    {
+      "ap_location_id": 1087,
+      "ap_location_name": "Mission 577: Defeat 5 Cow of Lv 1 or higher",
+      "category": 156,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 577,
+      "observed": true,
+      "title": "Defeat 5 Cow of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1088,
+      "ap_location_name": "Mission 578: Defeat 5 Sheep of Lv 1 or higher",
+      "category": 156,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 578,
+      "observed": true,
+      "title": "Defeat 5 Sheep of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1089,
+      "ap_location_name": "Mission 579: Defeat 5 Deer of Lv 1 or higher",
+      "category": 156,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 579,
+      "observed": true,
+      "title": "Defeat 5 Deer of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1090,
+      "ap_location_name": "Mission 580: Defeat 5 Chicken of Lv 1 or higher",
+      "category": 156,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 580,
+      "observed": true,
+      "title": "Defeat 5 Chicken of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1091,
+      "ap_location_name": "Mission 581: Defeat 3 Bear of Lv 1 or higher",
+      "category": 156,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 581,
+      "observed": true,
+      "title": "Defeat 3 Bear of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1092,
+      "ap_location_name": "Mission 583: Defeat 5 Goblin of Lv 1 or higher",
+      "category": 157,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 583,
+      "observed": true,
+      "title": "Defeat 5 Goblin of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1093,
+      "ap_location_name": "Mission 584: Defeat 5 Goblin Sword of Lv 1 or higher",
+      "category": 157,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 584,
+      "observed": true,
+      "title": "Defeat 5 Goblin Sword of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1094,
+      "ap_location_name": "Mission 585: Defeat 5 Goblin Archer of Lv 1 or higher",
+      "category": 157,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 585,
+      "observed": true,
+      "title": "Defeat 5 Goblin Archer of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1095,
+      "ap_location_name": "Mission 586: Defeat 3 Greataxe Gremlin of Lv 1 or higher",
+      "category": 157,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 586,
+      "observed": true,
+      "title": "Defeat 3 Greataxe Gremlin of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1096,
+      "ap_location_name": "Mission 587: Defeat 3 Greatshield Gremlin of Lv 1 or higher",
+      "category": 157,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 587,
+      "observed": true,
+      "title": "Defeat 3 Greatshield Gremlin of Lv 1 or higher"
+    },
+    {
+      "ap_location_id": 1097,
+      "ap_location_name": "Mission 589: Defeat 5 Goblin of Lv 10 or higher",
+      "category": 158,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 589,
+      "observed": true,
+      "title": "Defeat 5 Goblin of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1098,
+      "ap_location_name": "Mission 590: Defeat 5 Goblin Sword of Lv 10 or higher",
+      "category": 158,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 590,
+      "observed": true,
+      "title": "Defeat 5 Goblin Sword of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1099,
+      "ap_location_name": "Mission 591: Defeat 5 Goblin Archer of Lv 10 or higher",
+      "category": 158,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 591,
+      "observed": true,
+      "title": "Defeat 5 Goblin Archer of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1100,
+      "ap_location_name": "Mission 592: Defeat 3 Greataxe Gremlin of Lv 10 or higher",
+      "category": 158,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 592,
+      "observed": true,
+      "title": "Defeat 3 Greataxe Gremlin of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1101,
+      "ap_location_name": "Mission 593: Defeat 3 Greatshield Gremlin of Lv 10 or higher",
+      "category": 158,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 593,
+      "observed": true,
+      "title": "Defeat 3 Greatshield Gremlin of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1102,
+      "ap_location_name": "Mission 595: Defeat 5 Killer Bee of Lv 10 or higher",
+      "category": 159,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 595,
+      "observed": true,
+      "title": "Defeat 5 Killer Bee of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1103,
+      "ap_location_name": "Mission 596: Defeat 5 Phoechicks of Lv 10 or higher",
+      "category": 159,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 596,
+      "observed": true,
+      "title": "Defeat 5 Phoechicks of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1104,
+      "ap_location_name": "Mission 597: Defeat 5 Wizard of Lv 10 or higher",
+      "category": 159,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 597,
+      "observed": true,
+      "title": "Defeat 5 Wizard of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1105,
+      "ap_location_name": "Mission 598: Defeat 5 Lizard Axe of Lv 10 or higher",
+      "category": 159,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 598,
+      "observed": true,
+      "title": "Defeat 5 Lizard Axe of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1106,
+      "ap_location_name": "Mission 599: Defeat 5 Lizard Sword of Lv 10 or higher",
+      "category": 159,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 599,
+      "observed": true,
+      "title": "Defeat 5 Lizard Sword of Lv 10 or higher"
+    },
+    {
+      "ap_location_id": 1107,
+      "ap_location_name": "Mission 601: Defeat 10 Goblin of Lv 20 or higher",
+      "category": 160,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 601,
+      "observed": true,
+      "title": "Defeat 10 Goblin of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1108,
+      "ap_location_name": "Mission 602: Defeat 10 Goblin Sword of Lv 20 or higher",
+      "category": 160,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 602,
+      "observed": true,
+      "title": "Defeat 10 Goblin Sword of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1109,
+      "ap_location_name": "Mission 603: Defeat 10 Goblin Archer of Lv 20 or higher",
+      "category": 160,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 603,
+      "observed": true,
+      "title": "Defeat 10 Goblin Archer of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1110,
+      "ap_location_name": "Mission 604: Defeat 5 Greataxe Gremlin of Lv 20 or higher",
+      "category": 160,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 604,
+      "observed": true,
+      "title": "Defeat 5 Greataxe Gremlin of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1111,
+      "ap_location_name": "Mission 605: Defeat 5 Greatshield Gremlin of Lv 20 or higher",
+      "category": 160,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 605,
+      "observed": true,
+      "title": "Defeat 5 Greatshield Gremlin of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1112,
+      "ap_location_name": "Mission 607: Defeat 10 Skeleton Soldier of Lv 20 or higher",
+      "category": 161,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 607,
+      "observed": true,
+      "title": "Defeat 10 Skeleton Soldier of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1113,
+      "ap_location_name": "Mission 608: Defeat 10 Skeleton Archer of Lv 20 or higher",
+      "category": 161,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 608,
+      "observed": true,
+      "title": "Defeat 10 Skeleton Archer of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1114,
+      "ap_location_name": "Mission 609: Defeat 10 Werewolf of the Crescent Moon of Lv 20 or higher",
+      "category": 161,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 609,
+      "observed": true,
+      "title": "Defeat 10 Werewolf of the Crescent Moon of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1115,
+      "ap_location_name": "Mission 610: Defeat 3 Skeleton Pirate of Lv 20 or higher",
+      "category": 161,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 610,
+      "observed": true,
+      "title": "Defeat 3 Skeleton Pirate of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1116,
+      "ap_location_name": "Mission 611: Defeat 5 Skeleton Sailor of Lv 20 or higher",
+      "category": 161,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 611,
+      "observed": true,
+      "title": "Defeat 5 Skeleton Sailor of Lv 20 or higher"
+    },
+    {
+      "ap_location_id": 1117,
+      "ap_location_name": "Mission 613: Defeat 10 Goblin of Lv 35 or higher",
+      "category": 162,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 613,
+      "observed": true,
+      "title": "Defeat 10 Goblin of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1118,
+      "ap_location_name": "Mission 614: Defeat 10 Goblin Sword of Lv 35 or higher",
+      "category": 162,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 614,
+      "observed": true,
+      "title": "Defeat 10 Goblin Sword of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1119,
+      "ap_location_name": "Mission 615: Defeat 10 Goblin Archer of Lv 35 or higher",
+      "category": 162,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 615,
+      "observed": true,
+      "title": "Defeat 10 Goblin Archer of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1120,
+      "ap_location_name": "Mission 616: Defeat 5 Greataxe Gremlin of Lv 35 or higher",
+      "category": 162,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 616,
+      "observed": true,
+      "title": "Defeat 5 Greataxe Gremlin of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1121,
+      "ap_location_name": "Mission 617: Defeat 5 Greatshield Gremlin of Lv 35 or higher",
+      "category": 162,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 617,
+      "observed": true,
+      "title": "Defeat 5 Greatshield Gremlin of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1122,
+      "ap_location_name": "Mission 619: Defeat 3 Gigantes Ballista of Lv 35 or higher",
+      "category": 163,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 619,
+      "observed": true,
+      "title": "Defeat 3 Gigantes Ballista of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1123,
+      "ap_location_name": "Mission 620: Defeat 3 Gigantes Hoplon of Lv 35 or higher",
+      "category": 163,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 620,
+      "observed": true,
+      "title": "Defeat 3 Gigantes Hoplon of Lv 35 or higher"
+    },
+    {
+      "ap_location_id": 1124,
+      "ap_location_name": "Mission 621: Defeat 3 Kraken of Lv 35 or higher",
+      "category": 163,
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "id": 621,
+      "observed": true,
+      "title": "Defeat 3 Kraken of Lv 35 or higher"
+    }
+  ],
+  "provenance": {
+    "assembly": "AD__Overcraft 0.0.0.0",
+    "bepinex": "5.4.23.5",
+    "capture_utc": "2026-10-07T20:45:27.1932523Z",
+    "character": "disposable test character/world",
+    "collector_dll_sha256": "df8ca6cbd0483a75883d859d6ef726420e862d9a8765d1e022f02c3c15cbe068",
+    "game": "Craftopia",
+    "method": "OcMissionManager.Inst.GetMissionLists() via DiagnosticCollector F9",
+    "source_json_sha256": "764af275ac87450b4185c528f3346834300c4f7571556428ff823e9c672e14bb",
+    "unity_version": "2022.3.62.9860879"
+  },
+  "schema_version": 1,
+  "unique_ids": 125
+}

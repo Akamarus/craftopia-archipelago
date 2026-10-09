@@ -1,0 +1,379 @@
+{
+  "_comment": "Craftopia mission data. 'class' is the verified IL type name (stable key). 'game_id' is Mission.get_ID() (data-driven; null until captured at runtime). See docs/GAME_DATA_DUMP.md.",
+  "_schema_version": 2,
+  "_count": 53,
+  "_note_142_vs_53": "Hook inventory cited 142; IL shows 53 concrete Mission subclasses. Discrepancy unresolved.",
+  "missions": [
+    {
+      "name": "Axe Repair",
+      "class": "Oc.Missions.AxeRepairMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Boss Kill Ascension",
+      "class": "Oc.Missions.BossKillAscension",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Boss Kill World Level",
+      "class": "Oc.Missions.BossKillWorldLevel",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Bread",
+      "class": "Oc.Missions.BreadMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Building",
+      "class": "Oc.Missions.BuildingMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Category Collect",
+      "class": "Oc.Missions.CategoryCollectMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Chest Refine Material",
+      "class": "Oc.Missions.ChestRefineMaterialMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Chest Refine Stone",
+      "class": "Oc.Missions.ChestRefineStoneMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Chest Refine Target",
+      "class": "Oc.Missions.ChestRefineTargetMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Chest Storage",
+      "class": "Oc.Missions.ChestStorageMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Discover Dungeon",
+      "class": "Oc.Missions.DiscoverDungeonMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Dismantling",
+      "class": "Oc.Missions.DismantlingMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Eat",
+      "class": "Oc.Missions.EatMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Enchant Fragment",
+      "class": "Oc.Missions.EnchantFragmentMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Enemy Hit",
+      "class": "Oc.Missions.EnemyHitMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Enemy Hit Race",
+      "class": "Oc.Missions.EnemyHitRaceMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Enemy Kill",
+      "class": "Oc.Missions.EnemyKillMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Enemy Kill _with Level",
+      "class": "Oc.Missions.EnemyKillMission_withLevel",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Glider Wind Zone",
+      "class": "Oc.Missions.GliderWindZoneMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Go To Hell",
+      "class": "Oc.Missions.GoToHellMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Head Shot",
+      "class": "Oc.Missions.HeadShotMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Head Shot Target",
+      "class": "Oc.Missions.HeadShotTargetMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Hervest",
+      "class": "Oc.Missions.HervestMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Collect",
+      "class": "Oc.Missions.ItemCollectMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Collect Race",
+      "class": "Oc.Missions.ItemCollectRaceMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Cost",
+      "class": "Oc.Missions.ItemCostMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Craft",
+      "class": "Oc.Missions.ItemCraftMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Enchant",
+      "class": "Oc.Missions.ItemEnchantMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Equip",
+      "class": "Oc.Missions.ItemEquipMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Refine",
+      "class": "Oc.Missions.ItemRefineMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Item Sold",
+      "class": "Oc.Missions.ItemSoldMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Kill Race",
+      "class": "Oc.Missions.KillRaceMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Low Health Kill",
+      "class": "Oc.Missions.LowHealthKillMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Mana Cost Rase",
+      "class": "Oc.Missions.ManaCostRaseMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Map Transform",
+      "class": "Oc.Missions.MapTransformMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Categroy Clear",
+      "class": "Oc.Missions.MissionCategroyClearMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Page",
+      "class": "Oc.Missions.MissionPageMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Object Destroy Race",
+      "class": "Oc.Missions.ObjectDestroyRaceMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Object Hit",
+      "class": "Oc.Missions.ObjectHitMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Open Full Map",
+      "class": "Oc.Missions.OpenFullMapMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Pet Mono",
+      "class": "Oc.Missions.PetMonoMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Player Burn",
+      "class": "Oc.Missions.PlayerBurnMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Rotate Building",
+      "class": "Oc.Missions.RotateBuildingMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Seeding",
+      "class": "Oc.Missions.SeedingMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Skill Heal",
+      "class": "Oc.Missions.SkillHealMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Skill Level Up",
+      "class": "Oc.Missions.SkillLevelUpMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Soul Orb Exchange",
+      "class": "Oc.Missions.SoulOrbExchangeMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Statical Data",
+      "class": "Oc.Missions.StaticalDataMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Statical Data Race",
+      "class": "Oc.Missions.StaticalDataRaceMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Talk To Anubis",
+      "class": "Oc.Missions.TalkToAnubisMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Watering",
+      "class": "Oc.Missions.WateringMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "Weapon Enchant",
+      "class": "Oc.Missions.WeaponEnchantMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    },
+    {
+      "name": "World Level Up",
+      "class": "Oc.Missions.WorldLevelUpMission",
+      "game_id": null,
+      "region": "Overworld",
+      "verified": "class_from_il"
+    }
+  ]
+}

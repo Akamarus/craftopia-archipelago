@@ -1,0 +1,16 @@
+# Craftopia player YAML for Archipelago 0.6.8
+# Copy to your Archipelago Players/ folder and edit.
+
+name: CraftopiaPlayer
+game: Craftopia
+Craftopia:
+  # Victory condition.
+  # 0 = complete the designated goal mission, 1 = complete all missions.
+  goal: 0
+
+  # How many skill points each mission check grants in-game.
+  # Range 1-5.
+  skill_points_per_check: 1
+
+  # Enable mission-completion checks.
+  enable_mission_checks: true

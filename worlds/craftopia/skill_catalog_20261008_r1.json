@@ -1,0 +1,2182 @@
+{
+  "catalog_id": "20261008_r1",
+  "provenance": {
+    "capture_sha256": "0234E95D1DF019CAA28352778A741163892FF217C0184983B80310B2D3480A27",
+    "capture_timestamp": "2026-10-08T18:56:10Z",
+    "collector_sha256": "2ABD545D5F33CE31E44E8C516BF2B60DA76EB3EB23FA09C01A8B8D89A039DE33",
+    "game_assembly_sha256": "88DB99EBE9FBF1296C74465B6F32467CDBC71711235F925532D9BCF6F2CCEBEA",
+    "note": "Derived candidate set: implemented entries in 6 player categories with Tier1-Tier5. NOT proof of learnability/reachability.",
+    "source": "OcSkillManager.skillList.all at runtime (F9 diagnostic collector)"
+  },
+  "skills": {
+    "1000": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Meditation",
+      "raw_category": 1,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1001": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Wisdom",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1002": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Ironclad",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1003": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Dual Wield",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1004": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Two-Handed",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1005": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Parry",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1006": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Double Jump",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1007": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Jumping Shot",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1008": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Martial Arts: Fist",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1009": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Forester",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1010": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Survivalist",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1011": {
+      "category": "Basic",
+      "max_level": 1,
+      "name": "Ducking",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1012": {
+      "category": "Basic",
+      "max_level": 1,
+      "name": "Acrobatic",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1013": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Pocket Money",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1014": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Life Stealing",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1015": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Dolphin Swim",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1016": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Wrath",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1017": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Bull's Eye",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1018": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Expert",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1019": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blood Bath",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1020": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Lumberjack's Quick Work",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1021": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Miner's Quick Work",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1022": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Feather Fall",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1023": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Double-Fish Catch",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1024": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Economist",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1025": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Regurgitation",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1026": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Gourmet",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1027": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Aggressive Ambition",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1028": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Money Grubber",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1029": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Long Swimming",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1030": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Aerial",
+      "raw_category": 5,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1031": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "High Five",
+      "raw_category": 5,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1032": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Lean Force",
+      "raw_category": 5,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1033": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Mana Drain",
+      "raw_category": 5,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1034": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Driver",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1035": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Skill Fighter",
+      "raw_category": 1,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1036": {
+      "category": "Life",
+      "max_level": 1,
+      "name": "Angler",
+      "raw_category": 4,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1037": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Wild Might",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1038": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Ninjutsu",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1039": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Warp Shift",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1040": {
+      "category": "Trick",
+      "max_level": 1,
+      "name": "Giant Shoulder",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1041": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Calming Scenery",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1042": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Over the Rainbow",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1043": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Shock Absorber",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1045": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Wall Climber",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1046": {
+      "category": "Basic",
+      "max_level": 1,
+      "name": "Jump Charge",
+      "raw_category": 1,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1047": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Gluttony",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1048": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Loot Hunter",
+      "raw_category": 5,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1050": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Meditation II",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1051": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Vitality",
+      "raw_category": 1,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1053": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Collector",
+      "raw_category": 1,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1054": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Rabbit Jump",
+      "raw_category": 1,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1055": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Grit",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1056": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Quick Pacing",
+      "raw_category": 1,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1057": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Endurance",
+      "raw_category": 1,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "1058": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Rotating Strike",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1059": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Charge Strike",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1060": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Strong Bash",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1061": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Great Archer",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1062": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Counter",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1063": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Samurai",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1064": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Rune Stream",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1065": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Unstoppable",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1066": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Backstab",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1067": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Forester II",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1068": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Sense of Lumberjack",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1069": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Sense of Miner",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1070": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Bounty Hunter",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1074": {
+      "category": "Life",
+      "max_level": 3,
+      "name": "Treasure Hunt",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1075": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Unflammable",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1076": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Secret Ingredient",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1078": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Efficient Work",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1079": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Salesmanship",
+      "raw_category": 4,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1080": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Habituation",
+      "raw_category": 4,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "1081": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Maintenance",
+      "raw_category": 5,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1084": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Martial Arts: Head",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1085": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Martial Arts: Body",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1086": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Sneak Attack",
+      "raw_category": 5,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1088": {
+      "category": "Life",
+      "max_level": 3,
+      "name": "Gathering Life",
+      "raw_category": 4,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1089": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Blessing of Mana",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1090": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Magic grasps",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1091": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Fast Cast",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1092": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Carpet Bombing",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1093": {
+      "category": "Tamer",
+      "max_level": 3,
+      "name": "Novice Trainer",
+      "raw_category": 6,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1095": {
+      "category": "Tamer",
+      "max_level": 3,
+      "name": "Veterinarian",
+      "raw_category": 6,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1096": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Wild Rage",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1097": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Wild Vitality",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1098": {
+      "category": "Tamer",
+      "max_level": 3,
+      "name": "Skilled Trainer",
+      "raw_category": 6,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1099": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Wild Wrath",
+      "raw_category": 6,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1100": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Wild Vigor",
+      "raw_category": 6,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1101": {
+      "category": "Tamer",
+      "max_level": 1,
+      "name": "Elite Tamer",
+      "raw_category": 6,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1102": {
+      "category": "Tamer",
+      "max_level": 1,
+      "name": "Monstrous March",
+      "raw_category": 6,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "1107": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Half of the shield",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "1111": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Wood Cutter",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1112": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Magic Drill",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "1113": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Golem Spin",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "1114": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Missile Salvo",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "1115": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Eclipse of Judgment",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "1116": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Meteorite Smasher",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "840": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Combo Strike",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "841": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Lightning Bolt",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "842": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Attack Order",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "843": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Taunt",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "844": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Berserk",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "845": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Refresh",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "846": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Rampage",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "847": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Shield Charge",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "848": {
+      "category": "Combat",
+      "max_level": 3,
+      "name": "Dragon Fall",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "849": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Magnum Shot",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "850": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Multiway Shot",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "851": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Storm Arrow",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "852": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Rapid Fire",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "853": {
+      "category": "Magic",
+      "max_level": 3,
+      "name": "Execution",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "854": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Tailwind",
+      "raw_category": 1,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "855": {
+      "category": "Trick",
+      "max_level": 1,
+      "name": "Stealth",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "856": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Resurrection",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "857": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Play Dead",
+      "raw_category": 5,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "858": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Mana Siphon",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "859": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Heal",
+      "raw_category": 3,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "860": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Hell Blaze",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "861": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Lucky Mallet",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "862": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Animal Bomber",
+      "raw_category": 6,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "863": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Freezing Ray",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "864": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Lightning Speed",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "865": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "A Piece of Cake",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "866": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Summon Meteor",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "867": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Wind Edge",
+      "raw_category": 3,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "868": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blade Dance",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "869": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Charged Spear",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "870": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Stalking Strike",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "871": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Explosion",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "872": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Frost Mine",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "873": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Iai Slash",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "874": {
+      "category": "Magic",
+      "max_level": 3,
+      "name": "Time Lock",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "875": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Alchemic Potion",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "876": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Gatherer's Frenzy",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "877": {
+      "category": "Trick",
+      "max_level": 1,
+      "name": "Satiation",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "878": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Magical Quiver",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "879": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Sumptuous Feast",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "880": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Backwater Formation",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "881": {
+      "category": "Life",
+      "max_level": 3,
+      "name": "Slumber",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "882": {
+      "category": "Trick",
+      "max_level": 1,
+      "name": "Full Moon",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "883": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Trick Box",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "884": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Solar Power",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "885": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Self Explosion",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "886": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Levitation",
+      "raw_category": 5,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "887": {
+      "category": "Trick",
+      "max_level": 1,
+      "name": "Gigantification",
+      "raw_category": 5,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "888": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Fishers Life",
+      "raw_category": 5,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "889": {
+      "category": "Combat",
+      "max_level": 1,
+      "name": "Weapon Polishing",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "890": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Judgment Shot",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "892": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Leap Strike",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "893": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blooming Strike",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "894": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Excalibur",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "895": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Sacrifice Supper",
+      "raw_category": 4,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "896": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Companion Plants",
+      "raw_category": 4,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "897": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Tuning Up",
+      "raw_category": 4,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "898": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Battle Hymn",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "899": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Absorption",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "900": {
+      "category": "Life",
+      "max_level": 1,
+      "name": "Explosion Signal",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "901": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Toss-up",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "902": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Multi Deployment",
+      "raw_category": 4,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "904": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Fertilize",
+      "raw_category": 4,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "905": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Water Creation",
+      "raw_category": 3,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "906": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Fire Creation",
+      "raw_category": 3,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "907": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Cyclone",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "908": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Arch Heal",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "909": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Magic Blade",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "910": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Great Escape",
+      "raw_category": 1,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "911": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Lightning Ball",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "912": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Decoy Doll",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "913": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Tough Swimmer",
+      "raw_category": 5,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "914": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Necromance",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "915": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Magic Shield",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "916": {
+      "category": "Basic",
+      "max_level": 6,
+      "name": "Storm Run",
+      "raw_category": 1,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "917": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Unlimited Fake Blade",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "919": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "High Resurrection",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "920": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Native Alchemy",
+      "raw_category": 4,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "922": {
+      "category": "Magic",
+      "max_level": 1,
+      "name": "Runic Barrage",
+      "raw_category": 3,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "923": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Triple Slash",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "924": {
+      "category": "Trick",
+      "max_level": 6,
+      "name": "Fasting",
+      "raw_category": 5,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "925": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Life Siphon",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "926": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Mantra",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "927": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Encourage",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "928": {
+      "category": "Life",
+      "max_level": 6,
+      "name": "Prayer",
+      "raw_category": 4,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "929": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Miasma",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "931": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Protection",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "932": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Vorpal Dance",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "933": {
+      "category": "Tamer",
+      "max_level": 1,
+      "name": "Wait Order",
+      "raw_category": 6,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "934": {
+      "category": "Tamer",
+      "max_level": 1,
+      "name": "Guard Order",
+      "raw_category": 6,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "935": {
+      "category": "Tamer",
+      "max_level": 1,
+      "name": "Follow Order",
+      "raw_category": 6,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "936": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Pet Heal",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "937": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Pet Encourage",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "938": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Pet Resurrection",
+      "raw_category": 6,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "939": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Command of Swift Horse",
+      "raw_category": 6,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "940": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Return Order",
+      "raw_category": 6,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "941": {
+      "category": "Tamer",
+      "max_level": 5,
+      "name": "Army of the King",
+      "raw_category": 6,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "942": {
+      "category": "Tamer",
+      "max_level": 6,
+      "name": "Assist Order",
+      "raw_category": 6,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "953": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Roar",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "954": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Jump Attack",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "955": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Dual Blade",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "956": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blood Fang",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "957": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Soul Wailing",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "958": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Scratch Rose",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "959": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Piercing Talon",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "960": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Kuzushi",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "961": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Skull Crusher",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "962": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blood Shredder",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "963": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Wheel Slash",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "964": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Half Moon",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "965": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Tiger's Maw",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "966": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Dual Wield Dance",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "967": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Blood Scourge",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "968": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Comet Thrust",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "970": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Study Aim",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "971": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "High Grip Hold",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "973": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Hollow Point",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "974": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Spread Shot",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "976": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Desperado",
+      "raw_category": 2,
+      "raw_tier": 1,
+      "tier": 1,
+      "tier_name": "Tier1"
+    },
+    "977": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Fire in the hole!",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "978": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Barrel Roll",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "979": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Fireball",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "980": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Piercing Light",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "981": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Fire Storm",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "982": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Fire Blade",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "983": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Seismic Charge",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "984": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Will-o-wisp",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "985": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Psycho Gun",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "986": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Feather Squall",
+      "raw_category": 2,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "987": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Frog Stomp",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "988": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Dragon Tail",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "989": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Decisive Cleave",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "990": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Grimonoir",
+      "raw_category": 3,
+      "raw_tier": 2,
+      "tier": 2,
+      "tier_name": "Tier2"
+    },
+    "991": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Golden Wind",
+      "raw_category": 2,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "992": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Grand Fleur",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "993": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Curse of the Dust",
+      "raw_category": 3,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "994": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Acid Liquid",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "995": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Evil Dragon's Erosion",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "996": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Lava Eruption",
+      "raw_category": 2,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    },
+    "997": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Venom Squall",
+      "raw_category": 3,
+      "raw_tier": 3,
+      "tier": 3,
+      "tier_name": "Tier3"
+    },
+    "998": {
+      "category": "Combat",
+      "max_level": 6,
+      "name": "Venom Liquid",
+      "raw_category": 2,
+      "raw_tier": 4,
+      "tier": 4,
+      "tier_name": "Tier4"
+    },
+    "999": {
+      "category": "Magic",
+      "max_level": 6,
+      "name": "Megiddo Flare",
+      "raw_category": 3,
+      "raw_tier": 5,
+      "tier": 5,
+      "tier_name": "Tier5"
+    }
+  }
+}

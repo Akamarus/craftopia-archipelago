@@ -1,0 +1,20 @@
+# Experimental class-based mission catalog; runtime availability unverified.
+name: CraftopiaPlayer
+game: Craftopia
+Craftopia:
+  goal_boss: false
+  goal_age: false
+  goal_objectives: true
+  goal_objective_count: 30
+  skill_points_per_check: 1
+  enable_mission_checks: true
+  starting_combat: player_choice
+  # Select using --starter-choice Sword (or another listed category).
+  # An in-game picker is not implemented.
+  enable_age_checks: false
+  enable_soul_orb_checks: false
+  enable_chest_checks: false
+  enable_challenge_checks: false
+  enable_anubis_checks: false
+  enable_shop_checks: false
+  enable_boss_checks: false

@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><ImplicitUsings>disable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../CraftopiaArchipelago/Permissions.cs" />
+    <Compile Include="../CraftopiaArchipelago/MiniJson.cs" />
+    <Compile Include="../CraftopiaArchipelago/UnlockMirror.cs" />
+  </ItemGroup>
+</Project>

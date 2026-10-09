@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>CraftopiaArchipelago</AssemblyName>
+    <RootNamespace>CraftopiaArchipelago</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <DebugType>none</DebugType>
+    <AssemblyVersion>1.8.9</AssemblyVersion>
+    <Version>1.8.9</Version>
+  </PropertyGroup>
+
+  <!-- Versioned skill catalog from runtime capture (embedded). -->
+  <ItemGroup>
+    <EmbeddedResource Include="../../worlds/craftopia/skill_catalog_20261008_r1.json">
+      <LogicalName>skill_catalog_20261008_r1.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- ValidationDecision is pure shared logic, compiled in. -->
+  <ItemGroup>
+    <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
+  </ItemGroup>
+
+  <!-- Compile-only references. None of these ship with the mod. -->
+  <ItemGroup>
+    <Reference Include="BepInEx">
+      <HintPath>..\refs\BepInEx.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\refs\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="AD__Overcraft">
+      <HintPath>..\refs\AD__Overcraft.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\refs\Mirror.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\refs\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\refs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
+
+
+

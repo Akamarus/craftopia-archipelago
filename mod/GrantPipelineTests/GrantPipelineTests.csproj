@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>GrantPipelineTests</AssemblyName>
+  </PropertyGroup>
+  <!-- The full mod is compiled in so the hook-registration test reflects over
+       the real shipping Patches class. References are copied locally for the
+       test only; the mod itself never ships them (Private=false there). -->
+  <ItemGroup>
+    <Compile Include="..\CraftopiaArchipelago\GrantPipeline.cs" />
+    <Compile Include="..\CraftopiaArchipelago\PlayerReadiness.cs" />
+    <Compile Include="..\CraftopiaArchipelago\MiniJson.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Bridge.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Patches.cs" />
+    <Compile Include="..\CraftopiaArchipelago\SkillEnforcement.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Plugin.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Validation.cs" />
+    <Compile Include="..\CraftopiaArchipelago\EntitlementStore.cs" />
+    <Compile Include="..\CraftopiaArchipelago\GrantTransaction.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Eligibility.cs" />
+    <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
+    <Reference Include="BepInEx">
+      <HintPath>..\refs\BepInEx.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\refs\0Harmony.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="AD__Overcraft">
+      <HintPath>..\refs\AD__Overcraft.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\refs\Mirror.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\refs\UnityEngine.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\refs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\refs\MonoMod.Utils.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\refs\MonoMod.RuntimeDetour.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+<ItemGroup><Compile Include="../CraftopiaArchipelago/PersistedState.cs" /><Compile Include="../CraftopiaArchipelago/ValidationGate.cs" /><Compile Include="../CraftopiaArchipelago/Permissions.cs" /><Compile Include="../CraftopiaArchipelago/PlayerStatusDisplay.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/UnlockMirror.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentState.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentAttestation.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentCoordinator.cs" /></ItemGroup></Project>
+
+
+

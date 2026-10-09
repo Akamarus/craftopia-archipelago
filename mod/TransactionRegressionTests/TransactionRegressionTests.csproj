@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>TransactionRegressionTests</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="TransactionRegressionTests.cs" />
+    <Compile Include="..\CraftopiaArchipelago\GrantTransaction.cs" />
+    <Compile Include="..\CraftopiaArchipelago\GrantPipeline.cs" />
+    <Compile Include="..\CraftopiaArchipelago\EntitlementStore.cs" />
+    <Compile Include="..\CraftopiaArchipelago\MiniJson.cs" />
+    <Compile Include="..\CraftopiaArchipelago\Eligibility.cs" />
+    <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
+  </ItemGroup>
+<ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentState.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentAttestation.cs" /></ItemGroup></Project>
+
+
