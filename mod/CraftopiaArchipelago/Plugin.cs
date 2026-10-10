@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.8.9";
+        public const string VERSION = "1.9.0";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -92,58 +92,15 @@ namespace CraftopiaArchipelago
         /// <summary>
         /// Resolve a building type name to its production group.
         /// Returns "opening" for free stations, group ID for gated stations,
-        /// or null if unknown (caller should fail-open).
-        /// Based on /tmp/production_groups.md (29 types, 10 groups).
+        /// or null if unknown (bound production attempts are denied).
+        /// Concrete station types are matched exactly.
         /// </summary>
         internal static string ResolveProductionGroup(string typeName)
-        {
-            if (string.IsNullOrEmpty(typeName))
-                return null;
-            // Opening set: hand crafting + basic crafting bench (free).
-            if (typeName.Contains("OcBldg_CraftingBench") && !typeName.Contains("Automation"))
-                return "opening";
-            // G1 smelting
-            if (typeName.Contains("Refiner"))
-                return "smelting";
-            // G2 cooking
-            if (typeName.Contains("Campfire") || typeName.Contains("CookingPot"))
-                return "cooking";
-            // G3 farming
-            if (typeName.Contains("OcBldg_Farm") || typeName.Contains("WheatField") ||
-                typeName.Contains("BreedPlant") || typeName.Contains("SeedMakingMachine"))
-                return "farming";
-            // G4 livestock & fishing
-            if (typeName.Contains("StockFarm") || typeName.Contains("CrabPot") ||
-                typeName.Contains("FishPool") || typeName.Contains("FilletMachine"))
-                return "livestock_fishing";
-            // G5 alchemy
-            if (typeName.Contains("Alchemy"))
-                return "alchemy";
-            // G6 recycling
-            if (typeName.Contains("RecycleMachine") || typeName.Contains("Composter") ||
-                typeName.Contains("WeaponDisassembly"))
-                return "recycling";
-            // G7 water processing
-            if (typeName.Contains("WaterPurification") || typeName.Contains("WashingMachine") ||
-                typeName.Contains("Dryer"))
-                return "water_processing";
-            // G8 equipment care
-            if (typeName.Contains("RepairWorkshop") || typeName.Contains("Aging"))
-                return "equipment_care";
-            // G9 automation
-            if (typeName.Contains("Automation"))
-                return "automation";
-            // G11 creature combining
-            if (typeName.Contains("CombinedEm"))
-                return "creature_combining";
-            // G10 power excluded (role unconfirmed)
-            // Unknown: fail-open
-            return null;
-        }
+            => ProductionEnforcement.ResolveStation(typeName);
 
         /// <summary>
         /// Resolve a skill ID to its category and tier.
-        /// Returns null if unknown (caller should fail-open).
+        /// Returns null if unknown (bound learning attempts are denied).
         /// </summary>
         private static bool skillCatalogWarningLogged = false;
 
@@ -537,14 +494,16 @@ namespace CraftopiaArchipelago
         /// </summary>
         private static bool InstallAndVerifyHooks()
         {
-            Harmony harmony;
+            Harmony harmony = null;
             try
             {
                 harmony = new Harmony(GUID);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
+                ProductionHooks.Install(harmony);
             }
             catch (Exception e)
             {
+                try { harmony?.UnpatchSelf(); } catch { }
                 Log.LogError("[AP] FATAL: Harmony PatchAll threw: " + e.GetType().Name
                     + ": " + e.Message + ". Hooks not registered; bridge not started.");
                 return false;

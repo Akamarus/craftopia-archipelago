@@ -55,7 +55,4 @@
       <Private>true</Private>
     </Reference>
   </ItemGroup>
-<ItemGroup><Compile Include="../CraftopiaArchipelago/PersistedState.cs" /><Compile Include="../CraftopiaArchipelago/ValidationGate.cs" /><Compile Include="../CraftopiaArchipelago/Permissions.cs" /><Compile Include="../CraftopiaArchipelago/PlayerStatusDisplay.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/UnlockMirror.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentState.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentAttestation.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentCoordinator.cs" /></ItemGroup></Project>
-
-
-
+<ItemGroup><Compile Include="../CraftopiaArchipelago/PersistedState.cs" /><Compile Include="../CraftopiaArchipelago/ValidationGate.cs" /><Compile Include="../CraftopiaArchipelago/Permissions.cs" /><Compile Include="../CraftopiaArchipelago/PlayerStatusDisplay.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/UnlockMirror.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentState.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentAttestation.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/EnrollmentCoordinator.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/ProductionEnforcement.cs" /><Compile Include="../CraftopiaArchipelago/ProductionHooks.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/ObservationJournal.cs" /></ItemGroup><ItemGroup><Compile Include="../CraftopiaArchipelago/ConnectorGuard.cs" /></ItemGroup></Project>

@@ -5,7 +5,7 @@ using BepInEx;
 
 namespace CraftopiaDiagnostic
 {
-    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.0.0")]
+    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.2.0")]
     public class DiagnosticCollector : BaseUnityPlugin
     {
         private void Awake()
@@ -50,12 +50,24 @@ namespace CraftopiaDiagnostic
             catch { }
         }
 
+        private static string Hash(string path)
+        {
+            try { using (var sha = System.Security.Cryptography.SHA256.Create())
+                using (var file = System.IO.File.OpenRead(path))
+                    return BitConverter.ToString(sha.ComputeHash(file)).Replace("-", "").ToLowerInvariant(); }
+            catch { return null; }
+        }
+
         private void RunDiagnostic()
         {
             Logger.LogInfo("[DIAG] Starting diagnostic collection...");
             var output = new Dictionary<string, object>();
             output["timestamp"] = DateTime.UtcNow.ToString("o");
-            output["schema_version"] = 2;
+            output["schema_version"] = 3;
+            output["collector_version"] = "1.2.0";
+            output["game_assembly_sha256"] = Hash(typeof(Oc.OcPlMaster).Assembly.Location);
+            output["collector_sha256"] = Hash(Assembly.GetExecutingAssembly().Location);
+            ProgressionCapture.Collect(output);
 
             try
             {
@@ -203,6 +215,11 @@ namespace CraftopiaDiagnostic
                                     {
                                         var t = m.GetType();
                                         d["class"] = t.FullName;
+                                        d["requirements_and_rewards"] = CatalogFields.Read(m, new[] {
+                                            "worldLevel", "targetValue", "status", "achievementID",
+                                            "rewardItemID_A", "rewardItemCount_A", "rewardItemID_B", "rewardItemCount_B",
+                                            "rewardGold", "skillPoint", "rewardExp", "lithograph"
+                                        });
                                         d["id"] = t.GetProperty("ID")?.GetValue(m);
                                         d["title"] = t.GetProperty("Title")?.GetValue(m);
                                         d["category"] = t.GetProperty("Category")?.GetValue(m);

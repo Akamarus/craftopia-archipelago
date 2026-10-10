@@ -47,8 +47,8 @@ namespace CraftopiaArchipelago
         private long knownEpoch;
         internal int ConnectionId { get { return Volatile.Read(ref connectionId); } }
         private readonly ConcurrentQueue<string> outbox = new ConcurrentQueue<string>();
-        private string outboxPath;
-        private readonly object outboxFileLock = new object();
+        private ObservationJournal observations;
+        private string knownToken;
 
         public bool IsConnected { get { return connected; } }
 
@@ -66,98 +66,10 @@ namespace CraftopiaArchipelago
             running = false;
         }
 
-        /// <summary>Called from the Harmony patch (Unity main thread).</summary>
-        /// <summary>
-        /// Initialize the durable observation outbox. Call once at startup.
-        /// Replays any observations that were persisted but not yet sent.
-        /// </summary>
         public void InitDurableOutbox(string path)
         {
-            outboxPath = path;
-            // Replay unsent observations from previous session.
-            try
-            {
-                if (System.IO.File.Exists(path))
-                {
-                    var lines = System.IO.File.ReadAllLines(path);
-                    int replayed = 0;
-                    foreach (var line in lines)
-                    {
-                        if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            outbox.Enqueue(line.Trim());
-                            replayed++;
-                        }
-                    }
-                    if (replayed > 0)
-                        Plugin.Log.LogInfo($"[AP] replayed {replayed} unsent observation(s) from durable outbox");
-                }
-            }
-            catch (Exception e)
-            {
-                Plugin.Log.LogError("[AP] durable outbox replay failed: " + e.GetType().Name);
-            }
-        }
-
-        /// <summary>
-        /// Persist an observation to the durable outbox file before queueing.
-        /// Uses atomic write (temp file + replace) to avoid corruption.
-        /// </summary>
-        private void PersistObservation(string msg)
-        {
-            if (string.IsNullOrEmpty(outboxPath)) return;
-            lock (outboxFileLock)
-            {
-                try
-                {
-                    // Append to the file. Each line is one JSON message.
-                    System.IO.File.AppendAllText(outboxPath, msg + "\n");
-                }
-                catch (Exception e)
-                {
-                    Plugin.Log.LogError("[AP] failed to persist observation: " + e.GetType().Name);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Remove a sent observation from the durable outbox.
-        /// Called after the bridge acknowledges receipt.
-        /// </summary>
-        public void AckObservation(string msg)
-        {
-            if (string.IsNullOrEmpty(outboxPath)) return;
-            lock (outboxFileLock)
-            {
-                try
-                {
-                    if (!System.IO.File.Exists(outboxPath)) return;
-                    var lines = System.IO.File.ReadAllLines(outboxPath);
-                    var remaining = new System.Collections.Generic.List<string>();
-                    bool removed = false;
-                    foreach (var line in lines)
-                    {
-                        if (!removed && line.Trim() == msg.Trim())
-                        {
-                            removed = true; // Remove only the first match.
-                        }
-                        else if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            remaining.Add(line);
-                        }
-                    }
-                    if (removed)
-                    {
-                        var tmp = outboxPath + ".tmp";
-                        System.IO.File.WriteAllLines(tmp, remaining);
-                        System.IO.File.Replace(tmp, outboxPath, null);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Plugin.Log.LogError("[AP] failed to ack observation: " + e.GetType().Name);
-                }
-            }
+            observations = new ObservationJournal(path);
+            // Replay only after the socket negotiates the matching epoch/slot.
         }
 
         public void SendCheck(int missionId, string missionTitle, string missionClass)
@@ -170,12 +82,13 @@ namespace CraftopiaArchipelago
                 ["epoch"] = epoch,
                 ["slot"] = Plugin.SlotName.Value,
                 ["mission_id"] = (long)missionId,
+                ["observation_id"] = "mission:" + missionId.ToString(System.Globalization.CultureInfo.InvariantCulture),
                 ["mission_title"] = missionTitle ?? "",
                 ["mission_class"] = missionClass ?? ""
             });
             // Durable: persist before queueing so a game exit doesn't lose it.
-            PersistObservation(msg);
-            outbox.Enqueue(msg);
+            if (observations != null && observations.Append(msg)) outbox.Enqueue(msg);
+            else Plugin.SafeError("[AP] observation not queued: durable journal unavailable; preserve files for review");
         }
 
         /// <summary>
@@ -308,6 +221,13 @@ namespace CraftopiaArchipelago
             string cmd = MiniJson.GetString(msg, "cmd");
             switch (cmd)
             {
+                case "observation_ack":
+                    if (MiniJson.GetLong(msg, "epoch") == Interlocked.Read(ref knownEpoch) &&
+                        MiniJson.GetString(msg, "slot") == Plugin.SlotName.Value &&
+                        MiniJson.GetString(msg, "connection_token") == knownToken)
+                        observations?.Ack(MiniJson.GetString(msg, "observation_id"),
+                            MiniJson.GetLong(msg, "epoch"), MiniJson.GetString(msg, "slot"));
+                    break;
                 case "connected":
                     Plugin.Log.LogInfo("[AP] bridge link is live (server connected)");
                     break;
@@ -346,6 +266,9 @@ namespace CraftopiaArchipelago
                     string.IsNullOrWhiteSpace(MiniJson.GetString(msg,"connection_token"))) return;
                 long epoch = (long)epochRaw;
                 Interlocked.Exchange(ref knownEpoch, epoch);
+                knownToken = MiniJson.GetString(msg, "connection_token");
+                if (observations != null)
+                    foreach (var pending in observations.Snapshot(epoch, Plugin.SlotName.Value)) outbox.Enqueue(pending);
                 var enrolledList = MiniJson.GetLongList(msg, "enrolled_guids");
                 var enrolled = new System.Collections.Generic.HashSet<int>();
                 foreach (long g in enrolledList)

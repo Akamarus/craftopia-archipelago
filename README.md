@@ -2,7 +2,9 @@
 
 An experimental native [Archipelago](https://archipelago.gg/) integration for Craftopia: a Python APWorld, a bridge client, and a BepInEx mod.
 
-**Current source baseline: v1.8.9. Status updated October 9, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
+**Current development source: v1.9.0. Last gameplay-tested baseline: v1.8.9. Updated October 10, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
+
+The current batch repairs production guards and durable mission observations, and expands the read-only collector. Its F9 capture contains 7,052 unique positive item IDs, raw recipe dependencies, nine age records, and 21 bench groups. These are evidence for further logic work, not a finished equipment or beatability model. See the [batch evidence and test plan](docs/PROGRESSION_BATCH_20261010.md).
 
 ## Verified in the game
 
@@ -58,6 +60,6 @@ This source snapshot does not include a ready-to-install APWorld package or a ge
 
 ## Verification baseline
 
-The v1.8.9 development build passed **340 C# assertions**, with zero compiler warnings/errors. Real AP 0.6.8 generation produced the 125-location test seed. The whole Python suite was not rerun for v1.8.9; some older tests and documentation retain obsolete assumptions. These results are recorded observations, not a claim that every included test currently passes on every platform.
+The current batch passed all **11 C# test programs**, **70 client tests**, and **14 world tests**, including real AP 0.6.8 legacy generation. The C# baseline contains 340 assertions, with new production, collector, observation-journal and connector coverage. The gameplay build has zero compiler warnings/errors. The previously tested v1.8.9 seed had 125 instance locations. Automated results do not establish runtime hook behavior or seed beatability.
 
 Published source excludes game binaries, build outputs, private saves, delivery ledgers, local configuration, and raw runtime logs. No binary release is published with this initial source snapshot.

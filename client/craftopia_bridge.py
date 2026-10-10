@@ -1446,10 +1446,10 @@ class Bridge:
         return loc_id
 
     async def report_check(self, mission_id, mission_title, mission_class=None):
-        if self.recovery_hold or not integer(mission_id,-2147483648,2147483647): return
-        if mission_class is not None and not valid_text(mission_class): return
+        if self.recovery_hold or not integer(mission_id,-2147483648,2147483647): return False
+        if mission_class is not None and not valid_text(mission_class): return False
         loc_id=self.location_id_for_mission(mission_id,mission_class) if self.datapackage_ready else None
-        if self.datapackage_ready and loc_id is None: return
+        if self.datapackage_ready and loc_id is None: return False
         record={'mission_id':mission_id,'mission_title':mission_title,'mission_class':mission_class,
                 'location_id':loc_id,'deferred':loc_id is None}
         proposed=candidate(self.ledger)
@@ -1461,9 +1461,10 @@ class Bridge:
             objective=self.slot_data.get('objective_locations',{}).get(name)
             if objective:
                 proposed['goal_events']['completed_objectives']=sorted(self.completed_objectives | {objective})
-        if not self.commit(proposed): return
+        if not self.commit(proposed): return False
         await self.reconcile_pending_checks()
         await self.check_goal_completion()
+        return True
             # Entry remains in pending_checks; will be retried on reconnect.
 
     # ---------- Craftopia mod side (local bridge) ----------
@@ -1652,9 +1653,14 @@ class Bridge:
             if (not self._conn_validated(token) or type(msg.get('epoch')) is not int
                     or msg['epoch'] != self.ledger['epoch'] or msg.get('slot') != self.args.slot):
                 return
-            await self.report_check(msg.get("mission_id", -1),
+            accepted = await self.report_check(msg.get("mission_id", -1),
                                     msg.get("mission_title", ""),
                                     msg.get("mission_class"))
+            observation_id = msg.get('observation_id')
+            if accepted and valid_text(observation_id):
+                await self.send_mod({'cmd': 'observation_ack', 'epoch': self.ledger['epoch'],
+                    'slot': self.args.slot, 'observation_id': observation_id,
+                    'connection_token': token if token is not None else self.connection_token}, token=token)
         elif cmd == "grant_ack":
             await self.on_grant_ack(msg, token)
         elif cmd == "unlock_ack":

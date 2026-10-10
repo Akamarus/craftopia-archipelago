@@ -1,6 +1,6 @@
-# Current verified status — v1.8.9
+# Current status — v1.9.0 development / v1.8.9 gameplay baseline
 
-Updated October 9, 2026. This document supersedes implementation-status claims in older reports in this repository.
+Updated October 10, 2026. This document supersedes implementation-status claims in older reports in this repository. The gameplay observations below remain v1.8.9 results. Current source adds production-boundary repairs and durable observation acknowledgments; these are not yet gameplay-tested. Collector v1.2.0 was independently deployed and captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
 ## Controlled runtime results
 
@@ -56,6 +56,6 @@ Validation defers while an exact approved enrollment awaits load completion. Thi
 - Boss/age victory options remain rejected by supported generation until locations and logic exist.
 - Mission-awarded skill learning may use a different game method from the tested skill-menu path.
 - Historical recovery, forced duplicate injection, and live crash-recovery tests were not performed.
-- Per-frame blocked-grant logging and older test portability/fixture assumptions still need cleanup.
+- Per-frame blocked-grant logging still needs cleanup. Numeric GUID and Windows authority-lock fixtures were repaired; all client/world suites passed for this development batch.
 
 The companion Tamer gameplay mod is a separate project and is not included or enabled by this integration.

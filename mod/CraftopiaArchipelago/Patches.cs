@@ -92,43 +92,7 @@ namespace CraftopiaArchipelago
             try { Plugin.OnLoadEnd(__state, __exception); } catch { }
         }
 
-        // ---- Production enforcement ----
-
-        [HarmonyPatch(typeof(Oc.OcBuildingBase_Craft), nameof(Oc.OcBuildingBase_Craft.StartProcessReq))]
-        [HarmonyPrefix]
-        private static bool StartProcessReqPrefix(
-            Oc.OcBuildingBase_Craft __instance,
-            Oc.Item.OcItem item, short targetNum, int autoTgtNum, int completeNum, float timeCostRate)
-        {
-            try
-            {
-                if (Plugin.Permissions == null) return true;
-                if (!Plugin.IsSessionBound()) return true;
-
-                // Map the concrete building type to its production group.
-                string typeName = __instance.GetType().FullName ?? "";
-                string group = Plugin.ResolveProductionGroup(typeName);
-                if (group == null) return true; // Unknown station; allow vanilla.
-
-                // Opening set: hand crafting and basic crafting bench are free.
-                if (group == "opening") return true;
-
-                if (!Plugin.Permissions.IsProductionUnlocked(group))
-                {
-                    string msg = $"[AP] Station locked: {group} requires an Archipelago unlock. " +
-                        "Find 'Production: " + group + "' to use this station.";
-                    Plugin.Log.LogInfo(msg);
-                    Plugin.StatusDisplay?.ShowBlockedAction(msg);
-                    return false; // Block before resources are consumed.
-                }
-                return true;
-            }
-            catch (Exception e)
-            {
-                Plugin.Log.LogError("[AP] StartProcessReq prefix error: " + e.GetType().Name);
-                return true; // Fail-open on error.
-            }
-        }
+        // Production checks are installed at pre-cost boundaries by ProductionHooks.
 
         // ---- Skill tree enforcement ----
 
