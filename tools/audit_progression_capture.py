@@ -1,4 +1,4 @@
-"""Audit read-only schema-3 evidence; never infer reachability or write game state."""
+"""Audit read-only schema-3/4 evidence; never infer reachability or write game state."""
 import argparse
 from collections import Counter
 import hashlib
@@ -8,8 +8,8 @@ from pathlib import Path
 
 def audit(raw):
     data = json.loads(raw)
-    if type(data.get("schema_version")) is not int or data["schema_version"] != 3:
-        raise ValueError("Expected diagnostic schema 3")
+    if type(data.get("schema_version")) is not int or data["schema_version"] not in (3, 4):
+        raise ValueError("Expected diagnostic schema 3 or 4")
     for section in ("items", "ages", "craft_bench_map", "age_new_items", "missions", "skills"):
         if data.get(section + "_status") != "collected" or not isinstance(data.get(section), list):
             raise ValueError(f"Incomplete section: {section}")

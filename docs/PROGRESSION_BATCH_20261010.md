@@ -6,6 +6,8 @@ Runtime checkpoint: all 22 production hooks and nine existing hooks registered w
 
 ## Production repair
 
+**Subsequent evidence correction:** The positive furnace tests above prove ordinary operation after age advancement and after reload. They do not prove a locked furnace is blocked by Smelting permission. Inspection found the old `Refiner → smelting` class mapping actually targets weapon refinement, and generic crafting benches select recipes by their installed item's family ID. That mapping remains an identified defect in the installed development build pending station-family evidence; do not count furnace enforcement as verified. See [equipment/prerequisite work](EQUIPMENT_PROGRESSION_20261010.md).
+
 The old `StartProcessReq` guard was too late for several callers: the installed game consumes items or currency before invoking it. The new guard set targets 22 inspected method boundaries in UI crafting and automatic production. All target names/signatures were verified against the installed assembly. Bound unknown stations and evaluation failures deny; opening crafting and explicitly excluded power retain vanilla behavior.
 
 The connector uses a narrow transpiler at the host crafting branch. Denial branches to the existing discovery/cleanup section, before consumption. It does not skip the entire Update. The transpiler rejects unfamiliar method layouts; patch-install failure removes this mod's partial patches. A synthetic IL regression executes locked target → discovery → unlocked target without consuming on the denied frame. An independent source/IL review found no remaining concrete blocker after this correction.

@@ -8,7 +8,7 @@ namespace CraftopiaDiagnostic
     internal static class ProgressionCapture
     {
         private static readonly string[] ItemFields = {
-            "id", "status", "isOldData", "StatusMapOnly", "rank", "rarity", "familyId", "categoryId",
+            "id", "status", "isOldData", "StatusMapOnly", "rank", "rarity", "familyId", "categoryId", "inventoryTabId", "existPrefab",
             "equipSlot", "wpCategory", "workbenchId", "workbenchLv", "playerCraftCount", "carftTimeCost",
             "materialA_Id", "materialA_count", "materialB_Id", "materialB_count", "materialC_Id", "materialC_count",
             "materialD_Id", "materialD_count", "materialE_Id", "materialE_count", "_materialID", "_materialNum",
@@ -38,7 +38,18 @@ namespace CraftopiaDiagnostic
                 var all = CatalogFields.Field(catalog, "all") as IEnumerable;
                 var rows = new List<object>();
                 if (all != null) foreach (var item in all)
-                    if (item != null) rows.Add(CatalogFields.Read(item, ItemFields));
+                {
+                    if (item == null) continue;
+                    var row = CatalogFields.Read(item, ItemFields);
+                    // Only this reviewed localization getter is permitted. It
+                    // does not issue identities, load prefabs or change items.
+                    try {
+                        row["display_name"] = item.GetType().GetProperty("DisplayName")?.GetValue(item) as string;
+                        row["display_name_status"] = row["display_name"] == null ? "unavailable" : "collected";
+                    }
+                    catch (Exception e) { row["display_name_status"] = "error:" + e.GetType().Name; }
+                    rows.Add(row);
+                }
                 output["items"] = rows;
                 output["items_status"] = all == null ? "catalog_unavailable" : rows.Count == 0 ? "empty" : "collected";
                 output["craft_bench_map"] = IdMap(CatalogFields.Field(manager, "craftBenchMap"));
@@ -74,6 +85,19 @@ namespace CraftopiaDiagnostic
                 output["ages_status"] = ages == null ? "unavailable" : rows.Count == 0 ? "empty" : "collected";
             }
             catch (Exception e) { output["ages_status"] = "error:" + e.GetType().Name; }
+            try
+            {
+                // Active, already loaded scene objects only. No prefab loading,
+                // spawning, scene traversal into players, or inventory reads.
+                var type = typeof(Oc.OcPlMaster).Assembly.GetType("Oc.OcBuildingBase_Craft", true);
+                var rows = new List<object>();
+                foreach (var station in UnityEngine.Object.FindObjectsOfType(type))
+                    rows.Add(CatalogFields.StationIdentity(station));
+                output["loaded_stations"] = rows;
+                output["loaded_stations_status"] = rows.Count == 0 ? "none_loaded" : "collected";
+                output["loaded_stations_limitations"] = "Active scene stations only; no locations, owners or inventory contents. Not a complete station catalog.";
+            }
+            catch (Exception e) { output["loaded_stations_status"] = "error:" + e.GetType().Name; }
         }
         private static List<object> ItemIds(object items)
         {

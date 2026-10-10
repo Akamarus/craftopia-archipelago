@@ -151,6 +151,14 @@ def build_item_table() -> Dict[str, CraftopiaItemDef]:
         max_count=1,
     )
 
+    # Append-only IDs: never change existing seed item IDs (1..25).
+    # Catalog registration is not pool enablement. Equipment is excluded from
+    # playable generation until reviewed prerequisites and runtime gates exist.
+    for ap_id, category in enumerate(('Sword', 'Bow', 'Shield', 'Lance', 'SwordTwoHand',
+                                     'Gun', 'Katana', 'MagicStaff', 'VacuumGun', 'Head', 'Body'), 26):
+        name = 'Progressive Equipment: ' + category
+        items[name] = CraftopiaItemDef(name, ap_id, 'progression', 10)
+
     return items
 
 

@@ -5,7 +5,7 @@ using BepInEx;
 
 namespace CraftopiaDiagnostic
 {
-    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.2.0")]
+    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.3.0")]
     public class DiagnosticCollector : BaseUnityPlugin
     {
         private void Awake()
@@ -63,8 +63,8 @@ namespace CraftopiaDiagnostic
             Logger.LogInfo("[DIAG] Starting diagnostic collection...");
             var output = new Dictionary<string, object>();
             output["timestamp"] = DateTime.UtcNow.ToString("o");
-            output["schema_version"] = 3;
-            output["collector_version"] = "1.2.0";
+            output["schema_version"] = 4;
+            output["collector_version"] = "1.3.0";
             output["game_assembly_sha256"] = Hash(typeof(Oc.OcPlMaster).Assembly.Location);
             output["collector_sha256"] = Hash(Assembly.GetExecutingAssembly().Location);
             ProgressionCapture.Collect(output);

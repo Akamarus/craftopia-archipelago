@@ -9,6 +9,16 @@ namespace CraftopiaDiagnostic
     // identity issuance, inventory mutation, or player/save-state traversal.
     public static class CatalogFields
     {
+        public static Dictionary<string, object> StationIdentity(object station)
+        {
+            var item = Field(station, "<_BldgItem_InItemSlot>k__BackingField");
+            var data = Field(item, "<data>k__BackingField");
+            return new Dictionary<string, object> {
+                ["type"] = station?.GetType().FullName,
+                ["item_id"] = Primitive(Field(data, "id")),
+                ["family_id"] = Primitive(Field(data, "familyId"))
+            };
+        }
         public static object Field(object instance, string name)
         {
             for (Type t = instance?.GetType(); t != null; t = t.BaseType)

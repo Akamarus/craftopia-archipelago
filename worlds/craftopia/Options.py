@@ -152,6 +152,17 @@ class MissionCatalogVersion(Choice):
     default = 0
 
 
+class LogicMode(Choice):
+    """Candidate retains experimental flat logic. Verified requires reviewed
+    prerequisites for every active mission; currently unavailable and rejected.
+    A captured recipe catalog alone does not establish beatability.
+    """
+    display_name = "Progression Logic"
+    option_candidate = 0
+    option_verified = 1
+    default = 0
+
+
 @dataclass
 class CraftopiaOptions(PerGameCommonOptions):
     # Victory (at least one must be enabled; validated at generation)
@@ -167,6 +178,7 @@ class CraftopiaOptions(PerGameCommonOptions):
     enable_mission_checks: EnableMissionChecks
     # Catalog version (instance-based mapping is opt-in)
     mission_catalog_version: MissionCatalogVersion
+    logic_mode: LogicMode
     enable_age_checks: EnableAgeChecks
     enable_soul_orb_checks: EnableSoulOrbChecks
     enable_chest_checks: EnableChestChecks

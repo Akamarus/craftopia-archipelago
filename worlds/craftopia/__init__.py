@@ -20,6 +20,7 @@ from worlds.AutoWorld import World, WebWorld
 from .Data import build_item_table, build_location_table, load_mission_data
 from .Items import CraftopiaItem, CraftopiaLocation, ITEM_CLASSIFICATION
 from .Options import CraftopiaOptions
+from .Progression import ProgressionModel, load_reviewed_profile
 
 
 class CraftopiaWebWorld(WebWorld):
@@ -87,6 +88,13 @@ class CraftopiaWorld(World):
         super().__init__(multiworld, player)
         self.item_table = _item_table
         self.location_table = _location_table
+        self.progression_model = None
+
+    def generate_early(self):
+        if self.options.logic_mode.value == 1:
+            if self.options.mission_catalog_version.value != 1:
+                raise ValueError('Verified progression requires numeric mission instances')
+            self.progression_model = ProgressionModel(load_reviewed_profile(), self.item_table)
 
     def create_item(self, name: str) -> CraftopiaItem:
         if name == "Completed Objective":
@@ -235,6 +243,15 @@ class CraftopiaWorld(World):
         locations = [loc for loc in overworld.locations if loc.address is not None]
         n_locations = len(locations)
 
+        model = getattr(self, 'progression_model', None)
+        if model is not None:
+            model.require_coverage([loc.game_id for loc in locations])
+            # Attach rules to actual network locations. Their local objective
+            # events already delegate to these locations' reachability.
+            for loc in locations:
+                loc.access_rule = lambda state, mid=loc.game_id: model.can_complete(
+                    mid, lambda name: state.count(name, self.player))
+
         if n_locations == 0:
             raise Exception(
                 "Craftopia: zero locations generated. Enable at least one "
@@ -324,6 +341,7 @@ class CraftopiaWorld(World):
                 if self.location_name_to_id.get(v, 0) < 1000
             }
         return {
+            "logic_mode": "verified" if getattr(self, 'progression_model', None) is not None else "candidate",
             "class_to_location": class_map,
             "game_id_to_location": game_id_map,
             "objective_locations": {

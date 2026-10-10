@@ -51,6 +51,8 @@ Validation defers while an exact approved enrollment awaits load completion. Thi
 
 ## Remaining work
 
+October 10 follow-up: [equipment/prerequisite foundation and collector 1.3](EQUIPMENT_PROGRESSION_20261010.md) add tested progressive receipt handling and real AP access-rule integration. Equipment items are registered but excluded from playable pools. Verified logic rejects generation without a reviewed profile; none is bundled yet. The furnace's positive runtime test does not verify denial while locked: the previous Refiner/smelting mapping was found to describe weapon refinement. Station family mapping is the next runtime evidence request.
+
 - Production permissions need end-to-end runtime tests; equipment tiers need verified per-item progression data and enforcement.
 - Non-mission checks, replacement rewards, and useful material/money delivery are incomplete.
 - Multiplayer code/design is present but not validated as a supported end-to-end feature.

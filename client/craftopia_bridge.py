@@ -335,6 +335,30 @@ class Bridge:
         proposed['pending_unlocks'].append(record)
         return self.commit(proposed)
 
+    def progressive_equipment(self, category, receipt_id):
+        """Materialize each progressive receipt once into the durable tier mirror.
+
+        No playable pool enables these yet. Waiting for the starter choice avoids
+        retroactively changing already committed receipt payloads.
+        """
+        if self.recovery_hold or not self.ledger['starters_applied']:
+            return None
+        if category not in ('Sword', 'Bow', 'Shield', 'Lance', 'SwordTwoHand',
+                            'Gun', 'Katana', 'MagicStaff', 'VacuumGun', 'Head', 'Body'):
+            return None
+        old = next((u for u in self.ledger['unlocks'] if u['receipt_id'] == receipt_id), None)
+        if old is not None:
+            if (old.get('cmd') != 'unlock_equipment' or old.get('category') != category
+                    or old.get('progressive') is not True):
+                self.recovery_hold = True
+                print('[AP] RECOVERY HOLD: progressive receipt payload changed', flush=True)
+                return None
+            return dict(old)
+        current = max((u['tier'] for u in self.ledger['unlocks']
+                       if u.get('cmd') == 'unlock_equipment' and u.get('category') == category), default=0)
+        return dict(cmd='unlock_equipment', category=category, tier=min(current + 1, 10),
+                    receipt_id=receipt_id, progressive=True)
+
     async def replay_unlocks(self, all_history=False, token=None):
         if not self.can_deliver_unlocks(): return
         if all_history or getattr(self, 'needs_unlock_replay', False):
@@ -897,7 +921,12 @@ class Bridge:
                 # These use durable delivery: persist pending, send to mod,
                 # require ack, retry on reconnect. See UNLOCK_DELIVERY.md.
                 unlock_msg = None
-                if item_name.startswith("Equipment Tier: "):
+                if item_name.startswith("Progressive Equipment: "):
+                    unlock_msg = self.progressive_equipment(item_name.split(': ', 1)[1], g)
+                    if unlock_msg is None:
+                        if msg not in self.retry_item_messages: self.retry_item_messages.append(msg)
+                        continue
+                elif item_name.startswith("Equipment Tier: "):
                     # Format: "Equipment Tier: <category> <tier>"
                     parts = item_name.split(": ", 1)[1].rsplit(" ", 1)
                     if len(parts) == 2:
