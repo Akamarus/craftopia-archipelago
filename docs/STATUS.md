@@ -4,6 +4,8 @@ Updated October 10, 2026. This document supersedes implementation-status claims 
 
 ## Controlled runtime results
 
+Additional v1.9.0 production results: locked campfire cooking preserved ingredients; ordinary crafting produced a stone pickaxe; the actual gliding mission delivered Smelting. Following normal advancement to Agricultural Age, a furnace batch consumed the expected materials and produced the expected output. Production save/reload and other station paths are still pending.
+
 Tests used a disposable new character and world, a separate native AP 0.6.8 seed, and disabled server release/collection automation. No historical reward recovery was performed.
 
 | Test | Observed result |
