@@ -2,11 +2,13 @@
 
 Updated October 10, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
+Equipment follow-up: [versioned catalog and pure permission evaluator](EQUIPMENT_CATALOG_20261010.md) cover 237 progressive candidates, 429 explicitly unsupported combat rows and 6,386 vanilla rows. Whole-loadout validation and strict evidence checks pass automated tests. Runtime equipment hooks and seed activation are not wired; equipment remains excluded from generated pools. All 12 C# suites, 77 bridge tests, 22 world tests and eight exporter tests pass. Installed gameplay remains v1.9.1.
+
 ## Controlled runtime results
 
 v1.9.1 station-family runtime checks passed by tester confirmation: Stone Furnace consumed normal ingredients and produced output with Smelting owned; Cooking Pot denied a recipe without consuming available ingredients while Cooking was unowned; ordinary Workbench crafting succeeded. The current log corroborates missing-Cooking denials and shows no Error/FATAL/Exception entries. Startup verified all 31 hooks, character identity and matching AP-aware totals. Locked furnace, connector operation and other station families remain unverified.
 
-Collector 1.3 captured successfully: ten distinct loaded station class/item/family bindings, including Stone Furnace, Cooking Pot and Workbench sharing `OcBldg_CraftingBench`. The v1.9.1 repair resolves these by family, assigns weapon Refinery to equipment care, and denies unknown generic-bench families. All 11 C# suites passed (28 production assertions); build has zero warnings/errors. The repaired DLL was installed after a full test-state backup while the game was closed. Its runtime checks are pending. See [station evidence](STATION_EVIDENCE_20261010.json).
+Collector 1.3 captured successfully: ten distinct loaded station class/item/family bindings, including Stone Furnace, Cooking Pot and Workbench sharing `OcBldg_CraftingBench`. The v1.9.1 repair resolves these by family, assigns weapon Refinery to equipment care, and denies unknown generic-bench families. All 11 C# suites passed (28 production assertions); build has zero warnings/errors. The repaired DLL was installed after a full test-state backup while the game was closed. The three runtime checks above subsequently passed. See [station evidence](STATION_EVIDENCE_20261010.json).
 
 Additional v1.9.0 production results: locked campfire cooking preserved ingredients; ordinary crafting produced a stone pickaxe; the actual gliding mission delivered Smelting. Following normal advancement to Agricultural Age, a furnace batch consumed the expected materials and produced the expected output. After saving and reloading, validation passed, Smelting permission restored, and the tester confirmed furnace operation still worked. Other station paths and multiplayer remain unverified.
 
@@ -55,7 +57,7 @@ Validation defers while an exact approved enrollment awaits load completion. Thi
 
 ## Remaining work
 
-October 10 follow-up: [equipment/prerequisite foundation and collector 1.3](EQUIPMENT_PROGRESSION_20261010.md) add tested progressive receipt handling and real AP access-rule integration. Equipment items are registered but excluded from playable pools. Verified logic rejects generation without a reviewed profile; none is bundled yet. The furnace's positive runtime test does not verify denial while locked: the previous Refiner/smelting mapping was found to describe weapon refinement. Station family mapping is the next runtime evidence request.
+October 10 follow-up: [equipment/prerequisite foundation and collector 1.3](EQUIPMENT_PROGRESSION_20261010.md) add tested progressive receipt handling and real AP access-rule integration. Equipment items are registered but excluded from playable pools. Verified logic rejects generation without a reviewed profile; none is bundled yet. Station-family mapping is captured and the three v1.9.1 paths above passed; the furnace's positive runtime test still does not verify denial while locked.
 
 - Production permissions need end-to-end runtime tests; equipment tiers need verified per-item progression data and enforcement.
 - Non-mission checks, replacement rewards, and useful material/money delivery are incomplete.
