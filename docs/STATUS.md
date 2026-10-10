@@ -4,6 +4,8 @@ Updated October 10, 2026. This document supersedes implementation-status claims 
 
 ## Controlled runtime results
 
+v1.9.1 station-family runtime checks passed by tester confirmation: Stone Furnace consumed normal ingredients and produced output with Smelting owned; Cooking Pot denied a recipe without consuming available ingredients while Cooking was unowned; ordinary Workbench crafting succeeded. The current log corroborates missing-Cooking denials and shows no Error/FATAL/Exception entries. Startup verified all 31 hooks, character identity and matching AP-aware totals. Locked furnace, connector operation and other station families remain unverified.
+
 Collector 1.3 captured successfully: ten distinct loaded station class/item/family bindings, including Stone Furnace, Cooking Pot and Workbench sharing `OcBldg_CraftingBench`. The v1.9.1 repair resolves these by family, assigns weapon Refinery to equipment care, and denies unknown generic-bench families. All 11 C# suites passed (28 production assertions); build has zero warnings/errors. The repaired DLL was installed after a full test-state backup while the game was closed. Its runtime checks are pending. See [station evidence](STATION_EVIDENCE_20261010.json).
 
 Additional v1.9.0 production results: locked campfire cooking preserved ingredients; ordinary crafting produced a stone pickaxe; the actual gliding mission delivered Smelting. Following normal advancement to Agricultural Age, a furnace batch consumed the expected materials and produced the expected output. After saving and reloading, validation passed, Smelting permission restored, and the tester confirmed furnace operation still worked. Other station paths and multiplayer remain unverified.

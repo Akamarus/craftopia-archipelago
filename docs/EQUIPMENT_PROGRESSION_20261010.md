@@ -46,3 +46,7 @@ The generic crafting-bench class represents Workbench (item 200, family 20011), 
 All 11 C# suites pass, including 28 production assertions covering inherited backing-field resolution, locked/owned furnace, independent cooking permissions, and unknown/missing families. Build: zero warnings/errors. Independent source/IL review found no blocker. Other generic-bench families remain unsupported and blocked; owning all production items does not bypass unknown identity.
 
 v1.9.1 installed after backup; SHA-256 `ca4df6300a6569cbce56a4a6f1966fd74b4e2da6b0a4caed6edb8ead9029e8a5`. Runtime validation remains pending: opening workbench should work, owned smelting should work, unowned Cooking Pot should deny without consuming ingredients. Locked furnace and connector behavior need separate controlled tests; do not erase existing Smelting ownership to create a negative test.
+
+### Runtime results after deployment
+
+All three requested checks passed by explicit tester confirmation: owned Stone Furnace completed one batch with normal cost/output; unowned Cooking Pot blocked without consuming available ingredients; ordinary Workbench crafted successfully. Log evidence corroborates the Cooking permission denial; input/output correctness comes from the tester, not the denial log alone. All 31 hooks registered, the existing character passed identity/total validation, and the inspected log contains no Error/FATAL/Exception entries. This verifies the three tested station-family paths, not unknown benches, connector automation, multiplayer or a locked-furnace case.
