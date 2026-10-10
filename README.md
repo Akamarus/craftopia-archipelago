@@ -2,7 +2,7 @@
 
 An experimental native [Archipelago](https://archipelago.gg/) integration for Craftopia: a Python APWorld, a bridge client, and a BepInEx mod.
 
-**Current development source: v1.9.0. Last gameplay-tested baseline: v1.8.9. Updated October 10, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
+**Current development source: v1.9.0, with limited runtime testing in progress. Previous gameplay baseline: v1.8.9. Updated October 10, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
 
 The current batch repairs production guards and durable mission observations, and expands the read-only collector. Its F9 capture contains 7,052 unique positive item IDs, raw recipe dependencies, nine age records, and 21 bench groups. These are evidence for further logic work, not a finished equipment or beatability model. See the [batch evidence and test plan](docs/PROGRESSION_BATCH_20261010.md).
 

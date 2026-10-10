@@ -1,6 +1,6 @@
 # Current status — v1.9.0 development / v1.8.9 gameplay baseline
 
-Updated October 10, 2026. This document supersedes implementation-status claims in older reports in this repository. The gameplay observations below remain v1.8.9 results. Current source adds production-boundary repairs and durable observation acknowledgments; these are not yet gameplay-tested. Collector v1.2.0 was independently deployed and captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
+Updated October 10, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
 ## Controlled runtime results
 

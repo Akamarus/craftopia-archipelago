@@ -1,6 +1,8 @@
 # Production and progression evidence batch
 
-Development source v1.9.0; gameplay deployment remains the tested v1.8.9. Collector v1.2.0 is the only new DLL deployed so far. No enrollment reset, historical recovery, save edit, or new grant injection was performed.
+Development source v1.9.0 was deployed for controlled testing on October 10 after backing up the prior installation and test state. Collector v1.2.0 also captured successfully. No enrollment reset, historical recovery, save edit, or new grant injection was performed.
+
+Runtime checkpoint: all 22 production hooks and nine existing hooks registered without logged errors. The existing character passed AP-aware validation and restored its permissions. A campfire cooking attempt without the cooking unlock was denied; the tester explicitly confirmed the raw ingredient count stayed unchanged. This verifies one locked campfire path. Unlocked production, connector behavior and the other production paths remain unverified.
 
 ## Production repair
 
@@ -8,7 +10,7 @@ The old `StartProcessReq` guard was too late for several callers: the installed 
 
 The connector uses a narrow transpiler at the host crafting branch. Denial branches to the existing discovery/cleanup section, before consumption. It does not skip the entire Update. The transpiler rejects unfamiliar method layouts; patch-install failure removes this mod's partial patches. A synthetic IL regression executes locked target → discovery → unlocked target without consuming on the denied frame. An independent source/IL review found no remaining concrete blocker after this correction.
 
-Actual Harmony application, material preservation and crafting remain unverified in-game. Automated world machinery currently uses the local permission mirror; separate-player ownership/authority is not established by this patch. Multiplayer production is not a supported claim.
+Actual Harmony registration and locked campfire ingredient preservation are now verified as described above. Allowed crafting and the other production paths remain unverified. Automated world machinery currently uses the local permission mirror; separate-player ownership/authority is not established by this patch. Multiplayer production is not a supported claim.
 
 ## Mission observation custody
 
