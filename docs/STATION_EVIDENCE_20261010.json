@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-10-10T07:04:42.3558176Z",
+  "schema_version": 4,
+  "collector_version": "1.3.0",
+  "collector_sha256": "9190b193d429b29b9744a2d7756fa41e5de1a35b6d1101e0784993f8d8ca2948",
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "source_sha256": "9630d555339e48a85f62dac620f31a3b60229b651458d2154c31fbbd561b6233",
+  "stations": [
+    {
+      "type": "Oc.OcBldg_Campfire",
+      "item_id": 404,
+      "family_id": 20203,
+      "display_name": "Campfire"
+    },
+    {
+      "type": "Oc.OcBldg_CraftingBench",
+      "item_id": 200,
+      "family_id": 20011,
+      "display_name": "Workbench"
+    },
+    {
+      "type": "Oc.OcBldg_CraftingBench",
+      "item_id": 248,
+      "family_id": 20015,
+      "display_name": "Cooking Pot"
+    },
+    {
+      "type": "Oc.OcBldg_CraftingBench",
+      "item_id": 356,
+      "family_id": 20018,
+      "display_name": "Stone Furnace"
+    },
+    {
+      "type": "Oc.OcBldg_Farm",
+      "item_id": 308,
+      "family_id": 20208,
+      "display_name": "Farming Plot"
+    },
+    {
+      "type": "Oc.OcBldg_ItemGenerator",
+      "item_id": 332,
+      "family_id": 20101,
+      "display_name": "Well"
+    },
+    {
+      "type": "Oc.OcBldg_ItemGenerator_CookingPot",
+      "item_id": 2005,
+      "family_id": 20204,
+      "display_name": "Large Pot"
+    },
+    {
+      "type": "Oc.OcBldg_ItemGenerator_Refiner",
+      "item_id": 428,
+      "family_id": 20207,
+      "display_name": "Refinery"
+    },
+    {
+      "type": "Oc.OcBldg_WeaponDisassembly",
+      "item_id": 432,
+      "family_id": 20207,
+      "display_name": "Refining Scrap Bench"
+    },
+    {
+      "type": "Oc.OcBldg_WheatField",
+      "item_id": 296,
+      "family_id": 20101,
+      "display_name": "Wheat Field"
+    }
+  ],
+  "limitations": [
+    "Active loaded station snapshot only; does not prove all station instances exist or every gate works.",
+    "Family ID is interpreted with class identity, never globally; different classes share family IDs."
+  ]
+}

@@ -82,16 +82,16 @@ namespace CraftopiaArchipelago
             if (original.DeclaringType.FullName == "Oc.Item.UI.OcItemUI_CraftMng")
             {
                 var bench = Field(instance, "_workBench");
-                return bench == null ? "opening" : ProductionEnforcement.ResolveStation(bench.GetType().FullName);
+                return bench == null ? "opening" : ProductionEnforcement.ResolveStationObject(bench);
             }
             if (original.DeclaringType.FullName == "Oc.OcAttach_CraftConnecter")
             {
                 var station = Field(instance, "_ConnectBldg");
                 // Destroyed Unity objects can retain a managed reference.
                 return station is UnityEngine.Object obj && obj
-                    ? ProductionEnforcement.ResolveStation(station.GetType().FullName) : null;
+                    ? ProductionEnforcement.ResolveStationObject(station) : null;
             }
-            return ProductionEnforcement.ResolveStation(instance?.GetType().FullName);
+            return ProductionEnforcement.ResolveStationObject(instance);
         }
 
         private static IEnumerable<CodeInstruction> ConnectorTranspiler(IEnumerable<CodeInstruction> instructions)

@@ -35,9 +35,29 @@ class Program
         string Group(string name) => (string)resolve.Invoke(null, new object[] {name});
         Assert(Group("Oc.OcBldg_Campfire") == "cooking", "exact campfire type");
         Assert(Group("Other.FakeRefiner") == null, "substring impostor cannot acquire permissions");
-        Assert(Group("Oc.OcBldg_CraftingBench") == "opening", "opening bench exact");
+        Assert(Group("Oc.OcBldg_CraftingBench") == null, "generic bench requires family evidence");
+        Assert(Group("Oc.OcBldg_ItemGenerator_Refiner") == "equipment_care", "refiner is weapon refinement, not smelting");
+        var objectResolver = type.GetMethod("ResolveStationObject");
+        Assert(objectResolver != null, "station object resolver required");
+        string Station(object value) => (string)objectResolver.Invoke(null, new[] { value });
+        Assert(Station(new Oc.OcBldg_CraftingBench(20011)) == "opening", "observed opening workbench");
+        Assert(Station(new Oc.OcBldg_CraftingBench(20018)) == "smelting", "observed stone furnace");
+        Assert(Station(new Oc.OcBldg_CraftingBench(20015)) == "cooking", "observed cooking pot");
+        Assert(Station(new Oc.OcBldg_CraftingBench(999)) == null, "unknown bench family cannot become free");
+        Assert(Station(new Oc.OcBldg_CraftingBench(null)) == null, "missing item data cannot become free");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20018))), "locked furnace denied");
+        p.UnlockProduction("Production: smelting");
+        Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20018))), "owned furnace allowed");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20015))), "smelting does not unlock cooking pot");
         Assert(Group("Oc.OcBldg_Automation") == "automation", "automation not free bench");
         Assert(Group("Oc.OcBldg_ItemGenerator_ThermalPowerPlant") == "excluded_power", "excluded power explicit");
         Console.WriteLine($"ProductionTests: {checks} assertions passed");
     }
+}
+
+namespace Oc {
+    class StationData { public int familyId; public StationData(int value) { familyId = value; } }
+    class StationItem { public StationData data { get; } public StationItem(int value) { data = new StationData(value); } }
+    class StationBase { public StationItem _BldgItem_InItemSlot { get; } public StationBase(int? family) { _BldgItem_InItemSlot = family.HasValue ? new StationItem(family.Value) : null; } }
+    class OcBldg_CraftingBench : StationBase { public OcBldg_CraftingBench(int? family) : base(family) { } }
 }

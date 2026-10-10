@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace CraftopiaArchipelago
 {
@@ -9,9 +10,8 @@ namespace CraftopiaArchipelago
     {
         private static readonly Dictionary<string, string> Groups = new Dictionary<string, string>
         {
-            ["Oc.OcBldg_CraftingBench"] = "opening",
             ["Oc.OcBldg_Automation"] = "automation",
-            ["Oc.OcBldg_ItemGenerator_Refiner"] = "smelting",
+            ["Oc.OcBldg_ItemGenerator_Refiner"] = "equipment_care",
             ["Oc.OcBldg_Campfire"] = "cooking",
             ["Oc.OcBldg_ItemGenerator_CookingPot"] = "cooking",
             ["Oc.OcBldg_Farm"] = "farming",
@@ -37,6 +37,37 @@ namespace CraftopiaArchipelago
 
         public static string ResolveStation(string typeName)
             => typeName != null && Groups.TryGetValue(typeName, out var group) ? group : null;
+
+        public static string ResolveStationObject(object station)
+        {
+            string type = station?.GetType().FullName;
+            if (type != "Oc.OcBldg_CraftingBench") return ResolveStation(type);
+            // Runtime capture 2026-10-10: one class backs distinct stations.
+            // Read the same item-data family used by the game's recipe lookup.
+            // Only observed class/family pairs are admitted; no name guessing.
+            var item = Field(station, "<_BldgItem_InItemSlot>k__BackingField");
+            var data = Field(item, "<data>k__BackingField");
+            var rawFamily = Field(data, "familyId");
+            if (!(rawFamily is int family)) return null;
+            switch (family)
+            {
+                case 20011: return "opening";
+                case 20018: return "smelting";
+                case 20015: return "cooking";
+                default: return null;
+            }
+        }
+
+        private static object Field(object instance, string name)
+        {
+            for (Type type = instance?.GetType(); type != null; type = type.BaseType)
+            {
+                var field = type.GetField(name, BindingFlags.Instance | BindingFlags.Public |
+                    BindingFlags.NonPublic | BindingFlags.DeclaredOnly);
+                if (field != null) return field.GetValue(instance);
+            }
+            return null;
+        }
 
         public static bool CanStart(bool bound, PermissionManager permissions,
             Func<string> resolveGroup, Action<string> diagnostic)

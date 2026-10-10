@@ -36,3 +36,13 @@ Next capture: load the existing test character/world, stand near the furnace and
 - Independent source and installed-IL review found no concrete blocker; it did not perform a runtime collector capture. No equipment enforcement or fully beatable seed claim follows from these tests.
 
 Collector 1.3 was installed after backing up 1.2 while the game was closed. Installed SHA-256: `9190b193d429b29b9744a2d7756fa41e5de1a35b6d1101e0784993f8d8ca2948`. Its first runtime capture is pending. Gameplay DLL and live bridge were not replaced by this follow-up.
+
+## Subsequent capture and station repair
+
+The capture at `2026-10-10T07:04:42Z` succeeded (source SHA-256 `9630d555339e48a85f62dac620f31a3b60229b651458d2154c31fbbd561b6233`). Ten distinct station bindings are recorded in [sanitized evidence](STATION_EVIDENCE_20261010.json).
+
+The generic crafting-bench class represents Workbench (item 200, family 20011), Cooking Pot (248, 20015), and Stone Furnace (356, 20018). v1.9.1 resolves these exact class/family pairs for manual crafting and connector dispatch, instead of granting every generic bench opening access. Missing and unrecognized families deny. Refinery now requires equipment care. Family IDs are not globally unique station roles: Wheat Field and Well share one, so class context is essential.
+
+All 11 C# suites pass, including 28 production assertions covering inherited backing-field resolution, locked/owned furnace, independent cooking permissions, and unknown/missing families. Build: zero warnings/errors. Independent source/IL review found no blocker. Other generic-bench families remain unsupported and blocked; owning all production items does not bypass unknown identity.
+
+v1.9.1 installed after backup; SHA-256 `ca4df6300a6569cbce56a4a6f1966fd74b4e2da6b0a4caed6edb8ead9029e8a5`. Runtime validation remains pending: opening workbench should work, owned smelting should work, unowned Cooking Pot should deny without consuming ingredients. Locked furnace and connector behavior need separate controlled tests; do not erase existing Smelting ownership to create a negative test.
