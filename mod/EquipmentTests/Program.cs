@@ -13,8 +13,10 @@ class Program
     }
     static int Main()
     {
+        SessionTests.Run();
         var json = File.ReadAllText("worlds/craftopia/equipment_catalog_20261010_r1.json");
         var catalog = EquipmentCatalog.Parse(json);
+        ReadTests.Run(catalog);
         Check(catalog.Count == 7052, "all observed positive IDs accounted for");
         var permissions = new PermissionManager(null, null);
         var stoneSword = catalog.Snapshot(44);

@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.9.1";
+        public const string VERSION = "1.9.2";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -45,6 +45,19 @@ namespace CraftopiaArchipelago
         // Persistent session binding, separate from socket connectivity.
         // Set when a validated session is established; cleared only on
         // explicit session change or recovery hold. Survives disconnects.
+        private static EquipmentSession equipmentSession;
+        internal static bool EquipmentRequired => equipmentSession != null && equipmentSession.Required;
+        internal static PermissionManager EquipmentPermissions()
+        {
+            try {
+                if (!EquipmentRequired || Validator == null || eligibility == null) return null;
+                var s = Validator.Capture();
+                bool valid = s.Ready && s.Input.Identity == IdentityStatus.Verified &&
+                    Validator.LastOutcome.Outcome == ValidationOutcome.Pass && !Validator.IsHeld(s.Input.Guid,s.Input.Epoch) &&
+                    eligibility.IsEligible(s.Player,s.Input.Guid,s.Input.Epoch,s.LoadEvent);
+                return equipmentSession.Ready(s.Input.Guid,s.Input.Epoch,SlotName.Value,valid) ? Permissions : null;
+            } catch { return null; }
+        }
         private static bool sessionBound = false;
         private static long boundEpoch = 0;
         private static string boundSlot = null;
@@ -314,6 +327,10 @@ namespace CraftopiaArchipelago
             Permissions = new PermissionManager(m => Log.LogInfo(m), m => Log.LogWarning(m));
 
             unlockMirror = new UnlockMirror(Permissions);
+            equipmentSession = new EquipmentSession(
+                Config.Bind("EquipmentTest", "Enabled", false, "Explicit experimental equipment test approval; existing seeds leave false.").Value,
+                Config.Bind("EquipmentTest", "CharacterGuid", 0, "Approved test character GUID.").Value,
+                Config.Bind("EquipmentTest", "Epoch", 0L, "Approved test epoch.").Value, SlotName.Value);
 
             // Player status display.
             StatusDisplay = new PlayerStatusDisplay(Permissions, m => Log.LogInfo(m));
@@ -500,6 +517,7 @@ namespace CraftopiaArchipelago
                 harmony = new Harmony(GUID);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
                 ProductionHooks.Install(harmony);
+                EquipmentHooks.Install(harmony);
             }
             catch (Exception e)
             {
@@ -655,13 +673,13 @@ namespace CraftopiaArchipelago
         /// Enqueues for main-thread processing; does NOT touch validation state
         /// directly (thread safety). The main thread drains the queue in Update.
         /// </summary>
-        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0)
+        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0, string equipmentCatalog = null, int equipmentProtocol = 0, int multiplayer = 0)
         {
             try
             {
                 lock (pendingSessions)
                 {
-                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection));
+                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection, equipmentCatalog, equipmentProtocol, multiplayer));
                 }
                 Log.LogInfo("[AP] session queued: epoch=" + epoch);
             }
@@ -675,12 +693,15 @@ namespace CraftopiaArchipelago
         {
             public long Epoch;
             public string Token;
+            public string EquipmentCatalog;
+            public int EquipmentProtocol, Multiplayer;
             public int Connection;
             public System.Collections.Generic.HashSet<int> EnrolledGuids;
-            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection)
+            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection, string equipmentCatalog, int equipmentProtocol, int multiplayer)
             {
                 Epoch = epoch;
                 EnrolledGuids = guids; Token = token; Connection = connection;
+                EquipmentCatalog=equipmentCatalog; EquipmentProtocol=equipmentProtocol; Multiplayer=multiplayer;
             }
         }
 
@@ -744,6 +765,12 @@ namespace CraftopiaArchipelago
                     var s = next.Value;
                     if (Bridge == null || s.Connection != Bridge.ConnectionId ||
                         !unlockMirror.BeginSession(SlotName.Value,s.Epoch,s.Token,s.Connection)) return;
+                    if (!equipmentSession.Bind(s.Epoch,SlotName.Value,s.EquipmentCatalog,s.EquipmentProtocol,s.Multiplayer))
+                    {
+                        eligibility?.Block("equipment contract rejected");
+                        EquipmentHooks.Diagnostic("Equipment contract rejected; delivery held. Review explicit test approval.");
+                        return;
+                    }
                     // Invalidate eligibility BEFORE using the new session.
                     if (eligibility != null)
                         eligibility.OnSessionChange(s.Epoch);
@@ -973,11 +1000,15 @@ namespace CraftopiaArchipelago
                 eligible = false; // fail closed
             }
 
-            ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold);
+            bool equipmentContractReady = equipmentSession != null && equipmentSession.ContractReady;
+            bool equipmentIdentityReady = !EquipmentRequired || EquipmentPermissions() != null;
+            ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold && equipmentContractReady && equipmentIdentityReady);
+            // Restore ownership before admission: missing unlocks must not deadlock their own delivery.
+            bool equipmentAdmitted = equipmentSession != null && equipmentSession.Admit(equipmentIdentityReady,EquipmentHooks.CurrentEquipmentAllowed);
 
             System.Collections.Generic.List<long> acks =
                 new System.Collections.Generic.List<long>();
-            if (validationAllows && eligible && !recoveryHold)
+            if (validationAllows && eligible && !recoveryHold && equipmentAdmitted)
             {
                 try
                 {
@@ -1002,7 +1033,7 @@ namespace CraftopiaArchipelago
             // If blocked, they stay queued for next frame.
             // Reacks gated on validation AND eligibility AND no recovery hold.
             // All ack paths use the same gate.
-            if (validationAllows && eligible && !recoveryHold)
+            if (validationAllows && eligible && !recoveryHold && equipmentAdmitted)
             {
                 foreach (var r in inboundResults)
                 {

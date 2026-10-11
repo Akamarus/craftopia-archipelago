@@ -1,10 +1,12 @@
-# Current status — v1.9.1 development / v1.8.9 gameplay baseline
+# Current status — v1.9.2 development / v1.8.9 gameplay baseline
 
-Updated October 10, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
+Updated October 11, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
-Equipment follow-up: [versioned catalog and pure permission evaluator](EQUIPMENT_CATALOG_20261010.md) cover 237 progressive candidates, 429 explicitly unsupported combat rows and 6,386 vanilla rows. Whole-loadout validation and strict evidence checks pass automated tests. Runtime equipment hooks and seed activation are not wired; equipment remains excluded from generated pools. All 12 C# suites, 77 bridge tests, 22 world tests and eight exporter tests pass. Installed gameplay remains v1.9.1.
+Equipment follow-up: [v1.9.2 game-facing integration](EQUIPMENT_HOOKS_v192.md) adds seven pre-cost/pre-transfer hooks, full-loadout checking and an explicit character/session/catalog test contract. Equipment remains disabled by default and excluded from generated pools. All 12 C# suites, 82 bridge tests, 22 world tests and eight exporter tests pass; build has zero warnings/errors. Independent review and the wrong-character admission fix are complete. Active equipment enforcement is not runtime-verified; the next step is a disabled registration smoke test. The last runtime-tested gameplay build is v1.9.1.
 
 ## Controlled runtime results
+
+v1.9.2 is installed for a disabled-equipment registration smoke test after a complete test-state backup. Its runtime results are pending; v1.9.1 remains the last verified gameplay build. See [deployment and test scope](EQUIPMENT_HOOKS_v192.md).
 
 v1.9.1 station-family runtime checks passed by tester confirmation: Stone Furnace consumed normal ingredients and produced output with Smelting owned; Cooking Pot denied a recipe without consuming available ingredients while Cooking was unowned; ordinary Workbench crafting succeeded. The current log corroborates missing-Cooking denials and shows no Error/FATAL/Exception entries. Startup verified all 31 hooks, character identity and matching AP-aware totals. Locked furnace, connector operation and other station families remain unverified.
 

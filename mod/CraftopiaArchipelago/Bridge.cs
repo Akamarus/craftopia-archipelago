@@ -137,7 +137,8 @@ namespace CraftopiaArchipelago
                             ["cmd"] = "connect",
                             ["game"] = "Craftopia",
                             ["name"] = Plugin.SlotName.Value,
-                            ["unlock_protocol"] = 2L
+                            ["unlock_protocol"] = 2L,
+                            ["equipment_protocol"] = 1L
                         };
                         // Include character GUID if a character is loaded.
                         // The bridge uses this for enrollment (explicit, not automatic).
@@ -279,7 +280,13 @@ namespace CraftopiaArchipelago
                 }
                 Plugin.Log.LogInfo("[AP] session: epoch=" + epoch +
                     ", enrolled=" + enrolled.Count + " guid(s)");
-                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId);
+                // Malformed optional fields become a rejected contract, never legacy mode.
+                string catalog = null;
+                if (msg.TryGetValue("equipment_catalog",out var catalogRaw)) catalog = catalogRaw as string ?? "INVALID";
+                int equipmentProtocol = 0, multiplayer = 0;
+                if (msg.TryGetValue("equipment_protocol",out var ep)) equipmentProtocol = ep is long epn && epn >= 0 && epn <= int.MaxValue ? (int)epn : -1;
+                if (msg.TryGetValue("multiplayer_mode",out var mp)) multiplayer = mp is long mpn && mpn >= 0 && mpn <= int.MaxValue ? (int)mpn : -1;
+                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId, catalog, equipmentProtocol, multiplayer);
             }
             catch (Exception e)
             {

@@ -1,5 +1,7 @@
 # Equipment catalog and evaluator checkpoint
 
+October 11 update: [v1.9.2](EQUIPMENT_HOOKS_v192.md) implements the game-facing integration below as a disabled-by-default experiment. The rest of this document records the earlier catalog-only checkpoint.
+
 The October 10 schema-4 capture has been converted into an explicit, reproducible decision table. This is a tested permission evaluator, **not deployed equipment enforcement or a playable equipment-randomized seed**. No save, live ledger, ownership, installed DLL, or generated seed was changed.
 
 ## Evidence and scope

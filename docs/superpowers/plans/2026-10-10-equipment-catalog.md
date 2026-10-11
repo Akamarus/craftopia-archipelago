@@ -9,7 +9,7 @@
 - [x] Test exporter rejection of malformed/duplicate evidence and explicit unsupported loot.
 - [x] Export a sanitized versioned catalog with source hashes and no character/world identifiers.
 - [x] Test and implement immutable C# catalog parsing and permission decisions; unknown IDs, inconsistent metadata and failures deny when enabled, disabled mode preserves vanilla.
-- [ ] Complete runtime integration: verified whole-loadout extraction at the confirmation callback, seed/session activation, and pre-existing gear policy. Installed IL confirms that loadouts unequip first; per-item-only hooks are insufficient. No runtime gate enabled at this checkpoint.
+- [x] Implement runtime integration: whole-loadout extraction at the confirmation callback, explicit test-session activation, and non-destructive pre-existing gear admission policy. See `docs/EQUIPMENT_HOOKS_v192.md`. Runtime behavior remains to be tested; full use enforcement and playable seed activation are not claimed.
 - [x] Run the relevant suites, obtain independent review, and record exact runtime limitations in `docs/EQUIPMENT_CATALOG_20261010.md`.
 
 Equipment items remain excluded from the generated pool until safe hook coverage and the prerequisite profile exist. The existing test seed and its ownership/history are not edited to manufacture equipment tests.

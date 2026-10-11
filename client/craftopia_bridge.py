@@ -271,8 +271,20 @@ class Bridge:
         self.restore_goal_events()
         return True
 
+    def equipment_contract_ready(self):
+        requested = 'equipment_catalog' in self.slot_data or 'equipment_protocol' in self.slot_data
+        if not requested:
+            return True
+        if (self.slot_data.get('equipment_catalog') != 'equipment_20261010_r1'
+                or type(self.slot_data.get('equipment_protocol')) is not int
+                or self.slot_data['equipment_protocol'] != 1 or self.multiplayer_mode != 0):
+            return False
+        capabilities = getattr(self, 'equipment_capabilities', {})
+        tokens = self._all_conn_tokens()
+        return bool(tokens) and all(capabilities.get(t) == 1 for t in tokens)
+
     def can_deliver_unlocks(self):
-        return (not self.recovery_hold and self.ap_connected
+        return (self.equipment_contract_ready() and not self.recovery_hold and self.ap_connected
                 and self._any_mod_validated()
                 and bool(self._all_conn_tokens()))
 
@@ -1011,6 +1023,7 @@ class Bridge:
         return True
 
     async def flush_char_grants(self, character_guid, token):
+        if not self.equipment_contract_ready(): return
         """Send a character's pending (incl. unacked) grant indices to one
         mod connection. Pending stays durable until that character acks."""
         if self.recovery_hold:
@@ -1273,6 +1286,7 @@ class Bridge:
         return True
 
     async def send_grant(self, indices, token=None):
+        if not self.equipment_contract_ready(): return
         # Indices are only marked delivered when the mod acks them (see
         # on_grant_ack). Grants go only to a handshake-validated mod socket —
         # never to an unknown socket.
@@ -1601,6 +1615,9 @@ class Bridge:
             conn["validated"] = True
             conn["guid"] = guid
         self_token = token if token is not None else self.connection_token
+        if not hasattr(self, 'equipment_capabilities'): self.equipment_capabilities = {}
+        capability = msg.get('equipment_protocol')
+        self.equipment_capabilities[self_token] = capability if type(capability) is int else 0
         print(f"[mod] handshake validated (slot '{name}', game '{game or '?'}'"
               + (f", character {guid}" if guid else "") + ")",
               flush=True)
@@ -1659,6 +1676,9 @@ class Bridge:
             "enrolled_guids": enrolled,
             "multiplayer_mode": self.multiplayer_mode,
         }
+        if 'equipment_catalog' in self.slot_data:
+            msg['equipment_catalog'] = self.slot_data['equipment_catalog']
+            msg['equipment_protocol'] = self.slot_data['equipment_protocol']
         await self.send_mod(msg, token=token)
         print(f"[mod] session sent: epoch={self.ledger['epoch']}, "
               f"enrolled={len(enrolled)} guid(s)", flush=True)
