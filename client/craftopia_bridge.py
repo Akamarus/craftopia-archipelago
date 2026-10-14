@@ -682,8 +682,21 @@ class Bridge:
             objective=self.slot_data.get('objective_locations',{}).get(name)
             if objective and objective not in proposed['goal_events']['completed_objectives']:
                 proposed['goal_events']['completed_objectives'].append(objective)
+        confirmed = [v for v in proposed['pending_checks'] if v['location_id'] in self.checked_locations]
         proposed['pending_checks']=[v for v in proposed['pending_checks'] if v['location_id'] not in self.checked_locations]
         if not self.commit(proposed): return
+        # Cosmetic only: custody ACK is not server confirmation. Replayed server
+        # packets cannot announce again after durable pending removal.
+        for record in confirmed:
+            for token, conn in list(self._iter_conns()):
+                try:
+                    await self.send_mod({'cmd': 'check_confirmed', 'epoch': self.ledger['epoch'],
+                        'slot': self.args.slot, 'connection_token': token,
+                        'location_id': record['location_id'],
+                        'title': str(record.get('mission_title') or 'Mission')[:180]}, token=token)
+                except Exception:
+                    pass  # Cosmetic delivery cannot interrupt checks or victory.
+
         ids=sorted({v['location_id'] for v in self.ledger['pending_checks'] if v['location_id'] is not None})
         if self.ap_connected and ids: await self.send_ap({'cmd':'LocationChecks','locations':ids})
         await self.check_goal_completion()
@@ -1497,7 +1510,7 @@ class Bridge:
                 'location_id':loc_id,'deferred':loc_id is None}
         proposed=candidate(self.ledger)
         key=(mission_class,mission_id)
-        if not any((v.get('mission_class'),v['mission_id'])==key for v in proposed['pending_checks']):
+        if loc_id not in self.checked_locations and not any((v.get('mission_class'),v['mission_id'])==key for v in proposed['pending_checks']):
             proposed['pending_checks'].append(record)
         if loc_id is not None:
             name=next((n for n,v in self.location_name_to_id.items() if v==loc_id),None)

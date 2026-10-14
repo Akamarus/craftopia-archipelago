@@ -72,6 +72,21 @@ namespace CraftopiaArchipelago
             // Replay only after the socket negotiates the matching epoch/slot.
         }
 
+        private readonly System.Collections.Concurrent.ConcurrentQueue<Dictionary<string, object>> notifications =
+            new System.Collections.Concurrent.ConcurrentQueue<Dictionary<string, object>>();
+        // Recheck binding on the game thread, after pending session changes.
+        public void PumpNotifications()
+        {
+            while (notifications.TryDequeue(out var msg)) {
+                if (!IsConnected || Plugin.Validator == null || MiniJson.GetLong(msg, "epoch") != Interlocked.Read(ref knownEpoch) ||
+                    MiniJson.GetLong(msg, "epoch") != Plugin.Validator.CurrentEpoch ||
+                    MiniJson.GetString(msg, "slot") != Plugin.SlotName.Value ||
+                    string.IsNullOrEmpty(knownToken) || MiniJson.GetString(msg, "connection_token") != knownToken) continue;
+                Plugin.StatusDisplay?.Notify("confirmed:" + knownEpoch + ":" + MiniJson.GetLong(msg, "location_id"),
+                    "Check confirmed: " + MiniJson.GetString(msg, "title"), PlayerStatusDisplay.Now);
+            }
+        }
+
         public void SendCheck(int missionId, string missionTitle, string missionClass)
         {
             long epoch = Interlocked.Read(ref knownEpoch);
@@ -87,7 +102,11 @@ namespace CraftopiaArchipelago
                 ["mission_class"] = missionClass ?? ""
             });
             // Durable: persist before queueing so a game exit doesn't lose it.
-            if (observations != null && observations.Append(msg)) outbox.Enqueue(msg);
+            if (observations != null && observations.Append(msg)) {
+                outbox.Enqueue(msg);
+                try { Plugin.StatusDisplay?.Notify("queued:" + epoch + ":" + missionId,
+                    "Check queued: " + missionTitle, PlayerStatusDisplay.Now); } catch { }
+            }
             else Plugin.SafeError("[AP] observation not queued: durable journal unavailable; preserve files for review");
         }
 
@@ -222,6 +241,9 @@ namespace CraftopiaArchipelago
             string cmd = MiniJson.GetString(msg, "cmd");
             switch (cmd)
             {
+                case "check_confirmed":
+                    if (notifications.Count < 64) notifications.Enqueue(msg);
+                    break;
                 case "observation_ack":
                     if (MiniJson.GetLong(msg, "epoch") == Interlocked.Read(ref knownEpoch) &&
                         MiniJson.GetString(msg, "slot") == Plugin.SlotName.Value &&

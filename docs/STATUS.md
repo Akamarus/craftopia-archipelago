@@ -1,5 +1,14 @@
 # Current status â€” v1.9.3 development / v1.8.9 gameplay baseline
 
+## v1.9.4 installed — runtime verification pending
+
+Adds queued/server-confirmed check notices, attempted-action unlock explanations, F8 panel input repair, and quieter continuous permission checks. Includes a separate opt-in 11-mission opening profile with exact routing and Sword dependency; legacy/candidate seeds remain unchanged. See [feedback and live checks](NOTIFICATIONS_v194.md) and [opening profile evidence/limits](EARLY_PROFILE.md).
+
+Verification: all 13 C# executable suites passed; release build has zero warnings/errors. All 12 client scripts and seven world scripts passed individually, plus eight exporter assertions. The opening profile includes actual AP 0.6.8 restrictive fill/beatability checks for 20 seeds. Initial restricted-sandbox asyncio runs timed out; isolated reruns outside that restriction passed. Two outdated test fixtures were corrected (routing metadata and the stub world's actual location API). These are automated results, not new in-game test claims.
+
+Installed while the game was closed, after backing up saves/configuration, the previous DLL and bridge state. Installed DLL SHA-256: `294fe155aa7b5006cb5163178c7952fc9ded4e56cb7e0999a1549c335743841e`. The bridge reconnected to the existing seed/history. The current character/world/seed and optional Tamer installation have not been changed for this update. New overlay readability, action messages and full new-profile completion still need live verification.
+
+
 Updated October 14, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
 Equipment follow-up: [v1.9.2 game-facing integration](EQUIPMENT_HOOKS_v192.md) adds seven pre-cost/pre-transfer hooks, full-loadout checking and an explicit character/session/catalog test contract. Equipment remains disabled by default and excluded from generated pools. All 12 C# suites, 82 bridge tests, 22 world tests and eight exporter tests pass; build has zero warnings/errors. Independent review and the wrong-character admission fix are complete. Selected active equipment paths passed a controlled fresh-character test on October 14; the disabled smoke test passed on October 12. Equipment remains experimental and excluded from normal generated pools.

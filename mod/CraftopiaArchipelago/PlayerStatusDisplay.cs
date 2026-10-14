@@ -8,8 +8,7 @@ namespace CraftopiaArchipelago
     /// Player-facing status display.
     ///
     /// Shows unlocks, victory progress, and connection status.
-    /// This is the data model; actual in-game UI rendering requires
-    /// Unity UI hooks (not yet implemented).
+    /// Main-thread data model for the transient notices and F8 panel.
     /// </summary>
     public class PlayerStatusDisplay
     {
@@ -80,16 +79,45 @@ namespace CraftopiaArchipelago
         /// Display a blocked-action message to the player.
         /// Queues the message for the in-game status view.
         /// </summary>
-        private string lastBlockedMessage = null;
+        private readonly Dictionary<string, double> recent = new Dictionary<string, double>();
+        private readonly List<Tuple<string, double>> notices = new List<Tuple<string, double>>();
+        private readonly Dictionary<string, string> transitions = new Dictionary<string, string>();
+        public static double Now => (DateTime.UtcNow - new DateTime(2020, 1, 1)).TotalSeconds;
+        public void Notify(string key, string message, double now)
+        {
+            if (string.IsNullOrWhiteSpace(message) || string.IsNullOrEmpty(key)) return;
+            if (recent.TryGetValue(key, out double until) && until > now) return;
+            foreach (var old in new List<string>(recent.Keys)) if (recent[old] <= now) recent.Remove(old);
+            if (recent.Count >= 256) return; // Bound flood memory as well as visible lines.
+            recent[key] = now + 10;
+            var clean = new StringBuilder();
+            foreach (char c in message) {
+                if (clean.Length >= 180) break;
+                if (!char.IsControl(c) && c != '<' && c != '>') clean.Append(c);
+            }
+            notices.RemoveAll(n => n.Item2 <= now);
+            if (notices.Count >= 3) notices.RemoveAt(0);
+            notices.Add(Tuple.Create(clean.ToString(), now + 6));
+        }
+        public string VisibleMessages(double now)
+        {
+            notices.RemoveAll(n => n.Item2 <= now);
+            return string.Join("\n", notices.ConvertAll(n => n.Item1));
+        }
+        public void Transition(string key, string message)
+        {
+            if (transitions.TryGetValue(key, out string previous) && previous == message) return;
+            if (transitions.Count >= 256 && !transitions.ContainsKey(key)) return;
+            transitions[key] = message;
+            try { if (!string.IsNullOrEmpty(message)) logInfo?.Invoke(message); } catch { }
+        }
         public void ShowBlockedAction(string message)
         {
-            LastError = message;
-            // Transition-only logging: avoid spamming every frame.
-            if (message != lastBlockedMessage)
-            {
-                lastBlockedMessage = message;
-                logInfo?.Invoke(message);
-            }
+            try {
+                LastError = message;
+                Notify("blocked:" + message, message, Now);
+                Transition("blocked:" + message, message);
+            } catch { } // Presentation cannot change the enforcement result.
         }
 
         public void LogStatus()

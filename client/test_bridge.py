@@ -55,6 +55,8 @@ def make_args(cb, **kw):
 def make_bridge(cb, tmpdir, **kw):
     b = cb.Bridge(make_args(cb, **kw))
     # simulate a connected native world
+    b.slot_data = {'mission_catalog_version': 'legacy', 'mission_catalog_schema': 0,
+        'objective_locations': {'Mission Alpha':'location:101', 'Mission Beta':'location:102'}}
     b.game_id_to_location = {"42": "Mission Alpha", "43": "Mission Beta"}
     b.location_name_to_id = {"Mission Alpha": 101, "Mission Beta": 102}
     b.item_name_to_id = {"Skill Point": 500, "Victory": 501}
@@ -70,7 +72,7 @@ def make_bridge(cb, tmpdir, **kw):
     async def fake_send_ap(msg):
         b.sent_ap.append(msg)
 
-    async def fake_send_mod(msg):
+    async def fake_send_mod(msg, token=None):
         b.sent_mod.append(msg)
 
     async def fake_send_grant(indices):

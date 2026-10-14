@@ -40,7 +40,7 @@ namespace CraftopiaArchipelago
             ["OcItemUI_SeedMakingMachineMng"] = "farming", ["OcItemUI_WeaponDisassemblyMng"] = "recycling"
         };
         private static readonly BindingFlags Flags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
-        private static string lastMessage;
+        private static readonly HashSet<string> loggedMessages = new HashSet<string>();
 
         internal static bool Install(Harmony harmony)
         {
@@ -109,10 +109,11 @@ namespace CraftopiaArchipelago
         {
             return ProductionEnforcement.CanStart(Plugin.IsSessionBound(), Plugin.Permissions,
                 () => Group(__instance, __originalMethod), message => {
-                    if (lastMessage == message) return;
-                    lastMessage = message;
-                    try { Plugin.Log?.LogInfo(message); } catch { }
-                    try { Plugin.StatusDisplay?.ShowBlockedAction(message); } catch { }
+                    if (loggedMessages.Count < 256 && loggedMessages.Add(message))
+                        try { Plugin.Log?.LogInfo(message); } catch { }
+                    // Machine ticks are background enforcement, not player attempts.
+                    if (__originalMethod.DeclaringType.Namespace == "Oc.Item.UI")
+                        try { Plugin.StatusDisplay?.ShowBlockedAction(message); } catch { }
                 });
         }
         private static bool BoolPrefix(object __instance, MethodBase __originalMethod, ref bool __result)

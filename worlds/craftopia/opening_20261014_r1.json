@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "reviewed": true,
+  "profile_id": "opening_20261014_r1",
+  "evidence": "docs/EARLY_PROFILE.md",
+  "nodes": {
+    "gather": [
+      []
+    ],
+    "stone_tools": [
+      [
+        {
+          "node": "gather"
+        }
+      ]
+    ],
+    "workbench": [
+      [
+        {
+          "node": "stone_tools"
+        }
+      ]
+    ],
+    "stone_sword": [
+      [
+        {
+          "node": "workbench"
+        },
+        {
+          "item": "Progressive Equipment: Sword",
+          "count": 1
+        }
+      ]
+    ]
+  },
+  "missions": {
+    "30": "workbench",
+    "50": "gather",
+    "51": "stone_tools",
+    "52": "stone_tools",
+    "53": "gather",
+    "54": "gather",
+    "55": "stone_tools",
+    "56": "stone_tools",
+    "57": "gather",
+    "58": "workbench",
+    "60": "stone_sword"
+  },
+  "pool": [
+    "Progressive Equipment: Sword",
+    "Production: smelting",
+    "Production: cooking",
+    "Skill Tree: Magic",
+    "Skill Tree: Tamer"
+  ]
+}

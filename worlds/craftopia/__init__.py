@@ -89,8 +89,16 @@ class CraftopiaWorld(World):
         self.item_table = _item_table
         self.location_table = _location_table
         self.progression_model = None
+        self.opening_profile = None
 
     def generate_early(self):
+        if self.options.logic_mode.value == 2:
+            if self.options.mission_catalog_version.value != 1 or self.options.multiplayer_mode.value != 0:
+                raise ValueError('Opening profile requires instance missions and separate slots')
+            import json
+            from pathlib import Path
+            self.opening_profile = json.loads(Path(__file__).with_name('opening_20261014_r1.json').read_text())
+            self.progression_model = ProgressionModel(self.opening_profile, self.item_table)
         if self.options.logic_mode.value == 1:
             if self.options.mission_catalog_version.value != 1:
                 raise ValueError('Verified progression requires numeric mission instances')
@@ -130,6 +138,8 @@ class CraftopiaWorld(World):
                 from .mission_id_mapper import get_id_map
                 id_map = get_id_map()
                 for mission_id in sorted(id_map.keys()):
+                    if self.opening_profile is not None and str(mission_id) not in self.opening_profile['missions']:
+                        continue
                     info = id_map[mission_id]
                     loc_name = info["ap_location_name"]
                     loc = CraftopiaLocation(
@@ -202,6 +212,12 @@ class CraftopiaWorld(World):
             "Skill Tree: Combat Tier 4",
             "Skill Tree: Combat Tier 5",
         ]
+        if self.opening_profile is not None:
+            pool = self.opening_profile['pool']
+            if len(pool) > len(locations): raise ValueError('Opening pool exceeds location count')
+            for name in pool + ['Skill Point'] * (len(locations) - len(pool)):
+                self.multiworld.itempool.append(self.create_item(name))
+            return
         for item_name in skill_tree_items:
             self.multiworld.itempool.append(self.create_item(item_name))
 
@@ -340,15 +356,19 @@ class CraftopiaWorld(World):
                 k: v for k, v in self.game_id_to_location.items()
                 if self.location_name_to_id.get(v, 0) < 1000
             }
+        active_names = {loc.name for loc in self.multiworld.get_locations(self.player) if loc.address is not None}
+        game_id_map = {key: name for key, name in game_id_map.items() if name in active_names}
         return {
-            "logic_mode": "verified" if getattr(self, 'progression_model', None) is not None else "candidate",
+            **({'equipment_catalog': 'equipment_20261010_r1', 'equipment_protocol': 1,
+                'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),
+            "logic_mode": "opening" if self.opening_profile else "verified" if getattr(self, 'progression_model', None) is not None else "candidate",
             "class_to_location": class_map,
             "game_id_to_location": game_id_map,
             "objective_locations": {
                 name: f"location:{ap_id}"
                 for name, ap_id in self.location_name_to_id.items()
                 # Filter by active catalog: legacy (1-53) vs instance (1000+).
-                if (
+                if name in active_names and (
                     (self.options.mission_catalog_version.value == 1 and ap_id >= 1000)
                     or (self.options.mission_catalog_version.value == 0 and ap_id < 1000)
                 )

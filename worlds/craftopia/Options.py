@@ -155,11 +155,13 @@ class MissionCatalogVersion(Choice):
 class LogicMode(Choice):
     """Candidate retains experimental flat logic. Verified requires reviewed
     prerequisites for every active mission; currently unavailable and rejected.
+    Opening is a separate 11-mission first-age pilot, requiring instance mode.
     A captured recipe catalog alone does not establish beatability.
     """
     display_name = "Progression Logic"
     option_candidate = 0
     option_verified = 1
+    option_opening = 2
     default = 0
 
 

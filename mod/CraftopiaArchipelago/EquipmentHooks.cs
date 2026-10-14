@@ -8,12 +8,14 @@ namespace CraftopiaArchipelago
     internal static class EquipmentHooks
     {
         static EquipmentCatalog catalog;
-        static string lastDiagnostic;
+        [ThreadStatic] static int craftActionDepth;
+        static readonly System.Collections.Generic.HashSet<string> diagnostics = new System.Collections.Generic.HashSet<string>();
         internal static void Diagnostic(string message)
         {
             try {
-                if (message == lastDiagnostic) return;
-                lastDiagnostic = message;
+                if (diagnostics.Contains(message)) return;
+                if (diagnostics.Count >= 256) diagnostics.Clear();
+                diagnostics.Add(message);
                 Plugin.Log.LogWarning("[AP] " + message);
             } catch { }
         }
@@ -23,6 +25,15 @@ namespace CraftopiaArchipelago
                 throw new InvalidOperationException("Equipment hook evidence does not match this game build");
             using (var stream = typeof(Plugin).Assembly.GetManifestResourceStream("equipment_catalog_20261010_r1.json"))
             using (var reader = new System.IO.StreamReader(stream)) catalog = EquipmentCatalog.Parse(reader.ReadToEnd());
+            var craftAction = typeof(Oc.OcPlMaster).Assembly.GetType("Oc.Item.UI.OcItemUI_CraftMng",true)
+                .GetMethod("CraftButtonExecute",BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic);
+            var begin = typeof(EquipmentHooks).GetMethod(nameof(BeginCraft),BindingFlags.Static|BindingFlags.NonPublic);
+            var end = typeof(EquipmentHooks).GetMethod(nameof(EndCraft),BindingFlags.Static|BindingFlags.NonPublic);
+            harmony.Patch(craftAction,prefix:new HarmonyMethod(begin),finalizer:new HarmonyMethod(end));
+            bool beginFound=false,endFound=false;
+            foreach(var p in Harmony.GetPatchInfo(craftAction).Prefixes) if(p.owner==Plugin.GUID && p.PatchMethod==begin) beginFound=true;
+            foreach(var p in Harmony.GetPatchInfo(craftAction).Finalizers) if(p.owner==Plugin.GUID && p.PatchMethod==end) endFound=true;
+            if(!beginFound || !endFound) throw new InvalidOperationException("Craft notice boundary not registered");
             Patch(harmony,"Oc.Item.UI.OcItemUI_CraftMng","CanCraft",typeof(bool),nameof(ItemBool),"Oc.Item.ItemData","System.Int32");
             Patch(harmony,"Oc.Item.OcItem_CraftEnchantSelect","TryCraftItem",typeof(Oc.Item.OcItem),nameof(CraftItem),"Oc.Item.ItemData","System.Int32");
             Patch(harmony,"Oc.OcChestComponent","canAutoCraftNum",typeof(byte),nameof(AutoCraft),"Oc.Item.ItemData");
@@ -52,22 +63,28 @@ namespace CraftopiaArchipelago
                 throw new InvalidOperationException("World age unavailable");
             return world.WorldLevel;
         }
-        static bool Allow(Func<EquipmentSnapshot> read) => EquipmentEnforcement.Allow(
-            Plugin.EquipmentRequired,catalog,Plugin.EquipmentPermissions(),read,Age,Diagnostic);
+        static void BeginCraft(out bool __state) { __state=true; craftActionDepth++; }
+        static void EndCraft(bool __state) { if(__state && craftActionDepth>0) craftActionDepth--; }
+        static void ActionDiagnostic(string message) {
+            Diagnostic(message);
+            try { Plugin.StatusDisplay?.ShowBlockedAction(message); } catch { }
+        }
+        static bool Allow(Func<EquipmentSnapshot> read, bool action=false) => EquipmentEnforcement.Allow(
+            Plugin.EquipmentRequired,catalog,Plugin.EquipmentPermissions(),read,Age,action ? ActionDiagnostic : Diagnostic);
         static bool ItemBool(object __0, ref bool __result)
         {
-            if (Allow(() => EquipmentRead.Item(__0))) return true;
+            if (Allow(() => EquipmentRead.Item(__0),craftActionDepth>0)) return true;
             __result=false; return false;
         }
-        static bool StackBool(Oc.Item.OcItemStack __0, ref bool __result)
+        static bool StackBool(Oc.Item.OcItemStack __0, MethodBase __originalMethod, ref bool __result)
         {
             // These polymorphic getters resolve assigned stacks; inspected as read-only.
-            if (Allow(() => EquipmentRead.Item(__0.item.data))) return true;
+            if (Allow(() => EquipmentRead.Item(__0.item.data),__originalMethod.Name == "TryEquipItem")) return true;
             __result=false; return false;
         }
         static bool CraftItem(object __0, ref Oc.Item.OcItem __result)
         {
-            if (Allow(() => EquipmentRead.Item(__0))) return true;
+            if (Allow(() => EquipmentRead.Item(__0),true)) return true;
             __result=null; return false;
         }
         static bool AutoCraft(object __0, ref byte __result)
@@ -86,8 +103,8 @@ namespace CraftopiaArchipelago
                     var manager=Oc.Item.OcItemDataMng.Inst;
                     return EquipmentRead.Loadout(EquipmentRead.Field(saved,"equips") as IEnumerable,
                         EquipmentRead.Field(manager,"validItemDataList") as IEnumerable);
-                },Age,Diagnostic);
-            } catch { Diagnostic("Equipment loadout blocked before transfer: unreadable context."); return false; }
+                },Age,ActionDiagnostic);
+            } catch { ActionDiagnostic("Equipment loadout blocked before transfer: unreadable context."); return false; }
         }
         internal static bool CurrentEquipmentAllowed()
         {

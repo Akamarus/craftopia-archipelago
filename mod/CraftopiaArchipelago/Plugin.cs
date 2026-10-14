@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.9.3";
+        public const string VERSION = "1.9.4";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -902,6 +902,7 @@ namespace CraftopiaArchipelago
             // 0. Process pending sessions (from network thread) BEFORE validation.
             // This invalidates eligibility and applies the new epoch/enrollment.
             ProcessPendingSessions();
+            try { PollStatusKey(); Bridge?.PumpNotifications(); } catch { }
             TryFreshEnrollment();
 
 
@@ -954,10 +955,7 @@ namespace CraftopiaArchipelago
                     var outcome = Validator.LastOutcome.Outcome;
                     // LastOutcome defaults to Defer (zero-init) until first validation.
                     validationAllows = (outcome == ValidationOutcome.Pass);
-                    if (!validationAllows)
-                    {
-                        Log.LogInfo("[AP] grants blocked: validation outcome=" + outcome);
-                    }
+                    StatusDisplay?.Transition("validation", validationAllows ? null : "[AP] grants blocked: validation outcome=" + outcome);
                 }
             }
             catch (Exception e)
@@ -989,8 +987,7 @@ namespace CraftopiaArchipelago
                     identityEligible = !Validator.IsHeld(guid, epoch) &&
                         eligibility.IsEligible(playerRef, guid, epoch, loadEventCounter);
                     eligible = Pipeline.Epoch == epoch && identityEligible;
-                    if (!eligible)
-                        Log.LogInfo("[AP] grants blocked: not eligible (player/guid/epoch/load mismatch)");
+                    StatusDisplay?.Transition("eligibility", eligible ? null : "[AP] grants blocked: not eligible (player/guid/epoch/load mismatch)");
                 }
             }
             catch (Exception e)
@@ -1025,7 +1022,7 @@ namespace CraftopiaArchipelago
             }
             else if (recoveryHold)
             {
-                Log.LogWarning("[AP] grants blocked: recovery hold (incomplete intent)");
+                StatusDisplay?.Transition("recovery", "[AP] grants blocked: recovery hold (incomplete intent)");
             }
             // else: grants remain queued; no ack; retry next frame after validation.
 
@@ -1062,37 +1059,38 @@ namespace CraftopiaArchipelago
         /// Shows connection, slot/session, permissions, goal progress, recovery holds.
         /// </summary>
         private bool showStatusOverlay = false;
+        private void PollStatusKey()
+        {
+            var input = Type.GetType("UnityEngine.Input, UnityEngine.InputLegacyModule");
+            var key = Type.GetType("UnityEngine.KeyCode, UnityEngine.CoreModule");
+            if (input != null && key != null && (bool)input.GetMethod("GetKeyDown", new[] { key })
+                .Invoke(null, new[] { Enum.Parse(key, "F8") })) showStatusOverlay = !showStatusOverlay;
+        }
+        private object noticeStyle;
         private void OnGUI()
         {
-            // Toggle with F8 via reflection (avoids Unity module refs).
-            try
-            {
-                var inputType = System.Type.GetType("UnityEngine.Input, UnityEngine.InputLegacyModule");
-                if (inputType != null)
-                {
-                    var getKeyDown = inputType.GetMethod("GetKeyDown", new[] { typeof(int) });
-                    // KeyCode.F8 = 119
-                    if (getKeyDown != null && (bool)getKeyDown.Invoke(null, new object[] { 119 }))
-                        showStatusOverlay = !showStatusOverlay;
-                }
-            }
-            catch { }
-            if (!showStatusOverlay) return;
             if (!ReferenceEquals(instance, this)) return;
-
-            try
-            {
-                // Use reflection for GUI calls to avoid module references.
-                var guiType = System.Type.GetType("UnityEngine.GUI, UnityEngine.IMGUIModule");
-                if (guiType == null) return;
-                string status = BuildStatusText();
-                // GUI.Label(new Rect(10, 10, 400, 300), status)
-                var rectType = System.Type.GetType("UnityEngine.Rect, UnityEngine.CoreModule");
-                var rect = System.Activator.CreateInstance(rectType, 10f, 10f, 400f, 300f);
-                var labelMethod = guiType.GetMethod("Label", new[] { rectType, typeof(string) });
-                labelMethod?.Invoke(null, new[] { rect, status });
-            }
-            catch { }
+            try {
+                var gui = Type.GetType("UnityEngine.GUI, UnityEngine.IMGUIModule");
+                var rectType = typeof(UnityEngine.Rect);
+                var styleType = Type.GetType("UnityEngine.GUIStyle, UnityEngine.IMGUIModule");
+                if (gui == null || styleType == null) return;
+                if (noticeStyle == null) {
+                    var skin = gui.GetProperty("skin").GetValue(null);
+                    noticeStyle = Activator.CreateInstance(styleType, skin.GetType().GetProperty("box").GetValue(skin));
+                    styleType.GetProperty("fontSize").SetValue(noticeStyle, 20);
+                    styleType.GetProperty("wordWrap").SetValue(noticeStyle, true);
+                    styleType.GetProperty("richText").SetValue(noticeStyle, false);
+                    var alignment = styleType.GetProperty("alignment");
+                    alignment.SetValue(noticeStyle, Enum.Parse(alignment.PropertyType, "UpperLeft"));
+                }
+                var box = gui.GetMethod("Box", new[] { rectType, typeof(string), styleType });
+                string notices = StatusDisplay?.VisibleMessages(PlayerStatusDisplay.Now);
+                if (!string.IsNullOrEmpty(notices))
+                    box?.Invoke(null, new object[] {new UnityEngine.Rect(20, 80, 800, 180), notices, noticeStyle});
+                if (showStatusOverlay)
+                    box?.Invoke(null, new object[] {new UnityEngine.Rect(20, 280, 800, 520), BuildStatusText(), noticeStyle});
+            } catch { } // UI must never interrupt game or grants.
         }
 
         private string BuildStatusText()
