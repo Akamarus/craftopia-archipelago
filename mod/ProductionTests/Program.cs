@@ -43,6 +43,9 @@ class Program
         Assert(Station(new Oc.OcBldg_CraftingBench(20011)) == "opening", "observed opening workbench");
         Assert(Station(new Oc.OcBldg_CraftingBench(20018)) == "smelting", "observed stone furnace");
         Assert(Station(new Oc.OcBldg_CraftingBench(20015)) == "cooking", "observed cooking pot");
+        Assert(Station(new Oc.OcBldg_CraftingBench(20017)) == "opening", "observed Blacksmith family is a recipe bench");
+        Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20017))),
+            "Blacksmith station does not require an unrelated production unlock; item gates still run separately");
         Assert(Station(new Oc.OcBldg_CraftingBench(999)) == null, "unknown bench family cannot become free");
         Assert(Station(new Oc.OcBldg_CraftingBench(null)) == null, "missing item data cannot become free");
         Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20018))), "locked furnace denied");

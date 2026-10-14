@@ -1,4 +1,4 @@
-# Current status — v1.9.2 development / v1.8.9 gameplay baseline
+# Current status — v1.9.3 development / v1.8.9 gameplay baseline
 
 Updated October 14, 2026. This document supersedes implementation-status claims in older reports in this repository. The table below remains the v1.8.9 baseline. Controlled v1.9.0 testing additionally verified registration of all 22 production hooks, a successful existing-character load, and a locked campfire attempt denied without consuming ingredients. Other production paths and durable observation acknowledgments still need runtime verification. Collector v1.2.0 captured successfully. See [batch results](PROGRESSION_BATCH_20261010.md).
 
@@ -74,6 +74,10 @@ October 10 follow-up: [equipment/prerequisite foundation and collector 1.3](EQUI
 - Historical recovery, forced duplicate injection, and live crash-recovery tests were not performed.
 - Per-frame blocked-grant logging still needs cleanup. Numeric GUID and Windows authority-lock fixtures were repaired; all client/world suites passed for this development batch.
 
-The companion Tamer gameplay mod is a separate project and is not included or enabled by this integration.
+The companion Tamer gameplay mod is a separate optional plugin, not bundled or required by this integration. It was restored locally on October 14 at the tester's request; startup and basic pet follow/recall/combat checks passed; advanced compatibility remains unverified. See [optional companion setup and limits](OPTIONAL_TAMER.md).
 
 October 14 follow-up: bridge-only reconnect preserved ownership and previous grant history; tester confirmed Sword equip, continued Shield craft denial, and successful saved Sword loadout restoration. Denied loadouts remain untested. Further tier tests retain the same character/world and earned progression.
+
+October 14 Blacksmith repair (v1.9.3, deployed after backup; Copper Sword craft/equip confirmed): Copper Sword correctly became available after the second progressive Sword receipt, but clicking Craft was denied by the separate production hook: station identity unavailable. A fresh collector capture verified Blacksmith item 272 as `Oc.OcBldg_CraftingBench`, family 20017. The exact family now uses the recipe-bench path; unknown benches still deny, and independent equipment/native age/cost checks remain unchanged. The new regression failed before the repair; all 30 production assertions and the equipment suite pass afterward. Release build: zero warnings/errors. Tester subsequently confirmed Copper Sword crafting and equipping succeeded. See [station evidence](STATION_EVIDENCE_20261014.json).
+
+The ongoing diagnostic used explicit server test grants for Smelting and a second Progressive Sword receipt. These are not naturally earned progression evidence: Smelting was placed behind a level-35 enemy mission, exposing an unresolved placement/prerequisite problem. Before the Sword tier-2 grant, Copper Sword crafting was denied with all ingredients available and a logged tier-2 requirement. No character/world reset was used.

@@ -52,6 +52,9 @@ namespace CraftopiaArchipelago
             switch (family)
             {
                 case 20011: return "opening";
+                // Capture 2026-10-14: Blacksmith (item 272). Recipe benches
+                // retain vanilla costs/age checks and independent equipment gates.
+                case 20017: return "opening";
                 case 20018: return "smelting";
                 case 20015: return "cooking";
                 default: return null;

@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.9.2";
+        public const string VERSION = "1.9.3";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;

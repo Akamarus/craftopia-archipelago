@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-14T19:55:41.5102269Z",
+  "schema_version": 4,
+  "collector_version": "1.3.0",
+  "collector_sha256": "9190b193d429b29b9744a2d7756fa41e5de1a35b6d1101e0784993f8d8ca2948",
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "source_sha256": "aab77e143250fa4ef1ce11cb610e5405f6015a49cc729048cf4d491dd6470a52",
+  "stations": [
+    {
+      "type": "Oc.OcBldg_CraftingBench",
+      "item_id": 272,
+      "family_id": 20017,
+      "display_name": "Blacksmith"
+    }
+  ],
+  "limitations": [
+    "Observed loaded Blacksmith binding only; repaired craft execution awaits runtime verification.",
+    "Recipe-bench classification leaves native costs/age and independent equipment gates in place."
+  ]
+}
