@@ -49,3 +49,21 @@ Only after that step should a separate explicitly approved equipment test be pre
 The disabled-equipment smoke test passed: all seven equipment hooks and 31 existing registrations verified on Unity Mono. The restored original session loaded with verified identity, matching AP-aware totals and ownership replay. The tester confirmed normal cheap-item crafting, equipment removal/equipping, owned furnace operation, and Cooking Pot denial without ingredient consumption. Logs corroborate missing-Cooking denials and contain no Error/FATAL/recovery hold or new skill-point application during these checks. This verifies the disabled path, not active equipment enforcement.
 
 Before character loading, a missing live bridge ledger caused startup to create an unexpected epoch. That bridge was stopped and the game closed. The original epoch and ownership were restored from a preserved backup; three later acknowledgments were reconciled against prior bridge logs, both game-side grant stores, and server replay. All 24 applied indices agreed. No game saves or point totals were edited. A local resume guard now rejects a missing, held or mismatched test ledger. The cause of the file disappearance is unknown; this operational guard is not a general bridge persistence fix.
+
+## October 14 active equipment results
+
+A separate diagnostic seed used an explicitly approved fresh level-1 character with zero assigned, unspent and mission points. Enrollment committed and AP-aware validation passed. Bow tier 1 was the starter; mission 50 (punch trees five times) was fixed to Sword tier 1 by a local diagnostic wrapper. Normal generation was unchanged; this is not a beatability-tested seed.
+
+| Check | Evidence / result |
+| --- | --- |
+| Sword unowned | Tester confirmed starting stick equip denied; log requires Sword tier 1 |
+| Sword received | Mission 50 check and Sword tier 1 unlock logged; tester confirmed stick could then equip |
+| Owned crafting | Tester confirmed Stone Sword crafting and equipping |
+| Ordinary tool control | Tester confirmed Stone Pickaxe crafting |
+| Full game restart | Existing enrollment loaded; validation passed at five unspent points; Sword and Bow restored; tester confirmed Sword unequip/re-equip |
+| Duplicate check | Prior five grant indices were not reapplied; a distinct sword-equip mission subsequently delivered the sixth point |
+| Category separation | Wooden Shield crafting denied despite sufficient materials (23/3 stone, 16/2 logs); log requires Shield tier 1 |
+
+Locked Sword crafting was not tested because gathering its materials triggered the fixed unlock mission. The shield result verifies a locked crafting decision, not independently measured before/after material preservation. Shield equipping, denied-equip stack preservation, drag/drop, saved loadouts, higher-tier/age gates, bridge-only restart, wrong-character switching, unknown items, and pre-existing gear admission remain unverified in this round. Private saves, logs and state snapshots were preserved; personal identifiers are not published.
+
+An earlier bridge ledger replacement attempt reported Windows access denied. Later persisted ownership, acknowledgments and matching game records were observed; the cause of the transient failure remains undetermined. No failure-injection durability claim is made.
