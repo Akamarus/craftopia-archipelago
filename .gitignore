@@ -32,9 +32,15 @@ venv/
 **/craftopia-archipelago-grants-*.json
 **/craftopia-archipelago-entitlement-*.json*
 **/craftopia-archipelago-intent-*.json
+**/craftopia-currency-*.json
+**/craftopia-orb-character-*.bound
 *.archipelago
 *.apsave
 AP_*.zip
 AP_*_Spoiler.txt
 backups/
 saves/
+
+# Local research work products and agent scratch data
+/artifacts/
+/.superpowers/

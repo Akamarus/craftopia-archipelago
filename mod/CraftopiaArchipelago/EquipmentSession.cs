@@ -10,6 +10,7 @@ namespace CraftopiaArchipelago
         private readonly long epoch;
         private readonly string slot;
         private bool accepted, rejected;
+        public string Catalog { get; private set; }
         public bool Required { get; private set; }
         public bool ContractReady => !Required || (accepted && !rejected);
 
@@ -25,13 +26,17 @@ namespace CraftopiaArchipelago
             if (!Required) return true;
             accepted = false;
             if (rejected || !approved || guid == 0 || epoch <= 0 || string.IsNullOrWhiteSpace(slot)
-                || sessionEpoch != epoch || sessionSlot != slot || catalog != EquipmentCatalog.CatalogId
-                || protocol != 1 || multiplayer != 0)
+                || sessionEpoch != epoch || sessionSlot != slot
+                || (Catalog != null && Catalog != catalog)
+                || !((catalog == EquipmentCatalog.CatalogId && protocol == 1)
+                     || ((catalog == EquipmentCatalog.ReviewedLootCatalogId || catalog == EquipmentCatalog.ReviewedLootR2CatalogId) && protocol == 2))
+                || multiplayer != 0)
             {
                 rejected = true;
                 return false;
             }
             accepted = true;
+            Catalog = catalog;
             return true;
         }
 

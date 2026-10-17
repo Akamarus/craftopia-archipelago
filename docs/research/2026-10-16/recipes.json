@@ -1,0 +1,2405 @@
+{
+  "source_capture": "evidence/milestones-20261016/craftopia_diag_20261016_181842_9364a392874f467b9334b501b2962ae0.json",
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "attachment_limitations": "Both Google JSON attachments are truncated. Original has 18 complete processed-material rows; revised has 16. Missing later registry rows cannot be audited as supplied recipes.",
+  "claims": [
+    {
+      "source": "original",
+      "name": "Old Rags",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Straw": 3
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Old Rag",
+      "candidate_ids": [
+        3400
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Small Placeable Torches",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Wood": 1,
+          "Charcoal": 1
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Small Placeable Torch",
+      "candidate_ids": [
+        5123
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Paper",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Wood": 2,
+          "Water Bucket": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Paper",
+      "candidate_ids": [
+        2457
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Bolt",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Bolt",
+      "candidate_ids": [
+        3468
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Spring",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Spring",
+      "candidate_ids": [
+        3469
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Cogwheel",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 2
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Cogwheel",
+      "candidate_ids": [
+        2451
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Gears",
+      "claim": {
+        "station": "Machine Factory",
+        "ingredients": {
+          "Iron Ingot": 2,
+          "Bolt": 2
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Gears",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "original",
+      "name": "Ceramic",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Clay": 2,
+          "Charcoal": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Ceramic",
+      "candidate_ids": [
+        3470
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Grease",
+      "claim": {
+        "station": "Cooking Hearth",
+        "ingredients": {
+          "Animal Fat": 2
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Grease",
+      "candidate_ids": [
+        2458
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Bioethanol",
+      "claim": {
+        "station": "Aging Vat",
+        "ingredients": {
+          "Wheat": 10
+        },
+        "age_requirement": 3
+      },
+      "matched_name": "Bioethanol",
+      "candidate_ids": [
+        2452
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Battery",
+      "claim": {
+        "station": "Generator Wheel",
+        "ingredients": {
+          "Monster Prism": 1
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Battery",
+      "candidate_ids": [
+        2100
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "High-Capacity Battery",
+      "claim": {
+        "station": "Machine Factory",
+        "ingredients": {
+          "Battery": 3,
+          "Silicon": 1
+        },
+        "age_requirement": 5
+      },
+      "matched_name": "High Capacity Battery",
+      "candidate_ids": [
+        3463
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Charcoal",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Wood": 5
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Charcoal",
+      "candidate_ids": [
+        749
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Elemental Dust",
+      "claim": {
+        "station": "Wizard Bench",
+        "ingredients": {
+          "Magi Fragment": 1,
+          "Crystals": 1
+        },
+        "age_requirement": 3
+      },
+      "matched_name": "Elemental Dust",
+      "candidate_ids": [
+        2460
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Iron Ingot",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Iron Ore": 2,
+          "Charcoal": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Iron Ingot",
+      "candidate_ids": [
+        712
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Steel Ingot",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Iron Ingot": 2,
+          "Charcoal": 2
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Steel Ingot",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "original",
+      "name": "Gold Ingot",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Gold Ore": 2
+        },
+        "age_requirement": 3
+      },
+      "matched_name": "Gold Ingot",
+      "candidate_ids": [
+        714
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "original",
+      "name": "Titanium Ingot",
+      "claim": {
+        "station": "Skilled Blacksmith",
+        "ingredients": {
+          "Titanium Ore": 2,
+          "Charcoal": 2
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Titanium Ingot",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "revised",
+      "name": "Old Rags",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Straw": 2
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Old Rag",
+      "candidate_ids": [
+        3400
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Small Placeable Torches",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Wood": 1,
+          "Coal": 1
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Small Placeable Torch",
+      "candidate_ids": [
+        5123
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Paper",
+      "claim": {
+        "station": "Stone Workbench",
+        "ingredients": {
+          "Wood": 3
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Paper",
+      "candidate_ids": [
+        2457
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Bolt",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Bolt",
+      "candidate_ids": [
+        3468
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Spring",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Spring",
+      "candidate_ids": [
+        3469
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Cogwheel",
+      "claim": {
+        "station": "Blacksmith Block",
+        "ingredients": {
+          "Iron Ingot": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Cogwheel",
+      "candidate_ids": [
+        2451
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Gears",
+      "claim": {
+        "station": "Machine Factory",
+        "ingredients": {
+          "Iron Ingot": 2
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Gears",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "revised",
+      "name": "Ceramic",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Clay": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Ceramic",
+      "candidate_ids": [
+        3470
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Grease",
+      "claim": {
+        "station": "Cooking Hearth",
+        "ingredients": {
+          "Animal Flesh": 1
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Grease",
+      "candidate_ids": [
+        2458
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Bioethanol",
+      "claim": {
+        "station": "Aging Vat",
+        "ingredients": {
+          "Wheat": 5
+        },
+        "age_requirement": 3
+      },
+      "matched_name": "Bioethanol",
+      "candidate_ids": [
+        2452
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Battery",
+      "claim": {
+        "station": "Generator Wheel",
+        "ingredients": {
+          "Monster Prism": 1
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Battery",
+      "candidate_ids": [
+        2100
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "High-Capacity Battery",
+      "claim": {
+        "station": "Machine Factory",
+        "ingredients": {
+          "Battery": 2,
+          "Silicon": 1
+        },
+        "age_requirement": 5
+      },
+      "matched_name": "High Capacity Battery",
+      "candidate_ids": [
+        3463
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Charcoal",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Wood": 1
+        },
+        "age_requirement": 1
+      },
+      "matched_name": "Charcoal",
+      "candidate_ids": [
+        749
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Elemental Dust",
+      "claim": {
+        "station": "Wizard Bench",
+        "ingredients": {
+          "Magi Fragment": 1
+        },
+        "age_requirement": 3
+      },
+      "matched_name": "Elemental Dust",
+      "candidate_ids": [
+        2460
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Iron Ingot",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Iron Ore": 2
+        },
+        "age_requirement": 2
+      },
+      "matched_name": "Iron Ingot",
+      "candidate_ids": [
+        712
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "revised",
+      "name": "Steel Ingot",
+      "claim": {
+        "station": "Stone Furnace",
+        "ingredients": {
+          "Iron Ingot": 1,
+          "Charcoal": 1
+        },
+        "age_requirement": 4
+      },
+      "matched_name": "Steel Ingot",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Linen Wool",
+      "matched_name": "Linen Wool",
+      "candidate_ids": [
+        3402
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Engine Parts",
+      "matched_name": "Engine Parts",
+      "candidate_ids": [
+        3464
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Fuel Tank",
+      "matched_name": "Fuel Tank",
+      "candidate_ids": [
+        3465
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Bioplastics",
+      "matched_name": "Bioplastic",
+      "candidate_ids": [
+        2459
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Steel Pillar",
+      "matched_name": "Steel Pillar",
+      "candidate_ids": [
+        5305
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Fireproof Polymer",
+      "matched_name": "Fireproof Polymer",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Platinum Ingot",
+      "matched_name": "Platinum Ingot",
+      "candidate_ids": [
+        715
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Holy Water",
+      "matched_name": "Holy Water",
+      "candidate_ids": [
+        813,
+        5565
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Armor Plate",
+      "matched_name": "Armor Plate",
+      "candidate_ids": [
+        3467
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Sanctuary Flag",
+      "matched_name": "Sanctuary Flag",
+      "candidate_ids": [
+        5145
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Adamantite Ingot",
+      "matched_name": "Adamantite Ingot",
+      "candidate_ids": [
+        716,
+        721
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Glass Pane",
+      "matched_name": "Glass Pane",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Heat-Resistant Polymer",
+      "matched_name": "Heat-Resistant Polymer",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Solar Cell",
+      "matched_name": "Solar Cell",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Circuit Board",
+      "matched_name": "Circuit Board",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Refined Rubber",
+      "matched_name": "Refined Rubber",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Advanced Alloy",
+      "matched_name": "Advanced Alloy",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Chemical Catalyst",
+      "matched_name": "Chemical Catalyst",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Cryo Fluid",
+      "matched_name": "Cryo Fluid",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Mythril Ingot",
+      "matched_name": "Mithril Ingot",
+      "candidate_ids": [
+        717
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Heat Resistance Potion",
+      "matched_name": "Heat Resistance Potion",
+      "candidate_ids": [
+        5546
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Hell Resistance Potion",
+      "matched_name": "Hell Resistance Potion",
+      "candidate_ids": [
+        5547
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Freeze Resistance Potion",
+      "matched_name": "Freeze Resistance Potion",
+      "candidate_ids": [
+        5548
+      ],
+      "match_status": "exact name or explicit lexical alias; inspect statuses"
+    },
+    {
+      "source": "tower material or environmental claim",
+      "name": "Advanced Freeze Resistance Potion",
+      "matched_name": "Advanced Freeze Resistance Potion",
+      "candidate_ids": [],
+      "match_status": "unresolved: no exact localized name; not proof of nonexistence"
+    }
+  ],
+  "recursive_item_records": [
+    {
+      "id": 2100,
+      "name": "Battery",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=2100]"
+    },
+    {
+      "id": 698,
+      "name": "Stone",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=698]"
+    },
+    {
+      "id": 695,
+      "name": "Bone",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=695]"
+    },
+    {
+      "id": 3450,
+      "name": "Clay",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20002,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20002
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 752,
+          "name": "Sand",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3450]"
+    },
+    {
+      "id": 2460,
+      "name": "Elemental Dust",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=2460]"
+    },
+    {
+      "id": 2459,
+      "name": "Bioplastic",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20206,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20206
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2452,
+          "name": "Bioethanol",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 2458,
+          "name": "Grease",
+          "quantity": 2,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=2459]"
+    },
+    {
+      "id": 2458,
+      "name": "Grease",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20206,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20206
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2050,
+          "name": "Animal Flesh",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=2458]"
+    },
+    {
+      "id": 2457,
+      "name": "Paper",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2454,
+          "name": "Straw",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=2457]"
+    },
+    {
+      "id": 2455,
+      "name": "Rubber",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20206,
+      "raw_workbench_level": 3,
+      "displayed_recipe_age": 4,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20206
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2452,
+          "name": "Bioethanol",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=2455]"
+    },
+    {
+      "id": 2454,
+      "name": "Straw",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=2454]"
+    },
+    {
+      "id": 2452,
+      "name": "Bioethanol",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20206,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20206
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2055,
+          "name": "Wheat",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=2452]"
+    },
+    {
+      "id": 2451,
+      "name": "Cogwheel",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=2451]"
+    },
+    {
+      "id": 2055,
+      "name": "Wheat",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=2055]"
+    },
+    {
+      "id": 2050,
+      "name": "Animal Flesh",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=2050]"
+    },
+    {
+      "id": 5145,
+      "name": "Sanctuary Flag",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20020,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20020
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 5141,
+          "name": "Talisman Flag",
+          "quantity": 9,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 713,
+          "name": "Silver Ingot",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 2460,
+          "name": "Elemental Dust",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=5145]"
+    },
+    {
+      "id": 699,
+      "name": "Copper Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=699]"
+    },
+    {
+      "id": 3402,
+      "name": "Linen Wool",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 3400,
+          "name": "Old Rag",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 758,
+          "name": "Sheep Wool",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3402]"
+    },
+    {
+      "id": 3400,
+      "name": "Old Rag",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 2454,
+          "name": "Straw",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=3400]"
+    },
+    {
+      "id": 5565,
+      "name": "Holy Water",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20012,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20012
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=5565]"
+    },
+    {
+      "id": 3469,
+      "name": "Spring",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 711,
+          "name": "Copper Ingot",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3469]"
+    },
+    {
+      "id": 5549,
+      "name": "凍結レジストポーション（仮）",
+      "status": 0,
+      "isOldData": false,
+      "workbench_id": 20012,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=5549]"
+    },
+    {
+      "id": 5548,
+      "name": "Freeze Resistance Potion",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20012,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20012
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 740,
+          "name": "Yellow Herb",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3360,
+          "name": "Hell Pepper",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=5548]"
+    },
+    {
+      "id": 5547,
+      "name": "Hell Resistance Potion",
+      "status": 3,
+      "isOldData": false,
+      "workbench_id": 20012,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 740,
+          "name": "Yellow Herb",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3360,
+          "name": "Hell Pepper",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=5547]"
+    },
+    {
+      "id": 5546,
+      "name": "Heat Resistance Potion",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20012,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20012
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 740,
+          "name": "Yellow Herb",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3445,
+          "name": "Snow Mint",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 811,
+          "name": "Water",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=5546]"
+    },
+    {
+      "id": 813,
+      "name": "Holy Water",
+      "status": 0,
+      "isOldData": false,
+      "workbench_id": 20015,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=813]"
+    },
+    {
+      "id": 811,
+      "name": "Water",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20015,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 10,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20015
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 839,
+          "name": "Bucket(<color=#2980b9>Water</color>)",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=811]"
+    },
+    {
+      "id": 416,
+      "name": "Aging Facility",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [
+        2
+      ],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 698,
+          "name": "Stone",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 695,
+          "name": "Bone",
+          "quantity": 5,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=416]"
+    },
+    {
+      "id": 5141,
+      "name": "Talisman Flag",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20020,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20020
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3400,
+          "name": "Old Rag",
+          "quantity": 2,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 2460,
+          "name": "Elemental Dust",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=5141]"
+    },
+    {
+      "id": 3463,
+      "name": "High Capacity Battery",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 714,
+          "name": "Gold Ingot",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 2100,
+          "name": "Battery",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3463]"
+    },
+    {
+      "id": 212,
+      "name": "Potion Brewing Stand",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 711,
+          "name": "Copper Ingot",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 769,
+          "name": "Glass",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 722,
+          "name": "Red Herb",
+          "quantity": 1,
+          "source_field": "materialC_Id/materialC_count"
+        },
+        {
+          "id": 734,
+          "name": "Blue Herb",
+          "quantity": 1,
+          "source_field": "materialD_Id/materialD_count"
+        },
+        {
+          "id": 740,
+          "name": "Yellow Herb",
+          "quantity": 1,
+          "source_field": "materialE_Id/materialE_count"
+        }
+      ],
+      "source": "items[id=212]"
+    },
+    {
+      "id": 3360,
+      "name": "Hell Pepper",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=3360]"
+    },
+    {
+      "id": 3401,
+      "name": "Cotton Canvas",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 3400,
+          "name": "Old Rag",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=3401]"
+    },
+    {
+      "id": 700,
+      "name": "Iron Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=700]"
+    },
+    {
+      "id": 701,
+      "name": "Silver Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 3,
+      "displayed_recipe_age": 4,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=701]"
+    },
+    {
+      "id": 702,
+      "name": "Gold Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=702]"
+    },
+    {
+      "id": 839,
+      "name": "Bucket(<color=#2980b9>Water</color>)",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=839]"
+    },
+    {
+      "id": 5305,
+      "name": "Steel Pillar",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20020,
+      "raw_workbench_level": 3,
+      "displayed_recipe_age": 4,
+      "count_per_craft": 10,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20020
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 10,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3468,
+          "name": "Bolt",
+          "quantity": 10,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=5305]"
+    },
+    {
+      "id": 769,
+      "name": "Glass",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 752,
+          "name": "Sand",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=769]"
+    },
+    {
+      "id": 248,
+      "name": "Cooking Pot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 711,
+          "name": "Copper Ingot",
+          "quantity": 10,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 10,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=248]"
+    },
+    {
+      "id": 758,
+      "name": "Sheep Wool",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=758]"
+    },
+    {
+      "id": 752,
+      "name": "Sand",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 10,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        0
+      ],
+      "ingredients": [
+        {
+          "id": 698,
+          "name": "Stone",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=752]"
+    },
+    {
+      "id": 356,
+      "name": "Stone Furnace",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 698,
+          "name": "Stone",
+          "quantity": 25,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 10,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=356]"
+    },
+    {
+      "id": 749,
+      "name": "Charcoal",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 2,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=749]"
+    },
+    {
+      "id": 746,
+      "name": "Log",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=746]"
+    },
+    {
+      "id": 2000,
+      "name": "Generator (Small)",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 2451,
+          "name": "Cogwheel",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 5,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=2000]"
+    },
+    {
+      "id": 740,
+      "name": "Yellow Herb",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=740]"
+    },
+    {
+      "id": 3467,
+      "name": "Armor Plate",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20013,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20013
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 99,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=3467]"
+    },
+    {
+      "id": 3470,
+      "name": "Ceramic",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 3450,
+          "name": "Clay",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 749,
+          "name": "Charcoal",
+          "quantity": 2,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3470]"
+    },
+    {
+      "id": 734,
+      "name": "Blue Herb",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=734]"
+    },
+    {
+      "id": 3445,
+      "name": "Snow Mint",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=3445]"
+    },
+    {
+      "id": 722,
+      "name": "Red Herb",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=722]"
+    },
+    {
+      "id": 721,
+      "name": "Adamantite Ingot",
+      "status": 5,
+      "isOldData": false,
+      "workbench_id": 20023,
+      "raw_workbench_level": 7,
+      "displayed_recipe_age": 8,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 709,
+          "name": "Adamantite",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=721]"
+    },
+    {
+      "id": 703,
+      "name": "Platinum Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=703]"
+    },
+    {
+      "id": 704,
+      "name": "Adamantite Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 6,
+      "displayed_recipe_age": 7,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=704]"
+    },
+    {
+      "id": 705,
+      "name": "Mithril Ore",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 7,
+      "displayed_recipe_age": 8,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=705]"
+    },
+    {
+      "id": 3464,
+      "name": "Engine Parts",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20013,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20013
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 2100,
+          "name": "Battery",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 3470,
+          "name": "Ceramic",
+          "quantity": 5,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=3464]"
+    },
+    {
+      "id": 3465,
+      "name": "Fuel Tank",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20013,
+      "raw_workbench_level": 3,
+      "displayed_recipe_age": 4,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20013
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 2455,
+          "name": "Rubber",
+          "quantity": 5,
+          "source_field": "materialB_Id/materialB_count"
+        },
+        {
+          "id": 3401,
+          "name": "Cotton Canvas",
+          "quantity": 5,
+          "source_field": "materialC_Id/materialC_count"
+        }
+      ],
+      "source": "items[id=3465]"
+    },
+    {
+      "id": 709,
+      "name": "Adamantite",
+      "status": 5,
+      "isOldData": false,
+      "workbench_id": 20001,
+      "raw_workbench_level": 7,
+      "displayed_recipe_age": 8,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [],
+      "age_new_items_indices": [],
+      "ingredients": [],
+      "source": "items[id=709]"
+    },
+    {
+      "id": 200,
+      "name": "Workbench",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20002,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20002
+      ],
+      "age_new_items_indices": [
+        0
+      ],
+      "ingredients": [
+        {
+          "id": 698,
+          "name": "Stone",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=200]"
+    },
+    {
+      "id": 3468,
+      "name": "Bolt",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20011,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20011
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 712,
+          "name": "Iron Ingot",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 711,
+          "name": "Copper Ingot",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=3468]"
+    },
+    {
+      "id": 712,
+      "name": "Iron Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 2,
+      "displayed_recipe_age": 3,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        2
+      ],
+      "ingredients": [
+        {
+          "id": 700,
+          "name": "Iron Ore",
+          "quantity": 3,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=712]"
+    },
+    {
+      "id": 713,
+      "name": "Silver Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 3,
+      "displayed_recipe_age": 4,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        3
+      ],
+      "ingredients": [
+        {
+          "id": 701,
+          "name": "Silver Ore",
+          "quantity": 3,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=713]"
+    },
+    {
+      "id": 714,
+      "name": "Gold Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 4,
+      "displayed_recipe_age": 5,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        4
+      ],
+      "ingredients": [
+        {
+          "id": 702,
+          "name": "Gold Ore",
+          "quantity": 3,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=714]"
+    },
+    {
+      "id": 715,
+      "name": "Platinum Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 5,
+      "displayed_recipe_age": 6,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        5
+      ],
+      "ingredients": [
+        {
+          "id": 703,
+          "name": "Platinum Ore",
+          "quantity": 3,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=715]"
+    },
+    {
+      "id": 716,
+      "name": "Adamantite Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 6,
+      "displayed_recipe_age": 7,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        6
+      ],
+      "ingredients": [
+        {
+          "id": 704,
+          "name": "Adamantite Ore",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=716]"
+    },
+    {
+      "id": 717,
+      "name": "Mithril Ingot",
+      "status": 2,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 7,
+      "displayed_recipe_age": 8,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        7
+      ],
+      "ingredients": [
+        {
+          "id": 705,
+          "name": "Mithril Ore",
+          "quantity": 5,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=717]"
+    },
+    {
+      "id": 711,
+      "name": "Copper Ingot",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20018,
+      "raw_workbench_level": 1,
+      "displayed_recipe_age": 2,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20018
+      ],
+      "age_new_items_indices": [
+        1
+      ],
+      "ingredients": [
+        {
+          "id": 699,
+          "name": "Copper Ore",
+          "quantity": 3,
+          "source_field": "materialA_Id/materialA_count"
+        }
+      ],
+      "source": "items[id=711]"
+    },
+    {
+      "id": 5123,
+      "name": "Small Placeable Torch",
+      "status": 1,
+      "isOldData": false,
+      "workbench_id": 20002,
+      "raw_workbench_level": 0,
+      "displayed_recipe_age": 1,
+      "count_per_craft": 1,
+      "blueprint_required": false,
+      "listed_craft_bench_maps": [
+        20002
+      ],
+      "age_new_items_indices": [],
+      "ingredients": [
+        {
+          "id": 746,
+          "name": "Log",
+          "quantity": 1,
+          "source_field": "materialA_Id/materialA_count"
+        },
+        {
+          "id": 3400,
+          "name": "Old Rag",
+          "quantity": 1,
+          "source_field": "materialB_Id/materialB_count"
+        }
+      ],
+      "source": "items[id=5123]"
+    }
+  ],
+  "notes": [
+    "Displayed recipe age is raw workbenchLv+1, proven by ItemData.DisplayWorkBenchLv and CraftMng.CanCraft. It is not station upgrade level.",
+    "No map membership establishes only absent active listed recipe, not all obtaining routes.",
+    "CountPerCraft=max(1,playerCraftCount), proved in installed DLL.",
+    "Family20001 is NO_CRAFT_FAMILY_ID. Noncraft rows workbenchLv are not acquisition-age proofs.",
+    "AP station mapping requires runtime class/family. Generic recipe families20012/20013/20020 are not recognized by current ProductionEnforcement."
+  ]
+}

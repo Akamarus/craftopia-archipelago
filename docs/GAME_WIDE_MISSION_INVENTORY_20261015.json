@@ -1,0 +1,1259 @@
+{
+  "schema": 1,
+  "scope": "All 125 captured mission IDs; not every mission in the game",
+  "source_catalog": "mission_catalog_20261007_r1",
+  "capture_timestamp": "2026-10-10T07:04:42.3558176Z",
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "entries": [
+    {
+      "game_id": 30,
+      "ap_location_id": 1005,
+      "title": "Equip a stone workbench and place it",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 50,
+      "ap_location_id": 1012,
+      "title": "Punch trees 5 times",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 5,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 51,
+      "ap_location_id": 1013,
+      "title": "Make a Stone Axe",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 52,
+      "ap_location_id": 1014,
+      "title": "Equip a Stone Axe",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 53,
+      "ap_location_id": 1015,
+      "title": "Obtain 30 numbers of Log",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 30,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 54,
+      "ap_location_id": 1016,
+      "title": "Punch rocks 5 times",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 5,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 55,
+      "ap_location_id": 1017,
+      "title": "Make a stone pickaxe",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 56,
+      "ap_location_id": 1018,
+      "title": "Equip a stone pickaxe",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 57,
+      "ap_location_id": 1019,
+      "title": "Collect 30 stones",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 30,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 58,
+      "ap_location_id": 1020,
+      "title": "Make a stone workbench",
+      "group": "Opening tested",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 60,
+      "ap_location_id": 1022,
+      "title": "Craft Stone One-Handed Sword",
+      "group": "Opening tested",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "opening-tested",
+      "prerequisite_audit": "Existing opening rules; Sword permission for 60"
+    },
+    {
+      "game_id": 10,
+      "ap_location_id": 1001,
+      "title": "Make a glider on the stone workbench",
+      "group": "Traversal",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Glider recipe/leather, native age, campfire/updraft where relevant"
+    },
+    {
+      "game_id": 59,
+      "ap_location_id": 1021,
+      "title": "Fly through the sky with a glider",
+      "group": "Traversal",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Glider recipe/leather, native age, campfire/updraft where relevant"
+    },
+    {
+      "game_id": 67,
+      "ap_location_id": 1025,
+      "title": "Ride the updraft from a campfire to fly high into the sky",
+      "group": "Traversal",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Glider recipe/leather, native age, campfire/updraft where relevant"
+    },
+    {
+      "game_id": 79,
+      "ap_location_id": 1030,
+      "title": "Equip a Glider",
+      "group": "Traversal",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Glider recipe/leather, native age, campfire/updraft where relevant"
+    },
+    {
+      "game_id": 61,
+      "ap_location_id": 1023,
+      "title": "Knock out an animal and get 3 pieces of raw meat",
+      "group": "Foraging and food gathering",
+      "raw_world_level": 1,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Resource/animal access; combat where relevant"
+    },
+    {
+      "game_id": 514,
+      "ap_location_id": 1051,
+      "title": "Obtain 20 Straw by destoying bushes in the field",
+      "group": "Foraging and food gathering",
+      "raw_world_level": 0,
+      "raw_target": 20,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Resource/animal access; combat where relevant"
+    },
+    {
+      "game_id": 521,
+      "ap_location_id": 1054,
+      "title": "Harvest 5 Wild Berry",
+      "group": "Foraging and food gathering",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Resource/animal access; combat where relevant"
+    },
+    {
+      "game_id": 523,
+      "ap_location_id": 1056,
+      "title": "Gather 3 Red Herb",
+      "group": "Foraging and food gathering",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Resource/animal access; combat where relevant"
+    },
+    {
+      "game_id": 63,
+      "ap_location_id": 1024,
+      "title": "Craft a campfire",
+      "group": "Building and storage",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 95,
+      "ap_location_id": 1039,
+      "title": "Craft Wooden Slope",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 96,
+      "ap_location_id": 1040,
+      "title": "Deploy Wooden Slope",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 97,
+      "ap_location_id": 1041,
+      "title": "Rotate Wooden Slope",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 98,
+      "ap_location_id": 1042,
+      "title": "Collect the buildings you've set up",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 563,
+      "ap_location_id": 1075,
+      "title": "Equip and Deploy Bed",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 564,
+      "ap_location_id": 1076,
+      "title": "Equip and Deploy Chest",
+      "group": "Building and storage",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Recipe materials, age, placement/manipulation completion"
+    },
+    {
+      "game_id": 16,
+      "ap_location_id": 1003,
+      "title": "Make 100G from selling on the market",
+      "group": "Commerce",
+      "raw_world_level": 1,
+      "raw_target": 100,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Market recipe, age and sellable renewable goods"
+    },
+    {
+      "game_id": 36,
+      "ap_location_id": 1007,
+      "title": "Set up a market",
+      "group": "Commerce",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Market recipe, age and sellable renewable goods"
+    },
+    {
+      "game_id": 516,
+      "ap_location_id": 1052,
+      "title": "Craft Market on Workbench",
+      "group": "Commerce",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Market recipe, age and sellable renewable goods"
+    },
+    {
+      "game_id": 15,
+      "ap_location_id": 1002,
+      "title": "Let's make 5 wheat fields",
+      "group": "Farming and cooking",
+      "raw_world_level": 1,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 70,
+      "ap_location_id": 1026,
+      "title": "Craft Cooking Pot",
+      "group": "Farming and cooking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 105,
+      "ap_location_id": 1046,
+      "title": "Obtain a bucket of water from the well",
+      "group": "Farming and cooking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 106,
+      "ap_location_id": 1047,
+      "title": "Water the wheat field",
+      "group": "Farming and cooking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 107,
+      "ap_location_id": 1048,
+      "title": "Harvest 1 counts of wheat from the grown wheat field",
+      "group": "Farming and cooking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 529,
+      "ap_location_id": 1059,
+      "title": "Craft Wheat Flour on Cooking Pot",
+      "group": "Farming and cooking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 530,
+      "ap_location_id": 1060,
+      "title": "Craft Bread on Cooking Pot",
+      "group": "Farming and cooking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Water/crop chain, native age, Farming/Cooking use permissions as applicable"
+    },
+    {
+      "game_id": 72,
+      "ap_location_id": 1027,
+      "title": "Craft a Stone Furnace",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 73,
+      "ap_location_id": 1028,
+      "title": "Smelt ores with a furnace to Craft 20 ingots",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 20,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 78,
+      "ap_location_id": 1029,
+      "title": "Craft Blacksmith",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 80,
+      "ap_location_id": 1031,
+      "title": "Craft Branch Bow on Workbench",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 81,
+      "ap_location_id": 1032,
+      "title": "Craft Branch Arrow on Workbench",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 82,
+      "ap_location_id": 1033,
+      "title": "Use Blacksmith to craft a copper shield",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 85,
+      "ap_location_id": 1034,
+      "title": "Craft a detector",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 86,
+      "ap_location_id": 1035,
+      "title": "Equip a detector",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 565,
+      "ap_location_id": 1077,
+      "title": "Equip Stone One-Handed Sword",
+      "group": "Equipment and metalworking",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Age, recipe station, materials, Smelting and equipment category/tier as applicable"
+    },
+    {
+      "game_id": 46,
+      "ap_location_id": 1010,
+      "title": "Obtain 3 Mana potion",
+      "group": "Alchemy",
+      "raw_world_level": 1,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Herb sources, station recipe, Alchemy permission and actual item conditions"
+    },
+    {
+      "game_id": 522,
+      "ap_location_id": 1055,
+      "title": "Craft Medicinal Herb",
+      "group": "Alchemy",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Herb sources, station recipe, Alchemy permission and actual item conditions"
+    },
+    {
+      "game_id": 524,
+      "ap_location_id": 1057,
+      "title": "Craft Potion Brewing Stand on Workbench",
+      "group": "Alchemy",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Herb sources, station recipe, Alchemy permission and actual item conditions"
+    },
+    {
+      "game_id": 525,
+      "ap_location_id": 1058,
+      "title": "Craft Small Life Potion on Potion Brewing Stand",
+      "group": "Alchemy",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Herb sources, station recipe, Alchemy permission and actual item conditions"
+    },
+    {
+      "game_id": 539,
+      "ap_location_id": 1064,
+      "title": "Craft Refinery on Workbench",
+      "group": "Refinement",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Equipment-care/refining chain, iron equipment and refining-stone sources"
+    },
+    {
+      "game_id": 540,
+      "ap_location_id": 1065,
+      "title": "Craft Refining Scrap Bench on Workbench",
+      "group": "Refinement",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Equipment-care/refining chain, iron equipment and refining-stone sources"
+    },
+    {
+      "game_id": 541,
+      "ap_location_id": 1066,
+      "title": "Generate Refining Stone III on Refining Scrap Bench",
+      "group": "Refinement",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Equipment-care/refining chain, iron equipment and refining-stone sources"
+    },
+    {
+      "game_id": 542,
+      "ap_location_id": 1067,
+      "title": "Put Iron One-Handed Sword into Refinery's Chest for Refining Material Weapon",
+      "group": "Refinement",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Equipment-care/refining chain, iron equipment and refining-stone sources"
+    },
+    {
+      "game_id": 543,
+      "ap_location_id": 1068,
+      "title": "Put Refining Stone III into Refinery's Chest for Refining Stone",
+      "group": "Refinement",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Equipment-care/refining chain, iron equipment and refining-stone sources"
+    },
+    {
+      "game_id": 571,
+      "ap_location_id": 1082,
+      "title": "Craft Enchanting Table",
+      "group": "Enchanting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enchant sources/station, target equipment or cooking recipe, age"
+    },
+    {
+      "game_id": 572,
+      "ap_location_id": 1083,
+      "title": "Obtain Enchanting Fragment",
+      "group": "Enchanting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enchant sources/station, target equipment or cooking recipe, age"
+    },
+    {
+      "game_id": 573,
+      "ap_location_id": 1084,
+      "title": "Apply Enchantment to Iron One-Handed Sword",
+      "group": "Enchanting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enchant sources/station, target equipment or cooking recipe, age"
+    },
+    {
+      "game_id": 574,
+      "ap_location_id": 1085,
+      "title": "Apply \"Good Cook's\" Enchantment to Cooking Pot",
+      "group": "Enchanting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enchant sources/station, target equipment or cooking recipe, age"
+    },
+    {
+      "game_id": 575,
+      "ap_location_id": 1086,
+      "title": "Craft Bread with Enchantments",
+      "group": "Enchanting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enchant sources/station, target equipment or cooking recipe, age"
+    },
+    {
+      "game_id": 519,
+      "ap_location_id": 1053,
+      "title": "Craft Old Rag on Workbench",
+      "group": "Clothing",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Cloth/leather sources, hatter station and equipment tier where applicable"
+    },
+    {
+      "game_id": 556,
+      "ap_location_id": 1070,
+      "title": "Use Hatter to make capes",
+      "group": "Clothing",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Cloth/leather sources, hatter station and equipment tier where applicable"
+    },
+    {
+      "game_id": 557,
+      "ap_location_id": 1071,
+      "title": "Use Hatter to craft Red Beret",
+      "group": "Clothing",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Cloth/leather sources, hatter station and equipment tier where applicable"
+    },
+    {
+      "game_id": 37,
+      "ap_location_id": 1008,
+      "title": "Place 5 Rotating Saws",
+      "group": "Automation",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Station recipes, metal/material chains, native age and operation versus placement distinction"
+    },
+    {
+      "game_id": 38,
+      "ap_location_id": 1009,
+      "title": "Place 5 Excavator",
+      "group": "Automation",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Station recipes, metal/material chains, native age and operation versus placement distinction"
+    },
+    {
+      "game_id": 531,
+      "ap_location_id": 1061,
+      "title": "Craft Rotating Saws on Workbench",
+      "group": "Automation",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Station recipes, metal/material chains, native age and operation versus placement distinction"
+    },
+    {
+      "game_id": 532,
+      "ap_location_id": 1062,
+      "title": "Craft Excavator on Workbench",
+      "group": "Automation",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Station recipes, metal/material chains, native age and operation versus placement distinction"
+    },
+    {
+      "game_id": 533,
+      "ap_location_id": 1063,
+      "title": "Craft Monster Prism on Workbench",
+      "group": "Tamer",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Prism/registration recipes, species access; distinguish capture from tame"
+    },
+    {
+      "game_id": 560,
+      "ap_location_id": 1072,
+      "title": "Craft Pet Management Machine on a Workbench",
+      "group": "Tamer",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Prism/registration recipes, species access; distinguish capture from tame"
+    },
+    {
+      "game_id": 561,
+      "ap_location_id": 1073,
+      "title": "Capture Mono",
+      "group": "Tamer",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Prism/registration recipes, species access; distinguish capture from tame"
+    },
+    {
+      "game_id": 562,
+      "ap_location_id": 1074,
+      "title": "Capture Cow",
+      "group": "Tamer",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Prism/registration recipes, species access; distinguish capture from tame"
+    },
+    {
+      "game_id": 570,
+      "ap_location_id": 1081,
+      "title": "Tame Mono as a pet",
+      "group": "Tamer",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Prism/registration recipes, species access; distinguish capture from tame"
+    },
+    {
+      "game_id": 7,
+      "ap_location_id": 1000,
+      "title": "Do a jump-slash",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 28,
+      "ap_location_id": 1004,
+      "title": "Set an enemy on fire",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 34,
+      "ap_location_id": 1006,
+      "title": "Defeat a cow with a headshot",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 1,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 47,
+      "ap_location_id": 1011,
+      "title": "Use 110 Mana within 10 seconds",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 1,
+      "raw_target": 110,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 99,
+      "ap_location_id": 1043,
+      "title": "Use the skill points to learn a skill",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 544,
+      "ap_location_id": 1069,
+      "title": "Learn Heal and use it",
+      "group": "Skills and combat techniques",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Relevant skill unlock, spendable points, weapon access, mana and target conditions"
+    },
+    {
+      "game_id": 87,
+      "ap_location_id": 1036,
+      "title": "Explore the island and find a dungeon",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 88,
+      "ap_location_id": 1037,
+      "title": "Defeat the boss inside the dungeon",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 93,
+      "ap_location_id": 1038,
+      "title": "Open the map",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 100,
+      "ap_location_id": 1044,
+      "title": "Meet the God of Sky Island (Anubis)",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 101,
+      "ap_location_id": 1045,
+      "title": "Give Slate of Growth to Anubis to increase your stats",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 567,
+      "ap_location_id": 1079,
+      "title": "Give Soul Orb to Anubis to exchange them with rewards",
+      "group": "Exploration, dungeon and Anubis",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Region/traversal/combat or exchange currency; map opening is separate"
+    },
+    {
+      "game_id": 512,
+      "ap_location_id": 1049,
+      "title": "Check the mission screen",
+      "group": "Mission meta",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "UI observation versus successful category reward; prevent duplicate reward identity"
+    },
+    {
+      "game_id": 513,
+      "ap_location_id": 1050,
+      "title": "Receive a reward by completing all missions of a mission category",
+      "group": "Mission meta",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "UI observation versus successful category reward; prevent duplicate reward identity"
+    },
+    {
+      "game_id": 566,
+      "ap_location_id": 1078,
+      "title": "Defeat 1 Goblin",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 568,
+      "ap_location_id": 1080,
+      "title": "Defeat 1 Deer",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 1,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 577,
+      "ap_location_id": 1087,
+      "title": "Defeat 5 Cow of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 578,
+      "ap_location_id": 1088,
+      "title": "Defeat 5 Sheep of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 579,
+      "ap_location_id": 1089,
+      "title": "Defeat 5 Deer of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 580,
+      "ap_location_id": 1090,
+      "title": "Defeat 5 Chicken of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 581,
+      "ap_location_id": 1091,
+      "title": "Defeat 3 Bear of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 583,
+      "ap_location_id": 1092,
+      "title": "Defeat 5 Goblin of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 584,
+      "ap_location_id": 1093,
+      "title": "Defeat 5 Goblin Sword of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 585,
+      "ap_location_id": 1094,
+      "title": "Defeat 5 Goblin Archer of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 586,
+      "ap_location_id": 1095,
+      "title": "Defeat 3 Greataxe Gremlin of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 587,
+      "ap_location_id": 1096,
+      "title": "Defeat 3 Greatshield Gremlin of Lv 1 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 589,
+      "ap_location_id": 1097,
+      "title": "Defeat 5 Goblin of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 590,
+      "ap_location_id": 1098,
+      "title": "Defeat 5 Goblin Sword of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 591,
+      "ap_location_id": 1099,
+      "title": "Defeat 5 Goblin Archer of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 592,
+      "ap_location_id": 1100,
+      "title": "Defeat 3 Greataxe Gremlin of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 593,
+      "ap_location_id": 1101,
+      "title": "Defeat 3 Greatshield Gremlin of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 595,
+      "ap_location_id": 1102,
+      "title": "Defeat 5 Killer Bee of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 596,
+      "ap_location_id": 1103,
+      "title": "Defeat 5 Phoechicks of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 597,
+      "ap_location_id": 1104,
+      "title": "Defeat 5 Wizard of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 598,
+      "ap_location_id": 1105,
+      "title": "Defeat 5 Lizard Axe of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 599,
+      "ap_location_id": 1106,
+      "title": "Defeat 5 Lizard Sword of Lv 10 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 601,
+      "ap_location_id": 1107,
+      "title": "Defeat 10 Goblin of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 602,
+      "ap_location_id": 1108,
+      "title": "Defeat 10 Goblin Sword of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 603,
+      "ap_location_id": 1109,
+      "title": "Defeat 10 Goblin Archer of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 604,
+      "ap_location_id": 1110,
+      "title": "Defeat 5 Greataxe Gremlin of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 605,
+      "ap_location_id": 1111,
+      "title": "Defeat 5 Greatshield Gremlin of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 607,
+      "ap_location_id": 1112,
+      "title": "Defeat 10 Skeleton Soldier of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 608,
+      "ap_location_id": 1113,
+      "title": "Defeat 10 Skeleton Archer of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 609,
+      "ap_location_id": 1114,
+      "title": "Defeat 10 Werewolf of the Crescent Moon of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 610,
+      "ap_location_id": 1115,
+      "title": "Defeat 3 Skeleton Pirate of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 611,
+      "ap_location_id": 1116,
+      "title": "Defeat 5 Skeleton Sailor of Lv 20 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 613,
+      "ap_location_id": 1117,
+      "title": "Defeat 10 Goblin of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 614,
+      "ap_location_id": 1118,
+      "title": "Defeat 10 Goblin Sword of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 615,
+      "ap_location_id": 1119,
+      "title": "Defeat 10 Goblin Archer of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 10,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 616,
+      "ap_location_id": 1120,
+      "title": "Defeat 5 Greataxe Gremlin of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 617,
+      "ap_location_id": 1121,
+      "title": "Defeat 5 Greatshield Gremlin of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 5,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 619,
+      "ap_location_id": 1122,
+      "title": "Defeat 3 Gigantes Ballista of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 620,
+      "ap_location_id": 1123,
+      "title": "Defeat 3 Gigantes Hoplon of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    },
+    {
+      "game_id": 621,
+      "ap_location_id": 1124,
+      "title": "Defeat 3 Kraken of Lv 35 or higher",
+      "group": "Enemy hunting",
+      "raw_world_level": 0,
+      "raw_target": 3,
+      "evidence": "catalogued; rule/runtime validation needed",
+      "prerequisite_audit": "Enemy species/region, count and minimum level, viable combat route; raw age alone is insufficient"
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "research_only": true,
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "capture_sha256": "aa8d5caa551d3f67646317dfcdb4ea292f86a1cf1f08ab5ad42a3446578fd6a8",
+  "runtime_evidence": {
+    "source": "artifacts\\harvesting-research\\all.cs",
+    "line_start": 170435,
+    "line_end": 170439,
+    "excerpt": "\t\t\tint islandLevel = SingletonMonoBehaviour<OcWorldManager>.Inst.IslandLevel;\n\t\t\tfor (int i = 0; i < num3; i++)\n\t\t\t{\n\t\t\t\tOcItem item = new OcItem(SingletonMonoBehaviour<OcItemDataMng>.Inst.RandomTreasureData(islandLevel, rarityType));\n\t\t\t\tOcUtility.attachEnchant_ForTreasureBox(islandLevel, ref item, rarityType);"
+  },
+  "normal_island_level_evidence": "itemoffer.json",
+  "entries": [
+    {
+      "id": 3270,
+      "name": "Iron Gauntlet",
+      "normal_general_chest_combinations": [
+        {
+          "island_level": 0,
+          "chest_rarity_index": 1,
+          "rank_selection_weight": 1
+        },
+        {
+          "island_level": 0,
+          "chest_rarity_index": 2,
+          "rank_selection_weight": 1
+        }
+      ],
+      "live_craft_bench_ids": [
+        20017
+      ],
+      "raw_age_requirement": 2,
+      "display_age": 3,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 712,
+          "count": 5
+        },
+        {
+          "id": 692,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3271,
+      "name": "Iron Glove",
+      "normal_general_chest_combinations": [
+        {
+          "island_level": 0,
+          "chest_rarity_index": 1,
+          "rank_selection_weight": 1
+        },
+        {
+          "island_level": 0,
+          "chest_rarity_index": 2,
+          "rank_selection_weight": 1
+        }
+      ],
+      "live_craft_bench_ids": [
+        20017
+      ],
+      "raw_age_requirement": 2,
+      "display_age": 3,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 712,
+          "count": 5
+        },
+        {
+          "id": 692,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3272,
+      "name": "Gold Gauntlet",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20017
+      ],
+      "raw_age_requirement": 4,
+      "display_age": 5,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 714,
+          "count": 5
+        },
+        {
+          "id": 692,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3273,
+      "name": "Gold Glove",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20017
+      ],
+      "raw_age_requirement": 4,
+      "display_age": 5,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 714,
+          "count": 5
+        },
+        {
+          "id": 692,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3274,
+      "name": "Adamantite Gauntlet",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 6,
+      "display_age": 7,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 716,
+          "count": 5
+        },
+        {
+          "id": 684,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3275,
+      "name": "Adamantite Glove",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 6,
+      "display_age": 7,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 716,
+          "count": 5
+        },
+        {
+          "id": 693,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3276,
+      "name": "Mithril Gauntlet",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 7,
+      "display_age": 8,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 717,
+          "count": 5
+        },
+        {
+          "id": 684,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3277,
+      "name": "Mithril Glove",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 7,
+      "display_age": 8,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 717,
+          "count": 5
+        },
+        {
+          "id": 693,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3278,
+      "name": "High Mithril Gauntlet",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 8,
+      "display_age": 9,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 718,
+          "count": 5
+        },
+        {
+          "id": 684,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3279,
+      "name": "High Mithril Glove",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20022
+      ],
+      "raw_age_requirement": 8,
+      "display_age": 9,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 718,
+          "count": 5
+        },
+        {
+          "id": 693,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3280,
+      "name": "Orichalcum Gauntlet",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20027
+      ],
+      "raw_age_requirement": 9,
+      "display_age": 10,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 719,
+          "count": 5
+        },
+        {
+          "id": 684,
+          "count": 5
+        },
+        {
+          "id": 680,
+          "count": 5
+        }
+      ]
+    },
+    {
+      "id": 3281,
+      "name": "Orichalcum Glove",
+      "normal_general_chest_combinations": [],
+      "live_craft_bench_ids": [
+        20027
+      ],
+      "raw_age_requirement": 9,
+      "display_age": 10,
+      "blueprint_required": false,
+      "recipe": [
+        {
+          "id": 719,
+          "count": 5
+        },
+        {
+          "id": 693,
+          "count": 5
+        },
+        {
+          "id": 2460,
+          "count": 5
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "General-chest selection only; not a census of placed chest lottery classes.",
+    "Live recipe membership and raw age do not prove complete ingredient or station reachability.",
+    "No AP tier assignments or production changes."
+  ]
+}

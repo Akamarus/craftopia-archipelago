@@ -19,6 +19,8 @@ namespace CraftopiaArchipelago
     public sealed class EquipmentCatalog
     {
         public const string CatalogId = "equipment_20261010_r1";
+        public const string ReviewedLootCatalogId = "equipment_loot_20261016_r1";
+        public const string ReviewedLootR2CatalogId = "equipment_loot_20261016_r2";
         public const string AssemblyHash = "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea";
         private sealed class Rule
         {
@@ -117,6 +119,41 @@ namespace CraftopiaArchipelago
             }
             catch (FormatException) { throw; }
             catch (Exception error) { throw new FormatException("Invalid equipment catalog", error); }
+        }
+
+        public static EquipmentCatalog ParseReviewedLoot(string json)
+        {
+            // Separate instance and session identity: historical seeds keep the frozen rules.
+            var result = Parse(json);
+            if (!result.rules.TryGetValue(6031, out var club) || club.Decision != "unsupported"
+                || club.Category != "Sword" || club.Item.Workbench != 20001
+                || club.Item.WorkbenchLevel != 0 || club.Item.Status != 1
+                || club.Item.OldData || club.Item.CannotUse || club.Item.Prefab != 4)
+                throw new FormatException("Reviewed Goblin's Club evidence mismatch");
+            // Explicit balance decision, not a rank/rarity/recipe-age inference.
+            // See docs/LOOT_EQUIPMENT_REVIEW.md. Variants 6032-6034 stay unsupported.
+            club.Decision = "progressive";
+            club.Tier = 2;
+            club.Age = 0;
+            return result;
+        }
+
+        public static EquipmentCatalog ParseReviewedLootR2(string json)
+        {
+            // Preserve r1 independently; only new sessions opt into the bow review.
+            var result = ParseReviewedLoot(json);
+            if (!result.rules.TryGetValue(6187, out var bow) || bow.Decision != "unsupported"
+                || bow.Category != "Bow" || bow.Item.Workbench != 20001
+                || bow.Item.WorkbenchLevel != 0 || bow.Item.Status != 1
+                || bow.Item.OldData || bow.Item.CannotUse || bow.Item.Prefab != 4
+                || bow.Item.InventoryTab != 1 || bow.Item.WeaponCategory != 6 || bow.Item.Slot != 2)
+                throw new FormatException("Reviewed Goblin's Bow evidence mismatch");
+            // Explicit comparison with Copper Bow, not item-rank or source-level projection.
+            // No additional age gate is imposed; this is not an earliest-acquisition claim.
+            bow.Decision = "progressive";
+            bow.Tier = 2;
+            bow.Age = 0;
+            return result;
         }
 
         internal bool Check(EquipmentSnapshot live, PermissionManager permissions, Func<int> currentAge, out string reason)

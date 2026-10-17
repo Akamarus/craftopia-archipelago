@@ -43,6 +43,42 @@ def validate(ledger):
     if not all(text(ledger.get(k)) for k in ('server','slot','game','session')):
         raise ValueError('missing ledger identity')
     if not integer(ledger.get('epoch'),1): raise ValueError('invalid epoch')
+    milestones=ledger.get('milestone_checks',[])
+    if not isinstance(milestones,list): raise ValueError('invalid milestone checks')
+    seen_milestones=set()
+    for r in milestones:
+        if (not isinstance(r,dict) or r.get('family') not in ('tower','age','dungeon','category') or
+            not integer(r.get('source_id'),-2147483648,2147483647) or not integer(r.get('stage'),0,99) or
+            not integer(r.get('location_id'),3000,4999) or not text(r.get('character_guid')) or
+            not isinstance(r.get('world_fingerprint'),str) or len(r['world_fingerprint'])!=64 or
+            any(c not in '0123456789ABCDEF' for c in r['world_fingerprint']) or
+            r.get('key')!=f"milestone:{r['family']}:{r['source_id']}:{r['stage']}" or r['key'] in seen_milestones):
+            raise ValueError('invalid milestone history')
+        seen_milestones.add(r['key'])
+    currency = ledger.get('currency_receipts', [])
+    orbs=ledger.get('orb_checks',[])
+    if not isinstance(orbs,list): raise ValueError('invalid orb checks')
+    seen_orbs=set()
+    for r in orbs:
+        if (not isinstance(r,dict) or not integer(r.get('orb_guid'),-2147483648,2147483647) or
+                not integer(r.get('location_id'),2000,2999) or not text(r.get('character_guid')) or r['orb_guid'] in seen_orbs):
+            raise ValueError('invalid orb check')
+        seen_orbs.add(r['orb_guid'])
+    if not isinstance(currency, list): raise ValueError('invalid currency history')
+    seen_currency = set()
+    for r in currency:
+        if (not isinstance(r,dict) or not integer(r.get('receipt_id')) or
+                type(r.get('amount')) is not int or r['amount'] != 1 or
+                type(r.get('acknowledged')) is not bool or 'character_guid' not in r or r['receipt_id'] in seen_currency):
+            raise ValueError('invalid currency receipt')
+        guid = r.get('character_guid')
+        if guid is not None:
+            try:
+                if not text(guid) or str(int(guid)) != guid or not -2147483648 <= int(guid) <= 2147483647 or int(guid)==0:
+                    raise ValueError('invalid currency character')
+            except (ValueError,TypeError): raise ValueError('invalid currency character')
+        if r['acknowledged'] and guid is None: raise ValueError('unassigned currency ack')
+        seen_currency.add(r['receipt_id'])
     for key in ('delivered','pending_checks','unlocks','pending_unlocks'):
         if not isinstance(ledger.get(key),list): raise ValueError('missing list: '+key)
     # --- multiplayer/enrollment keys: migrate with defaults, never corrupt ---

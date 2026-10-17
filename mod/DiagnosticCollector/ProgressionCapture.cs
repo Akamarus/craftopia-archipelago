@@ -29,7 +29,7 @@ namespace CraftopiaDiagnostic
                 "Loaded data snapshot, not complete accessibility proof.",
                 "Rank/rarity are raw data, not assigned progression tiers.",
                 "Craft bench map keys are raw IDs; station mapping still needs confirmation.",
-                "No world, character, network credentials, or inventory contents collected."
+                "This progression subsection excludes character identities, credentials and inventory contents; world-object evidence is in world_evidence."
             };
             try
             {

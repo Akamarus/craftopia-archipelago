@@ -1,0 +1,2217 @@
+{
+  "capture": "evidence/milestones-20261016/craftopia_diag_20261016_181842_9364a392874f467b9334b501b2962ae0.json",
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "scope": "Loaded tower definitions, all captured age rows, raw age_new_items lists. No GUIDs, player identity, inventory or credentials.",
+  "towers": [
+    {
+      "item_id": 3806,
+      "name": "Geezah Plateau Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 698,
+              "name": "Stone",
+              "count": 50
+            },
+            {
+              "item_id": 752,
+              "name": "Sand",
+              "count": 10
+            },
+            {
+              "item_id": 746,
+              "name": "Log",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3400,
+              "name": "Old Rag",
+              "count": 10
+            },
+            {
+              "item_id": 758,
+              "name": "Sheep Wool",
+              "count": 10
+            },
+            {
+              "item_id": 683,
+              "name": "Leather",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 699,
+              "name": "Copper Ore",
+              "count": 20
+            },
+            {
+              "item_id": 5123,
+              "name": "Small Placeable Torch",
+              "count": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3807,
+      "name": "Millewind Hill Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 2457,
+              "name": "Paper",
+              "count": 20
+            },
+            {
+              "item_id": 2458,
+              "name": "Grease",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 2100,
+              "name": "Battery",
+              "count": 20
+            },
+            {
+              "item_id": 2452,
+              "name": "Bioethanol",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 2451,
+              "name": "Cogwheel",
+              "count": 20
+            },
+            {
+              "item_id": 3468,
+              "name": "Bolt",
+              "count": 20
+            },
+            {
+              "item_id": 3469,
+              "name": "Spring",
+              "count": 20
+            },
+            {
+              "item_id": 3470,
+              "name": "Ceramic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3808,
+      "name": "Yarden Meadow's Mountain Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 701,
+              "name": "Silver Ore",
+              "count": 50
+            },
+            {
+              "item_id": 749,
+              "name": "Charcoal",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 680,
+              "name": "Fang",
+              "count": 10
+            },
+            {
+              "item_id": 692,
+              "name": "Bird Feather",
+              "count": 10
+            },
+            {
+              "item_id": 695,
+              "name": "Bone",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 2453,
+              "name": "Crystal",
+              "count": 20
+            },
+            {
+              "item_id": 763,
+              "name": "Sulfur",
+              "count": 20
+            },
+            {
+              "item_id": 2460,
+              "name": "Elemental Dust",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3809,
+      "name": "Yarden Meadow's Ruin Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 713,
+              "name": "Silver Ingot",
+              "count": 30
+            },
+            {
+              "item_id": 2455,
+              "name": "Rubber",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3373,
+              "name": "Scrap Parts",
+              "count": 10
+            },
+            {
+              "item_id": 769,
+              "name": "Glass",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 764,
+              "name": "Black Gunpowder",
+              "count": 20
+            },
+            {
+              "item_id": 3466,
+              "name": "Electronic Circuit",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3810,
+      "name": "Owatatsu Archipelago Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 714,
+              "name": "Gold Ingot",
+              "count": 20
+            },
+            {
+              "item_id": 3402,
+              "name": "Linen Wool",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 723,
+              "name": "Bright Red Herb",
+              "count": 5
+            },
+            {
+              "item_id": 735,
+              "name": "Ultramarine Herb",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3463,
+              "name": "High Capacity Battery",
+              "count": 20
+            },
+            {
+              "item_id": 3464,
+              "name": "Engine Parts",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3811,
+      "name": "Brigandine Valley Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 723,
+              "name": "Bright Red Herb",
+              "count": 10
+            },
+            {
+              "item_id": 735,
+              "name": "Ultramarine Herb",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3464,
+              "name": "Engine Parts",
+              "count": 20
+            },
+            {
+              "item_id": 3465,
+              "name": "Fuel Tank",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 5305,
+              "name": "Steel Pillar",
+              "count": 20
+            },
+            {
+              "item_id": 2459,
+              "name": "Bioplastic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3812,
+      "name": "Sherbert Iceberg Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 715,
+              "name": "Platinum Ingot",
+              "count": 50
+            },
+            {
+              "item_id": 5565,
+              "name": "Holy Water",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 684,
+              "name": "Rare Leather",
+              "count": 10
+            },
+            {
+              "item_id": 693,
+              "name": "Rare Bird Feather",
+              "count": 10
+            },
+            {
+              "item_id": 759,
+              "name": "Fluffy Sheep Wool",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3467,
+              "name": "Armor Plate",
+              "count": 10
+            },
+            {
+              "item_id": 5145,
+              "name": "Sanctuary Flag",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3813,
+      "name": "Unnefell Desert Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 716,
+              "name": "Adamantite Ingot",
+              "count": 50
+            },
+            {
+              "item_id": 3474,
+              "name": "Special Cement",
+              "count": 30
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3477,
+              "name": "Light Weight Frame",
+              "count": 20
+            },
+            {
+              "item_id": 3475,
+              "name": "Light Weight Steel Frame",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3403,
+              "name": "Felt Cloth",
+              "count": 20
+            },
+            {
+              "item_id": 3479,
+              "name": "Reinforced Plastic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3814,
+      "name": "Miasma Wetlands Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 3450,
+              "name": "Clay",
+              "count": 50
+            },
+            {
+              "item_id": 3468,
+              "name": "Bolt",
+              "count": 100
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3457,
+              "name": "Paint",
+              "count": 30
+            },
+            {
+              "item_id": 3471,
+              "name": "Chemicals",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3480,
+              "name": "Rare Scrap Parts",
+              "count": 10
+            },
+            {
+              "item_id": 3481,
+              "name": "High Performance Electronic Circuit",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3815,
+      "name": "Inferno Volcano Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 718,
+              "name": "High Mithril Ingot",
+              "count": 100
+            },
+            {
+              "item_id": 3360,
+              "name": "Hell Pepper",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 761,
+              "name": "Crude Oil",
+              "count": 100
+            },
+            {
+              "item_id": 771,
+              "name": "Fortified Glass",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3474,
+              "name": "Special Cement",
+              "count": 150
+            },
+            {
+              "item_id": 3355,
+              "name": "Reaper's Spirit Scale",
+              "count": 10
+            },
+            {
+              "item_id": 1502,
+              "name": "Captured Anubis",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "age_transitions": [
+    {
+      "from_world_level": 0,
+      "to_world_level": 1,
+      "displayed_age_from": 1,
+      "displayed_age_to": 2,
+      "gold": 0,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6575,
+          "name": "Clover",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6576,
+          "name": "Plateau Moonstone",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6577,
+          "name": "Ironwood",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6578,
+          "name": "Plateau Ancient Doll Fragment",
+          "count": 1,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 45,
+          "name": "Copper One-Handed Sword"
+        },
+        {
+          "item_id": 57,
+          "name": "Copper Pickaxe"
+        },
+        {
+          "item_id": 69,
+          "name": "Copper Axe"
+        },
+        {
+          "item_id": 272,
+          "name": "Blacksmith"
+        },
+        {
+          "item_id": 356,
+          "name": "Stone Furnace"
+        },
+        {
+          "item_id": 275,
+          "name": "Armory"
+        },
+        {
+          "item_id": 296,
+          "name": "Wheat Field"
+        },
+        {
+          "item_id": 248,
+          "name": "Cooking Pot"
+        },
+        {
+          "item_id": 2123,
+          "name": "Wooden Fishing Rod"
+        }
+      ]
+    },
+    {
+      "from_world_level": 1,
+      "to_world_level": 2,
+      "displayed_age_from": 2,
+      "displayed_age_to": 3,
+      "gold": 500,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6575,
+          "name": "Clover",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6576,
+          "name": "Plateau Moonstone",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6577,
+          "name": "Ironwood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6578,
+          "name": "Plateau Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 46,
+          "name": "Iron One-Handed Sword"
+        },
+        {
+          "item_id": 58,
+          "name": "Iron Pickaxe"
+        },
+        {
+          "item_id": 70,
+          "name": "Iron Axe"
+        },
+        {
+          "item_id": 212,
+          "name": "Potion Brewing Stand"
+        },
+        {
+          "item_id": 395,
+          "name": "Enchanting Table"
+        },
+        {
+          "item_id": 428,
+          "name": "Refinery"
+        },
+        {
+          "item_id": 644,
+          "name": "Conveyor Belt"
+        },
+        {
+          "item_id": 2000,
+          "name": "Generator (Small)"
+        },
+        {
+          "item_id": 776,
+          "name": "Steel Chest"
+        }
+      ]
+    },
+    {
+      "from_world_level": 2,
+      "to_world_level": 3,
+      "displayed_age_from": 3,
+      "displayed_age_to": 4,
+      "gold": 2500,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6580,
+          "name": "Mandragora",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6581,
+          "name": "Emerald of Hills",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6582,
+          "name": "Ancient Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6583,
+          "name": "Hills Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 105,
+          "name": "Flintlock Revolver"
+        },
+        {
+          "item_id": 5830,
+          "name": "Grenade"
+        },
+        {
+          "item_id": 1403,
+          "name": "Hoverboard"
+        },
+        {
+          "item_id": 1915,
+          "name": "Container"
+        },
+        {
+          "item_id": 209,
+          "name": "Machine Factory"
+        },
+        {
+          "item_id": 464,
+          "name": "Rotating Saws"
+        },
+        {
+          "item_id": 476,
+          "name": "Excavator"
+        },
+        {
+          "item_id": 1952,
+          "name": "Drone for Shooting"
+        },
+        {
+          "item_id": 3604,
+          "name": "Small Cure Life Potion"
+        }
+      ]
+    },
+    {
+      "from_world_level": 3,
+      "to_world_level": 4,
+      "displayed_age_from": 4,
+      "displayed_age_to": 5,
+      "gold": 20000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6585,
+          "name": "Carnivorous Plant",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6586,
+          "name": "Alexandrite of Meadow",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6587,
+          "name": "Petrified Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6588,
+          "name": "Meadow Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 107,
+          "name": "Rifle I"
+        },
+        {
+          "item_id": 3181,
+          "name": "Poisonous Arrow"
+        },
+        {
+          "item_id": 1404,
+          "name": "Motorcycle"
+        },
+        {
+          "item_id": 777,
+          "name": "Cemented Carbide Chest"
+        },
+        {
+          "item_id": 201,
+          "name": "Improved Workbench"
+        },
+        {
+          "item_id": 1992,
+          "name": "Pipeline (Relay)"
+        },
+        {
+          "item_id": 3227,
+          "name": "Bank"
+        },
+        {
+          "item_id": 1916,
+          "name": "Automatic Assembly Machine"
+        },
+        {
+          "item_id": 1401,
+          "name": "Hot Air Balloon"
+        }
+      ]
+    },
+    {
+      "from_world_level": 4,
+      "to_world_level": 5,
+      "displayed_age_from": 5,
+      "displayed_age_to": 6,
+      "gold": 50000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6590,
+          "name": "Thunder Flower",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6591,
+          "name": "Morganite of Archipelago",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6592,
+          "name": "Bamboo",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6593,
+          "name": "Archipelago Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6595,
+          "name": "Suspicious Pumpkin",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6596,
+          "name": "Topaz of Valley",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6597,
+          "name": "Mushroom Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6598,
+          "name": "Valley Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 781,
+          "name": "Cloud Storage"
+        },
+        {
+          "item_id": 1405,
+          "name": "Buggy"
+        },
+        {
+          "item_id": 1409,
+          "name": "Fishing Boat"
+        },
+        {
+          "item_id": 273,
+          "name": "Skilled Blacksmith"
+        },
+        {
+          "item_id": 276,
+          "name": "Skilled Armory"
+        },
+        {
+          "item_id": 357,
+          "name": "Skilled Furnace"
+        },
+        {
+          "item_id": 333,
+          "name": "Water Purification Facility"
+        },
+        {
+          "item_id": 645,
+          "name": "High-Speed Conveyor Belt"
+        },
+        {
+          "item_id": 5832,
+          "name": "Flash Grenade"
+        }
+      ]
+    },
+    {
+      "from_world_level": 5,
+      "to_world_level": 6,
+      "displayed_age_from": 6,
+      "displayed_age_to": 7,
+      "gold": 200000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 3445,
+          "name": "Snow Mint",
+          "count": 10,
+          "status": 1
+        },
+        {
+          "item_id": 6601,
+          "name": "Aquamarine of Iceberg",
+          "count": 25,
+          "status": 1
+        },
+        {
+          "item_id": 6602,
+          "name": "Frozen Wood",
+          "count": 25,
+          "status": 1
+        },
+        {
+          "item_id": 6603,
+          "name": "Iceberg Ancient Doll Fragment",
+          "count": 10,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 210,
+          "name": "Skilled Machine Factory"
+        },
+        {
+          "item_id": 3198,
+          "name": "Gravity Glove"
+        },
+        {
+          "item_id": 5596,
+          "name": "Artificial Bedrock of Sand"
+        },
+        {
+          "item_id": 145,
+          "name": "Type 2 Mechanical Wings"
+        },
+        {
+          "item_id": 465,
+          "name": "Brainy Rotating Saws"
+        },
+        {
+          "item_id": 3515,
+          "name": "Chain Restraint Bullet"
+        },
+        {
+          "item_id": 778,
+          "name": "Adamantite Chest"
+        },
+        {
+          "item_id": 1970,
+          "name": "Large Capacity Container"
+        },
+        {
+          "item_id": 2001,
+          "name": "Thermal Power Plant"
+        }
+      ]
+    },
+    {
+      "from_world_level": 6,
+      "to_world_level": 7,
+      "displayed_age_from": 7,
+      "displayed_age_to": 8,
+      "gold": 1000000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6605,
+          "name": "Man-Eating Cactus",
+          "count": 15,
+          "status": 2
+        },
+        {
+          "item_id": 6606,
+          "name": "Rubellite",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6607,
+          "name": "Baobab",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6608,
+          "name": "Desert Ancient Doll Fragment",
+          "count": 15,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 51,
+          "name": "Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 63,
+          "name": "Mithril Pickaxe"
+        },
+        {
+          "item_id": 75,
+          "name": "Mithril Axe"
+        },
+        {
+          "item_id": 294,
+          "name": "Clone Breeding Facility"
+        },
+        {
+          "item_id": 1416,
+          "name": "Combat Helicopter"
+        },
+        {
+          "item_id": 1432,
+          "name": "Torpedo Boat"
+        },
+        {
+          "item_id": 1433,
+          "name": "CRFT-01(P)"
+        },
+        {
+          "item_id": 1993,
+          "name": "Sonic Pipeline"
+        },
+        {
+          "item_id": 3820,
+          "name": "Portable Portal"
+        }
+      ]
+    },
+    {
+      "from_world_level": 7,
+      "to_world_level": 8,
+      "displayed_age_from": 8,
+      "displayed_age_to": 9,
+      "gold": 2500000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6610,
+          "name": "Haunted Mushroom",
+          "count": 20,
+          "status": 2
+        },
+        {
+          "item_id": 6611,
+          "name": "Rose Quartz",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6612,
+          "name": "Mushroom Wood",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6613,
+          "name": "Wetlands Ancient Doll Fragment",
+          "count": 20,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 52,
+          "name": "High Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 64,
+          "name": "High Mithril Pickaxe"
+        },
+        {
+          "item_id": 76,
+          "name": "High Mithril Axe"
+        },
+        {
+          "item_id": 202,
+          "name": "Innovative Workbench"
+        },
+        {
+          "item_id": 430,
+          "name": "Master Refinery"
+        },
+        {
+          "item_id": 1658,
+          "name": "Captured Mini Inferno Whale"
+        },
+        {
+          "item_id": 1435,
+          "name": "Fish-shaped Missile"
+        },
+        {
+          "item_id": 2901,
+          "name": "Devil Wings"
+        },
+        {
+          "item_id": 1995,
+          "name": "Sorting Pipe"
+        }
+      ]
+    },
+    {
+      "from_world_level": 8,
+      "to_world_level": 9,
+      "displayed_age_from": 9,
+      "displayed_age_to": 10,
+      "gold": 5000000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6615,
+          "name": "Fire Grass",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6616,
+          "name": "Garnet",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6617,
+          "name": "Lava Wood",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6618,
+          "name": "Volcano Ancient Doll Fragment",
+          "count": 30,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 53,
+          "name": "Orichalcum One-Handed Sword"
+        },
+        {
+          "item_id": 65,
+          "name": "Orichalcum Pickaxe"
+        },
+        {
+          "item_id": 77,
+          "name": "Orichalcum Axe"
+        },
+        {
+          "item_id": 197,
+          "name": "Energy Bullet"
+        },
+        {
+          "item_id": 3521,
+          "name": "Trader's Table"
+        },
+        {
+          "item_id": 3211,
+          "name": "Vacuum Cleaner"
+        },
+        {
+          "item_id": 1963,
+          "name": "Latest Automatic Furnace"
+        },
+        {
+          "item_id": 2519,
+          "name": "High Dragon Mail for Men"
+        },
+        {
+          "item_id": 2906,
+          "name": "Goddess Wings"
+        }
+      ]
+    }
+  ],
+  "age_new_items": [
+    {
+      "world_level": 0,
+      "displayed_age": 1,
+      "items": [
+        {
+          "item_id": 44,
+          "name": "Stone One-Handed Sword"
+        },
+        {
+          "item_id": 56,
+          "name": "Stone Pickaxe"
+        },
+        {
+          "item_id": 68,
+          "name": "Stone Axe"
+        },
+        {
+          "item_id": 92,
+          "name": "Branch Bow"
+        },
+        {
+          "item_id": 116,
+          "name": "Wooden Shield"
+        },
+        {
+          "item_id": 141,
+          "name": "Handmade Glider"
+        },
+        {
+          "item_id": 152,
+          "name": "Stone Ring"
+        },
+        {
+          "item_id": 164,
+          "name": "Stone Amulet"
+        },
+        {
+          "item_id": 181,
+          "name": "Branch Arrow"
+        },
+        {
+          "item_id": 200,
+          "name": "Workbench"
+        },
+        {
+          "item_id": 404,
+          "name": "Campfire"
+        },
+        {
+          "item_id": 500,
+          "name": "Market"
+        },
+        {
+          "item_id": 752,
+          "name": "Sand"
+        },
+        {
+          "item_id": 772,
+          "name": "Wooden Wall"
+        },
+        {
+          "item_id": 773,
+          "name": "Wooden Floor"
+        },
+        {
+          "item_id": 774,
+          "name": "Wooden Slope"
+        },
+        {
+          "item_id": 775,
+          "name": "Chest"
+        },
+        {
+          "item_id": 788,
+          "name": "One-Handed Torch"
+        },
+        {
+          "item_id": 817,
+          "name": "Monster Prism"
+        }
+      ]
+    },
+    {
+      "world_level": 1,
+      "displayed_age": 2,
+      "items": [
+        {
+          "item_id": 45,
+          "name": "Copper One-Handed Sword"
+        },
+        {
+          "item_id": 57,
+          "name": "Copper Pickaxe"
+        },
+        {
+          "item_id": 69,
+          "name": "Copper Axe"
+        },
+        {
+          "item_id": 81,
+          "name": "Copper Two-Handed Sword"
+        },
+        {
+          "item_id": 93,
+          "name": "Copper Bow"
+        },
+        {
+          "item_id": 117,
+          "name": "Copper Shield"
+        },
+        {
+          "item_id": 129,
+          "name": "Copper Hat"
+        },
+        {
+          "item_id": 153,
+          "name": "Copper Ring"
+        },
+        {
+          "item_id": 165,
+          "name": "Copper Amulet"
+        },
+        {
+          "item_id": 176,
+          "name": "Wooden Arrow"
+        },
+        {
+          "item_id": 206,
+          "name": "Furniture Workbench"
+        },
+        {
+          "item_id": 212,
+          "name": "Potion Brewing Stand"
+        },
+        {
+          "item_id": 248,
+          "name": "Cooking Pot"
+        },
+        {
+          "item_id": 272,
+          "name": "Blacksmith"
+        },
+        {
+          "item_id": 275,
+          "name": "Armory"
+        },
+        {
+          "item_id": 296,
+          "name": "Wheat Field"
+        },
+        {
+          "item_id": 314,
+          "name": "Planter"
+        },
+        {
+          "item_id": 332,
+          "name": "Well"
+        },
+        {
+          "item_id": 356,
+          "name": "Stone Furnace"
+        },
+        {
+          "item_id": 572,
+          "name": "Billboard"
+        },
+        {
+          "item_id": 602,
+          "name": "Training Dummy"
+        },
+        {
+          "item_id": 711,
+          "name": "Copper Ingot"
+        },
+        {
+          "item_id": 725,
+          "name": "Small Life Potion"
+        },
+        {
+          "item_id": 737,
+          "name": "Small Mana Potion"
+        },
+        {
+          "item_id": 749,
+          "name": "Charcoal"
+        },
+        {
+          "item_id": 769,
+          "name": "Glass"
+        },
+        {
+          "item_id": 787,
+          "name": "Two-Handed Torch"
+        },
+        {
+          "item_id": 811,
+          "name": "Water"
+        }
+      ]
+    },
+    {
+      "world_level": 2,
+      "displayed_age": 3,
+      "items": [
+        {
+          "item_id": 31,
+          "name": "Farming Hoe"
+        },
+        {
+          "item_id": 46,
+          "name": "Iron One-Handed Sword"
+        },
+        {
+          "item_id": 58,
+          "name": "Iron Pickaxe"
+        },
+        {
+          "item_id": 70,
+          "name": "Iron Axe"
+        },
+        {
+          "item_id": 82,
+          "name": "Iron Two-Handed Sword"
+        },
+        {
+          "item_id": 94,
+          "name": "Iron Bow"
+        },
+        {
+          "item_id": 104,
+          "name": "Flintlock Carbine"
+        },
+        {
+          "item_id": 118,
+          "name": "Iron Shield"
+        },
+        {
+          "item_id": 142,
+          "name": "Beast Glider"
+        },
+        {
+          "item_id": 154,
+          "name": "Iron Ring"
+        },
+        {
+          "item_id": 166,
+          "name": "Iron Amulet"
+        },
+        {
+          "item_id": 177,
+          "name": "Iron Arrow"
+        },
+        {
+          "item_id": 188,
+          "name": "Old-model Gun Bullet"
+        },
+        {
+          "item_id": 284,
+          "name": "Livestock Farm"
+        },
+        {
+          "item_id": 395,
+          "name": "Enchanting Table"
+        },
+        {
+          "item_id": 416,
+          "name": "Aging Facility"
+        },
+        {
+          "item_id": 428,
+          "name": "Refinery"
+        },
+        {
+          "item_id": 432,
+          "name": "Refining Scrap Bench"
+        },
+        {
+          "item_id": 468,
+          "name": "Sprinkler Robot"
+        },
+        {
+          "item_id": 469,
+          "name": "Brainy Sprinker Robot"
+        },
+        {
+          "item_id": 473,
+          "name": "Reaping Machine"
+        },
+        {
+          "item_id": 603,
+          "name": "Firecracker"
+        },
+        {
+          "item_id": 632,
+          "name": "Canon (45 degrees)"
+        },
+        {
+          "item_id": 644,
+          "name": "Conveyor Belt"
+        },
+        {
+          "item_id": 712,
+          "name": "Iron Ingot"
+        },
+        {
+          "item_id": 764,
+          "name": "Black Gunpowder"
+        },
+        {
+          "item_id": 776,
+          "name": "Steel Chest"
+        },
+        {
+          "item_id": 782,
+          "name": "Inter-character Cloud Storage"
+        },
+        {
+          "item_id": 789,
+          "name": "Lantern"
+        },
+        {
+          "item_id": 791,
+          "name": "Blue Mono Lantern"
+        },
+        {
+          "item_id": 792,
+          "name": "Green Mono Lantern"
+        },
+        {
+          "item_id": 793,
+          "name": "Redd Mono Lantern"
+        },
+        {
+          "item_id": 794,
+          "name": "Yellow Mono Lantern"
+        },
+        {
+          "item_id": 795,
+          "name": "White Mono Lantern"
+        },
+        {
+          "item_id": 796,
+          "name": "Purple Mono Lantern"
+        }
+      ]
+    },
+    {
+      "world_level": 3,
+      "displayed_age": 4,
+      "items": [
+        {
+          "item_id": 47,
+          "name": "Silver One-Handed Sword"
+        },
+        {
+          "item_id": 59,
+          "name": "Silver Pickaxe"
+        },
+        {
+          "item_id": 71,
+          "name": "Silver Axe"
+        },
+        {
+          "item_id": 83,
+          "name": "Silver Two-Handed Sword"
+        },
+        {
+          "item_id": 95,
+          "name": "Silver Bow"
+        },
+        {
+          "item_id": 105,
+          "name": "Flintlock Revolver"
+        },
+        {
+          "item_id": 119,
+          "name": "Silver Shield"
+        },
+        {
+          "item_id": 143,
+          "name": "Bard Glider"
+        },
+        {
+          "item_id": 155,
+          "name": "Silver Ring"
+        },
+        {
+          "item_id": 167,
+          "name": "Silver Amulet"
+        },
+        {
+          "item_id": 178,
+          "name": "Silver Arrow"
+        },
+        {
+          "item_id": 182,
+          "name": "Fire Arrow"
+        },
+        {
+          "item_id": 209,
+          "name": "Machine Factory"
+        },
+        {
+          "item_id": 293,
+          "name": "Breeding Facility"
+        },
+        {
+          "item_id": 335,
+          "name": "Crab Pot"
+        },
+        {
+          "item_id": 464,
+          "name": "Rotating Saws"
+        },
+        {
+          "item_id": 470,
+          "name": "Seeds Planting Robot"
+        },
+        {
+          "item_id": 476,
+          "name": "Excavator"
+        },
+        {
+          "item_id": 576,
+          "name": "Item Frame"
+        },
+        {
+          "item_id": 577,
+          "name": "Medieval Item Frame A"
+        },
+        {
+          "item_id": 578,
+          "name": "Medieval Item Frame B"
+        },
+        {
+          "item_id": 596,
+          "name": "Explosive Barrel"
+        },
+        {
+          "item_id": 713,
+          "name": "Silver Ingot"
+        },
+        {
+          "item_id": 726,
+          "name": "Medium Life Potion"
+        },
+        {
+          "item_id": 738,
+          "name": "Medium Mana Potion"
+        }
+      ]
+    },
+    {
+      "world_level": 4,
+      "displayed_age": 5,
+      "items": [
+        {
+          "item_id": 48,
+          "name": "Gold One-Handed Sword"
+        },
+        {
+          "item_id": 60,
+          "name": "Gold Pickaxe"
+        },
+        {
+          "item_id": 72,
+          "name": "Gold Axe"
+        },
+        {
+          "item_id": 84,
+          "name": "Gold Two-Handed Sword"
+        },
+        {
+          "item_id": 96,
+          "name": "Gold Bow"
+        },
+        {
+          "item_id": 107,
+          "name": "Rifle I"
+        },
+        {
+          "item_id": 109,
+          "name": "Submachine Gun I"
+        },
+        {
+          "item_id": 110,
+          "name": "Assault Rifle I"
+        },
+        {
+          "item_id": 114,
+          "name": "Shotgun I"
+        },
+        {
+          "item_id": 120,
+          "name": "Gold Shield"
+        },
+        {
+          "item_id": 144,
+          "name": "Ancient Glider"
+        },
+        {
+          "item_id": 156,
+          "name": "Gold Ring"
+        },
+        {
+          "item_id": 168,
+          "name": "Gold Amulet"
+        },
+        {
+          "item_id": 179,
+          "name": "Gold Arrow"
+        },
+        {
+          "item_id": 190,
+          "name": "Rifle Bullet"
+        },
+        {
+          "item_id": 191,
+          "name": "Assault Rifle Bullet"
+        },
+        {
+          "item_id": 192,
+          "name": "Shotgun Bullet"
+        },
+        {
+          "item_id": 193,
+          "name": "SMG Bullet"
+        },
+        {
+          "item_id": 201,
+          "name": "Improved Workbench"
+        },
+        {
+          "item_id": 315,
+          "name": "Medium Sized Planter"
+        },
+        {
+          "item_id": 471,
+          "name": "Agricultural Robot"
+        },
+        {
+          "item_id": 501,
+          "name": "Vigorous Market"
+        },
+        {
+          "item_id": 579,
+          "name": "Semi-transparent Sticker Type Tiny Item Stand"
+        },
+        {
+          "item_id": 580,
+          "name": "Wall-mounted Billboard"
+        },
+        {
+          "item_id": 599,
+          "name": "Punching Bag"
+        },
+        {
+          "item_id": 650,
+          "name": "Sorting Machine"
+        },
+        {
+          "item_id": 652,
+          "name": "Distributor"
+        },
+        {
+          "item_id": 656,
+          "name": "Prototype Rocket"
+        },
+        {
+          "item_id": 714,
+          "name": "Gold Ingot"
+        },
+        {
+          "item_id": 777,
+          "name": "Cemented Carbide Chest"
+        }
+      ]
+    },
+    {
+      "world_level": 5,
+      "displayed_age": 6,
+      "items": [
+        {
+          "item_id": 49,
+          "name": "Platinum One-Handed Sword"
+        },
+        {
+          "item_id": 61,
+          "name": "Platinum Pickaxe"
+        },
+        {
+          "item_id": 73,
+          "name": "Platinum Axe"
+        },
+        {
+          "item_id": 85,
+          "name": "Platinum Two-Handed Sword"
+        },
+        {
+          "item_id": 97,
+          "name": "Platinum Bow"
+        },
+        {
+          "item_id": 121,
+          "name": "Platinum Shield"
+        },
+        {
+          "item_id": 157,
+          "name": "Platinum Ring"
+        },
+        {
+          "item_id": 169,
+          "name": "Platinum Amulet"
+        },
+        {
+          "item_id": 180,
+          "name": "Platinum Arrow"
+        },
+        {
+          "item_id": 210,
+          "name": "Skilled Machine Factory"
+        },
+        {
+          "item_id": 273,
+          "name": "Skilled Blacksmith"
+        },
+        {
+          "item_id": 276,
+          "name": "Skilled Armory"
+        },
+        {
+          "item_id": 333,
+          "name": "Water Purification Facility"
+        },
+        {
+          "item_id": 338,
+          "name": "Fish Farm"
+        },
+        {
+          "item_id": 357,
+          "name": "Skilled Furnace"
+        },
+        {
+          "item_id": 429,
+          "name": "Skilled Refinery"
+        },
+        {
+          "item_id": 472,
+          "name": "Automated Robot"
+        },
+        {
+          "item_id": 645,
+          "name": "High-Speed Conveyor Belt"
+        },
+        {
+          "item_id": 647,
+          "name": "Dashboard"
+        },
+        {
+          "item_id": 651,
+          "name": "3-way Sorting Machine"
+        },
+        {
+          "item_id": 653,
+          "name": "3-way Distributor"
+        },
+        {
+          "item_id": 715,
+          "name": "Platinum Ingot"
+        },
+        {
+          "item_id": 765,
+          "name": "TNT"
+        },
+        {
+          "item_id": 781,
+          "name": "Cloud Storage"
+        }
+      ]
+    },
+    {
+      "world_level": 6,
+      "displayed_age": 7,
+      "items": [
+        {
+          "item_id": 50,
+          "name": "Adamantite One-Handed Sword"
+        },
+        {
+          "item_id": 62,
+          "name": "Adamantite Pickaxe"
+        },
+        {
+          "item_id": 74,
+          "name": "Adamantite Axe"
+        },
+        {
+          "item_id": 86,
+          "name": "Adamantite Two-Handed Sword"
+        },
+        {
+          "item_id": 98,
+          "name": "Adamantite Bow"
+        },
+        {
+          "item_id": 122,
+          "name": "Adamantite Shield"
+        },
+        {
+          "item_id": 145,
+          "name": "Type 2 Mechanical Wings"
+        },
+        {
+          "item_id": 158,
+          "name": "Adamantite Ring"
+        },
+        {
+          "item_id": 170,
+          "name": "Adamantite Amulet"
+        },
+        {
+          "item_id": 183,
+          "name": "Adamantite Arrow"
+        },
+        {
+          "item_id": 215,
+          "name": "Chemistry Lab Table"
+        },
+        {
+          "item_id": 465,
+          "name": "Brainy Rotating Saws"
+        },
+        {
+          "item_id": 467,
+          "name": "Massacre Drone"
+        },
+        {
+          "item_id": 716,
+          "name": "Adamantite Ingot"
+        },
+        {
+          "item_id": 778,
+          "name": "Adamantite Chest"
+        },
+        {
+          "item_id": 799,
+          "name": "Jetpack"
+        },
+        {
+          "item_id": 810,
+          "name": "Jet Fuel"
+        }
+      ]
+    },
+    {
+      "world_level": 7,
+      "displayed_age": 8,
+      "items": [
+        {
+          "item_id": 51,
+          "name": "Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 63,
+          "name": "Mithril Pickaxe"
+        },
+        {
+          "item_id": 75,
+          "name": "Mithril Axe"
+        },
+        {
+          "item_id": 87,
+          "name": "Mithril Two-Handed Sword"
+        },
+        {
+          "item_id": 99,
+          "name": "Mithril Bow"
+        },
+        {
+          "item_id": 123,
+          "name": "Mithril Shield"
+        },
+        {
+          "item_id": 159,
+          "name": "Mithril Ring"
+        },
+        {
+          "item_id": 171,
+          "name": "Mithril Amulet"
+        },
+        {
+          "item_id": 184,
+          "name": "Mithril Arrow"
+        },
+        {
+          "item_id": 202,
+          "name": "Innovative Workbench"
+        },
+        {
+          "item_id": 211,
+          "name": "Master Machine Factory"
+        },
+        {
+          "item_id": 213,
+          "name": "Skilled Potion Brewing Stand"
+        },
+        {
+          "item_id": 224,
+          "name": "Alchemy Cauldron"
+        },
+        {
+          "item_id": 249,
+          "name": "Top Grade Cooking Pot"
+        },
+        {
+          "item_id": 274,
+          "name": "Master Blacksmith"
+        },
+        {
+          "item_id": 277,
+          "name": "Master Armory"
+        },
+        {
+          "item_id": 294,
+          "name": "Clone Breeding Facility"
+        },
+        {
+          "item_id": 358,
+          "name": "Master Furnace"
+        },
+        {
+          "item_id": 502,
+          "name": "Global Market"
+        },
+        {
+          "item_id": 717,
+          "name": "Mithril Ingot"
+        },
+        {
+          "item_id": 727,
+          "name": "Large Life Potion"
+        },
+        {
+          "item_id": 739,
+          "name": "Large Mana Potion"
+        },
+        {
+          "item_id": 771,
+          "name": "Fortified Glass"
+        },
+        {
+          "item_id": 800,
+          "name": "High Performance Jetpack"
+        }
+      ]
+    },
+    {
+      "world_level": 8,
+      "displayed_age": 9,
+      "items": [
+        {
+          "item_id": 52,
+          "name": "High Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 64,
+          "name": "High Mithril Pickaxe"
+        },
+        {
+          "item_id": 76,
+          "name": "High Mithril Axe"
+        },
+        {
+          "item_id": 88,
+          "name": "High Mithril Two-Handed Sword"
+        },
+        {
+          "item_id": 100,
+          "name": "High Mithril Bow"
+        },
+        {
+          "item_id": 124,
+          "name": "High Mithril Shield"
+        },
+        {
+          "item_id": 160,
+          "name": "High Mithril Ring"
+        },
+        {
+          "item_id": 172,
+          "name": "High Mithril Amulet"
+        },
+        {
+          "item_id": 185,
+          "name": "High Mithril Arrow"
+        },
+        {
+          "item_id": 221,
+          "name": "Landscaping Workbench"
+        },
+        {
+          "item_id": 430,
+          "name": "Master Refinery"
+        },
+        {
+          "item_id": 482,
+          "name": "Raid Support Camp"
+        },
+        {
+          "item_id": 483,
+          "name": "Monster Merging Facility"
+        },
+        {
+          "item_id": 484,
+          "name": "Supply Group Chest"
+        },
+        {
+          "item_id": 611,
+          "name": "Guard Machinegun Turret Lv50"
+        },
+        {
+          "item_id": 718,
+          "name": "High Mithril Ingot"
+        },
+        {
+          "item_id": 779,
+          "name": "High Mithril Chest"
+        }
+      ]
+    },
+    {
+      "world_level": 9,
+      "displayed_age": 10,
+      "items": [
+        {
+          "item_id": 53,
+          "name": "Orichalcum One-Handed Sword"
+        },
+        {
+          "item_id": 65,
+          "name": "Orichalcum Pickaxe"
+        },
+        {
+          "item_id": 77,
+          "name": "Orichalcum Axe"
+        },
+        {
+          "item_id": 89,
+          "name": "Orichalcum Two-Handed Sword"
+        },
+        {
+          "item_id": 101,
+          "name": "Orichalcum Bow"
+        },
+        {
+          "item_id": 125,
+          "name": "Orichalcum Shield"
+        },
+        {
+          "item_id": 161,
+          "name": "Orichalcum Ring"
+        },
+        {
+          "item_id": 173,
+          "name": "Orichalcum Amulet"
+        },
+        {
+          "item_id": 186,
+          "name": "Orichalcum Arrow"
+        },
+        {
+          "item_id": 197,
+          "name": "Energy Bullet"
+        },
+        {
+          "item_id": 481,
+          "name": "Altar of Creation"
+        },
+        {
+          "item_id": 719,
+          "name": "Orichalcum Ingot"
+        }
+      ]
+    }
+  ]
+}

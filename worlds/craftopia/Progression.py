@@ -15,9 +15,12 @@ def load_reviewed_profile():
 
 
 class ProgressionModel:
-    def __init__(self, profile, known_items):
+    def __init__(self, profile, known_items, *, allow_experimental=False):
         if (not isinstance(profile, dict) or type(profile.get('schema')) is not int
-                or profile['schema'] != 1 or profile.get('reviewed') is not True
+                or profile['schema'] != 1
+                or not (profile.get('reviewed') is True or
+                        (allow_experimental and profile.get('reviewed') is False
+                         and profile.get('experimental') is True))
                 or not isinstance(profile.get('evidence'), str)
                 or not profile['evidence'].strip()):
             raise ValueError('Progression requires a reviewed schema-1 evidence profile')

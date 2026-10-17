@@ -40,6 +40,13 @@ namespace CraftopiaArchipelago
             }
         }
 
+        internal void SendMilestoneEnrollment(int guid,long epoch,string seed,string slot) {
+            if(!IsConnected || epoch!=Interlocked.Read(ref knownEpoch) || string.IsNullOrEmpty(knownToken))return;
+            outbox.Enqueue(MiniJson.Stringify(new Dictionary<string,object> {
+                {"cmd","milestone_enrollment"},{"character_guid",guid.ToString(System.Globalization.CultureInfo.InvariantCulture)},
+                {"epoch",epoch},{"seed_name",seed},{"slot",slot},{"connection_token",knownToken},{"local_enrollment_verified",true}
+            }));
+        }
         private Thread thread;
         private volatile bool running;
         private volatile bool connected;
@@ -82,8 +89,19 @@ namespace CraftopiaArchipelago
                     MiniJson.GetLong(msg, "epoch") != Plugin.Validator.CurrentEpoch ||
                     MiniJson.GetString(msg, "slot") != Plugin.SlotName.Value ||
                     string.IsNullOrEmpty(knownToken) || MiniJson.GetString(msg, "connection_token") != knownToken) continue;
+                if (MiniJson.GetString(msg, "cmd") == "activity_snapshot") {
+                    msg.TryGetValue("received", out var received);
+                    msg.TryGetValue("sent", out var sent);
+                    msg.TryGetValue("goal_complete", out var complete);
+                    if(Plugin.StatusDisplay != null) Plugin.StatusDisplay.TotalChecks = MiniJson.GetLong(msg, "total_check_count", -1);
+                    Plugin.StatusDisplay?.SetActivity(received as List<object>, sent as List<object>,
+                        MiniJson.GetLong(msg, "checked_count"), complete is bool won && won);
+                    if (Plugin.StatusDisplay != null)
+                        Plugin.StatusDisplay.HistoryLimited = msg.TryGetValue("history_limited", out var limited) && limited is bool isLimited && isLimited;
+                    continue;
+                }
                 Plugin.StatusDisplay?.Notify("confirmed:" + knownEpoch + ":" + MiniJson.GetLong(msg, "location_id"),
-                    "Check confirmed: " + MiniJson.GetString(msg, "title"), PlayerStatusDisplay.Now);
+                    "Check completed: " + PlayerStatusDisplay.CheckLabel(MiniJson.GetString(msg, "title")), PlayerStatusDisplay.Now);
             }
         }
 
@@ -108,6 +126,29 @@ namespace CraftopiaArchipelago
                     "Check queued: " + missionTitle, PlayerStatusDisplay.Now); } catch { }
             }
             else Plugin.SafeError("[AP] observation not queued: durable journal unavailable; preserve files for review");
+        }
+
+        internal bool SendMilestoneObservation(Dictionary<string,object> message)
+        {
+            if(MiniJson.GetLong(message,"epoch")!=Interlocked.Read(ref knownEpoch) || MiniJson.GetString(message,"slot")!=Plugin.SlotName.Value) return false;
+            var text=MiniJson.Stringify(message);
+            if(observations==null || !observations.Append(text)) return false;
+            outbox.Enqueue(text); return true;
+        }
+
+        internal bool SendOrbCheck(int orb,string seed,string slot,long epoch,int guid)
+        {
+            if(guid==0 || epoch!=Interlocked.Read(ref knownEpoch) || slot!=Plugin.SlotName.Value) return false;
+            var message=MiniJson.Stringify(new Dictionary<string,object> {
+                {"cmd","check"},{"check_category","soul_orb"},{"orb_guid",(long)orb},
+                {"observation_id","orb:"+orb.ToString(System.Globalization.CultureInfo.InvariantCulture)},
+                {"seed_name",seed},{"slot",slot},{"epoch",epoch},
+                {"character_guid",guid.ToString(System.Globalization.CultureInfo.InvariantCulture)}
+            });
+            if(observations==null || !observations.Append(message)) return false;
+            outbox.Enqueue(message);
+            // Server confirmation produces the collection popup; do not show a second queued popup.
+            return true;
         }
 
         /// <summary>
@@ -157,7 +198,10 @@ namespace CraftopiaArchipelago
                             ["game"] = "Craftopia",
                             ["name"] = Plugin.SlotName.Value,
                             ["unlock_protocol"] = 2L,
-                            ["equipment_protocol"] = 1L
+                            ["equipment_protocol"] = 1L,
+                            ["equipment_protocol_max"] = 2L,
+                            ["currency_protocol"] = 1L,
+                            ["soul_orb_protocol"] = 1L
                         };
                         // Include character GUID if a character is loaded.
                         // The bridge uses this for enrollment (explicit, not automatic).
@@ -242,6 +286,7 @@ namespace CraftopiaArchipelago
             switch (cmd)
             {
                 case "check_confirmed":
+                case "activity_snapshot":
                     if (notifications.Count < 64) notifications.Enqueue(msg);
                     break;
                 case "observation_ack":
@@ -262,6 +307,9 @@ namespace CraftopiaArchipelago
                     break;
                 case "print":
                     Plugin.Log.LogInfo("[AP] " + MiniJson.GetString(msg, "text"));
+                    break;
+                case "grant_currency":
+                    CurrencyRuntime.QueueGrant(msg, ConnectionId);
                     break;
                 case "unlock_equipment":
                     Plugin.QueueUnlock(msg, ConnectionId);
@@ -308,7 +356,7 @@ namespace CraftopiaArchipelago
                 int equipmentProtocol = 0, multiplayer = 0;
                 if (msg.TryGetValue("equipment_protocol",out var ep)) equipmentProtocol = ep is long epn && epn >= 0 && epn <= int.MaxValue ? (int)epn : -1;
                 if (msg.TryGetValue("multiplayer_mode",out var mp)) multiplayer = mp is long mpn && mpn >= 0 && mpn <= int.MaxValue ? (int)mpn : -1;
-                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId, catalog, equipmentProtocol, multiplayer);
+                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId, catalog, equipmentProtocol, multiplayer, msg);
             }
             catch (Exception e)
             {

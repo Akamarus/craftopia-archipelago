@@ -24,5 +24,7 @@ class Program {
         var absent = (Dictionary<string, object>)stationMethod.Invoke(null, new object[] {new Row()});
         if (absent["item_id"] != null || absent["family_id"] != null) throw new Exception("Missing station data invented");
         Console.WriteLine("CollectorTests: field inheritance, primitive arrays, missing fields, property and object exclusion passed");
+        EvidenceTests.Run();
+        ProgressionEvidenceTests.Run(); DiscoveryCacheTests.Run(); MilestoneEvidenceTests.Run();
     }
 }

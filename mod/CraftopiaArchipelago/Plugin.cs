@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.9.4";
+        public const string VERSION = "1.12.3";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -23,6 +23,8 @@ namespace CraftopiaArchipelago
         internal static PlayerStatusDisplay StatusDisplay;
         internal static ConfigEntry<string> SlotName;
         internal static ConfigEntry<int> LocalPort;
+        private ConfigEntry<float> hudX, hudY;
+        private readonly HudDragState hudDrag = new HudDragState();
         private static EnrollmentCoordinator enrollmentCoordinator;
         private static string enrollmentStatus;
 
@@ -46,6 +48,7 @@ namespace CraftopiaArchipelago
         // Set when a validated session is established; cleared only on
         // explicit session change or recovery hold. Survives disconnects.
         private static EquipmentSession equipmentSession;
+        internal static string EquipmentCatalogIdentity => equipmentSession?.Catalog;
         internal static bool EquipmentRequired => equipmentSession != null && equipmentSession.Required;
         internal static PermissionManager EquipmentPermissions()
         {
@@ -279,6 +282,8 @@ namespace CraftopiaArchipelago
             // This enables skill-tree enforcement with the 2026-10-08 runtime IDs.
             LoadSkillCatalogFromEmbedded();
 
+            hudX = Config.Bind("Display", "HudX", 220f, "Field Guide badge horizontal position in scaled UI pixels; drag with the cursor visible.");
+            hudY = Config.Bind("Display", "HudY", 20f, "Field Guide badge vertical position in scaled UI pixels.");
             SlotName = Config.Bind("General", "SlotName", "Player1",
                 "Archipelago slot name. Must match the name in your YAML.");
             LocalPort = Config.Bind("General", "LocalPort", 11341,
@@ -457,6 +462,8 @@ namespace CraftopiaArchipelago
             catch { /* logging must never break teardown */ }
 
             if (!owner) return; // duplicate instance; the owner keeps the bridge
+            fieldGuide.Dispose();
+            CurrencyRuntime.Suspend();
             instance = null;
             try
             {
@@ -518,6 +525,9 @@ namespace CraftopiaArchipelago
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
                 ProductionHooks.Install(harmony);
                 EquipmentHooks.Install(harmony);
+                CurrencySaveObserver.Install(harmony);
+                SoulOrbHooks.Install(harmony);
+                MilestoneHooks.Install(harmony);
             }
             catch (Exception e)
             {
@@ -618,6 +628,7 @@ namespace CraftopiaArchipelago
         internal static void SafeError(string message) { try { Log?.LogError(message); } catch { } }
         internal static LoadInvocation OnLoadStart(Oc.OcPlMaster instance)
         {
+            CurrencyRuntime.Suspend();
             unlockMirror?.Suspend();
             ++loadEventCounter;
             loadCompletedFlag = false;
@@ -673,13 +684,13 @@ namespace CraftopiaArchipelago
         /// Enqueues for main-thread processing; does NOT touch validation state
         /// directly (thread safety). The main thread drains the queue in Update.
         /// </summary>
-        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0, string equipmentCatalog = null, int equipmentProtocol = 0, int multiplayer = 0)
+        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0, string equipmentCatalog = null, int equipmentProtocol = 0, int multiplayer = 0, System.Collections.Generic.Dictionary<string,object> currencySession = null)
         {
             try
             {
                 lock (pendingSessions)
                 {
-                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection, equipmentCatalog, equipmentProtocol, multiplayer));
+                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection, equipmentCatalog, equipmentProtocol, multiplayer, currencySession));
                 }
                 Log.LogInfo("[AP] session queued: epoch=" + epoch);
             }
@@ -696,12 +707,14 @@ namespace CraftopiaArchipelago
             public string EquipmentCatalog;
             public int EquipmentProtocol, Multiplayer;
             public int Connection;
+            public System.Collections.Generic.Dictionary<string,object> CurrencySession;
             public System.Collections.Generic.HashSet<int> EnrolledGuids;
-            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection, string equipmentCatalog, int equipmentProtocol, int multiplayer)
+            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection, string equipmentCatalog, int equipmentProtocol, int multiplayer, System.Collections.Generic.Dictionary<string,object> currencySession)
             {
                 Epoch = epoch;
                 EnrolledGuids = guids; Token = token; Connection = connection;
                 EquipmentCatalog=equipmentCatalog; EquipmentProtocol=equipmentProtocol; Multiplayer=multiplayer;
+                CurrencySession=currencySession;
             }
         }
 
@@ -778,6 +791,7 @@ namespace CraftopiaArchipelago
                     if (grantTransaction != null && Validator.CurrentEpoch != s.Epoch)
                         grantTransaction.ClearCommittedForNewSession();
                     // Update validator.
+                    StatusDisplay?.ClearActivity();
                     Validator.CurrentEpoch = s.Epoch;
                     var guids = s.EnrolledGuids; // capture for lambda
                     Validator.IsEnrolled = g => guids != null && guids.Contains(g);
@@ -785,6 +799,8 @@ namespace CraftopiaArchipelago
                         ", enrolled=" + (guids != null ? guids.Count : 0));
                     // Persist session binding separately from socket connectivity.
                     SetSessionBound(s.Epoch, SlotName?.Value);
+                    CurrencyRuntime.ApplySession(s.CurrencySession,s.Connection);
+                    MilestoneSession.Bind(s.CurrencySession);
                 }
             }
             catch (Exception e)
@@ -839,7 +855,10 @@ namespace CraftopiaArchipelago
                     return Validator.Capture();
                 },
                     EnrollmentHasHistory(), recoveryHold || Validator.IsHeld(observed.Input.Guid,observed.Input.Epoch)))
+                {
+                    CurrencyRuntime.AttestNew(observed.Input.Guid);
                     Validator.Invalidate(); // Eligibility still requires fresh read-only validation below.
+                }
                 if (enrollmentStatus != enrollmentCoordinator.Status) {
                     enrollmentStatus=enrollmentCoordinator.Status;
                     Log.LogInfo("[AP] enrollment: "+enrollmentStatus);
@@ -903,6 +922,10 @@ namespace CraftopiaArchipelago
             // This invalidates eligibility and applies the new epoch/enrollment.
             ProcessPendingSessions();
             try { PollStatusKey(); Bridge?.PumpNotifications(); } catch { }
+            try { PollHudPointer(); } catch (Exception ex) {
+                hudDrag.Cancel();
+                try { StatusDisplay?.Transition("hud-input-error", "[AP] HUD input unavailable: " + ex.GetBaseException().Message); } catch { }
+            }
             TryFreshEnrollment();
 
 
@@ -1002,6 +1025,8 @@ namespace CraftopiaArchipelago
             ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold && equipmentContractReady && equipmentIdentityReady);
             // Restore ownership before admission: missing unlocks must not deadlock their own delivery.
             bool equipmentAdmitted = equipmentSession != null && equipmentSession.Admit(equipmentIdentityReady,EquipmentHooks.CurrentEquipmentAllowed);
+            CurrencyRuntime.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
+            MilestoneSession.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
 
             System.Collections.Generic.List<long> acks =
                 new System.Collections.Generic.List<long>();
@@ -1058,63 +1083,55 @@ namespace CraftopiaArchipelago
         /// In-game status overlay (Unity IMGUI). Toggle with F8.
         /// Shows connection, slot/session, permissions, goal progress, recovery holds.
         /// </summary>
-        private bool showStatusOverlay = false;
+        private readonly FieldGuideView fieldGuide = new FieldGuideView();
         private void PollStatusKey()
         {
-            var input = Type.GetType("UnityEngine.Input, UnityEngine.InputLegacyModule");
-            var key = Type.GetType("UnityEngine.KeyCode, UnityEngine.CoreModule");
-            if (input != null && key != null && (bool)input.GetMethod("GetKeyDown", new[] { key })
-                .Invoke(null, new[] { Enum.Parse(key, "F8") })) showStatusOverlay = !showStatusOverlay;
+            if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.F8)) {
+                fieldGuide.Toggle(); hudDrag.Cancel();
+            } else if (fieldGuide.IsOpen && UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Escape)) {
+                fieldGuide.SetOpen(false); hudDrag.Cancel();
+            }
         }
-        private object noticeStyle;
+        private void LateUpdate()
+        {
+            if (ReferenceEquals(instance, this)) fieldGuide.KeepCursor();
+        }
+        private void OnApplicationFocus(bool focused)
+        {
+            if (!focused) { fieldGuide.SetOpen(false); hudDrag.Cancel(); }
+        }
+        private void PollHudPointer()
+        {
+            if (!UnityEngine.Application.isFocused || !UnityEngine.Cursor.visible
+                || UnityEngine.Cursor.lockState == UnityEngine.CursorLockMode.Locked) { hudDrag.Cancel(); return; }
+            var mouse = UnityEngine.Input.mousePosition;
+            float scale = GuideScale();
+            float width = 244 * scale;
+            float x = PlayerStatusDisplay.ClampHudPosition(hudDrag.Active ? hudDrag.X : hudX.Value * scale, UnityEngine.Screen.width, width);
+            float y = PlayerStatusDisplay.ClampHudPosition(hudDrag.Active ? hudDrag.Y : hudY.Value * scale, UnityEngine.Screen.height, 52 * scale);
+            bool save = hudDrag.Step(UnityEngine.Input.GetMouseButtonDown(0),
+                UnityEngine.Input.GetMouseButton(0), UnityEngine.Input.GetMouseButtonUp(0),
+                mouse.x, UnityEngine.Screen.height - mouse.y, x, y, width - 36 * scale, 52 * scale,
+                UnityEngine.Screen.width - 36 * scale, UnityEngine.Screen.height, 52 * scale);
+            if (save) { hudX.Value = hudDrag.X / scale; hudY.Value = hudDrag.Y / scale; }
+        }
+        private static float GuideScale()
+        {
+            return Math.Max(.4f, Math.Min(1.5f, Math.Min(UnityEngine.Screen.height / 900f, UnityEngine.Screen.width / 1050f)));
+        }
         private void OnGUI()
         {
             if (!ReferenceEquals(instance, this)) return;
             try {
-                var gui = Type.GetType("UnityEngine.GUI, UnityEngine.IMGUIModule");
-                var rectType = typeof(UnityEngine.Rect);
-                var styleType = Type.GetType("UnityEngine.GUIStyle, UnityEngine.IMGUIModule");
-                if (gui == null || styleType == null) return;
-                if (noticeStyle == null) {
-                    var skin = gui.GetProperty("skin").GetValue(null);
-                    noticeStyle = Activator.CreateInstance(styleType, skin.GetType().GetProperty("box").GetValue(skin));
-                    styleType.GetProperty("fontSize").SetValue(noticeStyle, 20);
-                    styleType.GetProperty("wordWrap").SetValue(noticeStyle, true);
-                    styleType.GetProperty("richText").SetValue(noticeStyle, false);
-                    var alignment = styleType.GetProperty("alignment");
-                    alignment.SetValue(noticeStyle, Enum.Parse(alignment.PropertyType, "UpperLeft"));
-                }
-                var box = gui.GetMethod("Box", new[] { rectType, typeof(string), styleType });
-                string notices = StatusDisplay?.VisibleMessages(PlayerStatusDisplay.Now);
-                if (!string.IsNullOrEmpty(notices))
-                    box?.Invoke(null, new object[] {new UnityEngine.Rect(20, 80, 800, 180), notices, noticeStyle});
-                if (showStatusOverlay)
-                    box?.Invoke(null, new object[] {new UnityEngine.Rect(20, 280, 800, 520), BuildStatusText(), noticeStyle});
-            } catch { } // UI must never interrupt game or grants.
-        }
-
-        private string BuildStatusText()
-        {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Craftopia Archipelago ===");
-            sb.AppendLine($"Version: {VERSION}");
-            sb.AppendLine($"Connected: {(Bridge != null && Bridge.IsConnected ? "YES" : "NO")}");
-            sb.AppendLine($"Slot: {SlotName?.Value ?? "?"}");
-            sb.AppendLine($"Recovery Hold: {(recoveryHold ? "ACTIVE" : "none")}");
-            if (StatusDisplay != null)
-            {
-                sb.AppendLine("--- Permissions ---");
-                sb.AppendLine(StatusDisplay.GetStatusSummary());
+                float scale = GuideScale();
+                fieldGuide.Draw(StatusDisplay, Permissions, SlotName?.Value ?? "Unknown",
+                    Bridge != null && Bridge.IsConnected, recoveryHold, enrollmentStatus,
+                    hudDrag.Active ? hudDrag.X / scale : hudX?.Value ?? 220,
+                    hudDrag.Active ? hudDrag.Y / scale : hudY?.Value ?? 20, scale);
+            } catch (Exception ex) {
+                StatusDisplay?.Transition("field-guide-error", "[AP] Field Guide unavailable: " + ex.GetBaseException().Message);
             }
-            if (!string.IsNullOrEmpty(StatusDisplay?.LastError))
-            {
-                sb.AppendLine("--- Last Blocked ---");
-                sb.AppendLine(StatusDisplay.LastError);
-            }
-            sb.AppendLine("(F8 to toggle)");
-            return sb.ToString();
         }
-
         /// <summary>
         /// Execute grants transactionally: for each pending batch, run the
         /// full intent → mutation → atomic commit transaction.
@@ -1211,5 +1228,3 @@ namespace CraftopiaArchipelago
         }
     }
 }
-
-

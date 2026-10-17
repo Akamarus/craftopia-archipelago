@@ -1,0 +1,5558 @@
+{
+  "research_only": true,
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "entries": [
+    {
+      "id": 5681,
+      "name": "Expansion Magazine II",
+      "blueprint_id": 6801,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6801,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20027,
+        "raw_age_level": 8,
+        "displayed_recipe_age": 9,
+        "ingredients": [
+          {
+            "id": 718,
+            "name": "High Mithril Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 3469,
+            "name": "Spring",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": -7279367487757318234,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 6680544884448099419
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 183946023281864616,
+          "_saveDataVersion": 10,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": -4705315116026605574
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -2103743368469781838
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 2911398203972022083
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 81031038613662779
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": 7060517044131265796
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": -6384668568736048951
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": 2023132011318278079
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 2503620363616256249
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 2503620363616256249,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6801
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": 6680544884448099419,
+        "hierarchy": [
+          {
+            "game_object": 6680544884448099419,
+            "transform": 6732239080469475150,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6732239080469475150
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7279367487757318234
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -4705315116026605574,
+            "transform": 3633684435812077608,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3633684435812077608
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3960062211776377523
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3139076378703774194
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8958111104155559351
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -698270558392698400
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8416812229913277221,
+            "transform": 4327332002748251617,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4327332002748251617
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8487501221119034641,
+            "transform": -6148461423662947815,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6148461423662947815
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 932019002868010727,
+            "transform": 5630065607570818564,
+            "name": "A_3_Reward",
+            "active": true,
+            "local_position": {
+              "x": -59.20000076293945,
+              "y": 12.460000038146973,
+              "z": -14.500007629394531
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -1.1026859283447266e-06,
+              "z": -0.0,
+              "w": -1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5630065607570818564
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1756443692336989935,
+            "transform": 3112633931215891838,
+            "name": "Cavedungeon_001",
+            "active": true,
+            "local_position": {
+              "x": -94.4998779296875,
+              "y": 0.0,
+              "z": 16.292030334472656
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3112633931215891838
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 5055504437116817206,
+            "transform": 2159568381783826208,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 1366.108642578125,
+              "y": -188.50999450683594,
+              "z": 2651.409423828125
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -0.7251191139221191,
+              "z": -0.0,
+              "w": -0.6886235475540161
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2159568381783826208
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 4684986836888583426,
+            "transform": 8067060158740946404,
+            "name": "oc_pf_SubWorld_CaveDungeon_025",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8067060158740946404
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7108887413239195411
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8951182672779676842
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4917380850184919816
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -77660825519915033
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4276307841664666743
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5919060060357862862
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6356921456304205318
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_025.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_025.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_025",
+        "path_id": -7108887413239195411,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 4684986836888583426
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": 2159568381783826208
+          },
+          "_areaSize": {
+            "x": 400.0,
+            "y": 130.0,
+            "z": 320.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -2366860870230752225
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -8826348419127747805
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4467042046917500314
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 919204833057187515
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2951841960566074428
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7279367487757318234
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4276975038458985321
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1040821067539771761
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 859005835261109200
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1029775712519149970
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -8386156087141766676
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1704220557215023305
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 7421137625381855536
+            }
+          ],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 25,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72284,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12359
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12254
+            },
+            "_subWorldID": 25,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33614
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33638
+            },
+            "_movingDuration": 8.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": 693287546,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68591
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": -341.54315185546875,
+                "y": -55.959999084472656,
+                "z": 7.43743896484375
+              }
+            },
+            {
+              "name": "oc_pf_gimmick003",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Position_003",
+              "active": true,
+              "position": {
+                "x": 1124.25,
+                "y": 49.91999816894531,
+                "z": 2892.679931640625
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_025",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12332
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33641
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12356
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -175.8000030517578,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33641
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42328,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon025",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon025",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "22b1d26dc16afdc43abfa100c3cbbb0d",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 1116.0250244140625,
+              "y": 56.28757095336914,
+              "z": 2899.68994140625
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "22b1d26dc16afdc43abfa100c3cbbb0d",
+          "key_type": 0,
+          "key_offset": 1619675,
+          "entry": 21644,
+          "fields": [
+            17412,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24633,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_025.prefab"
+        },
+        "restart_position": {
+          "x": 1116.0250244140625,
+          "y": 56.28757095336914,
+          "z": 2899.68994140625
+        }
+      }
+    },
+    {
+      "id": 5682,
+      "name": "Quickloader II",
+      "blueprint_id": 6802,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6802,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20022,
+        "raw_age_level": 6,
+        "displayed_recipe_age": 7,
+        "ingredients": [
+          {
+            "id": 716,
+            "name": "Adamantite Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 3468,
+            "name": "Bolt",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": -671767106356713556,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -1322018791905767047
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 184003231455590300,
+          "_saveDataVersion": 1,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": 4232632112033802934
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 8997371197743628372
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 9094655027984194533
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 5046019785674322640
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": 8843108034366194812
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": 8580325835730628098
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": -4438608700159252971
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 3377328705307148334
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 3377328705307148334,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6802
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": -1322018791905767047,
+        "hierarchy": [
+          {
+            "game_object": -1322018791905767047,
+            "transform": 5100316984717346674,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5100316984717346674
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -671767106356713556
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 4232632112033802934,
+            "transform": 740895023710646118,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 740895023710646118
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1759017191835751493
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1519916787744315246
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6751808548070470228
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3428016287025796799
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 8441275920745491024,
+            "transform": 6422817682181418388,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6422817682181418388
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 3316845998657179709,
+            "transform": 3952258662936918549,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3952258662936918549
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 203068755817123937,
+            "transform": -3018190980503154767,
+            "name": "A_3_Reward",
+            "active": true,
+            "local_position": {
+              "x": -92.8499984741211,
+              "y": 7.0258026123046875,
+              "z": -6.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -1.1026859283447266e-06,
+              "z": -0.0,
+              "w": -1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3018190980503154767
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 5415845874204201740,
+            "transform": 3192880591442750992,
+            "name": "Cavedungeon_001",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3192880591442750992
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2135414602658722228,
+            "transform": -7945192866157826880,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 3063.0,
+              "y": -170.35694885253906,
+              "z": -252.0
+            },
+            "local_rotation": {
+              "x": -2.126872900021226e-09,
+              "y": -0.08147861808538437,
+              "z": -1.5541257170070821e-09,
+              "w": 0.9966751337051392
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7945192866157826880
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -3643829964001819332,
+            "transform": -2615922592428556094,
+            "name": "oc_pf_SubWorld_CaveDungeon_021",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -2615922592428556094
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7749150947201198220
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3934533244933202122
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1329487869660925603
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 7929626480001575758
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -4286961865532143269
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -203769479960543868
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_021.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_021.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_021",
+        "path_id": -7749150947201198220,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -3643829964001819332
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": -7945192866157826880
+          },
+          "_areaSize": {
+            "x": 250.0,
+            "y": 100.0,
+            "z": 250.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -671767106356713556
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -5064502016673929005
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1294009820285008020
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 8150120560712781022
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7359698434787789433
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2407047618424801002
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3565280095673377874
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3413264488691631303
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2913304828282038280
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2065972418432626946
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 8023174650529289215
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7889286035338998802
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 97495936845161840
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6772687008205635256
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 865057303736460007
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 21,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72246,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12252
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12311
+            },
+            "_subWorldID": 21,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33568
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33527
+            },
+            "_movingDuration": 8.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": -1967569492,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68595
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 3162.814453125,
+                "y": 12.01129150390625,
+                "z": -252.46356201171875
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_021",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12286
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33534
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12245
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -175.8000030517578,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33534
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42324,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon021",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon021",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "8cd0aa9e1e999ea4f809fe317e7b2da8",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 3597.11669921875,
+              "y": 151.68765258789062,
+              "z": -141.2799530029297
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "8cd0aa9e1e999ea4f809fe317e7b2da8",
+          "key_type": 0,
+          "key_offset": 1619223,
+          "entry": 21640,
+          "fields": [
+            17408,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24625,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_021.prefab"
+        },
+        "restart_position": {
+          "x": 3597.11669921875,
+          "y": 151.68765258789062,
+          "z": -141.2799530029297
+        }
+      }
+    },
+    {
+      "id": 5683,
+      "name": "Custom Grip II",
+      "blueprint_id": 6803,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6803,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20022,
+        "raw_age_level": 5,
+        "displayed_recipe_age": 6,
+        "ingredients": [
+          {
+            "id": 715,
+            "name": "Platinum Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 3468,
+            "name": "Bolt",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": 2646956119785693737,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -7032125936715448742
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 183981243523613989,
+          "_saveDataVersion": 0,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": -5268632228258380711
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 9069529287859338467
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -126219872462758173
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2155710348504248040
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": -5627838647847135219
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": -2490979539164308198
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": 1509013344728556870
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 3377328705307148328
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 3377328705307148328,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6803
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": -7032125936715448742,
+        "hierarchy": [
+          {
+            "game_object": -7032125936715448742,
+            "transform": -6680772544547640287,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6680772544547640287
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2646956119785693737
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -5268632228258380711,
+            "transform": 2628326050541841420,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2628326050541841420
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -226228990710163301
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 7890422254832646687
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -2387958735169001292
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -2635114726925352203,
+            "transform": -78665725750545909,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -78665725750545909
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8484695404993427172,
+            "transform": -6614124248743851955,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6614124248743851955
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 7689214520994253756,
+            "transform": -4557039864428675061,
+            "name": "A_11",
+            "active": true,
+            "local_position": {
+              "x": -0.0,
+              "y": 9.0,
+              "z": -97.19999694824219
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -0.7071067094802856,
+              "z": -0.0,
+              "w": 0.7071069478988647
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -4557039864428675061
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -2654903797856519834,
+            "transform": 3284908929774082816,
+            "name": "GameObject",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": -9.0,
+              "z": -20.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -0.0,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3284908929774082816
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 674079524241247847,
+            "transform": -3648759227752501401,
+            "name": "oc_pf_dungeon--CaveBoss08_DryadFlower",
+            "active": true,
+            "local_position": {
+              "x": -59.60009002685547,
+              "y": 22.5,
+              "z": -16.500001907348633
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071067690849304,
+              "z": -0.0,
+              "w": 0.7071067690849304
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3648759227752501401
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2392369159679909698,
+            "transform": 6596877767074574778,
+            "name": "Cavedungeon_019",
+            "active": true,
+            "local_position": {
+              "x": 50.0,
+              "y": 0.0,
+              "z": -0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6596877767074574778
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1275980232641504277,
+            "transform": 5114225097231822637,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 2964.300048828125,
+              "y": -190.32823181152344,
+              "z": 50.900001525878906
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.9996195435523987,
+              "z": -0.0,
+              "w": 0.027584433555603027
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5114225097231822637
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -4053475052830916597,
+            "transform": 3863080322481387675,
+            "name": "oc_pf_SubWorld_CaveDungeon_019",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3863080322481387675
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4285083518399743349
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4004416051460739661
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5740194894011043935
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4094409798027669525
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5409823912347584699
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -375215091297665903
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1724854987036115924
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_019.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_019.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_019",
+        "path_id": 4285083518399743349,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -4053475052830916597
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": 5114225097231822637
+          },
+          "_areaSize": {
+            "x": 380.0,
+            "y": 100.0,
+            "z": 250.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 5504266356650109697
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 5093571243595032845
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2646956119785693737
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7667250513373417293
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2037665970587107469
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6346135969564674849
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -5116543669101316176
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3018866553765229723
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 95668003897451484
+            }
+          ],
+          "_lockableObjs": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -8399410122060962204
+            }
+          ]
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 19,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72277,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12345
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12294
+            },
+            "_subWorldID": 19,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33579
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33632
+            },
+            "_movingDuration": 8.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": 350643904,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68581
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 2817.18408203125,
+                "y": -7.959999084472656,
+                "z": 58.00213623046875
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_019",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12297
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33627
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12350
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -175.8000030517578,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33627
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42322,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon019",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon019",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "3122281105fe4a149946b0700fd12f1b",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 3038.07177734375,
+              "y": 50.24441909790039,
+              "z": 336.71978759765625
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "3122281105fe4a149946b0700fd12f1b",
+          "key_type": 0,
+          "key_offset": 1618997,
+          "entry": 21638,
+          "fields": [
+            17406,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24621,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_019.prefab"
+        },
+        "restart_position": {
+          "x": 3038.07177734375,
+          "y": 50.24441909790039,
+          "z": 336.71978759765625
+        }
+      }
+    },
+    {
+      "id": 5684,
+      "name": "Bipod II",
+      "blueprint_id": 6804,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6804,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20027,
+        "raw_age_level": 8,
+        "displayed_recipe_age": 9,
+        "ingredients": [
+          {
+            "id": 718,
+            "name": "High Mithril Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 3469,
+            "name": "Spring",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": -3610398827600407785,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 5771059262804814067
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 183563412151703165,
+          "_saveDataVersion": 8,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": 2750993160333926355
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -198930505097050924
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -103687643787529195
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3854289760749685570
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": 8424465494288990672
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": -3009994905335722424
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": 2783382581061574546
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 2503620363616256249
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 2503620363616256249,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6804
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": 5771059262804814067,
+        "hierarchy": [
+          {
+            "game_object": 5771059262804814067,
+            "transform": -3552814117570149593,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3552814117570149593
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3610398827600407785
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2750993160333926355,
+            "transform": 411252373310209987,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 411252373310209987
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3716078010689396137
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5780598001488223086
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -4111717976187018811
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3361808327189441943
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1245649983900766705,
+            "transform": 5012785333859496169,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5012785333859496169
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -6937660187662313072,
+            "transform": -8553116972166800977,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -8553116972166800977
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -4184393355259738780,
+            "transform": -397193557187364657,
+            "name": "A_3_Reward",
+            "active": true,
+            "local_position": {
+              "x": -103.5999984741211,
+              "y": 19.559999465942383,
+              "z": 3.5
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -1.1026859283447266e-06,
+              "z": -0.0,
+              "w": -1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -397193557187364657
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8567054076943057780,
+            "transform": -1140896479469455474,
+            "name": "Cavedungeon_001",
+            "active": true,
+            "local_position": {
+              "x": -114.25995635986328,
+              "y": -6.880000114440918,
+              "z": 14.600000381469727
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1140896479469455474
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -3565084107120493317,
+            "transform": -5219219048771314712,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 2119.37255859375,
+              "y": -275.9599914550781,
+              "z": 2301.563720703125
+            },
+            "local_rotation": {
+              "x": -5.769313915493512e-10,
+              "y": 0.946474552154541,
+              "z": 2.5702224792922834e-09,
+              "w": -0.3227786421775818
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5219219048771314712
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 5233908685857363920,
+            "transform": 196596877055129244,
+            "name": "oc_pf_SubWorld_CaveDungeon_024",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 196596877055129244
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 397146145876820662
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3660689891545491826
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 615500489411478848
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -9140853808636516630
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -8930035624584553720
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -2052956928505718107
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_024.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_024.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_024",
+        "path_id": 397146145876820662,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 5233908685857363920
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": -5219219048771314712
+          },
+          "_areaSize": {
+            "x": 550.0,
+            "y": 150.0,
+            "z": 260.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 842818081429939571
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6090750911338370520
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3610398827600407785
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3523480631512026910
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2673134217531602987
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2561310860475302526
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1821687803798815377
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 8986871051503165332
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3694990350027363171
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 24,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72283,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12358
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12253
+            },
+            "_subWorldID": 24,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33612
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33639
+            },
+            "_movingDuration": 8.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": 114607761,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68590
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": -425.49432373046875,
+                "y": -139.08624267578125,
+                "z": 106.22897338867188
+              }
+            },
+            {
+              "name": "oc_pf_gimmick002",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Position_002",
+              "active": true,
+              "position": {
+                "x": 1754.5799560546875,
+                "y": 38.59000015258789,
+                "z": 2544.989990234375
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_024",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12330
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33640
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12357
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -175.8000030517578,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33640
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42327,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon024",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon024",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "58b0b4278da1de847bd83f2ab70b1a94",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 1741.1512451171875,
+              "y": 43.7400016784668,
+              "z": 2545.324462890625
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "58b0b4278da1de847bd83f2ab70b1a94",
+          "key_type": 0,
+          "key_offset": 1619562,
+          "entry": 21643,
+          "fields": [
+            17411,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24631,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_024.prefab"
+        },
+        "restart_position": {
+          "x": 1741.1512451171875,
+          "y": 43.7400016784668,
+          "z": 2545.324462890625
+        }
+      }
+    },
+    {
+      "id": 5685,
+      "name": "Laser Sight II",
+      "blueprint_id": 6805,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6805,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20022,
+        "raw_age_level": 7,
+        "displayed_recipe_age": 8,
+        "ingredients": [
+          {
+            "id": 717,
+            "name": "Mithril Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 2453,
+            "name": "Crystal",
+            "quantity": 1
+          },
+          {
+            "id": 2100,
+            "name": "Battery",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": 3533987161280259921,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 534438482623538069
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 183422700416366513,
+          "_saveDataVersion": 6,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": -5097829423385010807
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 7761587823220640813
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -1299773044178120076
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1541504888400378689
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": -1839682813128363212
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": 4877130904446534660
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": 2654574452381523856
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 2475546399973834845
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 2475546399973834845,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6805
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": 534438482623538069,
+        "hierarchy": [
+          {
+            "game_object": 534438482623538069,
+            "transform": 8739502575035895146,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8739502575035895146
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3533987161280259921
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -5097829423385010807,
+            "transform": -3874331605560307883,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3874331605560307883
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3025478508954925602
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2035086685574622588
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2913910401687988295
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4344254948556354876
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -4067264972837257691,
+            "transform": 6820783525235976780,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6820783525235976780
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1658843290938266622,
+            "transform": 1551884617639590731,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 1551884617639590731
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 4207733541672997722,
+            "transform": 1327846185082750491,
+            "name": "A_2",
+            "active": true,
+            "local_position": {
+              "x": 34.450172424316406,
+              "y": 22.300003051757812,
+              "z": 101.45013427734375
+            },
+            "local_rotation": {
+              "x": -7.605134947759489e-17,
+              "y": 0.7071068286895752,
+              "z": -3.0064402141386924e-17,
+              "w": 0.7071068286895752
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 1327846185082750491
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8326988117464129362,
+            "transform": 5380446938137139715,
+            "name": "Cavedungeon_022",
+            "active": true,
+            "local_position": {
+              "x": -96.93012237548828,
+              "y": -6.899994373321533,
+              "z": 16.49997329711914
+            },
+            "local_rotation": {
+              "x": -6.938892249546003e-18,
+              "y": -0.0,
+              "z": -2.220445519854721e-16,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5380446938137139715
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 7932887902052126802,
+            "transform": 987540533772135089,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 3436.8759765625,
+              "y": -310.54998779296875,
+              "z": 1478.3800048828125
+            },
+            "local_rotation": {
+              "x": 1.438479890758515e-09,
+              "y": -0.999602198600769,
+              "z": -2.206733018539353e-09,
+              "w": -0.028206288814544678
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 987540533772135089
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1747581927379858638,
+            "transform": 4629159876254005517,
+            "name": "oc_pf_SubWorld_CaveDungeon_022",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4629159876254005517
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -2227022634904890749
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6482579090617114019
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1442904280399420970
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 1403118328664341059
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1987470564646995416
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4147158616994866111
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6858370593568060470
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_022.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_022.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_022",
+        "path_id": -2227022634904890749,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 1747581927379858638
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": 987540533772135089
+          },
+          "_areaSize": {
+            "x": 380.0,
+            "y": 130.0,
+            "z": 380.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -8612998660808906054
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1870611682529620906
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3082528701115690554
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1521499115891184280
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 5180913495843984381
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1539039895554802405
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3533987161280259921
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1255711648335619761
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2304013082666470947
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4194332785756303689
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2534869723794910540
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2061577304441093258
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 22,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72245,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12251
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12312
+            },
+            "_subWorldID": 22,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33567
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33526
+            },
+            "_movingDuration": 8.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": 1897160444,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68594
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": -425.4944152832031,
+                "y": -139.08624267578125,
+                "z": 106.22889709472656
+              }
+            },
+            {
+              "name": "oc_pf_gimmick002",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Position_002",
+              "active": true,
+              "position": {
+                "x": 3001.760009765625,
+                "y": 4.0,
+                "z": 1423.5699462890625
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_022",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12285
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33533
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12244
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -175.8000030517578,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33533
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42325,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon022",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon022",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "fbce9cb69c3e41a4e8ffd97105d5536f",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 2984.6220703125,
+              "y": 6.896850109100342,
+              "z": 1409.761962890625
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "fbce9cb69c3e41a4e8ffd97105d5536f",
+          "key_type": 0,
+          "key_offset": 1619336,
+          "entry": 21641,
+          "fields": [
+            17409,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24627,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_022.prefab"
+        },
+        "restart_position": {
+          "x": 2984.6220703125,
+          "y": 6.896850109100342,
+          "z": 1409.761962890625
+        }
+      }
+    },
+    {
+      "id": 5686,
+      "name": "Sling Belt II",
+      "blueprint_id": 6806,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6806,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20022,
+        "raw_age_level": 7,
+        "displayed_recipe_age": 8,
+        "ingredients": [
+          {
+            "id": 717,
+            "name": "Mithril Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 3401,
+            "name": "Cotton Canvas",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": 7387218673017324422,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 102172333133789341
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 182305555882151698,
+          "_saveDataVersion": 6,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": 6983614434734797934
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -5434347646431117947
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -8337400512357518142
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -5010678976080764361
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": 5595577539257214748
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": 5289334734642072833
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": 529202369645501833
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 2503620363616256249
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 2503620363616256249,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6806
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": 102172333133789341,
+        "hierarchy": [
+          {
+            "game_object": 102172333133789341,
+            "transform": 4073047094141503480,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4073047094141503480
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 7387218673017324422
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 6983614434734797934,
+            "transform": -5049318527887233005,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5049318527887233005
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6898701933869491290
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8908374610773847304
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 1750113271618602924
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8219529472429567451
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 6647642049427521883,
+            "transform": -2461210326686759841,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -2461210326686759841
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -5198995320470076019,
+            "transform": -5598845181576400802,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5598845181576400802
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 9221060093878899304,
+            "transform": 2395090545550935578,
+            "name": "A_3_Reward",
+            "active": true,
+            "local_position": {
+              "x": -71.08999633789062,
+              "y": 14.710000038146973,
+              "z": -14.9399995803833
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -1.1026859283447266e-06,
+              "z": -0.0,
+              "w": -1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 2395090545550935578
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 577561714107177282,
+            "transform": -1633967201890286046,
+            "name": "Cavedungeon_001",
+            "active": true,
+            "local_position": {
+              "x": -95.0,
+              "y": -6.599999904632568,
+              "z": 16.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1633967201890286046
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 884644154139438993,
+            "transform": 6504004987084315018,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 1725.4232177734375,
+              "y": -557.0999755859375,
+              "z": 1981.2962646484375
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": -0.04857092723250389,
+              "z": 0.0,
+              "w": 0.9988197684288025
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6504004987084315018
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2432130450360208300,
+            "transform": -3541923600429230830,
+            "name": "oc_pf_SubWorld_CaveDungeon_023",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3541923600429230830
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 7705564268992991235
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -8765498883341333873
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6705603007181449548
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -4152704446306164211
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7101716050357546116
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 4342196794118024136
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -1434679685990329382
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_023.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_023.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_023",
+        "path_id": 7705564268992991235,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 2432130450360208300
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": 6504004987084315018
+          },
+          "_areaSize": {
+            "x": 450.0,
+            "y": 100.0,
+            "z": 250.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -6348568811992592630
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1306883045047989591
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2797936200994750788
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7463123431504507133
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7787214733418612940
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7387218673017324422
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3211452897498764607
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 321536434015836502
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7782547420079197356
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6469463901809365699
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3364553908026920683
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 9140144735529513163
+            }
+          ],
+          "_staticObjList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 7430699298994141295
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2133005031532018811
+            }
+          ],
+          "_spawnerList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 1857233375231149327
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4781667720530177496
+            }
+          ],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 23,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72240,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12230
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12333
+            },
+            "_subWorldID": 23,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33537
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33517
+            },
+            "_movingDuration": 12.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": 104642506,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68592
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": -191.996337890625,
+                "y": -54.80000305175781,
+                "z": 5.521728515625
+              }
+            },
+            {
+              "name": "oc_pf_gimmick001",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Position_001",
+              "active": true,
+              "position": {
+                "x": 1650.02001953125,
+                "y": 3.5199999809265137,
+                "z": 1804.6400146484375
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_023",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12255
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33512
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12235
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -505.79998779296875,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33512
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42326,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon023",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon023",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "91b690f98360e614299bb5840cb059e6",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 1647.008056640625,
+              "y": 6.290404796600342,
+              "z": 1793.9549560546875
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "91b690f98360e614299bb5840cb059e6",
+          "key_type": 0,
+          "key_offset": 1619449,
+          "entry": 21642,
+          "fields": [
+            17410,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24629,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_023.prefab"
+        },
+        "restart_position": {
+          "x": 1647.008056640625,
+          "y": 6.290404796600342,
+          "z": 1793.9549560546875
+        }
+      }
+    },
+    {
+      "id": 5687,
+      "name": "Resin Stock II",
+      "blueprint_id": 6807,
+      "disposition": "fixed_subworld_chest_blueprint_recipe",
+      "source_verified": true,
+      "full_route_verified": false,
+      "ap_tier": null,
+      "minimum_acquisition_age": null,
+      "recipe": {
+        "kind": "conditional_blueprint_recipe",
+        "blueprint_id": 6807,
+        "blueprint_map_asset": "sharedassets0.assets",
+        "blueprint_map_path_id": 91163,
+        "workbench_family": 20022,
+        "raw_age_level": 5,
+        "displayed_recipe_age": 6,
+        "ingredients": [
+          {
+            "id": 715,
+            "name": "Platinum Ingot",
+            "quantity": 2
+          },
+          {
+            "id": 746,
+            "name": "Log",
+            "quantity": 1
+          }
+        ],
+        "output_quantity": 1,
+        "blueprint_acquisition": "Verified fixed chest with active scene elevator and catalog load binding; earliest access and full traversal not established."
+      },
+      "chest": {
+        "asset": "CAB-cdb776c41ad88a38c5ade1b15b4f3a9a",
+        "bundle": "subworld_assets_all_a1d7ab9ed17d58a694a149fbd4ecc0b8.bundle",
+        "path_id": -6161614593865318177,
+        "cls": "OcGimmick_TreasureBox",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -3712814984703645205
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": -6455560168149032944
+          },
+          "m_Name": "",
+          "_IgnoreSave": 1,
+          "_openOnStart": 0,
+          "_resetOnDayEnd": 0,
+          "_Gimmick_Count_OnOpen": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_linkingDungeonClear": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "_prefabPosHash": 184135161878621599,
+          "_saveDataVersion": 1,
+          "_pickupTriggerMode": 0,
+          "_CanClose": 0,
+          "_CanReopen": 0,
+          "_IsDungeonClear": 0,
+          "_NeedsOpenAllDoor": 0,
+          "gameObjectsToDisable": [],
+          "gameObjectsToEnable": [],
+          "gimmickToOpen": [],
+          "gimmickToOpenWithoutEvents": [],
+          "gimmickToClose": [],
+          "gimmickToCloseWithoutEvents": [],
+          "effectToStop": [],
+          "messageOnOpen": "",
+          "gameObjectsToDisableOnClose": [],
+          "gameObjectsToEnableOnClose": [],
+          "gimmickToOpenOnClose": [],
+          "gimmickToOpenWithoutEventsOnClose": [],
+          "gimmickToCloseOnClose": [],
+          "gimmickToCloseWithoutEventsOnClose": [],
+          "_pickupAfterProcesses": [],
+          "_deactivateColInOpen": 1,
+          "_pickupConditions": [],
+          "_pickupHoldAddSuccessTime": 0.0,
+          "_popString1TermOpen": "",
+          "_popString1TermClose": "",
+          "_popString2Term": "",
+          "_popStringHoldTermOpen": "",
+          "_popStringHoldTermClose": "",
+          "_disabledReasonTerm": "",
+          "_controlCompleteByAnim": 0,
+          "_ParentGameObject": {
+            "m_FileID": 0,
+            "m_PathID": -2450637651710361376
+          },
+          "_OpenEnableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -3867742284136275883
+            }
+          ],
+          "_OpenDisableGameObject": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 1375719372420537648
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1568551613019982435
+            }
+          ],
+          "_Effect": {
+            "m_FileID": 0,
+            "m_PathID": 8587721517465957426
+          },
+          "_RequirOpenGimmicks": [],
+          "_OpenNum": 0,
+          "_NeedsLockFx": 0,
+          "_audioSource": {
+            "m_FileID": 0,
+            "m_PathID": -4364933661823097095
+          },
+          "_SimpleAnimation": {
+            "m_FileID": 0,
+            "m_PathID": -5059197963866880628
+          },
+          "_RarityType": 2,
+          "_ForceSpawn": 1,
+          "_treasureLottery": {
+            "rid": 3377328705307148353
+          },
+          "references": {
+            "version": 2,
+            "RefIds": [
+              {
+                "rid": 3377328705307148353,
+                "type": {
+                  "class": "OcTreasureLottery_Fix",
+                  "ns": "Oc",
+                  "asm": "AD__Overcraft"
+                },
+                "data": {
+                  "_itemInfos": [
+                    {
+                      "ItemID": {
+                        "_id": 6807
+                      },
+                      "Num": 1
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        "game_object": -3712814984703645205,
+        "hierarchy": [
+          {
+            "game_object": -3712814984703645205,
+            "transform": -5272152265486463379,
+            "name": "TreasureBox_Core",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5272152265486463379
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6161614593865318177
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -2450637651710361376,
+            "transform": -8849060773346999730,
+            "name": "oc_pf_TreasureBox--FixLegendary",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 0.7071069478988647,
+              "z": -0.0,
+              "w": 0.7071067094802856
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -8849060773346999730
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -14989456013580016
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3434651870023769152
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -5325434416763434677
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 261143923785104167
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2198212885073434780,
+            "transform": 7474159808944599135,
+            "name": "TreasureBox",
+            "active": true,
+            "local_position": {
+              "x": 4.0,
+              "y": 0.5299999713897705,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 7474159808944599135
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 2213954294812373072,
+            "transform": -6877544669879679666,
+            "name": "Logic",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -6877544669879679666
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1677760245281137404,
+            "transform": -3577854288649993407,
+            "name": "A_3_Reward",
+            "active": true,
+            "local_position": {
+              "x": -76.079833984375,
+              "y": 7.0258026123046875,
+              "z": -14.121357917785645
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": -1.1026859283447266e-06,
+              "z": -0.0,
+              "w": -1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -3577854288649993407
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1574479569666779217,
+            "transform": -706900126939997249,
+            "name": "Cavedungeon_001",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": -0.0,
+              "y": 2.9802318834981634e-08,
+              "z": -0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -706900126939997249
+                }
+              }
+            ]
+          },
+          {
+            "game_object": 1791507936341781030,
+            "transform": 8878809729404111123,
+            "name": "Center",
+            "active": true,
+            "local_position": {
+              "x": 2401.0,
+              "y": -140.3545379638672,
+              "z": -579.7999877929688
+            },
+            "local_rotation": {
+              "x": 1.9681285490236178e-09,
+              "y": -0.9570071697235107,
+              "z": -1.7508176020086808e-09,
+              "w": -0.2900642156600952
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8878809729404111123
+                }
+              }
+            ]
+          },
+          {
+            "game_object": -8203305505148722316,
+            "transform": -4705860311999799617,
+            "name": "oc_pf_SubWorld_CaveDungeon_017",
+            "active": true,
+            "local_position": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "local_rotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "local_scale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "components": [
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -4705860311999799617
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -7075761422866722043
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 3676643429804913826
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": -8936567375887009714
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 9167178955128406227
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 6735346005853803673
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 5909828448856218327
+                }
+              },
+              {
+                "component": {
+                  "m_FileID": 0,
+                  "m_PathID": 8358909244944898105
+                }
+              }
+            ]
+          }
+        ],
+        "containers": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_017.prefab"
+        ]
+      },
+      "subworld_component": {
+        "root": [
+          "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_017.prefab"
+        ],
+        "game_object": "oc_pf_SubWorld_CaveDungeon_017",
+        "path_id": -7075761422866722043,
+        "cls": "OcSubWorld",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -8203305505148722316
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5402404662097913754
+          },
+          "m_Name": "",
+          "_centerTrans": {
+            "m_FileID": 0,
+            "m_PathID": 8878809729404111123
+          },
+          "_areaSize": {
+            "x": 250.0,
+            "y": 100.0,
+            "z": 250.0
+          },
+          "_outSideDamageAreaLenght": 20.0,
+          "_gimmickList": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -2826896457819161417
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1817122287086227950
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -420758689108130071
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6161614593865318177
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4935771259631857230
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1555223608133824443
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 6084767026002908421
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -8553793997571286100
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4208616655037368037
+            }
+          ],
+          "_staticObjList": [],
+          "_spawnerList": [],
+          "_lockableObjs": []
+        }
+      },
+      "entry_binding_verified": true,
+      "entry_binding": {
+        "subworld_id": 17,
+        "elevator": {
+          "asset": "level11",
+          "path_id": 72264,
+          "cls": "OcObj_SubWorldElevator",
+          "name": "",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12303
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 2001
+            },
+            "m_Name": "",
+            "_floor": {
+              "m_FileID": 0,
+              "m_PathID": 12237
+            },
+            "_subWorldID": 17,
+            "_defaultStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33630
+            },
+            "_subWorldStationTrans": {
+              "m_FileID": 0,
+              "m_PathID": 33581
+            },
+            "_movingDuration": 12.0,
+            "_accDuration": 3.0,
+            "_stationIntervalDist": 0.0,
+            "_gUID": -1563518249,
+            "_PlEnterExitEvent": {
+              "m_FileID": 0,
+              "m_PathID": 68579
+            }
+          },
+          "hierarchy": [
+            {
+              "name": "OcObj_SubWorldElevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Elevator_CaveDungeon",
+              "active": true,
+              "position": {
+                "x": 2310.35888671875,
+                "y": 192.01376342773438,
+                "z": -620.259033203125
+              }
+            },
+            {
+              "name": "oc_pf_gimmick_CaveDungeon_017",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            },
+            {
+              "name": "Cave_Gimmick",
+              "active": true,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              }
+            }
+          ],
+          "_defaultStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12348
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33585
+            }
+          },
+          "_subWorldStationTrans_transform": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 12299
+            },
+            "m_LocalRotation": {
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0,
+              "w": 1.0
+            },
+            "m_LocalPosition": {
+              "x": 0.0,
+              "y": -325.79998779296875,
+              "z": 0.0
+            },
+            "m_LocalScale": {
+              "x": 1.0,
+              "y": 1.0,
+              "z": 1.0
+            },
+            "m_Children": [],
+            "m_Father": {
+              "m_FileID": 0,
+              "m_PathID": 33585
+            }
+          }
+        },
+        "subworld_so": {
+          "asset": "sharedassets6.assets",
+          "path_id": 42320,
+          "cls": "OcSubWorldSo",
+          "name": "so--SubWorld_00_CaveDungeon017",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4189
+            },
+            "m_Name": "so--SubWorld_00_CaveDungeon017",
+            "SubWorldPrefab": {
+              "m_AssetGUID": "835a843a66ccb164ba6b7369d376c5e0",
+              "m_SubObjectName": "",
+              "m_SubObjectType": ""
+            },
+            "RestartPos": {
+              "x": 2013.779052734375,
+              "y": 299.0124816894531,
+              "z": -830.943603515625
+            }
+          }
+        },
+        "catalog_binding": {
+          "key": "835a843a66ccb164ba6b7369d376c5e0",
+          "key_type": 0,
+          "key_offset": 1618771,
+          "entry": 21636,
+          "fields": [
+            17404,
+            3,
+            52849,
+            -942533314,
+            -1,
+            24617,
+            6
+          ],
+          "internal_id": "Assets/_Overcraft/Prefab/SubWorld/oc_pf_SubWorld_CaveDungeon_017.prefab"
+        },
+        "restart_position": {
+          "x": 2013.779052734375,
+          "y": 299.0124816894531,
+          "z": -830.943603515625
+        }
+      }
+    }
+  ],
+  "code_evidence": [
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 168537,
+      "end": 168587,
+      "text": "\tpublic class OcGimmick_TreasureBox : OcGimmick_TreasureBoxBase\n\t{\n\t\tpublic enum RarityType\n\t\t{\n\t\t\tCommon,\n\t\t\tEpic,\n\t\t\tLegendary\n\t\t}\n\n\t\t[SerializeField]\n\t\tprivate RarityType _RarityType;\n\n\t\t[SerializeField]\n\t\tprivate bool _ForceSpawn;\n\n\t\tprivate int _Rarity;\n\n\t\tprivate bool _EnableEnchantPoint;\n\n\t\t[SerializeReference]\n\t\tprivate IOcTreasureLottery _treasureLottery = new OcTreasureLottery_General();\n\n\t\tpublic Vector3 DropPos => base.transform.position + Vector3.up * 0.8f;\n\n\t\tpublic Vector3 DropForward => base.transform.forward;\n\n\t\tpublic RarityType RarityTypeVal => _RarityType;\n\n\t\tpublic bool EnableEnchantPoint => _EnableEnchantPoint;\n\n\t\tprotected override void Start()\n\t\t{\n\t\t\tif (_ForceSpawn)\n\t\t\t{\n\t\t\t\t_Spawn = true;\n\t\t\t}\n\t\t\telse if (UnityEngine.Random.Range(0f, 1f) <= 1f / 3f)\n\t\t\t{\n\t\t\t\t_Spawn = true;\n\t\t\t}\n\t\t\t_EnableEnchantPoint = UnityEngine.Random.value <= 1f / 3f;\n\t\t\tbase.Start();\n\t\t}\n\n\t\tprotected override void doComplete()\n\t\t{\n\t\t\tbase.doComplete();\n\t\t\t_treasureLottery.Lottery(this);\n\t\t}\n\t}\n\tpublic abstract class OcGimmick_TreasureBoxBase : OcGimmick_Pickup, IOcGimmick_Count"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 170338,
+      "end": 170389,
+      "text": "\tpublic class OcTreasureLottery_Fix : IOcTreasureLottery\n\t{\n\t\t[Serializable]\n\t\tpublic class ItemInfo\n\t\t{\n\t\t\tpublic OcItemID ItemID = new OcItemID();\n\n\t\t\tpublic int Num = 1;\n\t\t}\n\n\t\t[SerializeField]\n\t\tprivate ItemInfo[] _itemInfos = new ItemInfo[0];\n\n\t\tpublic void Lottery(OcGimmick_TreasureBox treasureBox)\n\t\t{\n\t\t\tint num = 1;\n\t\t\tif (treasureBox.FirstOpen_NetUserId == SingletonMonoBehaviour<OcNetMng>.Inst.NetUserId_Master && UnityEngine.Random.value < OcPlMng.LocalPl.SkillCtrl.TreasureHunter_Prob)\n\t\t\t{\n\t\t\t\tnum++;\n\t\t\t\tSingletonMonoBehaviour<OcMessageMng>.Inst.LocalPlMessage(DescriptionBuilder.BuildText(LocalizationManager.GetTranslation(\"100_UI/Speech/TresureHunter/Success\", true, 0, true, false, (GameObject)null, (string)null)));\n\t\t\t}\n\t\t\tItemInfo[] itemInfos = _itemInfos;\n\t\t\tforeach (ItemInfo itemInfo in itemInfos)\n\t\t\t{\n\t\t\t\tOcItem item = new OcItem(itemInfo.ItemID.ItemData);\n\t\t\t\tif (SingletonMonoBehaviour<OcNetMng>.Inst.IsClient)\n\t\t\t\t{\n\t\t\t\t\tshort num2 = (short)(itemInfo.Num * (num - 1));\n\t\t\t\t\tif (num2 > 0)\n\t\t\t\t\t{\n\t\t\t\t\t\tSingletonMonoBehaviour<OcNetMng>.Inst.NetRPC?.DropItem_TreasureHunterAdditionalDrop.Send(item, num2, treasureBox.BuffListId, treasureBox.PosHash);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tdrop(item, (byte)(itemInfo.Num * num), treasureBox.DropPos, treasureBox.DropForward);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tprivate static void drop(OcItem item, byte num, in Vector3 dropPos, in Vector3 dropForward)\n\t\t{\n\t\t\tOcDropItemActivateInfo ocDropItemActivateInfo = new OcDropItemActivateInfo();\n\t\t\tocDropItemActivateInfo.poolType = OcDropItemMng.PoolType.KillDrop_Em;\n\t\t\tocDropItemActivateInfo.pos = dropPos;\n\t\t\tocDropItemActivateInfo.item = item;\n\t\t\tocDropItemActivateInfo.stockNum = num;\n\t\t\tocDropItemActivateInfo.dropForward = dropForward;\n\t\t\tocDropItemActivateInfo.dropDeg = 120f;\n\t\t\tSingletonMonoBehaviour<OcDropItemMng>.Inst.activate(ocDropItemActivateInfo);\n\t\t}\n\t}"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 553441,
+      "end": 553478,
+      "text": "\t[CreateAssetMenu(menuName = \"OverCraft/ItemHandler/OcItemHandler_Blueprint\")]\n\tpublic class OcItemHandler_Blueprint : ItemHandlerSO\n\t{\n\t\tpublic override void TryUse(OcItemStack itemStack, out bool success, out bool needsCooldown)\n\t\t{\n\t\t\tif (!SingletonMonoBehaviour<OcItemDataMng>.Inst.BlueprintToRecipeDic.ContainsKey(itemStack.ItemData.Id))\n\t\t\t{\n\t\t\t\tDebug.Log((object)\"設計図の解放アイテムが未設定です\");\n\t\t\t\tsuccess = false;\n\t\t\t\tneedsCooldown = false;\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tint num = SingletonMonoBehaviour<OcItemDataMng>.Inst.BlueprintToRecipeDic[itemStack.ItemData.Id];\n\t\t\tif (SingletonMonoBehaviour<OcItemDataMng>.Inst.IsItemUnlocked(num))\n\t\t\t{\n\t\t\t\tDebug.Log((object)\"レシピ開放済み\");\n\t\t\t\tsuccess = false;\n\t\t\t\tneedsCooldown = false;\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tSingletonMonoBehaviour<OcItemDataMng>.Inst.UnlockRecipe(num);\n\t\t\titemStack.Decrease(1, isCostingItem: true);\n\t\t\tItemData itemData_OrNull = SingletonMonoBehaviour<OcItemDataMng>.Inst.GetItemData_OrNull(num);\n\t\t\tif ((bool)itemData_OrNull)\n\t\t\t{\n\t\t\t\tstring message = LocalizationManager.GetTranslation(\"100_UI/Text/LearnedRecipe\", true, 0, true, false, (GameObject)null, (string)null).Replace(\"[A]\", itemData_OrNull.DisplayName);\n\t\t\t\tUISceneSingleton<OcItemUI_EquipmentMng>.InstUISS?.ItemUseNotify(message);\n\t\t\t\tif (itemData_OrNull.IsSkill())\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupPetSkillUnlock(itemData_OrNull);\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupCraftUnlock(itemData_OrNull);\n\t\t\t\t}\n\t\t\t}\n\t\t\tsuccess = true;\n\t\t\tneedsCooldown = true;"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 555390,
+      "end": 555480,
+      "text": "\t\tprivate void LoadRecipeSaveData()\n\t\t{\n\t\t\tint[] reicpeUnlocked = SingletonMonoBehaviour<OcPlCharacterManager>.Inst.GetReicpeUnlocked();\n\t\t\t_itemUnlocked.Clear();\n\t\t\tint[] array = reicpeUnlocked;\n\t\t\tforeach (int itemId in array)\n\t\t\t{\n\t\t\t\tUnlockRecipe(itemId);\n\t\t\t}\n\t\t\tint soulOrbRewardItemCount = SingletonMonoBehaviour<OcPlCharacterManager>.Inst.GetSoulOrbRewardItemCount();\n\t\t\tSoSoulOrbRewardData soulOrbRewardData = OcResidentData.SoulOrbRewardData;\n\t\t\tfor (int j = 0; j < soulOrbRewardItemCount; j++)\n\t\t\t{\n\t\t\t\tif (TryGetBluePrintRecipeItem(soulOrbRewardData.GetRewardItemID(j), out var recipeItem))\n\t\t\t\t{\n\t\t\t\t\tUnlockRecipe(recipeItem);\n\t\t\t\t}\n\t\t\t}\n\t\t\tItemData[] array2 = blueprintRecipeList;\n\t\t\tforeach (ItemData itemData in array2)\n\t\t\t{\n\t\t\t\tif (!IsItemUnlocked(itemData.Id))\n\t\t\t\t{\n\t\t\t\t\tint workBenchId = itemData.WorkBenchId;\n\t\t\t\t\tif (craftBenchMap.ContainsKey(workBenchId) && craftBenchMap[workBenchId].Contains(itemData))\n\t\t\t\t\t{\n\t\t\t\t\t\tcraftBenchMap[workBenchId].Remove(itemData);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tpublic bool TryGetBluePrintRecipeItem(int blueprintID, out ItemData recipeItem)\n\t\t{\n\t\t\tif (SingletonMonoBehaviour<OcItemDataMng>.Inst.BlueprintToRecipeDic.TryGetValue(blueprintID, out var value))\n\t\t\t{\n\t\t\t\trecipeItem = GetItemData_OrNull(value);\n\t\t\t\treturn !recipeItem.IsNullOrEmpty();\n\t\t\t}\n\t\t\trecipeItem = EmptyData;\n\t\t\treturn false;\n\t\t}\n\n\t\tpublic void SetFavourite(int itemId, bool isFavorite)\n\t\t{\n\t\t\tif (isFavorite)\n\t\t\t{\n\t\t\t\tif (!_itemFavouriteList.Contains(itemId))\n\t\t\t\t{\n\t\t\t\t\t_itemFavouriteList.Add(itemId);\n\t\t\t\t}\n\t\t\t}\n\t\t\telse if (_itemFavouriteList.Contains(itemId))\n\t\t\t{\n\t\t\t\t_itemFavouriteList.Remove(itemId);\n\t\t\t}\n\t\t}\n\n\t\tpublic void UnlockRecipe(int itemId)\n\t\t{\n\t\t\tItemData itemData_OrNull = GetItemData_OrNull(itemId);\n\t\t\tif (!itemData_OrNull.IsNullOrEmpty())\n\t\t\t{\n\t\t\t\tUnlockRecipe(itemData_OrNull);\n\t\t\t}\n\t\t}\n\n\t\tpublic void UnlockRecipe(ItemData item)\n\t\t{\n\t\t\tif (IsItemUnlocked(item.Id))\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\t\t\t_itemUnlocked.Add(item.Id);\n\t\t\tif (!item.IsSkill())\n\t\t\t{\n\t\t\t\tint workBenchId = item.WorkBenchId;\n\t\t\t\tif (craftBenchMap.ContainsKey(workBenchId) && !craftBenchMap[workBenchId].Contains(item))\n\t\t\t\t{\n\t\t\t\t\tcraftBenchMap[workBenchId].Add(item);\n\t\t\t\t}\n\t\t\t}\n\t\t\tif (RecipeToBlueprintDic.TryGetValue(item.Id, out var value) && SingletonMonoBehaviour<StatisticalDataManager>.Inst.GetItemDeliveredCount(value) == 0f)\n\t\t\t{\n\t\t\t\tSingletonMonoBehaviour<StatisticalDataManager>.Inst.AddItemDelivered(value, 1);\n\t\t\t}\n\t\t}\n\n\t\tpublic System.Collections.Generic.IReadOnlyList<int> GetItemFavourite()\n\t\t{\n\t\t\treturn _itemFavouriteList;"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 569485,
+      "end": 569525,
+      "text": "\t\tpublic ItemData CurrentItem { get; private set; }\n\n\t\tpublic void RefreshDetail(ItemData itemData)\n\t\t{\n\t\t\tif (itemData.IsNullOrEmpty())\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tCurrentItem = itemData;\n\t\t\titemSlot.Init(itemData);\n\t\t\t((TMP_Text)itemName).text = itemData.DisplayName;\n\t\t\t((TMP_Text)itemDesc).text = itemData.Description;\n\t\t\tItemData itemData_OrNull = SingletonMonoBehaviour<OcItemDataMng>.Inst.GetItemData_OrNull(SingletonMonoBehaviour<OcItemDataMng>.Inst.RecipeToBlueprintDic[itemData.Id]);\n\t\t\tif (itemData_OrNull.IsNullOrEmpty())\n\t\t\t{\n\t\t\t\tdropInfoRoot.SetActiveIfRequired(isActive: false);\n\t\t\t\ttresureOrGacha.SetActiveIfRequired(isActive: false);\n\t\t\t\t((UnityEngine.Component)(object)placementText).gameObject.SetActiveIfRequired(isActive: false);\n\t\t\t\tspecificPlacementRoot.SetActiveIfRequired(isActive: false);\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tIEnumerable<SoEnemyData> emFromDropItemID = SingletonMonoBehaviour<OcEmMng>.Inst.getEmFromDropItemID(itemData_OrNull.Id, havingEnemyNames.Length);\n\t\t\tdropInfoRoot.SetActiveIfRequired(!emFromDropItemID.Empty());\n\t\t\tIEnumerator<SoEnemyData> enumerator = emFromDropItemID.GetEnumerator();\n\t\t\tTMP_Text[] array = havingEnemyNames;\n\t\t\tforeach (TMP_Text val in array)\n\t\t\t{\n\t\t\t\tbool flag = enumerator.MoveNext();\n\t\t\t\t((UnityEngine.Component)(object)val).gameObject.SetActiveIfRequired(flag);\n\t\t\t\tif (flag)\n\t\t\t\t{\n\t\t\t\t\tval.SetText(enumerator.Current.Name);\n\t\t\t\t}\n\t\t\t}\n\t\t\ttresureOrGacha.SetActiveIfRequired(itemData_OrNull.ProbInTreasureBox > 0f);\n\t\t\tstring text = default(string);\n\t\t\tbool isActive = LocalizationManager.TryGetTranslation(ZString.Concat<string, short>(\"204_ItemWhereToGet/\", itemData_OrNull.Id), ref text, true, true, 0, true, false, (GameObject)null, (string)null);\n\t\t\t((UnityEngine.Component)(object)placementText).gameObject.SetActiveIfRequired(isActive);\n\t\t\tplacementText.SetText(text);\n\t\t\tspecificPlacementRoot.SetActiveIfRequired(tresureOrGacha.activeSelf || ((UnityEngine.Component)(object)placementText).gameObject.activeSelf);\n\t\t}"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 570850,
+      "end": 570882,
+      "text": "\t\t\t\treturn;\n\t\t\t}\n\t\t\tswitch (_selectedButtonId)\n\t\t\t{\n\t\t\tcase 0:\n\t\t\t{\n\t\t\t\tItemData rewardItemData = SoulOrbRewardList.GetRewardItemData(_exchangeCount[0]);\n\t\t\t\tif (!rewardItemData)\n\t\t\t\t{\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tif (SingletonMonoBehaviour<OcItemDataMng>.Inst.TryGetBluePrintRecipeItem(rewardItemData.Id, out var recipeItem))\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcItemDataMng>.Inst.UnlockRecipe(recipeItem);\n\t\t\t\t\tif (recipeItem.IsSkill())\n\t\t\t\t\t{\n\t\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupPetSkillUnlock(recipeItem);\n\t\t\t\t\t}\n\t\t\t\t\telse\n\t\t\t\t\t{\n\t\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupCraftUnlock(recipeItem);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tUISceneSingleton<OcItemUI_InventoryMng>.InstUISS?.TryTakeItem(rewardItemData.Id, 0, 1, OcItemUI_InventoryMng.ItemTakeTrigger.Reward);\n\t\t\t\t}\n\t\t\t\t_exchangeCount[0]++;\n\t\t\t\tbreak;\n\t\t\t}\n\t\t\tcase 1:\n\t\t\t\tOcPlMng.LocalPl.SkillCtrl.AddSkillPoint(1);\n\t\t\t\t_exchangeCount[1]++;"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 571605,
+      "end": 571642,
+      "text": "\n\t\tpublic void OnExchangeButtonPressed()\n\t\t{\n\t\t\tOcItemUI_InventoryMng instUISS = UISceneSingleton<OcItemUI_InventoryMng>.InstUISS;\n\t\t\tif ((object)instUISS != null && instUISS.TryCostItem(_statusUpHandler.SoulOrb, 5) < 5)\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tint rewardItemID = _statusUpHandler.SoulOrbRewardList.GetRewardItemID(_exchangeCount[0]);\n\t\t\tint num = _statusUpHandler.SoulOrbRewardList.GetRewardNum(_exchangeCount[0]);\n\t\t\tif (SingletonMonoBehaviour<OcItemDataMng>.Inst.TryGetBluePrintRecipeItem(rewardItemID, out var recipeItem))\n\t\t\t{\n\t\t\t\tSingletonMonoBehaviour<OcItemDataMng>.Inst.UnlockRecipe(recipeItem);\n\t\t\t\tif (recipeItem.IsSkill())\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupPetSkillUnlock(recipeItem);\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupCraftUnlock(recipeItem);\n\t\t\t\t}\n\t\t\t\tnum = -1;\n\t\t\t}\n\t\t\tif (num > 0)\n\t\t\t{\n\t\t\t\tUISceneSingleton<OcItemUI_InventoryMng>.InstUISS?.TryTakeItem(rewardItemID, 0, num, OcItemUI_InventoryMng.ItemTakeTrigger.Reward);\n\t\t\t\tItemData itemData_OrNull = SingletonMonoBehaviour<OcItemDataMng>.Inst.GetItemData_OrNull(rewardItemID);\n\t\t\t\tif ((bool)itemData_OrNull)\n\t\t\t\t{\n\t\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupReward(itemData_OrNull.DisplayName, itemData_OrNull.ItemImage_Icon, ZString.Concat<char, int>('×', num), 0);\n\t\t\t\t}\n\t\t\t}\n\t\t\t_lastExchange = _exchangeCount[0];\n\t\t\t_exchangeCount[0]++;\n\t\t\tSingletonMission<SoulOrbExchangeMission>.Inst?.TryProgress();\n\t\t\tRefreshUI();\n\t\t\tSingletonMonoBehaviour<OcPlCharacterManager>.Inst.SetSoulOrbExchangeCount(_exchangeCount);\n\t\t}"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 11563,
+      "end": 11577,
+      "text": "\t[Category(\"00. 【よく使うやつ】\")]\n\t[DisplayName(\"クラフトレシピ全開放\")]\n\t[Sort(10)]\n\tpublic void UnlockAllRecipe()\n\t{\n\t\tItemData[] blueprintRecipes = SingletonMonoBehaviour<OcItemDataMng>.Inst.BlueprintRecipes;\n\t\tforeach (ItemData item in blueprintRecipes)\n\t\t{\n\t\t\tSingletonMonoBehaviour<OcItemDataMng>.Inst.UnlockRecipe(item);\n\t\t}\n\t\tWorldLevel = OcWorldManager.MaxWorldLevelAvailable;\n\t\tShowAllRecipe = true;\n\t}\n\n\t[Category(\"00. 【よく使うやつ】\")]"
+    },
+    {
+      "file": "artifacts\\harvesting-research\\all.cs",
+      "start": 398773,
+      "end": 398786,
+      "text": "\t\t}\n\n\t\tpublic void BossSkillUnlock(OcSkillLockCondition_Boss bossKillCond)\n\t\t{\n\t\t\tItemData itemData_OrNull = SingletonMonoBehaviour<OcItemDataMng>.Inst.GetItemData_OrNull(bossKillCond.SkillId);\n\t\t\tif (itemData_OrNull != null)\n\t\t\t{\n\t\t\t\tSingletonMonoBehaviour<OcItemDataMng>.Inst.UnlockRecipe(bossKillCond.SkillId);\n\t\t\t\tSingletonMonoBehaviour<OcUI_HUDUnlockHandler>.Inst.PopupPlSkillUnlock(itemData_OrNull);\n\t\t\t}\n\t\t}\n\n\t\tprivate void TryStoreAssignedSP(OcSkill skill, int sp = 0)\n\t\t{"
+    },
+    {
+      "file": "artifacts/harvesting-research/all.cs",
+      "start": 177925,
+      "end": 177940,
+      "text": "\t\t}\n\n\t\tvoid OcPickupEvent.Pickup()\n\t\t{\n\t\t\tif (IsStopping)\n\t\t\t{\n\t\t\t\tif (!SingletonMonoBehaviour<OcSubWorldMng>.Inst.Exists(_subWorldID) && !SingletonMonoBehaviour<OcSubWorldMng>.Inst.TryCreate(_subWorldID))\n\t\t\t\t{\n\t\t\t\t\tDebug.LogError((object)\"サブワールドの数オーバー\");\n\t\t\t\t}\n\t\t\t\telse\n\t\t\t\t{\n\t\t\t\t\tStartMove();\n\t\t\t\t}\n\t\t\t}\n\t\t}"
+    },
+    {
+      "file": "artifacts/harvesting-research/all.cs",
+      "start": 392687,
+      "end": 392740,
+      "text": "\t\t\treturn _instDic.ContainsKey(id);\n\t\t}\n\n\t\tpublic bool TryCreate(int id)\n\t\t{\n\t\t\tif (_instDic.Count >= 3)\n\t\t\t{\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\tif (Exists(id))\n\t\t\t{\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\tif (SingletonMonoBehaviour<OcNetMng>.Inst.IsMultiPlay)\n\t\t\t{\n\t\t\t\tSingletonMonoBehaviour<OcNetMng>.Inst.NetRPC.SubWorld.SendCreateToOther(id);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tCreate_RPC(id);\n\t\t\t}\n\t\t\treturn true;\n\t\t}\n\n\t\tpublic void Create_RPC(int id)\n\t\t{\n\t\t\t//IL_0096: Unknown result type (might be due to invalid IL or missing references)\n\t\t\t//IL_009b: Unknown result type (might be due to invalid IL or missing references)\n\t\t\tif (_stateDic.ContainsKey(id))\n\t\t\t{\n\t\t\t\tDebug.LogError((object)$\"{id}のサブワールドを生成しようとしましたが、_stateDicが設定済みです。生成中が解放されていない可能性あり。\");\n\t\t\t\treturn;\n\t\t\t}\n\t\t\t_stateDic.Add(id, SubWorldState.InstantiateWait);\n\t\t\tAssetReferenceGameObject subWorldPrefab = _subWorldSoList.OcSubWorldSos[id].SubWorldPrefab;\n\t\t\tif (((AssetReference)subWorldPrefab).IsValid() && ((AssetReference)subWorldPrefab).IsDone)\n\t\t\t{\n\t\t\t\tInstantiateSubWorld(id, (GameObject)((AssetReference)subWorldPrefab).Asset);\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tAsyncOperationHandle<GameObject> handle = ((AssetReferenceT<GameObject>)(object)subWorldPrefab).LoadAssetAsync();\n\t\t\thandle.Completed += onLoaded;\n\t\t\tvoid onLoaded(AsyncOperationHandle<GameObject> result)\n\t\t\t{\n\t\t\t\tInstantiateSubWorld(id, result.Result);\n\t\t\t\thandle.Completed -= onLoaded;\n\t\t\t}\n\t\t}\n\n\t\tprivate void InstantiateSubWorld(int id, GameObject prefab)\n\t\t{\n\t\t\tif (!prefab)\n\t\t\t{\n\t\t\t\tDebug.LogError((object)$\"{id}のサブワールドを生成しようとしましたが、プレハブが不正でした\");"
+    }
+  ],
+  "historical_source": {
+    "url": "https://store.steampowered.com/news/posts/?appids=1307550&enddate=1633323907&feed=steam_community_announcements",
+    "title": "2021/09/30 Update Patch v20210930.1502",
+    "date": "2021-09-30",
+    "finding": "Publisher stated seven accessory-II blueprints were rare level-30-plus dungeon boss drops. Historical provenance only; current source evidence is the installed fixed cave chest data."
+  },
+  "limitations": [
+    "Active scene elevator, list index, prefab GUID, catalog binding and registered chest verified; full traversal/prerequisites and earliest access not proved.",
+    "No runtime pickup or blueprint consumption performed.",
+    "No AP tier or earliest age assigned.",
+    "Other negative acquisition audits remain bounded."
+  ],
+  "subworld_list": {
+    "asset": "sharedassets6.assets",
+    "path_id": 42303,
+    "cls": "OcSubWorldSoList",
+    "name": "_so--SubWorldSoList",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 1,
+        "m_PathID": 3873
+      },
+      "m_Name": "_so--SubWorldSoList",
+      "OcSubWorldSos": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 42329
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42304
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42305
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42306
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42307
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42308
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42309
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42310
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42311
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42312
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42313
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42314
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42315
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42316
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42317
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42318
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42319
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42320
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42321
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42322
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42323
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42324
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42325
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42326
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42327
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 42328
+        }
+      ]
+    }
+  },
+  "subworld_manager": {
+    "asset": "sharedassets6.assets",
+    "path_id": 42416,
+    "cls": "OcSubWorldMng",
+    "name": "",
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 10351
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 1,
+        "m_PathID": 3670
+      },
+      "m_Name": "",
+      "_subWorldSoList": {
+        "m_FileID": 0,
+        "m_PathID": 42303
+      },
+      "_elevatorRequest": []
+    }
+  }
+}

@@ -44,7 +44,7 @@ namespace CraftopiaArchipelago
             if (type != "Oc.OcBldg_CraftingBench") return ResolveStation(type);
             // Runtime capture 2026-10-10: one class backs distinct stations.
             // Read the same item-data family used by the game's recipe lookup.
-            // Only observed class/family pairs are admitted; no name guessing.
+            // Explicit audited recipe families only; no name guessing.
             var item = Field(station, "<_BldgItem_InItemSlot>k__BackingField");
             var data = Field(item, "<data>k__BackingField");
             var rawFamily = Field(data, "familyId");
@@ -55,8 +55,17 @@ namespace CraftopiaArchipelago
                 // Capture 2026-10-14: Blacksmith (item 272). Recipe benches
                 // retain vanilla costs/age checks and independent equipment gates.
                 case 20017: return "opening";
+                // Installed recipe-family audit 2026-10-16. Manual component
+                // and furniture recipes retain native age/material checks;
+                // automation is gated separately by the automation hook.
+                case 20013: return "opening";
+                case 20020: return "opening";
+                case 20012: return "alchemy";
                 case 20018: return "smelting";
                 case 20015: return "cooking";
+                // F9 2026-10-16: Aging Facility item 416 uses the generic
+                // bench and family 20206. Match the existing Aging UI gate.
+                case 20206: return "equipment_care";
                 default: return null;
             }
         }

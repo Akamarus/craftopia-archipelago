@@ -20,7 +20,8 @@ class GoalContract(unittest.TestCase):
                   goal_age_target=5,starting_combat=0,mission_catalog_version=0,skill_points_per_check=1,multiplayer_mode=0,
                   **{'enable_'+n+'_checks':1 for n in ('mission','age','soul_orb','chest','challenge','anubis','shop','boss')})
         w.options=types.SimpleNamespace(**{k:types.SimpleNamespace(value=v) for k,v in opts.items()})
-        locations=[types.SimpleNamespace(name='Mission'+str(i),address=i+1) for i in range(53)]
+        locations=[types.SimpleNamespace(name='Mission'+str(i),address=i+1,check_category='mission') for i in range(53)]
+        w.options.enable_soul_orb_checks.value=0
         w.multiworld=types.SimpleNamespace(get_region=lambda *a:types.SimpleNamespace(locations=locations),get_locations=lambda *a:locations,completion_condition={})
         w.class_to_location={};w.game_id_to_location={};w.location_name_to_id={l.name:l.address for l in locations}
         w.set_rules()

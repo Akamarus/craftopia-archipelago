@@ -7,7 +7,10 @@ namespace CraftopiaArchipelago
 {
     internal static class EquipmentHooks
     {
-        static EquipmentCatalog catalog;
+        static EquipmentCatalog originalCatalog, reviewedCatalog, reviewedR2Catalog;
+        static EquipmentCatalog catalog => Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedLootR2CatalogId
+            ? reviewedR2Catalog : Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedLootCatalogId
+            ? reviewedCatalog : originalCatalog;
         [ThreadStatic] static int craftActionDepth;
         static readonly System.Collections.Generic.HashSet<string> diagnostics = new System.Collections.Generic.HashSet<string>();
         internal static void Diagnostic(string message)
@@ -24,7 +27,12 @@ namespace CraftopiaArchipelago
             if (typeof(Oc.OcPlMaster).Module.ModuleVersionId != new Guid("62ff4b5b-7684-4c41-b5f0-f44aa19360ca"))
                 throw new InvalidOperationException("Equipment hook evidence does not match this game build");
             using (var stream = typeof(Plugin).Assembly.GetManifestResourceStream("equipment_catalog_20261010_r1.json"))
-            using (var reader = new System.IO.StreamReader(stream)) catalog = EquipmentCatalog.Parse(reader.ReadToEnd());
+            using (var reader = new System.IO.StreamReader(stream)) {
+                var json = reader.ReadToEnd();
+                originalCatalog = EquipmentCatalog.Parse(json);
+                reviewedCatalog = EquipmentCatalog.ParseReviewedLoot(json);
+                reviewedR2Catalog = EquipmentCatalog.ParseReviewedLootR2(json);
+            }
             var craftAction = typeof(Oc.OcPlMaster).Assembly.GetType("Oc.Item.UI.OcItemUI_CraftMng",true)
                 .GetMethod("CraftButtonExecute",BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic);
             var begin = typeof(EquipmentHooks).GetMethod(nameof(BeginCraft),BindingFlags.Static|BindingFlags.NonPublic);
@@ -35,6 +43,9 @@ namespace CraftopiaArchipelago
             foreach(var p in Harmony.GetPatchInfo(craftAction).Finalizers) if(p.owner==Plugin.GUID && p.PatchMethod==end) endFound=true;
             if(!beginFound || !endFound) throw new InvalidOperationException("Craft notice boundary not registered");
             Patch(harmony,"Oc.Item.UI.OcItemUI_CraftMng","CanCraft",typeof(bool),nameof(ItemBool),"Oc.Item.ItemData","System.Int32");
+            InstallRecipeNotice(harmony,"RefreshInfo",nameof(RecipeSelected));
+            InstallRecipeNotice(harmony,"OnCloseUI",nameof(ClearRecipe));
+            InstallRecipeNotice(harmony,"Unselect",nameof(ClearRecipe));
             Patch(harmony,"Oc.Item.OcItem_CraftEnchantSelect","TryCraftItem",typeof(Oc.Item.OcItem),nameof(CraftItem),"Oc.Item.ItemData","System.Int32");
             Patch(harmony,"Oc.OcChestComponent","canAutoCraftNum",typeof(byte),nameof(AutoCraft),"Oc.Item.ItemData");
             Patch(harmony,"Oc.Item.UI.OcItemUI_EquipmentMng","CanEquipItem",typeof(bool),nameof(StackBool),"Oc.Item.OcItemStack","System.Boolean");
@@ -62,6 +73,28 @@ namespace CraftopiaArchipelago
             if (world == null || world.CurrentWorld == null || Oc.OcGameSceneShareSingleton.IsOpening)
                 throw new InvalidOperationException("World age unavailable");
             return world.WorldLevel;
+        }
+        static void InstallRecipeNotice(Harmony harmony,string name,string callback)
+        {
+            var target=typeof(Oc.OcPlMaster).Assembly.GetType("Oc.Item.UI.OcItemUI_CraftMng",true)
+                .GetMethod(name,BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic);
+            var hook=typeof(EquipmentHooks).GetMethod(callback,BindingFlags.Static|BindingFlags.NonPublic);
+            harmony.Patch(target,postfix:new HarmonyMethod(hook));
+            foreach(var p in Harmony.GetPatchInfo(target).Postfixes)
+                if(p.owner==Plugin.GUID && p.PatchMethod==hook) return;
+            throw new InvalidOperationException("Recipe notice hook not registered: " + name);
+        }
+        static void ClearRecipe() { try { Plugin.StatusDisplay?.SetRecipeNotice(null); } catch { } }
+        static void RecipeSelected(object __instance)
+        {
+            ClearRecipe();
+            try {
+                // Inspected getter reads selectingCell.stack.ItemData; no game mutation.
+                var item=__instance.GetType().GetProperty("selectingItem",BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic).GetValue(__instance);
+                if(item==null || !Plugin.EquipmentRequired) return;
+                EquipmentEnforcement.Allow(true,catalog,Plugin.EquipmentPermissions(),
+                    () => EquipmentRead.Item(item),Age,message => Plugin.StatusDisplay?.SetRecipeNotice(message));
+            } catch { } // Cosmetic observer cannot alter the original menu or enforcement.
         }
         static void BeginCraft(out bool __state) { __state=true; craftActionDepth++; }
         static void EndCraft(bool __state) { if(__state && craftActionDepth>0) craftActionDepth--; }

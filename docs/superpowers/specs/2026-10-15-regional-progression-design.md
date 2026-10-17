@@ -1,10 +1,10 @@
 # Regional progression and early Smelting protection
 
-Status: proposed design, awaiting review. Research completed October 15, 2026.
+Status: region approach approved in conversation; revised scope includes tower repair stages and age evolution. Exact environmental requirements and runtime completion boundaries remain experimental. Research completed October 15, 2026.
 
 ## Intended result
 
-Keep the large mission/Soul Orb pool, but stop treating geographic distance as free access. Early production must not depend on reaching a distant region that needs that production. Preserve the current character, world, seed, frozen location IDs, and receipt history. Tamer logic uses vanilla capabilities; respawning chests remain excluded.
+Keep the large mission/Soul Orb pool and organize it by region. Most of the world is physically open: distance and higher-level enemies alone do not establish a mandatory tower, age or weapon gate. Model actual environmental and individual check requirements. Preserve the current character, world, seed, frozen location IDs, and receipt history. Tamer logic uses vanilla capabilities; respawning chests remain excluded. Add a separate AP check for each successful tower repair stage and each actual age advancement in future seeds.
 
 ## Evidence collected
 
@@ -60,9 +60,11 @@ Alternatives considered: granting Smelting at start is simple but removes its ra
 
 ## Stage 1: early-placement safeguard and research metadata
 
-For newly generated expedition seeds, constrain that player's `Production: smelting` item to the same player's ten tested opening missions: IDs 30, 50, 51, 52, 53, 54, 55, 56, 57, 58. Mission 60 is excluded because it has a Sword permission dependency. Resolve these through frozen mission IDs; never use title matching.
+For newly generated expedition seeds, constrain that player's `Production: smelting` item to the same player's verified Geezah Soul Orbs OR ten tested opening missions: IDs 30, 50, 51, 52, 53, 54, 55, 56, 57, 58. The user explicitly accepts Geezah orbs as opening placements. Resolve these through frozen IDs; never use title matching. Mission 60 remains outside the initial guaranteed-opening set because it has a Sword permission dependency.
 
-Apply the restriction to every potential destination, including remote worlds in multiworld, using AP placement constraints that compose with existing item rules. Do not just prefer early placement. Respect exclusions, plando and priorities; report a clear generation error if settings leave no valid opening destination. Do not silently remove items, force a starting grant, weaken the rule, or substitute an orb. Confirm the implementation approach against AP 0.6.8 before coding.
+Review Geezah membership before adding orb IDs to this placement set; the 55 nearest-tower candidates are not automatically Geezah. Any individual orb prerequisite must still be modeled, and Smelting must not lock itself behind that prerequisite. When orb checks are disabled, use the opening missions. If the verified eligible union is empty, reject generation with an explanation.
+
+Apply the restriction to every potential destination, including remote worlds in multiworld, using AP placement constraints that compose with existing item rules. Do not just prefer early placement. Respect exclusions, plando and priorities; report a clear generation error if settings leave no valid opening destination. Do not silently remove items, force a starting grant, or widen the eligible union. Confirm the implementation approach against AP 0.6.8 before coding.
 
 Keep pool counts and existing checks unchanged. Mark the generation profile/version distinctly so a spoiler identifies this safeguard. Historical slot data and current sessions keep their original contracts. This is an opening safety improvement, not a declaration that expedition logic is beatable.
 
@@ -72,11 +74,43 @@ Keep map matches as separate research metadata containing runtime GUID/AP ID, ex
 
 Each reviewed region needs explicit borders or manually reviewed membership, real entrance alternatives, native age/tower conditions where demonstrated, and a source for required materials. Each orb needs any additional traversal, cage, puzzle or encounter requirement. A nearby tower is only a geographic reference.
 
+The user reports cold and heat survival requirements in the iceberg and volcano areas. Represent these as distinct survival capabilities with alternative proven routes, rather than inventing a mandatory armor tier. Trace each route's recipes, ingredient sources, station permissions, native age, equipment permissions if applicable, strength and duration. Verify whether protection is needed throughout a region or only in specific hazard zones. Do not assume a brief unprotected run, healing spam, death recovery or a modded Tamer ability is a normal logic route. Exact thresholds and practical traversal remain playtest questions. Keep enemy difficulty as advisory information unless an actual required encounter has supported capability requirements.
+
 Represent capabilities as conjunctions and alternatives using the existing least-fixed-point progression model. Extend coverage to orb identities explicitly; no implicit `field` fallback for unknown entries in a reviewed profile. Preserve alternate vanilla combat/Tamer routes when evidence supports them.
 
 Use logical capability nodes for repeatable access to resources, not current inventory counts. Actual observed age/tower events need dedicated identifiers and rules before integration; do not equate a raw age array index with a reached age. A resource cycle must never prove itself reachable.
 
 A reviewed regional profile must refuse generation with unmapped enabled checks and name the missing evidence. The existing broad experimental profile remains available and clearly labeled. No claim of complete regional logic until every enabled check and the goal have evidence-backed coverage.
+
+## Tower repair stages and age evolution checks
+
+### Location identity and scope
+
+Create one network location per authored tower and completed repair stage, using a stable game tower identifier plus the resulting stage. Use readable labels such as `Geezah Plateau: Tower Repair Stage 1`. Enumerate the actual number of stages per tower; do not assume every tower has three stages or turn the map's ten rows into ten verified tower identities. Give final repair its own stage location, not a duplicate generic completion check.
+
+Create one network location per actually reached age beyond the starting age, using the verified destination world-level value and display name. Do not award a starting-age check. Nine raw age-data rows do not prove nine advancements. Freeze new AP IDs after catalog validation in a non-overlapping range, preserving all mission and orb IDs.
+
+Existing mission checks may also complete during the same action. Retain those distinct locations deliberately; never accidentally submit a tower stage twice through both a repair callback and an achievement callback. Decide pool composition for the added locations in the implementation plan, preserving item/location balance.
+
+### Observation and delivery
+
+Inspect the installed implementation before choosing hooks. `OcAchievement_RestoreTower.OnAchieve` is currently only a candidate for full restoration; it is not evidence of individual stages. The collector already observes `Oc.Maps.OcWorldManager.SetWorldLevel(int)`, but that method can be called while loading or synchronizing state. A setter callback alone is not an age-advancement event.
+
+Capture stable tower identity, world identity, prior/resulting stage, paid costs and successful completion boundary. For age evolution capture prior/resulting world level, the authoritative advancement path, required costs, and whether the call came from load/synchronization. Only successful new transitions in the bound session create observations. Cancellation, failed payment, repeated callbacks, entering a region, reconnect, and restoring a save do not create new checks.
+
+Persist observations through the existing outbox before sending. Bridge routing must use explicit slot-data allowlists for these families. Deduplicate by seed/slot and stable location identity, and only display completed status after confirmation. Preserve world/character enrollment rules and reject observations from a different world. In shared-world play, validate authoritative changes and distribute credit using the existing enrolled-player policy; do not assume every network callback is a locally paid repair.
+
+Keep native repairs, material spending, age unlocking and world changes intact. AP checks are attached to successful progression. Do not suppress native advancement or its enabling effects. Any separate native item/currency reward requires inspection before deciding replacement behavior.
+
+### Dependencies and existing saves
+
+Tower stage N requires the preceding stage plus valid access to its material sources and operating permissions. Age advancement requires its real vanilla conditions and material capabilities; it is not automatically locked behind every geographically earlier tower. Never place the only required production/resistance unlock at the stage or age that needs it.
+
+New tower/age checks require a newly generated seed. Do not append locations to the running 564-location seed. Preserve the current character for diagnostics and further playtests. Before a future seed uses a progressed character, explicitly define enrollment/baseline treatment for already-completed stages and ages; do not silently retro-award them or reset progress. Runtime probes should use upcoming uncompleted stages where possible.
+
+### Verification
+
+Test intermediate and final stage success, unsuccessful payment, cancellation, duplicate callbacks, save/reload, disconnect/replay, mismatched identity and allowlist rejection. For ages also test same-level assignment, lower-level/load assignment and legitimate advancement; unexplained multi-level jumps must be held rather than inventing intermediate completions. Confirm stages and actual age names with runtime evidence before marking the catalog ready. Generation tests must include repair/resource cycles, environmental self-locks, pool balance, and routing compatibility with old seeds.
 
 ## Validation for Stage 1
 
@@ -92,4 +126,4 @@ No live seed regeneration, replacement DLL, forced age progression, save edits, 
 
 ## Review decision
 
-Approve Stage 1 implementation with the ten-mission Smelting constraint and separate research metadata. Stage 2 needs verified region memberships and travel/resource evidence before its access rules can be implemented responsibly.
+The user approved regional grouping, early missions OR verified Geezah orbs for Smelting, open travel without invented enemy-level gates, and experimental refinement of environmental survival rules. They additionally requested checks for every tower repair stage and age evolution. Next prepare an implementation plan covering evidence collection first, catalog/observer integration second, and generation safeguards with regression tests. No claim of complete regional access or working tower-stage hooks until those paths are verified.

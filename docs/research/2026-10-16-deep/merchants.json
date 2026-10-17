@@ -1,0 +1,3733 @@
+{
+  "research_only": true,
+  "summary": {
+    "new_dynamic_merchant_routes": 14,
+    "merchant_source": "Craftable Medal Trader's Table 3522",
+    "world_placements_unchanged": 53,
+    "all67_shop_items_now_have_placement_or_instantiation_evidence": true
+  },
+  "equipment": [
+    {
+      "id": 1727,
+      "name": "Flamberge",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_01",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6665
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 1843,
+      "name": "Gram",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_10",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6674
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 1906,
+      "name": "Spear of Achilles",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_04",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6668
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 2521,
+      "name": "Assault Dragon Mail for Men",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_08",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6672
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 2522,
+      "name": "Assault Dragon Mail for Women",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_08",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6672
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 2523,
+      "name": "Magic Dragon Mail for Men",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_07",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6671
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 2524,
+      "name": "Magic Dragon Mail for Women",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_07",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6671
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 5509,
+      "name": "Assault Dragon Helm for Men",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_06",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6670
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 5510,
+      "name": "Assault Dragon Helm for Women",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_06",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6670
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 5511,
+      "name": "Magic Dragon Helm for Men",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_03",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6667
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 5512,
+      "name": "Magic Dragon Helm for Women",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_03",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6667
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 6380,
+      "name": "Necro's Cane",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_02",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6666
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 6455,
+      "name": "Tanukigasaki",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_05",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6669
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    },
+    {
+      "id": 6532,
+      "name": "Gungnir Storm",
+      "normal_status_eligible": true,
+      "routes": [
+        {
+          "catalog": "SoShopList_OW_Overwrite_LimitedDungeon_09",
+          "required_world_level": 9,
+          "base_price": 50,
+          "cashier": {
+            "rid": 5226949780300103705,
+            "type": {
+              "class": "OcItemCashier",
+              "ns": "Oc",
+              "asm": "AD__Overcraft"
+            },
+            "data": {
+              "_costItem": {
+                "_id": 6673
+              }
+            }
+          },
+          "active_placements": [],
+          "serialized_sale_matches": true
+        }
+      ],
+      "new_source": "Medal Trader's Table 3522 dynamic summon"
+    }
+  ],
+  "catalogs": {
+    "SoShopList_OW_Overwrite_LimitedDungeon_01": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91291,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6665
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 1727,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 170
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1205,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1213,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5546,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_02": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91292,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6666
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 6380,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 507
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 506
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 505
+            }
+          ],
+          "_overwritePrice": 20,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1203,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1231,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 3661,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_03": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91293,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6667
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 5511,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5512,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 249
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 248
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1209,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 3606,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_04": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91294,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6668
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 1906,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 321
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 320
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5548,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1223,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1227,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_05": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91295,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6669
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 6455,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 395
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 394
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 393
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 392
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1215,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1229,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_06": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91296,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6670
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 5509,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5510,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 204
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 203
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 199
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 202
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 198
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_07": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91297,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6671
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 2523,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 2524,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 209
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 208
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 207
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1235,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1221,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_08": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91298,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6672
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 2521,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 2522,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 159
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 180
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 177
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 179
+            }
+          ],
+          "_overwritePrice": 20,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 176
+            }
+          ],
+          "_overwritePrice": 20,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1225,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5565,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_09": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91299,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6673
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 6532,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 282
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 281
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 280
+            }
+          ],
+          "_overwritePrice": 20,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 3606,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1279,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    },
+    "SoShopList_OW_Overwrite_LimitedDungeon_10": {
+      "asset": "sharedassets0.assets",
+      "path_id": 91300,
+      "cashier": {
+        "rid": 5226949780300103705,
+        "type": {
+          "class": "OcItemCashier",
+          "ns": "Oc",
+          "asm": "AD__Overcraft"
+        },
+        "data": {
+          "_costItem": {
+            "_id": 6674
+          }
+        }
+      },
+      "sales": [
+        {
+          "_id": 1843,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 517
+            }
+          ],
+          "_overwritePrice": 70,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 516
+            }
+          ],
+          "_overwritePrice": 50,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 5780,
+          "_requirWorldLv": 9,
+          "_enchantments": [
+            {
+              "_id": 515
+            }
+          ],
+          "_overwritePrice": 30,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1270,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1273,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        },
+        {
+          "_id": 1276,
+          "_requirWorldLv": 9,
+          "_enchantments": [],
+          "_overwritePrice": 3,
+          "_canKillDrop": 0
+        }
+      ],
+      "placements": []
+    }
+  },
+  "random_catalogs": [
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 91290,
+      "cls": "SoRandShopWeightList",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 16777216,
+          "m_PathID": 98113159168
+        },
+        "m_Name": "SoRandShopWeight_BossChallageMerchant",
+        "_shopListWeightInfos": [
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91291
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91292
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91293
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91294
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91295
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91296
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91297
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91298
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91299
+            },
+            "Weight": 10.0
+          },
+          {
+            "SoShopList": {
+              "m_FileID": 0,
+              "m_PathID": 91300
+            },
+            "Weight": 10.0
+          }
+        ]
+      }
+    }
+  ],
+  "summon_components": [
+    {
+      "file": "resources.assets",
+      "id": 539257,
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 83912
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4879
+        },
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "icon": {
+          "m_FileID": 2,
+          "m_PathID": 4987
+        },
+        "_PinHolder": {
+          "m_FileID": 0,
+          "m_PathID": 456809
+        },
+        "_overwriteProcesses": [
+          {
+            "rid": 2763296561550327880
+          }
+        ],
+        "references": {
+          "version": 2,
+          "RefIds": [
+            {
+              "rid": 2763296561550327880,
+              "type": {
+                "class": "OcSpawnerOverwriteRandomShopListProcess",
+                "ns": "Oc",
+                "asm": "AD__Overcraft"
+              },
+              "data": {
+                "_weightListSo": {
+                  "m_FileID": 2,
+                  "m_PathID": 91290
+                }
+              }
+            }
+          ]
+        }
+      },
+      "gameobject": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 154456
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 539257
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 456809
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "m_Name": "Core",
+        "m_Tag": 0,
+        "m_IsActive": true
+      },
+      "components": [
+        {
+          "id": 539257,
+          "cls": "OcInstallObj_SummonNPC",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 83912
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4879
+            },
+            "m_Name": "",
+            "syncDirection": 0,
+            "syncMode": 0,
+            "syncInterval": 0.10000000149011612,
+            "_ignoreDeath": 0,
+            "icon": {
+              "m_FileID": 2,
+              "m_PathID": 4987
+            },
+            "_PinHolder": {
+              "m_FileID": 0,
+              "m_PathID": 456809
+            },
+            "_overwriteProcesses": [
+              {
+                "rid": 2763296561550327880
+              }
+            ],
+            "references": {
+              "version": 2,
+              "RefIds": [
+                {
+                  "rid": 2763296561550327880,
+                  "type": {
+                    "class": "OcSpawnerOverwriteRandomShopListProcess",
+                    "ns": "Oc",
+                    "asm": "AD__Overcraft"
+                  },
+                  "data": {
+                    "_weightListSo": {
+                      "m_FileID": 2,
+                      "m_PathID": 91290
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 456809,
+          "cls": "OcPinHolder",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 83912
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 459
+            },
+            "m_Name": "",
+            "buildingIcon": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "displayDistance": 20.0,
+            "height": 2.0
+          }
+        }
+      ],
+      "externals": [
+        "globalgamemanagers.assets",
+        "sharedassets0.assets",
+        "Resources/unity_builtin_extra",
+        "Library/unity default resources"
+      ]
+    },
+    {
+      "file": "sharedassets0.assets",
+      "id": 101112,
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 28477
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4879
+        },
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "icon": {
+          "m_FileID": 0,
+          "m_PathID": 4987
+        },
+        "_PinHolder": {
+          "m_FileID": 0,
+          "m_PathID": 114770
+        },
+        "_overwriteProcesses": [
+          {
+            "rid": 2763296561550327880
+          }
+        ],
+        "references": {
+          "version": 2,
+          "RefIds": [
+            {
+              "rid": 2763296561550327880,
+              "type": {
+                "class": "OcSpawnerOverwriteRandomShopListProcess",
+                "ns": "Oc",
+                "asm": "AD__Overcraft"
+              },
+              "data": {
+                "_weightListSo": {
+                  "m_FileID": 0,
+                  "m_PathID": 91290
+                }
+              }
+            }
+          ]
+        }
+      },
+      "gameobject": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 54383
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 101112
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 114770
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "m_Name": "Core",
+        "m_Tag": 0,
+        "m_IsActive": true
+      },
+      "components": [
+        {
+          "id": 101112,
+          "cls": "OcInstallObj_SummonNPC",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 28477
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 4879
+            },
+            "m_Name": "",
+            "syncDirection": 0,
+            "syncMode": 0,
+            "syncInterval": 0.10000000149011612,
+            "_ignoreDeath": 0,
+            "icon": {
+              "m_FileID": 0,
+              "m_PathID": 4987
+            },
+            "_PinHolder": {
+              "m_FileID": 0,
+              "m_PathID": 114770
+            },
+            "_overwriteProcesses": [
+              {
+                "rid": 2763296561550327880
+              }
+            ],
+            "references": {
+              "version": 2,
+              "RefIds": [
+                {
+                  "rid": 2763296561550327880,
+                  "type": {
+                    "class": "OcSpawnerOverwriteRandomShopListProcess",
+                    "ns": "Oc",
+                    "asm": "AD__Overcraft"
+                  },
+                  "data": {
+                    "_weightListSo": {
+                      "m_FileID": 0,
+                      "m_PathID": 91290
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": 114770,
+          "cls": "OcPinHolder",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 28477
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 459
+            },
+            "m_Name": "",
+            "buildingIcon": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            },
+            "displayDistance": 20.0,
+            "height": 2.0
+          }
+        }
+      ],
+      "externals": [
+        "globalgamemanagers.assets",
+        "Resources/unity_builtin_extra",
+        "Library/unity default resources"
+      ]
+    }
+  ],
+  "item_prefab_links": [
+    {
+      "key": "oc_pf_ItemPrefab_03522",
+      "id": 51080,
+      "data": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 173670
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 529766
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "m_Name": "oc_pf_ItemPrefab_03522",
+        "m_Tag": 0,
+        "m_IsActive": true
+      },
+      "components": [
+        {
+          "id": 529766,
+          "cls": "OcItemPrefab",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 51080
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 5892
+            },
+            "m_Name": "",
+            "itemID": 3522,
+            "_RawItemModel": {
+              "m_FileID": 0,
+              "m_PathID": 122077
+            },
+            "_EquipPrefab": {
+              "m_FileID": 0,
+              "m_PathID": 544572
+            },
+            "_considerFieldObj": 0,
+            "_considerFieldObjWithNetworkServerSpawn": 0,
+            "_groupBuildMirror": 0,
+            "_saveDataVersion": -1,
+            "_fieldObjGUID": 65535,
+            "_attachTargetObjForFieldObj": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "oc_pf_ItemPrefab_03831",
+      "id": 129512,
+      "data": {
+        "m_Component": [
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 229575
+            }
+          },
+          {
+            "component": {
+              "m_FileID": 0,
+              "m_PathID": 466858
+            }
+          }
+        ],
+        "m_Layer": 0,
+        "m_Name": "oc_pf_ItemPrefab_03831",
+        "m_Tag": 0,
+        "m_IsActive": true
+      },
+      "components": [
+        {
+          "id": 466858,
+          "cls": "OcItemPrefab",
+          "data": {
+            "m_GameObject": {
+              "m_FileID": 0,
+              "m_PathID": 129512
+            },
+            "m_Enabled": 1,
+            "m_Script": {
+              "m_FileID": 1,
+              "m_PathID": 5892
+            },
+            "m_Name": "",
+            "itemID": 3831,
+            "_RawItemModel": {
+              "m_FileID": 0,
+              "m_PathID": 80991
+            },
+            "_EquipPrefab": {
+              "m_FileID": 0,
+              "m_PathID": 599302
+            },
+            "_considerFieldObj": 0,
+            "_considerFieldObjWithNetworkServerSpawn": 0,
+            "_groupBuildMirror": 0,
+            "_saveDataVersion": -1,
+            "_fieldObjGUID": 65535,
+            "_attachTargetObjForFieldObj": {
+              "m_FileID": 0,
+              "m_PathID": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "equip_links": [
+    {
+      "id": 544572,
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 85426
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 7174
+        },
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "equipSlot": 0,
+        "wpOnMount": 0,
+        "wpOffMount": 0,
+        "wpCategory": 13,
+        "_mountBehaviour": 3,
+        "ammoType": 0,
+        "_meleeAttackCollision": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_GunMuzzle": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_EquipDisableCol": [],
+        "_InstalledActiveGameObject": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 19202
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 83912
+          }
+        ],
+        "_InstalledCompleteGameObject": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 133535
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 19202
+          }
+        ],
+        "_DisableGameObject": [],
+        "_EquipEnable_InstallDisable_GameObject": [],
+        "_Install_Ignore_Reverse_GameObject": [],
+        "_HorizontalGroundAncher": [],
+        "_AdditionalDrawObj": [],
+        "_isOnlyPlMasterAddDrawObj": 0,
+        "_Install_Children_ItemPrefab": [],
+        "_ActionStateParticle": [],
+        "_InstallObj_DontSendPosDeg": 0,
+        "_InstallOfsFw": 0.0,
+        "_InstallOfsUp": 0.0,
+        "_RaycastOfsUp": 0.0,
+        "_InstallOfsDegY": 0.0,
+        "_InstallRot180": 0,
+        "_AttachOfsZ": 0.0,
+        "_GridSize": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "_Install_IgnoreHitCheckTerrain": 0,
+        "_Install_FrontRaycheckOfs": 0.0,
+        "_CheckRevertOfs": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "_JugglingOfsY": 0.0,
+        "_HitCheckOtherBldg": {
+          "m_FileID": 0,
+          "m_PathID": 517080
+        },
+        "_DropItemScale": 0.30000001192092896,
+        "_BodyEquipType": 0,
+        "_EqWpOffOfsY": 0.0,
+        "_EqWpOffScale": 0.800000011920929,
+        "_GravityGroveThrow_FreeRot": 0,
+        "_GravityGroveThrow_AddTorque": 0,
+        "syncItemId": 0,
+        "syncLevel": 0,
+        "syncItemVersion": 0,
+        "syncUseADissolver": 0,
+        "syncGUID": 0,
+        "syncHP": 0.0,
+        "syncCond": 0
+      }
+    },
+    {
+      "id": 599302,
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 136262
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 7174
+        },
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "equipSlot": 0,
+        "wpOnMount": 0,
+        "wpOffMount": 0,
+        "wpCategory": 13,
+        "_mountBehaviour": 3,
+        "ammoType": 0,
+        "_meleeAttackCollision": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_GunMuzzle": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_EquipDisableCol": [],
+        "_InstalledActiveGameObject": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 87214
+          }
+        ],
+        "_InstalledCompleteGameObject": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 129330
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 127752
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 150809
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 114191
+          }
+        ],
+        "_DisableGameObject": [],
+        "_EquipEnable_InstallDisable_GameObject": [],
+        "_Install_Ignore_Reverse_GameObject": [],
+        "_HorizontalGroundAncher": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 212187
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 154034
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 163805
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 182527
+          }
+        ],
+        "_AdditionalDrawObj": [],
+        "_isOnlyPlMasterAddDrawObj": 0,
+        "_Install_Children_ItemPrefab": [],
+        "_ActionStateParticle": [],
+        "_InstallObj_DontSendPosDeg": 0,
+        "_InstallOfsFw": 5.0,
+        "_InstallOfsUp": 0.0,
+        "_RaycastOfsUp": 0.0,
+        "_InstallOfsDegY": 0.0,
+        "_InstallRot180": 0,
+        "_AttachOfsZ": 0.0,
+        "_GridSize": {
+          "x": 0,
+          "y": 0,
+          "z": 0
+        },
+        "_Install_IgnoreHitCheckTerrain": 0,
+        "_Install_FrontRaycheckOfs": 0.0,
+        "_CheckRevertOfs": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "_JugglingOfsY": 0.0,
+        "_HitCheckOtherBldg": {
+          "m_FileID": 0,
+          "m_PathID": 502846
+        },
+        "_DropItemScale": 1.0,
+        "_BodyEquipType": 0,
+        "_EqWpOffOfsY": 0.0,
+        "_EqWpOffScale": 0.800000011920929,
+        "_GravityGroveThrow_FreeRot": 0,
+        "_GravityGroveThrow_AddTorque": 0,
+        "syncItemId": 0,
+        "syncLevel": 0,
+        "syncItemVersion": 0,
+        "syncUseADissolver": 0,
+        "syncGUID": 0,
+        "syncHP": 0.0,
+        "syncCond": 0
+      }
+    }
+  ],
+  "recipe_capture": {
+    "3522": {
+      "id": 3522,
+      "status": 2,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 10,
+      "rarity": 0,
+      "familyId": 20501,
+      "categoryId": 19,
+      "inventoryTabId": 2,
+      "existPrefab": 4,
+      "equipSlot": 0,
+      "wpCategory": 13,
+      "workbenchId": 20011,
+      "workbenchLv": 9,
+      "playerCraftCount": 0,
+      "carftTimeCost": 0,
+      "materialA_Id": 746,
+      "materialA_count": 5,
+      "materialB_Id": 719,
+      "materialB_count": 1,
+      "materialC_Id": 712,
+      "materialC_count": 1,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": [
+        746,
+        719,
+        712,
+        0,
+        0
+      ],
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 298,
+      "cantUse": false,
+      "display_name": "Medal Trader's Table",
+      "display_name_status": "collected"
+    },
+    "3831": {
+      "id": 3831,
+      "status": 2,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 14,
+      "rarity": 4,
+      "familyId": 20301,
+      "categoryId": 17,
+      "inventoryTabId": 2,
+      "existPrefab": 4,
+      "equipSlot": 0,
+      "wpCategory": 13,
+      "workbenchId": 20011,
+      "workbenchLv": 9,
+      "playerCraftCount": 0,
+      "carftTimeCost": 0,
+      "materialA_Id": 3341,
+      "materialA_count": 1,
+      "materialB_Id": 698,
+      "materialB_count": 100,
+      "materialC_Id": 719,
+      "materialC_count": 10,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": [
+        3341,
+        698,
+        719,
+        0,
+        0
+      ],
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 3000,
+      "cantUse": false,
+      "display_name": "Boss Challenge Dungeon Gate",
+      "display_name_status": "collected"
+    },
+    "719": {
+      "id": 719,
+      "status": 2,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 11,
+      "rarity": 0,
+      "familyId": 40203,
+      "categoryId": 34,
+      "inventoryTabId": 3,
+      "existPrefab": 2,
+      "equipSlot": 0,
+      "wpCategory": 0,
+      "workbenchId": 20029,
+      "workbenchLv": 9,
+      "playerCraftCount": 0,
+      "carftTimeCost": 3,
+      "materialA_Id": 707,
+      "materialA_count": 10,
+      "materialB_Id": 0,
+      "materialB_count": 0,
+      "materialC_Id": 0,
+      "materialC_count": 0,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": [
+        707,
+        0,
+        0,
+        0,
+        0
+      ],
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 240,
+      "cantUse": false,
+      "display_name": "Orichalcum Ingot",
+      "display_name_status": "collected"
+    },
+    "712": {
+      "id": 712,
+      "status": 1,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 3,
+      "rarity": 0,
+      "familyId": 40202,
+      "categoryId": 34,
+      "inventoryTabId": 3,
+      "existPrefab": 2,
+      "equipSlot": 0,
+      "wpCategory": 0,
+      "workbenchId": 20018,
+      "workbenchLv": 2,
+      "playerCraftCount": 0,
+      "carftTimeCost": 3,
+      "materialA_Id": 700,
+      "materialA_count": 3,
+      "materialB_Id": 0,
+      "materialB_count": 0,
+      "materialC_Id": 0,
+      "materialC_count": 0,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": [
+        700,
+        0,
+        0,
+        0,
+        0
+      ],
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 4,
+      "cantUse": false,
+      "display_name": "Iron Ingot",
+      "display_name_status": "collected"
+    },
+    "3341": {
+      "id": 3341,
+      "status": 2,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 14,
+      "rarity": 4,
+      "familyId": 42601,
+      "categoryId": 71,
+      "inventoryTabId": 3,
+      "existPrefab": 0,
+      "equipSlot": 0,
+      "wpCategory": 0,
+      "workbenchId": 20001,
+      "workbenchLv": 0,
+      "playerCraftCount": 0,
+      "carftTimeCost": 0,
+      "materialA_Id": 0,
+      "materialA_count": 0,
+      "materialB_Id": 0,
+      "materialB_count": 0,
+      "materialC_Id": 0,
+      "materialC_count": 0,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": null,
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 0,
+      "cantUse": false,
+      "display_name": "Goddess's Rune",
+      "display_name_status": "collected"
+    },
+    "698": {
+      "id": 698,
+      "status": 1,
+      "isOldData": false,
+      "StatusMapOnly": null,
+      "rank": 0,
+      "rarity": 0,
+      "familyId": 40001,
+      "categoryId": 32,
+      "inventoryTabId": 3,
+      "existPrefab": 2,
+      "equipSlot": 0,
+      "wpCategory": 0,
+      "workbenchId": 20001,
+      "workbenchLv": 0,
+      "playerCraftCount": 0,
+      "carftTimeCost": 3,
+      "materialA_Id": 0,
+      "materialA_count": 0,
+      "materialB_Id": 0,
+      "materialB_count": 0,
+      "materialC_Id": 0,
+      "materialC_count": 0,
+      "materialD_Id": 0,
+      "materialD_count": 0,
+      "materialE_Id": 0,
+      "materialE_count": 0,
+      "_materialID": null,
+      "_materialNum": null,
+      "<IsBlueprintRequired>k__BackingField": false,
+      "atk": 0,
+      "matk": 0,
+      "def": 0,
+      "maxStack": 100,
+      "price": 1,
+      "cantUse": false,
+      "display_name": "Stone",
+      "display_name_status": "collected"
+    }
+  },
+  "live_recipe_membership": {
+    "3522": [
+      20011
+    ],
+    "3831": [
+      20011
+    ]
+  },
+  "entrance": {
+    "id": 94640,
+    "data": {
+      "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 33889
+      },
+      "m_Enabled": 1,
+      "m_Script": {
+        "m_FileID": 1,
+        "m_PathID": 3025
+      },
+      "m_Name": "",
+      "syncDirection": 0,
+      "syncMode": 0,
+      "syncInterval": 0.10000000149011612,
+      "_ignoreDeath": 0,
+      "_warpDungeon": {
+        "m_FileID": 0,
+        "m_PathID": 112758
+      },
+      "_dungeonConsole": {
+        "m_FileID": 0,
+        "m_PathID": 94608
+      }
+    },
+    "ancestry": [
+      {
+        "id": 33889,
+        "data": {
+          "m_Component": [
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 42791
+              }
+            },
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 94640
+              }
+            }
+          ],
+          "m_Layer": 0,
+          "m_Name": "Core",
+          "m_Tag": 0,
+          "m_IsActive": true
+        }
+      },
+      {
+        "id": 32476,
+        "data": {
+          "m_Component": [
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 41592
+              }
+            },
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 109965
+              }
+            },
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 101123
+              }
+            },
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 98556
+              }
+            },
+            {
+              "component": {
+                "m_FileID": 0,
+                "m_PathID": 106454
+              }
+            }
+          ],
+          "m_Layer": 0,
+          "m_Name": "oc_pf_ItemPrefabPart_20301_Core_LimitedBossDungeon_3831",
+          "m_Tag": 0,
+          "m_IsActive": true
+        }
+      }
+    ],
+    "linked": [
+      {
+        "id": 112758,
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 23933
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 1,
+            "m_PathID": 1556
+          },
+          "m_Name": "",
+          "tfTargetPos": {
+            "m_FileID": 0,
+            "m_PathID": 40309
+          },
+          "_WarpType": 1,
+          "_IsUnlockableShortcut": 0,
+          "_LockNum": 0,
+          "_CloseLimitSec": 0.0,
+          "_messageTermInStartClose": "100_UI/Message/WarpStartClose",
+          "_messageTermInClose": "100_UI/Message/WarpClose",
+          "_messageTermTryWarpInClose": "100_UI/Speech/WarpClosed",
+          "_activeInOpenObjs": [],
+          "_activeInCloseObjs": [],
+          "_CloseWarpType": {
+            "_hasValue": 0,
+            "_value": 0
+          },
+          "fastTravel": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "respawnPoint": {
+            "m_FileID": 0,
+            "m_PathID": 53393
+          },
+          "entranceSource": {
+            "m_FileID": 0,
+            "m_PathID": 90786
+          },
+          "dungeonConsole": {
+            "m_FileID": 0,
+            "m_PathID": 94608
+          },
+          "entranceEffect": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 24599
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 17978
+            }
+          ],
+          "entranceCollider": {
+            "m_FileID": 0,
+            "m_PathID": 72158
+          },
+          "gateCloseCollider": {
+            "m_FileID": 0,
+            "m_PathID": 16290
+          }
+        }
+      },
+      {
+        "id": 94608,
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 33657
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 1,
+            "m_PathID": 4212
+          },
+          "m_Name": ""
+        }
+      }
+    ]
+  },
+  "entrance_source": [
+    {
+      "id": 90786,
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_090_LimitedBoss",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 90788
+        },
+        "subDungeonList": []
+      }
+    }
+  ],
+  "dungeon_source": {
+    "m_GameObject": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+      "m_FileID": 1,
+      "m_PathID": 4193
+    },
+    "m_Name": "So--OcDungeonOpenWorld_090_LimitedBoss",
+    "sourceId": 90,
+    "dungeonPrefab": {
+      "m_AssetGUID": "4be9b1d0b8ad7b74c974a0733a32a631",
+      "m_SubObjectName": "",
+      "m_SubObjectType": ""
+    },
+    "isCoveredDungerAirspace": 0,
+    "AdditionalTimer": 0.0,
+    "bossEmType": 229,
+    "bossLevel": 0,
+    "isCombatDungeon": 1,
+    "battleDungeonType": 3,
+    "_overwriteBossImage": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "_overwriteBossNameTerm": "",
+    "dungeontheme": 4,
+    "dungeonDayTime": 10.0,
+    "dungeonWeather": {
+      "m_FileID": 0,
+      "m_PathID": 80020
+    },
+    "BGM": 1,
+    "dmgType": 0,
+    "dmgLevel": 0
+  },
+  "medal_rewards": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42047,
+      "cls": "SoLimitedBossDungeon",
+      "name": "so--SoLimitedBossDungeon_003_SatyrosLv3",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4953
+        },
+        "m_Name": "so--SoLimitedBossDungeon_003_SatyrosLv3",
+        "EmType": 145,
+        "Level": 150,
+        "RewardItems": [
+          {
+            "itemID": 6674,
+            "num": 10
+          },
+          {
+            "itemID": 6665,
+            "num": 1
+          },
+          {
+            "itemID": 6666,
+            "num": 1
+          },
+          {
+            "itemID": 6667,
+            "num": 1
+          }
+        ],
+        "RoomTheme": 0,
+        "EffectiveWeaponAttr": 138,
+        "EffectiveWeaponAttrRate": 0.30000001192092896,
+        "ColdDmgLevel": 0,
+        "FireDmgLevel": 0,
+        "PoisonDmgLevel": 0,
+        "IsEnemyPermanentHot": 1,
+        "IsHotRatio": 0,
+        "HotRatio": 0.0,
+        "HotValue": 2000.0,
+        "HotInterval": 20.0,
+        "IsPlayerPermanentDot": 1,
+        "IsDotRatio": 0,
+        "DotRatio": 0.0,
+        "DotValue": 40.0,
+        "DotInterval": 5.0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42056,
+      "cls": "SoLimitedBossDungeon",
+      "name": "so--SoLimitedBossDungeon_012_GriffonLv3",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4953
+        },
+        "m_Name": "so--SoLimitedBossDungeon_012_GriffonLv3",
+        "EmType": 44,
+        "Level": 150,
+        "RewardItems": [
+          {
+            "itemID": 6667,
+            "num": 10
+          },
+          {
+            "itemID": 6674,
+            "num": 1
+          },
+          {
+            "itemID": 6665,
+            "num": 1
+          },
+          {
+            "itemID": 6668,
+            "num": 1
+          }
+        ],
+        "RoomTheme": 2,
+        "EffectiveWeaponAttr": 164,
+        "EffectiveWeaponAttrRate": 0.30000001192092896,
+        "ColdDmgLevel": 2,
+        "FireDmgLevel": 0,
+        "PoisonDmgLevel": 2,
+        "IsEnemyPermanentHot": 1,
+        "IsHotRatio": 1,
+        "HotRatio": 0.029999999329447746,
+        "HotValue": 0.0,
+        "HotInterval": 10.0,
+        "IsPlayerPermanentDot": 1,
+        "IsDotRatio": 1,
+        "DotRatio": 0.05000000074505806,
+        "DotValue": 0.0,
+        "DotInterval": 10.0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42072,
+      "cls": "SoLimitedBossDungeon",
+      "name": "so--SoLimitedBossDungeon_028_DragonLv1",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4953
+        },
+        "m_Name": "so--SoLimitedBossDungeon_028_DragonLv1",
+        "EmType": 7,
+        "Level": 80,
+        "RewardItems": [
+          {
+            "itemID": 6665,
+            "num": 3
+          }
+        ],
+        "RoomTheme": 3,
+        "EffectiveWeaponAttr": 0,
+        "EffectiveWeaponAttrRate": 1.0,
+        "ColdDmgLevel": 0,
+        "FireDmgLevel": 0,
+        "PoisonDmgLevel": 0,
+        "IsEnemyPermanentHot": 1,
+        "IsHotRatio": 0,
+        "HotRatio": 0.009999999776482582,
+        "HotValue": 0.0,
+        "HotInterval": 20.0,
+        "IsPlayerPermanentDot": 0,
+        "IsDotRatio": 0,
+        "DotRatio": 0.0,
+        "DotValue": 3.0,
+        "DotInterval": 15.0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42073,
+      "cls": "SoLimitedBossDungeon",
+      "name": "so--SoLimitedBossDungeon_029_DragonLv2",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4953
+        },
+        "m_Name": "so--SoLimitedBossDungeon_029_DragonLv2",
+        "EmType": 7,
+        "Level": 100,
+        "RewardItems": [
+          {
+            "itemID": 6665,
+            "num": 5
+          }
+        ],
+        "RoomTheme": 3,
+        "EffectiveWeaponAttr": 194,
+        "EffectiveWeaponAttrRate": 0.6000000238418579,
+        "ColdDmgLevel": 0,
+        "FireDmgLevel": 4,
+        "PoisonDmgLevel": 0,
+        "IsEnemyPermanentHot": 1,
+        "IsHotRatio": 0,
+        "HotRatio": 0.0,
+        "HotValue": 1000.0,
+        "HotInterval": 20.0,
+        "IsPlayerPermanentDot": 1,
+        "IsDotRatio": 0,
+        "DotRatio": 0.0,
+        "DotValue": 3.0,
+        "DotInterval": 15.0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42074,
+      "cls": "SoLimitedBossDungeon",
+      "name": "so--SoLimitedBossDungeon_030_DragonLv3",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4953
+        },
+        "m_Name": "so--SoLimitedBossDungeon_030_DragonLv3",
+        "EmType": 7,
+        "Level": 120,
+        "RewardItems": [
+          {
+            "itemID": 6665,
+            "num": 10
+          },
+          {
+            "itemID": 6670,
+            "num": 1
+          },
+          {
+            "itemID": 6671,
+            "num": 1
+          },
+          {
+            "itemID": 6668,
+            "num": 1
+          }
+        ],
+        "RoomTheme": 3,
+        "EffectiveWeaponAttr": 194,
+        "EffectiveWeaponAttrRate": 0.10000000149011612,
+        "ColdDmgLevel": 0,
+        "FireDmgLevel": 4,
+        "PoisonDmgLevel": 0,
+        "IsEnemyPermanentHot": 1,
+        "IsHotRatio": 1,
+        "HotRatio": 0.10000000149011612,
+        "HotValue": 0.0,
+        "HotInterval": 60.0,
+        "IsPlayerPermanentDot": 1,
+        "IsDotRatio": 0,
+        "DotRatio": 0.0,
+        "DotValue": 30.0,
+        "DotInterval": 10.0
+      }
+    }
+  ],
+  "bundle_scan": {
+    "selected_count": 186,
+    "errors": [
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        -4258433385965557787,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        -2196533970159621073,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        792047427658988134,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        1251360711219507099,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        4754440693242335921,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        4792142761979322244,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        6705280735210720002,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ],
+      [
+        "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        7489422589581215881,
+        "?",
+        "File cab-2926bf5930a7383f16e0fbc773c71178 not found in G:\\SteamLibrary\\steamapps\\common\\Craftopia\\Craftopia_Data\\StreamingAssets\\aa\\StandaloneWindows64"
+      ]
+    ],
+    "limited_boss_objects": [
+      {
+        "asset": "CAB-a40fedafb4f0e541625d527cb8f6b805",
+        "bundle": "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        "path_id": -7882771876149290202,
+        "cls": "OcLimitedBossDungeonRoom",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 2159038993337516583
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 1350467765101016326
+          },
+          "m_Name": "",
+          "_startPoint": {
+            "m_FileID": 0,
+            "m_PathID": -2637064470504246234
+          },
+          "_roomRadius": 30.0,
+          "_centerPoint": {
+            "m_FileID": 0,
+            "m_PathID": 1235251568733480924
+          }
+        },
+        "game_object": 2159038993337516583,
+        "ancestry": [
+          {
+            "id": 2159038993337516583,
+            "name": "oc_pf_dungeon--BossRoom03",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 2159038993337516583
+              },
+              "m_LocalRotation": {
+                "x": -0.0,
+                "y": -0.0,
+                "z": -0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": -600.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -8342210238822352128
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5822310500373230554
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -4406527511247038244
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -8789267474594475235
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 2244125234782264078
+              }
+            }
+          },
+          {
+            "id": 495635368857888659,
+            "name": "oc_pf_dungeon--LimitedBoss",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 495635368857888659
+              },
+              "m_LocalRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7506750025382598173
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2905090859805103321
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5571549165335831627
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 6181013737184164656
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1572447679752046992
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2380563530053834831
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -3599105143827957535
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 922018873428391001
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -875914594161462471
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "asset": "CAB-a40fedafb4f0e541625d527cb8f6b805",
+        "bundle": "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        "path_id": -1962053768450965972,
+        "cls": "OcLimitedBossDungeonRoom",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -4735405289012064748
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 1350467765101016326
+          },
+          "m_Name": "",
+          "_startPoint": {
+            "m_FileID": 0,
+            "m_PathID": -286415673973745038
+          },
+          "_roomRadius": 30.0,
+          "_centerPoint": {
+            "m_FileID": 0,
+            "m_PathID": -7303506501154107872
+          }
+        },
+        "game_object": -4735405289012064748,
+        "ancestry": [
+          {
+            "id": -4735405289012064748,
+            "name": "oc_pf_dungeon--BossRoom02",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": -4735405289012064748
+              },
+              "m_LocalRotation": {
+                "x": -0.0,
+                "y": -0.0,
+                "z": -0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": -600.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2865203136339054393
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2627576051826944611
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -2152868275674326488
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1603587662817929793
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 2244125234782264078
+              }
+            }
+          },
+          {
+            "id": 495635368857888659,
+            "name": "oc_pf_dungeon--LimitedBoss",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 495635368857888659
+              },
+              "m_LocalRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7506750025382598173
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2905090859805103321
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5571549165335831627
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 6181013737184164656
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1572447679752046992
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2380563530053834831
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -3599105143827957535
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 922018873428391001
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -875914594161462471
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "asset": "CAB-a40fedafb4f0e541625d527cb8f6b805",
+        "bundle": "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        "path_id": -1231459814988144603,
+        "cls": "OcLimitedBossDungeonRoom",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -8578086138390192211
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 1350467765101016326
+          },
+          "m_Name": "",
+          "_startPoint": {
+            "m_FileID": 0,
+            "m_PathID": 3527714622626429504
+          },
+          "_roomRadius": 30.0,
+          "_centerPoint": {
+            "m_FileID": 0,
+            "m_PathID": -9070688936860643163
+          }
+        },
+        "game_object": -8578086138390192211,
+        "ancestry": [
+          {
+            "id": -8578086138390192211,
+            "name": "oc_pf_dungeon--BossRoom01",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": -8578086138390192211
+              },
+              "m_LocalRotation": {
+                "x": -0.0,
+                "y": -0.0,
+                "z": -0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 600.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 472144150492639170
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 314117939214283854
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1539258196826342
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7525308177625874205
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 2244125234782264078
+              }
+            }
+          },
+          {
+            "id": 495635368857888659,
+            "name": "oc_pf_dungeon--LimitedBoss",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 495635368857888659
+              },
+              "m_LocalRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7506750025382598173
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2905090859805103321
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5571549165335831627
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 6181013737184164656
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1572447679752046992
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2380563530053834831
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -3599105143827957535
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 922018873428391001
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -875914594161462471
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "asset": "CAB-a40fedafb4f0e541625d527cb8f6b805",
+        "bundle": "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        "path_id": 2153832486273062191,
+        "cls": "OcLimitedBossDungeonRoom",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": -7703747244246279234
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 1350467765101016326
+          },
+          "m_Name": "",
+          "_startPoint": {
+            "m_FileID": 0,
+            "m_PathID": 7623581078520194141
+          },
+          "_roomRadius": 30.0,
+          "_centerPoint": {
+            "m_FileID": 0,
+            "m_PathID": 8003193087260237726
+          }
+        },
+        "game_object": -7703747244246279234,
+        "ancestry": [
+          {
+            "id": -7703747244246279234,
+            "name": "oc_pf_dungeon--BossRoom04",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": -7703747244246279234
+              },
+              "m_LocalRotation": {
+                "x": -0.0,
+                "y": -0.0,
+                "z": -0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 600.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -6339490052142954990
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 3045982361654098251
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -8049366623391780157
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -8755329027362945807
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 2244125234782264078
+              }
+            }
+          },
+          {
+            "id": 495635368857888659,
+            "name": "oc_pf_dungeon--LimitedBoss",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 495635368857888659
+              },
+              "m_LocalRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7506750025382598173
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2905090859805103321
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5571549165335831627
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 6181013737184164656
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1572447679752046992
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2380563530053834831
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -3599105143827957535
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 922018873428391001
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -875914594161462471
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "asset": "CAB-a40fedafb4f0e541625d527cb8f6b805",
+        "bundle": "defaultlocalgroup_assets_all_48788aa8a57ebd6fe7e4e72e60c38c4f.bundle",
+        "path_id": 3468893445699506308,
+        "cls": "OcDungeon_LimitedBoss",
+        "name": "",
+        "data": {
+          "m_GameObject": {
+            "m_FileID": 0,
+            "m_PathID": 495635368857888659
+          },
+          "m_Enabled": 1,
+          "m_Script": {
+            "m_FileID": 0,
+            "m_PathID": 5809978107707106530
+          },
+          "m_Name": "",
+          "Root": {
+            "m_FileID": 0,
+            "m_PathID": -7208303097928857610
+          },
+          "_devDungeonWarps": [],
+          "roomCount": 0,
+          "_gimmickList": [],
+          "_staticObjList": [],
+          "_spawnerList": [],
+          "_lockableObjs": [
+            {
+              "m_FileID": 0,
+              "m_PathID": 2283399089418598552
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -5492231059218700886
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -761596654152957318
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3956331378978384865
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 756318749485932826
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 6992218661455557788
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2367289349307097921
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4591617626161153179
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3999463687003029365
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7710994548070403507
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7160912698894087874
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4445303768203220447
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 8810852926441187092
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -5680156619336862675
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6758041192387385757
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2433790707663243035
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4695963509816381700
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2469937606546009236
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7460905390228950017
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 3235084456568309593
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 32476519684713772
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1207344925509432181
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4480551366872229829
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 453333884631153033
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -8816069582511136610
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 129215874620058536
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 1542582649485585512
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2991022662939897348
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 6312482828579652260
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 6309456709499398119
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 6266658645511855045
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7807783706970456981
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7848817602747798986
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3662534933046400421
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7525275997560895236
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -8960185070411461569
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -6285614868837197746
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2407108799889737176
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 5230250496435200999
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 5093321838625839415
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -2181992519322462531
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 4160926554887981972
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 7188761992919465578
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -4507524488777901300
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 313837351086162891
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 8166546541067805770
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -3230873025084475293
+            }
+          ],
+          "_rooms": [
+            {
+              "m_FileID": 0,
+              "m_PathID": -1231459814988144603
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -1962053768450965972
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": -7882771876149290202
+            },
+            {
+              "m_FileID": 0,
+              "m_PathID": 2153832486273062191
+            }
+          ],
+          "_returnPoint": {
+            "m_FileID": 0,
+            "m_PathID": -5474918394490356579
+          },
+          "_exitGate": {
+            "m_FileID": 0,
+            "m_PathID": 5314091486278918579
+          },
+          "_IconRenderer": {
+            "m_FileID": 0,
+            "m_PathID": -9187847188315859484
+          }
+        },
+        "game_object": 495635368857888659,
+        "ancestry": [
+          {
+            "id": 495635368857888659,
+            "name": "oc_pf_dungeon--LimitedBoss",
+            "active": true,
+            "transform": {
+              "m_GameObject": {
+                "m_FileID": 0,
+                "m_PathID": 495635368857888659
+              },
+              "m_LocalRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+              },
+              "m_LocalPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+              },
+              "m_LocalScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+              },
+              "m_Children": [
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -7506750025382598173
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2905090859805103321
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -5571549165335831627
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 6181013737184164656
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 1572447679752046992
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 2380563530053834831
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -3599105143827957535
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": 922018873428391001
+                },
+                {
+                  "m_FileID": 0,
+                  "m_PathID": -875914594161462471
+                }
+              ],
+              "m_Father": {
+                "m_FileID": 0,
+                "m_PathID": 0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "raw_reference_scan": [
+    {
+      "file": "resources.assets",
+      "id": 539257,
+      "cls": "OcInstallObj_SummonNPC",
+      "name": "",
+      "offsets": [
+        176
+      ],
+      "random_string": true
+    },
+    {
+      "file": "resources.assets",
+      "id": 570998,
+      "cls": "OcHitCheckOtherBldg",
+      "name": "",
+      "offsets": [
+        4
+      ],
+      "random_string": false
+    },
+    {
+      "file": "sharedassets0.assets",
+      "id": 101112,
+      "cls": "OcInstallObj_SummonNPC",
+      "name": "",
+      "offsets": [
+        176
+      ],
+      "random_string": true
+    },
+    {
+      "file": "sharedassets2.assets",
+      "id": 92646,
+      "cls": "OcTMPScaler",
+      "name": "",
+      "offsets": [
+        36
+      ],
+      "random_string": false
+    },
+    {
+      "file": "sharedassets2.assets",
+      "id": 93390,
+      "cls": "OcItemUI_Inventory_InfoBox_AttachedModule",
+      "name": "",
+      "offsets": [
+        48
+      ],
+      "random_string": false
+    }
+  ],
+  "limits": [
+    "No runtime crafting, summon, purchase, or boss victory was performed.",
+    "Age10 recipes and raw world-level9 purchase check describe this route, not an AP tier or proof of earliest possible acquisition.",
+    "Ingredient acquisition and safe challenge combat remain separate dependencies.",
+    "Random catalog selection means no desired item guaranteed on an individual summon."
+  ]
+}

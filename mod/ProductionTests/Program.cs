@@ -40,9 +40,26 @@ class Program
         var objectResolver = type.GetMethod("ResolveStationObject");
         Assert(objectResolver != null, "station object resolver required");
         string Station(object value) => (string)objectResolver.Invoke(null, new[] { value });
+        Assert(Station(new Oc.OcBldg_CraftingBench(20012)) == "alchemy", "audited potion family requires alchemy");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20012))), "locked potion bench denies");
+        p.UnlockProduction("Production: cooking");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20012))), "cooking cannot unlock potion bench");
+        p.UnlockProduction("Production: alchemy");
+        Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20012))), "alchemy permits potion bench");
+        p.Clear();
+        foreach (int family in new[] { 20013, 20020 })
+            Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(family))), "audited manual recipe family retains vanilla checks");
         Assert(Station(new Oc.OcBldg_CraftingBench(20011)) == "opening", "observed opening workbench");
         Assert(Station(new Oc.OcBldg_CraftingBench(20018)) == "smelting", "observed stone furnace");
         Assert(Station(new Oc.OcBldg_CraftingBench(20015)) == "cooking", "observed cooking pot");
+        Assert(Station(new Oc.OcBldg_CraftingBench(20206)) == "equipment_care", "observed Aging Facility uses generic bench family 20206");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20206))), "aging remains locked without Equipment Care");
+        p.UnlockProduction("Production: cooking");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20206))), "Cooking does not bypass Aging Facility gate");
+        p.Clear();
+        p.UnlockProduction("Production: equipment_care");
+        Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20206))), "Equipment Care permits Aging Facility before vanilla costs");
+        p.Clear();
         Assert(Station(new Oc.OcBldg_CraftingBench(20017)) == "opening", "observed Blacksmith family is a recipe bench");
         Assert(Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20017))),
             "Blacksmith station does not require an unrelated production unlock; item gates still run separately");

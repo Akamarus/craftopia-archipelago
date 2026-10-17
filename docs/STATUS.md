@@ -1,6 +1,66 @@
+## October 16 Geezah expansion � v1.12.3 / regional r5
+
+Prepared the117-check Geezah profile, up from52:14 additional missions and51 native-region soul orbs. Added Magic and two Shield progression copies. Victory remains tower repair3 AND Ruin of Beginning. Essential progression is excluded from optional orbs because individual routes remain unverified. See [expansion scope and evidence](GEEZAH_EXPANSION.md).
+
+World validation:64 tests including100 real fills; focused bridge validation:68 tests. The expanded seed was generated and archive-checked. This update publishes source and evidence; it does not install the prepared package or switch the active playthrough. The48 presumed legacy items remain parked.
+
+Audited progression r2 and equipment contract r2 from the preceding work are included. Historical status entries below describe earlier snapshots.
+
+Publication verification: all15 C# regression programs passed; Release build has zero warnings/errors. Fixed GrantPipelineTests source/reference inclusion so it compiles the current Field Guide and milestone code rather than an outdated subset. The legacy all-client discovery command stalls; focused suites and isolated module results are used, not a claim that discovery passed.
+
+## October 16 audit integration — v1.12.2 (built, not installed)
+
+Implemented [audited progression data and station mappings](AUDIT_INTEGRATION_20261016.md): 253 item definitions, 30 tower stages, nine age transitions and 77 resistance records. Geezah r3 uses audited tower/age ingredients with existing experimental source assumptions. Added exact generic-bench families for Potion Brewing Stand (Alchemy), Machine Factory and Furniture Workbench (ordinary manual crafting). Unknown stations still deny; later regions remain unavailable.
+
+Verification: full world suite 55 tests passed with workspace temporary storage, including 100 generated regional seeds; after adding the final cycle regression, all six audit tests passed. ProductionTests 40 assertions passed; ConnectorTests lifecycle/cost-isolation/unsupported-IL checks passed; Release build zero warnings/errors. Independent scoped review found no blockers. Initial broad-suite failure was a sandbox temporary-folder access failure, resolved by rerunning with workspace TEMP/TMP.
+
+Prepared `artifacts/audit-integration-20261016` contains the DLL and APWorld. No installation, active seed replacement, save changes or GitHub publication occurred. Live station-class confirmation and later-region acquisition/geometry remain outstanding.
+
+## v1.12.1 prepared — regional runs and first explicit loot tier
+
+New regional profile r2 has 52 Geezah checks and requires tower completion AND
+Ruin of Beginning. Smelting/Cooking are restricted to reachable opening checks.
+Goblin's Club 6031 has an explicit Sword tier 2 rule only in the new equipment
+contract; old seeds and stronger club variants retain their prior rules.
+See [regional runs](REGIONAL_RUNS.md) and [loot review](LOOT_EQUIPMENT_REVIEW.md).
+
+Validation: 50 world tests including 100 regional fills, 23 client equipment
+tests, 13 equipment exporter/audit tests, and 6,849 C# equipment assertions pass.
+Release build has zero warnings/errors. Independent review's malformed-catalog
+finding was corrected and covered by regressions. New example seed/APWorld/DLL
+are prepared locally; no live game, bridge, save, or seed was replaced.
+Runtime equip/reload testing and remaining loot acquisition evidence are pending.
+
+## v1.11.0 Geezah pilot — 2026-10-16
+
+New opt-in 50-check Geezah profile and native milestone observers are prepared for
+controlled live testing. See [pilot scope, evidence limits and test sequence](GEEZAH_PILOT.md).
+Collector v1.5.2 is installed and live F9 capture verified. Existing CraftopiaOrbs
+seed/save/receipt history is preserved; the pilot requires a separate fresh world.
+## v1.10.1 experimental live-test repair � 2026-10-15
+
+Installed locally for the existing Soul Orb test session. Two orb checks confirmed;
+first vanilla currency suppressed; second AP currency saved but acknowledgment stalled.
+Corrected mismatched path normalization and added observer diagnostics. One witnessed
+delivery reconciled offline with backups and exact identity/save-hash checks; no game
+save edits. Automatic save confirmation still requires another live test.
+HUD: compact corner history toggle, friendly single orb-check popup, explicit currency
+pending/delivered history and no received popup on duplicate acknowledgments.
+Validation: currency 89 assertions, notification tests, 133 bridge tests, six actual-SQLite
+probe assertions; build clean. See SOUL_ORB_IMPLEMENTATION.md for evidence limits.
+
+# v1.10.0 experimental source — October 15, 2026
+
+Soul Orb integration is implemented and packaged, not installed or live verified. The installed v1.9.8 DLL remains unchanged. The opt-in expedition pool now contains 125 missions plus 439 observed orb candidates, with 439 matching currency items. Respawning chests remain excluded; Tamer remains vanilla. See [implementation details and live-test checklist](SOUL_ORB_IMPLEMENTATION.md).
+
+Verification: 132 client unittest cases, 36 real-AP/world tests, 86 currency/replacement/binding assertions, and six read-only SQLite fixture assertions pass. All 14 C# executable suites passed; the affected currency and pipeline suites were rerun after final repairs. Release build has zero warnings/errors. The four asynchronous legacy/client scripts that timed out in the sandbox passed with local socket access outside it. Focused review found and resolved session-enrollment races and startup collection bypasses.
+
+Physical orb reachability and the runtime reward/save hooks still require a controlled live test. No existing seed, save, ledger, or installed plugin was changed for this batch.
+
+---
 # Current status — v1.9.3 development / v1.8.9 gameplay baseline
 
-## v1.9.4 installed � runtime verification pending
+## v1.9.4 installed � runtime verification pending
 
 Adds queued/server-confirmed check notices, attempted-action unlock explanations, F8 panel input repair, and quieter continuous permission checks. Includes a separate opt-in 11-mission opening profile with exact routing and Sword dependency; legacy/candidate seeds remain unchanged. See [feedback and live checks](NOTIFICATIONS_v194.md) and [opening profile evidence/limits](EARLY_PROFILE.md).
 

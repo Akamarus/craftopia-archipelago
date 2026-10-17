@@ -1,4 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup>
   <ItemGroup><Compile Include="../DiagnosticCollector/CatalogFields.cs" Condition="Exists('../DiagnosticCollector/CatalogFields.cs')" /></ItemGroup>
-</Project>
+  <ItemGroup>
+    <Compile Include="../DiagnosticCollector/MilestoneEvidence.cs" />
+    <Compile Include="../DiagnosticCollector/ProgressionObservation.cs" Condition="Exists('../DiagnosticCollector/ProgressionObservation.cs')" />
+    <Compile Include="../DiagnosticCollector/ProgressionEvidence.cs" Condition="Exists('../DiagnosticCollector/ProgressionEvidence.cs')" />
+    <Compile Include="../DiagnosticCollector/EvidenceProjection.cs" Condition="Exists('../DiagnosticCollector/EvidenceProjection.cs')" />
+    <Compile Include="../DiagnosticCollector/ObservationBuffer.cs" Condition="Exists('../DiagnosticCollector/ObservationBuffer.cs')" />
+    <Compile Include="../DiagnosticCollector/JsonWriter.cs" Condition="Exists('../DiagnosticCollector/JsonWriter.cs')" />
+  </ItemGroup>
+<ItemGroup><Compile Include="../DiagnosticCollector/DiscoveryCache.cs" Condition="Exists('../DiagnosticCollector/DiscoveryCache.cs')" /></ItemGroup></Project>

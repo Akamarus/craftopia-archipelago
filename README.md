@@ -2,9 +2,13 @@
 
 An experimental native [Archipelago](https://archipelago.gg/) integration for Craftopia: a Python APWorld, a bridge client, and a BepInEx mod.
 
-**Current development source: v1.9.0, with limited runtime testing in progress. Previous gameplay baseline: v1.8.9. Updated October 10, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
+**Current development source: v1.12.3 experimental. Updated October 16, 2026.** This is a development snapshot, not a complete or generally validated randomizer release.
 
-The current batch repairs production guards and durable mission observations, and expands the read-only collector. Its F9 capture contains 7,052 unique positive item IDs, raw recipe dependencies, nine age records, and 21 bench groups. These are evidence for further logic work, not a finished equipment or beatability model. See the [batch evidence and test plan](docs/PROGRESSION_BATCH_20261010.md).
+The expanded Geezah regional playtest has **117 checks**: 52 missions, 51 native-region soul orbs, nine mission-category claims, three tower repairs, one age evolution, and Ruin of Beginning. Victory requires **Geezah tower completion AND Ruin of Beginning**. Magic and Shield unlocks support the new healing and crafting missions. See [Geezah expansion](docs/GEEZAH_EXPANSION.md) and [regional progression](docs/REGIONAL_RUNS.md).
+
+Individual orb routes still need live testing, so required progression items cannot be placed on those optional checks. Respawning chests and later-region checks are excluded from this profile. The separate experimental expedition mode retains its larger candidate pool.
+
+The source includes the Field Guide menu, durable orb/currency delivery, mission-category/tower/age/dungeon observations, audited recipe dependencies, and explicit reviewed loot tiers. The 48 presumed legacy equipment IDs remain outside active progression review. See [current status](docs/STATUS.md) for verification and remaining limits.
 
 ## Verified in the game
 
@@ -60,6 +64,8 @@ This source snapshot does not include a ready-to-install APWorld package or a ge
 
 ## Verification baseline
 
-The current batch passed all **11 C# test programs**, **70 client tests**, and **14 world tests**, including real AP 0.6.8 legacy generation. The C# baseline contains 340 assertions, with new production, collector, observation-journal and connector coverage. The gameplay build has zero compiler warnings/errors. The previously tested v1.8.9 seed had 125 instance locations. Automated results do not establish runtime hook behavior or seed beatability.
+The expanded regional profile passed **64 world tests**, including **100 randomized fills**, and **68 focused bridge tests**. These verify modeled logic and delivery contracts; they do not establish every physical orb route. Additional source-publication regression results are recorded in [current status](docs/STATUS.md).
 
 Published source excludes game binaries, build outputs, private saves, delivery ledgers, local configuration, and raw runtime logs. No binary release is published with this initial source snapshot.
+
+Geezah short-run pilot (experimental): see [scope and live-test instructions](docs/GEEZAH_PILOT.md).

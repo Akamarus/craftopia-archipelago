@@ -1,0 +1,4990 @@
+{
+  "schema": 1,
+  "catalog_id": "progression_audit_20261016_r2",
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "evidence": "docs/research/2026-10-16/README.md",
+  "items": {
+    "141": {
+      "name": "Handmade Glider",
+      "status": 1,
+      "family": 20011,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "746": 5,
+        "683": 5,
+        "3400": 5
+      },
+      "active_recipe": true
+    },
+    "200": {
+      "name": "Workbench",
+      "status": 1,
+      "family": 20002,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "698": 1,
+        "746": 1
+      },
+      "active_recipe": true
+    },
+    "206": {
+      "name": "Furniture Workbench",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "698": 5,
+        "746": 5,
+        "711": 1
+      },
+      "active_recipe": true
+    },
+    "209": {
+      "name": "Machine Factory",
+      "status": 1,
+      "family": 20011,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "712": 10,
+        "698": 10,
+        "746": 20
+      },
+      "active_recipe": true
+    },
+    "212": {
+      "name": "Potion Brewing Stand",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "711": 5,
+        "769": 5,
+        "722": 1,
+        "734": 1,
+        "740": 1
+      },
+      "active_recipe": true
+    },
+    "248": {
+      "name": "Cooking Pot",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "711": 10,
+        "746": 10
+      },
+      "active_recipe": true
+    },
+    "272": {
+      "name": "Blacksmith",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "711": 10,
+        "746": 10,
+        "698": 20
+      },
+      "active_recipe": true
+    },
+    "296": {
+      "name": "Wheat Field",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "746": 5,
+        "2454": 5
+      },
+      "active_recipe": true
+    },
+    "332": {
+      "name": "Well",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "698": 25,
+        "746": 5,
+        "712": 5
+      },
+      "active_recipe": false
+    },
+    "356": {
+      "name": "Stone Furnace",
+      "status": 1,
+      "family": 20011,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "698": 25,
+        "746": 10
+      },
+      "active_recipe": true
+    },
+    "404": {
+      "name": "Campfire",
+      "status": 1,
+      "family": 20002,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "698": 1,
+        "746": 1
+      },
+      "active_recipe": true
+    },
+    "416": {
+      "name": "Aging Facility",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "698": 5,
+        "695": 5
+      },
+      "active_recipe": true
+    },
+    "500": {
+      "name": "Market",
+      "status": 1,
+      "family": 20011,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "698": 10,
+        "746": 10
+      },
+      "active_recipe": true
+    },
+    "680": {
+      "name": "Fang",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "683": {
+      "name": "Leather",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "684": {
+      "name": "Rare Leather",
+      "status": 1,
+      "family": 20001,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "683": 10
+      },
+      "active_recipe": false
+    },
+    "686": {
+      "name": "Talon",
+      "status": 5,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "692": {
+      "name": "Bird Feather",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "693": {
+      "name": "Rare Bird Feather",
+      "status": 1,
+      "family": 20001,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "692": 10
+      },
+      "active_recipe": false
+    },
+    "695": {
+      "name": "Bone",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "698": {
+      "name": "Stone",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "699": {
+      "name": "Copper Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "700": {
+      "name": "Iron Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "701": {
+      "name": "Silver Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 3,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "702": {
+      "name": "Gold Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "703": {
+      "name": "Platinum Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 5,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "704": {
+      "name": "Adamantite Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 6,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "705": {
+      "name": "Mithril Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 7,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "706": {
+      "name": "High Mithril Ore",
+      "status": 2,
+      "family": 20001,
+      "age": 8,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "707": {
+      "name": "Orichalcum Ore",
+      "status": 2,
+      "family": 20001,
+      "age": 9,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "709": {
+      "name": "Adamantite",
+      "status": 5,
+      "family": 20001,
+      "age": 7,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "711": {
+      "name": "Copper Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "699": 3
+      },
+      "active_recipe": true
+    },
+    "712": {
+      "name": "Iron Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "700": 3
+      },
+      "active_recipe": true
+    },
+    "713": {
+      "name": "Silver Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "701": 3
+      },
+      "active_recipe": true
+    },
+    "714": {
+      "name": "Gold Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "702": 3
+      },
+      "active_recipe": true
+    },
+    "715": {
+      "name": "Platinum Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "703": 3
+      },
+      "active_recipe": true
+    },
+    "716": {
+      "name": "Adamantite Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "704": 5
+      },
+      "active_recipe": true
+    },
+    "717": {
+      "name": "Mithril Ingot",
+      "status": 2,
+      "family": 20018,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "705": 5
+      },
+      "active_recipe": true
+    },
+    "718": {
+      "name": "High Mithril Ingot",
+      "status": 2,
+      "family": 20023,
+      "age": 8,
+      "output": 1,
+      "ingredients": {
+        "706": 5
+      },
+      "active_recipe": true
+    },
+    "719": {
+      "name": "Orichalcum Ingot",
+      "status": 2,
+      "family": 20029,
+      "age": 9,
+      "output": 1,
+      "ingredients": {
+        "707": 10
+      },
+      "active_recipe": true
+    },
+    "721": {
+      "name": "Adamantite Ingot",
+      "status": 5,
+      "family": 20023,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "709": 1
+      },
+      "active_recipe": false
+    },
+    "722": {
+      "name": "Red Herb",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "723": {
+      "name": "Bright Red Herb",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "734": {
+      "name": "Blue Herb",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "735": {
+      "name": "Ultramarine Herb",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "740": {
+      "name": "Yellow Herb",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "746": {
+      "name": "Log",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "749": {
+      "name": "Charcoal",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "746": 2
+      },
+      "active_recipe": true
+    },
+    "752": {
+      "name": "Sand",
+      "status": 1,
+      "family": 20018,
+      "age": 0,
+      "output": 10,
+      "ingredients": {
+        "698": 1
+      },
+      "active_recipe": true
+    },
+    "758": {
+      "name": "Sheep Wool",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "759": {
+      "name": "Fluffy Sheep Wool",
+      "status": 2,
+      "family": 20001,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "758": 10
+      },
+      "active_recipe": false
+    },
+    "761": {
+      "name": "Crude Oil",
+      "status": 1,
+      "family": 20001,
+      "age": 6,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "763": {
+      "name": "Sulfur",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "764": {
+      "name": "Black Gunpowder",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "763": 1,
+        "2046": 1,
+        "749": 1
+      },
+      "active_recipe": true
+    },
+    "769": {
+      "name": "Glass",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "752": 5
+      },
+      "active_recipe": true
+    },
+    "771": {
+      "name": "Fortified Glass",
+      "status": 2,
+      "family": 20018,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "752": 5,
+        "3471": 5
+      },
+      "active_recipe": true
+    },
+    "787": {
+      "name": "Two-Handed Torch",
+      "status": 1,
+      "family": 20002,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2454": 1,
+        "746": 1
+      },
+      "active_recipe": true
+    },
+    "788": {
+      "name": "One-Handed Torch",
+      "status": 1,
+      "family": 20002,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "2454": 1,
+        "746": 1
+      },
+      "active_recipe": true
+    },
+    "811": {
+      "name": "Water",
+      "status": 1,
+      "family": 20015,
+      "age": 1,
+      "output": 10,
+      "ingredients": {
+        "839": 1
+      },
+      "active_recipe": true
+    },
+    "813": {
+      "name": "Holy Water",
+      "status": 0,
+      "family": 20015,
+      "age": 5,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "835": {
+      "name": "Horn",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "839": {
+      "name": "Bucket(<color=#2980b9>Water</color>)",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1210": {
+      "name": "Orange",
+      "status": 2,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1214": {
+      "name": "Grapes",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1216": {
+      "name": "Lemon",
+      "status": 99,
+      "family": 20001,
+      "age": 6,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1218": {
+      "name": "Peach",
+      "status": 2,
+      "family": 20001,
+      "age": 7,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1224": {
+      "name": "Pineapple",
+      "status": 2,
+      "family": 20001,
+      "age": 7,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1502": {
+      "name": "Captured Anubis",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "1790": {
+      "name": "Dragon Helm for Men",
+      "status": 0,
+      "family": 20016,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "717": 5,
+        "3353": 10
+      },
+      "active_recipe": false
+    },
+    "1791": {
+      "name": "Dragon Helm for Women",
+      "status": 0,
+      "family": 20016,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "717": 5,
+        "3353": 10
+      },
+      "active_recipe": false
+    },
+    "1919": {
+      "name": "Bucket (empty)",
+      "status": 1,
+      "family": 20002,
+      "age": 0,
+      "output": 10,
+      "ingredients": {
+        "746": 1,
+        "698": 1
+      },
+      "active_recipe": true
+    },
+    "2000": {
+      "name": "Generator (Small)",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 1,
+        "2451": 1,
+        "746": 5
+      },
+      "active_recipe": true
+    },
+    "2046": {
+      "name": "Saltpeter",
+      "status": 1,
+      "family": 20206,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2048": 1
+      },
+      "active_recipe": true
+    },
+    "2047": {
+      "name": "Ash",
+      "status": 1,
+      "family": 20018,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "2454": 1
+      },
+      "active_recipe": true
+    },
+    "2048": {
+      "name": "Feces",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2050": {
+      "name": "Animal Flesh",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2051": {
+      "name": "Fillets of Fish",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2053": {
+      "name": "Shellfish",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2055": {
+      "name": "Wheat",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2057": {
+      "name": "Egg",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2058": {
+      "name": "Milk",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2062": {
+      "name": "Salt",
+      "status": 1,
+      "family": 20015,
+      "age": 0,
+      "output": 5,
+      "ingredients": {
+        "839": 1
+      },
+      "active_recipe": true
+    },
+    "2064": {
+      "name": "Mushroom",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2074": {
+      "name": "Luxury Fillets",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2076": {
+      "name": "Poisonous Mushroom",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2077": {
+      "name": "Toxic Mushroom",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2080": {
+      "name": "Detoxifying Mushroom",
+      "status": 5,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2097": {
+      "name": "Toxin",
+      "status": 1,
+      "family": 20012,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "2077": 5
+      },
+      "active_recipe": true
+    },
+    "2100": {
+      "name": "Battery",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2302": {
+      "name": "Talisman of Scorch",
+      "status": 4,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "2456": 1,
+        "2460": 1,
+        "686": 1,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2303": {
+      "name": "Talisman of Infection",
+      "status": 4,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "2097": 1,
+        "2460": 1,
+        "686": 1,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2304": {
+      "name": "Talisman of Freezing",
+      "status": 4,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "769": 1,
+        "2460": 1,
+        "686": 1,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2307": {
+      "name": "Amulet of Passion Lv1",
+      "status": 1,
+      "family": 20017,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "764": 1,
+        "683": 1,
+        "695": 1,
+        "713": 2
+      },
+      "active_recipe": true
+    },
+    "2308": {
+      "name": "Amulet of Immunity Lv1",
+      "status": 1,
+      "family": 20017,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2053": 1,
+        "2057": 1,
+        "2064": 1,
+        "713": 2
+      },
+      "active_recipe": true
+    },
+    "2309": {
+      "name": "Amulet of Cold-blood Lv1",
+      "status": 1,
+      "family": 20017,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2074": 1,
+        "2051": 1,
+        "2053": 1,
+        "713": 2
+      },
+      "active_recipe": true
+    },
+    "2324": {
+      "name": "Bloodshed Charm",
+      "status": 99,
+      "family": 20017,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3361": 3,
+        "835": 1,
+        "2057": 1,
+        "714": 1
+      },
+      "active_recipe": false
+    },
+    "2325": {
+      "name": "Pathogen Charm",
+      "status": 99,
+      "family": 20017,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2080": 3,
+        "835": 1,
+        "763": 1,
+        "714": 1
+      },
+      "active_recipe": false
+    },
+    "2326": {
+      "name": "Accessory 3 (blue)",
+      "status": 0,
+      "family": 20017,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3366": 1,
+        "692": 1,
+        "763": 1,
+        "713": 1
+      },
+      "active_recipe": false
+    },
+    "2338": {
+      "name": "Amulet of Passion Lv2",
+      "status": 2,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "3360": 1,
+        "714": 1,
+        "2307": 1
+      },
+      "active_recipe": true
+    },
+    "2339": {
+      "name": "Amulet of Immunity Lv2",
+      "status": 2,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "2076": 1,
+        "714": 1,
+        "2308": 1
+      },
+      "active_recipe": true
+    },
+    "2340": {
+      "name": "Amulet of Cold-blood Lv2",
+      "status": 2,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "3445": 1,
+        "714": 1,
+        "2309": 1
+      },
+      "active_recipe": true
+    },
+    "2341": {
+      "name": "Amulet of Passion Lv3",
+      "status": 3,
+      "family": 20017,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "3360": 1,
+        "717": 1,
+        "2338": 1
+      },
+      "active_recipe": false
+    },
+    "2342": {
+      "name": "Amulet of Immunity Lv3",
+      "status": 3,
+      "family": 20017,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "2076": 1,
+        "717": 1,
+        "2339": 1
+      },
+      "active_recipe": false
+    },
+    "2343": {
+      "name": "Amulet of Cold-blood Lv3",
+      "status": 3,
+      "family": 20017,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "3445": 1,
+        "717": 1,
+        "2340": 1
+      },
+      "active_recipe": false
+    },
+    "2344": {
+      "name": "Ardor Choker Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2461": 1,
+        "2471": 1,
+        "683": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2345": {
+      "name": "Immunity Choker Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2462": 1,
+        "2471": 1,
+        "683": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2346": {
+      "name": "Cold-blooded Choker Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2463": 1,
+        "2471": 1,
+        "683": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2347": {
+      "name": "Ardor Bracelet Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2461": 1,
+        "2472": 1,
+        "680": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2348": {
+      "name": "Immunity Bracelet Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2462": 1,
+        "2472": 1,
+        "680": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2349": {
+      "name": "Cold-blooded Bracelet Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2463": 1,
+        "2472": 1,
+        "680": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2350": {
+      "name": "Ardor Earrings Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2461": 1,
+        "2473": 1,
+        "692": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2351": {
+      "name": "Immunity Earrings Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2462": 1,
+        "2473": 1,
+        "692": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2352": {
+      "name": "Cold-blooded Earrings Lv1",
+      "status": 99,
+      "family": 20017,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "2463": 1,
+        "2473": 1,
+        "692": 5,
+        "769": 5,
+        "714": 2
+      },
+      "active_recipe": false
+    },
+    "2363": {
+      "name": "Master Craftsman's Whetstone",
+      "status": 2,
+      "family": 20022,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "3340": 3,
+        "3450": 5,
+        "811": 1
+      },
+      "active_recipe": false
+    },
+    "2364": {
+      "name": "Cleansing Talisman",
+      "status": 2,
+      "family": 20022,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "3340": 3,
+        "2062": 5,
+        "2457": 1
+      },
+      "active_recipe": false
+    },
+    "2367": {
+      "name": "Earring of Ice Crystal",
+      "status": 1,
+      "family": 20017,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3329": 10,
+        "2460": 10
+      },
+      "active_recipe": true
+    },
+    "2368": {
+      "name": "Earring of Contamination",
+      "status": 2,
+      "family": 20017,
+      "age": 8,
+      "output": 1,
+      "ingredients": {
+        "3334": 1,
+        "718": 1,
+        "693": 1
+      },
+      "active_recipe": true
+    },
+    "2376": {
+      "name": "Amulet of Versatility Lv1",
+      "status": 1,
+      "family": 20017,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "764": 2,
+        "3371": 2,
+        "2076": 2,
+        "2051": 2,
+        "714": 2
+      },
+      "active_recipe": true
+    },
+    "2385": {
+      "name": "Mono Charm",
+      "status": 2,
+      "family": 20017,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3347": 33,
+        "712": 3,
+        "683": 3
+      },
+      "active_recipe": true
+    },
+    "2451": {
+      "name": "Cogwheel",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 2
+      },
+      "active_recipe": true
+    },
+    "2452": {
+      "name": "Bioethanol",
+      "status": 1,
+      "family": 20206,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2055": 2
+      },
+      "active_recipe": true
+    },
+    "2453": {
+      "name": "Crystal",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2454": {
+      "name": "Straw",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2455": {
+      "name": "Rubber",
+      "status": 1,
+      "family": 20206,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2452": 2
+      },
+      "active_recipe": true
+    },
+    "2456": {
+      "name": "Amber",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2457": {
+      "name": "Paper",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2454": 2,
+        "811": 1
+      },
+      "active_recipe": true
+    },
+    "2458": {
+      "name": "Grease",
+      "status": 1,
+      "family": 20206,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2050": 2
+      },
+      "active_recipe": true
+    },
+    "2459": {
+      "name": "Bioplastic",
+      "status": 1,
+      "family": 20206,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "2452": 2,
+        "2458": 2
+      },
+      "active_recipe": true
+    },
+    "2460": {
+      "name": "Elemental Dust",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2461": {
+      "name": "Heart Core of Firebrand",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2462": {
+      "name": "Heart Core of Pathogen",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2463": {
+      "name": "Heart Core of Ice Crystal",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2471": {
+      "name": "Memory Piece of the Vampirism",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2472": {
+      "name": "Memory Piece of the 11th",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2473": {
+      "name": "Memory Piece of Wisdom",
+      "status": 5,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2511": {
+      "name": "Red Dragon Mail for Men",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3353": 1
+      },
+      "active_recipe": false
+    },
+    "2512": {
+      "name": "Red Dragon Mail for Women",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3353": 1
+      },
+      "active_recipe": false
+    },
+    "2513": {
+      "name": "Armored Suit for Men",
+      "status": 0,
+      "family": 20017,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "712": 20,
+        "683": 20
+      },
+      "active_recipe": false
+    },
+    "2514": {
+      "name": "Armored Suit for Women",
+      "status": 0,
+      "family": 20017,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "712": 20,
+        "683": 20
+      },
+      "active_recipe": false
+    },
+    "2515": {
+      "name": "Black Dragon Mail for Men",
+      "status": 1,
+      "family": 20025,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "713": 5,
+        "3355": 1
+      },
+      "active_recipe": true
+    },
+    "2516": {
+      "name": "Black Dragon Mail for Women",
+      "status": 1,
+      "family": 20025,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "713": 5,
+        "3355": 1
+      },
+      "active_recipe": true
+    },
+    "2517": {
+      "name": "Blue Dragon Mail for Men",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3354": 1
+      },
+      "active_recipe": false
+    },
+    "2518": {
+      "name": "Blue Dragon Mail for Women",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3354": 1
+      },
+      "active_recipe": false
+    },
+    "2519": {
+      "name": "High Dragon Mail for Men",
+      "status": 2,
+      "family": 20028,
+      "age": 9,
+      "output": 1,
+      "ingredients": {
+        "3362": 3,
+        "719": 5,
+        "3353": 2
+      },
+      "active_recipe": true
+    },
+    "2520": {
+      "name": "High Dragon Mail for Women",
+      "status": 2,
+      "family": 20028,
+      "age": 9,
+      "output": 1,
+      "ingredients": {
+        "3362": 3,
+        "719": 5,
+        "3353": 2
+      },
+      "active_recipe": true
+    },
+    "2521": {
+      "name": "Assault Dragon Mail for Men",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2522": {
+      "name": "Assault Dragon Mail for Women",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2523": {
+      "name": "Magic Dragon Mail for Men",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2524": {
+      "name": "Magic Dragon Mail for Women",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3329": {
+      "name": "Ice Crystal of Fenrir",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3334": {
+      "name": "Hydra's Reversed Scale",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3340": {
+      "name": "Eroded Gem",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3347": {
+      "name": "3rd Anniversary Mono Coin",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3353": {
+      "name": "Dragon Scale",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3354": {
+      "name": "Executioner's Scale",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3355": {
+      "name": "Reaper's Spirit Scale",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3360": {
+      "name": "Hell Pepper",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3361": {
+      "name": "Heated Mineral",
+      "status": 4,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3362": {
+      "name": "Hellfire Wood",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3366": {
+      "name": "地獄耐毒素材(仮)",
+      "status": 0,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3370": {
+      "name": "Ice",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3371": {
+      "name": "Snow",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3373": {
+      "name": "Scrap Parts",
+      "status": 1,
+      "family": 20011,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "3468": 5,
+        "3469": 5
+      },
+      "active_recipe": true
+    },
+    "3400": {
+      "name": "Old Rag",
+      "status": 1,
+      "family": 20011,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "2454": 2
+      },
+      "active_recipe": true
+    },
+    "3401": {
+      "name": "Cotton Canvas",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3400": 5
+      },
+      "active_recipe": true
+    },
+    "3402": {
+      "name": "Linen Wool",
+      "status": 1,
+      "family": 20011,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "3400": 5,
+        "758": 5
+      },
+      "active_recipe": true
+    },
+    "3403": {
+      "name": "Felt Cloth",
+      "status": 1,
+      "family": 20011,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "3402": 5,
+        "759": 1
+      },
+      "active_recipe": true
+    },
+    "3445": {
+      "name": "Snow Mint",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3450": {
+      "name": "Clay",
+      "status": 1,
+      "family": 20002,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "752": 2,
+        "811": 1
+      },
+      "active_recipe": true
+    },
+    "3457": {
+      "name": "Paint",
+      "status": 1,
+      "family": 20011,
+      "age": 4,
+      "output": 10,
+      "ingredients": {
+        "722": 1,
+        "734": 1,
+        "740": 1,
+        "2452": 1
+      },
+      "active_recipe": true
+    },
+    "3463": {
+      "name": "High Capacity Battery",
+      "status": 1,
+      "family": 20011,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 2,
+        "2100": 5
+      },
+      "active_recipe": true
+    },
+    "3464": {
+      "name": "Engine Parts",
+      "status": 1,
+      "family": 20013,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "2100": 5,
+        "3470": 5
+      },
+      "active_recipe": true
+    },
+    "3465": {
+      "name": "Fuel Tank",
+      "status": 1,
+      "family": 20013,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "2455": 5,
+        "3401": 5
+      },
+      "active_recipe": true
+    },
+    "3466": {
+      "name": "Electronic Circuit",
+      "status": 1,
+      "family": 20011,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2453": 1,
+        "711": 1,
+        "3470": 1,
+        "2455": 1
+      },
+      "active_recipe": true
+    },
+    "3467": {
+      "name": "Armor Plate",
+      "status": 1,
+      "family": 20013,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "712": 99
+      },
+      "active_recipe": true
+    },
+    "3468": {
+      "name": "Bolt",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 1,
+        "711": 1
+      },
+      "active_recipe": true
+    },
+    "3469": {
+      "name": "Spring",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 1,
+        "711": 1
+      },
+      "active_recipe": true
+    },
+    "3470": {
+      "name": "Ceramic",
+      "status": 1,
+      "family": 20018,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3450": 1,
+        "749": 2
+      },
+      "active_recipe": true
+    },
+    "3471": {
+      "name": "Chemicals",
+      "status": 1,
+      "family": 20024,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "2458": 1,
+        "2452": 1
+      },
+      "active_recipe": true
+    },
+    "3474": {
+      "name": "Special Cement",
+      "status": 1,
+      "family": 20011,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "700": 5,
+        "698": 5,
+        "811": 5,
+        "2047": 5,
+        "3471": 1
+      },
+      "active_recipe": true
+    },
+    "3475": {
+      "name": "Light Weight Steel Frame",
+      "status": 1,
+      "family": 20011,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "716": 1
+      },
+      "active_recipe": true
+    },
+    "3477": {
+      "name": "Light Weight Frame",
+      "status": 1,
+      "family": 20011,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "713": 1
+      },
+      "active_recipe": true
+    },
+    "3479": {
+      "name": "Reinforced Plastic",
+      "status": 1,
+      "family": 20024,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "2459": 1,
+        "2452": 1,
+        "3471": 1
+      },
+      "active_recipe": true
+    },
+    "3480": {
+      "name": "Rare Scrap Parts",
+      "status": 2,
+      "family": 20011,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "717": 5,
+        "3468": 10,
+        "3469": 10
+      },
+      "active_recipe": true
+    },
+    "3481": {
+      "name": "High Performance Electronic Circuit",
+      "status": 2,
+      "family": 20011,
+      "age": 7,
+      "output": 1,
+      "ingredients": {
+        "717": 5,
+        "3466": 5,
+        "3479": 5
+      },
+      "active_recipe": true
+    },
+    "5123": {
+      "name": "Small Placeable Torch",
+      "status": 1,
+      "family": 20002,
+      "age": 0,
+      "output": 1,
+      "ingredients": {
+        "746": 1,
+        "3400": 1
+      },
+      "active_recipe": true
+    },
+    "5141": {
+      "name": "Talisman Flag",
+      "status": 1,
+      "family": 20020,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "746": 2,
+        "3400": 2,
+        "2460": 1
+      },
+      "active_recipe": true
+    },
+    "5145": {
+      "name": "Sanctuary Flag",
+      "status": 1,
+      "family": 20020,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "5141": 9,
+        "713": 1,
+        "2460": 1
+      },
+      "active_recipe": true
+    },
+    "5305": {
+      "name": "Steel Pillar",
+      "status": 1,
+      "family": 20020,
+      "age": 3,
+      "output": 10,
+      "ingredients": {
+        "712": 10,
+        "3468": 10
+      },
+      "active_recipe": true
+    },
+    "5501": {
+      "name": "Red Dragon Helm for Men",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3353": 1
+      },
+      "active_recipe": false
+    },
+    "5502": {
+      "name": "Red Dragon Helm for Women",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3353": 1
+      },
+      "active_recipe": false
+    },
+    "5503": {
+      "name": "Black Dragon Helm for Men",
+      "status": 1,
+      "family": 20025,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "713": 5,
+        "3355": 1
+      },
+      "active_recipe": true
+    },
+    "5504": {
+      "name": "Black Dragon Helm for Women",
+      "status": 1,
+      "family": 20025,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "713": 5,
+        "3355": 1
+      },
+      "active_recipe": true
+    },
+    "5505": {
+      "name": "Blue Dragon Helm for Men",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3354": 1
+      },
+      "active_recipe": false
+    },
+    "5506": {
+      "name": "Blue Dragon Helm for Women",
+      "status": 1,
+      "family": 20001,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "714": 5,
+        "3354": 1
+      },
+      "active_recipe": false
+    },
+    "5507": {
+      "name": "High Dragon Helm for Men",
+      "status": 1,
+      "family": 20028,
+      "age": 9,
+      "output": 1,
+      "ingredients": {
+        "3362": 3,
+        "719": 5,
+        "3353": 2
+      },
+      "active_recipe": true
+    },
+    "5508": {
+      "name": "High Dragon Helm for Women",
+      "status": 1,
+      "family": 20028,
+      "age": 9,
+      "output": 1,
+      "ingredients": {
+        "3362": 3,
+        "719": 5,
+        "3353": 2
+      },
+      "active_recipe": true
+    },
+    "5509": {
+      "name": "Assault Dragon Helm for Men",
+      "status": 2,
+      "family": 20001,
+      "age": 9,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5510": {
+      "name": "Assault Dragon Helm for Women",
+      "status": 2,
+      "family": 20001,
+      "age": 9,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5511": {
+      "name": "Magic Dragon Helm for Men",
+      "status": 2,
+      "family": 20001,
+      "age": 9,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5512": {
+      "name": "Magic Dragon Helm for Women",
+      "status": 2,
+      "family": 20001,
+      "age": 9,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5546": {
+      "name": "Heat Resistance Potion",
+      "status": 1,
+      "family": 20012,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "740": 1,
+        "3445": 1,
+        "811": 1
+      },
+      "active_recipe": true
+    },
+    "5547": {
+      "name": "Hell Resistance Potion",
+      "status": 3,
+      "family": 20012,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "740": 1,
+        "3360": 1,
+        "811": 1
+      },
+      "active_recipe": false
+    },
+    "5548": {
+      "name": "Freeze Resistance Potion",
+      "status": 1,
+      "family": 20012,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "740": 1,
+        "3360": 1,
+        "811": 1
+      },
+      "active_recipe": true
+    },
+    "5549": {
+      "name": "凍結レジストポーション（仮）",
+      "status": 0,
+      "family": 20012,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5550": {
+      "name": "Poison Resistance Potion",
+      "status": 1,
+      "family": 20012,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "740": 1,
+        "2076": 1
+      },
+      "active_recipe": true
+    },
+    "5565": {
+      "name": "Holy Water",
+      "status": 1,
+      "family": 20012,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "811": 5
+      },
+      "active_recipe": true
+    },
+    "5850": {
+      "name": "Tea Leaf",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5851": {
+      "name": "Honey",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5852": {
+      "name": "Royal Jelly",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5860": {
+      "name": "Banana",
+      "status": 3,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "5900": {
+      "name": "Green Tea",
+      "status": 4,
+      "family": 20015,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "5850": 3
+      },
+      "active_recipe": false
+    },
+    "5901": {
+      "name": "Red Herb Tea",
+      "status": 4,
+      "family": 20015,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "722": 3,
+        "5850": 3
+      },
+      "active_recipe": false
+    },
+    "5902": {
+      "name": "Blue Herb Tea",
+      "status": 4,
+      "family": 20015,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "734": 3,
+        "5850": 3
+      },
+      "active_recipe": false
+    },
+    "5903": {
+      "name": "Yellow Herb Tea",
+      "status": 4,
+      "family": 20015,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "740": 3,
+        "5850": 3
+      },
+      "active_recipe": false
+    },
+    "5904": {
+      "name": "Mixed Tea",
+      "status": 4,
+      "family": 20015,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "722": 3,
+        "734": 3,
+        "740": 3,
+        "5850": 3
+      },
+      "active_recipe": false
+    },
+    "5910": {
+      "name": "Orange Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "1210": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5911": {
+      "name": "Grape Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "1214": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5912": {
+      "name": "Lemon Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "1216": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5913": {
+      "name": "Banana Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 4,
+      "output": 1,
+      "ingredients": {
+        "5860": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5914": {
+      "name": "Pineapple Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "1224": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5915": {
+      "name": "Peach Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 5,
+      "output": 1,
+      "ingredients": {
+        "1218": 3,
+        "2058": 5,
+        "5851": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5916": {
+      "name": "Matcha Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "5850": 3,
+        "2058": 5,
+        "5852": 1,
+        "3370": 1
+      },
+      "active_recipe": false
+    },
+    "5917": {
+      "name": "Mixed Shake",
+      "status": 4,
+      "family": 20015,
+      "age": 6,
+      "output": 1,
+      "ingredients": {
+        "5915": 3,
+        "5914": 5,
+        "5913": 1,
+        "5852": 1
+      },
+      "active_recipe": false
+    },
+    "6575": {
+      "name": "Clover",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6576": {
+      "name": "Plateau Moonstone",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6577": {
+      "name": "Ironwood",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6578": {
+      "name": "Plateau Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6580": {
+      "name": "Mandragora",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6581": {
+      "name": "Emerald of Hills",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6582": {
+      "name": "Ancient Wood",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6583": {
+      "name": "Hills Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6585": {
+      "name": "Carnivorous Plant",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6586": {
+      "name": "Alexandrite of Meadow",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6587": {
+      "name": "Petrified Wood",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6588": {
+      "name": "Meadow Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6590": {
+      "name": "Thunder Flower",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6591": {
+      "name": "Morganite of Archipelago",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6592": {
+      "name": "Bamboo",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6593": {
+      "name": "Archipelago Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6595": {
+      "name": "Suspicious Pumpkin",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6596": {
+      "name": "Topaz of Valley",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6597": {
+      "name": "Mushroom Wood",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6598": {
+      "name": "Valley Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6601": {
+      "name": "Aquamarine of Iceberg",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6602": {
+      "name": "Frozen Wood",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6603": {
+      "name": "Iceberg Ancient Doll Fragment",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6605": {
+      "name": "Man-Eating Cactus",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6606": {
+      "name": "Rubellite",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6607": {
+      "name": "Baobab",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6608": {
+      "name": "Desert Ancient Doll Fragment",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6610": {
+      "name": "Haunted Mushroom",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6611": {
+      "name": "Rose Quartz",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6612": {
+      "name": "Mushroom Wood",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6613": {
+      "name": "Wetlands Ancient Doll Fragment",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6615": {
+      "name": "Fire Grass",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6616": {
+      "name": "Garnet",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6617": {
+      "name": "Lava Wood",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "6618": {
+      "name": "Volcano Ancient Doll Fragment",
+      "status": 2,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    }
+  },
+  "towers": [
+    {
+      "item_id": 3806,
+      "name": "Geezah Plateau Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 698,
+              "name": "Stone",
+              "count": 50
+            },
+            {
+              "item_id": 752,
+              "name": "Sand",
+              "count": 10
+            },
+            {
+              "item_id": 746,
+              "name": "Log",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3400,
+              "name": "Old Rag",
+              "count": 10
+            },
+            {
+              "item_id": 758,
+              "name": "Sheep Wool",
+              "count": 10
+            },
+            {
+              "item_id": 683,
+              "name": "Leather",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 699,
+              "name": "Copper Ore",
+              "count": 20
+            },
+            {
+              "item_id": 5123,
+              "name": "Small Placeable Torch",
+              "count": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3807,
+      "name": "Millewind Hill Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 2457,
+              "name": "Paper",
+              "count": 20
+            },
+            {
+              "item_id": 2458,
+              "name": "Grease",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 2100,
+              "name": "Battery",
+              "count": 20
+            },
+            {
+              "item_id": 2452,
+              "name": "Bioethanol",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 2451,
+              "name": "Cogwheel",
+              "count": 20
+            },
+            {
+              "item_id": 3468,
+              "name": "Bolt",
+              "count": 20
+            },
+            {
+              "item_id": 3469,
+              "name": "Spring",
+              "count": 20
+            },
+            {
+              "item_id": 3470,
+              "name": "Ceramic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3808,
+      "name": "Yarden Meadow's Mountain Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 701,
+              "name": "Silver Ore",
+              "count": 50
+            },
+            {
+              "item_id": 749,
+              "name": "Charcoal",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 680,
+              "name": "Fang",
+              "count": 10
+            },
+            {
+              "item_id": 692,
+              "name": "Bird Feather",
+              "count": 10
+            },
+            {
+              "item_id": 695,
+              "name": "Bone",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 2453,
+              "name": "Crystal",
+              "count": 20
+            },
+            {
+              "item_id": 763,
+              "name": "Sulfur",
+              "count": 20
+            },
+            {
+              "item_id": 2460,
+              "name": "Elemental Dust",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3809,
+      "name": "Yarden Meadow's Ruin Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 713,
+              "name": "Silver Ingot",
+              "count": 30
+            },
+            {
+              "item_id": 2455,
+              "name": "Rubber",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3373,
+              "name": "Scrap Parts",
+              "count": 10
+            },
+            {
+              "item_id": 769,
+              "name": "Glass",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 764,
+              "name": "Black Gunpowder",
+              "count": 20
+            },
+            {
+              "item_id": 3466,
+              "name": "Electronic Circuit",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3810,
+      "name": "Owatatsu Archipelago Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 714,
+              "name": "Gold Ingot",
+              "count": 20
+            },
+            {
+              "item_id": 3402,
+              "name": "Linen Wool",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 723,
+              "name": "Bright Red Herb",
+              "count": 5
+            },
+            {
+              "item_id": 735,
+              "name": "Ultramarine Herb",
+              "count": 5
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3463,
+              "name": "High Capacity Battery",
+              "count": 20
+            },
+            {
+              "item_id": 3464,
+              "name": "Engine Parts",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3811,
+      "name": "Brigandine Valley Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 723,
+              "name": "Bright Red Herb",
+              "count": 10
+            },
+            {
+              "item_id": 735,
+              "name": "Ultramarine Herb",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3464,
+              "name": "Engine Parts",
+              "count": 20
+            },
+            {
+              "item_id": 3465,
+              "name": "Fuel Tank",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 5305,
+              "name": "Steel Pillar",
+              "count": 20
+            },
+            {
+              "item_id": 2459,
+              "name": "Bioplastic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3812,
+      "name": "Sherbert Iceberg Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 715,
+              "name": "Platinum Ingot",
+              "count": 50
+            },
+            {
+              "item_id": 5565,
+              "name": "Holy Water",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 684,
+              "name": "Rare Leather",
+              "count": 10
+            },
+            {
+              "item_id": 693,
+              "name": "Rare Bird Feather",
+              "count": 10
+            },
+            {
+              "item_id": 759,
+              "name": "Fluffy Sheep Wool",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3467,
+              "name": "Armor Plate",
+              "count": 10
+            },
+            {
+              "item_id": 5145,
+              "name": "Sanctuary Flag",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3813,
+      "name": "Unnefell Desert Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 716,
+              "name": "Adamantite Ingot",
+              "count": 50
+            },
+            {
+              "item_id": 3474,
+              "name": "Special Cement",
+              "count": 30
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3477,
+              "name": "Light Weight Frame",
+              "count": 20
+            },
+            {
+              "item_id": 3475,
+              "name": "Light Weight Steel Frame",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3403,
+              "name": "Felt Cloth",
+              "count": 20
+            },
+            {
+              "item_id": 3479,
+              "name": "Reinforced Plastic",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3814,
+      "name": "Miasma Wetlands Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 3450,
+              "name": "Clay",
+              "count": 50
+            },
+            {
+              "item_id": 3468,
+              "name": "Bolt",
+              "count": 100
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3457,
+              "name": "Paint",
+              "count": 30
+            },
+            {
+              "item_id": 3471,
+              "name": "Chemicals",
+              "count": 20
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3480,
+              "name": "Rare Scrap Parts",
+              "count": 10
+            },
+            {
+              "item_id": 3481,
+              "name": "High Performance Electronic Circuit",
+              "count": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3815,
+      "name": "Inferno Volcano Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 718,
+              "name": "High Mithril Ingot",
+              "count": 100
+            },
+            {
+              "item_id": 3360,
+              "name": "Hell Pepper",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 761,
+              "name": "Crude Oil",
+              "count": 100
+            },
+            {
+              "item_id": 771,
+              "name": "Fortified Glass",
+              "count": 50
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 3474,
+              "name": "Special Cement",
+              "count": 150
+            },
+            {
+              "item_id": 3355,
+              "name": "Reaper's Spirit Scale",
+              "count": 10
+            },
+            {
+              "item_id": 1502,
+              "name": "Captured Anubis",
+              "count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "age_transitions": [
+    {
+      "from_world_level": 0,
+      "to_world_level": 1,
+      "displayed_age_from": 1,
+      "displayed_age_to": 2,
+      "gold": 0,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6575,
+          "name": "Clover",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6576,
+          "name": "Plateau Moonstone",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6577,
+          "name": "Ironwood",
+          "count": 1,
+          "status": 1
+        },
+        {
+          "item_id": 6578,
+          "name": "Plateau Ancient Doll Fragment",
+          "count": 1,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 45,
+          "name": "Copper One-Handed Sword"
+        },
+        {
+          "item_id": 57,
+          "name": "Copper Pickaxe"
+        },
+        {
+          "item_id": 69,
+          "name": "Copper Axe"
+        },
+        {
+          "item_id": 272,
+          "name": "Blacksmith"
+        },
+        {
+          "item_id": 356,
+          "name": "Stone Furnace"
+        },
+        {
+          "item_id": 275,
+          "name": "Armory"
+        },
+        {
+          "item_id": 296,
+          "name": "Wheat Field"
+        },
+        {
+          "item_id": 248,
+          "name": "Cooking Pot"
+        },
+        {
+          "item_id": 2123,
+          "name": "Wooden Fishing Rod"
+        }
+      ]
+    },
+    {
+      "from_world_level": 1,
+      "to_world_level": 2,
+      "displayed_age_from": 2,
+      "displayed_age_to": 3,
+      "gold": 500,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6575,
+          "name": "Clover",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6576,
+          "name": "Plateau Moonstone",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6577,
+          "name": "Ironwood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6578,
+          "name": "Plateau Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 46,
+          "name": "Iron One-Handed Sword"
+        },
+        {
+          "item_id": 58,
+          "name": "Iron Pickaxe"
+        },
+        {
+          "item_id": 70,
+          "name": "Iron Axe"
+        },
+        {
+          "item_id": 212,
+          "name": "Potion Brewing Stand"
+        },
+        {
+          "item_id": 395,
+          "name": "Enchanting Table"
+        },
+        {
+          "item_id": 428,
+          "name": "Refinery"
+        },
+        {
+          "item_id": 644,
+          "name": "Conveyor Belt"
+        },
+        {
+          "item_id": 2000,
+          "name": "Generator (Small)"
+        },
+        {
+          "item_id": 776,
+          "name": "Steel Chest"
+        }
+      ]
+    },
+    {
+      "from_world_level": 2,
+      "to_world_level": 3,
+      "displayed_age_from": 3,
+      "displayed_age_to": 4,
+      "gold": 2500,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6580,
+          "name": "Mandragora",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6581,
+          "name": "Emerald of Hills",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6582,
+          "name": "Ancient Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6583,
+          "name": "Hills Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 105,
+          "name": "Flintlock Revolver"
+        },
+        {
+          "item_id": 5830,
+          "name": "Grenade"
+        },
+        {
+          "item_id": 1403,
+          "name": "Hoverboard"
+        },
+        {
+          "item_id": 1915,
+          "name": "Container"
+        },
+        {
+          "item_id": 209,
+          "name": "Machine Factory"
+        },
+        {
+          "item_id": 464,
+          "name": "Rotating Saws"
+        },
+        {
+          "item_id": 476,
+          "name": "Excavator"
+        },
+        {
+          "item_id": 1952,
+          "name": "Drone for Shooting"
+        },
+        {
+          "item_id": 3604,
+          "name": "Small Cure Life Potion"
+        }
+      ]
+    },
+    {
+      "from_world_level": 3,
+      "to_world_level": 4,
+      "displayed_age_from": 4,
+      "displayed_age_to": 5,
+      "gold": 20000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6585,
+          "name": "Carnivorous Plant",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6586,
+          "name": "Alexandrite of Meadow",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6587,
+          "name": "Petrified Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6588,
+          "name": "Meadow Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 107,
+          "name": "Rifle I"
+        },
+        {
+          "item_id": 3181,
+          "name": "Poisonous Arrow"
+        },
+        {
+          "item_id": 1404,
+          "name": "Motorcycle"
+        },
+        {
+          "item_id": 777,
+          "name": "Cemented Carbide Chest"
+        },
+        {
+          "item_id": 201,
+          "name": "Improved Workbench"
+        },
+        {
+          "item_id": 1992,
+          "name": "Pipeline (Relay)"
+        },
+        {
+          "item_id": 3227,
+          "name": "Bank"
+        },
+        {
+          "item_id": 1916,
+          "name": "Automatic Assembly Machine"
+        },
+        {
+          "item_id": 1401,
+          "name": "Hot Air Balloon"
+        }
+      ]
+    },
+    {
+      "from_world_level": 4,
+      "to_world_level": 5,
+      "displayed_age_from": 5,
+      "displayed_age_to": 6,
+      "gold": 50000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6590,
+          "name": "Thunder Flower",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6591,
+          "name": "Morganite of Archipelago",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6592,
+          "name": "Bamboo",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6593,
+          "name": "Archipelago Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6595,
+          "name": "Suspicious Pumpkin",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6596,
+          "name": "Topaz of Valley",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6597,
+          "name": "Mushroom Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6598,
+          "name": "Valley Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 781,
+          "name": "Cloud Storage"
+        },
+        {
+          "item_id": 1405,
+          "name": "Buggy"
+        },
+        {
+          "item_id": 1409,
+          "name": "Fishing Boat"
+        },
+        {
+          "item_id": 273,
+          "name": "Skilled Blacksmith"
+        },
+        {
+          "item_id": 276,
+          "name": "Skilled Armory"
+        },
+        {
+          "item_id": 357,
+          "name": "Skilled Furnace"
+        },
+        {
+          "item_id": 333,
+          "name": "Water Purification Facility"
+        },
+        {
+          "item_id": 645,
+          "name": "High-Speed Conveyor Belt"
+        },
+        {
+          "item_id": 5832,
+          "name": "Flash Grenade"
+        }
+      ]
+    },
+    {
+      "from_world_level": 5,
+      "to_world_level": 6,
+      "displayed_age_from": 6,
+      "displayed_age_to": 7,
+      "gold": 200000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 3445,
+          "name": "Snow Mint",
+          "count": 10,
+          "status": 1
+        },
+        {
+          "item_id": 6601,
+          "name": "Aquamarine of Iceberg",
+          "count": 25,
+          "status": 1
+        },
+        {
+          "item_id": 6602,
+          "name": "Frozen Wood",
+          "count": 25,
+          "status": 1
+        },
+        {
+          "item_id": 6603,
+          "name": "Iceberg Ancient Doll Fragment",
+          "count": 10,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 210,
+          "name": "Skilled Machine Factory"
+        },
+        {
+          "item_id": 3198,
+          "name": "Gravity Glove"
+        },
+        {
+          "item_id": 5596,
+          "name": "Artificial Bedrock of Sand"
+        },
+        {
+          "item_id": 145,
+          "name": "Type 2 Mechanical Wings"
+        },
+        {
+          "item_id": 465,
+          "name": "Brainy Rotating Saws"
+        },
+        {
+          "item_id": 3515,
+          "name": "Chain Restraint Bullet"
+        },
+        {
+          "item_id": 778,
+          "name": "Adamantite Chest"
+        },
+        {
+          "item_id": 1970,
+          "name": "Large Capacity Container"
+        },
+        {
+          "item_id": 2001,
+          "name": "Thermal Power Plant"
+        }
+      ]
+    },
+    {
+      "from_world_level": 6,
+      "to_world_level": 7,
+      "displayed_age_from": 7,
+      "displayed_age_to": 8,
+      "gold": 1000000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6605,
+          "name": "Man-Eating Cactus",
+          "count": 15,
+          "status": 2
+        },
+        {
+          "item_id": 6606,
+          "name": "Rubellite",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6607,
+          "name": "Baobab",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6608,
+          "name": "Desert Ancient Doll Fragment",
+          "count": 15,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 51,
+          "name": "Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 63,
+          "name": "Mithril Pickaxe"
+        },
+        {
+          "item_id": 75,
+          "name": "Mithril Axe"
+        },
+        {
+          "item_id": 294,
+          "name": "Clone Breeding Facility"
+        },
+        {
+          "item_id": 1416,
+          "name": "Combat Helicopter"
+        },
+        {
+          "item_id": 1432,
+          "name": "Torpedo Boat"
+        },
+        {
+          "item_id": 1433,
+          "name": "CRFT-01(P)"
+        },
+        {
+          "item_id": 1993,
+          "name": "Sonic Pipeline"
+        },
+        {
+          "item_id": 3820,
+          "name": "Portable Portal"
+        }
+      ]
+    },
+    {
+      "from_world_level": 7,
+      "to_world_level": 8,
+      "displayed_age_from": 8,
+      "displayed_age_to": 9,
+      "gold": 2500000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6610,
+          "name": "Haunted Mushroom",
+          "count": 20,
+          "status": 2
+        },
+        {
+          "item_id": 6611,
+          "name": "Rose Quartz",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6612,
+          "name": "Mushroom Wood",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6613,
+          "name": "Wetlands Ancient Doll Fragment",
+          "count": 20,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 52,
+          "name": "High Mithril One-Handed Sword"
+        },
+        {
+          "item_id": 64,
+          "name": "High Mithril Pickaxe"
+        },
+        {
+          "item_id": 76,
+          "name": "High Mithril Axe"
+        },
+        {
+          "item_id": 202,
+          "name": "Innovative Workbench"
+        },
+        {
+          "item_id": 430,
+          "name": "Master Refinery"
+        },
+        {
+          "item_id": 1658,
+          "name": "Captured Mini Inferno Whale"
+        },
+        {
+          "item_id": 1435,
+          "name": "Fish-shaped Missile"
+        },
+        {
+          "item_id": 2901,
+          "name": "Devil Wings"
+        },
+        {
+          "item_id": 1995,
+          "name": "Sorting Pipe"
+        }
+      ]
+    },
+    {
+      "from_world_level": 8,
+      "to_world_level": 9,
+      "displayed_age_from": 9,
+      "displayed_age_to": 10,
+      "gold": 5000000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6615,
+          "name": "Fire Grass",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6616,
+          "name": "Garnet",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6617,
+          "name": "Lava Wood",
+          "count": 30,
+          "status": 2
+        },
+        {
+          "item_id": 6618,
+          "name": "Volcano Ancient Doll Fragment",
+          "count": 30,
+          "status": 2
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 53,
+          "name": "Orichalcum One-Handed Sword"
+        },
+        {
+          "item_id": 65,
+          "name": "Orichalcum Pickaxe"
+        },
+        {
+          "item_id": 77,
+          "name": "Orichalcum Axe"
+        },
+        {
+          "item_id": 197,
+          "name": "Energy Bullet"
+        },
+        {
+          "item_id": 3521,
+          "name": "Trader's Table"
+        },
+        {
+          "item_id": 3211,
+          "name": "Vacuum Cleaner"
+        },
+        {
+          "item_id": 1963,
+          "name": "Latest Automatic Furnace"
+        },
+        {
+          "item_id": 2519,
+          "name": "High Dragon Mail for Men"
+        },
+        {
+          "item_id": 2906,
+          "name": "Goddess Wings"
+        }
+      ]
+    }
+  ],
+  "resistance": {
+    "787": {
+      "status": 1,
+      "fire": 0,
+      "cold": 4,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "788": {
+      "status": 1,
+      "fire": 0,
+      "cold": 2,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "1790": {
+      "status": 0,
+      "fire": 2,
+      "cold": 1,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "1791": {
+      "status": 0,
+      "fire": 2,
+      "cold": 1,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2302": {
+      "status": 4,
+      "fire": 1,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2303": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2304": {
+      "status": 4,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2307": {
+      "status": 1,
+      "fire": 1,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2308": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2309": {
+      "status": 1,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2324": {
+      "status": 99,
+      "fire": 2,
+      "cold": -1,
+      "poison": -1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2325": {
+      "status": 99,
+      "fire": -1,
+      "cold": -1,
+      "poison": 2,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2326": {
+      "status": 0,
+      "fire": -1,
+      "cold": -1,
+      "poison": 2,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2338": {
+      "status": 2,
+      "fire": 2,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2339": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 2,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2340": {
+      "status": 2,
+      "fire": 0,
+      "cold": 2,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2341": {
+      "status": 3,
+      "fire": 3,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2342": {
+      "status": 3,
+      "fire": 0,
+      "cold": 0,
+      "poison": 3,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2343": {
+      "status": 3,
+      "fire": 0,
+      "cold": 3,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2344": {
+      "status": 99,
+      "fire": 1,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2345": {
+      "status": 99,
+      "fire": 0,
+      "cold": 0,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2346": {
+      "status": 99,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2347": {
+      "status": 99,
+      "fire": 1,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2348": {
+      "status": 99,
+      "fire": 0,
+      "cold": 0,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2349": {
+      "status": 99,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2350": {
+      "status": 99,
+      "fire": 1,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2351": {
+      "status": 99,
+      "fire": 0,
+      "cold": 0,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2352": {
+      "status": 99,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2363": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 2,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2364": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 2,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2367": {
+      "status": 1,
+      "fire": 0,
+      "cold": 1,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2368": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 3,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2376": {
+      "status": 1,
+      "fire": 1,
+      "cold": 1,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2385": {
+      "status": 2,
+      "fire": 1,
+      "cold": 1,
+      "poison": 1,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2511": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2512": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2513": {
+      "status": 0,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2514": {
+      "status": 0,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2515": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2516": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2517": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2518": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2519": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2520": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2521": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2522": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2523": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "2524": {
+      "status": 2,
+      "fire": 999,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 50,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5501": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5502": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5503": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5504": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5505": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5506": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5507": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5508": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5509": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5510": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5511": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5512": {
+      "status": 2,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 30,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 0.0
+    },
+    "5546": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 999.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 600.0
+    },
+    "5547": {
+      "status": 3,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1000.0,
+      "buff_cold": 0.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 100.0,
+      "duration": 600.0
+    },
+    "5548": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 999.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 600.0
+    },
+    "5550": {
+      "status": 1,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 0.0,
+      "buff_poison": 999.0,
+      "buff_hellfire": 0.0,
+      "duration": 600.0
+    },
+    "5900": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 1.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 60.0
+    },
+    "5901": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 1.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 60.0
+    },
+    "5902": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 1.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 60.0
+    },
+    "5903": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 1.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 60.0
+    },
+    "5904": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 0.0,
+      "buff_cold": 1.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 60.0
+    },
+    "5910": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5911": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5912": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5913": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5914": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5915": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5916": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    },
+    "5917": {
+      "status": 4,
+      "fire": 0,
+      "cold": 0,
+      "poison": 0,
+      "hellfire": 0,
+      "buff_fire": 1.0,
+      "buff_cold": -3.0,
+      "buff_poison": 0.0,
+      "buff_hellfire": 0.0,
+      "duration": 180.0
+    }
+  }
+}

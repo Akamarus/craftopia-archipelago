@@ -1,0 +1,1436 @@
+{
+  "research_only": true,
+  "source_files": {
+    "resources.assets": "ab19e69d97c57705b4d4d1142dc505235f0ebc6f0e300a5f143868add40cc20a",
+    "sharedassets0.assets": "230d0d5b4138ce393a944af51ca45bb8a978852432c4d3ea5cbbeb6fcafe1738",
+    "Managed/AD__Overcraft.dll": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea"
+  },
+  "records": [
+    {
+      "asset": "resources.assets",
+      "path_id": 473505,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "GeneratorRunnningZone",
+      "ancestry": [
+        "GeneratorRunnningZone",
+        "root",
+        "oc_pf_ItemPrefabParts_00000_02_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator_2002",
+        "oc_pf_ItemPrefab_02002"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 524650
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 220634
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 151208
+        },
+        "_GeneratorParticle": []
+      }
+    },
+    {
+      "asset": "resources.assets",
+      "path_id": 497717,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_20105_Core--Well",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_20105_Core--Well",
+        "oc_pf_ItemPrefabParts_20105_01_EquipPrefab--Well_332",
+        "oc_pf_ItemPrefab_00332"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 1,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 14,
+        "queueIcon": {
+          "m_FileID": 2,
+          "m_PathID": 6162
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "isAlwaysProcessing": 1,
+        "generateItemID": 839
+      }
+    },
+    {
+      "asset": "resources.assets",
+      "path_id": 514032,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator_2000",
+        "oc_pf_ItemPrefab_02000"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 2,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 221735
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "resources.assets",
+      "path_id": 520623,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "Zone_GeneratorRunnning",
+      "ancestry": [
+        "Zone_GeneratorRunnning",
+        "oc_pf_ItemPrefabParts_00000_03_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator_2000",
+        "oc_pf_ItemPrefab_02000"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 514032
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 228505
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 21215
+        },
+        "_GeneratorParticle": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 436066
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 453647
+          }
+        ]
+      }
+    },
+    {
+      "asset": "resources.assets",
+      "path_id": 524650,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator_2002",
+        "oc_pf_ItemPrefab_02002"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 2,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 198338
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 82477,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_00811",
+        "pKey": 811,
+        "id": 811,
+        "devPriority": 0,
+        "status": 1,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 5416
+        },
+        "maxStack": 100,
+        "price": 1,
+        "probInTreasureBox": 0.0,
+        "probInGacha": 0.0,
+        "rank": 1,
+        "rarity": 0,
+        "categoryId": 27,
+        "familyId": 30001,
+        "inventoryTabId": 5,
+        "workbenchId": 20015,
+        "workbenchLv": 1,
+        "playerCraftCount": 10,
+        "carftTimeCost": 60.0,
+        "materialA_Id": 839,
+        "materialB_Id": 0,
+        "materialC_Id": 0,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 1,
+        "materialB_count": 0,
+        "materialC_count": 0,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 0.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 0.0,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81692
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 0,
+        "equipSlot": 0,
+        "wpCategory": 0,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 82505,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_00839",
+        "pKey": 839,
+        "id": 839,
+        "devPriority": 0,
+        "status": 1,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 6162
+        },
+        "maxStack": 100,
+        "price": 0,
+        "probInTreasureBox": 0.0,
+        "probInGacha": 0.0,
+        "rank": 3,
+        "rarity": 0,
+        "categoryId": 6,
+        "familyId": 10903,
+        "inventoryTabId": 1,
+        "workbenchId": 20001,
+        "workbenchLv": 1,
+        "playerCraftCount": 0,
+        "carftTimeCost": 30.0,
+        "materialA_Id": 0,
+        "materialB_Id": 0,
+        "materialC_Id": 0,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 0,
+        "materialB_count": 0,
+        "materialC_count": 0,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 0.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 0.0,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81689
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 4,
+        "equipSlot": 1,
+        "wpCategory": 21,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 83585,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_01919",
+        "pKey": 1919,
+        "id": 1919,
+        "devPriority": 0,
+        "status": 1,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 6110
+        },
+        "maxStack": 100,
+        "price": 1,
+        "probInTreasureBox": 0.0,
+        "probInGacha": 0.0,
+        "rank": 2,
+        "rarity": 0,
+        "categoryId": 54,
+        "familyId": 10905,
+        "inventoryTabId": 1,
+        "workbenchId": 20002,
+        "workbenchLv": 0,
+        "playerCraftCount": 10,
+        "carftTimeCost": 1.0,
+        "materialA_Id": 746,
+        "materialB_Id": 698,
+        "materialC_Id": 0,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 1,
+        "materialB_count": 1,
+        "materialC_count": 0,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 0.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 0.0,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81689
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 4,
+        "equipSlot": 1,
+        "wpCategory": 25,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 83666,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_02000",
+        "pKey": 2000,
+        "id": 2000,
+        "devPriority": 0,
+        "status": 1,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 8992
+        },
+        "maxStack": 100,
+        "price": 21,
+        "probInTreasureBox": 0.0,
+        "probInGacha": 0.0,
+        "rank": 6,
+        "rarity": 0,
+        "categoryId": 18,
+        "familyId": 20401,
+        "inventoryTabId": 2,
+        "workbenchId": 20011,
+        "workbenchLv": 2,
+        "playerCraftCount": 0,
+        "carftTimeCost": 3.0,
+        "materialA_Id": 712,
+        "materialB_Id": 2451,
+        "materialC_Id": 746,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 1,
+        "materialB_count": 1,
+        "materialC_count": 5,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 0.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 1.0,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81689
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 4,
+        "equipSlot": 0,
+        "wpCategory": 13,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 83668,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_02002",
+        "pKey": 2002,
+        "id": 2002,
+        "devPriority": 0,
+        "status": 0,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 8913
+        },
+        "maxStack": 100,
+        "price": 0,
+        "probInTreasureBox": 0.0,
+        "probInGacha": 0.0,
+        "rank": 12,
+        "rarity": 0,
+        "categoryId": 18,
+        "familyId": 20401,
+        "inventoryTabId": 2,
+        "workbenchId": 20011,
+        "workbenchLv": 7,
+        "playerCraftCount": 1,
+        "carftTimeCost": 3.0,
+        "materialA_Id": 0,
+        "materialB_Id": 0,
+        "materialC_Id": 0,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 0,
+        "materialB_count": 0,
+        "materialC_count": 0,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 1.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 1.5,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81689
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 4,
+        "equipSlot": 2,
+        "wpCategory": 13,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 83766,
+      "cls": "ItemData",
+      "data": {
+        "m_Name": "So--ItemData_02100",
+        "pKey": 2100,
+        "id": 2100,
+        "devPriority": 0,
+        "status": 1,
+        "isOldData": 0,
+        "itemUIImage": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "maxStack": 100,
+        "price": 10,
+        "probInTreasureBox": 10.0,
+        "probInGacha": 0.0,
+        "rank": 6,
+        "rarity": 0,
+        "categoryId": 34,
+        "familyId": 40207,
+        "inventoryTabId": 3,
+        "workbenchId": 20001,
+        "workbenchLv": 2,
+        "playerCraftCount": 0,
+        "carftTimeCost": 20.0,
+        "materialA_Id": 0,
+        "materialB_Id": 0,
+        "materialC_Id": 0,
+        "materialD_Id": 0,
+        "materialE_Id": 0,
+        "materialA_count": 0,
+        "materialB_count": 0,
+        "materialC_count": 0,
+        "materialD_count": 0,
+        "materialE_count": 0,
+        "cooldownTime": 0.0,
+        "effectiveTime": 0.0,
+        "restoreHealth": 0.0,
+        "restoreHealthRate": 0.0,
+        "restoreMana": 0.0,
+        "restoreManaRate": 0.0,
+        "restoreSatiety": 0.0,
+        "addStamina": 0.0,
+        "buffMaxHealth": 0.0,
+        "buffMaxMana": 0.0,
+        "buffAtk": 0.0,
+        "buffMatk": 0.0,
+        "buffDef": 0.0,
+        "buffResistFireLv": 0.0,
+        "buffResistColdLv": 0.0,
+        "buffResistPoisonLv": 0.0,
+        "buffResistHellFireLv": 0.0,
+        "buffAtkBoss": 0.0,
+        "buffMatkBoss": 0.0,
+        "buffDefBoss": 0.0,
+        "buffFinalDamageRate": 0.0,
+        "buffFinalDamageRate_Bow": 0.0,
+        "buffFinalDamageRate_Sword": 0.0,
+        "buffFinalDamageRate_Dual": 0.0,
+        "buffFinalDamageRate_Lance": 0.0,
+        "buffFinalDamageRate_TwoHandSword": 0.0,
+        "buffFinalDamageRate_NoWeapon": 0.0,
+        "buffFinalDamageRate_Katana": 0.0,
+        "buffFinalDamageRate_Gun": 0.0,
+        "buffFinalDamageRate_MagicStaff": 0.0,
+        "buffIncreaseAtkByDefRate": 0.0,
+        "buffIncreaseMAtkByDefRate": 0.0,
+        "buffIncreaseAtkByHpRate": 0.0,
+        "buffIncreaseMAtkByHpRate": 0.0,
+        "buffIncreaseAtkByMpRate": 0.0,
+        "buffIncreaseMAtkByMpRate": 0.0,
+        "atk": 0,
+        "def": 0,
+        "matk": 0,
+        "hp": 0,
+        "mp": 0,
+        "motionSpeed": 0.0,
+        "movementSpeed": 0.0,
+        "jumpPow": 0.0,
+        "durabilityValue": 100.0,
+        "resistFireLv": 0,
+        "resistColdLv": 0,
+        "resistPoisonLv": 0,
+        "resistHellFireLv": 0,
+        "resistElementFireRate": 0.0,
+        "resistElementIceRate": 0.0,
+        "resistElementElectroRate": 0.0,
+        "hellFireValue": 0,
+        "poisonValue": 0,
+        "frozenVal": 0,
+        "chillVal": 0,
+        "electroVal": 0,
+        "elementFireValue": 0.0,
+        "elementIceValue": 0.0,
+        "elementElectroValue": 0.0,
+        "enchantID": 0,
+        "lootEnchantId_00": 0,
+        "lootEnchantId_01": 0,
+        "lootEnchantId_02": 0,
+        "lootEnchantId_03": 0,
+        "enchantInfluences": [],
+        "equipmentActiveSkillId": 0,
+        "equipmentActiveSkillLevel": 0,
+        "equipmentPassiveSkillId1": 0,
+        "equipmentPassiveSkillLevel1": 0,
+        "equipmentPassiveSkillId2": 0,
+        "equipmentPassiveSkillLevel2": 0,
+        "equipmentPassiveSkillId3": 0,
+        "equipmentPassiveSkillLevel3": 0,
+        "equipmentPassiveSkillId4": 0,
+        "equipmentPassiveSkillLevel4": 0,
+        "extraValue_A": 0.0,
+        "extraValue_B": 0.0,
+        "handler": {
+          "m_FileID": 0,
+          "m_PathID": 81691
+        },
+        "buildingDecoIcon": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "activeSkillType": 0,
+        "passiveSkillType": 0,
+        "cantUse": 0,
+        "deliveryCategory": 0,
+        "_Refine_MaxLv": 199,
+        "existPrefab": 0,
+        "equipSlot": 0,
+        "wpCategory": 0,
+        "_soItemLotteryTeble": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_SoGunAssistEquipParam": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        }
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 92362,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_20105_Core--Well",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_20105_Core--Well",
+        "oc_pf_ItemPrefabParts_20105_01_EquipPrefab--Well_332"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 1,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 14,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 6162
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "isAlwaysProcessing": 1,
+        "generateItemID": 839
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 92628,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "GeneratorRunnningZone",
+      "ancestry": [
+        "GeneratorRunnningZone",
+        "root",
+        "oc_pf_ItemPrefabParts_00000_02_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator_2002"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 111388
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 49534
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 29188
+        },
+        "_GeneratorParticle": []
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 94136,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_01_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 59934
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 94137,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 59935
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 94138,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 59936
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 95958,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_20105_Core--Well",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_20105_Core--Well",
+        "oc_pf_ItemPrefabParts_20105_01_EquipPrefab--Well"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 1,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 6162
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "isAlwaysProcessing": 1,
+        "generateItemID": 839
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 104890,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "GeneratorRunnningZone",
+      "ancestry": [
+        "GeneratorRunnningZone",
+        "root",
+        "oc_pf_ItemPrefabParts_00000_02_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 94137
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 39773
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 21163
+        },
+        "_GeneratorParticle": []
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 111388,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_02_EquipPrefab--Generator_2002"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 55145
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 112057,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "Zone_GeneratorRunnning",
+      "ancestry": [
+        "Zone_GeneratorRunnning",
+        "oc_pf_ItemPrefabParts_00000_03_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator_2000"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 112670
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 54143
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 19433
+        },
+        "_GeneratorParticle": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 98814
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 102458
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 112670,
+      "cls": "OcBldg_ItemGenerator",
+      "game_object": "oc_pf_ItemPrefabParts_00000_Core--Generator",
+      "ancestry": [
+        "oc_pf_ItemPrefabParts_00000_Core--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator_2000"
+      ],
+      "data": {
+        "m_Name": "",
+        "syncDirection": 0,
+        "syncMode": 0,
+        "syncInterval": 0.10000000149011612,
+        "_ignoreDeath": 0,
+        "_CanProcessSave": 0,
+        "_ProcessLoopFx": [],
+        "prevCompleteNum": 0,
+        "productionSoundType": 0,
+        "queueIcon": {
+          "m_FileID": 0,
+          "m_PathID": 9509
+        },
+        "dropTrans": {
+          "m_FileID": 0,
+          "m_PathID": 49256
+        },
+        "isAlwaysProcessing": 0,
+        "generateItemID": 2100
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 113602,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "GeneratorRunnningZone",
+      "ancestry": [
+        "GeneratorRunnningZone",
+        "root",
+        "oc_pf_ItemPrefabParts_00000_01_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_01_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 94136
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 43254
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 11447
+        },
+        "_GeneratorParticle": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 96481
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 109734
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 114623,
+      "cls": "OcZone_GeneratorRunning",
+      "game_object": "Zone_GeneratorRunnning",
+      "ancestry": [
+        "Zone_GeneratorRunnning",
+        "oc_pf_ItemPrefabParts_00000_03_Collision--Generator",
+        "oc_pf_ItemPrefabParts_00000_03_EquipPrefab--Generator"
+      ],
+      "data": {
+        "m_Name": "",
+        "_ItemGenerator": {
+          "m_FileID": 0,
+          "m_PathID": 94138
+        },
+        "_GeneratorRunningTrans": {
+          "m_FileID": 0,
+          "m_PathID": 43875
+        },
+        "_BeltConveyorFolder": {
+          "m_FileID": 0,
+          "m_PathID": 23802
+        },
+        "_GeneratorParticle": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 100925
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 99664
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Synthetic MonoBehaviour header excluded; actual parsed object header used for GameObject ancestry.",
+    "Generator component ancestry identifies prefab2000 and2002; no runtime test performed.",
+    "OldItem duplicates excluded."
+  ]
+}

@@ -5,12 +5,25 @@ using BepInEx;
 
 namespace CraftopiaDiagnostic
 {
-    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.3.0")]
+    [BepInPlugin("com.craftopia.diagnostic", "Craftopia Diagnostic Collector", "1.5.2")]
     public class DiagnosticCollector : BaseUnityPlugin
     {
+        private ObservationHooks observations;
+        private DateTime nextFlush, nextCapture;
+        private MethodInfo keyDown;
+        private object f9Key;
+        private string evidenceDirectory;
         private void Awake()
         {
-            Logger.LogInfo("[DIAG] Diagnostic collector loaded. Press F9 in-game to run.");
+            Logger.LogInfo("[DIAG] Collector 1.5.2 loaded. Press F9 for catalogs; read-only action observations save automatically.");
+            evidenceDirectory=System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "diagnostics");
+            try {
+                observations=new ObservationHooks(evidenceDirectory, message=>Logger.LogWarning("[DIAG] "+message));
+                observations.GameHash=Hash(typeof(Oc.OcPlMaster).Assembly.Location);
+                observations.CollectorHash=Hash(Assembly.GetExecutingAssembly().Location);
+                observations.Install();
+                Logger.LogInfo("[DIAG] Observer coverage: "+JsonWriter.Stringify(observations.Status()));
+            } catch(Exception e) { Logger.LogWarning("[DIAG] Observer setup incomplete: "+e.GetType().Name); }
             // Startup diagnostics: verify reflection lookups.
             try
             {
@@ -23,6 +36,8 @@ namespace CraftopiaDiagnostic
                     var keyCodeType = Type.GetType("UnityEngine.KeyCode, UnityEngine.CoreModule");
                     var m1 = keyCodeType != null ? inputType.GetMethod("GetKeyDown", new[] { keyCodeType }) : null;
                     var m2 = inputType.GetMethod("GetKeyDown", new[] { typeof(string) });
+                    keyDown=m1;
+                    if(keyCodeType!=null) f9Key=Enum.ToObject(keyCodeType,290);
                     Logger.LogInfo($"[DIAG] GetKeyDown(KeyCode): {(m1 != null ? "OK" : "MISSING")}");
                     Logger.LogInfo($"[DIAG] GetKeyDown(string): {(m2 != null ? "OK" : "MISSING")}");
                 }
@@ -34,21 +49,25 @@ namespace CraftopiaDiagnostic
         {
             try
             {
-                var inputType = Type.GetType("UnityEngine.Input, UnityEngine.InputLegacyModule");
-                if (inputType == null) return;
-                var keyCodeType = Type.GetType("UnityEngine.KeyCode, UnityEngine.CoreModule");
-                if (keyCodeType == null) return;
-                // Correct: GetKeyDown(KeyCode), F9 = 290
-                var m = inputType.GetMethod("GetKeyDown", new[] { keyCodeType });
-                if (m == null) return;
-                object f9 = Enum.ToObject(keyCodeType, 290);
-                if ((bool)m.Invoke(null, new[] { f9 }))
+                observations?.PollProgression();
+                if(DateTime.UtcNow>=nextFlush) {
+                    nextFlush=DateTime.UtcNow.AddSeconds(2);
+                    if(observations!=null) {
+                        try { observations.World=WorldEvidenceCapture.FindWorld(); observations.WorldObservedAt=DateTime.UtcNow; }
+                        catch { observations.World=null; observations.WorldObservedAt=default(DateTime); }
+                        observations.Flush();
+                    }
+                }
+                if (keyDown != null && DateTime.UtcNow>=nextCapture && (bool)keyDown.Invoke(null, new[] { f9Key }))
                 {
+                    nextCapture=DateTime.UtcNow.AddSeconds(5);
                     RunDiagnostic();
                 }
             }
             catch { }
         }
+
+        private void OnDestroy() { try { observations?.Dispose(); } catch { } }
 
         private static string Hash(string path)
         {
@@ -63,11 +82,15 @@ namespace CraftopiaDiagnostic
             Logger.LogInfo("[DIAG] Starting diagnostic collection...");
             var output = new Dictionary<string, object>();
             output["timestamp"] = DateTime.UtcNow.ToString("o");
-            output["schema_version"] = 4;
-            output["collector_version"] = "1.3.0";
+            output["schema_version"] = 5;
+            output["collector_version"] = "1.5.2";
+            string captureId=Guid.NewGuid().ToString("N");
+            output["capture_id"]=captureId;
+            if(observations!=null) { observations.Capture=captureId; observations.Flush(); output["observations"]=observations.Status(); }
             output["game_assembly_sha256"] = Hash(typeof(Oc.OcPlMaster).Assembly.Location);
             output["collector_sha256"] = Hash(Assembly.GetExecutingAssembly().Location);
             ProgressionCapture.Collect(output);
+            WorldEvidenceCapture.Collect(output);
 
             try
             {
@@ -154,6 +177,10 @@ namespace CraftopiaDiagnostic
                                             d["raw_tier"] = tierField?.GetValue(sk);
                                             d["is_implemented"] = t.GetProperty("IsImplemented")?.GetValue(sk);
                                             d["max_level"] = t.GetProperty("MaxLevel")?.GetValue(sk);
+                                            d["requirements"] = EvidenceProjection.Read(sk, new[] {
+                                                "_skillLockCondition", "levelUpCost_lv1", "levelUpCost_lv2", "levelUpCost_lv3",
+                                                "levelUpCost_lv4", "levelUpCost_lv5", "levelUpCost_lv6", "_preLocked"
+                                            });
                                             d["observed"] = true;
                                         }
                                         catch (Exception ex)
@@ -220,6 +247,7 @@ namespace CraftopiaDiagnostic
                                             "rewardItemID_A", "rewardItemCount_A", "rewardItemID_B", "rewardItemCount_B",
                                             "rewardGold", "skillPoint", "rewardExp", "lithograph"
                                         });
+                                        d["raw_fields"] = EvidenceProjection.Read(m, null);
                                         d["id"] = t.GetProperty("ID")?.GetValue(m);
                                         d["title"] = t.GetProperty("Title")?.GetValue(m);
                                         d["category"] = t.GetProperty("Category")?.GetValue(m);
@@ -252,11 +280,12 @@ namespace CraftopiaDiagnostic
             // Write JSON with proper escaping
             try
             {
-                string dir = System.IO.Path.GetDirectoryName(
-                    Assembly.GetExecutingAssembly().Location);
+                string dir = evidenceDirectory;
+                System.IO.Directory.CreateDirectory(dir);
                 string path = System.IO.Path.Combine(dir,
-                    $"craftopia_diag_{DateTime.UtcNow:yyyyMMdd_HHmmss}.json");
-                System.IO.File.WriteAllText(path, JsonWriter.Stringify(output));
+                    $"craftopia_diag_{DateTime.UtcNow:yyyyMMdd_HHmmss}_{captureId}.json");
+                System.IO.File.WriteAllText(path+".tmp", JsonWriter.Stringify(output));
+                System.IO.File.Move(path+".tmp",path);
                 Logger.LogInfo($"[DIAG] Complete: {missions.Count} missions, status={missionsStatus}. Wrote {path}");
             }
             catch (Exception e)
@@ -266,56 +295,4 @@ namespace CraftopiaDiagnostic
         }
     }
 
-    internal static class JsonWriter
-    {
-        public static string Stringify(object obj)
-        {
-            if (obj == null) return "null";
-            if (obj is string s) return Escape(s);
-            if (obj is bool b) return b ? "true" : "false";
-            // Culture-invariant numeric formatting
-            if (obj is int i) return i.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            if (obj is long l) return l.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            if (obj is float f) return f.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            if (obj is double d) return d.ToString(System.Globalization.CultureInfo.InvariantCulture);
-            if (obj is Dictionary<string, object> dict)
-            {
-                var parts = new List<string>();
-                foreach (var kv in dict)
-                    parts.Add(Escape(kv.Key) + ":" + Stringify(kv.Value));
-                return "{" + string.Join(",", parts) + "}";
-            }
-            if (obj is System.Collections.IEnumerable e && !(obj is string))
-            {
-                var parts = new List<string>();
-                foreach (var item in e) parts.Add(Stringify(item));
-                return "[" + string.Join(",", parts) + "]";
-            }
-            return Escape(obj.ToString());
-        }
-
-        private static string Escape(string s)
-        {
-            var sb = new System.Text.StringBuilder("\"");
-            foreach (char c in s)
-            {
-                switch (c)
-                {
-                    case '"': sb.Append("\\\""); break;
-                    case '\\': sb.Append("\\\\"); break;
-                    case '\n': sb.Append("\\n"); break;
-                    case '\r': sb.Append("\\r"); break;
-                    case '\t': sb.Append("\\t"); break;
-                    case '\b': sb.Append("\\b"); break;
-                    case '\f': sb.Append("\\f"); break;
-                    default:
-                        if (c < 32) sb.Append($"\\u{(int)c:X4}");
-                        else sb.Append(c);
-                        break;
-                }
-            }
-            sb.Append("\"");
-            return sb.ToString();
-        }
-    }
 }
