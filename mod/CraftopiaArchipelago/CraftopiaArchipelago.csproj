@@ -7,17 +7,19 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <DebugType>none</DebugType>
-    <AssemblyVersion>1.8.9</AssemblyVersion>
-    <Version>1.8.9</Version>
+    <AssemblyVersion>1.12.3</AssemblyVersion>
+    <Version>1.12.3</Version>
   </PropertyGroup>
 
   <!-- Versioned skill catalog from runtime capture (embedded). -->
+  <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/soul_orbs_20261015_r1.json"><LogicalName>soul_orbs_20261015_r1.json</LogicalName></EmbeddedResource></ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="../../worlds/craftopia/skill_catalog_20261008_r1.json">
       <LogicalName>skill_catalog_20261008_r1.json</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/equipment_catalog_20261010_r1.json"><LogicalName>equipment_catalog_20261010_r1.json</LogicalName></EmbeddedResource></ItemGroup>
   <!-- ValidationDecision is pure shared logic, compiled in. -->
   <ItemGroup>
     <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
@@ -25,6 +27,9 @@
 
   <!-- Compile-only references. None of these ship with the mod. -->
   <ItemGroup>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>..\refs\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>..\refs\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>..\refs\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="BepInEx">
       <HintPath>..\refs\BepInEx.dll</HintPath>
       <Private>false</Private>
@@ -51,7 +56,5 @@
     </Reference>
   </ItemGroup>
 
+<ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261016_r1.json" LogicalName="milestones_20261016_r1.json" /></ItemGroup>
 </Project>
-
-
-

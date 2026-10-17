@@ -194,5 +194,26 @@ namespace CraftopiaArchipelago
             skillTrees.Clear();
             logInfo("[AP] permissions cleared");
         }
+
+        // Read-only presentation of the same permissions used by enforcement.
+        public List<string> GetGuideRows()
+        {
+            var rows = new List<string>();
+            foreach (string category in new[] { "Sword", "Bow", "Shield", "Lance", "SwordTwoHand", "Katana", "Gun", "MagicStaff", "VacuumGun", "Head", "Body" }) {
+                equipmentTiers.TryGetValue(category, out int tier);
+                string name = category == "SwordTwoHand" ? "Two-handed weapon" : category == "MagicStaff" ? "Magic staff" : category == "VacuumGun" ? "Vacuum gun" : category == "Head" ? "Head armor" : category == "Body" ? "Body armor" : category;
+                rows.Add(name + "|" + (tier > 0 ? "Tier " + tier : "Locked"));
+            }
+            foreach (string group in new[] { "smelting", "cooking", "farming", "livestock_fishing", "alchemy", "recycling", "water_processing", "equipment_care", "automation", "creature_combining" }) {
+                string name = char.ToUpperInvariant(group[0]) + group.Substring(1).Replace('_', ' ');
+                rows.Add(name + "|" + (IsProductionUnlocked(group) ? "Unlocked" : "Locked"));
+            }
+            rows.Add("Basic skills|Available from the start");
+            for (int tier = 1; tier <= 5; tier++)
+                rows.Add("Combat skills " + tier + "|" + (IsSkillTreeUnlocked("Combat", tier) ? "Unlocked" : "Locked"));
+            foreach (string tree in new[] { "Magic", "Life", "Trick", "Tamer" })
+                rows.Add(tree + " skills|" + (IsSkillTreeUnlocked(tree, 1) ? "Unlocked" : "Locked"));
+            return rows;
+        }
     }
 }

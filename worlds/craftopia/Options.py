@@ -83,9 +83,9 @@ class EnableAgeChecks(Toggle):
 
 
 class EnableSoulOrbChecks(Toggle):
-    """Enable soul orb collection checks."""
+    """Reserved for soul orb replacement. Unavailable until durable currency delivery is implemented."""
     display_name = "Enable Soul Orb Checks"
-    default = True
+    default = False
 
 
 class EnableChestChecks(Toggle):
@@ -152,6 +152,34 @@ class MissionCatalogVersion(Choice):
     default = 0
 
 
+class LogicMode(Choice):
+    """Candidate retains experimental flat logic. Verified requires reviewed
+    prerequisites for every active mission; currently unavailable and rejected.
+    Opening is a separate 11-mission first-age pilot, requiring instance mode.
+    A captured recipe catalog alone does not establish beatability.
+    """
+    display_name = "Progression Logic"
+    option_candidate = 0
+    option_verified = 1
+    option_opening = 2
+    # Full captured mission pool with partial, explicitly experimental logic.
+    option_expedition = 3
+    option_geezah_pilot = 4
+    option_regional = 5
+    default = 0
+
+
+class EndingRegion(Choice):
+    """Regional runs end after the selected region's tower and main dungeon.
+    Geezah is the first supported ending. Later regions are not selectable
+    until their dungeon identities and prerequisite rules are established.
+    Only used with regional progression logic.
+    """
+    display_name = "Ending Region"
+    option_geezah = 0
+    default = 0
+
+
 @dataclass
 class CraftopiaOptions(PerGameCommonOptions):
     # Victory (at least one must be enabled; validated at generation)
@@ -167,6 +195,8 @@ class CraftopiaOptions(PerGameCommonOptions):
     enable_mission_checks: EnableMissionChecks
     # Catalog version (instance-based mapping is opt-in)
     mission_catalog_version: MissionCatalogVersion
+    logic_mode: LogicMode
+    ending_region: EndingRegion
     enable_age_checks: EnableAgeChecks
     enable_soul_orb_checks: EnableSoulOrbChecks
     enable_chest_checks: EnableChestChecks

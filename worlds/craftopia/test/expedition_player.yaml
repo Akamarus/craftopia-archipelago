@@ -1,0 +1,19 @@
+name: CraftopiaExpedition
+game: Craftopia
+Craftopia:
+  logic_mode: expedition
+  mission_catalog_version: 20261007_r1
+  goal_boss: false
+  goal_age: false
+  goal_objectives: true
+  goal_objective_count: 60
+  multiplayer_mode: separate_slots
+  starting_combat: player_choice
+  enable_mission_checks: true
+  enable_age_checks: false
+  enable_soul_orb_checks: false
+  enable_chest_checks: false
+  enable_challenge_checks: false
+  enable_anubis_checks: false
+  enable_shop_checks: false
+  enable_boss_checks: false

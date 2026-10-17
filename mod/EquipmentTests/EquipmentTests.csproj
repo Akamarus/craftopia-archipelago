@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../CraftopiaArchipelago/EquipmentRead.cs" />
+    <Compile Include="../CraftopiaArchipelago/Permissions.cs" />
+    <Compile Include="../CraftopiaArchipelago/MiniJson.cs" />
+    <Compile Include="../CraftopiaArchipelago/EquipmentEnforcement.cs" Condition="Exists('../CraftopiaArchipelago/EquipmentEnforcement.cs')" />
+    <Compile Include="../CraftopiaArchipelago/EquipmentSession.cs" Condition="Exists('../CraftopiaArchipelago/EquipmentSession.cs')" />
+  </ItemGroup>
+</Project>

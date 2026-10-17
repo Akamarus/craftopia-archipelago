@@ -1,0 +1,185 @@
+{
+  "research_only": true,
+  "capture_file": "craftopia_diag_20261017_002020_51232d89c6194fd8910029c450ac7208.json",
+  "capture_sha256": "d30249a1ac1d497a968c1de02969768ebdb3c0be4ef3de315df3268a226732f1",
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "user_reported_display_age": 5,
+  "unresolved_ids_in_live_craft_lists": [],
+  "items": [
+    {
+      "id": 95,
+      "name": "Silver Bow",
+      "raw_age": 3,
+      "live_benches": [
+        20017
+      ],
+      "atk": 175,
+      "matk": 87,
+      "recipe": [
+        {
+          "id": 713,
+          "name": "Silver Ingot",
+          "count": 3
+        },
+        {
+          "id": 746,
+          "name": "Log",
+          "count": 2
+        },
+        {
+          "id": 683,
+          "name": "Leather",
+          "count": 1
+        },
+        {
+          "id": 695,
+          "name": "Bone",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": 6161,
+      "name": "Silver Bow",
+      "raw_age": 0,
+      "live_benches": [],
+      "atk": 210,
+      "matk": 105,
+      "recipe": []
+    },
+    {
+      "id": 2307,
+      "name": "Amulet of Passion Lv1",
+      "raw_age": 3,
+      "live_benches": [
+        20017
+      ],
+      "atk": 0,
+      "matk": 0,
+      "recipe": [
+        {
+          "id": 764,
+          "name": "Black Gunpowder",
+          "count": 1
+        },
+        {
+          "id": 683,
+          "name": "Leather",
+          "count": 1
+        },
+        {
+          "id": 695,
+          "name": "Bone",
+          "count": 1
+        },
+        {
+          "id": 713,
+          "name": "Silver Ingot",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": 2308,
+      "name": "Amulet of Immunity Lv1",
+      "raw_age": 3,
+      "live_benches": [
+        20017
+      ],
+      "atk": 0,
+      "matk": 0,
+      "recipe": [
+        {
+          "id": 2053,
+          "name": "Shellfish",
+          "count": 1
+        },
+        {
+          "id": 2057,
+          "name": "Egg",
+          "count": 1
+        },
+        {
+          "id": 2064,
+          "name": "Mushroom",
+          "count": 1
+        },
+        {
+          "id": 713,
+          "name": "Silver Ingot",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": 2309,
+      "name": "Amulet of Cold-blood Lv1",
+      "raw_age": 3,
+      "live_benches": [
+        20017
+      ],
+      "atk": 0,
+      "matk": 0,
+      "recipe": [
+        {
+          "id": 2074,
+          "name": "Luxury Fillets",
+          "count": 1
+        },
+        {
+          "id": 2051,
+          "name": "Fillets of Fish",
+          "count": 1
+        },
+        {
+          "id": 2053,
+          "name": "Shellfish",
+          "count": 1
+        },
+        {
+          "id": 713,
+          "name": "Silver Ingot",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": 2376,
+      "name": "Amulet of Versatility Lv1",
+      "raw_age": 4,
+      "live_benches": [
+        20017
+      ],
+      "atk": 0,
+      "matk": 0,
+      "recipe": [
+        {
+          "id": 764,
+          "name": "Black Gunpowder",
+          "count": 2
+        },
+        {
+          "id": 3371,
+          "name": "Snow",
+          "count": 2
+        },
+        {
+          "id": 2076,
+          "name": "Poisonous Mushroom",
+          "count": 2
+        },
+        {
+          "id": 2051,
+          "name": "Fillets of Fish",
+          "count": 2
+        },
+        {
+          "id": 714,
+          "name": "Gold Ingot",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "conclusion": "Screenshot Silver Bow recipe and stats match ID95, not unresolved ID6161. Screenshots corroborate four amulet recipes and level1 resistances; no crafting success or earliest age observed."
+}

@@ -1,0 +1,53 @@
+{
+  "source_sha256": "c063a7e3ebb3e209e7a6af1e32e1324464351d698bf1cf12697fff3aa3e177c1",
+  "captured_at": "2026-10-10T03:53:43.5746911Z",
+  "collector_version": "1.2.0",
+  "collector_sha256": "4691920f05b3c179bd56045707260f3100e6e11bbc1065125e4648c8dfdd6190",
+  "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "counts": {
+    "items": 7053,
+    "ages": 9,
+    "craft_bench_map": 21,
+    "age_new_items": 10,
+    "missions": 125,
+    "skills": 360
+  },
+  "unique_item_ids": 7052,
+  "zero_id_sentinel_rows_excluded": 1,
+  "items_with_material_fields": 3213,
+  "missing_material_ids": [],
+  "malformed_material_pairs": [],
+  "missing_bench_item_ids": [],
+  "bench_assignment_mismatches": [],
+  "missing_age_requirement_ids": [],
+  "item_status_counts": {
+    "0": 3376,
+    "1": 1683,
+    "2": 1311,
+    "3": 246,
+    "4": 228,
+    "5": 114,
+    "6": 15,
+    "99": 79
+  },
+  "old_data_rows": 0,
+  "world_levels_in_age_rows": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "limitations": [
+    "Mixed raw status values may include disabled or non-player content; counts are not playable-item counts.",
+    "Material fields describe raw dependencies, not all gathering/drop/merchant sources.",
+    "Raw bench IDs are not yet bound to verified station types.",
+    "Age-array indices, raw rank, rarity, and bench level are not assigned AP tiers.",
+    "Mission base fields do not include every subclass-specific objective or prerequisite.",
+    "No beatability, equipment eligibility, or multiplayer authority claim follows from this audit."
+  ]
+}

@@ -40,6 +40,13 @@ namespace CraftopiaArchipelago
             }
         }
 
+        internal void SendMilestoneEnrollment(int guid,long epoch,string seed,string slot) {
+            if(!IsConnected || epoch!=Interlocked.Read(ref knownEpoch) || string.IsNullOrEmpty(knownToken))return;
+            outbox.Enqueue(MiniJson.Stringify(new Dictionary<string,object> {
+                {"cmd","milestone_enrollment"},{"character_guid",guid.ToString(System.Globalization.CultureInfo.InvariantCulture)},
+                {"epoch",epoch},{"seed_name",seed},{"slot",slot},{"connection_token",knownToken},{"local_enrollment_verified",true}
+            }));
+        }
         private Thread thread;
         private volatile bool running;
         private volatile bool connected;
@@ -47,8 +54,8 @@ namespace CraftopiaArchipelago
         private long knownEpoch;
         internal int ConnectionId { get { return Volatile.Read(ref connectionId); } }
         private readonly ConcurrentQueue<string> outbox = new ConcurrentQueue<string>();
-        private string outboxPath;
-        private readonly object outboxFileLock = new object();
+        private ObservationJournal observations;
+        private string knownToken;
 
         public bool IsConnected { get { return connected; } }
 
@@ -66,97 +73,35 @@ namespace CraftopiaArchipelago
             running = false;
         }
 
-        /// <summary>Called from the Harmony patch (Unity main thread).</summary>
-        /// <summary>
-        /// Initialize the durable observation outbox. Call once at startup.
-        /// Replays any observations that were persisted but not yet sent.
-        /// </summary>
         public void InitDurableOutbox(string path)
         {
-            outboxPath = path;
-            // Replay unsent observations from previous session.
-            try
-            {
-                if (System.IO.File.Exists(path))
-                {
-                    var lines = System.IO.File.ReadAllLines(path);
-                    int replayed = 0;
-                    foreach (var line in lines)
-                    {
-                        if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            outbox.Enqueue(line.Trim());
-                            replayed++;
-                        }
-                    }
-                    if (replayed > 0)
-                        Plugin.Log.LogInfo($"[AP] replayed {replayed} unsent observation(s) from durable outbox");
-                }
-            }
-            catch (Exception e)
-            {
-                Plugin.Log.LogError("[AP] durable outbox replay failed: " + e.GetType().Name);
-            }
+            observations = new ObservationJournal(path);
+            // Replay only after the socket negotiates the matching epoch/slot.
         }
 
-        /// <summary>
-        /// Persist an observation to the durable outbox file before queueing.
-        /// Uses atomic write (temp file + replace) to avoid corruption.
-        /// </summary>
-        private void PersistObservation(string msg)
+        private readonly System.Collections.Concurrent.ConcurrentQueue<Dictionary<string, object>> notifications =
+            new System.Collections.Concurrent.ConcurrentQueue<Dictionary<string, object>>();
+        // Recheck binding on the game thread, after pending session changes.
+        public void PumpNotifications()
         {
-            if (string.IsNullOrEmpty(outboxPath)) return;
-            lock (outboxFileLock)
-            {
-                try
-                {
-                    // Append to the file. Each line is one JSON message.
-                    System.IO.File.AppendAllText(outboxPath, msg + "\n");
+            while (notifications.TryDequeue(out var msg)) {
+                if (!IsConnected || Plugin.Validator == null || MiniJson.GetLong(msg, "epoch") != Interlocked.Read(ref knownEpoch) ||
+                    MiniJson.GetLong(msg, "epoch") != Plugin.Validator.CurrentEpoch ||
+                    MiniJson.GetString(msg, "slot") != Plugin.SlotName.Value ||
+                    string.IsNullOrEmpty(knownToken) || MiniJson.GetString(msg, "connection_token") != knownToken) continue;
+                if (MiniJson.GetString(msg, "cmd") == "activity_snapshot") {
+                    msg.TryGetValue("received", out var received);
+                    msg.TryGetValue("sent", out var sent);
+                    msg.TryGetValue("goal_complete", out var complete);
+                    if(Plugin.StatusDisplay != null) Plugin.StatusDisplay.TotalChecks = MiniJson.GetLong(msg, "total_check_count", -1);
+                    Plugin.StatusDisplay?.SetActivity(received as List<object>, sent as List<object>,
+                        MiniJson.GetLong(msg, "checked_count"), complete is bool won && won);
+                    if (Plugin.StatusDisplay != null)
+                        Plugin.StatusDisplay.HistoryLimited = msg.TryGetValue("history_limited", out var limited) && limited is bool isLimited && isLimited;
+                    continue;
                 }
-                catch (Exception e)
-                {
-                    Plugin.Log.LogError("[AP] failed to persist observation: " + e.GetType().Name);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Remove a sent observation from the durable outbox.
-        /// Called after the bridge acknowledges receipt.
-        /// </summary>
-        public void AckObservation(string msg)
-        {
-            if (string.IsNullOrEmpty(outboxPath)) return;
-            lock (outboxFileLock)
-            {
-                try
-                {
-                    if (!System.IO.File.Exists(outboxPath)) return;
-                    var lines = System.IO.File.ReadAllLines(outboxPath);
-                    var remaining = new System.Collections.Generic.List<string>();
-                    bool removed = false;
-                    foreach (var line in lines)
-                    {
-                        if (!removed && line.Trim() == msg.Trim())
-                        {
-                            removed = true; // Remove only the first match.
-                        }
-                        else if (!string.IsNullOrWhiteSpace(line))
-                        {
-                            remaining.Add(line);
-                        }
-                    }
-                    if (removed)
-                    {
-                        var tmp = outboxPath + ".tmp";
-                        System.IO.File.WriteAllLines(tmp, remaining);
-                        System.IO.File.Replace(tmp, outboxPath, null);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Plugin.Log.LogError("[AP] failed to ack observation: " + e.GetType().Name);
-                }
+                Plugin.StatusDisplay?.Notify("confirmed:" + knownEpoch + ":" + MiniJson.GetLong(msg, "location_id"),
+                    "Check completed: " + PlayerStatusDisplay.CheckLabel(MiniJson.GetString(msg, "title")), PlayerStatusDisplay.Now);
             }
         }
 
@@ -170,12 +115,40 @@ namespace CraftopiaArchipelago
                 ["epoch"] = epoch,
                 ["slot"] = Plugin.SlotName.Value,
                 ["mission_id"] = (long)missionId,
+                ["observation_id"] = "mission:" + missionId.ToString(System.Globalization.CultureInfo.InvariantCulture),
                 ["mission_title"] = missionTitle ?? "",
                 ["mission_class"] = missionClass ?? ""
             });
             // Durable: persist before queueing so a game exit doesn't lose it.
-            PersistObservation(msg);
-            outbox.Enqueue(msg);
+            if (observations != null && observations.Append(msg)) {
+                outbox.Enqueue(msg);
+                try { Plugin.StatusDisplay?.Notify("queued:" + epoch + ":" + missionId,
+                    "Check queued: " + missionTitle, PlayerStatusDisplay.Now); } catch { }
+            }
+            else Plugin.SafeError("[AP] observation not queued: durable journal unavailable; preserve files for review");
+        }
+
+        internal bool SendMilestoneObservation(Dictionary<string,object> message)
+        {
+            if(MiniJson.GetLong(message,"epoch")!=Interlocked.Read(ref knownEpoch) || MiniJson.GetString(message,"slot")!=Plugin.SlotName.Value) return false;
+            var text=MiniJson.Stringify(message);
+            if(observations==null || !observations.Append(text)) return false;
+            outbox.Enqueue(text); return true;
+        }
+
+        internal bool SendOrbCheck(int orb,string seed,string slot,long epoch,int guid)
+        {
+            if(guid==0 || epoch!=Interlocked.Read(ref knownEpoch) || slot!=Plugin.SlotName.Value) return false;
+            var message=MiniJson.Stringify(new Dictionary<string,object> {
+                {"cmd","check"},{"check_category","soul_orb"},{"orb_guid",(long)orb},
+                {"observation_id","orb:"+orb.ToString(System.Globalization.CultureInfo.InvariantCulture)},
+                {"seed_name",seed},{"slot",slot},{"epoch",epoch},
+                {"character_guid",guid.ToString(System.Globalization.CultureInfo.InvariantCulture)}
+            });
+            if(observations==null || !observations.Append(message)) return false;
+            outbox.Enqueue(message);
+            // Server confirmation produces the collection popup; do not show a second queued popup.
+            return true;
         }
 
         /// <summary>
@@ -224,7 +197,11 @@ namespace CraftopiaArchipelago
                             ["cmd"] = "connect",
                             ["game"] = "Craftopia",
                             ["name"] = Plugin.SlotName.Value,
-                            ["unlock_protocol"] = 2L
+                            ["unlock_protocol"] = 2L,
+                            ["equipment_protocol"] = 1L,
+                            ["equipment_protocol_max"] = 2L,
+                            ["currency_protocol"] = 1L,
+                            ["soul_orb_protocol"] = 1L
                         };
                         // Include character GUID if a character is loaded.
                         // The bridge uses this for enrollment (explicit, not automatic).
@@ -308,6 +285,17 @@ namespace CraftopiaArchipelago
             string cmd = MiniJson.GetString(msg, "cmd");
             switch (cmd)
             {
+                case "check_confirmed":
+                case "activity_snapshot":
+                    if (notifications.Count < 64) notifications.Enqueue(msg);
+                    break;
+                case "observation_ack":
+                    if (MiniJson.GetLong(msg, "epoch") == Interlocked.Read(ref knownEpoch) &&
+                        MiniJson.GetString(msg, "slot") == Plugin.SlotName.Value &&
+                        MiniJson.GetString(msg, "connection_token") == knownToken)
+                        observations?.Ack(MiniJson.GetString(msg, "observation_id"),
+                            MiniJson.GetLong(msg, "epoch"), MiniJson.GetString(msg, "slot"));
+                    break;
                 case "connected":
                     Plugin.Log.LogInfo("[AP] bridge link is live (server connected)");
                     break;
@@ -319,6 +307,9 @@ namespace CraftopiaArchipelago
                     break;
                 case "print":
                     Plugin.Log.LogInfo("[AP] " + MiniJson.GetString(msg, "text"));
+                    break;
+                case "grant_currency":
+                    CurrencyRuntime.QueueGrant(msg, ConnectionId);
                     break;
                 case "unlock_equipment":
                     Plugin.QueueUnlock(msg, ConnectionId);
@@ -346,6 +337,9 @@ namespace CraftopiaArchipelago
                     string.IsNullOrWhiteSpace(MiniJson.GetString(msg,"connection_token"))) return;
                 long epoch = (long)epochRaw;
                 Interlocked.Exchange(ref knownEpoch, epoch);
+                knownToken = MiniJson.GetString(msg, "connection_token");
+                if (observations != null)
+                    foreach (var pending in observations.Snapshot(epoch, Plugin.SlotName.Value)) outbox.Enqueue(pending);
                 var enrolledList = MiniJson.GetLongList(msg, "enrolled_guids");
                 var enrolled = new System.Collections.Generic.HashSet<int>();
                 foreach (long g in enrolledList)
@@ -356,7 +350,13 @@ namespace CraftopiaArchipelago
                 }
                 Plugin.Log.LogInfo("[AP] session: epoch=" + epoch +
                     ", enrolled=" + enrolled.Count + " guid(s)");
-                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId);
+                // Malformed optional fields become a rejected contract, never legacy mode.
+                string catalog = null;
+                if (msg.TryGetValue("equipment_catalog",out var catalogRaw)) catalog = catalogRaw as string ?? "INVALID";
+                int equipmentProtocol = 0, multiplayer = 0;
+                if (msg.TryGetValue("equipment_protocol",out var ep)) equipmentProtocol = ep is long epn && epn >= 0 && epn <= int.MaxValue ? (int)epn : -1;
+                if (msg.TryGetValue("multiplayer_mode",out var mp)) multiplayer = mp is long mpn && mpn >= 0 && mpn <= int.MaxValue ? (int)mpn : -1;
+                Plugin.OnSlotData(epoch, enrolled, MiniJson.GetString(msg,"connection_token"), ConnectionId, catalog, equipmentProtocol, multiplayer, msg);
             }
             catch (Exception e)
             {

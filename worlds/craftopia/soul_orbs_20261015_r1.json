@@ -1,0 +1,4414 @@
+{
+  "catalog_id": "soul_orbs_20261015_r1",
+  "schema": 1,
+  "frozen_ids": true,
+  "runtime_ready": false,
+  "status": "observed_candidates_access_unverified",
+  "source": {
+    "sha256": "24951f9e8dfa1c56fd566a94173d4392b1a8fc300dc2debc3802581571dae90f",
+    "captured_at": "2026-10-15T19:59:52.1475823Z",
+    "game_assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+    "collector_sha256": "6dd98c643081d260ca96c7fbb5cb970a0eb598cd4c674bc3d2896c2932aad317",
+    "collector_version": "1.4.0"
+  },
+  "limitations": [
+    "One loaded-world capture, not a complete game catalog.",
+    "No region, quest, age or traversal requirements verified.",
+    "Only one orb has live collection and reload evidence.",
+    "Cross-character and cross-world identity stability unverified.",
+    "Currency replacement and durable delivery required before activation.",
+    "Respawning chests are excluded; no chest rows are included."
+  ],
+  "orbs": [
+    {
+      "guid": -2146435856,
+      "ap_location_id": 2000,
+      "ap_location_name": "Soul Orb -2146435856",
+      "position": {
+        "x": 3852.31,
+        "y": 27.48712,
+        "z": -1477.532
+      }
+    },
+    {
+      "guid": -2143919419,
+      "ap_location_id": 2001,
+      "ap_location_name": "Soul Orb -2143919419",
+      "position": {
+        "x": 2375.27,
+        "y": 344.96,
+        "z": -158.31
+      }
+    },
+    {
+      "guid": -2140984310,
+      "ap_location_id": 2002,
+      "ap_location_name": "Soul Orb -2140984310",
+      "position": {
+        "x": -1129.83,
+        "y": 52.61538,
+        "z": -608.91
+      }
+    },
+    {
+      "guid": -2136655213,
+      "ap_location_id": 2003,
+      "ap_location_name": "Soul Orb -2136655213",
+      "position": {
+        "x": 2709.766,
+        "y": 467.214,
+        "z": 3074.031
+      }
+    },
+    {
+      "guid": -2135725142,
+      "ap_location_id": 2004,
+      "ap_location_name": "Soul Orb -2135725142",
+      "position": {
+        "x": -2337.679,
+        "y": 144.8596,
+        "z": -1200.536
+      }
+    },
+    {
+      "guid": -2118644166,
+      "ap_location_id": 2005,
+      "ap_location_name": "Soul Orb -2118644166",
+      "position": {
+        "x": 1647.943,
+        "y": 295.4063,
+        "z": -139.6416
+      }
+    },
+    {
+      "guid": -2114532259,
+      "ap_location_id": 2006,
+      "ap_location_name": "Soul Orb -2114532259",
+      "position": {
+        "x": 2188.013,
+        "y": 294.9346,
+        "z": -48.37931
+      }
+    },
+    {
+      "guid": -2107186941,
+      "ap_location_id": 2007,
+      "ap_location_name": "Soul Orb -2107186941",
+      "position": {
+        "x": 241.783,
+        "y": 100.509,
+        "z": 2959.61
+      }
+    },
+    {
+      "guid": -2100243590,
+      "ap_location_id": 2008,
+      "ap_location_name": "Soul Orb -2100243590",
+      "position": {
+        "x": 1833.362,
+        "y": 19.042,
+        "z": 2628.198
+      }
+    },
+    {
+      "guid": -2099892371,
+      "ap_location_id": 2009,
+      "ap_location_name": "Soul Orb -2099892371",
+      "position": {
+        "x": -768.2635,
+        "y": 136.8492,
+        "z": -262.7163
+      }
+    },
+    {
+      "guid": -2075035733,
+      "ap_location_id": 2010,
+      "ap_location_name": "Soul Orb -2075035733",
+      "position": {
+        "x": 2898.296,
+        "y": 370.8179,
+        "z": -172.3187
+      }
+    },
+    {
+      "guid": -2072002431,
+      "ap_location_id": 2011,
+      "ap_location_name": "Soul Orb -2072002431",
+      "position": {
+        "x": 1031.026,
+        "y": 70.12,
+        "z": 2367.511
+      }
+    },
+    {
+      "guid": -2044364082,
+      "ap_location_id": 2012,
+      "ap_location_name": "Soul Orb -2044364082",
+      "position": {
+        "x": 1219.493,
+        "y": 67.759,
+        "z": 1144.194
+      }
+    },
+    {
+      "guid": -2038900653,
+      "ap_location_id": 2013,
+      "ap_location_name": "Soul Orb -2038900653",
+      "position": {
+        "x": -393.8368,
+        "y": 1.050176,
+        "z": -898.3545
+      }
+    },
+    {
+      "guid": -2025451646,
+      "ap_location_id": 2014,
+      "ap_location_name": "Soul Orb -2025451646",
+      "position": {
+        "x": 2548.859,
+        "y": 26.52895,
+        "z": -1957.884
+      }
+    },
+    {
+      "guid": -2022022406,
+      "ap_location_id": 2015,
+      "ap_location_name": "Soul Orb -2022022406",
+      "position": {
+        "x": 8.481361,
+        "y": 3.445271,
+        "z": 461.9972
+      }
+    },
+    {
+      "guid": -2012511991,
+      "ap_location_id": 2016,
+      "ap_location_name": "Soul Orb -2012511991",
+      "position": {
+        "x": -168.2694,
+        "y": 42.79518,
+        "z": 293.5751
+      }
+    },
+    {
+      "guid": -2011626558,
+      "ap_location_id": 2017,
+      "ap_location_name": "Soul Orb -2011626558",
+      "position": {
+        "x": 2521.895,
+        "y": 368.248,
+        "z": 1979.121
+      }
+    },
+    {
+      "guid": -2001982094,
+      "ap_location_id": 2018,
+      "ap_location_name": "Soul Orb -2001982094",
+      "position": {
+        "x": 2572.277,
+        "y": 92.818,
+        "z": 952.623
+      }
+    },
+    {
+      "guid": -1989099945,
+      "ap_location_id": 2019,
+      "ap_location_name": "Soul Orb -1989099945",
+      "position": {
+        "x": 1531.719,
+        "y": 7.956,
+        "z": 3775.727
+      }
+    },
+    {
+      "guid": -1986431224,
+      "ap_location_id": 2020,
+      "ap_location_name": "Soul Orb -1986431224",
+      "position": {
+        "x": 2608.762,
+        "y": 77.713,
+        "z": 726.081
+      }
+    },
+    {
+      "guid": -1972190339,
+      "ap_location_id": 2021,
+      "ap_location_name": "Soul Orb -1972190339",
+      "position": {
+        "x": 1406.572,
+        "y": 125.326,
+        "z": 1607.928
+      }
+    },
+    {
+      "guid": -1943108802,
+      "ap_location_id": 2022,
+      "ap_location_name": "Soul Orb -1943108802",
+      "position": {
+        "x": 2578.06,
+        "y": 81.09998,
+        "z": -1582.88
+      }
+    },
+    {
+      "guid": -1935405627,
+      "ap_location_id": 2023,
+      "ap_location_name": "Soul Orb -1935405627",
+      "position": {
+        "x": 0.680213,
+        "y": 170.1949,
+        "z": -344.0133
+      }
+    },
+    {
+      "guid": -1931955370,
+      "ap_location_id": 2024,
+      "ap_location_name": "Soul Orb -1931955370",
+      "position": {
+        "x": 3046.7,
+        "y": 565.73,
+        "z": -947.97
+      }
+    },
+    {
+      "guid": -1918446506,
+      "ap_location_id": 2025,
+      "ap_location_name": "Soul Orb -1918446506",
+      "position": {
+        "x": 1278.616,
+        "y": 267.007,
+        "z": 1409.317
+      }
+    },
+    {
+      "guid": -1901593611,
+      "ap_location_id": 2026,
+      "ap_location_name": "Soul Orb -1901593611",
+      "position": {
+        "x": 1825.986,
+        "y": 139.358,
+        "z": 3455.45
+      }
+    },
+    {
+      "guid": -1898940809,
+      "ap_location_id": 2027,
+      "ap_location_name": "Soul Orb -1898940809",
+      "position": {
+        "x": -1801.333,
+        "y": 2.311749,
+        "z": -678.2776
+      }
+    },
+    {
+      "guid": -1882850748,
+      "ap_location_id": 2028,
+      "ap_location_name": "Soul Orb -1882850748",
+      "position": {
+        "x": -2175.288,
+        "y": 219.3,
+        "z": -979.5726
+      }
+    },
+    {
+      "guid": -1880563435,
+      "ap_location_id": 2029,
+      "ap_location_name": "Soul Orb -1880563435",
+      "position": {
+        "x": 501.193,
+        "y": 42.047,
+        "z": 3137.666
+      }
+    },
+    {
+      "guid": -1869038222,
+      "ap_location_id": 2030,
+      "ap_location_name": "Soul Orb -1869038222",
+      "position": {
+        "x": 1706.298,
+        "y": 146.802,
+        "z": 741.539
+      }
+    },
+    {
+      "guid": -1858125150,
+      "ap_location_id": 2031,
+      "ap_location_name": "Soul Orb -1858125150",
+      "position": {
+        "x": 524.9089,
+        "y": 100.9637,
+        "z": -1023.868
+      }
+    },
+    {
+      "guid": -1857650924,
+      "ap_location_id": 2032,
+      "ap_location_name": "Soul Orb -1857650924",
+      "position": {
+        "x": 303.556,
+        "y": 16.836,
+        "z": 2030.383
+      }
+    },
+    {
+      "guid": -1838343197,
+      "ap_location_id": 2033,
+      "ap_location_name": "Soul Orb -1838343197",
+      "position": {
+        "x": 2517.13,
+        "y": 111.839,
+        "z": 1688.905
+      }
+    },
+    {
+      "guid": -1786241662,
+      "ap_location_id": 2034,
+      "ap_location_name": "Soul Orb -1786241662",
+      "position": {
+        "x": 834.6959,
+        "y": 151.8254,
+        "z": -530.2765
+      }
+    },
+    {
+      "guid": -1785939900,
+      "ap_location_id": 2035,
+      "ap_location_name": "Soul Orb -1785939900",
+      "position": {
+        "x": -2018.591,
+        "y": 64.96,
+        "z": -1029.94
+      }
+    },
+    {
+      "guid": -1782135875,
+      "ap_location_id": 2036,
+      "ap_location_name": "Soul Orb -1782135875",
+      "position": {
+        "x": 862.4453,
+        "y": 38.32421,
+        "z": -1327.429
+      }
+    },
+    {
+      "guid": -1753849891,
+      "ap_location_id": 2037,
+      "ap_location_name": "Soul Orb -1753849891",
+      "position": {
+        "x": 1841.235,
+        "y": 257.9517,
+        "z": -221.3261
+      }
+    },
+    {
+      "guid": -1745891824,
+      "ap_location_id": 2038,
+      "ap_location_name": "Soul Orb -1745891824",
+      "position": {
+        "x": -946.2069,
+        "y": 31.8361,
+        "z": -579.6379
+      }
+    },
+    {
+      "guid": -1741922742,
+      "ap_location_id": 2039,
+      "ap_location_name": "Soul Orb -1741922742",
+      "position": {
+        "x": 1982.14,
+        "y": 182.31,
+        "z": 881.83
+      }
+    },
+    {
+      "guid": -1727036181,
+      "ap_location_id": 2040,
+      "ap_location_name": "Soul Orb -1727036181",
+      "position": {
+        "x": 4162.61,
+        "y": 77.85999,
+        "z": -545.83
+      }
+    },
+    {
+      "guid": -1718976402,
+      "ap_location_id": 2041,
+      "ap_location_name": "Soul Orb -1718976402",
+      "position": {
+        "x": -803.7,
+        "y": 32.59,
+        "z": -432.88
+      }
+    },
+    {
+      "guid": -1717729249,
+      "ap_location_id": 2042,
+      "ap_location_name": "Soul Orb -1717729249",
+      "position": {
+        "x": 2662.052,
+        "y": 163.814,
+        "z": 1805.516
+      }
+    },
+    {
+      "guid": -1693906283,
+      "ap_location_id": 2043,
+      "ap_location_name": "Soul Orb -1693906283",
+      "position": {
+        "x": -153.581,
+        "y": 54.829,
+        "z": 3175.412
+      }
+    },
+    {
+      "guid": -1673276376,
+      "ap_location_id": 2044,
+      "ap_location_name": "Soul Orb -1673276376",
+      "position": {
+        "x": 1621.37,
+        "y": 218.1556,
+        "z": -54.33492
+      }
+    },
+    {
+      "guid": -1667464848,
+      "ap_location_id": 2045,
+      "ap_location_name": "Soul Orb -1667464848",
+      "position": {
+        "x": 2487.11,
+        "y": 400.3758,
+        "z": -1187.775
+      }
+    },
+    {
+      "guid": -1657593283,
+      "ap_location_id": 2046,
+      "ap_location_name": "Soul Orb -1657593283",
+      "position": {
+        "x": -2261.385,
+        "y": 33.09962,
+        "z": -1709.758
+      }
+    },
+    {
+      "guid": -1657230876,
+      "ap_location_id": 2047,
+      "ap_location_name": "Soul Orb -1657230876",
+      "position": {
+        "x": 2129.585,
+        "y": 354.829,
+        "z": 1470.13
+      }
+    },
+    {
+      "guid": -1639133272,
+      "ap_location_id": 2048,
+      "ap_location_name": "Soul Orb -1639133272",
+      "position": {
+        "x": 1593.68,
+        "y": 292.656,
+        "z": -108.5791
+      }
+    },
+    {
+      "guid": -1625691972,
+      "ap_location_id": 2049,
+      "ap_location_name": "Soul Orb -1625691972",
+      "position": {
+        "x": -1444.508,
+        "y": 39.09591,
+        "z": -420.5644
+      }
+    },
+    {
+      "guid": -1609159969,
+      "ap_location_id": 2050,
+      "ap_location_name": "Soul Orb -1609159969",
+      "position": {
+        "x": -1214.574,
+        "y": 67.87,
+        "z": -445.4362
+      }
+    },
+    {
+      "guid": -1606415265,
+      "ap_location_id": 2051,
+      "ap_location_name": "Soul Orb -1606415265",
+      "position": {
+        "x": 2270.59,
+        "y": 293.9531,
+        "z": -83.23424
+      }
+    },
+    {
+      "guid": -1599508549,
+      "ap_location_id": 2052,
+      "ap_location_name": "Soul Orb -1599508549",
+      "position": {
+        "x": 1421.64,
+        "y": 90.57,
+        "z": 1205.66
+      }
+    },
+    {
+      "guid": -1599376709,
+      "ap_location_id": 2053,
+      "ap_location_name": "Soul Orb -1599376709",
+      "position": {
+        "x": 1938.098,
+        "y": 12.852,
+        "z": 3221.355
+      }
+    },
+    {
+      "guid": -1596088293,
+      "ap_location_id": 2054,
+      "ap_location_name": "Soul Orb -1596088293",
+      "position": {
+        "x": 2664.22,
+        "y": 352.1,
+        "z": -1221.76
+      }
+    },
+    {
+      "guid": -1595765594,
+      "ap_location_id": 2055,
+      "ap_location_name": "Soul Orb -1595765594",
+      "position": {
+        "x": -2338.406,
+        "y": 127.9241,
+        "z": -1090.284
+      }
+    },
+    {
+      "guid": -1580306007,
+      "ap_location_id": 2056,
+      "ap_location_name": "Soul Orb -1580306007",
+      "position": {
+        "x": 3362.47,
+        "y": 239.71,
+        "z": -1195.3
+      }
+    },
+    {
+      "guid": -1559911131,
+      "ap_location_id": 2057,
+      "ap_location_name": "Soul Orb -1559911131",
+      "position": {
+        "x": -1503.23,
+        "y": 36.51041,
+        "z": -1183.204
+      }
+    },
+    {
+      "guid": -1552971368,
+      "ap_location_id": 2058,
+      "ap_location_name": "Soul Orb -1552971368",
+      "position": {
+        "x": -2062.304,
+        "y": 148.9804,
+        "z": -1474.324
+      }
+    },
+    {
+      "guid": -1548142042,
+      "ap_location_id": 2059,
+      "ap_location_name": "Soul Orb -1548142042",
+      "position": {
+        "x": 1928.536,
+        "y": 0.51,
+        "z": 2777.858
+      }
+    },
+    {
+      "guid": -1545034744,
+      "ap_location_id": 2060,
+      "ap_location_name": "Soul Orb -1545034744",
+      "position": {
+        "x": 2659.8,
+        "y": 220.8,
+        "z": 1385.6
+      }
+    },
+    {
+      "guid": -1530989736,
+      "ap_location_id": 2061,
+      "ap_location_name": "Soul Orb -1530989736",
+      "position": {
+        "x": -680.124,
+        "y": 10.764,
+        "z": 3296.544
+      }
+    },
+    {
+      "guid": -1514306416,
+      "ap_location_id": 2062,
+      "ap_location_name": "Soul Orb -1514306416",
+      "position": {
+        "x": 1157.714,
+        "y": 37.505,
+        "z": -1564.336
+      }
+    },
+    {
+      "guid": -1506890000,
+      "ap_location_id": 2063,
+      "ap_location_name": "Soul Orb -1506890000",
+      "position": {
+        "x": 1966.732,
+        "y": 294.3936,
+        "z": -88.17242
+      }
+    },
+    {
+      "guid": -1499179819,
+      "ap_location_id": 2064,
+      "ap_location_name": "Soul Orb -1499179819",
+      "position": {
+        "x": -2765.556,
+        "y": 100.584,
+        "z": -1534.745
+      }
+    },
+    {
+      "guid": -1496544661,
+      "ap_location_id": 2065,
+      "ap_location_name": "Soul Orb -1496544661",
+      "position": {
+        "x": -1245.454,
+        "y": 65.79412,
+        "z": -539.8819
+      }
+    },
+    {
+      "guid": -1467246193,
+      "ap_location_id": 2066,
+      "ap_location_name": "Soul Orb -1467246193",
+      "position": {
+        "x": 2923.625,
+        "y": 55.917,
+        "z": 2106.102
+      }
+    },
+    {
+      "guid": -1438494695,
+      "ap_location_id": 2067,
+      "ap_location_name": "Soul Orb -1438494695",
+      "position": {
+        "x": 3850.54,
+        "y": 187.46,
+        "z": -1018.44
+      }
+    },
+    {
+      "guid": -1434823824,
+      "ap_location_id": 2068,
+      "ap_location_name": "Soul Orb -1434823824",
+      "position": {
+        "x": 748.8807,
+        "y": 40.26127,
+        "z": -2056.172
+      }
+    },
+    {
+      "guid": -1427270123,
+      "ap_location_id": 2069,
+      "ap_location_name": "Soul Orb -1427270123",
+      "position": {
+        "x": -731.308,
+        "y": 56.835,
+        "z": 1965.543
+      }
+    },
+    {
+      "guid": -1373195119,
+      "ap_location_id": 2070,
+      "ap_location_name": "Soul Orb -1373195119",
+      "position": {
+        "x": 2068.24,
+        "y": 375.36,
+        "z": 268.35
+      }
+    },
+    {
+      "guid": -1372691862,
+      "ap_location_id": 2071,
+      "ap_location_name": "Soul Orb -1372691862",
+      "position": {
+        "x": 3282.521,
+        "y": 200.578,
+        "z": -73.98199
+      }
+    },
+    {
+      "guid": -1367351554,
+      "ap_location_id": 2072,
+      "ap_location_name": "Soul Orb -1367351554",
+      "position": {
+        "x": 3283.422,
+        "y": 264.8787,
+        "z": -1091.715
+      }
+    },
+    {
+      "guid": -1353012733,
+      "ap_location_id": 2073,
+      "ap_location_name": "Soul Orb -1353012733",
+      "position": {
+        "x": -1662.153,
+        "y": 0.9913893,
+        "z": -664.6366
+      }
+    },
+    {
+      "guid": -1347683875,
+      "ap_location_id": 2074,
+      "ap_location_name": "Soul Orb -1347683875",
+      "position": {
+        "x": -2409.765,
+        "y": 6.582329,
+        "z": -883.0263
+      }
+    },
+    {
+      "guid": -1343074499,
+      "ap_location_id": 2075,
+      "ap_location_name": "Soul Orb -1343074499",
+      "position": {
+        "x": -2326.549,
+        "y": 110.5695,
+        "z": -1027.179
+      }
+    },
+    {
+      "guid": -1342286979,
+      "ap_location_id": 2076,
+      "ap_location_name": "Soul Orb -1342286979",
+      "position": {
+        "x": -282.2767,
+        "y": 11.32392,
+        "z": -1553.971
+      }
+    },
+    {
+      "guid": -1320616895,
+      "ap_location_id": 2077,
+      "ap_location_name": "Soul Orb -1320616895",
+      "position": {
+        "x": -1847.554,
+        "y": 1.198847,
+        "z": -879.5228
+      }
+    },
+    {
+      "guid": -1315473270,
+      "ap_location_id": 2078,
+      "ap_location_name": "Soul Orb -1315473270",
+      "position": {
+        "x": -2073.97,
+        "y": 174.61,
+        "z": -1543.21
+      }
+    },
+    {
+      "guid": -1315438631,
+      "ap_location_id": 2079,
+      "ap_location_name": "Soul Orb -1315438631",
+      "position": {
+        "x": 1803.2,
+        "y": 234.828,
+        "z": 3548.36
+      }
+    },
+    {
+      "guid": -1290104824,
+      "ap_location_id": 2080,
+      "ap_location_name": "Soul Orb -1290104824",
+      "position": {
+        "x": 2332.724,
+        "y": 0.289,
+        "z": 3455.483
+      }
+    },
+    {
+      "guid": -1278049228,
+      "ap_location_id": 2081,
+      "ap_location_name": "Soul Orb -1278049228",
+      "position": {
+        "x": -1414.818,
+        "y": 104.877,
+        "z": 2701.501
+      }
+    },
+    {
+      "guid": -1265492162,
+      "ap_location_id": 2082,
+      "ap_location_name": "Soul Orb -1265492162",
+      "position": {
+        "x": 3024.996,
+        "y": 53.989,
+        "z": 1489.219
+      }
+    },
+    {
+      "guid": -1261674103,
+      "ap_location_id": 2083,
+      "ap_location_name": "Soul Orb -1261674103",
+      "position": {
+        "x": 2874.74,
+        "y": 2.02,
+        "z": 668.81
+      }
+    },
+    {
+      "guid": -1244229055,
+      "ap_location_id": 2084,
+      "ap_location_name": "Soul Orb -1244229055",
+      "position": {
+        "x": -669.508,
+        "y": 78.91,
+        "z": 2239.956
+      }
+    },
+    {
+      "guid": -1241456425,
+      "ap_location_id": 2085,
+      "ap_location_name": "Soul Orb -1241456425",
+      "position": {
+        "x": 811.0063,
+        "y": 136.4464,
+        "z": -677.6981
+      }
+    },
+    {
+      "guid": -1239849211,
+      "ap_location_id": 2086,
+      "ap_location_name": "Soul Orb -1239849211",
+      "position": {
+        "x": -1175.584,
+        "y": 79.97119,
+        "z": -205.0501
+      }
+    },
+    {
+      "guid": -1238063659,
+      "ap_location_id": 2087,
+      "ap_location_name": "Soul Orb -1238063659",
+      "position": {
+        "x": -1491.852,
+        "y": 17.25044,
+        "z": -803.4778
+      }
+    },
+    {
+      "guid": -1235037978,
+      "ap_location_id": 2088,
+      "ap_location_name": "Soul Orb -1235037978",
+      "position": {
+        "x": 1895.68,
+        "y": 104.574,
+        "z": 2466.37
+      }
+    },
+    {
+      "guid": -1226839773,
+      "ap_location_id": 2089,
+      "ap_location_name": "Soul Orb -1226839773",
+      "position": {
+        "x": 2241.33,
+        "y": 446.89,
+        "z": -582.8
+      }
+    },
+    {
+      "guid": -1220730807,
+      "ap_location_id": 2090,
+      "ap_location_name": "Soul Orb -1220730807",
+      "position": {
+        "x": 2849.577,
+        "y": 209.852,
+        "z": 1570.89
+      }
+    },
+    {
+      "guid": -1201074653,
+      "ap_location_id": 2091,
+      "ap_location_name": "Soul Orb -1201074653",
+      "position": {
+        "x": 1461.799,
+        "y": 293.4259,
+        "z": -546.4077
+      }
+    },
+    {
+      "guid": -1193503401,
+      "ap_location_id": 2092,
+      "ap_location_name": "Soul Orb -1193503401",
+      "position": {
+        "x": 735.83,
+        "y": 216.8087,
+        "z": -579.69
+      }
+    },
+    {
+      "guid": -1191729232,
+      "ap_location_id": 2093,
+      "ap_location_name": "Soul Orb -1191729232",
+      "position": {
+        "x": -1003.398,
+        "y": 120.274,
+        "z": 2827.846
+      }
+    },
+    {
+      "guid": -1169039716,
+      "ap_location_id": 2094,
+      "ap_location_name": "Soul Orb -1169039716",
+      "position": {
+        "x": 2668.767,
+        "y": 557.0459,
+        "z": -478.4994
+      }
+    },
+    {
+      "guid": -1167168047,
+      "ap_location_id": 2095,
+      "ap_location_name": "Soul Orb -1167168047",
+      "position": {
+        "x": 2896.083,
+        "y": 276.625,
+        "z": 1689.997
+      }
+    },
+    {
+      "guid": -1161660528,
+      "ap_location_id": 2096,
+      "ap_location_name": "Soul Orb -1161660528",
+      "position": {
+        "x": -2149.352,
+        "y": 136.5401,
+        "z": -964.2206
+      }
+    },
+    {
+      "guid": -1150001710,
+      "ap_location_id": 2097,
+      "ap_location_name": "Soul Orb -1150001710",
+      "position": {
+        "x": 1792.61,
+        "y": 56.08,
+        "z": -1404.84
+      }
+    },
+    {
+      "guid": -1131240823,
+      "ap_location_id": 2098,
+      "ap_location_name": "Soul Orb -1131240823",
+      "position": {
+        "x": 571.8932,
+        "y": 100.0966,
+        "z": -936.939
+      }
+    },
+    {
+      "guid": -1116281565,
+      "ap_location_id": 2099,
+      "ap_location_name": "Soul Orb -1116281565",
+      "position": {
+        "x": -1298.619,
+        "y": 23.893,
+        "z": 3082.437
+      }
+    },
+    {
+      "guid": -1092272461,
+      "ap_location_id": 2100,
+      "ap_location_name": "Soul Orb -1092272461",
+      "position": {
+        "x": 967.9588,
+        "y": 143.1612,
+        "z": -1017.699
+      }
+    },
+    {
+      "guid": -1091557701,
+      "ap_location_id": 2101,
+      "ap_location_name": "Soul Orb -1091557701",
+      "position": {
+        "x": 2528.71,
+        "y": 51.79999,
+        "z": 111.02
+      }
+    },
+    {
+      "guid": -1059793475,
+      "ap_location_id": 2102,
+      "ap_location_name": "Soul Orb -1059793475",
+      "position": {
+        "x": 512.8153,
+        "y": 1.021846,
+        "z": -1510.524
+      }
+    },
+    {
+      "guid": -1055337400,
+      "ap_location_id": 2103,
+      "ap_location_name": "Soul Orb -1055337400",
+      "position": {
+        "x": 1397.771,
+        "y": 117.3815,
+        "z": 3211.782
+      }
+    },
+    {
+      "guid": -1045181361,
+      "ap_location_id": 2104,
+      "ap_location_name": "Soul Orb -1045181361",
+      "position": {
+        "x": 2582.314,
+        "y": 529.552,
+        "z": 2898.069
+      }
+    },
+    {
+      "guid": -1017678785,
+      "ap_location_id": 2105,
+      "ap_location_name": "Soul Orb -1017678785",
+      "position": {
+        "x": -719.8662,
+        "y": 28.44838,
+        "z": -1637.992
+      }
+    },
+    {
+      "guid": -1006783942,
+      "ap_location_id": 2106,
+      "ap_location_name": "Soul Orb -1006783942",
+      "position": {
+        "x": 845.1,
+        "y": 21.287,
+        "z": 2793.4
+      }
+    },
+    {
+      "guid": -997418562,
+      "ap_location_id": 2107,
+      "ap_location_name": "Soul Orb -997418562",
+      "position": {
+        "x": 2531,
+        "y": 545.88,
+        "z": -375.85
+      }
+    },
+    {
+      "guid": -956622831,
+      "ap_location_id": 2108,
+      "ap_location_name": "Soul Orb -956622831",
+      "position": {
+        "x": -139.6224,
+        "y": 6.7,
+        "z": -834.0657
+      }
+    },
+    {
+      "guid": -955876424,
+      "ap_location_id": 2109,
+      "ap_location_name": "Soul Orb -955876424",
+      "position": {
+        "x": 578.8173,
+        "y": 13.60066,
+        "z": -1521.816
+      }
+    },
+    {
+      "guid": -948974077,
+      "ap_location_id": 2110,
+      "ap_location_name": "Soul Orb -948974077",
+      "position": {
+        "x": 1706.038,
+        "y": 10.527,
+        "z": 3545.268
+      }
+    },
+    {
+      "guid": -938759854,
+      "ap_location_id": 2111,
+      "ap_location_name": "Soul Orb -938759854",
+      "position": {
+        "x": -1360.966,
+        "y": 28.94901,
+        "z": -946.619
+      }
+    },
+    {
+      "guid": -918152137,
+      "ap_location_id": 2112,
+      "ap_location_name": "Soul Orb -918152137",
+      "position": {
+        "x": 3035.36,
+        "y": 48.54999,
+        "z": 356.1799
+      }
+    },
+    {
+      "guid": -917665346,
+      "ap_location_id": 2113,
+      "ap_location_name": "Soul Orb -917665346",
+      "position": {
+        "x": 153.22,
+        "y": 53.44,
+        "z": 2321.22
+      }
+    },
+    {
+      "guid": -912745257,
+      "ap_location_id": 2114,
+      "ap_location_name": "Soul Orb -912745257",
+      "position": {
+        "x": -1673.118,
+        "y": 18.0008,
+        "z": -156.3097
+      }
+    },
+    {
+      "guid": -910968021,
+      "ap_location_id": 2115,
+      "ap_location_name": "Soul Orb -910968021",
+      "position": {
+        "x": 714.5292,
+        "y": 168.5315,
+        "z": 117.1612
+      }
+    },
+    {
+      "guid": -897097341,
+      "ap_location_id": 2116,
+      "ap_location_name": "Soul Orb -897097341",
+      "position": {
+        "x": -585.6,
+        "y": 14.52,
+        "z": 2201.7
+      }
+    },
+    {
+      "guid": -888028125,
+      "ap_location_id": 2117,
+      "ap_location_name": "Soul Orb -888028125",
+      "position": {
+        "x": 616.0643,
+        "y": 154.4821,
+        "z": 184.733
+      }
+    },
+    {
+      "guid": -866197725,
+      "ap_location_id": 2118,
+      "ap_location_name": "Soul Orb -866197725",
+      "position": {
+        "x": 2058.29,
+        "y": 257.23,
+        "z": 1278.81
+      }
+    },
+    {
+      "guid": -863599673,
+      "ap_location_id": 2119,
+      "ap_location_name": "Soul Orb -863599673",
+      "position": {
+        "x": 1615.61,
+        "y": 135.2,
+        "z": 2919.1
+      }
+    },
+    {
+      "guid": -862042059,
+      "ap_location_id": 2120,
+      "ap_location_name": "Soul Orb -862042059",
+      "position": {
+        "x": 1988.149,
+        "y": 347.4063,
+        "z": -636.1822
+      }
+    },
+    {
+      "guid": -858868575,
+      "ap_location_id": 2121,
+      "ap_location_name": "Soul Orb -858868575",
+      "position": {
+        "x": -121.839,
+        "y": 46.453,
+        "z": 2658
+      }
+    },
+    {
+      "guid": -845647298,
+      "ap_location_id": 2122,
+      "ap_location_name": "Soul Orb -845647298",
+      "position": {
+        "x": -2223.639,
+        "y": 160.0072,
+        "z": -1487.327
+      }
+    },
+    {
+      "guid": -845186387,
+      "ap_location_id": 2123,
+      "ap_location_name": "Soul Orb -845186387",
+      "position": {
+        "x": 250.834,
+        "y": 128.914,
+        "z": 2849.542
+      }
+    },
+    {
+      "guid": -838780965,
+      "ap_location_id": 2124,
+      "ap_location_name": "Soul Orb -838780965",
+      "position": {
+        "x": 607.149,
+        "y": 36.579,
+        "z": 1387.177
+      }
+    },
+    {
+      "guid": -835158791,
+      "ap_location_id": 2125,
+      "ap_location_name": "Soul Orb -835158791",
+      "position": {
+        "x": 1644.642,
+        "y": 49.80761,
+        "z": 82.18959
+      }
+    },
+    {
+      "guid": -827098524,
+      "ap_location_id": 2126,
+      "ap_location_name": "Soul Orb -827098524",
+      "position": {
+        "x": 4224.183,
+        "y": 43.2597,
+        "z": -702.6448
+      }
+    },
+    {
+      "guid": -809008237,
+      "ap_location_id": 2127,
+      "ap_location_name": "Soul Orb -809008237",
+      "position": {
+        "x": 1910.597,
+        "y": 295.0627,
+        "z": -752.943
+      }
+    },
+    {
+      "guid": -805658307,
+      "ap_location_id": 2128,
+      "ap_location_name": "Soul Orb -805658307",
+      "position": {
+        "x": 2013.806,
+        "y": 311.0924,
+        "z": -925.7206
+      }
+    },
+    {
+      "guid": -805397331,
+      "ap_location_id": 2129,
+      "ap_location_name": "Soul Orb -805397331",
+      "position": {
+        "x": 1005.824,
+        "y": 93.79329,
+        "z": -371.1866
+      }
+    },
+    {
+      "guid": -795850536,
+      "ap_location_id": 2130,
+      "ap_location_name": "Soul Orb -795850536",
+      "position": {
+        "x": 1604.617,
+        "y": 49.771,
+        "z": 2404.689
+      }
+    },
+    {
+      "guid": -779895624,
+      "ap_location_id": 2131,
+      "ap_location_name": "Soul Orb -779895624",
+      "position": {
+        "x": 1579.982,
+        "y": 53.457,
+        "z": 484.424
+      }
+    },
+    {
+      "guid": -755249241,
+      "ap_location_id": 2132,
+      "ap_location_name": "Soul Orb -755249241",
+      "position": {
+        "x": 2808.45,
+        "y": 148.06,
+        "z": 184.83
+      }
+    },
+    {
+      "guid": -755237092,
+      "ap_location_id": 2133,
+      "ap_location_name": "Soul Orb -755237092",
+      "position": {
+        "x": 894.84,
+        "y": 118.96,
+        "z": -1934.89
+      }
+    },
+    {
+      "guid": -743905171,
+      "ap_location_id": 2134,
+      "ap_location_name": "Soul Orb -743905171",
+      "position": {
+        "x": -444.832,
+        "y": 9.938,
+        "z": 3755.098
+      }
+    },
+    {
+      "guid": -740599302,
+      "ap_location_id": 2135,
+      "ap_location_name": "Soul Orb -740599302",
+      "position": {
+        "x": 2581.372,
+        "y": 523.334,
+        "z": 2861.375
+      }
+    },
+    {
+      "guid": -738340395,
+      "ap_location_id": 2136,
+      "ap_location_name": "Soul Orb -738340395",
+      "position": {
+        "x": 1145.39,
+        "y": 107.955,
+        "z": 2385.59
+      }
+    },
+    {
+      "guid": -733694159,
+      "ap_location_id": 2137,
+      "ap_location_name": "Soul Orb -733694159",
+      "position": {
+        "x": 1390.021,
+        "y": 108.22,
+        "z": 2187.921
+      }
+    },
+    {
+      "guid": -718377781,
+      "ap_location_id": 2138,
+      "ap_location_name": "Soul Orb -718377781",
+      "position": {
+        "x": 2811.03,
+        "y": 923.34,
+        "z": -729.7949
+      }
+    },
+    {
+      "guid": -707065251,
+      "ap_location_id": 2139,
+      "ap_location_name": "Soul Orb -707065251",
+      "position": {
+        "x": -1927.687,
+        "y": 121.1658,
+        "z": -1644.961
+      }
+    },
+    {
+      "guid": -700440629,
+      "ap_location_id": 2140,
+      "ap_location_name": "Soul Orb -700440629",
+      "position": {
+        "x": -1566.03,
+        "y": 26.59,
+        "z": -375.31
+      }
+    },
+    {
+      "guid": -683453094,
+      "ap_location_id": 2141,
+      "ap_location_name": "Soul Orb -683453094",
+      "position": {
+        "x": 1945.209,
+        "y": 294.8969,
+        "z": 271.2882
+      }
+    },
+    {
+      "guid": -682936934,
+      "ap_location_id": 2142,
+      "ap_location_name": "Soul Orb -682936934",
+      "position": {
+        "x": -2001.346,
+        "y": 132.1183,
+        "z": -1265.358
+      }
+    },
+    {
+      "guid": -673239050,
+      "ap_location_id": 2143,
+      "ap_location_name": "Soul Orb -673239050",
+      "position": {
+        "x": 583.032,
+        "y": 81.978,
+        "z": 909.98
+      }
+    },
+    {
+      "guid": -673063917,
+      "ap_location_id": 2144,
+      "ap_location_name": "Soul Orb -673063917",
+      "position": {
+        "x": -219.975,
+        "y": 11.704,
+        "z": 3330.745
+      }
+    },
+    {
+      "guid": -666601315,
+      "ap_location_id": 2145,
+      "ap_location_name": "Soul Orb -666601315",
+      "position": {
+        "x": -141.7489,
+        "y": 143.7766,
+        "z": -693.5172
+      }
+    },
+    {
+      "guid": -662349908,
+      "ap_location_id": 2146,
+      "ap_location_name": "Soul Orb -662349908",
+      "position": {
+        "x": -2593.15,
+        "y": 135.771,
+        "z": -1176.646
+      }
+    },
+    {
+      "guid": -654383277,
+      "ap_location_id": 2147,
+      "ap_location_name": "Soul Orb -654383277",
+      "position": {
+        "x": 2913.2,
+        "y": 109.09,
+        "z": 240.31
+      }
+    },
+    {
+      "guid": -653742793,
+      "ap_location_id": 2148,
+      "ap_location_name": "Soul Orb -653742793",
+      "position": {
+        "x": 2087.932,
+        "y": 348.463,
+        "z": -608.0391
+      }
+    },
+    {
+      "guid": -637375617,
+      "ap_location_id": 2149,
+      "ap_location_name": "Soul Orb -637375617",
+      "position": {
+        "x": 670.562,
+        "y": 2.093,
+        "z": 2680.688
+      }
+    },
+    {
+      "guid": -636615252,
+      "ap_location_id": 2150,
+      "ap_location_name": "Soul Orb -636615252",
+      "position": {
+        "x": 2484.47,
+        "y": 266.12,
+        "z": -1041.05
+      }
+    },
+    {
+      "guid": -634852128,
+      "ap_location_id": 2151,
+      "ap_location_name": "Soul Orb -634852128",
+      "position": {
+        "x": -1370.05,
+        "y": 12,
+        "z": -854.29
+      }
+    },
+    {
+      "guid": -623633713,
+      "ap_location_id": 2152,
+      "ap_location_name": "Soul Orb -623633713",
+      "position": {
+        "x": 2305.068,
+        "y": 112.3952,
+        "z": -1859.105
+      }
+    },
+    {
+      "guid": -621493939,
+      "ap_location_id": 2153,
+      "ap_location_name": "Soul Orb -621493939",
+      "position": {
+        "x": 735.2376,
+        "y": 63.56736,
+        "z": -2007.86
+      }
+    },
+    {
+      "guid": -617558391,
+      "ap_location_id": 2154,
+      "ap_location_name": "Soul Orb -617558391",
+      "position": {
+        "x": 3228.351,
+        "y": 164.4985,
+        "z": 71.78149
+      }
+    },
+    {
+      "guid": -600828324,
+      "ap_location_id": 2155,
+      "ap_location_name": "Soul Orb -600828324",
+      "position": {
+        "x": 858.7994,
+        "y": 23.92154,
+        "z": -818.4939
+      }
+    },
+    {
+      "guid": -599274653,
+      "ap_location_id": 2156,
+      "ap_location_name": "Soul Orb -599274653",
+      "position": {
+        "x": 1903.902,
+        "y": 290.8534,
+        "z": -122.0417
+      }
+    },
+    {
+      "guid": -597707934,
+      "ap_location_id": 2157,
+      "ap_location_name": "Soul Orb -597707934",
+      "position": {
+        "x": 2139.26,
+        "y": 382.74,
+        "z": -474.14
+      }
+    },
+    {
+      "guid": -596446250,
+      "ap_location_id": 2158,
+      "ap_location_name": "Soul Orb -596446250",
+      "position": {
+        "x": 392.3628,
+        "y": 5.190879,
+        "z": -1915.362
+      }
+    },
+    {
+      "guid": -587195149,
+      "ap_location_id": 2159,
+      "ap_location_name": "Soul Orb -587195149",
+      "position": {
+        "x": -1218.379,
+        "y": 19.24525,
+        "z": -698.3073
+      }
+    },
+    {
+      "guid": -584050853,
+      "ap_location_id": 2160,
+      "ap_location_name": "Soul Orb -584050853",
+      "position": {
+        "x": 658.3545,
+        "y": 23.91927,
+        "z": -1539.863
+      }
+    },
+    {
+      "guid": -559366677,
+      "ap_location_id": 2161,
+      "ap_location_name": "Soul Orb -559366677",
+      "position": {
+        "x": 2758.944,
+        "y": 30.67,
+        "z": 889.757
+      }
+    },
+    {
+      "guid": -551084360,
+      "ap_location_id": 2162,
+      "ap_location_name": "Soul Orb -551084360",
+      "position": {
+        "x": 1818.64,
+        "y": 289.0814,
+        "z": -297.3333
+      }
+    },
+    {
+      "guid": -544688240,
+      "ap_location_id": 2163,
+      "ap_location_name": "Soul Orb -544688240",
+      "position": {
+        "x": -2621.432,
+        "y": 147.2152,
+        "z": -1211.807
+      }
+    },
+    {
+      "guid": -544083358,
+      "ap_location_id": 2164,
+      "ap_location_name": "Soul Orb -544083358",
+      "position": {
+        "x": -2712.81,
+        "y": 70.00434,
+        "z": -1721.627
+      }
+    },
+    {
+      "guid": -541543311,
+      "ap_location_id": 2165,
+      "ap_location_name": "Soul Orb -541543311",
+      "position": {
+        "x": 1805.06,
+        "y": 95.923,
+        "z": -1186.932
+      }
+    },
+    {
+      "guid": -539326798,
+      "ap_location_id": 2166,
+      "ap_location_name": "Soul Orb -539326798",
+      "position": {
+        "x": -197.5707,
+        "y": 5.761536,
+        "z": -883.4213
+      }
+    },
+    {
+      "guid": -531341953,
+      "ap_location_id": 2167,
+      "ap_location_name": "Soul Orb -531341953",
+      "position": {
+        "x": 1784.652,
+        "y": 126.3,
+        "z": 240.9391
+      }
+    },
+    {
+      "guid": -529797620,
+      "ap_location_id": 2168,
+      "ap_location_name": "Soul Orb -529797620",
+      "position": {
+        "x": 2611.749,
+        "y": 457.941,
+        "z": -535.384
+      }
+    },
+    {
+      "guid": -510114757,
+      "ap_location_id": 2169,
+      "ap_location_name": "Soul Orb -510114757",
+      "position": {
+        "x": 3060.904,
+        "y": 663.0777,
+        "z": -881.1846
+      }
+    },
+    {
+      "guid": -495184772,
+      "ap_location_id": 2170,
+      "ap_location_name": "Soul Orb -495184772",
+      "position": {
+        "x": 313.2456,
+        "y": 5.356833,
+        "z": -2268.31
+      }
+    },
+    {
+      "guid": -481893577,
+      "ap_location_id": 2171,
+      "ap_location_name": "Soul Orb -481893577",
+      "position": {
+        "x": 1374.432,
+        "y": 62.72,
+        "z": 2398.594
+      }
+    },
+    {
+      "guid": -473782915,
+      "ap_location_id": 2172,
+      "ap_location_name": "Soul Orb -473782915",
+      "position": {
+        "x": 1662.34,
+        "y": 288.0132,
+        "z": 260.2365
+      }
+    },
+    {
+      "guid": -448507932,
+      "ap_location_id": 2173,
+      "ap_location_name": "Soul Orb -448507932",
+      "position": {
+        "x": 1910.715,
+        "y": 272.252,
+        "z": 578.166
+      }
+    },
+    {
+      "guid": -409981052,
+      "ap_location_id": 2174,
+      "ap_location_name": "Soul Orb -409981052",
+      "position": {
+        "x": 2817.781,
+        "y": 819.314,
+        "z": -809.823
+      }
+    },
+    {
+      "guid": -407549705,
+      "ap_location_id": 2175,
+      "ap_location_name": "Soul Orb -407549705",
+      "position": {
+        "x": -359.0893,
+        "y": 24.01237,
+        "z": -1890.99
+      }
+    },
+    {
+      "guid": -395110805,
+      "ap_location_id": 2176,
+      "ap_location_name": "Soul Orb -395110805",
+      "position": {
+        "x": 3634.268,
+        "y": 179.978,
+        "z": -135.14
+      }
+    },
+    {
+      "guid": -371432185,
+      "ap_location_id": 2177,
+      "ap_location_name": "Soul Orb -371432185",
+      "position": {
+        "x": 1068.77,
+        "y": 42.49648,
+        "z": -1190.148
+      }
+    },
+    {
+      "guid": -369203824,
+      "ap_location_id": 2178,
+      "ap_location_name": "Soul Orb -369203824",
+      "position": {
+        "x": 3375.09,
+        "y": 57.03998,
+        "z": -1421.37
+      }
+    },
+    {
+      "guid": -366340545,
+      "ap_location_id": 2179,
+      "ap_location_name": "Soul Orb -366340545",
+      "position": {
+        "x": 251.141,
+        "y": 65.182,
+        "z": 2102.796
+      }
+    },
+    {
+      "guid": -356780239,
+      "ap_location_id": 2180,
+      "ap_location_name": "Soul Orb -356780239",
+      "position": {
+        "x": 2128.166,
+        "y": 333.1814,
+        "z": -337.289
+      }
+    },
+    {
+      "guid": -344770679,
+      "ap_location_id": 2181,
+      "ap_location_name": "Soul Orb -344770679",
+      "position": {
+        "x": 2113.09,
+        "y": 389.91,
+        "z": 241.17
+      }
+    },
+    {
+      "guid": -344326076,
+      "ap_location_id": 2182,
+      "ap_location_name": "Soul Orb -344326076",
+      "position": {
+        "x": 1907.329,
+        "y": 294.1001,
+        "z": -539.5573
+      }
+    },
+    {
+      "guid": -319323309,
+      "ap_location_id": 2183,
+      "ap_location_name": "Soul Orb -319323309",
+      "position": {
+        "x": -2732.624,
+        "y": 84.99684,
+        "z": -1149.666
+      }
+    },
+    {
+      "guid": -309336391,
+      "ap_location_id": 2184,
+      "ap_location_name": "Soul Orb -309336391",
+      "position": {
+        "x": 1619.344,
+        "y": 110.09,
+        "z": 3055.01
+      }
+    },
+    {
+      "guid": -309323659,
+      "ap_location_id": 2185,
+      "ap_location_name": "Soul Orb -309323659",
+      "position": {
+        "x": -1938.162,
+        "y": 98.21255,
+        "z": -1205.119
+      }
+    },
+    {
+      "guid": -296851491,
+      "ap_location_id": 2186,
+      "ap_location_name": "Soul Orb -296851491",
+      "position": {
+        "x": 259.227,
+        "y": 138.043,
+        "z": -375.859
+      }
+    },
+    {
+      "guid": -279910313,
+      "ap_location_id": 2187,
+      "ap_location_name": "Soul Orb -279910313",
+      "position": {
+        "x": -2326.228,
+        "y": 120.4836,
+        "z": -1213.91
+      }
+    },
+    {
+      "guid": -259840875,
+      "ap_location_id": 2188,
+      "ap_location_name": "Soul Orb -259840875",
+      "position": {
+        "x": 2071.736,
+        "y": 217.556,
+        "z": 3624.283
+      }
+    },
+    {
+      "guid": -258572625,
+      "ap_location_id": 2189,
+      "ap_location_name": "Soul Orb -258572625",
+      "position": {
+        "x": -2077.726,
+        "y": 148.8241,
+        "z": -1285.374
+      }
+    },
+    {
+      "guid": -255567853,
+      "ap_location_id": 2190,
+      "ap_location_name": "Soul Orb -255567853",
+      "position": {
+        "x": 1693.581,
+        "y": 257.5158,
+        "z": -755.5134
+      }
+    },
+    {
+      "guid": -251279542,
+      "ap_location_id": 2191,
+      "ap_location_name": "Soul Orb -251279542",
+      "position": {
+        "x": 1582.342,
+        "y": 235.086,
+        "z": -582.7961
+      }
+    },
+    {
+      "guid": -245780241,
+      "ap_location_id": 2192,
+      "ap_location_name": "Soul Orb -245780241",
+      "position": {
+        "x": 1483.035,
+        "y": 97.633,
+        "z": 2335.115
+      }
+    },
+    {
+      "guid": -216777164,
+      "ap_location_id": 2193,
+      "ap_location_name": "Soul Orb -216777164",
+      "position": {
+        "x": 397.382,
+        "y": 23.286,
+        "z": 2105.286
+      }
+    },
+    {
+      "guid": -216185530,
+      "ap_location_id": 2194,
+      "ap_location_name": "Soul Orb -216185530",
+      "position": {
+        "x": 2330.552,
+        "y": 151.379,
+        "z": 843.563
+      }
+    },
+    {
+      "guid": -210832631,
+      "ap_location_id": 2195,
+      "ap_location_name": "Soul Orb -210832631",
+      "position": {
+        "x": 1511.482,
+        "y": 118.6134,
+        "z": -1270.036
+      }
+    },
+    {
+      "guid": -210570363,
+      "ap_location_id": 2196,
+      "ap_location_name": "Soul Orb -210570363",
+      "position": {
+        "x": 505.305,
+        "y": 96.96,
+        "z": 2287.468
+      }
+    },
+    {
+      "guid": -209220461,
+      "ap_location_id": 2197,
+      "ap_location_name": "Soul Orb -209220461",
+      "position": {
+        "x": 282.8617,
+        "y": 74.96069,
+        "z": 413.3847
+      }
+    },
+    {
+      "guid": -197362365,
+      "ap_location_id": 2198,
+      "ap_location_name": "Soul Orb -197362365",
+      "position": {
+        "x": -1167.105,
+        "y": 31.54863,
+        "z": -964.0065
+      }
+    },
+    {
+      "guid": -189250300,
+      "ap_location_id": 2199,
+      "ap_location_name": "Soul Orb -189250300",
+      "position": {
+        "x": 1779.11,
+        "y": 199.4989,
+        "z": -490.9464
+      }
+    },
+    {
+      "guid": -186066518,
+      "ap_location_id": 2200,
+      "ap_location_name": "Soul Orb -186066518",
+      "position": {
+        "x": 488.72,
+        "y": 77.61,
+        "z": -1574.63
+      }
+    },
+    {
+      "guid": -175754275,
+      "ap_location_id": 2201,
+      "ap_location_name": "Soul Orb -175754275",
+      "position": {
+        "x": 2543.039,
+        "y": 164.652,
+        "z": 1591.551
+      }
+    },
+    {
+      "guid": -172972031,
+      "ap_location_id": 2202,
+      "ap_location_name": "Soul Orb -172972031",
+      "position": {
+        "x": 1083.69,
+        "y": 169.942,
+        "z": -454.7687
+      }
+    },
+    {
+      "guid": -162653972,
+      "ap_location_id": 2203,
+      "ap_location_name": "Soul Orb -162653972",
+      "position": {
+        "x": 622.163,
+        "y": 99.55981,
+        "z": 133.3352
+      }
+    },
+    {
+      "guid": -154346975,
+      "ap_location_id": 2204,
+      "ap_location_name": "Soul Orb -154346975",
+      "position": {
+        "x": 1935.166,
+        "y": 175.485,
+        "z": -62.26503
+      }
+    },
+    {
+      "guid": -153567751,
+      "ap_location_id": 2205,
+      "ap_location_name": "Soul Orb -153567751",
+      "position": {
+        "x": 357.2487,
+        "y": 59.93081,
+        "z": -1578.516
+      }
+    },
+    {
+      "guid": -145544335,
+      "ap_location_id": 2206,
+      "ap_location_name": "Soul Orb -145544335",
+      "position": {
+        "x": 3121.049,
+        "y": 306.939,
+        "z": -218.74
+      }
+    },
+    {
+      "guid": -138431987,
+      "ap_location_id": 2207,
+      "ap_location_name": "Soul Orb -138431987",
+      "position": {
+        "x": 1101.893,
+        "y": 17.13606,
+        "z": -1278.853
+      }
+    },
+    {
+      "guid": -130387363,
+      "ap_location_id": 2208,
+      "ap_location_name": "Soul Orb -130387363",
+      "position": {
+        "x": -2270.07,
+        "y": 169.99,
+        "z": -1409.73
+      }
+    },
+    {
+      "guid": -125194635,
+      "ap_location_id": 2209,
+      "ap_location_name": "Soul Orb -125194635",
+      "position": {
+        "x": 2021.332,
+        "y": 176.083,
+        "z": 657.434
+      }
+    },
+    {
+      "guid": -120468985,
+      "ap_location_id": 2210,
+      "ap_location_name": "Soul Orb -120468985",
+      "position": {
+        "x": 3290.848,
+        "y": 542.2441,
+        "z": -532.3845
+      }
+    },
+    {
+      "guid": -113604019,
+      "ap_location_id": 2211,
+      "ap_location_name": "Soul Orb -113604019",
+      "position": {
+        "x": -2768.94,
+        "y": 139.9,
+        "z": -1342.27
+      }
+    },
+    {
+      "guid": -88875197,
+      "ap_location_id": 2212,
+      "ap_location_name": "Soul Orb -88875197",
+      "position": {
+        "x": 1722.996,
+        "y": 240.3148,
+        "z": -368.254
+      }
+    },
+    {
+      "guid": -82845963,
+      "ap_location_id": 2213,
+      "ap_location_name": "Soul Orb -82845963",
+      "position": {
+        "x": 1395.749,
+        "y": 9.953,
+        "z": 3214.918
+      }
+    },
+    {
+      "guid": -48084746,
+      "ap_location_id": 2214,
+      "ap_location_name": "Soul Orb -48084746",
+      "position": {
+        "x": -1337.092,
+        "y": 24.48159,
+        "z": -227.3499
+      }
+    },
+    {
+      "guid": -33693328,
+      "ap_location_id": 2215,
+      "ap_location_name": "Soul Orb -33693328",
+      "position": {
+        "x": 824.9686,
+        "y": 278.2183,
+        "z": -886.8481
+      }
+    },
+    {
+      "guid": -14625745,
+      "ap_location_id": 2216,
+      "ap_location_name": "Soul Orb -14625745",
+      "position": {
+        "x": 1543.096,
+        "y": 25.32832,
+        "z": -1497.126
+      }
+    },
+    {
+      "guid": 14783225,
+      "ap_location_id": 2217,
+      "ap_location_name": "Soul Orb 14783225",
+      "position": {
+        "x": -71.359,
+        "y": 4.196,
+        "z": 3433.762
+      }
+    },
+    {
+      "guid": 22880515,
+      "ap_location_id": 2218,
+      "ap_location_name": "Soul Orb 22880515",
+      "position": {
+        "x": -2246.95,
+        "y": 129.6,
+        "z": -1317.1
+      }
+    },
+    {
+      "guid": 27168056,
+      "ap_location_id": 2219,
+      "ap_location_name": "Soul Orb 27168056",
+      "position": {
+        "x": -2761.762,
+        "y": 78.46025,
+        "z": -1259.993
+      }
+    },
+    {
+      "guid": 29161610,
+      "ap_location_id": 2220,
+      "ap_location_name": "Soul Orb 29161610",
+      "position": {
+        "x": 3215.224,
+        "y": 691.5928,
+        "z": -646.6736
+      }
+    },
+    {
+      "guid": 30795988,
+      "ap_location_id": 2221,
+      "ap_location_name": "Soul Orb 30795988",
+      "position": {
+        "x": -1277.166,
+        "y": 19.12246,
+        "z": -956.8391
+      }
+    },
+    {
+      "guid": 39932655,
+      "ap_location_id": 2222,
+      "ap_location_name": "Soul Orb 39932655",
+      "position": {
+        "x": 2719.385,
+        "y": 543.1431,
+        "z": -241.4331
+      }
+    },
+    {
+      "guid": 43657623,
+      "ap_location_id": 2223,
+      "ap_location_name": "Soul Orb 43657623",
+      "position": {
+        "x": 1267.624,
+        "y": 124.619,
+        "z": 1342.016
+      }
+    },
+    {
+      "guid": 46880010,
+      "ap_location_id": 2224,
+      "ap_location_name": "Soul Orb 46880010",
+      "position": {
+        "x": -1349.642,
+        "y": 68.965,
+        "z": 2399.829
+      }
+    },
+    {
+      "guid": 50143872,
+      "ap_location_id": 2225,
+      "ap_location_name": "Soul Orb 50143872",
+      "position": {
+        "x": 102.0471,
+        "y": 153.359,
+        "z": -892.574
+      }
+    },
+    {
+      "guid": 56477743,
+      "ap_location_id": 2226,
+      "ap_location_name": "Soul Orb 56477743",
+      "position": {
+        "x": -80.45792,
+        "y": 148.4322,
+        "z": -878.0785
+      }
+    },
+    {
+      "guid": 80771123,
+      "ap_location_id": 2227,
+      "ap_location_name": "Soul Orb 80771123",
+      "position": {
+        "x": -1338.765,
+        "y": 115.0716,
+        "z": -449.0652
+      }
+    },
+    {
+      "guid": 103732881,
+      "ap_location_id": 2228,
+      "ap_location_name": "Soul Orb 103732881",
+      "position": {
+        "x": -1574.513,
+        "y": 17.92836,
+        "z": -245.3065
+      }
+    },
+    {
+      "guid": 118560337,
+      "ap_location_id": 2229,
+      "ap_location_name": "Soul Orb 118560337",
+      "position": {
+        "x": 1794.86,
+        "y": 79.35,
+        "z": -1100.98
+      }
+    },
+    {
+      "guid": 118567950,
+      "ap_location_id": 2230,
+      "ap_location_name": "Soul Orb 118567950",
+      "position": {
+        "x": 853.088,
+        "y": 187.055,
+        "z": 1319.042
+      }
+    },
+    {
+      "guid": 142911533,
+      "ap_location_id": 2231,
+      "ap_location_name": "Soul Orb 142911533",
+      "position": {
+        "x": -1910.704,
+        "y": 55.60962,
+        "z": -1215.126
+      }
+    },
+    {
+      "guid": 154407827,
+      "ap_location_id": 2232,
+      "ap_location_name": "Soul Orb 154407827",
+      "position": {
+        "x": 1098.337,
+        "y": 17.567,
+        "z": -1281.541
+      }
+    },
+    {
+      "guid": 164629273,
+      "ap_location_id": 2233,
+      "ap_location_name": "Soul Orb 164629273",
+      "position": {
+        "x": 1986.42,
+        "y": 209.5197,
+        "z": 423.7941
+      }
+    },
+    {
+      "guid": 166867822,
+      "ap_location_id": 2234,
+      "ap_location_name": "Soul Orb 166867822",
+      "position": {
+        "x": 1761.332,
+        "y": 217.992,
+        "z": 3647.663
+      }
+    },
+    {
+      "guid": 168372989,
+      "ap_location_id": 2235,
+      "ap_location_name": "Soul Orb 168372989",
+      "position": {
+        "x": -2031.906,
+        "y": 136.7295,
+        "z": -1472.381
+      }
+    },
+    {
+      "guid": 179452629,
+      "ap_location_id": 2236,
+      "ap_location_name": "Soul Orb 179452629",
+      "position": {
+        "x": -279.6938,
+        "y": 6.229424,
+        "z": -1994.249
+      }
+    },
+    {
+      "guid": 184236076,
+      "ap_location_id": 2237,
+      "ap_location_name": "Soul Orb 184236076",
+      "position": {
+        "x": 1740.855,
+        "y": 215.457,
+        "z": 447.099
+      }
+    },
+    {
+      "guid": 191734698,
+      "ap_location_id": 2238,
+      "ap_location_name": "Soul Orb 191734698",
+      "position": {
+        "x": 2569.29,
+        "y": 0.32,
+        "z": 2208.73
+      }
+    },
+    {
+      "guid": 215824548,
+      "ap_location_id": 2239,
+      "ap_location_name": "Soul Orb 215824548",
+      "position": {
+        "x": 1233.792,
+        "y": 14.727,
+        "z": 2214.558
+      }
+    },
+    {
+      "guid": 231707430,
+      "ap_location_id": 2240,
+      "ap_location_name": "Soul Orb 231707430",
+      "position": {
+        "x": 548.7851,
+        "y": 9.494502,
+        "z": -1912.957
+      }
+    },
+    {
+      "guid": 233309235,
+      "ap_location_id": 2241,
+      "ap_location_name": "Soul Orb 233309235",
+      "position": {
+        "x": -2756.5,
+        "y": 142.5699,
+        "z": -1332.951
+      }
+    },
+    {
+      "guid": 239139417,
+      "ap_location_id": 2242,
+      "ap_location_name": "Soul Orb 239139417",
+      "position": {
+        "x": -2294.06,
+        "y": 96.33737,
+        "z": -954.52
+      }
+    },
+    {
+      "guid": 239453015,
+      "ap_location_id": 2243,
+      "ap_location_name": "Soul Orb 239453015",
+      "position": {
+        "x": -598.2914,
+        "y": 153.1694,
+        "z": -799.8112
+      }
+    },
+    {
+      "guid": 273875803,
+      "ap_location_id": 2244,
+      "ap_location_name": "Soul Orb 273875803",
+      "position": {
+        "x": -1426.658,
+        "y": 20.55,
+        "z": 2600.292
+      }
+    },
+    {
+      "guid": 275719628,
+      "ap_location_id": 2245,
+      "ap_location_name": "Soul Orb 275719628",
+      "position": {
+        "x": 2067.225,
+        "y": 406.8945,
+        "z": -496.9463
+      }
+    },
+    {
+      "guid": 276014594,
+      "ap_location_id": 2246,
+      "ap_location_name": "Soul Orb 276014594",
+      "position": {
+        "x": 2730.174,
+        "y": 535.436,
+        "z": -1133.118
+      }
+    },
+    {
+      "guid": 277791624,
+      "ap_location_id": 2247,
+      "ap_location_name": "Soul Orb 277791624",
+      "position": {
+        "x": 2509.914,
+        "y": 231.4465,
+        "z": 403.1834
+      }
+    },
+    {
+      "guid": 323254685,
+      "ap_location_id": 2248,
+      "ap_location_name": "Soul Orb 323254685",
+      "position": {
+        "x": -522.9064,
+        "y": 20.38838,
+        "z": 2103.177
+      }
+    },
+    {
+      "guid": 334841414,
+      "ap_location_id": 2249,
+      "ap_location_name": "Soul Orb 334841414",
+      "position": {
+        "x": 1950.81,
+        "y": 32.548,
+        "z": 2673.794
+      }
+    },
+    {
+      "guid": 371047582,
+      "ap_location_id": 2250,
+      "ap_location_name": "Soul Orb 371047582",
+      "position": {
+        "x": -292.706,
+        "y": 9.464,
+        "z": 3535.03
+      }
+    },
+    {
+      "guid": 382537690,
+      "ap_location_id": 2251,
+      "ap_location_name": "Soul Orb 382537690",
+      "position": {
+        "x": -564.33,
+        "y": 186.14,
+        "z": 2775.48
+      }
+    },
+    {
+      "guid": 416418440,
+      "ap_location_id": 2252,
+      "ap_location_name": "Soul Orb 416418440",
+      "position": {
+        "x": -1515.804,
+        "y": 40.02686,
+        "z": -856.0211
+      }
+    },
+    {
+      "guid": 417871827,
+      "ap_location_id": 2253,
+      "ap_location_name": "Soul Orb 417871827",
+      "position": {
+        "x": 1821.923,
+        "y": 216.632,
+        "z": 1097.08
+      }
+    },
+    {
+      "guid": 419635281,
+      "ap_location_id": 2254,
+      "ap_location_name": "Soul Orb 419635281",
+      "position": {
+        "x": -1256.364,
+        "y": 47.58193,
+        "z": -295.8516
+      }
+    },
+    {
+      "guid": 439721362,
+      "ap_location_id": 2255,
+      "ap_location_name": "Soul Orb 439721362",
+      "position": {
+        "x": 649.1758,
+        "y": 74.62282,
+        "z": 47.9924
+      }
+    },
+    {
+      "guid": 450188433,
+      "ap_location_id": 2256,
+      "ap_location_name": "Soul Orb 450188433",
+      "position": {
+        "x": 3096.45,
+        "y": 6.549988,
+        "z": -1979.58
+      }
+    },
+    {
+      "guid": 454527612,
+      "ap_location_id": 2257,
+      "ap_location_name": "Soul Orb 454527612",
+      "position": {
+        "x": -394.73,
+        "y": 76.51,
+        "z": 14.68
+      }
+    },
+    {
+      "guid": 462300227,
+      "ap_location_id": 2258,
+      "ap_location_name": "Soul Orb 462300227",
+      "position": {
+        "x": 38.66716,
+        "y": 133.4889,
+        "z": -1084.39
+      }
+    },
+    {
+      "guid": 482936123,
+      "ap_location_id": 2259,
+      "ap_location_name": "Soul Orb 482936123",
+      "position": {
+        "x": 1814.69,
+        "y": 507.72,
+        "z": 1597.21
+      }
+    },
+    {
+      "guid": 490600527,
+      "ap_location_id": 2260,
+      "ap_location_name": "Soul Orb 490600527",
+      "position": {
+        "x": -1186.764,
+        "y": 9.529194,
+        "z": -1134.394
+      }
+    },
+    {
+      "guid": 492903745,
+      "ap_location_id": 2261,
+      "ap_location_name": "Soul Orb 492903745",
+      "position": {
+        "x": -212.6036,
+        "y": 16.74056,
+        "z": -1944.28
+      }
+    },
+    {
+      "guid": 498335167,
+      "ap_location_id": 2262,
+      "ap_location_name": "Soul Orb 498335167",
+      "position": {
+        "x": 507.478,
+        "y": 34.646,
+        "z": 2323.296
+      }
+    },
+    {
+      "guid": 498732487,
+      "ap_location_id": 2263,
+      "ap_location_name": "Soul Orb 498732487",
+      "position": {
+        "x": 10.75745,
+        "y": 9.710789,
+        "z": -2273.862
+      }
+    },
+    {
+      "guid": 501190879,
+      "ap_location_id": 2264,
+      "ap_location_name": "Soul Orb 501190879",
+      "position": {
+        "x": -2343.57,
+        "y": 200.0338,
+        "z": -1549.8
+      }
+    },
+    {
+      "guid": 503820659,
+      "ap_location_id": 2265,
+      "ap_location_name": "Soul Orb 503820659",
+      "position": {
+        "x": -1348.469,
+        "y": 44.19348,
+        "z": -264.2816
+      }
+    },
+    {
+      "guid": 509063744,
+      "ap_location_id": 2266,
+      "ap_location_name": "Soul Orb 509063744",
+      "position": {
+        "x": 1605.3,
+        "y": 51.169,
+        "z": 3081.5
+      }
+    },
+    {
+      "guid": 510106118,
+      "ap_location_id": 2267,
+      "ap_location_name": "Soul Orb 510106118",
+      "position": {
+        "x": -1512.291,
+        "y": 24.80514,
+        "z": -743.6406
+      }
+    },
+    {
+      "guid": 517682722,
+      "ap_location_id": 2268,
+      "ap_location_name": "Soul Orb 517682722",
+      "position": {
+        "x": 2045.193,
+        "y": 524.82,
+        "z": 1459.448
+      }
+    },
+    {
+      "guid": 521374369,
+      "ap_location_id": 2269,
+      "ap_location_name": "Soul Orb 521374369",
+      "position": {
+        "x": -2229.12,
+        "y": 167.9423,
+        "z": -1617.68
+      }
+    },
+    {
+      "guid": 521724803,
+      "ap_location_id": 2270,
+      "ap_location_name": "Soul Orb 521724803",
+      "position": {
+        "x": 1569.633,
+        "y": 52.671,
+        "z": 3098.417
+      }
+    },
+    {
+      "guid": 529757646,
+      "ap_location_id": 2271,
+      "ap_location_name": "Soul Orb 529757646",
+      "position": {
+        "x": 399.198,
+        "y": 62.28,
+        "z": 2840.754
+      }
+    },
+    {
+      "guid": 533599736,
+      "ap_location_id": 2272,
+      "ap_location_name": "Soul Orb 533599736",
+      "position": {
+        "x": -193.6897,
+        "y": 5.327614,
+        "z": -2217.746
+      }
+    },
+    {
+      "guid": 542596090,
+      "ap_location_id": 2273,
+      "ap_location_name": "Soul Orb 542596090",
+      "position": {
+        "x": 4337.133,
+        "y": 9.599548,
+        "z": -1341.952
+      }
+    },
+    {
+      "guid": 544594203,
+      "ap_location_id": 2274,
+      "ap_location_name": "Soul Orb 544594203",
+      "position": {
+        "x": 2162.06,
+        "y": 268.9,
+        "z": 1962.25
+      }
+    },
+    {
+      "guid": 549910931,
+      "ap_location_id": 2275,
+      "ap_location_name": "Soul Orb 549910931",
+      "position": {
+        "x": 2161.47,
+        "y": 2.959,
+        "z": 3315.233
+      }
+    },
+    {
+      "guid": 570886667,
+      "ap_location_id": 2276,
+      "ap_location_name": "Soul Orb 570886667",
+      "position": {
+        "x": -2821.36,
+        "y": 3.630726,
+        "z": -1723.828
+      }
+    },
+    {
+      "guid": 589069179,
+      "ap_location_id": 2277,
+      "ap_location_name": "Soul Orb 589069179",
+      "position": {
+        "x": -1570.506,
+        "y": 13.798,
+        "z": 2960.463
+      }
+    },
+    {
+      "guid": 593940311,
+      "ap_location_id": 2278,
+      "ap_location_name": "Soul Orb 593940311",
+      "position": {
+        "x": 2221.955,
+        "y": 5.489,
+        "z": 3000.206
+      }
+    },
+    {
+      "guid": 597047054,
+      "ap_location_id": 2279,
+      "ap_location_name": "Soul Orb 597047054",
+      "position": {
+        "x": -685.963,
+        "y": 9.232,
+        "z": 3389.122
+      }
+    },
+    {
+      "guid": 597968107,
+      "ap_location_id": 2280,
+      "ap_location_name": "Soul Orb 597968107",
+      "position": {
+        "x": 1900.291,
+        "y": 73.829,
+        "z": 3203.206
+      }
+    },
+    {
+      "guid": 603985318,
+      "ap_location_id": 2281,
+      "ap_location_name": "Soul Orb 603985318",
+      "position": {
+        "x": 2062.96,
+        "y": 294.7181,
+        "z": -912.2999
+      }
+    },
+    {
+      "guid": 607552319,
+      "ap_location_id": 2282,
+      "ap_location_name": "Soul Orb 607552319",
+      "position": {
+        "x": 1098.641,
+        "y": 18.47646,
+        "z": -1278.739
+      }
+    },
+    {
+      "guid": 626804309,
+      "ap_location_id": 2283,
+      "ap_location_name": "Soul Orb 626804309",
+      "position": {
+        "x": -1152.818,
+        "y": 6.435,
+        "z": 2682.902
+      }
+    },
+    {
+      "guid": 636839980,
+      "ap_location_id": 2284,
+      "ap_location_name": "Soul Orb 636839980",
+      "position": {
+        "x": 861.616,
+        "y": 34.323,
+        "z": 2589.023
+      }
+    },
+    {
+      "guid": 654739858,
+      "ap_location_id": 2285,
+      "ap_location_name": "Soul Orb 654739858",
+      "position": {
+        "x": 1978.015,
+        "y": 25.8,
+        "z": 2579.673
+      }
+    },
+    {
+      "guid": 662959146,
+      "ap_location_id": 2286,
+      "ap_location_name": "Soul Orb 662959146",
+      "position": {
+        "x": 79.353,
+        "y": 29.205,
+        "z": 2425.749
+      }
+    },
+    {
+      "guid": 672444542,
+      "ap_location_id": 2287,
+      "ap_location_name": "Soul Orb 672444542",
+      "position": {
+        "x": -1373.78,
+        "y": 76.25,
+        "z": -468.84
+      }
+    },
+    {
+      "guid": 677111499,
+      "ap_location_id": 2288,
+      "ap_location_name": "Soul Orb 677111499",
+      "position": {
+        "x": 1833.642,
+        "y": 0.111,
+        "z": 10.492
+      }
+    },
+    {
+      "guid": 685784636,
+      "ap_location_id": 2289,
+      "ap_location_name": "Soul Orb 685784636",
+      "position": {
+        "x": 1379.136,
+        "y": 22.096,
+        "z": 3185.681
+      }
+    },
+    {
+      "guid": 691517367,
+      "ap_location_id": 2290,
+      "ap_location_name": "Soul Orb 691517367",
+      "position": {
+        "x": -1360.48,
+        "y": 87.64,
+        "z": -570.83
+      }
+    },
+    {
+      "guid": 714560355,
+      "ap_location_id": 2291,
+      "ap_location_name": "Soul Orb 714560355",
+      "position": {
+        "x": -1438.987,
+        "y": 15.45887,
+        "z": -1359.613
+      }
+    },
+    {
+      "guid": 751604953,
+      "ap_location_id": 2292,
+      "ap_location_name": "Soul Orb 751604953",
+      "position": {
+        "x": 241.814,
+        "y": 23.704,
+        "z": 2363.968
+      }
+    },
+    {
+      "guid": 759203296,
+      "ap_location_id": 2293,
+      "ap_location_name": "Soul Orb 759203296",
+      "position": {
+        "x": -1060.88,
+        "y": 19.92,
+        "z": -118.26
+      }
+    },
+    {
+      "guid": 769027155,
+      "ap_location_id": 2294,
+      "ap_location_name": "Soul Orb 769027155",
+      "position": {
+        "x": -1502.129,
+        "y": 61.32319,
+        "z": -1077.429
+      }
+    },
+    {
+      "guid": 798613808,
+      "ap_location_id": 2295,
+      "ap_location_name": "Soul Orb 798613808",
+      "position": {
+        "x": -189.896,
+        "y": 72.689,
+        "z": 1892.784
+      }
+    },
+    {
+      "guid": 810844828,
+      "ap_location_id": 2296,
+      "ap_location_name": "Soul Orb 810844828",
+      "position": {
+        "x": 1095.971,
+        "y": 17.8588,
+        "z": -1281.726
+      }
+    },
+    {
+      "guid": 816355969,
+      "ap_location_id": 2297,
+      "ap_location_name": "Soul Orb 816355969",
+      "position": {
+        "x": -1925.55,
+        "y": 8.72,
+        "z": -884
+      }
+    },
+    {
+      "guid": 819466891,
+      "ap_location_id": 2298,
+      "ap_location_name": "Soul Orb 819466891",
+      "position": {
+        "x": 2811.214,
+        "y": 372.8781,
+        "z": -1282.262
+      }
+    },
+    {
+      "guid": 828404379,
+      "ap_location_id": 2299,
+      "ap_location_name": "Soul Orb 828404379",
+      "position": {
+        "x": -1617.888,
+        "y": 18.58516,
+        "z": -851.6277
+      }
+    },
+    {
+      "guid": 836618883,
+      "ap_location_id": 2300,
+      "ap_location_name": "Soul Orb 836618883",
+      "position": {
+        "x": -542.88,
+        "y": 57.66,
+        "z": -170.18
+      }
+    },
+    {
+      "guid": 850528842,
+      "ap_location_id": 2301,
+      "ap_location_name": "Soul Orb 850528842",
+      "position": {
+        "x": -166.98,
+        "y": 27.6,
+        "z": 3027.02
+      }
+    },
+    {
+      "guid": 884967484,
+      "ap_location_id": 2302,
+      "ap_location_name": "Soul Orb 884967484",
+      "position": {
+        "x": -2113.06,
+        "y": 170.53,
+        "z": -1313.69
+      }
+    },
+    {
+      "guid": 888117534,
+      "ap_location_id": 2303,
+      "ap_location_name": "Soul Orb 888117534",
+      "position": {
+        "x": -2198.9,
+        "y": 175.6,
+        "z": -1652.9
+      }
+    },
+    {
+      "guid": 888620965,
+      "ap_location_id": 2304,
+      "ap_location_name": "Soul Orb 888620965",
+      "position": {
+        "x": 2248.143,
+        "y": 2.638,
+        "z": 2646.794
+      }
+    },
+    {
+      "guid": 902924598,
+      "ap_location_id": 2305,
+      "ap_location_name": "Soul Orb 902924598",
+      "position": {
+        "x": 2561.237,
+        "y": 355.611,
+        "z": 1444.806
+      }
+    },
+    {
+      "guid": 903719078,
+      "ap_location_id": 2306,
+      "ap_location_name": "Soul Orb 903719078",
+      "position": {
+        "x": 2892.415,
+        "y": 646.73,
+        "z": -957.038
+      }
+    },
+    {
+      "guid": 920511542,
+      "ap_location_id": 2307,
+      "ap_location_name": "Soul Orb 920511542",
+      "position": {
+        "x": -861.09,
+        "y": 18.73,
+        "z": 3002.25
+      }
+    },
+    {
+      "guid": 921766497,
+      "ap_location_id": 2308,
+      "ap_location_name": "Soul Orb 921766497",
+      "position": {
+        "x": 779.8002,
+        "y": 110.0345,
+        "z": -2033.564
+      }
+    },
+    {
+      "guid": 938307263,
+      "ap_location_id": 2309,
+      "ap_location_name": "Soul Orb 938307263",
+      "position": {
+        "x": -1823.459,
+        "y": 85.31232,
+        "z": -238.0497
+      }
+    },
+    {
+      "guid": 938366484,
+      "ap_location_id": 2310,
+      "ap_location_name": "Soul Orb 938366484",
+      "position": {
+        "x": -2614.101,
+        "y": 165.1479,
+        "z": -1464.476
+      }
+    },
+    {
+      "guid": 948503495,
+      "ap_location_id": 2311,
+      "ap_location_name": "Soul Orb 948503495",
+      "position": {
+        "x": 1605.538,
+        "y": 39.047,
+        "z": 2221.418
+      }
+    },
+    {
+      "guid": 953459471,
+      "ap_location_id": 2312,
+      "ap_location_name": "Soul Orb 953459471",
+      "position": {
+        "x": -285.0269,
+        "y": 45.10089,
+        "z": 149.9274
+      }
+    },
+    {
+      "guid": 953495201,
+      "ap_location_id": 2313,
+      "ap_location_name": "Soul Orb 953495201",
+      "position": {
+        "x": 1753.85,
+        "y": 65.3,
+        "z": 2300.15
+      }
+    },
+    {
+      "guid": 980015022,
+      "ap_location_id": 2314,
+      "ap_location_name": "Soul Orb 980015022",
+      "position": {
+        "x": 2899.351,
+        "y": 336.42,
+        "z": -99.03003
+      }
+    },
+    {
+      "guid": 991400110,
+      "ap_location_id": 2315,
+      "ap_location_name": "Soul Orb 991400110",
+      "position": {
+        "x": -922.7027,
+        "y": 70.05975,
+        "z": 243.6205
+      }
+    },
+    {
+      "guid": 1010983207,
+      "ap_location_id": 2316,
+      "ap_location_name": "Soul Orb 1010983207",
+      "position": {
+        "x": -1805.87,
+        "y": 96.29,
+        "z": -252.28
+      }
+    },
+    {
+      "guid": 1016704045,
+      "ap_location_id": 2317,
+      "ap_location_name": "Soul Orb 1016704045",
+      "position": {
+        "x": 1469.51,
+        "y": 49.316,
+        "z": 759.888
+      }
+    },
+    {
+      "guid": 1025920156,
+      "ap_location_id": 2318,
+      "ap_location_name": "Soul Orb 1025920156",
+      "position": {
+        "x": -956.51,
+        "y": 103.33,
+        "z": -1110
+      }
+    },
+    {
+      "guid": 1043355462,
+      "ap_location_id": 2319,
+      "ap_location_name": "Soul Orb 1043355462",
+      "position": {
+        "x": 560.7563,
+        "y": 205.0785,
+        "z": -689.5328
+      }
+    },
+    {
+      "guid": 1048282740,
+      "ap_location_id": 2320,
+      "ap_location_name": "Soul Orb 1048282740",
+      "position": {
+        "x": 1387.04,
+        "y": 134.782,
+        "z": 3661.19
+      }
+    },
+    {
+      "guid": 1077896499,
+      "ap_location_id": 2321,
+      "ap_location_name": "Soul Orb 1077896499",
+      "position": {
+        "x": 1220.326,
+        "y": 137.359,
+        "z": 2733.616
+      }
+    },
+    {
+      "guid": 1083051533,
+      "ap_location_id": 2322,
+      "ap_location_name": "Soul Orb 1083051533",
+      "position": {
+        "x": 413.9932,
+        "y": 90.29784,
+        "z": -1474.55
+      }
+    },
+    {
+      "guid": 1101802616,
+      "ap_location_id": 2323,
+      "ap_location_name": "Soul Orb 1101802616",
+      "position": {
+        "x": 902.8427,
+        "y": 218.5119,
+        "z": -1909.204
+      }
+    },
+    {
+      "guid": 1110620659,
+      "ap_location_id": 2324,
+      "ap_location_name": "Soul Orb 1110620659",
+      "position": {
+        "x": -681.192,
+        "y": 252.26,
+        "z": -546.0219
+      }
+    },
+    {
+      "guid": 1114756422,
+      "ap_location_id": 2325,
+      "ap_location_name": "Soul Orb 1114756422",
+      "position": {
+        "x": 3747.7,
+        "y": 141,
+        "z": -404.2
+      }
+    },
+    {
+      "guid": 1116153357,
+      "ap_location_id": 2326,
+      "ap_location_name": "Soul Orb 1116153357",
+      "position": {
+        "x": -772.81,
+        "y": 5.476,
+        "z": 2132.76
+      }
+    },
+    {
+      "guid": 1134690276,
+      "ap_location_id": 2327,
+      "ap_location_name": "Soul Orb 1134690276",
+      "position": {
+        "x": 2281.164,
+        "y": 408.5707,
+        "z": -255.7809
+      }
+    },
+    {
+      "guid": 1142019551,
+      "ap_location_id": 2328,
+      "ap_location_name": "Soul Orb 1142019551",
+      "position": {
+        "x": 2032.897,
+        "y": 324.2278,
+        "z": -752.0721
+      }
+    },
+    {
+      "guid": 1180354922,
+      "ap_location_id": 2329,
+      "ap_location_name": "Soul Orb 1180354922",
+      "position": {
+        "x": 1402.433,
+        "y": 7.37,
+        "z": 3656.818
+      }
+    },
+    {
+      "guid": 1192716519,
+      "ap_location_id": 2330,
+      "ap_location_name": "Soul Orb 1192716519",
+      "position": {
+        "x": 1195.743,
+        "y": 124.134,
+        "z": 3025.32
+      }
+    },
+    {
+      "guid": 1194660068,
+      "ap_location_id": 2331,
+      "ap_location_name": "Soul Orb 1194660068",
+      "position": {
+        "x": -2043.452,
+        "y": 119.9889,
+        "z": -1200.42
+      }
+    },
+    {
+      "guid": 1197077097,
+      "ap_location_id": 2332,
+      "ap_location_name": "Soul Orb 1197077097",
+      "position": {
+        "x": 2531.77,
+        "y": 243.79,
+        "z": -68.97998
+      }
+    },
+    {
+      "guid": 1207062975,
+      "ap_location_id": 2333,
+      "ap_location_name": "Soul Orb 1207062975",
+      "position": {
+        "x": -1465.43,
+        "y": 30.34,
+        "z": -843.46
+      }
+    },
+    {
+      "guid": 1210342708,
+      "ap_location_id": 2334,
+      "ap_location_name": "Soul Orb 1210342708",
+      "position": {
+        "x": -194.0562,
+        "y": 2.399591,
+        "z": 539.655
+      }
+    },
+    {
+      "guid": 1217580537,
+      "ap_location_id": 2335,
+      "ap_location_name": "Soul Orb 1217580537",
+      "position": {
+        "x": -813.7717,
+        "y": 3.746452,
+        "z": 2595.484
+      }
+    },
+    {
+      "guid": 1218690639,
+      "ap_location_id": 2336,
+      "ap_location_name": "Soul Orb 1218690639",
+      "position": {
+        "x": 785.582,
+        "y": 106.995,
+        "z": 1306.648
+      }
+    },
+    {
+      "guid": 1229487910,
+      "ap_location_id": 2337,
+      "ap_location_name": "Soul Orb 1229487910",
+      "position": {
+        "x": -873.142,
+        "y": 4.809,
+        "z": 3313.289
+      }
+    },
+    {
+      "guid": 1230721854,
+      "ap_location_id": 2338,
+      "ap_location_name": "Soul Orb 1230721854",
+      "position": {
+        "x": 511.89,
+        "y": 50.136,
+        "z": 2850.12
+      }
+    },
+    {
+      "guid": 1240098279,
+      "ap_location_id": 2339,
+      "ap_location_name": "Soul Orb 1240098279",
+      "position": {
+        "x": 3515.146,
+        "y": 143.3202,
+        "z": -1246.064
+      }
+    },
+    {
+      "guid": 1240766126,
+      "ap_location_id": 2340,
+      "ap_location_name": "Soul Orb 1240766126",
+      "position": {
+        "x": 2980.05,
+        "y": 722.5,
+        "z": -519.29
+      }
+    },
+    {
+      "guid": 1242672192,
+      "ap_location_id": 2341,
+      "ap_location_name": "Soul Orb 1242672192",
+      "position": {
+        "x": 3496.36,
+        "y": 13.83002,
+        "z": -1462.57
+      }
+    },
+    {
+      "guid": 1257317002,
+      "ap_location_id": 2342,
+      "ap_location_name": "Soul Orb 1257317002",
+      "position": {
+        "x": -602.447,
+        "y": 9.715,
+        "z": 3239.319
+      }
+    },
+    {
+      "guid": 1261849725,
+      "ap_location_id": 2343,
+      "ap_location_name": "Soul Orb 1261849725",
+      "position": {
+        "x": -23.951,
+        "y": 130.691,
+        "z": 2150.825
+      }
+    },
+    {
+      "guid": 1264307716,
+      "ap_location_id": 2344,
+      "ap_location_name": "Soul Orb 1264307716",
+      "position": {
+        "x": -2497.292,
+        "y": 178.8936,
+        "z": -1692.91
+      }
+    },
+    {
+      "guid": 1267233006,
+      "ap_location_id": 2345,
+      "ap_location_name": "Soul Orb 1267233006",
+      "position": {
+        "x": 1557.618,
+        "y": 0.427,
+        "z": 3414.357
+      }
+    },
+    {
+      "guid": 1268428828,
+      "ap_location_id": 2346,
+      "ap_location_name": "Soul Orb 1268428828",
+      "position": {
+        "x": 781.2018,
+        "y": 192.4089,
+        "z": -2061.364
+      }
+    },
+    {
+      "guid": 1277778644,
+      "ap_location_id": 2347,
+      "ap_location_name": "Soul Orb 1277778644",
+      "position": {
+        "x": 2571,
+        "y": 0.293,
+        "z": 2210.13
+      }
+    },
+    {
+      "guid": 1297753781,
+      "ap_location_id": 2348,
+      "ap_location_name": "Soul Orb 1297753781",
+      "position": {
+        "x": 1902.27,
+        "y": 47.01963,
+        "z": -19.86745
+      }
+    },
+    {
+      "guid": 1342007573,
+      "ap_location_id": 2349,
+      "ap_location_name": "Soul Orb 1342007573",
+      "position": {
+        "x": 2603.69,
+        "y": 683.2,
+        "z": -761.48
+      }
+    },
+    {
+      "guid": 1346040891,
+      "ap_location_id": 2350,
+      "ap_location_name": "Soul Orb 1346040891",
+      "position": {
+        "x": -356.446,
+        "y": 247.921,
+        "z": 2677.732
+      }
+    },
+    {
+      "guid": 1352811510,
+      "ap_location_id": 2351,
+      "ap_location_name": "Soul Orb 1352811510",
+      "position": {
+        "x": 1650.205,
+        "y": 13.352,
+        "z": 3029.059
+      }
+    },
+    {
+      "guid": 1360759752,
+      "ap_location_id": 2352,
+      "ap_location_name": "Soul Orb 1360759752",
+      "position": {
+        "x": -2374.643,
+        "y": 70.18247,
+        "z": -1836.261
+      }
+    },
+    {
+      "guid": 1364408069,
+      "ap_location_id": 2353,
+      "ap_location_name": "Soul Orb 1364408069",
+      "position": {
+        "x": -1227.898,
+        "y": 11.483,
+        "z": 2156.88
+      }
+    },
+    {
+      "guid": 1366291744,
+      "ap_location_id": 2354,
+      "ap_location_name": "Soul Orb 1366291744",
+      "position": {
+        "x": -97.19,
+        "y": 4.925,
+        "z": 1992.8
+      }
+    },
+    {
+      "guid": 1375038878,
+      "ap_location_id": 2355,
+      "ap_location_name": "Soul Orb 1375038878",
+      "position": {
+        "x": -1739.639,
+        "y": 16.32327,
+        "z": -1125.024
+      }
+    },
+    {
+      "guid": 1387125496,
+      "ap_location_id": 2356,
+      "ap_location_name": "Soul Orb 1387125496",
+      "position": {
+        "x": 2677.083,
+        "y": 540.046,
+        "z": -1125.996
+      }
+    },
+    {
+      "guid": 1391294908,
+      "ap_location_id": 2357,
+      "ap_location_name": "Soul Orb 1391294908",
+      "position": {
+        "x": -2301.02,
+        "y": 260.42,
+        "z": -1606.21
+      }
+    },
+    {
+      "guid": 1396590919,
+      "ap_location_id": 2358,
+      "ap_location_name": "Soul Orb 1396590919",
+      "position": {
+        "x": -1164.75,
+        "y": 63.32903,
+        "z": -529.1006
+      }
+    },
+    {
+      "guid": 1427556280,
+      "ap_location_id": 2359,
+      "ap_location_name": "Soul Orb 1427556280",
+      "position": {
+        "x": 1151.2,
+        "y": 139.2,
+        "z": 2606.5
+      }
+    },
+    {
+      "guid": 1429791698,
+      "ap_location_id": 2360,
+      "ap_location_name": "Soul Orb 1429791698",
+      "position": {
+        "x": 31.05029,
+        "y": 124.3911,
+        "z": -76.18055
+      }
+    },
+    {
+      "guid": 1436986366,
+      "ap_location_id": 2361,
+      "ap_location_name": "Soul Orb 1436986366",
+      "position": {
+        "x": -2740.759,
+        "y": 74.9924,
+        "z": -1413.462
+      }
+    },
+    {
+      "guid": 1436992481,
+      "ap_location_id": 2362,
+      "ap_location_name": "Soul Orb 1436992481",
+      "position": {
+        "x": -682.22,
+        "y": 315.8,
+        "z": 3049.086
+      }
+    },
+    {
+      "guid": 1454333234,
+      "ap_location_id": 2363,
+      "ap_location_name": "Soul Orb 1454333234",
+      "position": {
+        "x": -1857.57,
+        "y": 0.42,
+        "z": -1525.76
+      }
+    },
+    {
+      "guid": 1456011765,
+      "ap_location_id": 2364,
+      "ap_location_name": "Soul Orb 1456011765",
+      "position": {
+        "x": 141.56,
+        "y": 51.55,
+        "z": 2310.54
+      }
+    },
+    {
+      "guid": 1459923790,
+      "ap_location_id": 2365,
+      "ap_location_name": "Soul Orb 1459923790",
+      "position": {
+        "x": -1396.68,
+        "y": 54.63,
+        "z": -333.67
+      }
+    },
+    {
+      "guid": 1474584585,
+      "ap_location_id": 2366,
+      "ap_location_name": "Soul Orb 1474584585",
+      "position": {
+        "x": 1920.455,
+        "y": 83.37163,
+        "z": 22.81575
+      }
+    },
+    {
+      "guid": 1476349579,
+      "ap_location_id": 2367,
+      "ap_location_name": "Soul Orb 1476349579",
+      "position": {
+        "x": -2352.704,
+        "y": 28.38852,
+        "z": -1897.121
+      }
+    },
+    {
+      "guid": 1476758008,
+      "ap_location_id": 2368,
+      "ap_location_name": "Soul Orb 1476758008",
+      "position": {
+        "x": -2052.209,
+        "y": 119.1328,
+        "z": -1663.515
+      }
+    },
+    {
+      "guid": 1491303986,
+      "ap_location_id": 2369,
+      "ap_location_name": "Soul Orb 1491303986",
+      "position": {
+        "x": -833.566,
+        "y": 36.76,
+        "z": 3460.815
+      }
+    },
+    {
+      "guid": 1507385991,
+      "ap_location_id": 2370,
+      "ap_location_name": "Soul Orb 1507385991",
+      "position": {
+        "x": -2608.24,
+        "y": 194.06,
+        "z": -1378.88
+      }
+    },
+    {
+      "guid": 1508458628,
+      "ap_location_id": 2371,
+      "ap_location_name": "Soul Orb 1508458628",
+      "position": {
+        "x": 571.9608,
+        "y": 297.9614,
+        "z": -761.299
+      }
+    },
+    {
+      "guid": 1513881874,
+      "ap_location_id": 2372,
+      "ap_location_name": "Soul Orb 1513881874",
+      "position": {
+        "x": -2528.256,
+        "y": 231.7788,
+        "z": -1673.771
+      }
+    },
+    {
+      "guid": 1520953605,
+      "ap_location_id": 2373,
+      "ap_location_name": "Soul Orb 1520953605",
+      "position": {
+        "x": -2510.225,
+        "y": 176.421,
+        "z": -1340.363
+      }
+    },
+    {
+      "guid": 1531752375,
+      "ap_location_id": 2374,
+      "ap_location_name": "Soul Orb 1531752375",
+      "position": {
+        "x": 500.2667,
+        "y": 74.64091,
+        "z": 125.8991
+      }
+    },
+    {
+      "guid": 1538109677,
+      "ap_location_id": 2375,
+      "ap_location_name": "Soul Orb 1538109677",
+      "position": {
+        "x": 1397.192,
+        "y": 26.003,
+        "z": 2378.045
+      }
+    },
+    {
+      "guid": 1585661056,
+      "ap_location_id": 2376,
+      "ap_location_name": "Soul Orb 1585661056",
+      "position": {
+        "x": 1556.19,
+        "y": 92.05,
+        "z": -1392.27
+      }
+    },
+    {
+      "guid": 1587735447,
+      "ap_location_id": 2377,
+      "ap_location_name": "Soul Orb 1587735447",
+      "position": {
+        "x": -2574.603,
+        "y": 218.5334,
+        "z": -1605.352
+      }
+    },
+    {
+      "guid": 1599241572,
+      "ap_location_id": 2378,
+      "ap_location_name": "Soul Orb 1599241572",
+      "position": {
+        "x": 2274.258,
+        "y": 409.5631,
+        "z": -474.2817
+      }
+    },
+    {
+      "guid": 1602063913,
+      "ap_location_id": 2379,
+      "ap_location_name": "Soul Orb 1602063913",
+      "position": {
+        "x": -685.1542,
+        "y": 6.065204,
+        "z": -1108.888
+      }
+    },
+    {
+      "guid": 1611989960,
+      "ap_location_id": 2380,
+      "ap_location_name": "Soul Orb 1611989960",
+      "position": {
+        "x": 2017.891,
+        "y": 99.037,
+        "z": 2000.89
+      }
+    },
+    {
+      "guid": 1613884097,
+      "ap_location_id": 2381,
+      "ap_location_name": "Soul Orb 1613884097",
+      "position": {
+        "x": 986.11,
+        "y": 43.59,
+        "z": 1146.51
+      }
+    },
+    {
+      "guid": 1617275630,
+      "ap_location_id": 2382,
+      "ap_location_name": "Soul Orb 1617275630",
+      "position": {
+        "x": 1478.106,
+        "y": 230.358,
+        "z": 1568.088
+      }
+    },
+    {
+      "guid": 1620468209,
+      "ap_location_id": 2383,
+      "ap_location_name": "Soul Orb 1620468209",
+      "position": {
+        "x": 971.4285,
+        "y": 121.3826,
+        "z": -1472.767
+      }
+    },
+    {
+      "guid": 1622691899,
+      "ap_location_id": 2384,
+      "ap_location_name": "Soul Orb 1622691899",
+      "position": {
+        "x": 1822.842,
+        "y": 299.4415,
+        "z": -828.8464
+      }
+    },
+    {
+      "guid": 1626495614,
+      "ap_location_id": 2385,
+      "ap_location_name": "Soul Orb 1626495614",
+      "position": {
+        "x": 453.14,
+        "y": 78.96,
+        "z": -1682.81
+      }
+    },
+    {
+      "guid": 1631673813,
+      "ap_location_id": 2386,
+      "ap_location_name": "Soul Orb 1631673813",
+      "position": {
+        "x": 2094.542,
+        "y": 75.409,
+        "z": -1305.238
+      }
+    },
+    {
+      "guid": 1632248201,
+      "ap_location_id": 2387,
+      "ap_location_name": "Soul Orb 1632248201",
+      "position": {
+        "x": -859.5856,
+        "y": 201.8243,
+        "z": -1185.211
+      }
+    },
+    {
+      "guid": 1662774378,
+      "ap_location_id": 2388,
+      "ap_location_name": "Soul Orb 1662774378",
+      "position": {
+        "x": 382.559,
+        "y": 22.15438,
+        "z": -2093.25
+      }
+    },
+    {
+      "guid": 1662910569,
+      "ap_location_id": 2389,
+      "ap_location_name": "Soul Orb 1662910569",
+      "position": {
+        "x": 1968.07,
+        "y": 0.56,
+        "z": 3767.87
+      }
+    },
+    {
+      "guid": 1669265608,
+      "ap_location_id": 2390,
+      "ap_location_name": "Soul Orb 1669265608",
+      "position": {
+        "x": 1102.178,
+        "y": 17.90832,
+        "z": -1277.139
+      }
+    },
+    {
+      "guid": 1669833636,
+      "ap_location_id": 2391,
+      "ap_location_name": "Soul Orb 1669833636",
+      "position": {
+        "x": 103.297,
+        "y": 66.209,
+        "z": 2960.447
+      }
+    },
+    {
+      "guid": 1678548444,
+      "ap_location_id": 2392,
+      "ap_location_name": "Soul Orb 1678548444",
+      "position": {
+        "x": -713.0814,
+        "y": 27.62777,
+        "z": -1521.722
+      }
+    },
+    {
+      "guid": 1681377324,
+      "ap_location_id": 2393,
+      "ap_location_name": "Soul Orb 1681377324",
+      "position": {
+        "x": 1627.654,
+        "y": 122.6944,
+        "z": -1383.69
+      }
+    },
+    {
+      "guid": 1694479975,
+      "ap_location_id": 2394,
+      "ap_location_name": "Soul Orb 1694479975",
+      "position": {
+        "x": 2109.85,
+        "y": 286.051,
+        "z": -302.612
+      }
+    },
+    {
+      "guid": 1696290344,
+      "ap_location_id": 2395,
+      "ap_location_name": "Soul Orb 1696290344",
+      "position": {
+        "x": 556.8839,
+        "y": 28.04652,
+        "z": 205.5101
+      }
+    },
+    {
+      "guid": 1696969215,
+      "ap_location_id": 2396,
+      "ap_location_name": "Soul Orb 1696969215",
+      "position": {
+        "x": 2166.34,
+        "y": 259.83,
+        "z": 864.44
+      }
+    },
+    {
+      "guid": 1707725832,
+      "ap_location_id": 2397,
+      "ap_location_name": "Soul Orb 1707725832",
+      "position": {
+        "x": 2020.714,
+        "y": 331.726,
+        "z": -558.9846
+      }
+    },
+    {
+      "guid": 1715471724,
+      "ap_location_id": 2398,
+      "ap_location_name": "Soul Orb 1715471724",
+      "position": {
+        "x": 4134.936,
+        "y": 7.216431,
+        "z": 321.6055
+      }
+    },
+    {
+      "guid": 1728654045,
+      "ap_location_id": 2399,
+      "ap_location_name": "Soul Orb 1728654045",
+      "position": {
+        "x": 1848.662,
+        "y": 187.8085,
+        "z": -168.6463
+      }
+    },
+    {
+      "guid": 1730920854,
+      "ap_location_id": 2400,
+      "ap_location_name": "Soul Orb 1730920854",
+      "position": {
+        "x": 2356.346,
+        "y": 360.829,
+        "z": 1836.744
+      }
+    },
+    {
+      "guid": 1743701493,
+      "ap_location_id": 2401,
+      "ap_location_name": "Soul Orb 1743701493",
+      "position": {
+        "x": 2459.1,
+        "y": 2.68,
+        "z": 2549.84
+      }
+    },
+    {
+      "guid": 1755150764,
+      "ap_location_id": 2402,
+      "ap_location_name": "Soul Orb 1755150764",
+      "position": {
+        "x": -541.74,
+        "y": 83,
+        "z": 82.64
+      }
+    },
+    {
+      "guid": 1760010664,
+      "ap_location_id": 2403,
+      "ap_location_name": "Soul Orb 1760010664",
+      "position": {
+        "x": -2235.31,
+        "y": 316.57,
+        "z": -1661.13
+      }
+    },
+    {
+      "guid": 1765670492,
+      "ap_location_id": 2404,
+      "ap_location_name": "Soul Orb 1765670492",
+      "position": {
+        "x": 1668.453,
+        "y": 232.2158,
+        "z": -422.1045
+      }
+    },
+    {
+      "guid": 1766068979,
+      "ap_location_id": 2405,
+      "ap_location_name": "Soul Orb 1766068979",
+      "position": {
+        "x": 467.4971,
+        "y": 29.1988,
+        "z": -1752.496
+      }
+    },
+    {
+      "guid": 1771115153,
+      "ap_location_id": 2406,
+      "ap_location_name": "Soul Orb 1771115153",
+      "position": {
+        "x": 1690.14,
+        "y": 212.99,
+        "z": -707.42
+      }
+    },
+    {
+      "guid": 1805636196,
+      "ap_location_id": 2407,
+      "ap_location_name": "Soul Orb 1805636196",
+      "position": {
+        "x": 1571.863,
+        "y": 269.7249,
+        "z": -229.7414
+      }
+    },
+    {
+      "guid": 1807207805,
+      "ap_location_id": 2408,
+      "ap_location_name": "Soul Orb 1807207805",
+      "position": {
+        "x": 1445.289,
+        "y": 86.306,
+        "z": 937.126
+      }
+    },
+    {
+      "guid": 1812086289,
+      "ap_location_id": 2409,
+      "ap_location_name": "Soul Orb 1812086289",
+      "position": {
+        "x": -1406.977,
+        "y": 29.91901,
+        "z": -1035.401
+      }
+    },
+    {
+      "guid": 1816273651,
+      "ap_location_id": 2410,
+      "ap_location_name": "Soul Orb 1816273651",
+      "position": {
+        "x": -1224.68,
+        "y": 28.06,
+        "z": -1149.04
+      }
+    },
+    {
+      "guid": 1825542907,
+      "ap_location_id": 2411,
+      "ap_location_name": "Soul Orb 1825542907",
+      "position": {
+        "x": 1696.113,
+        "y": 283.497,
+        "z": 1738.18
+      }
+    },
+    {
+      "guid": 1827412009,
+      "ap_location_id": 2412,
+      "ap_location_name": "Soul Orb 1827412009",
+      "position": {
+        "x": 4.598536,
+        "y": 15.901,
+        "z": -1207.808
+      }
+    },
+    {
+      "guid": 1832164315,
+      "ap_location_id": 2413,
+      "ap_location_name": "Soul Orb 1832164315",
+      "position": {
+        "x": 1018.86,
+        "y": 80.5,
+        "z": -455.1
+      }
+    },
+    {
+      "guid": 1845844762,
+      "ap_location_id": 2414,
+      "ap_location_name": "Soul Orb 1845844762",
+      "position": {
+        "x": 2620.99,
+        "y": 248.46,
+        "z": -1312.68
+      }
+    },
+    {
+      "guid": 1857420540,
+      "ap_location_id": 2415,
+      "ap_location_name": "Soul Orb 1857420540",
+      "position": {
+        "x": 2150.778,
+        "y": 344.9799,
+        "z": -215.0608
+      }
+    },
+    {
+      "guid": 1869638844,
+      "ap_location_id": 2416,
+      "ap_location_name": "Soul Orb 1869638844",
+      "position": {
+        "x": 748.2687,
+        "y": 40.06379,
+        "z": -2057.626
+      }
+    },
+    {
+      "guid": 1874242847,
+      "ap_location_id": 2417,
+      "ap_location_name": "Soul Orb 1874242847",
+      "position": {
+        "x": -1364.648,
+        "y": 87.35054,
+        "z": -383.37
+      }
+    },
+    {
+      "guid": 1885239633,
+      "ap_location_id": 2418,
+      "ap_location_name": "Soul Orb 1885239633",
+      "position": {
+        "x": 1223.305,
+        "y": 18.22495,
+        "z": -1888.532
+      }
+    },
+    {
+      "guid": 1900884586,
+      "ap_location_id": 2419,
+      "ap_location_name": "Soul Orb 1900884586",
+      "position": {
+        "x": 119.86,
+        "y": 36.38,
+        "z": -1183.35
+      }
+    },
+    {
+      "guid": 1902381509,
+      "ap_location_id": 2420,
+      "ap_location_name": "Soul Orb 1902381509",
+      "position": {
+        "x": 4223.13,
+        "y": 53.38,
+        "z": -1091.48
+      }
+    },
+    {
+      "guid": 1912253734,
+      "ap_location_id": 2421,
+      "ap_location_name": "Soul Orb 1912253734",
+      "position": {
+        "x": 1740.417,
+        "y": 256.8645,
+        "z": -621.5146
+      }
+    },
+    {
+      "guid": 1912734369,
+      "ap_location_id": 2422,
+      "ap_location_name": "Soul Orb 1912734369",
+      "position": {
+        "x": 941.944,
+        "y": 240.51,
+        "z": -1493.063
+      }
+    },
+    {
+      "guid": 1942774852,
+      "ap_location_id": 2423,
+      "ap_location_name": "Soul Orb 1942774852",
+      "position": {
+        "x": 1847.726,
+        "y": 19.149,
+        "z": 2955.739
+      }
+    },
+    {
+      "guid": 1961888831,
+      "ap_location_id": 2424,
+      "ap_location_name": "Soul Orb 1961888831",
+      "position": {
+        "x": 2038.974,
+        "y": 341.326,
+        "z": -474.651
+      }
+    },
+    {
+      "guid": 1979739651,
+      "ap_location_id": 2425,
+      "ap_location_name": "Soul Orb 1979739651",
+      "position": {
+        "x": 2071.71,
+        "y": 177.431,
+        "z": 562.73
+      }
+    },
+    {
+      "guid": 2003775781,
+      "ap_location_id": 2426,
+      "ap_location_name": "Soul Orb 2003775781",
+      "position": {
+        "x": 2877.701,
+        "y": 334.8,
+        "z": -92.70801
+      }
+    },
+    {
+      "guid": 2010422928,
+      "ap_location_id": 2427,
+      "ap_location_name": "Soul Orb 2010422928",
+      "position": {
+        "x": -1441.352,
+        "y": 60.12445,
+        "z": -1358.543
+      }
+    },
+    {
+      "guid": 2018884159,
+      "ap_location_id": 2428,
+      "ap_location_name": "Soul Orb 2018884159",
+      "position": {
+        "x": 2848.15,
+        "y": 470.2,
+        "z": -1184.02
+      }
+    },
+    {
+      "guid": 2026173688,
+      "ap_location_id": 2429,
+      "ap_location_name": "Soul Orb 2026173688",
+      "position": {
+        "x": 877.16,
+        "y": 16.38,
+        "z": 1717.56
+      }
+    },
+    {
+      "guid": 2036122148,
+      "ap_location_id": 2430,
+      "ap_location_name": "Soul Orb 2036122148",
+      "position": {
+        "x": 682.1815,
+        "y": 106.0161,
+        "z": 12.00874
+      }
+    },
+    {
+      "guid": 2049269751,
+      "ap_location_id": 2431,
+      "ap_location_name": "Soul Orb 2049269751",
+      "position": {
+        "x": 2847.648,
+        "y": 32.072,
+        "z": 1211.887
+      }
+    },
+    {
+      "guid": 2071421792,
+      "ap_location_id": 2432,
+      "ap_location_name": "Soul Orb 2071421792",
+      "position": {
+        "x": 1025.883,
+        "y": 16.865,
+        "z": 2335.362
+      }
+    },
+    {
+      "guid": 2072634478,
+      "ap_location_id": 2433,
+      "ap_location_name": "Soul Orb 2072634478",
+      "position": {
+        "x": 2570.63,
+        "y": 0.21,
+        "z": 2207.42
+      }
+    },
+    {
+      "guid": 2084572214,
+      "ap_location_id": 2434,
+      "ap_location_name": "Soul Orb 2084572214",
+      "position": {
+        "x": -1552.246,
+        "y": 10.46649,
+        "z": -789.7521
+      }
+    },
+    {
+      "guid": 2100103659,
+      "ap_location_id": 2435,
+      "ap_location_name": "Soul Orb 2100103659",
+      "position": {
+        "x": 2556.688,
+        "y": 485.776,
+        "z": 1513.433
+      }
+    },
+    {
+      "guid": 2114205760,
+      "ap_location_id": 2436,
+      "ap_location_name": "Soul Orb 2114205760",
+      "position": {
+        "x": -223.8903,
+        "y": 77.6606,
+        "z": -2242.081
+      }
+    },
+    {
+      "guid": 2115283109,
+      "ap_location_id": 2437,
+      "ap_location_name": "Soul Orb 2115283109",
+      "position": {
+        "x": -1403.209,
+        "y": 36.386,
+        "z": 2044.159
+      }
+    },
+    {
+      "guid": 2123182171,
+      "ap_location_id": 2438,
+      "ap_location_name": "Soul Orb 2123182171",
+      "position": {
+        "x": 447.89,
+        "y": 35,
+        "z": -1695.95
+      }
+    }
+  ]
+}

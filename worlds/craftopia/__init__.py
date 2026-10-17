@@ -20,6 +20,7 @@ from worlds.AutoWorld import World, WebWorld
 from .Data import build_item_table, build_location_table, load_mission_data
 from .Items import CraftopiaItem, CraftopiaLocation, ITEM_CLASSIFICATION
 from .Options import CraftopiaOptions
+from .Progression import ProgressionModel, load_reviewed_profile
 
 
 class CraftopiaWebWorld(WebWorld):
@@ -60,6 +61,16 @@ _location_name_to_id = {n: d.ap_id for n, d in _location_table.items()}
 # These are stable and don't collide with legacy 1-53.
 _instance_ids = _get_instance_table()
 _location_name_to_id.update(_instance_ids)
+from .SoulOrbs import load_catalog as _load_orbs, validate_catalog as _validate_orbs
+for _orb in _validate_orbs(_load_orbs()):
+    if _orb['ap_location_id'] in _location_name_to_id.values() or _orb['ap_location_name'] in _location_name_to_id:
+        raise ValueError('Soul orb location ID/name collision')
+    _location_name_to_id[_orb['ap_location_name']] = _orb['ap_location_id']
+from .Milestones import load_catalog as _load_milestones, validate_catalog as _validate_milestones, key as _milestone_key
+for _row in _validate_milestones(_load_milestones()):
+    if _row['ap_location_id'] in _location_name_to_id.values() or _row['ap_location_name'] in _location_name_to_id:
+        raise ValueError('Milestone location ID/name collision')
+    _location_name_to_id[_row['ap_location_name']] = _row['ap_location_id']
 _class_to_location = {d.mission_class: n for n, d in _location_table.items()}
 _game_id_to_location = {d.game_id: n for n, d in _location_table.items()
                         if d.game_id is not None}
@@ -87,6 +98,50 @@ class CraftopiaWorld(World):
         super().__init__(multiworld, player)
         self.item_table = _item_table
         self.location_table = _location_table
+        self.progression_model = None
+        self.opening_profile = None
+        self.regional_profile = None
+
+    def selected_soul_orbs(self):
+        if self.options.logic_mode.value == 5:
+            from .RegionalRuns import geezah_orbs
+            return geezah_orbs()
+        return _validate_orbs(_load_orbs())
+
+    def generate_early(self):
+        if self.options.logic_mode.value in (4, 5):
+            if (self.multiworld.players != 1 or self.options.multiplayer_mode.value != 0 or
+                    self.options.mission_catalog_version.value != 1 or not self.options.enable_mission_checks.value or
+                    not self.options.enable_age_checks.value or not self.options.enable_boss_checks.value):
+                raise ValueError('Regional runs require one player, instance missions, age and dungeon checks')
+            if self.options.logic_mode.value == 5:
+                from .RegionalRuns import build_run_profile
+                self.regional_profile = build_run_profile(self.options.ending_region.current_key, self.item_table)
+            else:
+                from .Regional import load_profile, build_regional_profile
+                self.regional_profile = build_regional_profile(load_profile(),self.item_table)
+            self.opening_profile = self.regional_profile
+            self.progression_model = ProgressionModel(self.opening_profile,self.item_table,allow_experimental=True)
+        if self.options.enable_soul_orb_checks.value and self.options.logic_mode.value not in (3, 5):
+            raise ValueError('Soul Orbs currently require the experimental expedition profile; traversal is unverified.')
+        if self.options.logic_mode.value == 3:
+            if self.options.mission_catalog_version.value != 1 or self.options.multiplayer_mode.value != 0:
+                raise ValueError('Expedition requires instance missions and separate slots')
+            from .Expedition import build_profile
+            self.opening_profile = build_profile(self.item_table)
+            self.progression_model = ProgressionModel(self.opening_profile, self.item_table,
+                                                      allow_experimental=True)
+        if self.options.logic_mode.value == 2:
+            if self.options.mission_catalog_version.value != 1 or self.options.multiplayer_mode.value != 0:
+                raise ValueError('Opening profile requires instance missions and separate slots')
+            import json
+            from pathlib import Path
+            self.opening_profile = json.loads(Path(__file__).with_name('opening_20261014_r1.json').read_text())
+            self.progression_model = ProgressionModel(self.opening_profile, self.item_table)
+        if self.options.logic_mode.value == 1:
+            if self.options.mission_catalog_version.value != 1:
+                raise ValueError('Verified progression requires numeric mission instances')
+            self.progression_model = ProgressionModel(load_reviewed_profile(), self.item_table)
 
     def create_item(self, name: str) -> CraftopiaItem:
         if name == "Completed Objective":
@@ -122,6 +177,8 @@ class CraftopiaWorld(World):
                 from .mission_id_mapper import get_id_map
                 id_map = get_id_map()
                 for mission_id in sorted(id_map.keys()):
+                    if self.opening_profile is not None and str(mission_id) not in self.opening_profile['missions']:
+                        continue
                     info = id_map[mission_id]
                     loc_name = info["ap_location_name"]
                     loc = CraftopiaLocation(
@@ -159,7 +216,22 @@ class CraftopiaWorld(World):
                     event.place_locked_item(self.create_item("Completed Objective"))
                     overworld.locations.append(event)
 
-        # TODO: age, soul orb, chest, challenge, Anubis, shop, boss
+        if self.options.enable_soul_orb_checks.value:
+            for row in self.selected_soul_orbs():
+                loc=CraftopiaLocation(self.player,row['ap_location_name'],row['ap_location_id'],overworld)
+                loc.check_category='soul_orb'
+                loc.orb_guid=row['guid']
+                overworld.locations.append(loc)
+            # Observed positions only: no verified traversal rules. This is why
+            # the option is restricted to the explicitly experimental profile.
+
+        if getattr(self, 'regional_profile', None) is not None:
+            for row in self.regional_profile['milestones']:
+                loc=CraftopiaLocation(self.player,row['ap_location_name'],row['ap_location_id'],overworld)
+                loc.check_category='milestone'
+                overworld.locations.append(loc)
+
+        # TODO: chest, challenge, Anubis, shop
         # locations as their catalogs are verified. Each will set
         # loc.check_category accordingly.
 
@@ -174,7 +246,7 @@ class CraftopiaWorld(World):
             return
 
         # Validate victory configuration: at least one goal must be enabled.
-        if not (self.options.goal_boss.value or
+        if getattr(self, 'regional_profile', None) is None and not (self.options.goal_boss.value or
                 self.options.goal_age.value or
                 self.options.goal_objectives.value):
             raise Exception(
@@ -194,6 +266,21 @@ class CraftopiaWorld(World):
             "Skill Tree: Combat Tier 4",
             "Skill Tree: Combat Tier 5",
         ]
+        if self.opening_profile is not None:
+            pool = self.opening_profile['pool']
+            currency=['Soul Orb Currency'] * sum(getattr(l,'check_category',None)=='soul_orb' for l in overworld.locations)
+            if len(pool)+len(currency) > len(locations): raise ValueError('Opening pool exceeds location count')
+            skill_points = 0
+            for name in pool + currency + ['Skill Point'] * (len(locations) - len(pool) - len(currency)):
+                item = self.create_item(name)
+                if self.options.logic_mode.value == 5 and name == 'Skill Point':
+                    skill_points += 1
+                    # Tamer needs three points and the added Heal route needs one. Surplus still
+                    # grants points, but may fill AP-excluded locations.
+                    if skill_points > 4:
+                        item.classification = ITEM_CLASSIFICATION['filler']
+                self.multiworld.itempool.append(item)
+            return
         for item_name in skill_tree_items:
             self.multiworld.itempool.append(self.create_item(item_name))
 
@@ -232,13 +319,47 @@ class CraftopiaWorld(World):
             overworld = self.multiworld.get_region("Overworld", self.player)
         except KeyError:
             return
-        locations = [loc for loc in overworld.locations if loc.address is not None]
+        locations = [loc for loc in overworld.locations if loc.address is not None and getattr(loc,'check_category',None)=='mission']
         n_locations = len(locations)
+
+        model = getattr(self, 'progression_model', None)
+        if model is not None:
+            model.require_coverage([loc.game_id for loc in locations])
+            # Attach rules to actual network locations. Their local objective
+            # events already delegate to these locations' reachability.
+            for loc in locations:
+                loc.access_rule = lambda state, mid=loc.game_id: model.can_complete(
+                    mid, lambda name: state.count(name, self.player))
 
         if n_locations == 0:
             raise Exception(
                 "Craftopia: zero locations generated. Enable at least one "
                 "check category to generate a playable seed.")
+
+        if getattr(self, 'regional_profile', None) is not None:
+            from .RegionalRuns import apply_early_placement_rules
+            profile=self.regional_profile
+            milestone_model=ProgressionModel({**profile,'missions':profile['milestone_rules']},
+                                             self.item_table,allow_experimental=True)
+            network=[loc for loc in overworld.locations if loc.address is not None]
+            for loc in network:
+                if loc.check_category=='milestone':
+                    loc.access_rule=lambda state,mid=loc.address: milestone_model.can_complete(
+                        mid,lambda name: state.count(name,self.player))
+            from worlds.generic.Rules import add_item_rule
+            for loc in network:
+                if loc.check_category == 'soul_orb':
+                    # Field membership is verified, individual traversal is not.
+                    # Optional exploration cannot hold an essential reward.
+                    add_item_rule(loc, lambda item: not item.advancement)
+                    loc.access_rule = lambda state: model.can_complete(67,
+                        lambda name: state.count(name, self.player))
+            apply_early_placement_rules(self, network, profile)
+            goals=[loc for loc in network if loc.address in profile['goal_location_ids']]
+            if not goals or len(goals) != len(profile['goal_location_ids']):
+                raise ValueError('Regional victory requires every selected goal location')
+            self.multiworld.completion_condition[self.player]=lambda state: all(loc.can_reach(state) for loc in goals)
+            return
 
         # Validate victory configuration: at least one goal must be enabled.
         if not (self.options.goal_boss.value or
@@ -306,6 +427,9 @@ class CraftopiaWorld(World):
           locations only; class_to_location is empty (no class fallback).
         """
         is_instance = (self.options.mission_catalog_version.value == 1)
+        is_regional = getattr(self, 'regional_profile', None) is not None
+        is_expedition = getattr(getattr(self.options, 'logic_mode', None), 'value', 0) in (3,4,5)
+        is_regional_run = getattr(getattr(self.options, 'logic_mode', None), 'value', 0) == 5
         if is_instance:
             # Instance mode: numeric IDs only, no class fallback.
             from .mission_id_mapper import get_id_map
@@ -323,15 +447,40 @@ class CraftopiaWorld(World):
                 k: v for k, v in self.game_id_to_location.items()
                 if self.location_name_to_id.get(v, 0) < 1000
             }
+        active_names = {loc.name for loc in self.multiworld.get_locations(self.player) if loc.address is not None}
+        game_id_map = {key: name for key, name in game_id_map.items() if name in active_names}
         return {
+            **({'milestone_schema':1,'milestone_catalog':'milestones_20261016_r1',
+                'milestone_locations':{_milestone_key(r['family'],r['source_id'],r['stage']):r['ap_location_id']
+                                       for r in self.regional_profile['milestones']},
+                'goal_location_ids':self.regional_profile['goal_location_ids'],
+                'selected_region':self.regional_profile.get('region','geezah')} if is_regional else {}),
+            **({'regional_run_schema':1, 'ending_region':self.regional_profile['region'],
+                'included_regions':self.regional_profile['included_regions'],
+                'goal_policy':self.regional_profile['goal_policy'],
+                'early_item_locations':self.regional_profile['early_item_locations']}
+               if is_regional_run else {}),
+            **({'soul_orb_catalog':'soul_orbs_20261015_r1','soul_orb_schema':1,
+                'soul_orb_currency_protocol':1,'soul_orb_access':('regional_optional_unverified_traversal' if self.options.logic_mode.value == 5 else 'unverified_candidates'),
+                'soul_orb_locations':{str(r['guid']):r['ap_location_id'] for r in self.selected_soul_orbs()}}
+               if self.options.enable_soul_orb_checks.value else {}),
+            **({'equipment_catalog': ('equipment_loot_20261016_r2'
+                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5')
+                    else 'equipment_loot_20261016_r1') if is_regional_run else 'equipment_20261010_r1',
+                'equipment_protocol': 2 if is_regional_run else 1,
+                'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),
+            **({'equipment_tier_steps': self.opening_profile['equipment_tier_steps'],
+                'tamer_scope': 'vanilla', 'logic_evidence': 'partial_experimental'}
+               if is_expedition else {}),
+            "logic_mode": "regional" if is_regional_run else "geezah_pilot" if is_regional else "expedition" if is_expedition else "opening" if self.opening_profile else "verified" if getattr(self, 'progression_model', None) is not None else "candidate",
             "class_to_location": class_map,
             "game_id_to_location": game_id_map,
             "objective_locations": {
                 name: f"location:{ap_id}"
                 for name, ap_id in self.location_name_to_id.items()
                 # Filter by active catalog: legacy (1-53) vs instance (1000+).
-                if (
-                    (self.options.mission_catalog_version.value == 1 and ap_id >= 1000)
+                if name in active_names and (
+                    (self.options.mission_catalog_version.value == 1 and 1000 <= ap_id < 2000)
                     or (self.options.mission_catalog_version.value == 0 and ap_id < 1000)
                 )
             } if self.options.enable_mission_checks.value else {},
@@ -369,4 +518,3 @@ class CraftopiaWorld(World):
                 1 if self.options.mission_catalog_version.value == 1 else 0
             ),
         }
-

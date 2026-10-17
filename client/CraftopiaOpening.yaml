@@ -1,0 +1,11 @@
+name: CraftopiaOpen
+game: Craftopia
+Craftopia:
+  logic_mode: opening
+  mission_catalog_version: 20261007_r1
+  goal_boss: false
+  goal_age: false
+  goal_objectives: true
+  goal_objective_count: 11
+  multiplayer_mode: separate_slots
+  starting_combat: random_category

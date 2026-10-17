@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.8.9";
+        public const string VERSION = "1.12.3";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -23,6 +23,8 @@ namespace CraftopiaArchipelago
         internal static PlayerStatusDisplay StatusDisplay;
         internal static ConfigEntry<string> SlotName;
         internal static ConfigEntry<int> LocalPort;
+        private ConfigEntry<float> hudX, hudY;
+        private readonly HudDragState hudDrag = new HudDragState();
         private static EnrollmentCoordinator enrollmentCoordinator;
         private static string enrollmentStatus;
 
@@ -45,6 +47,20 @@ namespace CraftopiaArchipelago
         // Persistent session binding, separate from socket connectivity.
         // Set when a validated session is established; cleared only on
         // explicit session change or recovery hold. Survives disconnects.
+        private static EquipmentSession equipmentSession;
+        internal static string EquipmentCatalogIdentity => equipmentSession?.Catalog;
+        internal static bool EquipmentRequired => equipmentSession != null && equipmentSession.Required;
+        internal static PermissionManager EquipmentPermissions()
+        {
+            try {
+                if (!EquipmentRequired || Validator == null || eligibility == null) return null;
+                var s = Validator.Capture();
+                bool valid = s.Ready && s.Input.Identity == IdentityStatus.Verified &&
+                    Validator.LastOutcome.Outcome == ValidationOutcome.Pass && !Validator.IsHeld(s.Input.Guid,s.Input.Epoch) &&
+                    eligibility.IsEligible(s.Player,s.Input.Guid,s.Input.Epoch,s.LoadEvent);
+                return equipmentSession.Ready(s.Input.Guid,s.Input.Epoch,SlotName.Value,valid) ? Permissions : null;
+            } catch { return null; }
+        }
         private static bool sessionBound = false;
         private static long boundEpoch = 0;
         private static string boundSlot = null;
@@ -92,58 +108,15 @@ namespace CraftopiaArchipelago
         /// <summary>
         /// Resolve a building type name to its production group.
         /// Returns "opening" for free stations, group ID for gated stations,
-        /// or null if unknown (caller should fail-open).
-        /// Based on /tmp/production_groups.md (29 types, 10 groups).
+        /// or null if unknown (bound production attempts are denied).
+        /// Concrete station types are matched exactly.
         /// </summary>
         internal static string ResolveProductionGroup(string typeName)
-        {
-            if (string.IsNullOrEmpty(typeName))
-                return null;
-            // Opening set: hand crafting + basic crafting bench (free).
-            if (typeName.Contains("OcBldg_CraftingBench") && !typeName.Contains("Automation"))
-                return "opening";
-            // G1 smelting
-            if (typeName.Contains("Refiner"))
-                return "smelting";
-            // G2 cooking
-            if (typeName.Contains("Campfire") || typeName.Contains("CookingPot"))
-                return "cooking";
-            // G3 farming
-            if (typeName.Contains("OcBldg_Farm") || typeName.Contains("WheatField") ||
-                typeName.Contains("BreedPlant") || typeName.Contains("SeedMakingMachine"))
-                return "farming";
-            // G4 livestock & fishing
-            if (typeName.Contains("StockFarm") || typeName.Contains("CrabPot") ||
-                typeName.Contains("FishPool") || typeName.Contains("FilletMachine"))
-                return "livestock_fishing";
-            // G5 alchemy
-            if (typeName.Contains("Alchemy"))
-                return "alchemy";
-            // G6 recycling
-            if (typeName.Contains("RecycleMachine") || typeName.Contains("Composter") ||
-                typeName.Contains("WeaponDisassembly"))
-                return "recycling";
-            // G7 water processing
-            if (typeName.Contains("WaterPurification") || typeName.Contains("WashingMachine") ||
-                typeName.Contains("Dryer"))
-                return "water_processing";
-            // G8 equipment care
-            if (typeName.Contains("RepairWorkshop") || typeName.Contains("Aging"))
-                return "equipment_care";
-            // G9 automation
-            if (typeName.Contains("Automation"))
-                return "automation";
-            // G11 creature combining
-            if (typeName.Contains("CombinedEm"))
-                return "creature_combining";
-            // G10 power excluded (role unconfirmed)
-            // Unknown: fail-open
-            return null;
-        }
+            => ProductionEnforcement.ResolveStation(typeName);
 
         /// <summary>
         /// Resolve a skill ID to its category and tier.
-        /// Returns null if unknown (caller should fail-open).
+        /// Returns null if unknown (bound learning attempts are denied).
         /// </summary>
         private static bool skillCatalogWarningLogged = false;
 
@@ -309,6 +282,8 @@ namespace CraftopiaArchipelago
             // This enables skill-tree enforcement with the 2026-10-08 runtime IDs.
             LoadSkillCatalogFromEmbedded();
 
+            hudX = Config.Bind("Display", "HudX", 220f, "Field Guide badge horizontal position in scaled UI pixels; drag with the cursor visible.");
+            hudY = Config.Bind("Display", "HudY", 20f, "Field Guide badge vertical position in scaled UI pixels.");
             SlotName = Config.Bind("General", "SlotName", "Player1",
                 "Archipelago slot name. Must match the name in your YAML.");
             LocalPort = Config.Bind("General", "LocalPort", 11341,
@@ -357,6 +332,10 @@ namespace CraftopiaArchipelago
             Permissions = new PermissionManager(m => Log.LogInfo(m), m => Log.LogWarning(m));
 
             unlockMirror = new UnlockMirror(Permissions);
+            equipmentSession = new EquipmentSession(
+                Config.Bind("EquipmentTest", "Enabled", false, "Explicit experimental equipment test approval; existing seeds leave false.").Value,
+                Config.Bind("EquipmentTest", "CharacterGuid", 0, "Approved test character GUID.").Value,
+                Config.Bind("EquipmentTest", "Epoch", 0L, "Approved test epoch.").Value, SlotName.Value);
 
             // Player status display.
             StatusDisplay = new PlayerStatusDisplay(Permissions, m => Log.LogInfo(m));
@@ -483,6 +462,8 @@ namespace CraftopiaArchipelago
             catch { /* logging must never break teardown */ }
 
             if (!owner) return; // duplicate instance; the owner keeps the bridge
+            fieldGuide.Dispose();
+            CurrencyRuntime.Suspend();
             instance = null;
             try
             {
@@ -537,14 +518,20 @@ namespace CraftopiaArchipelago
         /// </summary>
         private static bool InstallAndVerifyHooks()
         {
-            Harmony harmony;
+            Harmony harmony = null;
             try
             {
                 harmony = new Harmony(GUID);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
+                ProductionHooks.Install(harmony);
+                EquipmentHooks.Install(harmony);
+                CurrencySaveObserver.Install(harmony);
+                SoulOrbHooks.Install(harmony);
+                MilestoneHooks.Install(harmony);
             }
             catch (Exception e)
             {
+                try { harmony?.UnpatchSelf(); } catch { }
                 Log.LogError("[AP] FATAL: Harmony PatchAll threw: " + e.GetType().Name
                     + ": " + e.Message + ". Hooks not registered; bridge not started.");
                 return false;
@@ -641,6 +628,7 @@ namespace CraftopiaArchipelago
         internal static void SafeError(string message) { try { Log?.LogError(message); } catch { } }
         internal static LoadInvocation OnLoadStart(Oc.OcPlMaster instance)
         {
+            CurrencyRuntime.Suspend();
             unlockMirror?.Suspend();
             ++loadEventCounter;
             loadCompletedFlag = false;
@@ -696,13 +684,13 @@ namespace CraftopiaArchipelago
         /// Enqueues for main-thread processing; does NOT touch validation state
         /// directly (thread safety). The main thread drains the queue in Update.
         /// </summary>
-        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0)
+        internal static void OnSlotData(long epoch, System.Collections.Generic.HashSet<int> enrolledGuids, string token = null, int connection = 0, string equipmentCatalog = null, int equipmentProtocol = 0, int multiplayer = 0, System.Collections.Generic.Dictionary<string,object> currencySession = null)
         {
             try
             {
                 lock (pendingSessions)
                 {
-                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection));
+                    pendingSessions.Enqueue(new SessionData(epoch, enrolledGuids, token, connection, equipmentCatalog, equipmentProtocol, multiplayer, currencySession));
                 }
                 Log.LogInfo("[AP] session queued: epoch=" + epoch);
             }
@@ -716,12 +704,17 @@ namespace CraftopiaArchipelago
         {
             public long Epoch;
             public string Token;
+            public string EquipmentCatalog;
+            public int EquipmentProtocol, Multiplayer;
             public int Connection;
+            public System.Collections.Generic.Dictionary<string,object> CurrencySession;
             public System.Collections.Generic.HashSet<int> EnrolledGuids;
-            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection)
+            public SessionData(long epoch, System.Collections.Generic.HashSet<int> guids, string token, int connection, string equipmentCatalog, int equipmentProtocol, int multiplayer, System.Collections.Generic.Dictionary<string,object> currencySession)
             {
                 Epoch = epoch;
                 EnrolledGuids = guids; Token = token; Connection = connection;
+                EquipmentCatalog=equipmentCatalog; EquipmentProtocol=equipmentProtocol; Multiplayer=multiplayer;
+                CurrencySession=currencySession;
             }
         }
 
@@ -785,6 +778,12 @@ namespace CraftopiaArchipelago
                     var s = next.Value;
                     if (Bridge == null || s.Connection != Bridge.ConnectionId ||
                         !unlockMirror.BeginSession(SlotName.Value,s.Epoch,s.Token,s.Connection)) return;
+                    if (!equipmentSession.Bind(s.Epoch,SlotName.Value,s.EquipmentCatalog,s.EquipmentProtocol,s.Multiplayer))
+                    {
+                        eligibility?.Block("equipment contract rejected");
+                        EquipmentHooks.Diagnostic("Equipment contract rejected; delivery held. Review explicit test approval.");
+                        return;
+                    }
                     // Invalidate eligibility BEFORE using the new session.
                     if (eligibility != null)
                         eligibility.OnSessionChange(s.Epoch);
@@ -792,6 +791,7 @@ namespace CraftopiaArchipelago
                     if (grantTransaction != null && Validator.CurrentEpoch != s.Epoch)
                         grantTransaction.ClearCommittedForNewSession();
                     // Update validator.
+                    StatusDisplay?.ClearActivity();
                     Validator.CurrentEpoch = s.Epoch;
                     var guids = s.EnrolledGuids; // capture for lambda
                     Validator.IsEnrolled = g => guids != null && guids.Contains(g);
@@ -799,6 +799,8 @@ namespace CraftopiaArchipelago
                         ", enrolled=" + (guids != null ? guids.Count : 0));
                     // Persist session binding separately from socket connectivity.
                     SetSessionBound(s.Epoch, SlotName?.Value);
+                    CurrencyRuntime.ApplySession(s.CurrencySession,s.Connection);
+                    MilestoneSession.Bind(s.CurrencySession);
                 }
             }
             catch (Exception e)
@@ -853,7 +855,10 @@ namespace CraftopiaArchipelago
                     return Validator.Capture();
                 },
                     EnrollmentHasHistory(), recoveryHold || Validator.IsHeld(observed.Input.Guid,observed.Input.Epoch)))
+                {
+                    CurrencyRuntime.AttestNew(observed.Input.Guid);
                     Validator.Invalidate(); // Eligibility still requires fresh read-only validation below.
+                }
                 if (enrollmentStatus != enrollmentCoordinator.Status) {
                     enrollmentStatus=enrollmentCoordinator.Status;
                     Log.LogInfo("[AP] enrollment: "+enrollmentStatus);
@@ -916,6 +921,11 @@ namespace CraftopiaArchipelago
             // 0. Process pending sessions (from network thread) BEFORE validation.
             // This invalidates eligibility and applies the new epoch/enrollment.
             ProcessPendingSessions();
+            try { PollStatusKey(); Bridge?.PumpNotifications(); } catch { }
+            try { PollHudPointer(); } catch (Exception ex) {
+                hudDrag.Cancel();
+                try { StatusDisplay?.Transition("hud-input-error", "[AP] HUD input unavailable: " + ex.GetBaseException().Message); } catch { }
+            }
             TryFreshEnrollment();
 
 
@@ -968,10 +978,7 @@ namespace CraftopiaArchipelago
                     var outcome = Validator.LastOutcome.Outcome;
                     // LastOutcome defaults to Defer (zero-init) until first validation.
                     validationAllows = (outcome == ValidationOutcome.Pass);
-                    if (!validationAllows)
-                    {
-                        Log.LogInfo("[AP] grants blocked: validation outcome=" + outcome);
-                    }
+                    StatusDisplay?.Transition("validation", validationAllows ? null : "[AP] grants blocked: validation outcome=" + outcome);
                 }
             }
             catch (Exception e)
@@ -1003,8 +1010,7 @@ namespace CraftopiaArchipelago
                     identityEligible = !Validator.IsHeld(guid, epoch) &&
                         eligibility.IsEligible(playerRef, guid, epoch, loadEventCounter);
                     eligible = Pipeline.Epoch == epoch && identityEligible;
-                    if (!eligible)
-                        Log.LogInfo("[AP] grants blocked: not eligible (player/guid/epoch/load mismatch)");
+                    StatusDisplay?.Transition("eligibility", eligible ? null : "[AP] grants blocked: not eligible (player/guid/epoch/load mismatch)");
                 }
             }
             catch (Exception e)
@@ -1014,11 +1020,17 @@ namespace CraftopiaArchipelago
                 eligible = false; // fail closed
             }
 
-            ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold);
+            bool equipmentContractReady = equipmentSession != null && equipmentSession.ContractReady;
+            bool equipmentIdentityReady = !EquipmentRequired || EquipmentPermissions() != null;
+            ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold && equipmentContractReady && equipmentIdentityReady);
+            // Restore ownership before admission: missing unlocks must not deadlock their own delivery.
+            bool equipmentAdmitted = equipmentSession != null && equipmentSession.Admit(equipmentIdentityReady,EquipmentHooks.CurrentEquipmentAllowed);
+            CurrencyRuntime.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
+            MilestoneSession.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
 
             System.Collections.Generic.List<long> acks =
                 new System.Collections.Generic.List<long>();
-            if (validationAllows && eligible && !recoveryHold)
+            if (validationAllows && eligible && !recoveryHold && equipmentAdmitted)
             {
                 try
                 {
@@ -1035,7 +1047,7 @@ namespace CraftopiaArchipelago
             }
             else if (recoveryHold)
             {
-                Log.LogWarning("[AP] grants blocked: recovery hold (incomplete intent)");
+                StatusDisplay?.Transition("recovery", "[AP] grants blocked: recovery hold (incomplete intent)");
             }
             // else: grants remain queued; no ack; retry next frame after validation.
 
@@ -1043,7 +1055,7 @@ namespace CraftopiaArchipelago
             // If blocked, they stay queued for next frame.
             // Reacks gated on validation AND eligibility AND no recovery hold.
             // All ack paths use the same gate.
-            if (validationAllows && eligible && !recoveryHold)
+            if (validationAllows && eligible && !recoveryHold && equipmentAdmitted)
             {
                 foreach (var r in inboundResults)
                 {
@@ -1071,62 +1083,55 @@ namespace CraftopiaArchipelago
         /// In-game status overlay (Unity IMGUI). Toggle with F8.
         /// Shows connection, slot/session, permissions, goal progress, recovery holds.
         /// </summary>
-        private bool showStatusOverlay = false;
+        private readonly FieldGuideView fieldGuide = new FieldGuideView();
+        private void PollStatusKey()
+        {
+            if (UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.F8)) {
+                fieldGuide.Toggle(); hudDrag.Cancel();
+            } else if (fieldGuide.IsOpen && UnityEngine.Input.GetKeyDown(UnityEngine.KeyCode.Escape)) {
+                fieldGuide.SetOpen(false); hudDrag.Cancel();
+            }
+        }
+        private void LateUpdate()
+        {
+            if (ReferenceEquals(instance, this)) fieldGuide.KeepCursor();
+        }
+        private void OnApplicationFocus(bool focused)
+        {
+            if (!focused) { fieldGuide.SetOpen(false); hudDrag.Cancel(); }
+        }
+        private void PollHudPointer()
+        {
+            if (!UnityEngine.Application.isFocused || !UnityEngine.Cursor.visible
+                || UnityEngine.Cursor.lockState == UnityEngine.CursorLockMode.Locked) { hudDrag.Cancel(); return; }
+            var mouse = UnityEngine.Input.mousePosition;
+            float scale = GuideScale();
+            float width = 244 * scale;
+            float x = PlayerStatusDisplay.ClampHudPosition(hudDrag.Active ? hudDrag.X : hudX.Value * scale, UnityEngine.Screen.width, width);
+            float y = PlayerStatusDisplay.ClampHudPosition(hudDrag.Active ? hudDrag.Y : hudY.Value * scale, UnityEngine.Screen.height, 52 * scale);
+            bool save = hudDrag.Step(UnityEngine.Input.GetMouseButtonDown(0),
+                UnityEngine.Input.GetMouseButton(0), UnityEngine.Input.GetMouseButtonUp(0),
+                mouse.x, UnityEngine.Screen.height - mouse.y, x, y, width - 36 * scale, 52 * scale,
+                UnityEngine.Screen.width - 36 * scale, UnityEngine.Screen.height, 52 * scale);
+            if (save) { hudX.Value = hudDrag.X / scale; hudY.Value = hudDrag.Y / scale; }
+        }
+        private static float GuideScale()
+        {
+            return Math.Max(.4f, Math.Min(1.5f, Math.Min(UnityEngine.Screen.height / 900f, UnityEngine.Screen.width / 1050f)));
+        }
         private void OnGUI()
         {
-            // Toggle with F8 via reflection (avoids Unity module refs).
-            try
-            {
-                var inputType = System.Type.GetType("UnityEngine.Input, UnityEngine.InputLegacyModule");
-                if (inputType != null)
-                {
-                    var getKeyDown = inputType.GetMethod("GetKeyDown", new[] { typeof(int) });
-                    // KeyCode.F8 = 119
-                    if (getKeyDown != null && (bool)getKeyDown.Invoke(null, new object[] { 119 }))
-                        showStatusOverlay = !showStatusOverlay;
-                }
-            }
-            catch { }
-            if (!showStatusOverlay) return;
             if (!ReferenceEquals(instance, this)) return;
-
-            try
-            {
-                // Use reflection for GUI calls to avoid module references.
-                var guiType = System.Type.GetType("UnityEngine.GUI, UnityEngine.IMGUIModule");
-                if (guiType == null) return;
-                string status = BuildStatusText();
-                // GUI.Label(new Rect(10, 10, 400, 300), status)
-                var rectType = System.Type.GetType("UnityEngine.Rect, UnityEngine.CoreModule");
-                var rect = System.Activator.CreateInstance(rectType, 10f, 10f, 400f, 300f);
-                var labelMethod = guiType.GetMethod("Label", new[] { rectType, typeof(string) });
-                labelMethod?.Invoke(null, new[] { rect, status });
+            try {
+                float scale = GuideScale();
+                fieldGuide.Draw(StatusDisplay, Permissions, SlotName?.Value ?? "Unknown",
+                    Bridge != null && Bridge.IsConnected, recoveryHold, enrollmentStatus,
+                    hudDrag.Active ? hudDrag.X / scale : hudX?.Value ?? 220,
+                    hudDrag.Active ? hudDrag.Y / scale : hudY?.Value ?? 20, scale);
+            } catch (Exception ex) {
+                StatusDisplay?.Transition("field-guide-error", "[AP] Field Guide unavailable: " + ex.GetBaseException().Message);
             }
-            catch { }
         }
-
-        private string BuildStatusText()
-        {
-            var sb = new System.Text.StringBuilder();
-            sb.AppendLine("=== Craftopia Archipelago ===");
-            sb.AppendLine($"Version: {VERSION}");
-            sb.AppendLine($"Connected: {(Bridge != null && Bridge.IsConnected ? "YES" : "NO")}");
-            sb.AppendLine($"Slot: {SlotName?.Value ?? "?"}");
-            sb.AppendLine($"Recovery Hold: {(recoveryHold ? "ACTIVE" : "none")}");
-            if (StatusDisplay != null)
-            {
-                sb.AppendLine("--- Permissions ---");
-                sb.AppendLine(StatusDisplay.GetStatusSummary());
-            }
-            if (!string.IsNullOrEmpty(StatusDisplay?.LastError))
-            {
-                sb.AppendLine("--- Last Blocked ---");
-                sb.AppendLine(StatusDisplay.LastError);
-            }
-            sb.AppendLine("(F8 to toggle)");
-            return sb.ToString();
-        }
-
         /// <summary>
         /// Execute grants transactionally: for each pending batch, run the
         /// full intent → mutation → atomic commit transaction.
@@ -1223,5 +1228,3 @@ namespace CraftopiaArchipelago
         }
     }
 }
-
-

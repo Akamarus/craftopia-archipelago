@@ -1,0 +1,18 @@
+name: CraftopiaGeezah
+game: Craftopia
+Craftopia:
+  logic_mode: geezah_pilot
+  mission_catalog_version: 20261007_r1
+  goal_boss: false
+  goal_age: false
+  goal_objectives: false
+  multiplayer_mode: separate_slots
+  starting_combat: player_choice
+  enable_mission_checks: true
+  enable_age_checks: true
+  enable_soul_orb_checks: false
+  enable_chest_checks: false
+  enable_challenge_checks: false
+  enable_anubis_checks: false
+  enable_shop_checks: false
+  enable_boss_checks: true

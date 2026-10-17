@@ -1,0 +1,6426 @@
+{
+  "research_only": true,
+  "capture_sha256": "aa8d5caa551d3f67646317dfcdb4ea292f86a1cf1f08ab5ad42a3446578fd6a8",
+  "map_source": "https://kregap.github.io/craftopia-map/",
+  "map_snapshot_date": "2026-10-15",
+  "map_coordinates_sha256": "f70c4822650fbe881d86e4e9e055b38b0a3a011b57d8474e9dc8830f26009749",
+  "shop_entries": [
+    {
+      "item_id": 5565,
+      "item_name": "Holy Water",
+      "shop_asset": "SoShopList_OW_Overwrite_LimitedDungeon_08",
+      "entry_index": 8,
+      "required_world_level": 9,
+      "overwrite_price": 3,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": false,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 746,
+      "item_name": "Log",
+      "shop_asset": "SoShopList_OW_Overwrite_01",
+      "entry_index": 0,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 698,
+      "item_name": "Stone",
+      "shop_asset": "SoShopList_OW_Overwrite_01",
+      "entry_index": 1,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 746,
+      "item_name": "Log",
+      "shop_asset": "SoShopList_OW_Overwrite_02",
+      "entry_index": 0,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 698,
+      "item_name": "Stone",
+      "shop_asset": "SoShopList_OW_Overwrite_02",
+      "entry_index": 1,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 746,
+      "item_name": "Log",
+      "shop_asset": "SoShopList_OW_Overwrite_03",
+      "entry_index": 0,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 698,
+      "item_name": "Stone",
+      "shop_asset": "SoShopList_OW_Overwrite_03",
+      "entry_index": 1,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2454,
+      "item_name": "Straw",
+      "shop_asset": "SoShopList_OW_Overwrite_03",
+      "entry_index": 3,
+      "required_world_level": 1,
+      "overwrite_price": 100,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3464,
+      "item_name": "Engine Parts",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 5,
+      "required_world_level": 4,
+      "overwrite_price": 500,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3465,
+      "item_name": "Fuel Tank",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 6,
+      "required_world_level": 4,
+      "overwrite_price": 500,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3468,
+      "item_name": "Bolt",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 7,
+      "required_world_level": 3,
+      "overwrite_price": 100,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3469,
+      "item_name": "Spring",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 8,
+      "required_world_level": 3,
+      "overwrite_price": 100,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3470,
+      "item_name": "Ceramic",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 9,
+      "required_world_level": 3,
+      "overwrite_price": 100,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 763,
+      "item_name": "Sulfur",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 13,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2453,
+      "item_name": "Crystal",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 14,
+      "required_world_level": 0,
+      "overwrite_price": 50,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2076,
+      "item_name": "Poisonous Mushroom",
+      "shop_asset": "SoShopList_OW_Overwrite_04",
+      "entry_index": 16,
+      "required_world_level": 4,
+      "overwrite_price": 250,
+      "cashier_type": "Oc.OcMoneyCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 758,
+      "item_name": "Sheep Wool",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_03",
+      "entry_index": 5,
+      "required_world_level": 0,
+      "overwrite_price": 1,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 692,
+      "item_name": "Bird Feather",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_03",
+      "entry_index": 6,
+      "required_world_level": 0,
+      "overwrite_price": 1,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 763,
+      "item_name": "Sulfur",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_03",
+      "entry_index": 7,
+      "required_world_level": 0,
+      "overwrite_price": 2,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2453,
+      "item_name": "Crystal",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_03",
+      "entry_index": 8,
+      "required_world_level": 0,
+      "overwrite_price": 2,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2076,
+      "item_name": "Poisonous Mushroom",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_03",
+      "entry_index": 9,
+      "required_world_level": 0,
+      "overwrite_price": 2,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 2452,
+      "item_name": "Bioethanol",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_04",
+      "entry_index": 4,
+      "required_world_level": 0,
+      "overwrite_price": 2,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3373,
+      "item_name": "Scrap Parts",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_04",
+      "entry_index": 5,
+      "required_world_level": 4,
+      "overwrite_price": 5,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3464,
+      "item_name": "Engine Parts",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_04",
+      "entry_index": 7,
+      "required_world_level": 4,
+      "overwrite_price": 5,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": false,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3465,
+      "item_name": "Fuel Tank",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_04",
+      "entry_index": 8,
+      "required_world_level": 4,
+      "overwrite_price": 5,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": false,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3360,
+      "item_name": "Hell Pepper",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_05",
+      "entry_index": 6,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3445,
+      "item_name": "Snow Mint",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_05",
+      "entry_index": 7,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 723,
+      "item_name": "Bright Red Herb",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_05",
+      "entry_index": 8,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 735,
+      "item_name": "Ultramarine Herb",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_05",
+      "entry_index": 9,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3445,
+      "item_name": "Snow Mint",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_06",
+      "entry_index": 6,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 3360,
+      "item_name": "Hell Pepper",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_06",
+      "entry_index": 7,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 723,
+      "item_name": "Bright Red Herb",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_06",
+      "entry_index": 8,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    },
+    {
+      "item_id": 735,
+      "item_name": "Ultramarine Herb",
+      "shop_asset": "SoShopList_OW_Overwrite_farming_06",
+      "entry_index": 9,
+      "required_world_level": 0,
+      "overwrite_price": 10,
+      "cashier_type": "Oc.OcItemCashier",
+      "can_kill_drop": true,
+      "limitation": "Loaded shop definition; merchant position, stock and access not proven."
+    }
+  ],
+  "map_leads": [
+    {
+      "external_row_id": "530",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-2137.376 121.4102 -1039.876",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "531",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-2265.928 120.4356 -1070.014",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "532",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-2496.62 181.3437 -1275.879",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "533",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-2544.497 173.8394 -1331.168",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "534",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-1174.532 60.622 -552.0556",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "535",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-334.5313 93.5192 -398.6819",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "536",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-374.707 89.5508 -481.5281",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "537",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "-374.124 107.302 -628.31",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "538",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "617.667 73.661 94.576",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "539",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "540.7053 74.4811 68.6646",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "540",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1022.862 30.498 -2103.54",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "541",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1094.772 30.58 -2052.412",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "542",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1094.461 30.468 -2123.979",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "543",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1066.966 30.825 -2193.641",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "544",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1208.599 10.189 -2068.546",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "545",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2038.817 74.063 -1460.911",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "546",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2008.369 75.247 -1495.784",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "547",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1949.523 290.187 -907.39",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "548",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1948.564 295.391 -809.741",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "549",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1890.638 290.187 -843.593",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "550",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1443.659 261.002 -56.184",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "551",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1446.331 257.453 -100.093",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "552",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2498.333 98.347 -1608.099",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "553",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2473.216 78.751 -1683.32",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "554",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2622.599 106.238 -1581.966",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "555",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "865.568 149.842 1437.952",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "556",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "863.36 149.898 1480.245",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "557",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1653.18 1.633 1822.215",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "558",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1550.148 1.989 1803.368",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "559",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2067.983 352.904 1729.743",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "560",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2068.716 365.818 1657.137",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "561",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2325.113 363.77 1847.481",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "562",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2309.878 355.848 1938.278",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "563",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2832.598 19.547 1343.837",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "564",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2877.334 12.71 1292.242",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "565",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2913.736 17.658 1353.313",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "566",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1661.341 129.6565 1391.272",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "567",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1734.084 126.5979 1285.724",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "568",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1677.194 131.456 1328.891",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "569",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2275.286 97.238 743.169",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "570",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2350.369 95.988 727.993",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "571",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2353.81 94.638 654.538",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "572",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2068.403 20.23 2418.375",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "573",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "2098.313 21.736 2466.323",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "574",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1936.672 24.366 2459.305",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "575",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1256.31 56.27 2906.768",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "576",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1334.377 56.287 2885.911",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "577",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1059.795 9.961 2316.738",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "578",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1064.466 22.532 2379.397",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "579",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1626.657 80.285 3545.224",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "580",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1567.652 70.527 3578.816",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "581",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1584.158 137.525 3729.033",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "582",
+      "name": "Cow",
+      "group": "Animals",
+      "coordinates": "1625.295 153.184 3655.651",
+      "marker_identifier": "animal-cow"
+    },
+    {
+      "external_row_id": "584",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-1879.974 121.6055 -1340.485",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "585",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-1926.047 120.9182 -1291.989",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "586",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2488.777 121.4719 -1161.052",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "587",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2568.468 121.6046 -1100.847",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "588",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2695.323 143.1409 -1213.443",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "589",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2685.862 161.0363 -1376.435",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "590",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-1895.434 120.4892 -1408.413",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "591",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2056.804 120.0266 -1171.492",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "592",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2272.322 119.7239 -1136.441",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "593",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-2090.881 62.9535 -962.716",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "594",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-1877.703 10.1194 -1134.856",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "595",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-1175.49 60.6551 -575.1183",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "596",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-223.4398 103.9408 -354.7277",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "597",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-320.7206 78.3581 -289.3572",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "598",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "-165.484 87.792 -259.507",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "599",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "545.168 74.369 138.313",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "600",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "463.6992 75.2647 132.3058",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "601",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "760.25 166.022 -375.896",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "602",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "835.266 174.184 -419.668",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "603",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1183.2 23.348 -2147.501",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "604",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1253.442 14.323 -2119.914",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "605",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1136.119 18.292 -2222.806",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "606",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1945.857 74.716 -1444.406",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "607",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1934.787 69.166 -1396.762",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "608",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2052.879 293.907 7.8744",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "609",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2108.708 294.0178 29.4605",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "610",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1475.523 257.453 154.819",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "611",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1621.917 259.894 278.902",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "612",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1556.045 254.488 -104.685",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "613",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2567.646 65.413 -1749.436",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "614",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2646.774 65.35 -1770.717",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "615",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2717.839 66.005 -1749.048",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "616",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2753.893 2.175 818.354",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "617",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2832.623 2.24 877.997",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "618",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2921.583 1.51 894.025",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "619",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2908.594 4.375 972.015",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "620",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2220.055 96.333 664.526",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "621",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2244.078 96.333 662.202",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "622",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2206.862 96.288 735.452",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "623",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1068.979 2.287 2045.784",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "624",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1028.026 2.968 2058.09",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "625",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1288.752 56.274 2769.143",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "626",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1434.234 62.727 2742.461",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "627",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1671.586 23.329 2783.965",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "628",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1801.705 3.326 2785.866",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "629",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1537.939 26.213 3447.998",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "630",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "1529.766 52.249 3534.28",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "631",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2357.051 400.932 3658.908",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "632",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2497.122 397.475 3684.704",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "633",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2463.474 434.332 3496.949",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "634",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2336.919 381.37 3739.965",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "635",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2563.525 422.135 3591.08",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "636",
+      "name": "Sheep",
+      "group": "Animals",
+      "coordinates": "2607.242 437.931 3529.35",
+      "marker_identifier": "animal-sheep"
+    },
+    {
+      "external_row_id": "638",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "-2548.184 200.0338 -1532.685",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "639",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "-312.022 144.485 -762.783",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "640",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "-102.941 82.99 79.59",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "641",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "36.551 124.391 159.403",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "642",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "-17.757 125.263 73.202",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "643",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "783.4695 74.3405 -78.3759",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "644",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "676.6718 143.7273 142.8812",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "645",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "676.2527 3.5367 382.5064",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "646",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "560.1521 119.0057 -39.6846",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "647",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "770.273 80.737 -2109.977",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "648",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "857.9379 38.3189 -1337.378",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "649",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "2567.451 26.529 -1965.535",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "650",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "2428.277 36.115 -1862.7",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "651",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "2508.127 36.765 -1873.264",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "652",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "1967.491 206.977 409.153",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "653",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "2398.312 275.565 -92.926",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "654",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "762.674 70.33 1154.644",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "655",
+      "name": "Bear",
+      "group": "Animals",
+      "coordinates": "1601.606 50.707 2448.127",
+      "marker_identifier": "animal-bear"
+    },
+    {
+      "external_row_id": "657",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-2146.647 119.83 -1177.194",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "658",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-2118.729 125.6651 -1224.228",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "659",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-2743.492 141.7953 -1432.261",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "660",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-2167.588 127.0085 -1292.117",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "661",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-1203.438 55.616 -629.952",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "662",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-215.9645 142.8129 -483.3471",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "663",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "-319.7883 120.112 -543.2628",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "664",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "398.288 111.61 87.529",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "665",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "841.201 165.395 -473.511",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "666",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "695.159 153.514 -402.636",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "667",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "997.366 71.081 -1294.029",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "668",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "942.672 74.528 -1357.419",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "669",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "860.021 115.003 -1204.124",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "670",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "996.822 117.748 -1215.696",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "671",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "596.247 49.897 -1498.875",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "672",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "522.684 67.195 -1541.108",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "673",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "435.042 30.736 -1816.556",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "674",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "426.738 60.839 -1773.429",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "675",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1808.08 75.428 -1512.646",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "676",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1755.941 75.247 -1437.111",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "677",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1754.159 88.265 -1508.613",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "678",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1531.108 258.02 -60.801",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "679",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1489.958 258.354 -119.866",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "680",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2119.861 290.988 122.629",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "681",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2067.038 293.88 136.281",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "682",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1510.552 258.38 -691.391",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "683",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1620.11 258.388 -674.1",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "684",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1573.836 240.167 -608.77",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "685",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2499.621 389.482 -983.572",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "686",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2427.368 388.276 -933.302",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "687",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2418.681 388.397 -1000.752",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "688",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2031.078 176 631.112",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "689",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2085.533 176 628.97",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "690",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2194.79 161.221 558.114",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "691",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2032.203 176 562.705",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "692",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2186.275 354.076 1815.997",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "693",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2235.528 355.51 1775.136",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "694",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2051.161 373.154 1627.012",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "695",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2073.543 353.955 1655.732",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "696",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2067.808 369.565 1790.133",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "697",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2005.573 353.618 1741.683",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "698",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "971.409 10.159 1906.357",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "699",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1031.907 10.37 1971.834",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "700",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1883.888 251.401 3611.175",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "701",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1880.907 248.884 3687.488",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "702",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "1922.348 260.025 3648.189",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "703",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2601.255 523.821 2918.291",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "704",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2599.339 516.242 2998.088",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "705",
+      "name": "Chicken",
+      "group": "Animals",
+      "coordinates": "2665.208 521.473 3076.828",
+      "marker_identifier": "animal-chicken"
+    },
+    {
+      "external_row_id": "707",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2692.779 87.3229 -1066.129",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "708",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2734.426 84.9969 -1164.576",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "709",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2728.122 85.6572 -1114.514",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "710",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2652.065 133.3588 -1139.161",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "711",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2706.807 142.4815 -1295.839",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "712",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2754.574 143.3439 -1381.003",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "713",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2671.934 170.3463 -1470.507",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "714",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2585.722 160.8361 -1284.442",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "715",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2399.938 232.097 -1558.81",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "716",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2377.452 237.329 -1584.017",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "717",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2253.59 310.2235 -1653.779",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "718",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-2026.095 60.4672 -998.2319",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "719",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-1932.161 43.6395 -1043.283",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "720",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-1358.931 47.402 -280.513",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "721",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-426.493 71.369 -347.578",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "722",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-482.829 65.508 -401.659",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "723",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-779.976 90.621 -759.667",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "724",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-779.132 113.028 -837.305",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "725",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-843.499 100.786 -898.024",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "726",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "-831.799 138.724 -997.752",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "727",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "429.519 194.794 -556.455",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "728",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "439.997 211.804 -627.455",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "729",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "279.574 100.681 63.482",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "730",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "354.419 74.482 151.72",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "731",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "599.655 157.259 -284.486",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "732",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "690.7 163.023 -265.12",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "733",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "217.74 188.848 -638.601",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "734",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "162.702 210.048 -557.979",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "735",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "107.15 194.084 -517.045",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "736",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "878.508 26.974 -944.198",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "737",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "856.751 23.922 -837.596",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "738",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "701.198 32.522 -2206.603",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "739",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "841.365 33.757 -2175.54",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "740",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "552.877 124.382 -1120.238",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "741",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "649.549 108.319 -1146.895",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "742",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "469.909 23.737 -1298.16",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "743",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "522.034 23.957 -1223.727",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "744",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "635.835 23.922 -1447.934",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "745",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "713.351 21.418 -1511.618",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "746",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2049.883 67.778 -1399.074",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "747",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1821.531 54.564 -1430.373",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "748",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1426.394 263.8955 13.6423",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "749",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1390.089 262.8126 -36.3887",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "750",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2173.382 291.781 21.6469",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "751",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2216.093 277.654 150.981",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "752",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2136.192 291.6275 76.6056",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "753",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2142.248 403.6179 -629.1086",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "754",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2231.08 444.671 -662.134",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "755",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2134.254 391.789 -695.11",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "756",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2145.006 381.453 -789.579",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "757",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2291.267 447.933 -779.387",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "758",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2301.387 102.95 634.388",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "759",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1962.051 200.958 689.586",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "760",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1782.127 196.619 552.984",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "761",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1963.611 200.062 564.951",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "762",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2933.83 4.491 1137.615",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "763",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2953.879 2.527 1238.184",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "764",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "952.305 9.095 1696.738",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "765",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1013.82 7.068 1735.031",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "766",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "945.839 8.132 1627.921",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "767",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2145.42 122.691 770.005",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "768",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2149.614 125.112 680.38",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "769",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1827.011 190.591 603.133",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "770",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1772.428 185.187 647.749",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "771",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1135.36 42.1159 2556.503",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "772",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1112.599 40.334 2635.8",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "773",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1945.371 7.581 2245.872",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "774",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "1951.558 32.956 2351.903",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "775",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2126.179 332.491 3774.134",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "776",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2167.963 357.202 3676.063",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "777",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2589.846 472.247 3406.777",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "778",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2597.418 487.236 3233.466",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "779",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2197.318 341.538 3779.44",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "780",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2474.209 428.286 3572.657",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "781",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2544.468 452.816 3507.313",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "782",
+      "name": "Deer",
+      "group": "Animals",
+      "coordinates": "2646.731 502.982 3193.14",
+      "marker_identifier": "animal-deer"
+    },
+    {
+      "external_row_id": "784",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-1133.485 1.6796 -1063.138",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "785",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-1168.326 3.7341 -1090.236",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "786",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-1748.417 1.777 -885.259",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "787",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-489.918 81.967 -1.27",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "788",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-514.405 81.756 98.992",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "789",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-613.163 83.919 0.185",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "790",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-625.508 83.693 -111.227",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "791",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "-538.978 83.661 -78.587",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "792",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3282.685 2.87 468.916",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "793",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2836.516 2.308 451.724",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "794",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3779.134 4.182 343.832",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "795",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3694 3.248 383.712",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "796",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "4344.138 3.482 -366.927",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "797",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3818.764 5.754 -1384.423",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "798",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3245.279 0.662 -1929.129",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "799",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "3006.356 7.136 -1997.179",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "800",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2681.061 5.463 -2201.166",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "801",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2669.316 7.087 -1955.577",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "802",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2786.047 11.961 -2015.61",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "803",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2043.132 122.304 769.642",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "804",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2082.265 121.815 718.697",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "805",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2677.505 19.039 1702.067",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "806",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2639.36 19.047 1730.107",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "807",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2573.947 26.742 1707.426",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "808",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2512.408 110.107 1642.846",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "809",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2524.904 111.944 1680.945",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "810",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "1624.782 -0.574 3323.08",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "811",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "1550.824 0.119 3387.852",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "812",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2018.81 -0.899 3431.483",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "813",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2107.148 0.71 3471.86",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "814",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2187.448 -0.934 3085.625",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "815",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2112.241 -2.291 3042.33",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "816",
+      "name": "Crocodile",
+      "group": "Animals",
+      "coordinates": "2062.79 -0.282 3078.958",
+      "marker_identifier": "animal-crocodile"
+    },
+    {
+      "external_row_id": "818",
+      "name": "Horse",
+      "group": "Animals",
+      "coordinates": "-1629.102 10.1391 -545.6976",
+      "marker_identifier": "animal-horse"
+    },
+    {
+      "external_row_id": "819",
+      "name": "Horse",
+      "group": "Animals",
+      "coordinates": "-1520.854 10.1193 -541.6168",
+      "marker_identifier": "animal-horse"
+    },
+    {
+      "external_row_id": "820",
+      "name": "Horse",
+      "group": "Animals",
+      "coordinates": "-1497.366 9.018 -714.078",
+      "marker_identifier": "animal-horse"
+    },
+    {
+      "external_row_id": "821",
+      "name": "Horse",
+      "group": "Animals",
+      "coordinates": "-1456.936 22.921 -662.05",
+      "marker_identifier": "animal-horse"
+    },
+    {
+      "external_row_id": "822",
+      "name": "Horse",
+      "group": "Animals",
+      "coordinates": "-1534.613 10.621 -653.4296",
+      "marker_identifier": "animal-horse"
+    },
+    {
+      "external_row_id": "824",
+      "name": "Pig",
+      "group": "Animals",
+      "coordinates": "-1624.768 10.1194 -662.795",
+      "marker_identifier": "animal-pig"
+    },
+    {
+      "external_row_id": "825",
+      "name": "Pig",
+      "group": "Animals",
+      "coordinates": "-1690.706 10.185 -595.442",
+      "marker_identifier": "animal-pig"
+    },
+    {
+      "external_row_id": "827",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-895.847 52.504 92.437",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "828",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-794.724 40.243 80.019",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "829",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-794.598 44.22 153.648",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "830",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-871.673 52.898 197.777",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "831",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-936.683 70.839 241.65",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "832",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "92.413 56.412 388.809",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "833",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-17.495 2.543 521.329",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "834",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-458.316 80.499 238.811",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "835",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-570.401 83.732 157.511",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "836",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-685.081 97.997 9.91",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "837",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "76.154 73.809 219.567",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "838",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "408.65 63.973 180.49",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "839",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "563.878 14.272 296.044",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "840",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "704.95 3.601 356.362",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "841",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "752.331 10.538 310.175",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "842",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "785.731 28.35 215.279",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "843",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "880.405 57.579 105.253",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "844",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-10.362 2.326 -1262.276",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "845",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "32.625 2.326 -1271.404",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "846",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "62.154 6.275 -1223.763",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "847",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "16.01 60.633 -1008.988",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "848",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-18.121 2.683 -896.629",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "849",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-149.906 28.131 -848.2",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "850",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-293.974 27.606 -848.585",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "851",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-528.957 52.42 -841.094",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "852",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-588.706 151.598 -818.586",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "853",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-762.289 110.701 -1054.122",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "854",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-902.906 44.022 -1149.082",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "855",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-845.212 50.032 -1098.918",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "856",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-723.226 102.524 -710.223",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "857",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "1252.205 3.48 -2203.534",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "858",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "1041.034 2.789 -2276.423",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "859",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "709.463 2.808 -2313.215",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "860",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "996.609 2.949 -1987.007",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "861",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "873.378 2.949 -1969.451",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "862",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "684.499 1.178 -1417.998",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "863",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "709.975 1.022 -1686.099",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "864",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-1147.34 3.966 -2040.381",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "865",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "-1232.648 10.989 -2247.363",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "866",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2051.482 6.681 -1868.271",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "867",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "1955.702 1.9 -1741.878",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "868",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "1932.281 1.9 -1651.169",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "869",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2665.833 15.89 -2040.1",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "870",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2665.351 16.207 -2125.164",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "871",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2756.488 17.248 -2088.982",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "872",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2571.725 5.795 -2278.934",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "873",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2868.163 7.676 -2014.336",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "874",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3284.723 12.433 -1816.501",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "875",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3352.479 12.856 -1768.652",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "876",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3442.335 26.15 -1570.74",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "877",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3661.312 10.395 -1406.349",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "878",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3737.94 23.528 -1330.479",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "879",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3839.875 28.692 -1273.162",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "880",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4173.548 65.375 -1100.076",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "881",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4337.176 55.651 -1049.006",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "882",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4336.612 45.308 -911.037",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "883",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4309.803 39.858 -705.497",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "884",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4262.136 9.048 -478.232",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "885",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4266.919 11.399 -395.394",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "886",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4196.336 78.872 -211.228",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "887",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4116.61 19.902 -101.928",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "888",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "4059.22 24.921 -69.848",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "889",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3881.411 50.684 69.691",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "890",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3324.85 29.906 404.786",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "891",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3390.384 41.142 373.582",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "892",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3134.072 12.949 470.158",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "893",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3129.622 12.79 474.895",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "894",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "3129.279 12.786 474.704",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "895",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2866.121 42.299 375.858",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "896",
+      "name": "Black-tailed Gull",
+      "group": "Animals",
+      "coordinates": "2814.056 42.79 302.398",
+      "marker_identifier": "animal-black-tailed-gull"
+    },
+    {
+      "external_row_id": "898",
+      "name": "Lone Wolf",
+      "group": "Animals",
+      "coordinates": "301.2311 89.1754 17.6478",
+      "marker_identifier": "animal-lone-wolf"
+    },
+    {
+      "external_row_id": "899",
+      "name": "Lone Wolf",
+      "group": "Animals",
+      "coordinates": "978.2207 79.4377 -303.1242",
+      "marker_identifier": "animal-lone-wolf"
+    },
+    {
+      "external_row_id": "900",
+      "name": "Lone Wolf",
+      "group": "Animals",
+      "coordinates": "502.6859 67.7109 158.3145",
+      "marker_identifier": "animal-lone-wolf"
+    },
+    {
+      "external_row_id": "901",
+      "name": "Lone Wolf",
+      "group": "Animals",
+      "coordinates": "2153.485 285.244 303.977",
+      "marker_identifier": "animal-lone-wolf"
+    },
+    {
+      "external_row_id": "902",
+      "name": "Lone Wolf",
+      "group": "Animals",
+      "coordinates": "2304.736 276.954 -10.807",
+      "marker_identifier": "animal-lone-wolf"
+    },
+    {
+      "external_row_id": "904",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-931.3794 51.8291 -983.3303",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "905",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-940.21 28.454 -916.38",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "906",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-985.765 11.667 -890.577",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "907",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-960.5599 38.7239 -677.2329",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "908",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-916.9457 36.6748 -616.7903",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "909",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-983.2116 28.4666 -761.8154",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "910",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-927.7521 38.2606 -784.0709",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "911",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-889.707 61.159 -998.905",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "912",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "369.16 188.102 -565.22",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "913",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "365.323 183.77 -504.413",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "914",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-56.998 198.02 -489.541",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "915",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-26.268 187.152 -414.151",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "916",
+      "name": "Boar",
+      "group": "Animals",
+      "coordinates": "-13.792 184.531 -468.967",
+      "marker_identifier": "animal-boar"
+    },
+    {
+      "external_row_id": "918",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "-201.13 41.238 285.243",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "919",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "-268.784 38.295 249.489",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "920",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "-148.075 41.488 349.039",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "921",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "-147.759 40.742 203.389",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "922",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "268.6031 108.6544 -146.5205",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "923",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "199.7915 108.7928 -216.6037",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "924",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "173.0896 126.3911 -272.0348",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "925",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "720.488 158.046 -178.132",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "926",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "561.625 156.941 -178.64",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "927",
+      "name": "Buffalo",
+      "group": "Animals",
+      "coordinates": "644.382 151.516 -119.708",
+      "marker_identifier": "animal-buffalo"
+    },
+    {
+      "external_row_id": "929",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1072.2 22.2 -1828.586",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "930",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1054.558 21.7 -1923.128",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "931",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "956.109 2.313 -2016.222",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "932",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "915.864 2.501 -2004.911",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "933",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "-1185.487 5.6405 -2085.625",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "934",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "-1244.523 7.6929 -2182.841",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "935",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1112.121 -0.007 2225.28",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "936",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1181.015 0.963 2222.918",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "937",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1548.364 0.198 2074.248",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "938",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1676.704 1.032 2058.275",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "939",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "2016.087 0.165 2205.004",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "940",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "2096.841 0.472 2270.73",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "941",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "2409.312 -1.367 3067.908",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "942",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "2334.136 0.114 3134.358",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "943",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1250.114 -1.33 3484.053",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "944",
+      "name": "Biting Alligator Turtle",
+      "group": "Animals",
+      "coordinates": "1255.247 -1.33 3395.063",
+      "marker_identifier": "animal-turtle"
+    },
+    {
+      "external_row_id": "946",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1006.294 5.9819 -2220.728",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "947",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "845.8292 1.6217 -2264.206",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "948",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1229.071 4.676 -2062.214",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "949",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "785.342 4.054 -2308.049",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "950",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "758.774 3.828 -1183.878",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "951",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "719.649 26.982 -1099.003",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "952",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "-1091.877 30.84 -2172.44",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "953",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "-1118.135 26.049 -2225.409",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "954",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "-1177.692 28.625 -2166.047",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "955",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "338.5775 4.9133 -1888.445",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "956",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "2047.917 17.216 2488.538",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "957",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "2086.582 4.416 2573.126",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "958",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1972.083 20.021 2490.278",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "959",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1033.157 56.105 2892.574",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "960",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1064.711 55.385 2804.055",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "961",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1136.054 56.865 2957.774",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "962",
+      "name": "Forlorn Giant Tortoise",
+      "group": "Animals",
+      "coordinates": "1093.093 56.143 2721.649",
+      "marker_identifier": "animal-tortoise"
+    },
+    {
+      "external_row_id": "964",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "-188.141 106.833 -2253.528",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "965",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "-151.683 31.694 -2228.499",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "966",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "-966.775 40.226 -2380.854",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "967",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "-853.2566 15.1646 -2331.599",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "968",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "-962.695 20.207 -2248.563",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "969",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "2082.003 200.386 -1142.576",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "970",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "2012.732 154.013 -1176.225",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "971",
+      "name": "Stubborn Gorilla",
+      "group": "Animals",
+      "coordinates": "2276.628 47.67 -1575.882",
+      "marker_identifier": "animal-gorilla"
+    },
+    {
+      "external_row_id": "973",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "2262.244 221.302 -1260.338",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "974",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "2310.724 218.414 -1309.855",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "975",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "2245.373 220.307 -1137.22",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "976",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "2147.121 193.349 -1147.623",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "977",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "3252.153 265.654 -1120.032",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "978",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "3344.695 256.614 -1134.199",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "979",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "3304.713 235.052 -1290.112",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "980",
+      "name": "Fox",
+      "group": "Animals",
+      "coordinates": "3386.125 238.934 -1246.089",
+      "marker_identifier": "animal-fox"
+    },
+    {
+      "external_row_id": "982",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "1781.665 102.678 233.816",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "983",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "1939.548 206.9689 142.2781",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "984",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "2166.036 293.8999 -62.8063",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "985",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "2010.597 281.26 -371.362",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "986",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "2017.084 324.2321 -749.2789",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "987",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "2002.81 274.906 38.585",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "988",
+      "name": "Absorbing Bat",
+      "group": "Animals",
+      "coordinates": "1639.622 219.792 -85.25",
+      "marker_identifier": "animal-bat"
+    },
+    {
+      "external_row_id": "990",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "-1570.72 27.151 -423.696",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "991",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "-1461.693 29.9229 -392.6863",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "992",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "-1564.366 23.288 -246.2923",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "993",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "-1537.903 22.964 -391.233",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "994",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "-1519.048 40.7724 -291.2715",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "995",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2171.113 273 399.095",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "996",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2375.894 277.2106 18.7636",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "997",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2229.145 276.014 280.594",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "998",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "3367.098 306.087 -156.784",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "999",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "3267.122 306.087 -223.562",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "1000",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "3149.216 307.186 -185.312",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "1001",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2560.382 624.922 -696.134",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "1002",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2565.502 647.655 -753.462",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "1003",
+      "name": "Wolf",
+      "group": "Animals",
+      "coordinates": "2598.801 647.764 -825.515",
+      "marker_identifier": "animal-wolf"
+    },
+    {
+      "external_row_id": "1005",
+      "name": "Kicking Off Cassowary",
+      "group": "Animals",
+      "coordinates": "1764.093 290.187 -740.101",
+      "marker_identifier": "animal-cassowary"
+    },
+    {
+      "external_row_id": "1006",
+      "name": "Kicking Off Cassowary",
+      "group": "Animals",
+      "coordinates": "1818.447 290.254 -813.217",
+      "marker_identifier": "animal-cassowary"
+    },
+    {
+      "external_row_id": "1007",
+      "name": "Kicking Off Cassowary",
+      "group": "Animals",
+      "coordinates": "2053.177 305.906 -835.257",
+      "marker_identifier": "animal-cassowary"
+    },
+    {
+      "external_row_id": "1009",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "3073.44 266.369 -1304.107",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1010",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "2730.936 22.773 183.684",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1011",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "2730.634 22.766 183.506",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1012",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "2715.995 6.869 248.958",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1013",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "2733.061 1.73 323.488",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1014",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "3970.769 53.693 -1083.876",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1015",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "4256.349 55.863 -989.745",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1016",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "4203.771 46.81 -773.138",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1017",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "4133.444 30.328 -357.019",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1018",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "4061.988 36.98 -173.701",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1019",
+      "name": "Slipping Penguin",
+      "group": "Animals",
+      "coordinates": "2975.36 43.259 409.356",
+      "marker_identifier": "animal-penguin"
+    },
+    {
+      "external_row_id": "1021",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "2543.858 242.15 -84.322",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1022",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "3213.056 184.618 46.605",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1023",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "4347.543 13.481 100.348",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1024",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "2439.49 252.81 -1250.573",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1025",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "2875.19 720.126 -490.121",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1026",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "3201.481 692.278 -637.574",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1027",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "3877.748 199.426 -912.23",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1028",
+      "name": "White Bear",
+      "group": "Animals",
+      "coordinates": "2837.207 289.254 -1373.079",
+      "marker_identifier": "animal-white-bear"
+    },
+    {
+      "external_row_id": "1030",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1734.582 140.185 923.647",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1031",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1739.363 124.532 1220.962",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1032",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "628.969 5.434 1261.875",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1033",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1208.107 31.119 1068.526",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1034",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1046.726 40.141 1180.078",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1035",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "693.137 3.285 1548.462",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1036",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "839.195 9.728 1645.38",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1037",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1685.753 127.053 1234.919",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1038",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "2253.774 101.673 811.001",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1039",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "2305.864 100.787 826.704",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1040",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1175.412 21.001 1029.16",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1041",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1167.695 13.746 987.402",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1042",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "740.162 0.732 1631.204",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1043",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "760.858 10.034 1537.286",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1044",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1327.262 4.858 1879.846",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1045",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1364.867 3.911 1888.324",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1046",
+      "name": "Pekoga",
+      "group": "Animals",
+      "coordinates": "1334.643 2.605 1930.345",
+      "marker_identifier": "animal-pekoga"
+    },
+    {
+      "external_row_id": "1048",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1043.858 5.512 1035.071",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1049",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1094.227 10.124 1038.525",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1050",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1881.693 156.042 865.968",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1051",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1880.393 146.887 933.27",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1052",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "2320.153 96.744 758.558",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1053",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "2330.354 97.959 792.776",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1054",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "2544.248 83.821 713.789",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1055",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "2553.046 84.112 730.381",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1056",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1140.907 7.047 1911.96",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1057",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1202.844 6.297 1926.969",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1058",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1146.63 3.801 1981.448",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1059",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "958.948 10.034 1995.971",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1060",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "903.693 6.649 1953.564",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1061",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "916.06 7.354 2002.241",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1062",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1114.494 4.993 992.985",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1063",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1012.532 9.186 1823.196",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1064",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "964.515 9.618 1829.453",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1065",
+      "name": "Camel",
+      "group": "Animals",
+      "coordinates": "1015.467 9.961 1864.841",
+      "marker_identifier": "animal-camel"
+    },
+    {
+      "external_row_id": "1067",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2284.709 354.12 1812.114",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1068",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2152.884 354.864 1782.319",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1069",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2119.927 353.643 1823.901",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1070",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2918.35 14.856 1406.952",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1071",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2816.179 16.72 1462.418",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1072",
+      "name": "Elephant",
+      "group": "Animals",
+      "coordinates": "2990.842 3.313 1415.651",
+      "marker_identifier": "animal-elephant"
+    },
+    {
+      "external_row_id": "1074",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1421.233 10.231 3305.052",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1075",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1486.963 9.845 3315.393",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1076",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1414.702 10.119 3234.341",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1077",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1008.141 36.255 2596.722",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1078",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "929.936 35.91 2540.718",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1079",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "939.9705 35.8705 2608.138",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1080",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1036.014 34.801 2555.626",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1081",
+      "name": "Cow Bomb",
+      "group": "Animals",
+      "coordinates": "1582.332 42.419 2268.17",
+      "marker_identifier": "animal-cowbomb"
+    },
+    {
+      "external_row_id": "1083",
+      "name": "Giraffe",
+      "group": "Animals",
+      "coordinates": "1350.399 55.463 2996.213",
+      "marker_identifier": "animal-giraffe"
+    },
+    {
+      "external_row_id": "1084",
+      "name": "Giraffe",
+      "group": "Animals",
+      "coordinates": "1270.33 56.053 2975.49",
+      "marker_identifier": "animal-giraffe"
+    },
+    {
+      "external_row_id": "1085",
+      "name": "Giraffe",
+      "group": "Animals",
+      "coordinates": "1333.924 56.137 2932.23",
+      "marker_identifier": "animal-giraffe"
+    },
+    {
+      "external_row_id": "1087",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1968.796 0.9838 2875.125",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1088",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1868.473 2.209 2920.179",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1089",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1739.807 5.676 2826.496",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1090",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1449.363 69.865 2758.935",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1091",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1441.845 57.167 2820.04",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1092",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1205.845 56.289 2777.634",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1093",
+      "name": "Frog",
+      "group": "Animals",
+      "coordinates": "1150.218 55.616 2887.91",
+      "marker_identifier": "animal-frog"
+    },
+    {
+      "external_row_id": "1131",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-2999.859 -4.85 -849.4885",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1132",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-2413.492 -4.85 -2087.19",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1133",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-1386.998 -4.85 -1459.99",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1134",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-597.0431 -4.85 -1249.046",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1135",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-1130.163 -4.85 414.5026",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1136",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "188.6738 -4.85 771.8576",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1137",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-714.7941 -4.85 -1997.635",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1138",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "1198.961 -4.85 -2561.246",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1139",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "2874.111 -4.85 -2554.661",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1140",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "4823.612 -4.85 123.105",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1141",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "3811.548 -4.85 1288.843",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1142",
+      "name": "School of Fish",
+      "group": "Fishing",
+      "coordinates": "-425.1843 -0.85 1063.682",
+      "marker_identifier": "fish-school"
+    },
+    {
+      "external_row_id": "1874",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2494.1, -1611.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1875",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2272.5, -1455.3]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1876",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2024.1, -1452.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1877",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1949.4, -1490.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1878",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1934.7, -1452.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1879",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2180.3, -1373.9]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1880",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2159.0, -1385.9]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1881",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2128.3, -1344.5]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1882",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2108.2, -1074.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1883",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2109.6, -1128.2]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1884",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-2179.0, -1203.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1885",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2584.9, -1615.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1886",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2539.5, -1854.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1887",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2482.1, -1718.4]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1888",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2697.1, -1434.0]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1889",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2701.1, -1416.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1890",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2694.4, -1379.2]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1891",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2316.5, -1809.2]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1892",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2224.4, -1707.7]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1893",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2319.2, -1436.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1894",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2112.3, -1416.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1895",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2494.1, -1144.2]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1896",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2468.8, -1141.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1897",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2434.0, -1101.5]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1898",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-2139.0, -830.5]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1899",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1798.5, -1069.5]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1900",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1685.0, -977.3]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1901",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1667.6, -965.3]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1902",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2435.4, -1587.5]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1903",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2415.3, -1555.5]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1904",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2615.6, -1834.5]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1905",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2498.1, -1791.8]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1906",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2802.6, -1648.9]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1907",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2363.3, -1889.3]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1908",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2312.5, -1751.8]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1909",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2325.9, -1634.3]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1910",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2149.6, -1363.2]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1911",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2196.4, -1404.6]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1912",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-2197.7, -1422.0]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1913",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-1798.5, -1174.9]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1914",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-1822.5, -1228.4]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1915",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-2522.2, -1603.5]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1916",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-2582.2, -1855.9]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1917",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-2813.2, -1562.2]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1918",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-2761.2, -1333.8]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1919",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-2248.4, -1650.3]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1920",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1677.0, -1089.5]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1921",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2686.4, -1791.8]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1922",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2224.4, -1587.5]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1923",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2331.2, -1488.7]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1924",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1982.7, -1588.9]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1925",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1961.4, -1627.6]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1926",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2383.3, -1195.0]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1927",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2297.8, -1117.5]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1928",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2295.2, -1154.9]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1929",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2240.4, -1037.4]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1930",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-2082.9, -1196.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1931",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1909.3, -1124.2]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1932",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1766.4, -974.7]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1933",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1587.5, -940.0]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1934",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1365.9, -757.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1935",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1494.1, -759.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1936",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1511.4, -635.5]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1937",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1738.4, -563.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1938",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-1367.2, -420.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1939",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-877.2, -761.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1940",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-631.5, -709.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1941",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-547.4, -802.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1942",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-847.3, -285.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1943",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-912.8, 81.5]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1944",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-844.7, 77.5]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1945",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-791.3, 78.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1946",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-188.2, 49.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1947",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[9.4, 239.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1948",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[209.7, 141.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1949",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[208.3, 68.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1950",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-160.2, -92.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1951",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1197.6, -922.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1952",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1508.7, -606.2]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1953",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1749.1, -526.0]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1954",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-1717.0, -547.4]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1955",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-616.8, -742.3]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1956",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[-828.6, 94.8]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1957",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-1181.6, -895.9]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1958",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-1512.7, -795.7]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1959",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-1389.9, -267.0]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1960",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-849.2, -711.6]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1961",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-779.7, -750.4]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1962",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-928.8, 126.9]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1963",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[-906.1, 203.0]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1964",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1137.6, -893.2]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1965",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1132.2, -925.3]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1966",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1462.0, -785.1]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1967",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1455.3, -814.4]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1968",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1743.7, -530.0]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "1969",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1443.3, -1241.7]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1970",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1467.4, -1070.8]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1971",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-1173.6, -945.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1972",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[-688.4, -25.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "1973",
+      "name": "Poisonous Mushroom",
+      "group": "Plants",
+      "coordinates": "[-110.8, -1020.1]",
+      "marker_identifier": "plants-mushroom-poisonous"
+    },
+    {
+      "external_row_id": "1974",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[12.8, -125.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1975",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-204.3, -177.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1976",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[-140.2, -196.2]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1977",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[279.1, -600.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1978",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[86.8, -774.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1979",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[239.0, -865.2]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1980",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[256.4, -1076.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1981",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[534.1, -810.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1982",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[562.2, -942.6]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1983",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[523.4, -941.3]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1984",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[532.8, -970.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1985",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[921.3, -891.9]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1986",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[956.0, -765.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1987",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[530.1, -555.4]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1988",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[731.7, -218.9]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "1989",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[488.7, -938.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1990",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[528.8, -1009.4]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1991",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[272.4, -2252.5]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1992",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[793.1, -464.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1993",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[837.2, -404.5]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1994",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[998.8, -281.7]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1995",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[1030.8, -212.3]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1996",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[871.9, -57.4]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1997",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[825.2, 10.7]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "1998",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[67.5, -12.1]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "1999",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[47.5, -112.3]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2000",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[193.6, -276.4]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2001",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[187.0, -914.6]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2002",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[125.5, -919.9]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2003",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[173.6, -1002.7]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2004",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[1064.2, -2037.5]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2005",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[1196.4, -2024.1]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2006",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[88.2, -475.3]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2007",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[13.4, -492.7]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2008",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[37.4, -680.9]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2009",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[106.9, -730.3]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2010",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[86.8, -817.1]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2011",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[179.0, -850.5]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2012",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-1124.0, -2273.6]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2013",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[-939.7, -2311.0]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2014",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[1192.4, -2069.5]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2015",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[754.4, 82.8]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2016",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[491.4, -965.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2017",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[1159.0, -2112.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2018",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[837.2, -1574.2]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2019",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[790.5, -1783.8]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2020",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[842.5, -889.2]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2021",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[914.6, -945.3]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2022",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[916.0, -819.8]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2023",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[986.7, -580.8]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2024",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[-216.3, -2295.2]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2025",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[184.3, -2305.9]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2026",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[-236.3, -2260.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2027",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[-166.9, -2220.4]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2028",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[455.3, -48.0]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2029",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[464.8, -122.7]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2030",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[388.3, -104.8]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2031",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[779.8, 50.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2032",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[733.1, 50.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2033",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[594.2, 2.7]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2034",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[644.9, 86.8]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2035",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[2602.3, -1745.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2036",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[2495.5, -1554.1]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2037",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[2147.0, -761.0]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2038",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[1363.3, -256.3]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "2039",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[1586.3, -309.7]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "2040",
+      "name": "Red Herb",
+      "group": "Plants",
+      "coordinates": "[1492.8, -428.6]",
+      "marker_identifier": "plants-herb-red"
+    },
+    {
+      "external_row_id": "2041",
+      "name": "Blue Herb",
+      "group": "Plants",
+      "coordinates": "[683.7, 252.4]",
+      "marker_identifier": "plants-herb-blue"
+    },
+    {
+      "external_row_id": "2042",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[1368.6, -156.2]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2043",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[1391.3, -178.9]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2044",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[1522.2, -468.6]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2045",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[2026.9, -1582.2]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2046",
+      "name": "Yellow Herb",
+      "group": "Plants",
+      "coordinates": "[1912.0, -281.7]",
+      "marker_identifier": "plants-herb-yellow"
+    },
+    {
+      "external_row_id": "2047",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[1367.3, -291.0]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2048",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[2204.4, -32.0]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2049",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[2143.0, 60.1]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2050",
+      "name": "Mushroom",
+      "group": "Plants",
+      "coordinates": "[2030.9, -44.0]",
+      "marker_identifier": "plants-mushroom"
+    },
+    {
+      "external_row_id": "2051",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2665.1, -1815.8]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2052",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2558.3, -1837.2]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2053",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2599.7, -1770.4]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2054",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2303.3, -1697.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2055",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2350.0, -952.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2056",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2531.6, -984.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2057",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2436.8, -761.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2058",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2366.0, -22.7]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2059",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2201.8, -146.8]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2060",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[1921.4, 413.9]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2061",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2013.5, 415.3]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2062",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2710.5, 526.1]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2063",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2836.0, 689.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2064",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2775.9, 650.3]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2065",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[1774.5, 76.1]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2066",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2475.5, -1687.7]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2067",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2243.2, -1667.6]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2068",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2301.9, -1612.9]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2069",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2550.3, -777.1]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2070",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2068.3, -886.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2071",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2069.6, -838.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2072",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2382.0, -92.1]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2073",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2163.1, -113.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2074",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2016.2, -256.3]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2075",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2336.6, 428.6]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2076",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2940.1, 349.9]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2077",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3020.3, 401.9]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2078",
+      "name": "Wild Berry",
+      "group": "Plants",
+      "coordinates": "[4084.4, -101.5]",
+      "marker_identifier": "plants-berry-wild"
+    },
+    {
+      "external_row_id": "2079",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[2630.4, -970.7]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2080",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[3427.5, -1442.0]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2081",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[4111.1, -188.3]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2082",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[3969.6, -208.3]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2083",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[4304.7, -775.8]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2084",
+      "name": "Bright Red Herb",
+      "group": "Plants",
+      "coordinates": "[4229.9, -1045.5]",
+      "marker_identifier": "plants-herb-bright-red"
+    },
+    {
+      "external_row_id": "2085",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2368.6, -1019.2]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2086",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2785.0, -839.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2087",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2745.5, -809.8]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2088",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2776.9, -796.5]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2089",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3036.2, -542.0]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2090",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3172.3, -635.2]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2091",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3066.3, -719.7]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2092",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3046.2, -888.8]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2093",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3111.1, -1046.8]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2094",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3021.6, -902.6]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2095",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[2750.5, -2112.3]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2096",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[4027.0, -182.9]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2097",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3913.5, -178.9]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2098",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[3954.9, -8.0]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2099",
+      "name": "Ultramarine Herb",
+      "group": "Plants",
+      "coordinates": "[4095.1, -1088.2]",
+      "marker_identifier": "plants-herb-ultramarine"
+    },
+    {
+      "external_row_id": "2100",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3837.3, -413.8]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2101",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3790.2, -469.7]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2102",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3699.1, -462.8]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2103",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3675.0, -417.6]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2104",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3692.3, -364.9]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2105",
+      "name": "Hell Pepper",
+      "group": "Plants",
+      "coordinates": "[3766.5, -336.0]",
+      "marker_identifier": "plants-hell-pepper"
+    },
+    {
+      "external_row_id": "2107",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1283.17 -65.52 2637.803",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2108",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1293.376 -65.52 2649.749",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2109",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1296.86 -65.52 2644.136",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2110",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1286.479 -65.52 2631.729",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2111",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1277.608 -65.52 2644.899",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2112",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1279.34 -65.52 2633.104",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2113",
+      "name": "Hellfire Wood",
+      "group": "Plants",
+      "coordinates": "-1276.804 -65.52 2650.61",
+      "marker_identifier": "plants-hellfire-wood"
+    },
+    {
+      "external_row_id": "2511",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3305.565 233.451 -1270.085",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2512",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3371.873 238.569 -1191.315",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2513",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3271.918 241.356 -1240.635",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2514",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3311.459 247.676 -1167.358",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2515",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3253.751 262.873 -1152.839",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2516",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3275.407 263.605 -1100.184",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2517",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2552.982 65.191 -1702.55",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2518",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2601.825 65.413 -1753.529",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2519",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2620.141 79.193 -1653.867",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2520",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2684.144 64.793 -1755.72",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2521",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4143.509 53.807 -1021.545",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2522",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4222.294 61.1121 -995.187",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2523",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4201.301 56.712 -946.5361",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2524",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4265.397 53.941 -938.4019",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2525",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4230.232 53.562 -1072.217",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2526",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4049.374 124.719 -488.636",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2527",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "4124.402 61.745 -614.803",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2528",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3601.072 159.877 -166.738",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2529",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3582.539 158.8781 -130.196",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2530",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3177.109 56.321 338.692",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2531",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3150.727 34.002 381.834",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2532",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3127.435 12.791 460.718",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2533",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3026.479 11.281 498.529",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2534",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3002.896 29.761 440.25",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2535",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2897.806 59.657 360.3979",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2536",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2873.927 147.824 216.434",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2537",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2986.307 117.657 104.589",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2538",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3082.474 140.728 18.531",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2539",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3031.802 138.7469 36.066",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2540",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3378.208 306.087 -167.705",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2541",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3371.399 306.087 -209.441",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2542",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3351.768 307.272 -247.899",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2543",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3312.667 306.825 -242.238",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2544",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3322.567 306.087 -216.194",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2545",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3279.705 306.087 -219.9141",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2546",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3302.754 306.087 -186.178",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2547",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3313.658 306.087 -160.847",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2548",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3294.479 306.087 -169.132",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2549",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3272.811 380.348 -397.9031",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2550",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3194.405 397.325 -376.196",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2551",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3019.986 587.0449 -415.6641",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2552",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3256.96 640.032 -715.3799",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2553",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3262.823 673.002 -611.9761",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2554",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "3281.303 659.104 -622.7629",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2555",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2984.353 656.499 -935.7041",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2556",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2300.469 385.927 -435.28",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2557",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2341.857 385.6899 -362.389",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2558",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2352.911 396.693 -413.446",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2559",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2322 399.1899 -429.099",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2560",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2326.798 398.463 -490.734",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2561",
+      "name": "Snow Mint",
+      "group": "Age Evolution Materials",
+      "coordinates": "2292.589 387.312 -507.814",
+      "marker_identifier": "evo-snow"
+    },
+    {
+      "external_row_id": "2887",
+      "name": "Copper Ore",
+      "group": "Ores",
+      "coordinates": "[[-1619.6, -989.4], [-1644.9, -1024.1], [-1661.0, -1149.6], [-1757.1, -1233.7], [-1770.4, -1379.2], [-1862.6, -1526.1], [-1781.1, -1631.6], [-2004.1, -1814.5], [-2148.3, -1742.4], [-2249.8, -1729.1], [-2287.2, -1783.8], [-2289.8, -1861.2], [-2411.3, -1926.7], [-2823.9, -1766.4], [-2822.6, -1418.0], [-2783.9, -1132.2], [-2614.3, -965.3], [-2447.4, -915.9], [-2300.5, -809.1], [-2215.1, -827.8], [-2081.5, -801.1], [-1870.6, -878.5], [-1762.4, -871.9], [-1662.3, -815.8], [-1681.0, -668.9], [-1751.7, -674.2], [-1797.1, -694.3], [-1793.1, -599.5], [-1778.5, -503.3], [-1831.9, -441.9], [-1906.6, -284.4], [-1745.1, -202.9], [-1638.3, -236.3], [-1476.7, -152.2], [-1387.2, -235.0], [-1328.5, -235.0], [-926.6, -550.1], [-1017.4, -654.2], [-1044.1, -886.5], [-1076.1, -933.3], [-1084.1, -1017.4], [-1224.3, -1192.3], [-1348.5, -1162.9], [-1444.7, -1367.2], [-1516.8, -1252.4], [-1535.4, -1054.8], [-1598.2, -985.3]]",
+      "marker_identifier": "ore-copper"
+    },
+    {
+      "external_row_id": "2888",
+      "name": "Iron Ore",
+      "group": "Ores",
+      "coordinates": "[[-2156.4, -1725.7], [-2196.2, -1651.5], [-2292.3, -1596.6], [-2293.7, -1512.9], [-2124.8, -1440.1], [-1825.4, -1453.8], [-1865.3, -1533.5], [-1773.3, -1633.7], [-1902.3, -1768.3], [-1995.7, -1816.3], [-2139.9, -1773.8]]",
+      "marker_identifier": "ore-iron"
+    },
+    {
+      "external_row_id": "2889",
+      "name": "Iron Ore",
+      "group": "Ores",
+      "coordinates": "[[-1448.4, -1367.5], [-1520.1, -1247.2], [-1565.9, -999.2], [-1376.8, -861.6], [-1329.5, -738.4], [-1147.4, -688.2], [-1035.6, -444.5], [-911.0, -556.3], [-565.5, -460.3], [-506.8, -352.8], [-362.0, -276.9], [-387.8, -926.1], [-578.4, -841.5], [-680.2, -755.6], [-693.1, -911.8], [-632.9, -1068.0], [-713.2, -1125.3], [-789.1, -1113.9], [-868.0, -1197.0], [-962.6, -1231.4], [-1031.3, -884.5], [-1095.8, -1000.6], [-1181.8, -1046.5], [-1200.5, -1184.1], [-1351.0, -1166.9]]",
+      "marker_identifier": "ore-iron"
+    },
+    {
+      "external_row_id": "2890",
+      "name": "Iron Ore",
+      "group": "Ores",
+      "coordinates": "[[-361.8, -261.3], [-632.3, 62.0], [-603.7, 172.0], [-429.9, 310.6], [-300.2, 510.7], [-104.4, 603.1], [36.3, 442.5], [124.3, 391.9], [71.5, 257.8], [172.7, 220.4], [353.1, 235.8], [542.2, 200.6], [612.6, -21.6], [366.3, -162.3], [232.1, -195.3], [223.3, -292.1], [7.8, -287.7], [-282.6, -204.1]]",
+      "marker_identifier": "ore-iron"
+    },
+    {
+      "external_row_id": "2891",
+      "name": "Iron Ore",
+      "group": "Ores",
+      "coordinates": "[[2816.9, 451.5], [2855.1, 363.2], [2952.2, 392.6], [3016.9, 280.8], [2984.6, 204.3], [3072.8, 89.6], [3237.6, -51.6], [3025.7, -228.1], [3496.5, -513.5], [3381.7, -919.5], [3116.9, -1016.6], [3611.2, -1410.8], [3970.1, -1201.9], [4382.0, -1087.2], [4402.6, -422.3], [4229.0, -122.2], [3505.3, 298.5], [3399.4, 478.0], [3052.2, 560.3]]",
+      "marker_identifier": "ore-iron"
+    },
+    {
+      "external_row_id": "2892",
+      "name": "Iron Ore",
+      "group": "Ores",
+      "coordinates": "[[-956.3, 41.5], [-737.9, 44.2], [-791.5, 220.0], [-882.1, 220.0], [-917.8, 284.5], [-997.5, 263.9]]",
+      "marker_identifier": "ore-iron"
+    },
+    {
+      "external_row_id": "2893",
+      "name": "Silver Ore",
+      "group": "Ores",
+      "coordinates": "[[-1659.6, -1356.5], [-1612.9, -1348.5], [-1583.5, -1377.9], [-1626.2, -1416.6], [-1679.6, -1409.9], [-1677.0, -1377.9]]",
+      "marker_identifier": "ore-silver"
+    },
+    {
+      "external_row_id": "2894",
+      "name": "Silver Ore",
+      "group": "Ores",
+      "coordinates": "[[1332.6, -214.9], [1444.7, -106.8], [1544.9, -57.4], [1777.2, -113.5], [1761.2, -232.3], [1661.0, -331.1], [1611.6, -437.9], [1448.7, -484.6], [1367.3, -435.2], [1321.9, -327.1]]",
+      "marker_identifier": "ore-silver"
+    },
+    {
+      "external_row_id": "2895",
+      "name": "Silver Ore",
+      "group": "Ores",
+      "coordinates": "[[-1244.4, -214.9], [-1036.1, -383.2], [-922.6, -510.0], [-567.4, -431.2], [-487.3, -247.0], [-564.8, -232.3], [-504.7, -124.1], [-659.6, 57.4], [-767.7, -12.0], [-981.3, -9.3], [-1126.9, -137.5]]",
+      "marker_identifier": "ore-silver"
+    },
+    {
+      "external_row_id": "2896",
+      "name": "Silver Ore",
+      "group": "Ores",
+      "coordinates": "[[616.9, -38.7], [439.3, -170.9], [401.9, -466.0], [520.8, -679.6], [522.1, -867.8], [480.7, -1044.1], [418.0, -1176.3], [272.4, -1296.4], [-1.3, -1118.9], [-92.1, -890.5], [-371.2, -930.6], [-349.8, -269.7], [-283.0, -220.3], [8.0, -301.7], [217.7, -305.7], [243.0, -205.6], [361.9, -174.9]]",
+      "marker_identifier": "ore-silver"
+    },
+    {
+      "external_row_id": "2897",
+      "name": "Gold Ore",
+      "group": "Ores",
+      "coordinates": "[[2189.1, -553.0], [2289.0, -553.0], [2329.8, -852.6], [2456.1, -1027.9], [2523.4, -1105.4], [2549.9, -1227.7], [2731.3, -1405.0], [2747.6, -1515.1], [2906.6, -1617.0], [2937.2, -1857.5], [3212.3, -2049.1], [3387.6, -2189.7], [3375.4, -2248.8], [3100.2, -2424.1], [2505.1, -2310.0], [2641.6, -2148.9], [2641.6, -1975.7], [2574.4, -1857.5], [2445.9, -1786.1], [2356.3, -1649.6], [2376.6, -1462.1], [2374.6, -1309.2], [2297.2, -1174.7], [2176.9, -1074.8], [2038.3, -1019.8], [2040.3, -946.4], [2079.1, -928.1], [2066.8, -685.5], [2142.3, -583.6]]",
+      "marker_identifier": "ore-gold"
+    },
+    {
+      "external_row_id": "2898",
+      "name": "Gold Ore",
+      "group": "Ores",
+      "coordinates": "[[499.4, -1070.8], [861.2, -1028.1], [1000.1, -923.9], [985.4, -795.7], [1069.5, -695.6], [1139.0, -614.2], [1053.5, -504.7], [932.0, -494.0], [969.4, -337.8], [1086.9, -53.4], [1026.8, 69.5], [850.6, 176.3], [747.7, 403.3], [616.9, 416.6], [538.1, 313.8], [538.1, 224.3], [628.9, -40.0], [455.3, -173.5], [412.6, -466.0], [534.1, -672.9], [535.4, -859.8], [495.4, -1046.8]]",
+      "marker_identifier": "ore-gold"
+    },
+    {
+      "external_row_id": "2899",
+      "name": "Gold Ore",
+      "group": "Ores",
+      "coordinates": "[[1579.6, 251.0], [1782.5, 307.1], [1924.1, 256.4], [2088.3, 73.5], [1921.4, -140.2], [1789.2, -106.8], [1554.2, -46.7]]",
+      "marker_identifier": "ore-gold"
+    },
+    {
+      "external_row_id": "2900",
+      "name": "Platinum Ore",
+      "group": "Ores",
+      "coordinates": "[[3674.5, -345.8], [3788.0, -299.1], [3866.8, -408.5], [3797.3, -498.0], [3694.5, -502.0], [3645.1, -416.6]]",
+      "marker_identifier": "ore-platinum"
+    },
+    {
+      "external_row_id": "2901",
+      "name": "Platinum Ore",
+      "group": "Ores",
+      "coordinates": "[[-437.9, -1918.7], [-381.8, -2034.8], [-312.4, -2006.8], [-176.2, -2080.2], [21.4, -2016.1], [-2.6, -1925.3], [-98.8, -1946.7], [-269.7, -1938.7], [-333.8, -1874.6], [-419.2, -1879.9]]",
+      "marker_identifier": "ore-platinum"
+    },
+    {
+      "external_row_id": "2902",
+      "name": "Platinum Ore",
+      "group": "Ores",
+      "coordinates": "[[110.1, -2348.3], [78.6, -2290.0], [244.8, -2177.7], [271.8, -1584.9], [352.6, -1346.8], [486.0, -1086.8], [859.9, -1041.4], [1030.8, -957.3], [1013.5, -797.1], [1105.6, -686.3], [1235.1, -667.6], [1257.8, -590.1], [1177.7, -566.1], [1002.8, -320.4], [1101.6, -54.7], [1277.8, -169.5], [1311.2, -206.9], [1301.9, -340.4], [1349.9, -448.6], [1422.0, -527.4], [1424.7, -511.4], [1619.6, -448.6], [1774.5, -241.6], [1793.2, -129.5], [1918.7, -158.9], [2018.9, -42.7], [2208.5, -65.4], [2356.7, -202.9], [2263.2, -401.9], [2272.5, -527.4], [2161.7, -538.1], [2044.2, -676.9], [2030.9, -945.3], [2018.9, -1025.4], [2163.1, -1088.2], [2283.2, -1184.3], [2362.0, -1315.1], [2342.0, -1647.6], [2392.7, -1793.1], [2599.7, -1929.3], [2574.3, -2014.8], [2367.3, -1897.3], [2235.2, -1917.3], [2103.0, -1886.6], [1969.5, -1869.2], [1889.3, -1632.9], [1857.3, -1622.2], [1714.4, -1695.7], [1571.6, -1616.9], [1476.8, -1603.5], [1390.0, -1697.0], [1295.2, -1794.5], [1285.8, -1946.7], [1252.5, -2033.5], [1367.3, -2136.3], [1344.6, -2217.7], [1173.7, -2237.8], [1054.8, -2323.2], [948.0, -2243.1], [754.4, -2375.3], [574.2, -2261.8], [456.7, -2252.5], [141.6, -2375.3]]",
+      "marker_identifier": "ore-platinum"
+    },
+    {
+      "external_row_id": "2903",
+      "name": "Adamantite Ore",
+      "group": "Ores",
+      "coordinates": "[[3022.9, -243.0], [3475.6, -527.4], [3372.7, -901.2], [3121.7, -1002.7], [2802.6, -952.0], [2594.3, -794.4], [2603.7, -710.3], [2754.6, -652.9], [2698.5, -261.7]]",
+      "marker_identifier": "ore-adamantite"
+    }
+  ],
+  "map_counts": {
+    "Absorbing Bat": 7,
+    "Adamantite Ore": 1,
+    "Bear": 18,
+    "Biting Alligator Turtle": 16,
+    "Black-tailed Gull": 70,
+    "Blue Herb": 29,
+    "Boar": 13,
+    "Bright Red Herb": 22,
+    "Buffalo": 10,
+    "Camel": 18,
+    "Chicken": 49,
+    "Copper Ore": 1,
+    "Cow": 53,
+    "Cow Bomb": 8,
+    "Crocodile": 33,
+    "Deer": 76,
+    "Elephant": 6,
+    "Forlorn Giant Tortoise": 17,
+    "Fox": 8,
+    "Frog": 7,
+    "Giraffe": 3,
+    "Gold Ore": 3,
+    "Hell Pepper": 9,
+    "Hellfire Wood": 7,
+    "Horse": 5,
+    "Iron Ore": 5,
+    "Kicking Off Cassowary": 3,
+    "Lone Wolf": 5,
+    "Mushroom": 29,
+    "Pekoga": 17,
+    "Pig": 2,
+    "Platinum Ore": 3,
+    "Poisonous Mushroom": 1,
+    "Red Herb": 35,
+    "School of Fish": 12,
+    "Sheep": 53,
+    "Silver Ore": 4,
+    "Slipping Penguin": 11,
+    "Snow Mint": 51,
+    "Stubborn Gorilla": 8,
+    "Ultramarine Herb": 30,
+    "White Bear": 8,
+    "Wild Berry": 51,
+    "Wolf": 14,
+    "Yellow Herb": 26
+  },
+  "limitations": [
+    "Map rows are author dataset leads, not game IDs, biome polygons or verified access rules.",
+    "No nearest-tower region assignment is made.",
+    "No exact drop tables or harvest tool requirements were captured.",
+    "No game state or generated seed is changed."
+  ]
+}

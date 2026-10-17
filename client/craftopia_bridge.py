@@ -60,6 +60,9 @@ import time
 _authority_lock_file = None
 import uuid
 from delivery_state import candidate, validate, valid_unlock, integer, text as valid_text, COMBAT
+from currency_delivery import CurrencyDeliveryMixin
+from soul_orb_delivery import SoulOrbDeliveryMixin
+from milestone_delivery import MilestoneDeliveryMixin
 
 try:
     import websockets
@@ -144,7 +147,7 @@ def save_ledger(path, data):
     os.replace(tmp, path)
 
 
-class Bridge:
+class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin):
     def __init__(self, args):
         self.args = args
         self.ap_ws = None
@@ -156,7 +159,10 @@ class Bridge:
         self.retry_item_messages = []
         self.ap_connected = False
         self.slot_data = {}
+        self.total_check_count = -1
         self.checked_locations = set()
+        self.received_activity = {}  # Cosmetic AP-index keyed history; rebuilt by server replay.
+        self.sent_activity = []
         # Recovery hold: set if ledger was corrupt at startup. Blocks all
         # delivery until explicit recovery.
         self.recovery_hold = False
@@ -271,8 +277,26 @@ class Bridge:
         self.restore_goal_events()
         return True
 
+    def equipment_contract_ready(self):
+        if not self.currency_contract_ready(): return False
+        requested = 'equipment_catalog' in self.slot_data or 'equipment_protocol' in self.slot_data
+        if not requested:
+            return True
+        protocol = self.slot_data.get('equipment_protocol')
+        if not isinstance(self.slot_data.get('equipment_catalog'), str): return False
+        expected = {'equipment_20261010_r1': 1, 'equipment_loot_20261016_r1': 2,
+                    'equipment_loot_20261016_r2': 2}.get(
+            self.slot_data.get('equipment_catalog'))
+        if (expected is None or type(protocol) is not int
+                or protocol != expected or self.multiplayer_mode != 0):
+            return False
+        capabilities = getattr(self, 'equipment_capabilities', {})
+        tokens = self._all_conn_tokens()
+        return bool(tokens) and all(type(capabilities.get(t)) is int
+                                   and protocol <= capabilities[t] <= 2 for t in tokens)
+
     def can_deliver_unlocks(self):
-        return (not self.recovery_hold and self.ap_connected
+        return (self.equipment_contract_ready() and not self.recovery_hold and self.ap_connected
                 and self._any_mod_validated()
                 and bool(self._all_conn_tokens()))
 
@@ -335,6 +359,40 @@ class Bridge:
         proposed['pending_unlocks'].append(record)
         return self.commit(proposed)
 
+    def progressive_equipment(self, category, receipt_id):
+        """Materialize each progressive receipt once into the durable tier mirror.
+
+        No playable pool enables these yet. Waiting for the starter choice avoids
+        retroactively changing already committed receipt payloads.
+        """
+        if self.recovery_hold or not self.ledger['starters_applied']:
+            return None
+        if category not in ('Sword', 'Bow', 'Shield', 'Lance', 'SwordTwoHand',
+                            'Gun', 'Katana', 'MagicStaff', 'VacuumGun', 'Head', 'Body'):
+            return None
+        old = next((u for u in self.ledger['unlocks'] if u['receipt_id'] == receipt_id), None)
+        if old is not None:
+            if (old.get('cmd') != 'unlock_equipment' or old.get('category') != category
+                    or old.get('progressive') is not True):
+                self.recovery_hold = True
+                print('[AP] RECOVERY HOLD: progressive receipt payload changed', flush=True)
+                return None
+            return dict(old)
+        current = max((u['tier'] for u in self.ledger['unlocks']
+                       if u.get('cmd') == 'unlock_equipment' and u.get('category') == category), default=0)
+        tier = min(current + 1, 10)
+        if 'equipment_tier_steps' in self.slot_data:
+            schedules = self.slot_data['equipment_tier_steps']
+            steps = schedules.get(category) if isinstance(schedules, dict) else None
+            if (not isinstance(steps, list) or not steps
+                    or any(type(t) is not int or not 1 <= t <= 10 for t in steps)
+                    or steps != sorted(set(steps))):
+                print('[AP] Invalid equipment tier schedule; delivery withheld', flush=True)
+                return None
+            tier = next((t for t in steps if t > current), steps[-1])
+        return dict(cmd='unlock_equipment', category=category, tier=tier,
+                    receipt_id=receipt_id, progressive=True)
+
     async def replay_unlocks(self, all_history=False, token=None):
         if not self.can_deliver_unlocks(): return
         if all_history or getattr(self, 'needs_unlock_replay', False):
@@ -383,6 +441,9 @@ class Bridge:
                         raise
                 await self.apply_starters()
                 await self.replay_unlocks()
+                await self.flush_currency()
+                await self.reconcile_orb_checks()
+                await self.reconcile_milestone_checks()
                 await self.reconcile_pending_checks()
                 await self.check_goal_completion()
                 now = time.monotonic()
@@ -481,8 +542,71 @@ class Bridge:
 
     async def on_room_update(self, msg):
         self.checked_locations.update(msg.get('checked_locations',[]))
+        for location in msg.get('checked_locations', []):
+            if location not in self.sent_activity:
+                self.sent_activity.append(location)
+        self.sent_activity = self.sent_activity[-1000:]
         await self.reconcile_pending_checks()
         await self.check_goal_completion()
+        await self.send_activity()
+
+    def record_received_activity(self, msg):
+        index, items = msg.get('index'), msg.get('items')
+        if type(index) is not int or index < 0 or not isinstance(items, list):
+            return
+        for offset, item in enumerate(items):
+            try:
+                item_id = self._item_id(item)
+                if type(item_id) is not int:
+                    continue
+                self.received_activity[index + offset] = self.item_id_to_name.get(item_id, f'Item #{item_id}')
+            except (ValueError, KeyError, TypeError):
+                continue
+        self.received_activity = dict(sorted(self.received_activity.items())[-1000:])
+
+    def activity_payload(self):
+        names = {v: k for k, v in self.location_name_to_id.items()}
+        # On reconnect AP supplies a set, not historical timestamps: use stable ID order.
+        ordered = sorted(self.checked_locations - set(self.sent_activity)) + self.sent_activity
+        confirmed = [v for v in ordered if v in self.checked_locations]
+        currency = {row['receipt_id']: row for row in self.ledger.get('currency_receipts', [])}
+        unlocks = {row.get('receipt_id'): row for row in self.ledger.get('unlocks', [])}
+        def item_label(index, name):
+            unlock = unlocks.get(index, {})
+            if unlock.get('progressive') is True and unlock.get('cmd') == 'unlock_equipment':
+                return f"{unlock['category']} \u2192 Tier {unlock['tier']}"
+            if name == 'Soul Orb Currency':
+                delivered = currency.get(index, {}).get('acknowledged') is True
+                return 'Soul Orb x1 - ' + ('delivered' if delivered else 'delivery pending')
+            return str(name)[:180]
+        payload = {'received': [item_label(index, name) for index, name in sorted(self.received_activity.items(), reverse=True)],
+                'sent': [str(names.get(v, f'Location #{v}'))[:180] for v in reversed(confirmed[-1000:])],
+                'checked_count': len(self.checked_locations),
+                'total_check_count': self.total_check_count,
+                'goal_complete': bool(getattr(self, 'goal_announced', False)),
+                'history_limited': len(confirmed) > 1000 or max(self.received_activity, default=-1) >= 1000}
+        # Leave headroom for the binding envelope under the mod's 64 KiB receive buffer.
+        # An oversized history drops oldest display rows, never delivery records.
+        while len(json.dumps(payload).encode('utf-8')) > 48000:
+            key = 'received' if len(payload['received']) >= len(payload['sent']) else 'sent'
+            payload[key].pop()
+            payload['history_limited'] = True
+        return payload
+
+    async def send_activity(self, token=None):
+        # Presentation must never prevent delivery, check reconciliation, or victory.
+        try:
+            payload = self.activity_payload()
+            for recipient, _ in list(self._iter_conns()):
+                if token is not None and recipient != token:
+                    continue
+                try:
+                    await self.send_mod(dict(payload, cmd='activity_snapshot', epoch=self.ledger['epoch'],
+                        slot=self.args.slot, connection_token=recipient), token=recipient)
+                except Exception:
+                    pass
+        except Exception:
+            pass
 
     async def check_goal_completion(self):
         if self.ap_connected and not self.recovery_hold and self.check_goal_complete():
@@ -491,10 +615,17 @@ class Bridge:
                 self.goal_announced = True
 
     async def on_connected(self, msg):
-        self.goal_announced = False
+        # The ledger's seed/epoch binding rejects a different seed. Preserve the
+        # announcement only for the same milestone goal on a socket reconnect.
+        next_slot=msg.get('slot_data',{}) or {}
+        same_goal=('milestone_catalog' in next_slot and
+                   next_slot.get('milestone_catalog')==self.slot_data.get('milestone_catalog') and
+                   next_slot.get('goal_location_ids')==self.slot_data.get('goal_location_ids'))
+        self.goal_announced = bool(same_goal and getattr(self,'goal_announced',False))
         self.ap_connected = True
         self.slot_data = msg.get("slot_data", {}) or {}
         self.checked_locations = set(msg.get("checked_locations", []))
+        self.total_check_count = len(self.checked_locations | set(msg["missing_locations"])) if isinstance(msg.get("missing_locations"), list) else -1
         print(f"[AP] connected as '{self.args.slot}' "
               f"(team {msg.get('team')}, slot {msg.get('slot')}) game={GAME}",
               flush=True)
@@ -526,7 +657,7 @@ class Bridge:
         # No automatic new-seed reset: if the ledger has history but the server
         # reports zero checks, that is either a new seed (user must restart with
         # --reset-ledger or a new --session) or something unexpected. Warn loudly
-        # and keep the ledger — deleting legitimate state automatically is worse
+        # and keep the ledger â€” deleting legitimate state automatically is worse
         # than pausing for a human decision.
         if (self.ledger["delivered"] or self.ledger["pending_checks"]) \
                 and not self.checked_locations:
@@ -610,6 +741,7 @@ class Bridge:
             await self.process_received_items(m)
         await self.reconcile_pending_checks()
         await self.check_goal_completion()
+        await self.send_activity()
 
     def print_mapping(self):
         print("=" * 70)
@@ -646,8 +778,21 @@ class Bridge:
             objective=self.slot_data.get('objective_locations',{}).get(name)
             if objective and objective not in proposed['goal_events']['completed_objectives']:
                 proposed['goal_events']['completed_objectives'].append(objective)
+        confirmed = [v for v in proposed['pending_checks'] if v['location_id'] in self.checked_locations]
         proposed['pending_checks']=[v for v in proposed['pending_checks'] if v['location_id'] not in self.checked_locations]
         if not self.commit(proposed): return
+        # Cosmetic only: custody ACK is not server confirmation. Replayed server
+        # packets cannot announce again after durable pending removal.
+        for record in confirmed:
+            for token, conn in list(self._iter_conns()):
+                try:
+                    await self.send_mod({'cmd': 'check_confirmed', 'epoch': self.ledger['epoch'],
+                        'slot': self.args.slot, 'connection_token': token,
+                        'location_id': record['location_id'],
+                        'title': str(record.get('mission_title') or 'Mission')[:180]}, token=token)
+                except Exception:
+                    pass  # Cosmetic delivery cannot interrupt checks or victory.
+
         ids=sorted({v['location_id'] for v in self.ledger['pending_checks'] if v['location_id'] is not None})
         if self.ap_connected and ids: await self.send_ap({'cmd':'LocationChecks','locations':ids})
         await self.check_goal_completion()
@@ -829,6 +974,7 @@ class Bridge:
             self.pending_item_messages.append(msg)
             return
         await self.process_received_items(msg)
+        await self.send_activity()
 
     @staticmethod
     def _item_id(item):
@@ -843,6 +989,10 @@ class Bridge:
         raise ValueError("Invalid ReceivedItems NetworkItem representation")
 
     async def process_received_items(self, msg):
+        try:
+            self.record_received_activity(msg)
+        except Exception:
+            pass
         if self.recovery_hold: return
         index = msg.get("index", 0)
         items = msg.get("items", [])
@@ -886,9 +1036,12 @@ class Bridge:
                 await self.on_victory()
             else:
                 # Team consumables (shared slot): money/material bundles are
-                # delivered ONCE to the team — never multiplied by players
+                # delivered ONCE to the team â€” never multiplied by players
                 # joining or reconnecting.
                 item_name = self.item_id_to_name.get(item_id, f"#{item_id}")
+                if item_name == 'Soul Orb Currency':
+                    await self.receive_currency(g, msg)
+                    continue
                 bundle = self._parse_bundle(item_name)
                 if bundle is not None:
                     await self._receive_team_bundle(g, item_name, bundle, msg)
@@ -897,7 +1050,12 @@ class Bridge:
                 # These use durable delivery: persist pending, send to mod,
                 # require ack, retry on reconnect. See UNLOCK_DELIVERY.md.
                 unlock_msg = None
-                if item_name.startswith("Equipment Tier: "):
+                if item_name.startswith("Progressive Equipment: "):
+                    unlock_msg = self.progressive_equipment(item_name.split(': ', 1)[1], g)
+                    if unlock_msg is None:
+                        if msg not in self.retry_item_messages: self.retry_item_messages.append(msg)
+                        continue
+                elif item_name.startswith("Equipment Tier: "):
                     # Format: "Equipment Tier: <category> <tier>"
                     parts = item_name.split(": ", 1)[1].rsplit(" ", 1)
                     if len(parts) == 2:
@@ -982,6 +1140,7 @@ class Bridge:
         return True
 
     async def flush_char_grants(self, character_guid, token):
+        if not self.equipment_contract_ready(): return
         """Send a character's pending (incl. unacked) grant indices to one
         mod connection. Pending stays durable until that character acks."""
         if self.recovery_hold:
@@ -1101,6 +1260,7 @@ class Bridge:
 
     def check_goal_complete(self):
         if self.recovery_hold: return False
+        if 'milestone_catalog' in self.slot_data: return self.milestone_goal_complete()
         enabled=[self.slot_data.get(k,False) for k in ('goal_boss','goal_age','goal_objectives')]
         if not any(enabled): return False
         if enabled[0]:
@@ -1207,7 +1367,7 @@ class Bridge:
 
         Explicit enrollment only: returns False (and enrolls nothing) under a
         recovery hold or with a missing/malformed guid. A missing or ambiguous
-        history never silently becomes a fresh character — the caller must
+        history never silently becomes a fresh character â€” the caller must
         refuse delivery until enrollment succeeds.
         """
         if self.recovery_hold:
@@ -1244,8 +1404,9 @@ class Bridge:
         return True
 
     async def send_grant(self, indices, token=None):
+        if not self.equipment_contract_ready(): return
         # Indices are only marked delivered when the mod acks them (see
-        # on_grant_ack). Grants go only to a handshake-validated mod socket —
+        # on_grant_ack). Grants go only to a handshake-validated mod socket â€”
         # never to an unknown socket.
         if self.recovery_hold:
             print(f"[AP] RECOVERY HOLD: {len(indices)} grant(s) blocked; "
@@ -1348,7 +1509,7 @@ class Bridge:
           Distinct missions sharing a class must remain distinct.
         - legacy: class name first (stable IL key), then numeric game ID.
 
-        Returns None (after a warning) when unmapped — the caller must
+        Returns None (after a warning) when unmapped â€” the caller must
         ignore the check, never crash.
         """
         if not self.datapackage_ready:
@@ -1446,24 +1607,25 @@ class Bridge:
         return loc_id
 
     async def report_check(self, mission_id, mission_title, mission_class=None):
-        if self.recovery_hold or not integer(mission_id,-2147483648,2147483647): return
-        if mission_class is not None and not valid_text(mission_class): return
+        if self.recovery_hold or not integer(mission_id,-2147483648,2147483647): return False
+        if mission_class is not None and not valid_text(mission_class): return False
         loc_id=self.location_id_for_mission(mission_id,mission_class) if self.datapackage_ready else None
-        if self.datapackage_ready and loc_id is None: return
+        if self.datapackage_ready and loc_id is None: return False
         record={'mission_id':mission_id,'mission_title':mission_title,'mission_class':mission_class,
                 'location_id':loc_id,'deferred':loc_id is None}
         proposed=candidate(self.ledger)
         key=(mission_class,mission_id)
-        if not any((v.get('mission_class'),v['mission_id'])==key for v in proposed['pending_checks']):
+        if loc_id not in self.checked_locations and not any((v.get('mission_class'),v['mission_id'])==key for v in proposed['pending_checks']):
             proposed['pending_checks'].append(record)
         if loc_id is not None:
             name=next((n for n,v in self.location_name_to_id.items() if v==loc_id),None)
             objective=self.slot_data.get('objective_locations',{}).get(name)
             if objective:
                 proposed['goal_events']['completed_objectives']=sorted(self.completed_objectives | {objective})
-        if not self.commit(proposed): return
+        if not self.commit(proposed): return False
         await self.reconcile_pending_checks()
         await self.check_goal_completion()
+        return True
             # Entry remains in pending_checks; will be retried on reconnect.
 
     # ---------- Craftopia mod side (local bridge) ----------
@@ -1471,7 +1633,7 @@ class Bridge:
     async def mod_handler(self, ws, path=None):
         # Connection ownership: in separate-slots mode (multiplayer_mode 0)
         # this bridge serves exactly one game. A second socket must never
-        # overwrite the owner's socket or validation state — not even while
+        # overwrite the owner's socket or validation state â€” not even while
         # the owner's handshake is still pending. Extra sockets are rejected
         # outright. In shared-slot mode (1) several game clients may connect;
         # the first is the primary, the rest are tracked extras.
@@ -1521,7 +1683,7 @@ class Bridge:
     async def try_handshake(self, ws, msg, token=None):
         """Validate a mod handshake. Returns True iff the socket is now
         eligible for grants. Missing/blank slot names are rejected (socket
-        closed, no abort — it may be a stray connection); a mismatching
+        closed, no abort â€” it may be a stray connection); a mismatching
         non-blank name is a genuine misconfiguration and aborts.
         token None = primary connection; otherwise a shared-mode extra."""
         if not isinstance(msg, dict) or msg.get("cmd") != "connect":
@@ -1571,6 +1733,11 @@ class Bridge:
             conn["validated"] = True
             conn["guid"] = guid
         self_token = token if token is not None else self.connection_token
+        if not hasattr(self, 'equipment_capabilities'): self.equipment_capabilities = {}
+        capability = msg.get('equipment_protocol_max', msg.get('equipment_protocol'))
+        self.equipment_capabilities[self_token] = capability if type(capability) is int else 0
+        if not hasattr(self, 'currency_capabilities'): self.currency_capabilities = {}
+        self.currency_capabilities[self_token] = (msg.get('currency_protocol'), msg.get('soul_orb_protocol'))
         print(f"[mod] handshake validated (slot '{name}', game '{game or '?'}'"
               + (f", character {guid}" if guid else "") + ")",
               flush=True)
@@ -1593,7 +1760,7 @@ class Bridge:
             print(f"[mod] re-sending {len(self.unacked)} unacked grant(s)", flush=True)
             await self.send_grant(list(self.unacked), token=self_token)
         # Late joiners get the full durable unlock history (permission state)
-        # plus any still-pending team bundles — but never already-delivered
+        # plus any still-pending team bundles â€” but never already-delivered
         # team consumables (team-once).
         await self.replay_unlocks(all_history=True, token=self_token)
         await self.flush_pending_bundles()
@@ -1629,7 +1796,21 @@ class Bridge:
             "enrolled_guids": enrolled,
             "multiplayer_mode": self.multiplayer_mode,
         }
+        if 'equipment_catalog' in self.slot_data:
+            msg['equipment_catalog'] = self.slot_data['equipment_catalog']
+            msg['equipment_protocol'] = self.slot_data['equipment_protocol']
+        if self.currency_ready():
+            msg['currency_protocol'] = 1
+            msg['seed_name'] = self.ledger['seed_name']
+            for field in ('soul_orb_catalog','soul_orb_schema','soul_orb_locations'):
+                if field in self.slot_data: msg[field] = self.slot_data[field]
+        if 'milestone_catalog' in self.slot_data:
+            msg['seed_name'] = self.ledger.get('seed_name')
+            for field in ('milestone_catalog','milestone_schema','milestone_locations','goal_location_ids'):
+                msg[field] = self.slot_data.get(field)
         await self.send_mod(msg, token=token)
+        await self.send_activity(token=self_token)
+        await self.flush_currency()
         print(f"[mod] session sent: epoch={self.ledger['epoch']}, "
               f"enrolled={len(enrolled)} guid(s)", flush=True)
 
@@ -1652,15 +1833,27 @@ class Bridge:
             if (not self._conn_validated(token) or type(msg.get('epoch')) is not int
                     or msg['epoch'] != self.ledger['epoch'] or msg.get('slot') != self.args.slot):
                 return
-            await self.report_check(msg.get("mission_id", -1),
-                                    msg.get("mission_title", ""),
-                                    msg.get("mission_class"))
+            if msg.get('check_category') == 'milestone':
+                accepted = await self.report_milestone(msg, token)
+            elif msg.get('check_category') == 'soul_orb':
+                accepted = await self.report_orb(msg, token)
+            else:
+                accepted = await self.report_check(msg.get("mission_id", -1),
+                                        msg.get("mission_title", ""),
+                                        msg.get("mission_class"))
+            observation_id = msg.get('observation_id')
+            if accepted and valid_text(observation_id):
+                await self.send_mod({'cmd': 'observation_ack', 'epoch': self.ledger['epoch'],
+                    'slot': self.args.slot, 'observation_id': observation_id,
+                    'connection_token': token if token is not None else self.connection_token}, token=token)
         elif cmd == "grant_ack":
             await self.on_grant_ack(msg, token)
         elif cmd == "unlock_ack":
             await self.accept_unlock_ack(msg)
         elif cmd == "bundle_ack":
             await self._on_bundle_ack(msg)
+        elif cmd == "currency_ack":
+            await self.accept_currency_ack(msg, token)
         elif cmd == "identity_update":
             # Character load or switch: update identity binding.
             # Menu-first connect sends handshake without GUID; this provides it.
@@ -1697,6 +1890,8 @@ class Bridge:
                     await self.flush_char_grants(guid_str, token)
             # Trigger session re-send so mod gets updated enrolled list.
             await self.send_session(token=token)
+        elif cmd == "milestone_enrollment":
+            await self.register_milestone_character(msg,token)
         elif cmd == "register_character":
             # Shared-slot late registration for connections that handshook
             # without a character_guid.
@@ -1938,7 +2133,7 @@ def run_recover_enrollment(session):
 
     Prints the session's enrollment state (characters, per-character grant
     accounting, team consumables, hold markers). Only after the operator
-    types YES does it clear enrollment history and release the hold — and it
+    types YES does it clear enrollment history and release the hold â€” and it
     keeps a backup. A missing or ambiguous history is never silently turned
     into a fresh character.
     """

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../CraftopiaArchipelago/MiniJson.cs" />
+    <Compile Include="../CraftopiaArchipelago/CurrencyDelivery.cs" />
+    <Compile Include="../CraftopiaArchipelago/CurrencyReceiptFile.cs" />
+    <Compile Include="../CraftopiaArchipelago/CurrencyInventoryVerifier.cs" />
+    <Compile Include="../CraftopiaArchipelago/CurrencySaveProof.cs" />
+    <Compile Include="../CraftopiaArchipelago/SoulOrbReplacement.cs" />
+    <Compile Include="../CraftopiaArchipelago/SoulOrbCharacterBinding.cs" />
+  </ItemGroup>
+</Project>

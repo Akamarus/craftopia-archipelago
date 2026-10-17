@@ -1,0 +1,210 @@
+{
+  "date": "2026-10-16",
+  "scope": "Installed current-runtime ItemOffer reward and encounter closure; no gameplay test",
+  "target_items": [
+    {
+      "id": 1723,
+      "name": "Sting"
+    },
+    {
+      "id": 1724,
+      "name": "Mjolnir"
+    },
+    {
+      "id": 6162,
+      "name": "Sharp Shooter"
+    }
+  ],
+  "conclusion": "High-table ItemOffer route is blocked for fresh normal current-runtime quests: IslandLevel returns zero without creative/debug override. NPC placement also remains unproved. Do not promote these items to normal obtainable or assign an acquisition age.",
+  "normal_island_level": 0,
+  "high_table_index": 2,
+  "high_positive_at_island_levels": [
+    6,
+    7
+  ],
+  "exceptions": [
+    "Creative world settings can populate DummyIslandWorldLevel. Placement/working-NPC is still required.",
+    "Debug/test overrides can populate DummyIslandWorldLevel.",
+    "LoadQuestData can reuse an unexpired in-memory quest table index; multiplayer can synchronize it. This is not a fresh normal quest generation path.",
+    "Old character import can carry already-owned equipment; it does not prove current-world production of that equipment."
+  ],
+  "registration": [
+    {
+      "em_type": 159,
+      "name": "NPC_Quest_BossDrop",
+      "enemy_asset_guid": "9032baccbadb53546b7a1596c5d033b6",
+      "so_enemy_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 41821
+      },
+      "network_asset_id": 3812666041
+    },
+    {
+      "em_type": 160,
+      "name": "NPC_Quest_Enchant",
+      "enemy_asset_guid": "b7ec680b6ab54ca4d8e876500383e9e5",
+      "so_enemy_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 41822
+      },
+      "network_asset_id": 1322740069
+    },
+    {
+      "em_type": 161,
+      "name": "NPC_Quest_Fish",
+      "enemy_asset_guid": "8d5e75c9c2cbf2c4897c2cf438b4bcd8",
+      "so_enemy_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 41823
+      },
+      "network_asset_id": 1393196979
+    },
+    {
+      "em_type": 162,
+      "name": "NPC_Quest_NaturalResource",
+      "enemy_asset_guid": "75942f48fa4ebff4d9a65901a0937a16",
+      "so_enemy_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 41824
+      },
+      "network_asset_id": 3712213119
+    },
+    {
+      "em_type": 163,
+      "name": "NPC_Quest_Treasure",
+      "enemy_asset_guid": "ec4b33ec812a2ed4f8c2465f2a61e5c5",
+      "so_enemy_pointer": {
+        "m_FileID": 0,
+        "m_PathID": 41825
+      },
+      "network_asset_id": 1480331540
+    }
+  ],
+  "registration_sources": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 42274,
+      "class": "SoEnemyArray"
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 39990,
+      "class": "EmTypeAssetIdPairAsset"
+    }
+  ],
+  "registration_scan_errors": [
+    [
+      "resources.assets",
+      421193,
+      "?",
+      "PPtr can't deref with m_PathID == 0!"
+    ]
+  ],
+  "source_sha256": "6587cbab8c5e42366fbd4c13cf00b7fc68de5a75719a3a50f0b2b941820f0a76",
+  "code_evidence": {
+    "network_registration": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 159640,
+      "end_line": 159663,
+      "text": "\t\tprivate void Start()\n\t\t{\n\t\t\tDebug.Log((object)\"OcEmMng.Start\");\n\t\t\tif (!SingletonMonoBehaviour<OcNetMng>.Inst.IsClient)\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tforeach (EmTypeAssetIdPair emTypeAssetIdPair in SingletonMonoBehaviour<OcEnemyAssetMng>.Inst.GetEmTypeAssetIdPairAsset().EmTypeAssetIdPairs)\n\t\t\t{\n\t\t\t\tNetworkClient.RegisterSpawnHandler(emTypeAssetIdPair.assetId, (SpawnDelegate)ClientSpawnDelegate, (UnSpawnDelegate)ClientUnSpawnDelegate);\n\t\t\t}\n\t\t}\n\n\t\tprivate GameObject ClientSpawnDelegate(Vector3 position, uint assetId)\n\t\t{\n\t\t\tEmSpawnInfo emSpawnInfo = new EmSpawnInfo(SingletonMonoBehaviour<OcEnemyAssetMng>.Inst.GetOcEmType(assetId), 0);\n\t\t\temSpawnInfo.pos = position;\n\t\t\tOcEm ocEm = SingletonMonoBehaviour<OcEnemyAssetMng>.Inst.LoadEnemyModelfromEmType(emSpawnInfo, _EmPool, 0);\n\t\t\tif (ocEm != null)\n\t\t\t{\n\t\t\t\treturn ocEm.gameObject;\n\t\t\t}\n\t\t\treturn null;\n\t\t}"
+    },
+    "spawn_restore": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 159538,
+      "end_line": 159565,
+      "text": "\t\tpublic void doSpawn_FromSaveData(int spawnerGuid, ushort emType, int guid, Vector3 pos, float degY, byte level, ulong cond, bool canRecall, bool isRaidAssist, int petId = 65535, int petOwnerPlId = -1, bool forceIgnoreSave = false)\n\t\t{\n\t\t\tif (!_EmPool.getEmFromGuid(guid))\n\t\t\t{\n\t\t\t\tif (OcUtility.IsNaN(in pos) || float.IsNaN(degY))\n\t\t\t\t{\n\t\t\t\t\tDebug.LogError((object)$\"{(OcEmType)emType}\u306e\u30b9\u30dd\u30fc\u30f3\u5ea7\u6a19{pos}\u304b\u5411\u304d{degY}\u304cNaN\u306a\u306e\u3067\u3001\u30b9\u30dd\u30fc\u30f3\u51fa\u6765\u307e\u305b\u3093\u3067\u3057\u305f\");\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tEmSpawnInfo emSpawnInfo = new EmSpawnInfo((OcEmType)emType, level);\n\t\t\t\temSpawnInfo.pos = pos;\n\t\t\t\temSpawnInfo.quat = Quaternion.Euler(0f, degY, 0f);\n\t\t\t\temSpawnInfo.level = level;\n\t\t\t\temSpawnInfo.isCharm = (cond & 4) != 0;\n\t\t\t\temSpawnInfo.petId = petId;\n\t\t\t\temSpawnInfo.petOwnerPlId = petOwnerPlId;\n\t\t\t\temSpawnInfo.forceIgnoreSave = forceIgnoreSave;\n\t\t\t\temSpawnInfo.strongEmType = OcCondition.ConvertNetCondToEnemyStrongType(cond);\n\t\t\t\temSpawnInfo.spawner = SingletonMonoBehaviour<OcSpawnerMng>.Inst.getSpawner(spawnerGuid);\n\t\t\t\temSpawnInfo.canRecall = canRecall;\n\t\t\t\temSpawnInfo.isRaidAssist = isRaidAssist;\n\t\t\t\tcreateEmInst(guid, emSpawnInfo);\n\t\t\t}\n\t\t}\n\n\t\tprivate int createEmInst(int guid, EmSpawnInfo info)\n\t\t{\n\t\t\tif (SingletonMonoBehaviour<OcNetMng>.Inst.IsClient)"
+    },
+    "load_save_data": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 159943,
+      "end_line": 159974,
+      "text": "\t\t}\n\n\t\tpublic void loadSaveData()\n\t\t{\n\t\t\tenemyCountFromSaveData = 0;\n\t\t\tEnemySaveData[] enemySaveDatas = SingletonMonoBehaviour<OcWorldManager>.Inst.GetEnemySaveDatas();\n\t\t\tif (enemySaveDatas == null || enemySaveDatas.Length == 0)\n\t\t\t{\n\t\t\t\tDebug.Log((object)\"OcEmMg:loadSaveData FirstIsland\");\n\t\t\t\t_IsSaveDataLoadEnd = true;\n\t\t\t\treturn;\n\t\t\t}\n\t\t\tint saveDataVersion = SingletonMonoBehaviour<OcWorldManager>.Inst.GetSaveDataVersion();\n\t\t\tfor (int i = 0; i < enemySaveDatas.Length; i++)\n\t\t\t{\n\t\t\t\tif (!canSaveLoad((OcEmType)enemySaveDatas[i].EmType, (enemySaveDatas[i].ConditionFlag & 4) != 0))\n\t\t\t\t{\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tif (enemySaveDatas[i].Health <= 0f)\n\t\t\t\t{\n\t\t\t\t\tDebug.LogWarning((object)$\"{enemySaveDatas[i].EmType}\u306f\u6b7b\u3093\u3067\u3044\u307e\u3059\");\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\t\t\t\tbyte level = enemySaveDatas[i].Level;\n\t\t\t\tif (saveDataVersion <= 1 && enemySaveDatas[i].EmType == 8)\n\t\t\t\t{\n\t\t\t\t\tlevel = 1;\n\t\t\t\t}\n\t\t\t\tdoSpawn_FromSaveData(65535, enemySaveDatas[i].EmType, enemySaveDatas[i].GUID, enemySaveDatas[i].position.Get(), enemySaveDatas[i].eular.y, level, enemySaveDatas[i].ConditionFlag, enemySaveDatas[i].CanRecall, enemySaveDatas[i].IsRaidAssist);\n\t\t\t\tenemyCountFromSaveData++;\n\t\t\t}"
+    },
+    "save_eligibility": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 160032,
+      "end_line": 160060,
+      "text": "\t\tpublic bool canSaveLoad(OcEmType emType, bool isCharm)\n\t\t{\n\t\t\tif (isCharm)\n\t\t\t{\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\tif (SoEmArray.SoArray[(uint)emType].IsVehicle)\n\t\t\t{\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\tswitch (emType)\n\t\t\t{\n\t\t\tcase OcEmType.Lumberjack:\n\t\t\tcase OcEmType.Sandbag:\n\t\t\tcase OcEmType.Scarecrow:\n\t\t\tcase OcEmType.TurretMachineGunGuard_Ally:\n\t\t\tcase OcEmType.SprinkerRobo:\n\t\t\tcase OcEmType.SowingRobo:\n\t\t\tcase OcEmType.FarmingRobo:\n\t\t\tcase OcEmType.FarmingRobo_FullAuto:\n\t\t\tcase OcEmType.CultivatorRobo:\n\t\t\t\treturn true;\n\t\t\tdefault:\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\n\t\tpublic void Event_DayEnd()\n\t\t{"
+    },
+    "asset_lookup": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 320539,
+      "end_line": 320566,
+      "text": "\tpublic class SoEnemyArray : ScriptableObject\n\t{\n\t\t[SerializeField]\n\t\t[EnumLabel(typeof(OcEmType))]\n\t\tprivate SoEnemy[] _SoArray = new SoEnemy[491];\n\n\t\t[SerializeField]\n\t\tprivate AssetReferenceGameObject[] _EmAssetRefArray = (AssetReferenceGameObject[])(object)new AssetReferenceGameObject[491];\n\n\t\tpublic float[] IslandRevise_Hp = new float[7];\n\n\t\tpublic float[] IslandRevise_Atk = new float[7];\n\n\t\tpublic float[] IslandRevise_AtkBoss = new float[7];\n\n\t\tpublic float MonobisProb = 0.3f;\n\n\t\tpublic SoEnemy[] SoArray => _SoArray;\n\n\t\tpublic AssetReferenceGameObject GetAssetRef(OcEmType emType)\n\t\t{\n\t\t\tif ((int)emType >= _EmAssetRefArray.Length)\n\t\t\t{\n\t\t\t\treturn null;\n\t\t\t}\n\t\t\treturn _EmAssetRefArray[(uint)emType];\n\t\t}\n"
+    },
+    "normal_island_level": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 431161,
+      "end_line": 431176,
+      "text": "\t\tpublic int IslandLevel\n\t\t{\n\t\t\tget\n\t\t\t{\n\t\t\t\tif (OcGameSceneShareSingleton.IsOpening)\n\t\t\t\t{\n\t\t\t\t\treturn 0;\n\t\t\t\t}\n\t\t\t\tif (SROptions_Sub.Current.DummyIslandWorldLevel >= 0)\n\t\t\t\t{\n\t\t\t\t\treturn SROptions_Sub.Current.DummyIslandWorldLevel;\n\t\t\t\t}\n\t\t\t\treturn 0;\n\t\t\t}\n\t\t}\n"
+    },
+    "creative_settings": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 431861,
+      "end_line": 431892,
+      "text": "\t\tprivate void ResetWorldSetting()\n\t\t{\n\t\t\tApplyWorldSetting(debugCraft: false, -1, -1, noDeath: false, noDamage: false, noHunger: false, infinitST: false, -1f, noBuildingDamage: false, limitBuild: false, -1);\n\t\t}\n\n\t\tprivate void OnGameSceneLoadFinish()\n\t\t{\n\t\t\tSingletonMonoBehaviour<OcGameSceneTransformManager>.Inst.onSceneLoadFinish -= OnGameSceneLoadFinish;\n\t\t\tif (IsCreativeMode && SingletonMonoBehaviour<OcNetMng>.Inst.IsServer && (bool)OcPlMng.LocalPl)\n\t\t\t{\n\t\t\t\tApplyWorldSetting(CurrentWorld.creativeModeSetting);\n\t\t\t\tOcPlMng.LocalPl.OverWriteStatus(CurrentWorld.plStartingData);\n\t\t\t}\n\t\t\t_islandLoading = false;\n\t\t}\n\n\t\tpublic void ApplyWorldSetting(CreativeModeSettingData creativeSetting)\n\t\t{\n\t\t\tApplyWorldSetting(creativeSetting.debugCraft, creativeSetting.worldLevel, creativeSetting.islandLevel, creativeSetting.noDeath, creativeSetting.noDamage, creativeSetting.noHunger, creativeSetting.infinitST, creativeSetting.forceDayTime, creativeSetting.noBuildingDamage, creativeSetting.limitBuild, creativeSetting.forceWeather);\n\t\t}\n\n\t\tpublic void ApplyWorldSetting(bool debugCraft, int worldLevel, int islandLevel, bool noDeath, bool noDamage, bool noHunger, bool infinitST, float forceDayTime, bool noBuildingDamage, bool limitBuild, int forceWeather)\n\t\t{\n\t\t\tSROptions current = SROptions.Current;\n\t\t\tSROptions_Sub current2 = SROptions_Sub.Current;\n\t\t\tcurrent.DebugCraft = debugCraft;\n\t\t\tif (worldLevel >= 0)\n\t\t\t{\n\t\t\t\tWorldLevel = Mathf.Min(worldLevel, MaxWorldLevelAvailable);\n\t\t\t}\n\t\t\tcurrent2.DummyIslandWorldLevel = islandLevel;\n\t\t\tSROptions_Player current3 = SROptions_Player.Current;"
+    },
+    "debug_default": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 20547,
+      "end_line": 20555,
+      "text": "\t[Category(\"15. \u3010\u30c6\u30b9\u30c8\u3011\")]\n\t[SROptions.DisplayName(\"Scene:TestIslandID\")]\n\t[SROptions.Sort(110)]\n\tpublic int TestIslandID { get; set; } = 4;\n\n\t[Category(\"15. \u3010\u30c6\u30b9\u30c8\u3011\")]\n\t[SROptions.Sort(120)]\n\tpublic int DummyIslandWorldLevel { get; set; } = -1;\n"
+    },
+    "quest_weights": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 518343,
+      "end_line": 518355,
+      "text": "\t\tprivate const int questResetIntervalDay = 3;\n\n\t\tprivate static readonly float[,] IslandLvToDifficultyWeights = new float[8, 3]\n\t\t{\n\t\t\t{ 1f, 0f, 0f },\n\t\t\t{ 1f, 0f, 0f },\n\t\t\t{ 1f, 0f, 0f },\n\t\t\t{ 1f, 1f, 0f },\n\t\t\t{ 0f, 1f, 0f },\n\t\t\t{ 0f, 1f, 0f },\n\t\t\t{ 0f, 1f, 1f },\n\t\t\t{ 0f, 0f, 1f }\n\t\t};"
+    },
+    "work_gate": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 518415,
+      "end_line": 518433,
+      "text": "\t\tprivate bool IsDuringWork\n\t\t{\n\t\t\tget\n\t\t\t{\n\t\t\t\tif (!base.OwnerSpawner)\n\t\t\t\t{\n\t\t\t\t\tif (allowedReceiveQuestGUIDForGuest.HasValue)\n\t\t\t\t\t{\n\t\t\t\t\t\treturn allowedReceiveQuestGUIDForGuest.Value == base.GUID;\n\t\t\t\t\t}\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\treturn true;\n\t\t\t}\n\t\t}\n\n\t\tprivate SoNPC_Event SoNPC_Event => (SoNPC_Event)base.SoNpcData;\n\n\t\tpublic override bool CanOpenChest => !base.Condition.IsCharm;"
+    },
+    "quest_restore": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 518481,
+      "end_line": 518531,
+      "text": "\t\tpublic override void restartOptional()\n\t\t{\n\t\t\tselectedRequiredItem = null;\n\t\t\tselectedRewardItem = null;\n\t\t\tif (_ChestItemList == null)\n\t\t\t{\n\t\t\t\t_ChestItemList = new OcItem_ChestItemList();\n\t\t\t}\n\t\t\tif (!SingletonMonoBehaviour<OcNetMng>.Inst.IsHost && allowedReceiveQuestGUIDForGuest != base.GUID)\n\t\t\t{\n\t\t\t\tallowedReceiveQuestGUIDForGuest = null;\n\t\t\t}\n\t\t\tif (IsDuringWork)\n\t\t\t{\n\t\t\t\tsetForceIgnoreSave(value: true);\n\t\t\t\tLoadQuestData();\n\t\t\t\tSendAllowReceiveQuest(-1);\n\t\t\t}\n\t\t}\n\n\t\tpublic void SendAllowReceiveQuest(int targetPlId)\n\t\t{\n\t\t\tif (IsDuringWork && SingletonMonoBehaviour<OcNetMng>.Inst.IsMultiPlay && SingletonMonoBehaviour<OcNetMng>.Inst.IsHost)\n\t\t\t{\n\t\t\t\tSingletonMonoBehaviour<OcNetMng>.Inst.NetRPC?.ServerBroadcast.Send(OcNetBroadcastType.AllowReceiveQuest, base.GUID, targetPlId);\n\t\t\t}\n\t\t}\n\n\t\tpublic void AllowReceiveQuestForGuest()\n\t\t{\n\t\t\tallowedReceiveQuestGUIDForGuest = base.GUID;\n\t\t\tLoadQuestData();\n\t\t}\n\n\t\tpublic void LoadQuestData()\n\t\t{\n\t\t\tif (SingletonMonoBehaviour<OcWorldManager>.Inst.InGameData.questNpcDataDic.TryGetValue((byte)base.EmType, out var value) && value.QuestLimitDay > SingletonMonoBehaviour<OcDayMng>.Inst.CurDay)\n\t\t\t{\n\t\t\t\tquestNpcSaveData = value;\n\t\t\t\tSoQuestRequiredItemTable soQuestRequiredItemTable = questRequiredItemTables[questNpcSaveData.SoQuestRequiredItemTableIndex];\n\t\t\t\tselectedRequiredItem = soQuestRequiredItemTable.Items[value.SoRequiredItemIndex];\n\t\t\t\tselectedRewardItem = soQuestRequiredItemTable.Reward.Items[value.SoRewardItemIndex];\n\t\t\t\tquestIsReceived = true;\n\t\t\t\tbase.Condition.setCharm(value.IsCleared);\n\t\t\t}\n\t\t\telse\n\t\t\t{\n\t\t\t\tRenewQuest();\n\t\t\t}\n\t\t}\n"
+    },
+    "talk_gate": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 518673,
+      "end_line": 518688,
+      "text": "\t\t\t}\n\t\t}\n\n\t\tpublic override bool canTalk(bool isRPC = false)\n\t\t{\n\t\t\tif (!base.canTalk(isRPC))\n\t\t\t{\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\tif (!IsDuringWork)\n\t\t\t{\n\t\t\t\treturn false;\n\t\t\t}\n\t\t\treturn true;\n\t\t}\n"
+    },
+    "quest_generation": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 518723,
+      "end_line": 518782,
+      "text": "\t\tpublic void RenewQuest()\n\t\t{\n\t\t\tSingletonMonoBehaviour<OcWorldManager>.Inst.InGameData.questNpcDataDic.Remove((byte)base.EmType);\n\t\t\tbase.Condition.setCharm(isCharm: false);\n\t\t\tquestNpcSaveData = default(QuestNpcSaveData);\n\t\t\tOcRand ocRand = new OcRand();\n\t\t\tocRand.InitState(QuestSeed);\n\t\t\tint length = IslandLvToDifficultyWeights.GetLength(1);\n\t\t\tint islandLevel = SingletonMonoBehaviour<OcWorldManager>.Inst.IslandLevel;\n\t\t\tfloat num = 0f;\n\t\t\tfor (int i = 0; i < length; i++)\n\t\t\t{\n\t\t\t\tnum += IslandLvToDifficultyWeights[islandLevel, i];\n\t\t\t}\n\t\t\tfloat num2 = ocRand.Range(0f, num);\n\t\t\tfloat num3 = 0f;\n\t\t\tquestNpcSaveData.SoQuestRequiredItemTableIndex = 0;\n\t\t\twhile (questNpcSaveData.SoQuestRequiredItemTableIndex < length)\n\t\t\t{\n\t\t\t\tnum3 += IslandLvToDifficultyWeights[islandLevel, questNpcSaveData.SoQuestRequiredItemTableIndex];\n\t\t\t\tif (num3 >= num2)\n\t\t\t\t{\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t\tquestNpcSaveData.SoQuestRequiredItemTableIndex++;\n\t\t\t}\n\t\t\tSoQuestRequiredItemTable soQuestRequiredItemTable = questRequiredItemTables[questNpcSaveData.SoQuestRequiredItemTableIndex];\n\t\t\tfloat num4 = ocRand.Range(0f, soQuestRequiredItemTable.Items.Sum((IQuestRequredItemInfo info) => info.Weight));\n\t\t\tfloat num5 = 0f;\n\t\t\tfor (int num6 = 0; num6 < soQuestRequiredItemTable.Items.Count; num6++)\n\t\t\t{\n\t\t\t\tIQuestRequredItemInfo questRequredItemInfo = soQuestRequiredItemTable.Items[num6];\n\t\t\t\tnum5 += questRequredItemInfo.Weight;\n\t\t\t\tif (num5 >= num4)\n\t\t\t\t{\n\t\t\t\t\tselectedRequiredItem = questRequredItemInfo;\n\t\t\t\t\tquestNpcSaveData.SoRequiredItemIndex = num6;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\tfloat num7 = ocRand.Range(0f, soQuestRequiredItemTable.Reward.Items.Sum((SoQuestRewardTable.ItemInfo info) => info.weight));\n\t\t\tfloat num8 = 0f;\n\t\t\tfor (int num9 = 0; num9 < soQuestRequiredItemTable.Reward.Items.Count; num9++)\n\t\t\t{\n\t\t\t\tSoQuestRewardTable.ItemInfo itemInfo = soQuestRequiredItemTable.Reward.Items[num9];\n\t\t\t\tnum8 += itemInfo.weight;\n\t\t\t\tif (num8 >= num7)\n\t\t\t\t{\n\t\t\t\t\tselectedRewardItem = itemInfo;\n\t\t\t\t\tquestNpcSaveData.SoRewardItemIndex = num9;\n\t\t\t\t\tbreak;\n\t\t\t\t}\n\t\t\t}\n\t\t\tquestNpcSaveData.RequireAndRewardMultiplier = RequiredAndRewardItemMultiplier;\n\t\t\tquestIsReceived = false;\n\t\t\tquestNpcSaveData.QuestLimitDay = QuestStartDay + 3;\n\t\t\tbase.Condition.setCharm(isCharm: false);\n\t\t}\n\n\t\tprivate void ReceiveQuest()"
+    },
+    "old_character_import": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 296288,
+      "end_line": 296367,
+      "text": "\tpublic struct PlCharaInheritData\n\t{\n\t\t[IgnoreMember]\n\t\tpublic string name;\n\n\t\tpublic InventoryBoxSaveData[] inheritItemList;\n\n\t\t[IgnoreMember]\n\t\tpublic InventoryBoxSaveData[] inheritPetItem;\n\n\t\t[IgnoreMember]\n\t\tpublic PetSaveData[] inheritPetList;\n\n\t\t[IgnoreMember]\n\t\tpublic floatPair[] deliveredList;\n\n\t\tpublic PlCharaInheritData(OcPlCharacterManager.OldCharaSaveStruct.OldSaveStructValue.ES3CharaSaveData oldSaveData)\n\t\t{\n\t\t\tname = oldSaveData.charaMakeData.Name;\n\t\t\tInventorySaveData inventorySaveData = oldSaveData.inventorySaveData;\n\t\t\tList<InventoryBoxSaveData> itemList = new List<InventoryBoxSaveData>();\n\t\t\tAddToItemList(inventorySaveData.equipmentList);\n\t\t\tAddToItemList(inventorySaveData.buildingList);\n\t\t\tAddToItemList(inventorySaveData.consumptionList);\n\t\t\tAddToItemList(inventorySaveData.materialList);\n\t\t\tinheritItemList = itemList.ToArray();\n\t\t\tList<int> list = new List<int>();\n\t\t\tList<InventoryBoxSaveData> list2 = new List<InventoryBoxSaveData>();\n\t\t\tInventoryBoxSaveData[] petList = inventorySaveData.petList;\n\t\t\tfor (int i = 0; i < petList.Length; i++)\n\t\t\t{\n\t\t\t\tInventoryBoxSaveData item = petList[i];\n\t\t\t\tif (!item.itemInBox.IsNullOrEmpty())\n\t\t\t\t{\n\t\t\t\t\tItemStackSaveData itemStackSaveData = item.itemInBox[0];\n\t\t\t\t\tif (itemStackSaveData.item.petID != 65535)\n\t\t\t\t\t{\n\t\t\t\t\t\tlist.Add(itemStackSaveData.item.petID);\n\t\t\t\t\t\tlist2.Add(item);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tList<PetSaveData> list3 = new List<PetSaveData>();\n\t\t\tPetSaveData[] petSaveDatas = oldSaveData.petSaveDatas;\n\t\t\tfor (int i = 0; i < petSaveDatas.Length; i++)\n\t\t\t{\n\t\t\t\tPetSaveData item2 = petSaveDatas[i];\n\t\t\t\tfor (int j = 0; j < list.Count; j++)\n\t\t\t\t{\n\t\t\t\t\tif (item2.GUID == list[j])\n\t\t\t\t\t{\n\t\t\t\t\t\titem2.Reset();\n\t\t\t\t\t\tlist3.Add(item2);\n\t\t\t\t\t\tlist.RemoveAt(j);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tinheritPetItem = list2.ToArray();\n\t\t\tinheritPetList = list3.ToArray();\n\t\t\tdeliveredList = oldSaveData.statisticalSaveDatas.itemDelivered;\n\t\t\tvoid AddToItemList(InventoryBoxSaveData[] InventorySaveList)\n\t\t\t{\n\t\t\t\tfor (int k = 0; k < InventorySaveList.Length; k++)\n\t\t\t\t{\n\t\t\t\t\tInventoryBoxSaveData item3 = InventorySaveList[k];\n\t\t\t\t\tItemStackSaveData[] itemInBox = item3.itemInBox;\n\t\t\t\t\tfor (int l = 0; l < itemInBox.Length; l++)\n\t\t\t\t\t{\n\t\t\t\t\t\tif (itemInBox[l].count > 0)\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\titemList.Add(item3);\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tpublic class OcPlCommon : MonoBehaviour"
+    },
+    "quest_state_not_serialized": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 432545,
+      "end_line": 432550,
+      "text": "\n\t\tpublic PlayerSaveData[] playerSaveDatas;\n\n\t\t[IgnoreMember]\n\t\tpublic Dictionary<byte, QuestNpcSaveData> questNpcDataDic;\n"
+    },
+    "quest_state_init": {
+      "source": "artifacts\\harvesting-research\\all.cs",
+      "start_line": 432600,
+      "end_line": 432608,
+      "text": "\t\t\tspawnerCondOnceSaveDatas = new SpawnerCondOnceSaveData[0];\n\t\t\titemFlagSaveDatas = new OcItemFlagSaveData[0];\n\t\t\traidAssistCampDatas = new RaidAssistCampSaveData[0];\n\t\t\tsupplyCorpsChestSaveDatas = new SupplyCorpsChestSaveData[0];\n\t\t\tsupplyPodTimer = -1f;\n\t\t\tsupplyPodInterval = -1f;\n\t\t\tplayerSaveDatas = new PlayerSaveData[0];\n\t\t\tquestNpcDataDic = new Dictionary<byte, QuestNpcSaveData>();\n\t\t\tkillInnocenceCount = 0;"
+    }
+  },
+  "prior_reward_evidence": "docs/research/2026-10-16-deep/equipment.json",
+  "static_prefab_evidence": "artifacts/closure-bundles/prefabs.json",
+  "negative_searches": {
+    "exact_npc_quest_enum_names": "Only enum declarations in all.cs; no named dedicated spawn calls. Numeric/data-driven spawning is not excluded by text search.",
+    "questRequiredItemTables": "Only field declaration and indexed reads in OcEm_NPC_ItemOffer; no assignment/replacement path found.",
+    "questNpcDataDic": "Reads/writes are quest generation/accept/clear and network synchronization. WorldInGameData field is IgnoreMember and initialized empty."
+  },
+  "placement_caveat": "Static prefab hierarchy scan contains619 OcDelayCreate components whose string-addressed child prefabs are not covered; general loader does not restrict child contents to decoration."
+}

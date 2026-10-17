@@ -1,6 +1,8 @@
 > Historical design/review document. Some statements describe proposals or older builds. See [current status](STATUS.md) and [development testing](DEVELOPMENT.md) before using setup or recovery instructions.
 
 # Craftopia Production Station & Age System Catalog
+
+> **October 10 correction:** The role labels below were inferred from metadata and are not verified station identities. Method-body inspection shows `OcBldg_ItemGenerator_Refiner` performs weapon refinement, not furnace smelting. `OcBuildingBase_Craft.get_Recipes` selects recipes using the installed item's `familyId`; a concrete building class alone cannot identify every crafting station. Collector 1.3 records loaded station item/family/type bindings to resolve this. Do not use the older Refiner/smelting label or assume every `OcBldg_CraftingBench` is the opening workbench.
 ## Static metadata analysis of `AD__Overcraft.dll` (via dnfile, no execution)
 
 **Method:** Python `dnfile` 0.18.0 metadata inspection of TypeDef/MethodDef/Field tables.

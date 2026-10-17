@@ -89,6 +89,9 @@ class MPBase(unittest.TestCase):
         cb.LEDGER_DIR = self.tmp.name
 
     def tearDown(self):
+        if getattr(cb, "_authority_lock_file", None) is not None:
+            cb._authority_lock_file.close()
+            cb._authority_lock_file = None
         self.tmp.cleanup()
 
     def new_bridge(self, slot='TestPlayer', session='mp'):
@@ -244,7 +247,7 @@ class SharedSlot(MPBase):
         run(b.process_received_items({'index': 0, 'items': [{'item': 9}]}))
         self.assertTrue(any(p['receipt_id'] == 0 for p in b.ledger['pending_unlocks']))
         # Late joiner gets the full history replay.
-        ws, _tok = self.connect_extra(b, guid='G1')
+        ws, _tok = self.connect_extra(b, guid='101')
         kinds = [m.get('cmd') for m in ws.sent]
         self.assertIn('unlock_production', [m.get('cmd') for m in ws.sent])
         # Ack clears pending but history survives...
@@ -255,7 +258,7 @@ class SharedSlot(MPBase):
         # ...and a later joiner gets the full history replay again (idempotent
         # permission state rebuild, matching v1.2.1 semantics): it returns to
         # pending until re-acked, never lost.
-        ws2, _t2 = self.connect_extra(b, guid='G2')
+        ws2, _t2 = self.connect_extra(b, guid='102')
         self.assertTrue(any(m.get('cmd') == 'unlock_production' for m in ws2.sent))
         msg2 = next(m for m in ws2.sent if m.get('cmd') == 'unlock_production')
         run(b.on_mod_message(dict(msg2, cmd='unlock_ack')))
@@ -266,37 +269,37 @@ class SharedSlot(MPBase):
         # Point arrives before anyone enrolls: held.
         run(b.process_received_items({'index': 0, 'items': [{'item': 1}]}))
         self.assertEqual(b.ledger['unassigned_points'], [0])
-        # G1 enrolls via handshake: claims held point, gets grant.
-        ws1, tok1 = self.connect_extra(b, guid='G1')
+        # 101 enrolls via handshake: claims held point, gets grant.
+        ws1, tok1 = self.connect_extra(b, guid='101')
         grants1 = [m for m in ws1.sent if m.get('cmd') == 'grant_items']
         self.assertEqual(len(grants1), 1)
         idx = grants1[0]['indices']
         self.assertTrue(idx)
-        # G1 acks (points "spent" in game).
+        # 101 acks (points "spent" in game).
         run(b.on_mod_message({'cmd': 'grant_ack', 'epoch': b.ledger['epoch'],
                               'indices': idx, 'slot': 'TestPlayer'}, tok1))
-        cg1 = b.ledger['char_grants']['G1']
+        cg1 = b.ledger['char_grants']['101']
         self.assertEqual(cg1['pending'], [])
         self.assertEqual(sorted(cg1['delivered']), sorted(idx))
-        # G1 reconnects: nothing re-granted.
-        ws1b, tok1b = self.connect_extra(b, guid='G1')
+        # 101 reconnects: nothing re-granted.
+        ws1b, tok1b = self.connect_extra(b, guid='101')
         self.assertFalse(any(m.get('cmd') == 'grant_items' for m in ws1b.sent))
-        # G2 enrolls later: does NOT get G1's historical point...
-        ws2, tok2 = self.connect_extra(b, guid='G2')
+        # 102 enrolls later: does NOT get 101's historical point...
+        ws2, tok2 = self.connect_extra(b, guid='102')
         self.assertFalse(any(m.get('cmd') == 'grant_items' for m in ws2.sent))
         # ...but both get the next point, once each.
         run(b.process_received_items({'index': 1, 'items': [{'item': 1}]}))
-        self.assertTrue(b.ledger['char_grants']['G1']['pending'])
-        self.assertTrue(b.ledger['char_grants']['G2']['pending'])
-        self.assertEqual(sorted(b.ledger['char_grants']['G1']['pending']),
-                         sorted(b.ledger['char_grants']['G2']['pending']))
+        self.assertTrue(b.ledger['char_grants']['101']['pending'])
+        self.assertTrue(b.ledger['char_grants']['102']['pending'])
+        self.assertEqual(sorted(b.ledger['char_grants']['101']['pending']),
+                         sorted(b.ledger['char_grants']['102']['pending']))
 
     def test_team_bundle_delivered_once(self):
         b = self.new_shared()
         run(b.process_received_items({'index': 5, 'items': [{'item': 3}]}))
         self.assertEqual(len(b.ledger['pending_bundles']), 1)
         # First connected mod gets it.
-        ws1, _t1 = self.connect_extra(b, guid='G1')
+        ws1, _t1 = self.connect_extra(b, guid='101')
         bundles = [m for m in ws1.sent if m.get('cmd') == 'grant_bundle']
         self.assertEqual(len(bundles), 1)
         self.assertEqual(bundles[0]['amount'], 500)
@@ -306,12 +309,12 @@ class SharedSlot(MPBase):
         self.assertEqual(b.ledger['team_consumables'], [5])
         self.assertEqual(b.ledger['pending_bundles'], [])
         # Late joiner does NOT get it again.
-        ws2, _t2 = self.connect_extra(b, guid='G2')
+        ws2, _t2 = self.connect_extra(b, guid='102')
         self.assertFalse(any(m.get('cmd') == 'grant_bundle' for m in ws2.sent))
         # Bridge restart does not resurrect it either.
         b2 = self.new_shared()
         self.assertEqual(b2.ledger['team_consumables'], [5])
-        ws3, _t3 = self.connect_extra(b2, guid='G3')
+        ws3, _t3 = self.connect_extra(b2, guid='103')
         self.assertFalse(any(m.get('cmd') == 'grant_bundle' for m in ws3.sent))
 
     def test_pending_bundle_survives_restart_until_ack(self):
@@ -319,14 +322,14 @@ class SharedSlot(MPBase):
         run(b.process_received_items({'index': 5, 'items': [{'item': 3}]}))
         b2 = self.new_shared()  # same session -> same ledger
         self.assertEqual(len(b2.ledger['pending_bundles']), 1)
-        ws, _t = self.connect_extra(b2, guid='G1')
+        ws, _t = self.connect_extra(b2, guid='101')
         self.assertTrue(any(m.get('cmd') == 'grant_bundle' for m in ws.sent))
 
     def test_second_socket_allowed_in_shared_mode(self):
         async def go():
             b = self.new_shared()
             b.ap_connected = True
-            hs = '{"cmd":"connect","name":"TestPlayer","game":"Craftopia","unlock_protocol":2,"character_guid":"G%d"}'
+            hs = '{"cmd":"connect","name":"TestPlayer","game":"Craftopia","unlock_protocol":2,"character_guid":"10%d"}'
             ws1 = FakeWS([hs % 1], stay_open=True)
             ws2 = FakeWS([hs % 2], stay_open=True)
             t1 = asyncio.create_task(b.mod_handler(ws1))
@@ -346,7 +349,7 @@ class SharedSlot(MPBase):
             self.assertEqual(s1[0]['multiplayer_mode'], 1)
             # Both characters enrolled.
             guids = {e['character_guid'] for e in b.ledger['enrollments']}
-            self.assertEqual(guids, {'G1', 'G2'})
+            self.assertEqual(guids, {'101', '102'})
             await ws1.eof()
             await ws2.eof()
             await asyncio.gather(t1, t2)
@@ -393,10 +396,10 @@ class RecoveryAndAuthority(MPBase):
             with self.assertRaises(SystemExit):
                 cb.claim_authority('auth-test', False)
         finally:
-            os.remove(p1)
+            cb._authority_lock_file.close()
         # After release, claiming works again.
         p2 = cb.claim_authority('auth-test', False)
-        os.remove(p2)
+        cb._authority_lock_file.close()
 
     def test_authority_takes_over_stale_lock(self):
         path = os.path.join(cb.LEDGER_DIR, 'craftopia_bridge_authority_stale-test.json')
@@ -404,20 +407,20 @@ class RecoveryAndAuthority(MPBase):
             json.dump({'pid': 2 ** 30, 'started': 0, 'ts': 0}, f)
         try:
             p = cb.claim_authority('stale-test', False)
-            with open(p, encoding='utf-8') as f:
+            with open(p + '.info', encoding='utf-8') as f:
                 self.assertEqual(json.load(f)['pid'], os.getpid())
         finally:
             if os.path.exists(path):
-                os.remove(path)
+                cb._authority_lock_file.close()
 
     def test_authority_takeover_flag(self):
         p1 = cb.claim_authority('takeover-test', False)
         try:
-            p2 = cb.claim_authority('takeover-test', True)
-            self.assertEqual(p1, p2)
+            with mock.patch.object(cb.time, 'sleep'), self.assertRaises(SystemExit):
+                cb.claim_authority('takeover-test', True)
         finally:
             if os.path.exists(p1):
-                os.remove(p1)
+                cb._authority_lock_file.close()
 
 
 if __name__ == '__main__':
