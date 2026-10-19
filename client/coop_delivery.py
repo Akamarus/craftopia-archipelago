@@ -1,5 +1,6 @@
 """Shared-slot delivery policy and persistence. No game or network side effects."""
 from dataclasses import asdict
+from uuid import UUID, uuid4
 from coop_items import UNLOCKS, TEAM_ITEMS, decode_receipt, validate_receipt
 from coop_progress import digest, integer, require, validate_identity, validate_member
 from coop_store import LockedJSON
@@ -42,25 +43,49 @@ class TeamDelivery:
             elif receipt.kind in TEAM_ITEMS:
                 expected.add((receipt.index, None))
         actual = set()
+        attempts = set()
+        characters = {m.character for m in self._members}
         for grant in state['grants']:
             require(type(grant) is dict and set(grant) == {'index', 'character', 'state', 'attempt'},
                     'invalid grant record')
             require(integer(grant['index']) and grant['index'] in receipts, 'unknown grant receipt')
             receipt = receipts[grant['index']]
             if receipt.kind == 'points':
-                require(grant['character'] in [m.character for m in self._members] and
+                require(type(grant['character']) is str and grant['character'] in characters and
                         grant['state'] == 'pending', 'invalid character entitlement')
                 key = (grant['index'], grant['character'])
             else:
-                require(receipt.kind in TEAM_ITEMS and grant['character'] is None and
-                        grant['state'] == 'unclaimed', 'invalid team grant')
+                require(receipt.kind in TEAM_ITEMS and type(grant['state']) is str and
+                        grant['state'] in ('unclaimed', 'reserved', 'dispatched', 'held', 'acknowledged'),
+                        'invalid team grant')
+                require(grant['character'] is None if grant['state'] == 'unclaimed' else
+                        type(grant['character']) is str and grant['character'] in characters,
+                        'invalid team grant owner')
                 key = (grant['index'], None)
-            require(grant['attempt'] is None and key not in actual, 'invalid or duplicate grant')
+            if grant['state'] in ('dispatched', 'held', 'acknowledged'):
+                self._attempt(grant['attempt'])
+                require(grant['attempt'] not in attempts, 'duplicate dispatch attempt')
+                attempts.add(grant['attempt'])
+            else:
+                require(grant['attempt'] is None, 'attempt on undispatched grant')
+            require(key not in actual, 'duplicate grant')
             actual.add(key)
         require(actual == expected, 'incomplete grant history')
 
     def __enter__(self):
         self._store.__enter__()
+        try:
+            state = self._store.snapshot()
+            changed = False
+            for grant in state['grants']:
+                if grant['state'] == 'dispatched':
+                    grant['state'] = 'held'
+                    changed = True
+            if changed:
+                self._store.commit(state)
+        except BaseException:
+            self._store.__exit__()
+            raise
         return self
 
     def __exit__(self, *args):
@@ -69,6 +94,76 @@ class TeamDelivery:
     def _member(self, member):
         validate_member(member)
         require(member in self._members, 'character not enrolled')
+
+    @staticmethod
+    def _attempt(attempt):
+        require(type(attempt) is str and len(attempt) == 36, 'invalid dispatch attempt')
+        try:
+            valid = str(UUID(attempt)) == attempt and UUID(attempt).int != 0
+        except ValueError:
+            valid = False
+        require(valid, 'invalid dispatch attempt')
+
+    def _grant(self, state, index, member):
+        self._member(member)
+        require(integer(index), 'invalid receipt index')
+        receipt = next((r for r in state['receipts'] if r['index'] == index), None)
+        require(receipt is not None and receipt['kind'] in TEAM_ITEMS, 'not a team item receipt')
+        return next(g for g in state['grants'] if g['index'] == index)
+
+    def _envelope(self, state, grant):
+        return dict(identity=asdict(self._identity), character=grant['character'],
+                    receipt=dict(next(r for r in state['receipts'] if r['index'] == grant['index'])),
+                    attempt=grant['attempt'], state=grant['state'])
+
+    def claim(self, index, member):
+        state = self._store.snapshot()
+        grant = self._grant(state, index, member)
+        if grant['state'] != 'unclaimed':
+            require(grant['character'] == member.character, 'item already claimed by another character')
+            return False
+        grant.update(character=member.character, state='reserved')
+        self._store.commit(state)
+        return True
+
+    def begin(self, index, member):
+        state = self._store.snapshot()
+        grant = self._grant(state, index, member)
+        require(grant['character'] == member.character, 'grant does not belong to character')
+        if grant['state'] in ('dispatched', 'held', 'acknowledged'):
+            return None
+        require(grant['state'] == 'reserved', 'grant is not ready')
+        grant.update(state='dispatched', attempt=str(uuid4()))
+        self._store.commit(state)
+        return self._envelope(state, grant)
+
+    def acknowledge(self, index, member, attempt, saved):
+        require(saved is True, 'saved grant evidence required')
+        self._attempt(attempt)
+        state = self._store.snapshot()
+        grant = self._grant(state, index, member)
+        require(grant['character'] == member.character and grant['attempt'] == attempt and
+                grant['state'] in ('dispatched', 'held', 'acknowledged'), 'acknowledgment does not match grant')
+        if grant['state'] == 'acknowledged':
+            return
+        grant['state'] = 'acknowledged'
+        self._store.commit(state)
+
+    def hold_dispatched(self, member):
+        self._member(member)
+        state = self._store.snapshot()
+        changed = False
+        for grant in state['grants']:
+            if grant['character'] == member.character and grant['state'] == 'dispatched':
+                grant['state'] = 'held'
+                changed = True
+        if changed:
+            self._store.commit(state)
+
+    def holds(self):
+        state = self._store.snapshot()
+        return [self._envelope(state, g) for g in sorted(state['grants'], key=lambda g: (g['index'], g['character'] or ''))
+                if g['state'] == 'held']
 
     def receive(self, receipt):
         validate_receipt(receipt)
