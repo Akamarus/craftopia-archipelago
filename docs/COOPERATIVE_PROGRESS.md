@@ -67,3 +67,46 @@ The old bridge's local-file multiplayer registry remains unchanged. It is not a 
 ## Verification
 
 Run `python -m unittest discover -s client -p "test_coop_*.py" -v` from the repository root. Tests cover separate and shared slots, independent confirmations, 750 offline accomplishments surviving host restart, world/catalog isolation, duplicate events, stale/conflicting snapshots, failed writes, and process lock release. Existing client tests should run in separate processes because some install module-level dependency mocks.
+
+## Shared-slot item delivery foundation
+
+`client/coop_items.py` defines immutable, normalized `ItemReceipt(index, item_id, kind, target, amount)` values. `client/coop_delivery.py` provides a `TeamDelivery(path, identity, members)` context manager. It requires shared-slot mode and a nonempty, fixed roster from validated group enrollment. Finish enrolling the group before activating this delivery journal. Reordering the same roster is harmless; changing its members or the session identity refuses to open the old journal.
+
+This module is also a development library, not wired into the running bridge or player package. The old first-connected-player bundle path remains unchanged until the production adapter is reviewed. Separate-slot delivery stays on its existing personal path.
+
+| Receipt kind | Delivery policy |
+| --- | --- |
+| `physical`, `currency` | One explicit claimant for the team |
+| `points` | One independent entitlement per enrolled character |
+| `unlock_equipment`, `unlock_production`, `unlock_skill_tree` | Shared desired state, replayable for every member |
+
+`receive(receipt)` atomically persists the receipt and any character entitlements. Identical AP-index replay returns false; conflicting content at that index raises an error without changing the journal. A new receipt returns true. `unlocks(member)` returns all unlock receipts sorted by AP index, including those received while the character was offline. Equipment amounts are resolved absolute tiers, not increments. The future game adapter must merge desired equipment tiers monotonically; production and skill unlocks are set membership. Do not reinterpret packet arrival order as progressive levels.
+
+For physical items and currency:
+
+1. `available()` lists unclaimed receipts.
+2. `claim(index, member)` durably reserves the item. The winner gets true; repeating the same claim gets false. Another character is refused, even after delivery or a restart.
+3. `begin(index, member)` saves a unique dispatch attempt **before** returning a grant envelope. The envelope carries group identity, character, receipt, attempt, and state. A dispatched, held, or acknowledged grant returns None on another begin call; it cannot generate another delivery attempt.
+4. Only verified character-save evidence permits `acknowledge(index, member, attempt, saved=True)`. This completes that exact character's attempt; matching repeated acknowledgments are harmless.
+
+Points use `pending_points(member)` and the same begin/acknowledge APIs without a team claim. No method takes a current point balance: spending points cannot create another entitlement. One character's acknowledgment never completes another character's grant.
+
+### Uncertain delivery
+
+Dispatch and game inventory mutation cannot form one atomic transaction. `hold_dispatched(member)` records a disconnect while acknowledgment is outstanding. Opening an existing journal also converts all unacknowledged dispatched grants to holds before exposing the journal. Reserved but undispatched items remain reserved; pending character points remain pending.
+
+`holds()` returns copies of held envelopes. Held items are not available to another claimant and begin returns None. A matching saved acknowledgment from the original owner and attempt can resolve a hold. There is deliberately no automatic regrant, transfer, or reset API. This can conservatively hold an item when the process crashed after saving dispatch but before actually sending it. Manual reconciliation tooling is a later stage; preserve the receipts instead of deleting them.
+
+Use a single serial owner per journal. OS locks exclude a second local process; they do not establish authority across different PCs. Receive, claim, dispatch, acknowledgment, and recovery each persist before publishing changed memory. A failed recovery write prevents the journal from opening and releases ownership for a later retry. Corrupt or incompatible files are never reset automatically.
+
+### Required production adapter
+
+The module accepts trusted calls, not unvalidated network packets. The adapter still must:
+
+- Validate AP items using the DataPackage, including progressive-equipment classification and actual game target IDs.
+- Authenticate current group, world, character, and connection ownership before accepting claims or acknowledgments.
+- Deliver envelopes only to their named character and preserve attempt IDs in the character's save receipt ledger.
+- Require real persisted save evidence before treating `saved=True` as valid; extend the existing currency save observer rather than bypassing it.
+- Read shared unlock history on reconnect and resolve holds without silently retrying uncertain mutations.
+
+These adapters, native networking, recovery UI, and live two-client testing remain unimplemented. The library tests establish policy and persistence only.

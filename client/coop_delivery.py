@@ -52,7 +52,8 @@ class TeamDelivery:
             receipt = receipts[grant['index']]
             if receipt.kind == 'points':
                 require(type(grant['character']) is str and grant['character'] in characters and
-                        grant['state'] == 'pending', 'invalid character entitlement')
+                        type(grant['state']) is str and grant['state'] in
+                        ('pending', 'dispatched', 'held', 'acknowledged'), 'invalid character entitlement')
                 key = (grant['index'], grant['character'])
             else:
                 require(receipt.kind in TEAM_ITEMS and type(grant['state']) is str and
@@ -104,12 +105,14 @@ class TeamDelivery:
             valid = False
         require(valid, 'invalid dispatch attempt')
 
-    def _grant(self, state, index, member):
+    def _grant(self, state, index, member, team_only=False):
         self._member(member)
         require(integer(index), 'invalid receipt index')
         receipt = next((r for r in state['receipts'] if r['index'] == index), None)
-        require(receipt is not None and receipt['kind'] in TEAM_ITEMS, 'not a team item receipt')
-        return next(g for g in state['grants'] if g['index'] == index)
+        kinds = TEAM_ITEMS if team_only else TEAM_ITEMS + ('points',)
+        require(receipt is not None and receipt['kind'] in kinds, 'not a grantable item receipt')
+        return next(g for g in state['grants'] if g['index'] == index and
+                    (receipt['kind'] != 'points' or g['character'] == member.character))
 
     def _envelope(self, state, grant):
         return dict(identity=asdict(self._identity), character=grant['character'],
@@ -118,7 +121,7 @@ class TeamDelivery:
 
     def claim(self, index, member):
         state = self._store.snapshot()
-        grant = self._grant(state, index, member)
+        grant = self._grant(state, index, member, team_only=True)
         if grant['state'] != 'unclaimed':
             require(grant['character'] == member.character, 'item already claimed by another character')
             return False
@@ -132,7 +135,7 @@ class TeamDelivery:
         require(grant['character'] == member.character, 'grant does not belong to character')
         if grant['state'] in ('dispatched', 'held', 'acknowledged'):
             return None
-        require(grant['state'] == 'reserved', 'grant is not ready')
+        require(grant['state'] in ('reserved', 'pending'), 'grant is not ready')
         grant.update(state='dispatched', attempt=str(uuid4()))
         self._store.commit(state)
         return self._envelope(state, grant)

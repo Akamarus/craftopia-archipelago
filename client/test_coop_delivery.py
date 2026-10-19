@@ -203,4 +203,41 @@ else:
         self.assertEqual(result.stdout.strip(), 'ValueError')
 
 
+class PointDeliveryTests(DeliveryFixture):
+    def test_offline_character_gets_own_entitlement_after_other_spends_points(self):
+        with self.open() as delivery:
+            delivery.receive(POINTS)
+            with self.assertRaises(ValueError): delivery.claim(POINTS.index, A)
+            envelope = delivery.begin(POINTS.index, A)
+            self.assertEqual(envelope['receipt']['amount'], 3)
+            self.assertEqual(delivery.pending_points(A), [])
+            self.assertEqual(delivery.pending_points(GUEST), [POINTS])
+            delivery.acknowledge(POINTS.index, A, envelope['attempt'], True)
+        with self.open() as delivery:
+            # There is deliberately no balance input: spending points cannot recreate grants.
+            self.assertFalse(delivery.receive(POINTS))
+            self.assertEqual(delivery.pending_points(A), [])
+            self.assertIsNone(delivery.begin(POINTS.index, A))
+            self.assertEqual(delivery.pending_points(GUEST), [POINTS])
+            guest = delivery.begin(POINTS.index, GUEST)
+            self.assertNotEqual(guest['attempt'], envelope['attempt'])
+            with self.assertRaises(ValueError): delivery.acknowledge(POINTS.index, GUEST, envelope['attempt'], True)
+            self.assertIsNone(delivery.begin(POINTS.index, GUEST))
+            delivery.acknowledge(POINTS.index, GUEST, guest['attempt'], True)
+            self.assertEqual(delivery.pending_points(GUEST), [])
+
+    def test_points_interrupted_dispatch_holds_only_affected_character(self):
+        with self.open() as delivery:
+            delivery.receive(POINTS)
+            envelope = delivery.begin(POINTS.index, A)
+        with self.open() as delivery:
+            self.assertEqual(delivery.pending_points(GUEST), [POINTS])
+            self.assertEqual(delivery.pending_points(A), [])
+            self.assertIsNone(delivery.begin(POINTS.index, A))
+            self.assertEqual([h['character'] for h in delivery.holds()], ['123'])
+            with self.assertRaises(ValueError): delivery.acknowledge(POINTS.index, GUEST, envelope['attempt'], True)
+            delivery.acknowledge(POINTS.index, A, envelope['attempt'], True)
+            self.assertEqual(delivery.holds(), [])
+
+
 if __name__ == '__main__': unittest.main()
