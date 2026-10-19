@@ -12,6 +12,10 @@ import asyncio
 
 VERSION = '1.16.0-alpha.1'
 
+def stage_workshop(mod, workshop):
+    # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
+    shutil.copytree(mod, workshop / 'plugins' / 'CraftopiaArchipelago')
+
 def validate_payload(root):
     for p in root.rglob('*'):
         if not p.is_file(): continue
@@ -57,7 +61,7 @@ def package(output):
         'No Python or compiler installation is required.\n'
         'AP records: %LOCALAPPDATA%/CraftopiaArchipelago. Back up with your saves.\n', encoding='utf-8')
     workshop = output / 'workshop'
-    shutil.copytree(mod, workshop)
+    stage_workshop(mod, workshop)
     # modInfo.txt is written only after Steam assigns the private item's ID.
     manifest(payload)
     manifest(workshop)
