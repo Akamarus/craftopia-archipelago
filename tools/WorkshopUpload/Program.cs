@@ -27,9 +27,11 @@ class Program
         try
         {
             Require(SteamUtils.GetAppID().m_AppId==App && SteamUser.BLoggedOn(),"Craftopia Steam session");
-            if(args.Length==2 && (args[0]=="inspect" || args[0]=="subscribe"))
+            if(args.Length==2 && (args[0]=="inspect" || args[0]=="subscribe" || args[0]=="unsubscribe"))
             {
                 var id=new PublishedFileId_t(ulong.Parse(args[1]));
+                if(args[0]=="unsubscribe")
+                    Result(Wait<RemoteStorageUnsubscribePublishedFileResult_t>(SteamUGC.UnsubscribeItem(id)).m_eResult);
                 if(args[0]=="subscribe")
                 {
                     Result(Wait<RemoteStorageSubscribePublishedFileResult_t>(SteamUGC.SubscribeItem(id)).m_eResult);
@@ -42,7 +44,7 @@ class Program
             }
             if(args.Length!=5 || args[0]!="upload")throw new ArgumentException("upload CONTENT ID_FILE PREVIEW DESCRIPTION | inspect ID | subscribe ID");
             string content=Path.GetFullPath(args[1]),idFile=Path.GetFullPath(args[2]);
-            Require(File.Exists(Path.Combine(content,"manifest.json")) && File.Exists(Path.Combine(content,"CraftopiaArchipelago.dll")),"Clean packaged content");
+            Require(File.Exists(Path.Combine(content,"manifest.json")) && File.Exists(Path.Combine(content,"plugins","CraftopiaArchipelago","CraftopiaArchipelago.dll")),"Clean packaged content in official loader layout");
             Require(File.Exists(args[3]) && File.Exists(args[4]),"Preview and description");
             PublishedFileId_t item;
             if(File.Exists(idFile))item=new PublishedFileId_t(ulong.Parse(File.ReadAllText(idFile).Trim()));
@@ -67,7 +69,9 @@ class Program
             var submitted=Wait<SubmitItemUpdateResult_t>(SteamUGC.SubmitItemUpdate(update,"Private alpha installation validation"));
             Result(submitted.m_eResult);
             Console.WriteLine("Upload accepted; agreementRequired="+submitted.m_bUserNeedsToAcceptWorkshopLegalAgreement);
-            Result(Wait<AddUGCDependencyResult_t>(SteamUGC.AddDependency(item,new PublishedFileId_t(2519948110))).m_eResult);
+            var dependency=Wait<AddUGCDependencyResult_t>(SteamUGC.AddDependency(item,new PublishedFileId_t(2519948110))).m_eResult;
+            // Re-uploading the same item retains its dependency; Steam reports duplicate.
+            if(dependency!=EResult.k_EResultDuplicateRequest)Result(dependency);
             Console.WriteLine("Private upload complete: https://steamcommunity.com/sharedfiles/filedetails/?id="+item);
             return 0;
         }
