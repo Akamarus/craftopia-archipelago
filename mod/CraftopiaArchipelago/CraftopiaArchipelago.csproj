@@ -7,8 +7,8 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <DebugType>none</DebugType>
-    <AssemblyVersion>1.12.3</AssemblyVersion>
-    <Version>1.12.3</Version>
+    <AssemblyVersion>1.15.0</AssemblyVersion>
+    <Version>1.15.0</Version>
   </PropertyGroup>
 
   <!-- Versioned skill catalog from runtime capture (embedded). -->
@@ -57,4 +57,7 @@
   </ItemGroup>
 
 <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261016_r1.json" LogicalName="milestones_20261016_r1.json" /></ItemGroup>
+<ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261017_r2.json" LogicalName="milestones_20261017_r2.json" /></ItemGroup>
+<ItemGroup><Reference Include="UnityEngine.UI"><HintPath>../refs/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+<ItemGroup><EmbeddedResource Include="../../worlds/craftopia/geezah_orbs_20261016_r1.json" LogicalName="geezah_orbs_20261016_r1.json" /><EmbeddedResource Include="../../worlds/craftopia/millewind_orbs_20261017_r1.json" LogicalName="millewind_orbs_20261017_r1.json" /></ItemGroup>
 </Project>

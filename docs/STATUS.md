@@ -1,3 +1,21 @@
+## 2026-10-19: public documentation refresh
+
+Geezah and Millewind owner playtests reached victory; in-game setup and remembered enrollment were confirmed. README, installation, roadmap, testing and developer instructions now separate that baseline from v1.15.0 map/pause features awaiting live acceptance. No public binary release is advertised.
+
+## 2026-10-18: soul orb map and Field Guide pause v1.15.0
+
+Seven C# programs and 46 focused Python tests passed; Release zero warnings/errors. Independent review completed. Native visual/gameplay acceptance remains pending; see ORB_MAP_AND_PAUSE.md. Current seed and enrollment are preserved.
+
+## 2026-10-18: in-game setup v1.14.0
+
+Installed Field Guide connection settings, portable managed bridge, and explicit fresh-character/world enrollment. 183 client tests and 17 C# programs passed; Release build has zero warnings/errors. 630 installed files matched the verified package. Source review fixes cover profile identity, transient reconnect, repeated settings writes, load-before-session identity publication, and currency-only enrollment. Live menu/enrollment/reload acceptance remains pending. See IN_GAME_SETUP.md.
+
+## October 17 Millewind preparation - v1.13.0
+
+The 161-check cumulative Geezah/Millewind seed is prepared, with matching world, bridge and mod. Victory requires Millewind tower completion AND Old Garden of Undead. See [prepared playtest](MILLEWIND_PLAYTEST.md) for scope, validation and live-test limits. Previous sessions remain unchanged.
+
+Historical status entries follow.
+
 ## October 16 Geezah expansion — v1.12.3 / regional r5
 
 Prepared the117-check Geezah profile, up from52:14 additional missions and51 native-region soul orbs. Added Magic and two Shield progression copies. Victory remains tower repair3 AND Ruin of Beginning. Essential progression is excluded from optional orbs because individual routes remain unverified. See [expansion scope and evidence](GEEZAH_EXPANSION.md).

@@ -37,5 +37,13 @@ class Program {
   Func<string,int?> throwing=k=>throw new Exception("read");
   if((bool)check.Invoke(null,new object[]{new[]{"x"},throwing}))throw new Exception("Reader exception accepted");
   Console.WriteLine("Milestone baseline: 7 assertions passed");
+  var world = new object();
+  var snapshot = new CraftopiaArchipelago.FreshWorldBaseline(world, 123, 5, 7);
+  if(!snapshot.Matches(world,123,5,7,0,true))throw new Exception("Fresh matching world rejected");
+  if(snapshot.Matches(new object(),123,5,7,0,true) || snapshot.Matches(world,124,5,7,0,true) ||
+     snapshot.Matches(world,123,6,7,0,true) || snapshot.Matches(world,123,5,8,0,true) ||
+     snapshot.Matches(world,123,5,7,1,true) || snapshot.Matches(world,123,5,7,0,false))
+      throw new Exception("Changed or completed world accepted");
+  Console.WriteLine("Fresh world confirmation: 7 assertions passed");
  }
 }

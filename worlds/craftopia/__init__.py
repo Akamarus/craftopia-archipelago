@@ -104,8 +104,8 @@ class CraftopiaWorld(World):
 
     def selected_soul_orbs(self):
         if self.options.logic_mode.value == 5:
-            from .RegionalRuns import geezah_orbs
-            return geezah_orbs()
+            from .RegionalOrbs import regional_orbs
+            return regional_orbs(self.options.ending_region.current_key)
         return _validate_orbs(_load_orbs())
 
     def generate_early(self):
@@ -450,7 +450,7 @@ class CraftopiaWorld(World):
         active_names = {loc.name for loc in self.multiworld.get_locations(self.player) if loc.address is not None}
         game_id_map = {key: name for key, name in game_id_map.items() if name in active_names}
         return {
-            **({'milestone_schema':1,'milestone_catalog':'milestones_20261016_r1',
+            **({'milestone_schema':1,'milestone_catalog':self.regional_profile.get('milestone_catalog','milestones_20261016_r1'),
                 'milestone_locations':{_milestone_key(r['family'],r['source_id'],r['stage']):r['ap_location_id']
                                        for r in self.regional_profile['milestones']},
                 'goal_location_ids':self.regional_profile['goal_location_ids'],
@@ -465,7 +465,7 @@ class CraftopiaWorld(World):
                 'soul_orb_locations':{str(r['guid']):r['ap_location_id'] for r in self.selected_soul_orbs()}}
                if self.options.enable_soul_orb_checks.value else {}),
             **({'equipment_catalog': ('equipment_loot_20261016_r2'
-                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5')
+                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1')
                     else 'equipment_loot_20261016_r1') if is_regional_run else 'equipment_20261010_r1',
                 'equipment_protocol': 2 if is_regional_run else 1,
                 'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),

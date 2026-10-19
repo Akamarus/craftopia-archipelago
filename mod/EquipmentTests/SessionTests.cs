@@ -6,6 +6,7 @@ static class SessionTests
     public static void Run()
     {
         void Check(bool value) { if (!value) throw new Exception("Equipment session regression"); }
+        ManagedSessionTests.Run();
         var legacy = new EquipmentSession(false, 0, 0, "slot");
         Check(legacy.Bind(50, "slot", null, 0, 0));
         Check(!legacy.Required);

@@ -11,10 +11,13 @@ namespace CraftopiaArchipelago
     internal static class MilestoneSession
     {
         internal const string Catalog="milestones_20261016_r1";
+        internal const string CurrentCatalog="milestones_20261017_r2";
+        static string activeCatalog;
         internal static readonly Dictionary<string,long> Frozen=new Dictionary<string,long>();
         static readonly Dictionary<int,Dictionary<string,object>> towers=new Dictionary<int,Dictionary<string,object>>();
         static readonly HashSet<string> selected=new HashSet<string>();
         static readonly Queue<Dictionary<string,object>> retry=new Queue<Dictionary<string,object>>();
+        internal static bool HasUnpersistedObservations => retry.Count > 0;
         static string seed,slot,worldHash;
         static long epoch;
         static bool enabled,valid,eligible;
@@ -29,11 +32,12 @@ namespace CraftopiaArchipelago
             }
             return null;
         }
-        internal static void LoadCatalog() {
-            using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(Catalog+".json"))
+        internal static void LoadCatalog(string catalog=Catalog) {
+            if(catalog!=Catalog && catalog!=CurrentCatalog) throw new FormatException("Unsupported milestone catalog");
+            using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(catalog+".json"))
             using(var reader=new StreamReader(stream)) {
                 var d=MiniJson.ParseObject(reader.ReadToEnd());
-                if(MiniJson.GetString(d,"catalog_id")!=Catalog || !(d["locations"] is List<object> rows)) throw new FormatException("Milestone catalog");
+                if(MiniJson.GetString(d,"catalog_id")!=catalog || !(d["locations"] is List<object> rows)) throw new FormatException("Milestone catalog");
                 Frozen.Clear();towers.Clear();
                 foreach(Dictionary<string,object> r in rows) {
                     int source=checked((int)(long)r["source_id"]);
@@ -73,8 +77,10 @@ namespace CraftopiaArchipelago
             enabled=m!=null && m.ContainsKey("milestone_catalog");
             if(!enabled) return;
             try {
-                if(MiniJson.GetString(m,"milestone_catalog")!=Catalog || !(m["milestone_schema"] is long schema) || schema!=1 ||
+                string catalog=MiniJson.GetString(m,"milestone_catalog");
+                if((catalog!=Catalog && catalog!=CurrentCatalog) || !(m["milestone_schema"] is long schema) || schema!=1 ||
                     !(m["multiplayer_mode"] is long mode) || mode!=0 || !(m["milestone_locations"] is Dictionary<string,object> map) || map.Count==0) return;
+                LoadCatalog(catalog);
                 var next=new HashSet<string>();
                 foreach(var pair in map) {
                     if(!(pair.Value is long id) || !Frozen.TryGetValue(pair.Key,out var frozen) || frozen!=id) return;
@@ -82,11 +88,11 @@ namespace CraftopiaArchipelago
                 }
                 string s=MiniJson.GetString(m,"seed_name"), sl=MiniJson.GetString(m,"slot");long ep=MiniJson.GetLong(m,"epoch");
                 if(string.IsNullOrWhiteSpace(s) || sl!=Plugin.SlotName.Value || ep<=0) return;
-                if(seed!=s || slot!=sl || epoch!=ep) {
+                if(seed!=s || slot!=sl || epoch!=ep || activeCatalog!=catalog) {
                     if(retry.Count>0) { Notice("Milestone persistence failed; keep this session for recovery.");return; }
                     boundWorld=null;boundCharacter=0;worldHash=null;
                 }
-                seed=s;slot=sl;epoch=ep;selected.Clear(); foreach(var k in next) selected.Add(k);
+                seed=s;slot=sl;epoch=ep;activeCatalog=catalog;selected.Clear(); foreach(var k in next) selected.Add(k);
                 valid=MilestoneHooks.Installed;
             } catch { valid=false; }
         }
@@ -120,6 +126,31 @@ namespace CraftopiaArchipelago
                     return manager.IsCategoryRewardTaken(source)?1:0;
                 default: return null;
             }
+        }
+        // Called only by the explicit enrollment buttons, never every GUI frame.
+        internal static object CaptureFreshEnrollmentWorld() {
+            try {
+                var manager=Oc.Maps.OcWorldManager.Inst;
+                var world=manager?.CurrentWorld;
+                if(manager==null || manager.IsLoading || world==null || manager.InGameData==null ||
+                    Oc.OcGameSceneShareSingleton.IsOpening || Oc.Network.OcNetMng.Inst.IsMultiPlay ||
+                    world.worldLevel!=0 || !(Field(world,"createdDate") is long created) || created<=0 ||
+                    !(Field(world,"worldSeed") is byte worldSeed) || Plugin.GetCharacterGuid()==0 ||
+                    (enabled && (!valid || !MilestoneBaseline.Accept(selected,BaselineState)))) return null;
+                return new FreshWorldBaseline(world,created,worldSeed,Plugin.GetCharacterGuid());
+            } catch { return null; }
+        }
+        internal static bool SameFreshEnrollmentWorld(object snapshot) {
+            try {
+                if(!(snapshot is FreshWorldBaseline baseline))return false;
+                var manager=Oc.Maps.OcWorldManager.Inst;
+                var world=manager?.CurrentWorld;
+                if(manager==null || manager.IsLoading || world==null || manager.InGameData==null ||
+                    Oc.OcGameSceneShareSingleton.IsOpening || Oc.Network.OcNetMng.Inst.IsMultiPlay ||
+                    !(Field(world,"createdDate") is long created) || !(Field(world,"worldSeed") is byte worldSeed))return false;
+                return baseline.Matches(world,created,worldSeed,Plugin.GetCharacterGuid(),world.worldLevel,
+                    !enabled || (valid && MilestoneBaseline.Accept(selected,BaselineState)));
+            } catch { return false; }
         }
         internal static void Pump(bool allowed) {
             eligible=false;

@@ -81,5 +81,5 @@ class Program {
   }
  }
  static string Entry(string points,string indices)=>"{\"schema\":2,\"enrollments\":{\"-7\":{\"epoch\":123,\"slot\":\"Test\",\"phase\":\"committed\",\"points\":"+points+",\"committed_indices\":"+indices+"}}}";
- static int Main() {FailedSecondWrite();BatchRetryAndReplay();AuthorityResolution();failures += CoordinatorTests.Run();Console.WriteLine($"Assertions: {checks}, failures: {failures}");return failures==0?0:1;}
+ static int Main() {IdentitySyncTests.Run();FailedSecondWrite();BatchRetryAndReplay();AuthorityResolution();failures += CoordinatorTests.Run();Console.WriteLine($"Assertions: {checks}, failures: {failures}");return failures==0?0:1;}
 }

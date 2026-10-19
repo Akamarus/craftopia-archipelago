@@ -44,6 +44,7 @@ class SoulOrbDeliveryMixin:
             rows.append({'orb_guid':orb,'location_id':loc,'character_guid':guid})
             if not self.commit(proposed): return False
         await self.reconcile_orb_checks()
+        await self.send_activity(token)
         return True
 
     async def reconcile_orb_checks(self):

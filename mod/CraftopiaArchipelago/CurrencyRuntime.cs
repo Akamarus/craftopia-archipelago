@@ -28,6 +28,10 @@ namespace CraftopiaArchipelago
         internal static void QueueGrant(Dictionary<string,object> msg,int c) {
             if(grants.Count<4096) grants.Enqueue(new Inbound{Message=msg,Connection=c});
         }
+        internal static void ResetSession() {
+            Suspend(); enabled=false; seed=null; slot=null; token=null; epoch=0; connection=0;
+            while(grants.TryDequeue(out var ignored)) { }
+        }
         internal static void Suspend() {
             ReadyForChecks=false;
             CurrencySaveObserver.Cancel(); observer=null; delivery=null;
@@ -55,6 +59,15 @@ namespace CraftopiaArchipelago
                 string key=BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(identity))).Replace("-","").ToLowerInvariant();
                 return Path.Combine(BepInEx.Paths.ConfigPath,"craftopia-currency-"+key+".json");
             }
+        }
+        internal static bool HasEnrollmentHistory(int character) {
+            if(!enabled) return false;
+            try {
+                string path=StatePath(character);
+                return SoulOrbCharacterBinding.RequiresSession(path) ||
+                    SoulOrbCharacterBinding.RequiresSession(path+".tmp") ||
+                    SoulOrbCharacterBinding.RequiresSession(path+".lock");
+            } catch { return true; }
         }
         internal static void AttestNew(int character) {
             // Called ONLY after the explicit new-character enrollment transition.
@@ -98,7 +111,6 @@ namespace CraftopiaArchipelago
                 long index=activeIndex;
                 if(index<0) foreach(var pair in pending) { index=pair.Key; break; }
                 if(index<0 || !pending.TryGetValue(index,out var message)) return;
-                bool completedNow=false;
                 var outcome=delivery.Deliver(index,1,true,SoulOrbInventoryAdapter.TryApply);
                 if(outcome==CurrencyResult.WaitingForSave) {
                     activeIndex=index;
@@ -106,7 +118,7 @@ namespace CraftopiaArchipelago
                     double now=PlayerStatusDisplay.Now;
                     if(observer!=null && observer.Verify(delivery.MutationToken,character)) {
                         if(delivery.ConfirmSaved(index,delivery.MutationToken,slot,epoch,character,true)) {
-                            outcome=CurrencyResult.Acknowledge; completedNow=true;
+                            outcome=CurrencyResult.Acknowledge;
                             observer=null; CurrencySaveObserver.Cancel(); activeIndex=-1;
                         }
                     } else if(now>=nextSave) {
@@ -119,7 +131,7 @@ namespace CraftopiaArchipelago
                     ack["cmd"]="currency_ack";
                     Plugin.Bridge.SendUnlockAck(ack); pending.Remove(index);
                     Notice(null);
-                    if(completedNow) Plugin.StatusDisplay?.Notify("currency:"+epoch+":"+index,"Received: Soul Orb x1",PlayerStatusDisplay.Now);
+                    // The bridge supplies the item/source card; acknowledgement updates delivery history.
                 } else if(outcome==CurrencyResult.Deferred) Notice("Soul Orb currency waiting for inventory space.");
                 else if(outcome==CurrencyResult.Hold) { ReadyForChecks=false; Notice("Currency delivery held: preserve receipt files for review."); }
             } catch { ReadyForChecks=false; Notice("Currency delivery could not be verified; no acknowledgment sent."); }

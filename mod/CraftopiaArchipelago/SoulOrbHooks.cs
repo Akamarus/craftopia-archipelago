@@ -42,7 +42,7 @@ namespace CraftopiaArchipelago
         internal static void Bind(Dictionary<string,object> message) {
             selected.Clear(); valid=false;
             requested=message.ContainsKey("soul_orb_catalog");
-            if(!requested) return;
+            if(!requested) {OrbMapTracker.State.Clear();return;}
             try {
                 if(MiniJson.GetString(message,"soul_orb_catalog")!=Catalog || !(message["soul_orb_schema"] is long schema) || schema!=1 ||
                     !(message["soul_orb_locations"] is Dictionary<string,object> map) || map.Count==0) return;
@@ -54,6 +54,7 @@ namespace CraftopiaArchipelago
                 seed=MiniJson.GetString(message,"seed_name"); slot=MiniJson.GetString(message,"slot"); epoch=MiniJson.GetLong(message,"epoch");
                 valid=!string.IsNullOrWhiteSpace(seed) && epoch>0;
             } catch { valid=false; }
+            finally { if(valid) OrbMapTracker.Bind(message,selected); else OrbMapTracker.State.Clear(); }
         }
         static bool Reward(Oc.OcSoulOrb __instance) {
             try {

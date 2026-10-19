@@ -6,14 +6,14 @@ remain experimental even when the corresponding checks have passed live tests.
 """
 from collections import Counter
 from .Expedition import build_profile
-from .Milestones import load_catalog, validate_catalog
+from .Milestones import load_catalog, validate_catalog, CATALOG_ID as MILESTONE_CATALOG_ID
 from .mission_id_mapper import get_id_map
 from .Progression import ProgressionModel
 from .AuditedProgression import material_nodes, repair_nodes, evolution_node, tower_costs, age_cost, CATALOG_ID
 
 
-PROFILE_ID = 'regional_geezah_20261016_r5'
-SUPPORTED_ENDINGS = ('geezah',)
+PROFILE_ID = 'regional_geezah_20261017_r6'
+SUPPORTED_ENDINGS = ('geezah', 'millewind')
 
 
 def build_run_profile(ending_region, item_table):
@@ -48,7 +48,7 @@ def build_run_profile(ending_region, item_table):
         'stone_sword': [[node('workbench'), equipment('Sword')]],
         'glider': [[node('workbench'), node('local_wildlife')]],
         'campfire': [[node('field')]],
-        'updraft': [[node('glider'), node('campfire'), production('cooking')]],
+        'updraft': [[node('glider'), node('campfire')]],
         'market': [[node('workbench')]],
         'wheat_field': [[node('age_1'), node('workbench')]],
         'water_surface': [[node('field')]],
@@ -59,7 +59,7 @@ def build_run_profile(ending_region, item_table):
                    [item('Skill Tree: Tamer'), item('Skill Point', 3), node('copper_ingot')]],
         'dungeon_geezah': [
             [node('age_1'), node('blacksmith'), equipment('Sword', 2)],
-            [node('age_1'), node('workbench'), equipment('Bow')],
+            [node('workbench'), equipment('Bow')],
             [node('age_1'), node('copper_ingot'), item('Skill Tree: Tamer'), item('Skill Point', 3)]],
     }
     missions = {}
@@ -128,23 +128,32 @@ def build_run_profile(ending_region, item_table):
         assign(ids, requirement)
 
     selected = {3000, 3001, 3002, 4000, 4100, 4202, 4203, 4204,
-                4205, 4207, 4208, 4214, 4352, 4354}
+                4205, 4207, 4208, 4214, 4228, 4341, 4352, 4354}
+    if ending_region == 'millewind':
+        _extend_millewind(nodes, raw_sources, ages, stations)
+        selected.update((3010, 3011, 3012, 4001, 4101))
+    included_regions = ['geezah'] + (['millewind'] if ending_region == 'millewind' else [])
     milestones = [r for r in validate_catalog(load_catalog()) if r['ap_location_id'] in selected]
     if {r['ap_location_id'] for r in milestones} != selected:
         raise ValueError('Missing selected regional milestone')
     rules, category_sources = {}, []
     for row in milestones:
-        if row['region'] != ending_region: raise ValueError('Milestone outside selected region')
+        if row['region'] not in included_regions: raise ValueError('Milestone outside selected region')
         family = row['family']
         if family == 'category':
             if not all(str(mid) in missions for mid in row['members']):
                 raise ValueError('Category has an unselected member')
             name = 'category_' + str(row['source_id'])
             nodes[name] = [[node(missions[str(mid)]) for mid in row['members']]]
-            category_sources.append([node(name)])
+            # Category141 contains mission513 and cannot be its own claim source.
+            if row['source_id'] != 141:
+                category_sources.append([node(name)])
         else:
             name = {'tower': 'tower_', 'age': 'age_', 'dungeon': 'dungeon_geezah'}[family]
             if family != 'dungeon': name += str(row['stage'])
+            if row['region'] == 'millewind':
+                name = ('tower_3807_' + str(row['stage']) if family == 'tower' else
+                        'age_2' if family == 'age' else 'dungeon_millewind')
         rules[str(row['ap_location_id'])] = name
     nodes['claim_category'] = category_sources
     catalog = get_id_map()
@@ -156,17 +165,57 @@ def build_run_profile(ending_region, item_table):
             'Progressive Equipment: Bow', 'Progressive Equipment: Bow',
             'Progressive Equipment: Body', 'Skill Tree: Tamer', 'Skill Tree: Magic',
             'Progressive Equipment: Shield', 'Progressive Equipment: Shield']
-    profile = dict(schema=1, reviewed=False, experimental=True, profile_id=PROFILE_ID,
-        evidence='docs/REGIONAL_RUNS.md', region=ending_region, included_regions=[ending_region],
+    if ending_region == 'millewind':
+        pool.extend(('Production: equipment_care', 'Progressive Equipment: Sword'))
+    profile = dict(schema=1, reviewed=False, experimental=True,
+        profile_id=PROFILE_ID if ending_region == 'geezah' else 'regional_millewind_20261017_r1',
+        milestone_catalog=MILESTONE_CATALOG_ID,
+        evidence='docs/REGIONAL_RUNS.md', region=ending_region, included_regions=included_regions,
         audited_progression_catalog=CATALOG_ID,
         nodes=nodes, missions=missions, milestone_rules=rules, milestones=milestones,
-        goal_location_ids=[3002, 4100], goal_policy='regional_tower_and_dungeon',
+        goal_location_ids=[3002, 4100] if ending_region == 'geezah' else [3012, 4101],
+        goal_policy='regional_tower_and_dungeon',
         early_item_locations={name: list(early) for name in ('Production: smelting', 'Production: cooking')},
         pool=pool, equipment_tier_steps=build_profile(item_table)['equipment_tier_steps'])
     model = ProgressionModel(profile, item_table, allow_experimental=True)
     if not all(model.can_complete(mid, lambda _: 0) for mid in opening):
         raise ValueError('Opening production destinations require randomized permissions')
     return profile
+
+
+def _extend_millewind(nodes, sources, ages, stations):
+    """Cumulative regional capabilities; consumable quantities stay vanilla."""
+    def node(name): return {'node': name}
+    ages[2] = 'age_2'
+    stations.update({20015: 'cooking_pot', 20206: 'aging_facility', 20017: 'blacksmith'})
+    nodes.update({
+        'millewind_field': [[node('field')]],
+        'local_iron_ore': [[node('millewind_field'), node('stone_tools')]],
+        'night_skeleton': [[node('stone_sword'), node('field')]],
+        'market_gold': [[node('market'), node('stone_tools')]],
+        'generator_operation': [[node('small_generator')]],
+    })
+    sources.update({
+        700: [[node('local_iron_ore')]],
+        695: [[node('night_skeleton')]],
+        2050: [[node('local_wildlife')]],
+        2055: [[node('farm_use')]],
+        2100: [[node('generator_operation')]],
+    })
+    # A completed opening tower supports this paid transition. Requiring the
+    # raw-age-2 Millewind repair recipes here would introduce a false cycle.
+    nodes['age_2'] = evolution_node(1, tower_node='tower_3', currency_node='market_gold')
+    nodes['age_2'][0].append(node('age_1'))
+    nodes.update(material_nodes({416, 2000, 712}, sources=sources, ages=ages, stations=stations))
+    nodes.update(repair_nodes(3807, sources=sources, ages=ages, stations=stations))
+    nodes['aging_facility'] = [[node('material_416')]]
+    nodes['small_generator'] = [[node('material_2000')]]
+    # Item46: raw age2, blacksmith, iron3/log2/leather1 (installed capture).
+    nodes['iron_sword'] = [[node('age_2'), node('blacksmith'),
+        node('material_712'), node('material_746'), node('material_683'),
+        {'item': 'Progressive Equipment: Sword', 'count': 3}]]
+    # Conservative combat sufficiency assumption, without mandatory armor.
+    nodes['dungeon_millewind'] = [[node('millewind_field'), node('iron_sword')]]
 
 
 def apply_early_placement_rules(world, locations, profile):
