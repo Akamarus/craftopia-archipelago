@@ -110,3 +110,7 @@ The module accepts trusted calls, not unvalidated network packets. The adapter s
 - Read shared unlock history on reconnect and resolve holds without silently retrying uncertain mutations.
 
 These adapters, native networking, recovery UI, and live two-client testing remain unimplemented. The library tests establish policy and persistence only.
+
+### Validation record (2026-10-19)
+
+All 40 cooperative tests and all 29 client test files passed using the local AP 0.6.8 test environment, with each client file run independently through its documented entry point. An independent review of the delivery changes found no actionable issues and separately reran all 40 cooperative tests successfully. This does not constitute live multiplayer acceptance. The installed mod, character saves, and AP session records were not modified.

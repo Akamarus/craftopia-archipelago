@@ -43,10 +43,10 @@ Persist format version 1, full group identity, exact roster, receipt definitions
 
 **Interfaces:** `receive(receipt: ItemReceipt) -> bool` returns true only for a newly persisted receipt; identical replay returns false. `unlocks(member: Member) -> list[ItemReceipt]` returns all unlock receipts in AP-index order for a roster member. `available() -> list[ItemReceipt]` lists unclaimed physical/currency receipts. `pending_points(member: Member) -> list[ItemReceipt]` lists that character's points not acknowledged or dispatched.
 
-- [ ] Write tests asserting repeated AP packets create one receipt; conflicting content at the same index rejects without disk changes; unknown member/mode/kind and boolean numeric fields reject. Test receipts arriving out of order and an offline member seeing all shared unlocks. Test returned-list mutation does not alter persisted state.
-- [ ] Run `python -m unittest discover -s client -p test_coop_items.py -v` and the corresponding delivery tests; observe missing behavior.
-- [ ] Implement receipt validation, TeamDelivery storage, receive, and read APIs. Initialize one independent pending entitlement per enrolled character for every points receipt. Receipt insertion and entitlement creation must be one atomic commit.
-- [ ] Run targeted tests until passing, then commit this task.
+- [x] Write tests asserting repeated AP packets create one receipt; conflicting content at the same index rejects without disk changes; unknown member/mode/kind and boolean numeric fields reject. Test receipts arriving out of order and an offline member seeing all shared unlocks. Test returned-list mutation does not alter persisted state.
+- [x] Run `python -m unittest discover -s client -p test_coop_items.py -v` and the corresponding delivery tests; observe missing behavior.
+- [x] Implement receipt validation, TeamDelivery storage, receive, and read APIs. Initialize one independent pending entitlement per enrolled character for every points receipt. Receipt insertion and entitlement creation must be one atomic commit.
+- [x] Run targeted tests until passing, then commit this task.
 
 ## Task 2: Team item claim, dispatch, and recovery
 
@@ -56,21 +56,21 @@ Physical/currency states: unclaimed → reserved → dispatched → acknowledged
 
 Unacknowledged dispatched records reopened from disk become held before any grant is returned. Held receipts accept only a matching saved acknowledgment from the original character and attempt; this allows the future character receipt ledger to resolve a completed grant. No reset/regrant API exists. The future adapter must mark unresolved live dispatches held when a connection is lost using `hold_dispatched(member: Member) -> None`. It must not use timeouts to transfer ownership.
 
-- [ ] Write tests for two sequential competing claims, two competing journal processes, repeat claim, dispatch persistence failure, owner reconnect, and wrong-character/wrong-attempt/unsaved acknowledgment. Confirm only one owner/envelope exists. Use real journals; inject faults only at fsync/replace boundaries.
-- [ ] Run tests to observe failures, then implement claim/begin/acknowledge/hold_dispatched/holds with atomic transitions. Acknowledgment is valid only for dispatched or held records with `saved is True` and the exact attempt/member; duplicates of an already acknowledged matching attempt are idempotent.
-- [ ] Add crash/reopen tests: reserved stays safely reserved; dispatched becomes held; held does not appear as available and begin returns None; valid saved acknowledgment clears the hold. Unknown receipt and corrupted state cannot become fresh defaults.
-- [ ] Run all delivery and progress tests, then commit.
+- [x] Write tests for two sequential competing claims, two competing journal processes, repeat claim, dispatch persistence failure, owner reconnect, and wrong-character/wrong-attempt/unsaved acknowledgment. Confirm only one owner/envelope exists. Use real journals; inject faults only at fsync/replace boundaries.
+- [x] Run tests to observe failures, then implement claim/begin/acknowledge/hold_dispatched/holds with atomic transitions. Acknowledgment is valid only for dispatched or held records with `saved is True` and the exact attempt/member; duplicates of an already acknowledged matching attempt are idempotent.
+- [x] Add crash/reopen tests: reserved stays safely reserved; dispatched becomes held; held does not appear as available and begin returns None; valid saved acknowledgment clears the hold. Unknown receipt and corrupted state cannot become fresh defaults.
+- [x] Run all delivery and progress tests, then commit.
 
 ## Task 3: Character entitlement delivery and regression scenarios
 
 **Interfaces:** The same begin/acknowledge/hold_dispatched methods operate on a points receipt's member-specific entitlement. Points require no team claim; each member's pending record can begin independently. Unlock receipts cannot be claimed, begun, or acknowledged through the inventory-grant API.
 
-- [ ] Write tests where A receives and acknowledges points while B is offline; restart and confirm only B is pending. Replaying the receipt or reconnecting A never creates a fresh entitlement. No method accepts current unspent point balance. Test one character's acknowledgment cannot clear the other's pending state.
-- [ ] Observe failures, implement point dispatch/acknowledgment using the Task 2 state machine per character, then run the tests. Apply crash holds to points as well as consumables until future per-character save evidence resolves them.
-- [ ] Add scenarios combining shared unlocks, claimed currency, points, AP replay, disconnect, and restart across independently stored test instances. Include write failures on receive, claim, begin, acknowledgment, and recovery transition; verify old committed bytes and memory survive failures.
-- [ ] Run all `test_coop_*.py` tests and all 26 existing client test files with their documented entry points. Use the local AP source for AP integration tests and separate processes to isolate dependency mocks.
-- [ ] Update documentation with the state machine, fixed-roster assumption, replay guarantees, recovery limits, required authenticated adapter/save evidence, and explicit uninstalled status. Record deferred live integration and lack of automatic manual recovery tooling.
-- [ ] Obtain independent whole-branch review, address blocking findings, and commit. Keep this stage local until runtime integration is validated.
+- [x] Write tests where A receives and acknowledges points while B is offline; restart and confirm only B is pending. Replaying the receipt or reconnecting A never creates a fresh entitlement. No method accepts current unspent point balance. Test one character's acknowledgment cannot clear the other's pending state.
+- [x] Observe failures, implement point dispatch/acknowledgment using the Task 2 state machine per character, then run the tests. Apply crash holds to points as well as consumables until future per-character save evidence resolves them.
+- [x] Add scenarios combining shared unlocks, claimed currency, points, AP replay, disconnect, and restart across independently stored test instances. Include write failures on receive, claim, begin, acknowledgment, and recovery transition; verify old committed bytes and memory survive failures.
+- [x] Run all `test_coop_*.py` tests and all 26 existing client test files with their documented entry points. Use the local AP source for AP integration tests and separate processes to isolate dependency mocks.
+- [x] Update documentation with the state machine, fixed-roster assumption, replay guarantees, recovery limits, required authenticated adapter/save evidence, and explicit uninstalled status. Record deferred live integration and lack of automatic manual recovery tooling.
+- [x] Obtain independent whole-branch review, address blocking findings, and commit. Keep this stage local until runtime integration is validated.
 
 ## Handoff boundaries
 

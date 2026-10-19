@@ -1,6 +1,6 @@
 # Shared-world multiplayer proposal
 
-Status: proposed for review; not implemented or advertised as supported.
+Status: approved. Transport-independent progress and delivery foundations are implemented and tested. Native networking, runtime adapters, and live co-op acceptance remain incomplete; multiplayer is not yet advertised as supported.
 
 ## Intended experience
 
