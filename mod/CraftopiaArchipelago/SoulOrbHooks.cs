@@ -15,7 +15,7 @@ namespace CraftopiaArchipelago
         static bool requested,valid;
         static string seed,slot;
         static long epoch;
-        static string BindingPath(int character) => Path.Combine(BepInEx.Paths.ConfigPath,
+        static string BindingPath(int character) => Path.Combine(UserStorage.Root,
             "craftopia-orb-character-"+character.ToString(System.Globalization.CultureInfo.InvariantCulture)+".bound");
         static string BindingIdentity => MiniJson.Stringify(new Dictionary<string,object>{{"seed",seed},{"slot",slot},{"epoch",epoch}});
         internal static bool MarkCharacter(int character) => character!=0 && requested && valid && SoulOrbCharacterBinding.Mark(BindingPath(character),BindingIdentity);

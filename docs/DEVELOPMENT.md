@@ -82,3 +82,15 @@ Other C# regressions are executable `mod/*Tests` projects. `SkillCatalogTests` n
 - Connection to an AP multiworld does not imply native Craftopia co-op support.
 
 Record live observations separately from automated results. Historical research and runbooks remain in `docs/` for traceability; the root README and linked player guide are the current entry points.
+
+## Build a downloadable release
+
+Build the mod in Release, then run with the approved Windows AP Python environment:
+
+```text
+python tools/package_release.py --output artifacts/release-v1.16.0
+```
+
+Use a fresh output directory. The command verifies the bundled bridge and produces a player ZIP, matching APWorld, checksums and separate Workshop content. The runtime inputs are explicitly selected; the validator rejects personal state and game assemblies. Review the manifest before uploading. The manifest records the source commit; build from a clean committed tree.
+
+Managed records now live in `%LOCALAPPDATA%\CraftopiaArchipelago`. `UserStorage` migrates prior configuration and bundle state atomically on first launch. The standalone developer bridge keeps its old directory unless `CRAFTOPIA_AP_DATA_DIR` is explicitly set. Never point test processes at live user data.

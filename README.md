@@ -9,10 +9,12 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia �
 - **Playable scope:** regional runs ending in Geezah or Millewind, with missions, Soul Orbs, mission categories, tower repairs, age evolutions and main dungeon checks.
 - **Goal:** finish the ending region's tower **and** clear its main dungeon.
 - **Setup:** F8 opens the Field Guide, including server/slot/password settings and character enrollment. A packaged build includes its own bridge runtime.
-- **Availability:** this repository currently distributes source, not a downloadable player release. Build the mod and portable bridge using the guide below. GitHub's **Download ZIP** contains source, not an installable mod.
+- **Availability:** **[Download the Windows alpha](https://github.com/Akamarus/craftopia-archipelago/releases)** — includes the compiled mod, portable bridge, APWorld and example YAML. No compiler or Python setup required. GitHub's green **Code → Download ZIP** button downloads source instead.
 - **Still in development:** later regions, remaining acquisition requirements, route coverage and native multiplayer compatibility. New map markers and pause behavior await live acceptance.
 
 [Installation and setup](docs/INSTALLATION.md) · [Roadmap](docs/ROADMAP.md) · [Testing and issue reports](docs/TESTING.md) · [Developer guide](docs/DEVELOPMENT.md)
+
+Steam Workshop distribution is being tested privately; use the GitHub release until a public Workshop link is listed here.
 
 ## Choose your run
 
@@ -46,7 +48,7 @@ Regional logic uses vanilla Tamer capabilities. A separate Tamer mod is optional
 
 | Component | Baseline |
 | --- | --- |
-| Mod source | v1.15.0 experimental |
+| Mod / player bundle | v1.16.0 experimental alpha |
 | Archipelago | 0.6.8 |
 | Game scope | Windows PC, Seamless World; observed game build 20260825.1206 |
 | Loader | BepInEx 5, 64-bit Mono |

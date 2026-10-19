@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.15.0";
+        public const string VERSION = "1.16.0";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -24,6 +24,7 @@ namespace CraftopiaArchipelago
         internal static ConfigEntry<string> SlotName;
         internal static ConfigEntry<int> LocalPort;
         private ConfigEntry<float> hudX, hudY;
+        private ConfigFile userConfig;
         private readonly HudDragState hudDrag = new HudDragState();
         private static EnrollmentCoordinator enrollmentCoordinator;
         private static string enrollmentStatus;
@@ -277,21 +278,33 @@ namespace CraftopiaArchipelago
                 return;
             }
             instance = this;
+            try
+            {
+                string pluginDirectory = System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                UserStorage.Migrate(UserStorage.Root, UserStorage.LegacyDirectories(BepInEx.Paths.ConfigPath, pluginDirectory, BepInEx.Paths.PluginPath));
+                userConfig = new ConfigFile(System.IO.Path.Combine(UserStorage.Root, "com.craftopia.archipelago.cfg"), true);
+            }
+            catch (Exception e)
+            {
+                Log.LogError("[AP] User-data migration stopped startup to protect progress: " + e.Message);
+                enabled = false;
+                return;
+            }
 
             // Load the versioned skill catalog from embedded resource.
             // This enables skill-tree enforcement with the 2026-10-08 runtime IDs.
             LoadSkillCatalogFromEmbedded();
 
-            hudX = Config.Bind("Display", "HudX", 220f, "Field Guide badge horizontal position in scaled UI pixels; drag with the cursor visible.");
-            hudY = Config.Bind("Display", "HudY", 20f, "Field Guide badge vertical position in scaled UI pixels.");
-            SlotName = Config.Bind("General", "SlotName", "Player1",
+            hudX = userConfig.Bind("Display", "HudX", 220f, "Field Guide badge horizontal position in scaled UI pixels; drag with the cursor visible.");
+            hudY = userConfig.Bind("Display", "HudY", 20f, "Field Guide badge vertical position in scaled UI pixels.");
+            SlotName = userConfig.Bind("General", "SlotName", "Player1",
                 "Archipelago slot name. Must match the name in your YAML.");
-            LocalPort = Config.Bind("General", "LocalPort", 11341,
+            LocalPort = userConfig.Bind("General", "LocalPort", 11341,
                 "Port the Python bridge client listens on (localhost).");
 
-            managedMode = Config.Bind("Connection", "Managed", true, "Use the in-game Connection page and managed local bridge.").Value;
+            managedMode = userConfig.Bind("Connection", "Managed", true, "Use the in-game Connection page and managed local bridge.").Value;
             InitializeSession(null);
-            Connection = new ConnectionController(Config, System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+            Connection = new ConnectionController(userConfig, System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
 
             if (!harmonyApplied)
             {
@@ -313,8 +326,7 @@ namespace CraftopiaArchipelago
                 try
                 {
                     string outboxPath = System.IO.Path.Combine(
-                        System.IO.Path.GetDirectoryName(
-                            System.Reflection.Assembly.GetExecutingAssembly().Location),
+                        UserStorage.Root,
                         "craftopia_observations.log");
                     Bridge.InitDurableOutbox(outboxPath);
                 }
@@ -353,18 +365,18 @@ namespace CraftopiaArchipelago
             // The applied-grant file is bound to the slot identity: a different
             // slot name gets a different file, so applied indices from one slot
             // can never suppress or duplicate another slot's grants.
-            GrantStatePath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+            GrantStatePath = System.IO.Path.Combine(UserStorage.Root,
                 "craftopia-archipelago-grants-" + sessionFileKey + ".json");
             LoadGrantState();
 
             // Entitlement store: durable AP skill-point entitlement per (guid, epoch).
-            EntitlementStorePath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+            EntitlementStorePath = System.IO.Path.Combine(UserStorage.Root,
                 "craftopia-archipelago-entitlement-" + sessionFileKey + ".json");
             entitlementStore = new EntitlementStore(EntitlementStorePath,
                 m => Log.LogInfo(m), m => Log.LogError(m));
             // Atomic enrollment state: single-file durable enrollment authority.
             // Replaces the two-file attestation+entitlement design.
-            string enrollmentPath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+            string enrollmentPath = System.IO.Path.Combine(UserStorage.Root,
                 "craftopia-archipelago-enrollment-" + sessionFileKey + ".json");
             var enrollmentState = new EnrollmentState(enrollmentPath,
                 m => Log.LogInfo(m), m => Log.LogError(m));
@@ -375,7 +387,7 @@ namespace CraftopiaArchipelago
             // Validation needs slot name and enrollment state.
 
             // Grant transaction: durable intent → mutation → atomic commit → ack.
-            string intentPath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+            string intentPath = System.IO.Path.Combine(UserStorage.Root,
                 "craftopia-archipelago-intent-" + sessionFileKey + ".json");
             grantTransaction = new GrantTransaction(
                 intentPath,
@@ -392,9 +404,9 @@ namespace CraftopiaArchipelago
 
             unlockMirror = new UnlockMirror(Permissions);
             equipmentSession = managedProfile ? EquipmentSession.Managed(SlotName.Value, enrollmentPath + ".equipment.json") : new EquipmentSession(
-                Config.Bind("EquipmentTest", "Enabled", false, "Explicit experimental equipment test approval; existing seeds leave false.").Value,
-                Config.Bind("EquipmentTest", "CharacterGuid", 0, "Approved test character GUID.").Value,
-                Config.Bind("EquipmentTest", "Epoch", 0L, "Approved test epoch.").Value, SlotName.Value);
+                userConfig.Bind("EquipmentTest", "Enabled", false, "Explicit experimental equipment test approval; existing seeds leave false.").Value,
+                userConfig.Bind("EquipmentTest", "CharacterGuid", 0, "Approved test character GUID.").Value,
+                userConfig.Bind("EquipmentTest", "Epoch", 0L, "Approved test epoch.").Value, SlotName.Value);
 
             // Player status display.
             StatusDisplay = new PlayerStatusDisplay(Permissions, m => Log.LogInfo(m));
@@ -451,11 +463,11 @@ namespace CraftopiaArchipelago
             Validator.HasHistory = () => Pipeline.Snapshot().Applied.Count > 0 || Pipeline.Snapshot().Quarantined.Count > 0;
             // Deliberately opt-in, exact character/session only. These values are captured
             // at startup; editing the config during play never silently enrolls anyone.
-            bool approveFresh = Config.Bind("Enrollment", "ApproveFreshCharacter", false,
+            bool approveFresh = userConfig.Bind("Enrollment", "ApproveFreshCharacter", false,
                 "Explicitly attest that the selected GUID is a NEW disposable level-1 character with zero points and no AP history. One-time approval; restart required.").Value;
-            int approvedGuid = Config.Bind("Enrollment", "CharacterGuid", 0,
+            int approvedGuid = userConfig.Bind("Enrollment", "CharacterGuid", 0,
                 "Exact signed GUID observed for the new character. Zero disables enrollment.").Value;
-            long approvedEpoch = Config.Bind("Enrollment", "Epoch", 0L,
+            long approvedEpoch = userConfig.Bind("Enrollment", "Epoch", 0L,
                 "Exact epoch of the new test seed. Zero disables enrollment.").Value;
             enrollmentCoordinator = new EnrollmentCoordinator(enrollmentState,
                 enrollmentPath + ".approval-used", approvedGuid, approvedEpoch, SlotName.Value, approveFresh);
@@ -492,7 +504,7 @@ namespace CraftopiaArchipelago
             }
             LocalPort.Value = localPort;
             Bridge = new Bridge(Pipeline.Epoch, true);
-            Bridge.InitDurableOutbox(System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+            Bridge.InitDurableOutbox(System.IO.Path.Combine(UserStorage.Root,
                 "craftopia-observations-" + sessionFileKey + ".log"));
             Bridge.Start();
             return true;
@@ -919,10 +931,10 @@ namespace CraftopiaArchipelago
                     (SoulOrbHooks.HasCharacterBinding(lastPlayerGuid) || CurrencyRuntime.HasEnrollmentHistory(lastPlayerGuid))) return true;
                 // Legacy state, unresolved intents, and partial writes require review.
                 if (EnrollmentEvidenceExists(EntitlementStorePath) || EnrollmentEvidenceExists(EntitlementStorePath + ".tmp")) return true;
-                string enrollment=System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+                string enrollment=System.IO.Path.Combine(UserStorage.Root,
                     "craftopia-archipelago-enrollment-"+sessionFileKey+".json");
                 if (EnrollmentEvidenceExists(enrollment+".tmp")) return true;
-                string intent=System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+                string intent=System.IO.Path.Combine(UserStorage.Root,
                     "craftopia-archipelago-intent-"+sessionFileKey+".json");
                 if (EnrollmentEvidenceExists(intent) || EnrollmentEvidenceExists(intent+".tmp")) return true;
                 if (EnrollmentEvidenceExists(GrantStatePath+".tmp")) return true;
