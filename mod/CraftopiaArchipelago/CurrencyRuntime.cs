@@ -57,7 +57,7 @@ namespace CraftopiaArchipelago
             string identity=MiniJson.Stringify(new Dictionary<string,object>{{"seed",seed},{"slot",slot},{"epoch",epoch},{"guid",(long)character}});
             using(var hash=SHA256.Create()) {
                 string key=BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(identity))).Replace("-","").ToLowerInvariant();
-                return Path.Combine(BepInEx.Paths.ConfigPath,"craftopia-currency-"+key+".json");
+                return Path.Combine(UserStorage.Root,"craftopia-currency-"+key+".json");
             }
         }
         internal static bool HasEnrollmentHistory(int character) {

@@ -7,8 +7,8 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <DebugType>none</DebugType>
-    <AssemblyVersion>1.15.0</AssemblyVersion>
-    <Version>1.15.0</Version>
+    <AssemblyVersion>1.16.0</AssemblyVersion>
+    <Version>1.16.0</Version>
   </PropertyGroup>
 
   <!-- Versioned skill catalog from runtime capture (embedded). -->

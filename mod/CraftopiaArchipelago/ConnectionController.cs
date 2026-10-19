@@ -75,6 +75,7 @@ namespace CraftopiaArchipelago
             var info = new ProcessStartInfo { FileName=executable, WorkingDirectory=Path.GetDirectoryName(script), UseShellExecute=false,
                 CreateNoWindow=true, WindowStyle=ProcessWindowStyle.Hidden, RedirectStandardInput=true, RedirectStandardOutput=true, RedirectStandardError=true };
             // Unity Mono does not consistently implement ArgumentList. Only this fixed local path is quoted; credentials travel through stdin.
+            info.EnvironmentVariables["CRAFTOPIA_AP_DATA_DIR"] = UserStorage.Root;
             info.Arguments = "-u " + QuoteArgument(script); return info;
         }
         private static string QuoteArgument(string value)

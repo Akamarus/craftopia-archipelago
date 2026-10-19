@@ -111,7 +111,9 @@ async def verify(bridge):
     import websockets
     executable = bridge / 'python' / 'python.exe'
     script = bridge / 'client' / 'connection_host.py'
+    # Smoke tests must never inherit the player's live storage location.
     env = dict(os.environ, PYTHONPATH=str(ROOT), PYTHONHOME=str(ROOT))
+    env.pop('CRAFTOPIA_AP_DATA_DIR', None)
     inspection = subprocess.run([str(executable), '-c',
         'import sys,ssl,websockets,json; print(json.dumps(dict(isolated=sys.flags.isolated,site="site" in sys.modules,paths=sys.path,openssl=ssl.OPENSSL_VERSION)))'],
         capture_output=True, text=True, env=env, timeout=15, check=True)

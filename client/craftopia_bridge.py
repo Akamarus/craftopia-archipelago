@@ -100,7 +100,9 @@ POINTS_STRIDE = 5
 
 CLIENT_GOAL = 30  # NetUtils.ClientStatus.CLIENT_GOAL
 
-LEDGER_DIR = os.path.dirname(os.path.abspath(__file__))
+# Managed installs pass their atomically migrated user-data root. The developer
+# CLI retains its existing session directory unless explicitly configured.
+LEDGER_DIR = os.environ.get("CRAFTOPIA_AP_DATA_DIR") or os.path.dirname(os.path.abspath(__file__))
 
 
 class _DumpDone(BaseException):

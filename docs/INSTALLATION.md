@@ -7,11 +7,13 @@
 - A matching Craftopia mod + bridge build and `craftopia.apworld`.
 - An Archipelago room with a Craftopia slot. The baseline used here is AP **0.6.8**.
 
-**There is no public ready-to-install release yet.** To obtain the files, follow [Build from source](DEVELOPMENT.md#build-from-source), or use a matching test package supplied by the maintainer. Do not install the repository ZIP as a mod.
+**Download the Windows ZIP from [GitHub Releases](https://github.com/Akamarus/craftopia-archipelago/releases).** Extract the complete ZIP. It includes the mod, its Python runtime, `craftopia.apworld` and `Craftopia.yaml`. You do not need a compiler or Python installation. Do not use the repository source ZIP.
 
 ## 1. Install the game files
 
-With Craftopia closed, place the mod and its bridge folder together:
+With Craftopia closed, right-click `Install-Mod.ps1` in the extracted release and choose **Run with PowerShell**. Enter the game folder shown by Steam → Craftopia → Manage → Browse local files. The installer updates an existing AP folder if present and preserves old state for migration.
+
+If Windows blocks the script, use the manual method: copy the contents of the release’s `mod` folder into the following folder (or your existing AP plugin folder):
 
 ```text
 Craftopia/
@@ -27,7 +29,11 @@ Craftopia/
           PROVENANCE.json
 ```
 
-Keep only one active copy of `CraftopiaArchipelago.dll`. When updating an existing installation, use its existing plugin folder and preserve configuration and AP state files. Do not move between plugin folders casually: the bundled bridge stores session state alongside its client.
+Keep only one active copy of `CraftopiaArchipelago.dll`. For the first upgrade from v1.15 or earlier, update the existing plugin folder and keep all its old files until you have launched the new build successfully.
+
+Starting with v1.16, preferences, enrollment, delivery records and observation queues live in **`%LOCALAPPDATA%\CraftopiaArchipelago`**. First launch copies the old records there without deleting the originals. This folder survives mod updates and uninstalls. Back it up together with your Craftopia saves. Do not delete it to resolve a connection problem.
+
+Migration refuses conflicting records or an incomplete destination rather than starting fresh. Close old bridge processes and preserve both sets of files for diagnosis if startup reports a migration error. Once migration completes, the new folder is authoritative; old copies are backups, not live data. The advanced, manually launched developer bridge retains its legacy location unless `CRAFTOPIA_AP_DATA_DIR` is set to this folder.
 
 A complete bridge package includes Python; players do not need to install Python or launch a bridge terminal separately. BepInEx and game DLLs are not included in the AP package.
 
@@ -38,7 +44,7 @@ If someone else is hosting, give them your Craftopia player YAML and use the ser
 If generating yourself:
 
 1. Install the matching `craftopia.apworld` in your Archipelago `custom_worlds` folder and restart the launcher.
-2. Copy the repository's [regional player YAML](../worlds/craftopia/test/regional_player.yaml) into your generation player-files folder.
+2. Copy the release's `Craftopia.yaml` into your generation player-files folder.
 3. Change `name` to your slot name. Set `ending_region` to `geezah` or `millewind`; keep `logic_mode: regional` and the template's other settings for this test profile.
 4. Generate the multiworld and host its resulting server data. For a source-based solo example, see the [developer commands](DEVELOPMENT.md#generate-a-solo-example).
 

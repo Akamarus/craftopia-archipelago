@@ -176,7 +176,7 @@ namespace CraftopiaArchipelago
                     var date=Field(world,"createdDate");var worldSeed=Field(world,"worldSeed");
                     if(!(date is long created) || created<=0 || !(worldSeed is byte ws)) { Notice("Milestone checks waiting for world identity.");return; }
                     string fingerprint=Hash(created.ToString(System.Globalization.CultureInfo.InvariantCulture)+":"+ws);
-                    string path=Path.Combine(BepInEx.Paths.ConfigPath,"craftopia-milestone-"+Hash(seed+":"+slot+":"+epoch+":"+character)+".bound");
+                    string path=Path.Combine(UserStorage.Root,"craftopia-milestone-"+Hash(seed+":"+slot+":"+epoch+":"+character)+".bound");
                     if(!SoulOrbCharacterBinding.RequiresSession(path) && !MilestoneBaseline.Accept(selected,BaselineState)) {
                         Notice("Pilot needs a fresh character and world near the first tower; waiting for an uncompleted baseline.");return;
                     }
