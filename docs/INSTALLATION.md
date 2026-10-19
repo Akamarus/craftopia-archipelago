@@ -3,7 +3,7 @@
 ## What you need
 
 - Craftopia's **Seamless World** version on Windows, with a separate character/world for AP.
-- **BepInEx 5, Windows x64 Mono**, installed in the Craftopia folder. Follow the [official BepInEx installation guide](https://docs.bepinex.dev/articles/user_guide/installation/index.html). Launch the game once to create the BepInEx folders, then close it.
+- An internet connection for the one-time loader download. Setup installs the tested BepInEx 5.4.23.5 Windows x64 Mono loader automatically and verifies its SHA-256 digest.
 - A matching Craftopia mod + bridge build and `craftopia.apworld`.
 - An Archipelago room with a Craftopia slot. The baseline used here is AP **0.6.8**.
 
@@ -11,9 +11,19 @@
 
 ## 1. Install the game files
 
-With Craftopia closed, right-click `Install-Mod.ps1` in the extracted release and choose **Run with PowerShell**. Enter the game folder shown by Steam → Craftopia → Manage → Browse local files. The installer updates an existing AP folder if present and preserves old state for migration.
+With Craftopia closed, **double-click `Setup.cmd`**, then press Enter to install. Setup finds the game in your Steam libraries; if it cannot choose a single installation, select the folder containing `Craftopia.exe`.
 
-If Windows blocks the script, use the manual method: copy the contents of the release’s `mod` folder into the following folder (or your existing AP plugin folder):
+- If the Craftopia AP Workshop item is already downloaded, Setup enables that copy. Steam handles subsequent mod updates. Wait for its official loader dependency to finish downloading too; Setup uses its Workshop discovery component with the tested modern loader.
+- Otherwise, Setup installs the mod included in this ZIP. Run Setup from a newer release to update it.
+- Existing manual AP installations are updated in place or disabled when switching to Workshop. Old records and other mods are retained.
+
+Launch Craftopia normally after Setup finishes. You do not need to install Python, compile anything, or launch a separate bridge.
+
+**Undo setup:** close Craftopia and run `Restore Previous Setup.cmd`. This restores the files from before the first setup run, including any previous AP version. Saves and `%LOCALAPPDATA%\CraftopiaArchipelago` are left alone. Backups live in the game's `CraftopiaAP-Setup` folder. Restore stops if a managed file has been changed afterward, so it does not silently overwrite a newer modification.
+
+Advanced: `Install-Mod.ps1 -Mode Manual` selects the bundled copy; `-Mode Workshop` selects the subscribed copy. The command wrappers set execution policy only for their own PowerShell process; they do not change the machine's policy. A folder permission error is reported without changing permissions.
+
+For a manual install, first install [BepInEx 5 Windows x64 Mono](https://docs.bepinex.dev/articles/user_guide/installation/index.html), then copy the contents of the release’s `mod` folder into the following folder (or your existing AP plugin folder):
 
 ```text
 Craftopia/
@@ -35,7 +45,7 @@ Starting with v1.16, preferences, enrollment, delivery records and observation q
 
 Migration refuses conflicting records or an incomplete destination rather than starting fresh. Close old bridge processes and preserve both sets of files for diagnosis if startup reports a migration error. Once migration completes, the new folder is authoritative; old copies are backups, not live data. The advanced, manually launched developer bridge retains its legacy location unless `CRAFTOPIA_AP_DATA_DIR` is set to this folder.
 
-A complete bridge package includes Python; players do not need to install Python or launch a bridge terminal separately. BepInEx and game DLLs are not included in the AP package.
+A complete bridge package includes Python; players do not need to install Python or launch a bridge terminal separately. The loader is downloaded from its official release during setup. Game DLLs are not distributed.
 
 ## 2. Prepare an Archipelago room
 

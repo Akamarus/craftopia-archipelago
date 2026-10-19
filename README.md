@@ -8,7 +8,8 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia �
 
 - **Playable scope:** regional runs ending in Geezah or Millewind, with missions, Soul Orbs, mission categories, tower repairs, age evolutions and main dungeon checks.
 - **Goal:** finish the ending region's tower **and** clear its main dungeon.
-- **Setup:** F8 opens the Field Guide, including server/slot/password settings and character enrollment. A packaged build includes its own bridge runtime.
+- **Install:** extract the Windows release ZIP, double-click **Setup.cmd**, and press Enter. Setup detects Craftopia, installs the verified loader, and handles manual or subscribed Workshop copies.
+- **Connect:** F8 opens the Field Guide, including server/slot/password settings and character enrollment. A packaged build includes its own bridge runtime.
 - **Availability:** **[Download the Windows alpha](https://github.com/Akamarus/craftopia-archipelago/releases)** — includes the compiled mod, portable bridge, APWorld and example YAML. No compiler or Python setup required. GitHub's green **Code → Download ZIP** button downloads source instead.
 - **Still in development:** later regions, remaining acquisition requirements, route coverage and native multiplayer compatibility. New map markers and pause behavior await live acceptance.
 

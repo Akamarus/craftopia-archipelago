@@ -10,7 +10,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from package_managed_bridge import ROOT, build, verify, validate_output
 import asyncio
 
-VERSION = '1.16.0-alpha.1'
+VERSION = '1.16.0-alpha.2'
 
 def stage_workshop(mod, workshop):
     # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
@@ -49,13 +49,15 @@ def package(output):
     shutil.copy2(ROOT / 'worlds/craftopia/test/regional_player.yaml', payload / 'Craftopia.yaml')
     for name in ('INSTALLATION.md', 'RELEASE_v1.16.0.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
-    shutil.copy2(ROOT / 'tools/Install-Mod.ps1', payload)
+    for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):
+        shutil.copy2(ROOT / 'tools' / name, payload)
     (payload / 'START_HERE.txt').write_text(
         'Craftopia Archipelago ' + VERSION + '\n\n'
         'Windows x64, Seamless World, BepInEx 5 Mono. Experimental alpha.\n'
-        'Install BepInEx first. Close Craftopia. Run Install-Mod.ps1 with PowerShell,\n'
-        'or copy mod/ into BepInEx/plugins/CraftopiaArchipelago/.\n'
-        'Existing users: update the existing AP folder; do not create a second copy.\n'
+        'Close Craftopia, then double-click Setup.cmd and press Enter to install.\n'
+        'Setup finds Steam libraries and downloads a verified modern BepInEx loader.\n'
+        'If the AP Workshop item is downloaded, Setup uses it; otherwise it installs the bundled mod.\n'
+        'Use Restore Previous Setup.cmd to undo setup without removing AP records.\n'
         'Read INSTALLATION.md. F8 > Connection sets your server/slot/password.\n'
         'The included craftopia.apworld and Craftopia.yaml are for your AP host.\n'
         'No Python or compiler installation is required.\n'

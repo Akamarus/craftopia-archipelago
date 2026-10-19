@@ -55,5 +55,8 @@ The helper always explicitly sets Private, adds the official loader dependency a
 - Private upload and update accepted; downloaded files match the payload manifest.
 - Unsubscribe/re-subscribe preserved all 48 existing AP storage files byte-for-byte.
 - Manual release installation loaded v1.16.0 and the Field Guide successfully.
-- Workshop-only startup remains unverified. A test pointing at the official loader produced no new loader log, and window capture failed. The working manual loader configuration was restored. This does not establish the cause of the startup problem or prove a clean Workshop install works.
-- Keep the Workshop listing private until the official loader startup, mod selector, and bundled bridge have passed a real-game test without the manual AP copy.
+- The subscribed AP copy loaded twice with BepInEx 5.4.23.5 plus the official MultiFolderLoader, with the manual AP DLL disabled. Tamer loaded alongside it.
+- The new Setup.cmd automatically detected the real Steam installation, downloaded the pinned loader, installed Workshop support and passed a live startup. Its restore command restored the previous installation; all 48 AP records remained unchanged.
+- The downloaded bridge passed isolation, SSL, handshake, auth-refusal, credential-privacy and shutdown tests in a disposable copy.
+- The old official loader bootstrap produced no fresh AP startup evidence. Workshop users must run the modern setup once; subscription alone is not enough.
+- Visual Field Guide/real-session connection acceptance from the subscribed copy remains pending because screen capture repeatedly timed out. Keep the listing private until that last live check passes.
