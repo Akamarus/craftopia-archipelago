@@ -40,6 +40,11 @@ class Program
         var objectResolver = type.GetMethod("ResolveStationObject");
         Assert(objectResolver != null, "station object resolver required");
         string Station(object value) => (string)objectResolver.Invoke(null, new[] { value });
+        Assert(Allow(true, p, () => Station(new Oc.OcBldg_ItemGenerator(2000, 20401))), "small generator runs without AP production unlock");
+        Assert(!Allow(true, p, () => Station(new Oc.OcBldg_ItemGenerator(332, 20101))), "well sharing generic machine type is not exempt");
+        Assert(Station(new Oc.OcBldg_ItemGenerator(9999, 20401)) == null, "same family alone cannot bypass production");
+        Assert(Station(new Oc.OcBldg_ItemGenerator(2000, 9999)) == null, "generator requires matching family evidence");
+        Assert(Station(new Oc.OcBldg_ItemGenerator(null, null)) == null, "missing generator data stays denied");
         Assert(Station(new Oc.OcBldg_CraftingBench(20012)) == "alchemy", "audited potion family requires alchemy");
         Assert(!Allow(true, p, () => Station(new Oc.OcBldg_CraftingBench(20012))), "locked potion bench denies");
         p.UnlockProduction("Production: cooking");
@@ -76,8 +81,9 @@ class Program
 }
 
 namespace Oc {
-    class StationData { public int familyId; public StationData(int value) { familyId = value; } }
-    class StationItem { public StationData data { get; } public StationItem(int value) { data = new StationData(value); } }
+    class StationData { public int familyId; public int id; public StationData(int value, int itemId = 0) { familyId = value; id = itemId; } }
+    class StationItem { public StationData data { get; } public StationItem(int value, int itemId = 0) { data = new StationData(value, itemId); } }
     class StationBase { public StationItem _BldgItem_InItemSlot { get; } public StationBase(int? family) { _BldgItem_InItemSlot = family.HasValue ? new StationItem(family.Value) : null; } }
+    class OcBldg_ItemGenerator { public StationItem _BldgItem_InItemSlot { get; } public OcBldg_ItemGenerator(int? id, int? family) { _BldgItem_InItemSlot = id.HasValue && family.HasValue ? new StationItem(family.Value, id.Value) : null; } }
     class OcBldg_CraftingBench : StationBase { public OcBldg_CraftingBench(int? family) : base(family) { } }
 }

@@ -1,0 +1,182 @@
+{
+  "localization_asset": "G:/SteamLibrary/steamapps/common/Craftopia/Craftopia_Data/resources.assets",
+  "localization": [
+    {
+      "term": "800_DungeonName/2",
+      "term_offset": 303488240,
+      "term_type": 0,
+      "language_count": 4,
+      "english": "Old Garden of Undead",
+      "english_offset": 303488272,
+      "serialized_record_hex": "110000003830305f44756e67656f6e4e616d652f320000000000000004000000140000004f6c642047617264656e206f6620556e64656164"
+    },
+    {
+      "term": "800_DungeonName/202",
+      "term_offset": 303507096,
+      "term_type": 0,
+      "language_count": 4,
+      "english": "Old Garden of Undead",
+      "english_offset": 303507128,
+      "serialized_record_hex": "130000003830305f44756e67656f6e4e616d652f323032000000000004000000140000004f6c642047617264656e206f6620556e64656164"
+    }
+  ],
+  "native_sources": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40796,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_002_Islanddungeon",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40808
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40821
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 20,
+                "recommendLevel": 30,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 40,
+                "recommendLevel": 50,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40808,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_002_Islanddungeon",
+        "sourceId": 2,
+        "dungeonPrefab": {
+          "m_AssetGUID": "de5858b7bf940b940bcff4175f28dcec",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 36,
+        "bossLevel": 20,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80019
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40821,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_202_Islanddungeon_Repeat",
+        "sourceId": 202,
+        "dungeonPrefab": {
+          "m_AssetGUID": "73baad0afdb6bb449b6e849fb6868bc3",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 36,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    }
+  ],
+  "workbook": {
+    "path": "outputs/logic-review-20261016/Craftopia - Outstanding Logic and Items.xlsx",
+    "sheet_xml": "xl/worksheets/sheet1.xml",
+    "question_id": "Q025",
+    "region_cell": "C31",
+    "region": "Millewind Hill Tower",
+    "answer_cell": "E31",
+    "answer": "Old Garden of Undead. No quest, items, or special requirements to access. The only limitation is combat gear.",
+    "confidence_cell": "G31",
+    "confidence": "Remembered"
+  }
+}

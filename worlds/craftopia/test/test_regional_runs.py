@@ -27,7 +27,7 @@ class RegionalRunTests(unittest.TestCase):
         self.assertEqual(data['goal_policy'], 'regional_tower_and_dungeon')
         self.assertEqual(data['equipment_catalog'], 'equipment_loot_20261016_r2')
         self.assertEqual(data['equipment_protocol'], 2)
-        self.assertEqual(len(mw.itempool), 66)
+        self.assertEqual(len(mw.itempool), 68)
         self.assertEqual({r['region'] for r in w.regional_profile['milestones']}, {'geezah'})
         self.assertIn('512', data['game_id_to_location'])
         self.assertIn('513', data['game_id_to_location'])
@@ -36,7 +36,7 @@ class RegionalRunTests(unittest.TestCase):
     def test_geezah_orbs_and_added_missions(self):
         mw = self.make(enable_soul_orb_checks=1); w = mw.worlds[1]
         data = w.fill_slot_data()
-        self.assertEqual(len(mw.itempool), 117)
+        self.assertEqual(len(mw.itempool), 119)
         self.assertEqual(len(data['soul_orb_locations']), 51)
         self.assertNotIn('714560355', data['soul_orb_locations'])
         from worlds.craftopia.SoulOrbs import resolve_location
@@ -65,14 +65,14 @@ class RegionalRunTests(unittest.TestCase):
         state.collect(w.create_item('Production: smelting'), prevent_sweep=True)
         self.assertTrue(checks[70].can_reach(state))
         self.assertTrue(checks[78].can_reach(state))
-        self.assertFalse(checks[67].can_reach(state))
+        self.assertTrue(checks[67].can_reach(state))
         state.collect(w.create_item('Production: cooking'), prevent_sweep=True)
         self.assertTrue(checks[67].can_reach(state))
 
     def test_bucket_route_and_audited_station_construction(self):
         mw = self.make(); w = mw.worlds[1]; state = CollectionState(mw)
         nodes = w.progression_model.nodes
-        self.assertEqual(w.regional_profile['profile_id'], 'regional_geezah_20261016_r5')
+        self.assertEqual(w.regional_profile['profile_id'], 'regional_geezah_20261017_r6')
         self.assertEqual(w.progression_model.missions['105'], 'water_bucket')
         self.assertNotIn('well', nodes)
         self.assertEqual(nodes['blacksmith'], [[{'node': 'material_272'}]])
@@ -105,7 +105,7 @@ class RegionalRunTests(unittest.TestCase):
     def test_unknown_region_and_incompatible_options_rejected(self):
         from worlds.craftopia.RegionalRuns import build_run_profile
         with self.assertRaisesRegex(ValueError, 'not ready'):
-            build_run_profile('millewind', self.make().worlds[1].item_table)
+            build_run_profile('volcano', self.make().worlds[1].item_table)
         for extra in (dict(multiplayer_mode=1),
                       dict(enable_age_checks=0), dict(enable_boss_checks=0)):
             with self.subTest(extra=extra), self.assertRaises(ValueError): self.make(**extra)

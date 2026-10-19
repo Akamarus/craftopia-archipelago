@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.12.3";
+        public const string VERSION = "1.15.0";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -237,7 +237,7 @@ namespace CraftopiaArchipelago
         /// retry-with-backoff, epoch rotation, and the rule that nothing is
         /// acked until it was applied AND durably persisted.
         /// </summary>
-        internal static readonly GrantPipeline Pipeline = new GrantPipeline();
+        internal static GrantPipeline Pipeline = new GrantPipeline();
 
         /// <summary>
         /// Skill-point grant applicator with player-readiness gating. The
@@ -289,22 +289,83 @@ namespace CraftopiaArchipelago
             LocalPort = Config.Bind("General", "LocalPort", 11341,
                 "Port the Python bridge client listens on (localhost).");
 
+            managedMode = Config.Bind("Connection", "Managed", true, "Use the in-game Connection page and managed local bridge.").Value;
+            InitializeSession(null);
+            Connection = new ConnectionController(Config, System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            if (!harmonyApplied)
+            {
+                if (!InstallAndVerifyHooks())
+                {
+                    // Verification failed: the mission hook is not registered.
+                    // Stop initialization here — do not start the bridge, do
+                    // not mark Harmony as initialized. The error above says why.
+                    return;
+                }
+                harmonyApplied = true;
+            }
+
+            if (!managedMode && Bridge == null)
+            {
+                Bridge = new Bridge();
+                // Initialize durable observation outbox.
+                // Path is in the BepInEx config folder.
+                try
+                {
+                    string outboxPath = System.IO.Path.Combine(
+                        System.IO.Path.GetDirectoryName(
+                            System.Reflection.Assembly.GetExecutingAssembly().Location),
+                        "craftopia_observations.log");
+                    Bridge.InitDurableOutbox(outboxPath);
+                }
+                catch (Exception e)
+                {
+                    Log.LogError("[AP] outbox init failed: " + e.GetType().Name);
+                }
+                Bridge.Start();
+            }
+
+            try
+            {
+                UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+                UnityEngine.SceneManagement.SceneManager.sceneUnloaded += OnSceneUnloaded;
+            }
+            catch (Exception e)
+            {
+                Log.LogWarning("[AP] could not subscribe to scene events: " + e.Message);
+            }
+
+            Log.LogInfo("[AP] CraftopiaArchipelago PoC " + VERSION + " loaded");
+        }
+
+        private static string sessionFileKey, enrollmentStatePath, sessionSeed;
+        private static float nextCharacterRegistration;
+        private static bool managedMode;
+        internal static ConnectionController Connection;
+        internal static string ManagedProfileKey { get; private set; }
+        internal static bool ManagedSessionInitialized => ManagedProfileKey != null;
+        private void InitializeSession(string profileKey)
+        {
+            fieldGuide.SetOpen(false); orbMap.Dispose(); OrbMapTracker.State.Clear();
+            enrollmentStatus = null; sessionSeed = null; nextCharacterRegistration = 0;
+            bool managedProfile = profileKey != null;
+            sessionFileKey = managedProfile ? "profile-" + profileKey : SanitizeSlot(SlotName.Value);
             // The applied-grant file is bound to the slot identity: a different
             // slot name gets a different file, so applied indices from one slot
             // can never suppress or duplicate another slot's grants.
             GrantStatePath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                "craftopia-archipelago-grants-" + SanitizeSlot(SlotName.Value) + ".json");
+                "craftopia-archipelago-grants-" + sessionFileKey + ".json");
             LoadGrantState();
 
             // Entitlement store: durable AP skill-point entitlement per (guid, epoch).
             EntitlementStorePath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                "craftopia-archipelago-entitlement-" + SanitizeSlot(SlotName.Value) + ".json");
+                "craftopia-archipelago-entitlement-" + sessionFileKey + ".json");
             entitlementStore = new EntitlementStore(EntitlementStorePath,
                 m => Log.LogInfo(m), m => Log.LogError(m));
             // Atomic enrollment state: single-file durable enrollment authority.
             // Replaces the two-file attestation+entitlement design.
             string enrollmentPath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                "craftopia-archipelago-enrollment-" + SanitizeSlot(SlotName.Value) + ".json");
+                "craftopia-archipelago-enrollment-" + sessionFileKey + ".json");
             var enrollmentState = new EnrollmentState(enrollmentPath,
                 m => Log.LogInfo(m), m => Log.LogError(m));
             enrollmentState.Load();
@@ -312,12 +373,10 @@ namespace CraftopiaArchipelago
             enrollmentStateField = enrollmentState;
             entitlementStore.Load();
             // Validation needs slot name and enrollment state.
-            Validator.SlotName = SlotName.Value;
-            Validator.EnrollmentState = enrollmentState;
 
             // Grant transaction: durable intent → mutation → atomic commit → ack.
             string intentPath = System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                "craftopia-archipelago-intent-" + SanitizeSlot(SlotName.Value) + ".json");
+                "craftopia-archipelago-intent-" + sessionFileKey + ".json");
             grantTransaction = new GrantTransaction(
                 intentPath,
                 entitlementStore,
@@ -332,7 +391,7 @@ namespace CraftopiaArchipelago
             Permissions = new PermissionManager(m => Log.LogInfo(m), m => Log.LogWarning(m));
 
             unlockMirror = new UnlockMirror(Permissions);
-            equipmentSession = new EquipmentSession(
+            equipmentSession = managedProfile ? EquipmentSession.Managed(SlotName.Value, enrollmentPath + ".equipment.json") : new EquipmentSession(
                 Config.Bind("EquipmentTest", "Enabled", false, "Explicit experimental equipment test approval; existing seeds leave false.").Value,
                 Config.Bind("EquipmentTest", "CharacterGuid", 0, "Approved test character GUID.").Value,
                 Config.Bind("EquipmentTest", "Epoch", 0L, "Approved test epoch.").Value, SlotName.Value);
@@ -364,6 +423,8 @@ namespace CraftopiaArchipelago
             // Validator: gates GameStartCheckSkillPoint via ValidationDecision.
             Validator = new Validator(entitlementStore,
                 m => Log.LogInfo(m), m => Log.LogError(m), new RecoveryHoldStore(EntitlementStorePath + ".holds.json"));
+            Validator.SlotName = SlotName.Value;
+            Validator.EnrollmentState = enrollmentState;
             Validator.LoadEvent = () => loadEventCounter;
             Validator.LoadCompleted = () => loadCompletedFlag;
             // Epoch and enrollment are set from bridge slot_data on connect.
@@ -398,52 +459,43 @@ namespace CraftopiaArchipelago
                 "Exact epoch of the new test seed. Zero disables enrollment.").Value;
             enrollmentCoordinator = new EnrollmentCoordinator(enrollmentState,
                 enrollmentPath + ".approval-used", approvedGuid, approvedEpoch, SlotName.Value, approveFresh);
-            Validator.AwaitingEnrollment = s => enrollmentCoordinator.CanWait(s,
+            enrollmentStatePath = enrollmentPath;
+            Validator.AwaitingEnrollment = s => managedMode ? ManagedAwaitingEnrollment(s) : enrollmentCoordinator.CanWait(s,
                 EnrollmentHasHistory(), recoveryHold || Validator.IsHeld(s.Input.Guid,s.Input.Epoch));
 
-            if (!harmonyApplied)
-            {
-                if (!InstallAndVerifyHooks())
-                {
-                    // Verification failed: the mission hook is not registered.
-                    // Stop initialization here — do not start the bridge, do
-                    // not mark Harmony as initialized. The error above says why.
-                    return;
-                }
-                harmonyApplied = true;
-            }
+        }
 
-            if (Bridge == null)
-            {
-                Bridge = new Bridge();
-                // Initialize durable observation outbox.
-                // Path is in the BepInEx config folder.
-                try
-                {
-                    string outboxPath = System.IO.Path.Combine(
-                        System.IO.Path.GetDirectoryName(
-                            System.Reflection.Assembly.GetExecutingAssembly().Location),
-                        "craftopia_observations.log");
-                    Bridge.InitDurableOutbox(outboxPath);
-                }
-                catch (Exception e)
-                {
-                    Log.LogError("[AP] outbox init failed: " + e.GetType().Name);
-                }
-                Bridge.Start();
+        internal static bool CanChangeConnection
+        {
+            get { try { return Oc.OcPlMng.LocalPl == null && !MilestoneSession.HasUnpersistedObservations; } catch { return false; } }
+        }
+        internal static bool PrepareManagedSession(string slot, string profileKey, int localPort)
+        {
+            if (instance == null || !harmonyApplied || !managedMode || string.IsNullOrWhiteSpace(slot) ||
+                !ConnectionController.IsValidProfileKey(profileKey) || localPort < 1 || localPort > 65535) return false;
+            bool same = ManagedProfileKey == profileKey && SlotName.Value == slot;
+            if (!same && !CanChangeConnection) return false;
+            Bridge?.Stop();
+            Bridge = null;
+            CancelEnrollment();
+            if (!same) {
+                CurrencyRuntime.ResetSession();
+                MilestoneSession.Bind(null);
+                lock (pendingSessions) pendingSessions.Clear();
+                lock (pendingUnlocks) pendingUnlocks.Clear();
+                Pipeline = new GrantPipeline();
+                ClearSessionBound("explicit main-menu profile selection");
+                recoveryHold = false; loadCompletedFlag = false; lastPlayerGuid = 0;
+                SlotName.Value = slot;
+                instance.InitializeSession(profileKey);
+                ManagedProfileKey = profileKey;
             }
-
-            try
-            {
-                UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-                UnityEngine.SceneManagement.SceneManager.sceneUnloaded += OnSceneUnloaded;
-            }
-            catch (Exception e)
-            {
-                Log.LogWarning("[AP] could not subscribe to scene events: " + e.Message);
-            }
-
-            Log.LogInfo("[AP] CraftopiaArchipelago PoC " + VERSION + " loaded");
+            LocalPort.Value = localPort;
+            Bridge = new Bridge(Pipeline.Epoch, true);
+            Bridge.InitDurableOutbox(System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
+                "craftopia-observations-" + sessionFileKey + ".log"));
+            Bridge.Start();
+            return true;
         }
 
         private void OnDestroy()
@@ -462,7 +514,10 @@ namespace CraftopiaArchipelago
             catch { /* logging must never break teardown */ }
 
             if (!owner) return; // duplicate instance; the owner keeps the bridge
+            Connection?.Dispose();
             fieldGuide.Dispose();
+            orbMap.Dispose();
+            OrbMapTracker.State.Clear();
             CurrencyRuntime.Suspend();
             instance = null;
             try
@@ -628,6 +683,7 @@ namespace CraftopiaArchipelago
         internal static void SafeError(string message) { try { Log?.LogError(message); } catch { } }
         internal static LoadInvocation OnLoadStart(Oc.OcPlMaster instance)
         {
+            CancelEnrollment();
             CurrencyRuntime.Suspend();
             unlockMirror?.Suspend();
             ++loadEventCounter;
@@ -669,7 +725,7 @@ namespace CraftopiaArchipelago
                 {
                     int guid = call.Player.GUID;
                     SetLastPlayerGuid(guid);
-                    Bridge?.SendIdentityUpdate(guid, Validator.CurrentEpoch, SlotName.Value);
+                    PublishLoadedIdentity();
                 }
                 catch (Exception ie)
                 {
@@ -801,6 +857,8 @@ namespace CraftopiaArchipelago
                     SetSessionBound(s.Epoch, SlotName?.Value);
                     CurrencyRuntime.ApplySession(s.CurrencySession,s.Connection);
                     MilestoneSession.Bind(s.CurrencySession);
+                    sessionSeed = s.CurrencySession == null ? null : MiniJson.GetString(s.CurrencySession,"seed_name");
+                    PublishLoadedIdentity();
                 }
             }
             catch (Exception e)
@@ -824,25 +882,149 @@ namespace CraftopiaArchipelago
             try { Validator.TrySoftValidation(); }
             catch { eligibility?.Block("late validation error"); Validator.Block(); }
         }
+        private static void PublishLoadedIdentity()
+        {
+            if (!loadCompletedFlag || Validator == null || Bridge == null) return;
+            var snapshot = Validator.Capture();
+            if (snapshot.Ready && snapshot.Input.Identity == IdentityStatus.Verified)
+                Bridge.SendIdentityUpdate(snapshot.Input.Guid, snapshot.Input.Epoch, SlotName.Value);
+        }
+        private static void TryRegisterEnrolledCharacter(bool allowed)
+        {
+            if (!allowed || Bridge == null || !Bridge.IsConnected || string.IsNullOrWhiteSpace(sessionSeed)) return;
+            try {
+                var snapshot = Validator.Capture();
+                if (!snapshot.Ready || snapshot.Input.Identity != IdentityStatus.Verified ||
+                    Validator.IsEnrolled == null || Validator.IsEnrolled(snapshot.Input.Guid)) return;
+                var authority = enrollmentStateField.Read(snapshot.Input.Guid,snapshot.Input.Epoch,SlotName.Value,
+                    Validator.HasHistory == null || Validator.HasHistory());
+                if (authority.Status != EntitlementStatus.Ok && authority.Status != EntitlementStatus.NoRecordConfirmed) return;
+                if (UnityEngine.Time.realtimeSinceStartup < nextCharacterRegistration) return;
+                nextCharacterRegistration = UnityEngine.Time.realtimeSinceStartup + 5f;
+                PublishLoadedIdentity();
+                Bridge.SendCharacterEnrollment(snapshot.Input.Guid,snapshot.Input.Epoch,sessionSeed,SlotName.Value);
+            } catch { eligibility?.Block("character registration unavailable"); }
+        }
+        private static bool EnrollmentEvidenceExists(string path)
+        {
+            try { System.IO.File.GetAttributes(path); return true; }
+            catch (System.IO.FileNotFoundException) { return false; }
+            catch { return true; }
+        }
         private static bool EnrollmentHasHistory()
         {
             try {
                 if (Validator.HasHistory == null || Validator.HasHistory()) return true;
+                if (managedMode && ManagedSessionInitialized && lastPlayerGuid != 0 &&
+                    (SoulOrbHooks.HasCharacterBinding(lastPlayerGuid) || CurrencyRuntime.HasEnrollmentHistory(lastPlayerGuid))) return true;
                 // Legacy state, unresolved intents, and partial writes require review.
-                if (System.IO.File.Exists(EntitlementStorePath) || System.IO.File.Exists(EntitlementStorePath + ".tmp")) return true;
+                if (EnrollmentEvidenceExists(EntitlementStorePath) || EnrollmentEvidenceExists(EntitlementStorePath + ".tmp")) return true;
                 string enrollment=System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                    "craftopia-archipelago-enrollment-"+SanitizeSlot(SlotName.Value)+".json");
-                if (System.IO.File.Exists(enrollment+".tmp") || System.IO.Directory.Exists(enrollment+".tmp")) return true;
+                    "craftopia-archipelago-enrollment-"+sessionFileKey+".json");
+                if (EnrollmentEvidenceExists(enrollment+".tmp")) return true;
                 string intent=System.IO.Path.Combine(BepInEx.Paths.ConfigPath,
-                    "craftopia-archipelago-intent-"+SanitizeSlot(SlotName.Value)+".json");
-                if (System.IO.File.Exists(intent) || System.IO.File.Exists(intent+".tmp")) return true;
-                if (System.IO.File.Exists(GrantStatePath+".tmp")) return true;
-                if (System.IO.File.Exists(GrantStatePath)) {
+                    "craftopia-archipelago-intent-"+sessionFileKey+".json");
+                if (EnrollmentEvidenceExists(intent) || EnrollmentEvidenceExists(intent+".tmp")) return true;
+                if (EnrollmentEvidenceExists(GrantStatePath+".tmp")) return true;
+                if (EnrollmentEvidenceExists(GrantStatePath)) {
                     var saved=PersistedGrantState.Read(GrantStatePath);
                     if (saved.Epoch != Validator.CurrentEpoch || saved.Applied.Count != 0 || saved.Quarantined.Count != 0) return true;
                 }
                 return false;
             } catch { return true; }
+        }
+        private static ValidationSnapshot pendingEnrollment;
+        private static string pendingEnrollmentProfile;
+        private static object pendingEnrollmentWorld;
+        internal static bool HasPendingEnrollment => pendingEnrollment != null && pendingEnrollmentWorld != null;
+        private static EnrollmentCoordinator NewEnrollmentApproval(ValidationSnapshot s)
+            => new EnrollmentCoordinator(enrollmentStateField, enrollmentStatePath + ".approval-used",
+                s.Input.Guid, s.Input.Epoch, SlotName.Value, true);
+        private static bool ManagedAwaitingEnrollment(ValidationSnapshot s)
+        {
+            if (!ManagedSessionInitialized) return true;
+            return NewEnrollmentApproval(s).CanWait(s, EnrollmentHasHistory(),
+                recoveryHold || Validator.IsHeld(s.Input.Guid, s.Input.Epoch));
+        }
+        internal static bool CanEnroll
+        {
+            get {
+                try {
+                    if (!managedMode || !ManagedSessionInitialized || !loadCompletedFlag ||
+                        Bridge == null || !Bridge.IsConnected || Connection == null || !Connection.IsConnected ||
+                        Validator == null || !IsSessionBound()) return false;
+                    var s = Validator.Capture();
+                    return EnrollmentCoordinator.IsFreshBaseline(s) && ManagedAwaitingEnrollment(s) &&
+                        (!EquipmentRequired || equipmentSession.CanApprove);
+                } catch { return false; }
+            }
+        }
+        internal static string EnrollmentSummary
+        {
+            get {
+                try {
+                    if (!ManagedSessionInitialized) return "Connect to your Archipelago slot from the main menu first.";
+                    if (Validator == null || Validator.CurrentEpoch <= 0) return "Waiting for the server seed and slot details.";
+                    if (!loadCompletedFlag || Oc.OcPlMng.LocalPl == null) return "Load your new level-1 character, then enroll it here.";
+                    var s = Validator.Capture();
+                    string baseline = "Character " + s.Input.Guid + ": level " + s.Input.Level +
+                        ", assigned points " + s.Input.AssignedPoints + ", unspent points " + s.Input.UnspentPoints + ". ";
+                    if (recoveryHold || Validator.IsHeld(s.Input.Guid,s.Input.Epoch)) return baseline + "Delivery held for review; enrollment cannot clear a recovery hold.";
+                    if (enrollmentStatus != null) return baseline + enrollmentStatus;
+                    if (CanEnroll) return baseline + "Fresh baseline available. Confirm that this is a new character for this seed.";
+                    var state = enrollmentStateField.Read(s.Input.Guid,s.Input.Epoch,SlotName.Value,false);
+                    if (state.Status == EntitlementStatus.Ok || state.Status == EntitlementStatus.NoRecordConfirmed)
+                        return baseline + "Character enrolled. World and reward checks remain active.";
+                    return baseline + "Fresh enrollment unavailable: baseline, saved history, or session approval needs review.";
+                } catch { return "Character details are not ready yet."; }
+            }
+        }
+        internal static string BeginEnrollment()
+        {
+            CancelEnrollment();
+            if (!CanEnroll) return enrollmentStatus = "Enrollment unavailable. A fresh level-1 zero-point character and a ready seed are required.";
+            pendingEnrollmentWorld = MilestoneSession.CaptureFreshEnrollmentWorld();
+            if (pendingEnrollmentWorld == null)
+                return enrollmentStatus = "A fresh world could not be verified. Use a new world near the first tower with no completed milestones.";
+            pendingEnrollment = Validator.Capture();
+            pendingEnrollmentProfile = ManagedProfileKey;
+            return enrollmentStatus = "Confirm fresh character " + pendingEnrollment.Input.Guid +
+                " for slot " + SlotName.Value + ". This approval is used once.";
+        }
+        internal static void CancelEnrollment()
+        {
+            pendingEnrollment = null; pendingEnrollmentProfile = null; pendingEnrollmentWorld = null;
+            enrollmentStatus = null;
+        }
+        internal static string ConfirmEnrollment()
+        {
+            var observed = pendingEnrollment;
+            string profile = pendingEnrollmentProfile;
+            object world = pendingEnrollmentWorld;
+            pendingEnrollment = null; pendingEnrollmentProfile = null; pendingEnrollmentWorld = null;
+            try {
+                if (observed == null || profile != ManagedProfileKey || !CanEnroll ||
+                    !observed.SameBinding(Validator.Capture()) || !MilestoneSession.SameFreshEnrollmentWorld(world))
+                    return enrollmentStatus = "Confirmation expired or the character or world changed. Review both and begin again.";
+                enrollmentCoordinator = NewEnrollmentApproval(observed);
+                bool committed = enrollmentCoordinator.TryEnroll(observed, () => {
+                    if (profile != ManagedProfileKey || !MilestoneSession.SameFreshEnrollmentWorld(world) || EnrollmentHasHistory() || recoveryHold ||
+                        Validator.IsHeld(observed.Input.Guid,observed.Input.Epoch))
+                        throw new InvalidOperationException("Enrollment evidence changed");
+                    return Validator.Capture();
+                }, EnrollmentHasHistory(), recoveryHold || Validator.IsHeld(observed.Input.Guid,observed.Input.Epoch));
+                if (!committed) return enrollmentStatus = enrollmentCoordinator.Status;
+                if (EquipmentRequired && !equipmentSession.Approve(observed.Input.Guid,observed.Input.Epoch,SlotName.Value)) {
+                    eligibility?.Block("equipment approval write failed"); Validator.Block();
+                    return enrollmentStatus = "Enrollment recorded, but equipment approval failed. Delivery held for review.";
+                }
+                CurrencyRuntime.AttestNew(observed.Input.Guid);
+                Validator.Invalidate();
+                return enrollmentStatus = "Fresh character enrolled. World baseline and reward validation will run before delivery.";
+            } catch {
+                eligibility?.Block("enrollment error"); Validator?.Block();
+                return enrollmentStatus = "Enrollment could not finish. Delivery held for review.";
+            }
         }
         private static void TryFreshEnrollment()
         {
@@ -920,13 +1102,14 @@ namespace CraftopiaArchipelago
 
             // 0. Process pending sessions (from network thread) BEFORE validation.
             // This invalidates eligibility and applies the new epoch/enrollment.
+            Connection?.Pump();
             ProcessPendingSessions();
             try { PollStatusKey(); Bridge?.PumpNotifications(); } catch { }
             try { PollHudPointer(); } catch (Exception ex) {
                 hudDrag.Cancel();
                 try { StatusDisplay?.Transition("hud-input-error", "[AP] HUD input unavailable: " + ex.GetBaseException().Message); } catch { }
             }
-            TryFreshEnrollment();
+            if (!managedMode) TryFreshEnrollment();
 
 
             // 0b. Late-session revalidation: if load is complete, session is
@@ -1025,6 +1208,7 @@ namespace CraftopiaArchipelago
             ProcessPendingUnlocks(validationAllows && identityEligible && !recoveryHold && equipmentContractReady && equipmentIdentityReady);
             // Restore ownership before admission: missing unlocks must not deadlock their own delivery.
             bool equipmentAdmitted = equipmentSession != null && equipmentSession.Admit(equipmentIdentityReady,EquipmentHooks.CurrentEquipmentAllowed);
+            TryRegisterEnrolledCharacter(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
             CurrencyRuntime.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
             MilestoneSession.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
 
@@ -1083,6 +1267,7 @@ namespace CraftopiaArchipelago
         /// In-game status overlay (Unity IMGUI). Toggle with F8.
         /// Shows connection, slot/session, permissions, goal progress, recovery holds.
         /// </summary>
+        private readonly OrbMapView orbMap = new OrbMapView();
         private readonly FieldGuideView fieldGuide = new FieldGuideView();
         private void PollStatusKey()
         {
@@ -1094,7 +1279,12 @@ namespace CraftopiaArchipelago
         }
         private void LateUpdate()
         {
-            if (ReferenceEquals(instance, this)) fieldGuide.KeepCursor();
+            if (ReferenceEquals(instance, this)) {
+                fieldGuide.KeepCursor();
+                try { orbMap.Refresh(OrbMapTracker.State); } catch(Exception e) { StatusDisplay?.Transition("orb-map-error", "AP map unavailable: " + e.GetType().Name); }
+                StatusDisplay?.ItemNotices.Advance(UnityEngine.Time.unscaledDeltaTime,
+                    !UnityEngine.Application.isFocused || fieldGuide.IsOpen);
+            }
         }
         private void OnApplicationFocus(bool focused)
         {
@@ -1123,9 +1313,10 @@ namespace CraftopiaArchipelago
         {
             if (!ReferenceEquals(instance, this)) return;
             try {
+                if(!fieldGuide.IsOpen) orbMap.DrawToggle();
                 float scale = GuideScale();
                 fieldGuide.Draw(StatusDisplay, Permissions, SlotName?.Value ?? "Unknown",
-                    Bridge != null && Bridge.IsConnected, recoveryHold, enrollmentStatus,
+                    Bridge != null && Bridge.IsConnected && (!managedMode || Connection?.IsConnected == true), recoveryHold, enrollmentStatus,
                     hudDrag.Active ? hudDrag.X / scale : hudX?.Value ?? 220,
                     hudDrag.Active ? hudDrag.Y / scale : hudY?.Value ?? 20, scale);
             } catch (Exception ex) {

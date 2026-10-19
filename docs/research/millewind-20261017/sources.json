@@ -1,0 +1,238 @@
+{
+  "rows": [
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 91172,
+      "cls": "SoAgeEvoData",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 7159
+        },
+        "m_Name": "So--SoAgeEvoData 1",
+        "worldLevel": 1,
+        "featuredItems": [
+          {
+            "m_FileID": 0,
+            "m_PathID": 81712
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 81724
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 81736
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 81878
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 82061
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 82094
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 82310
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 83666
+          },
+          {
+            "m_FileID": 0,
+            "m_PathID": 82442
+          }
+        ],
+        "requireGold": 500,
+        "requireItems": [
+          {
+            "item": {
+              "m_FileID": 0,
+              "m_PathID": 87824
+            },
+            "count": 5
+          },
+          {
+            "item": {
+              "m_FileID": 0,
+              "m_PathID": 87825
+            },
+            "count": 20
+          },
+          {
+            "item": {
+              "m_FileID": 0,
+              "m_PathID": 87826
+            },
+            "count": 20
+          },
+          {
+            "item": {
+              "m_FileID": 0,
+              "m_PathID": 87827
+            },
+            "count": 5
+          }
+        ],
+        "isEnabled": 1
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40796,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_002_Islanddungeon",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40808
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40821
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 20,
+                "recommendLevel": 30,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 40,
+                "recommendLevel": 50,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40808,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_002_Islanddungeon",
+        "sourceId": 2,
+        "dungeonPrefab": {
+          "m_AssetGUID": "de5858b7bf940b940bcff4175f28dcec",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 36,
+        "bossLevel": 20,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80019
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40821,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_202_Islanddungeon_Repeat",
+        "sourceId": 202,
+        "dungeonPrefab": {
+          "m_AssetGUID": "73baad0afdb6bb449b6e849fb6868bc3",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 36,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    }
+  ]
+}

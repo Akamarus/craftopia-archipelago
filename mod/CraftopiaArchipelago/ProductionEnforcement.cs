@@ -41,6 +41,16 @@ namespace CraftopiaArchipelago
         public static string ResolveStationObject(object station)
         {
             string type = station?.GetType().FullName;
+            if (type == "Oc.OcBldg_ItemGenerator")
+            {
+                // F9 2026-10-18: Generator (Small) is generic, as is Well.
+                // Exempt only the observed item/family pair, never the whole type.
+                var generatorItem = Field(station, "<_BldgItem_InItemSlot>k__BackingField");
+                var generatorData = Field(generatorItem, "<data>k__BackingField");
+                return Field(generatorData, "id") is int id && id == 2000 &&
+                    Field(generatorData, "familyId") is int familyId && familyId == 20401
+                    ? "excluded_power" : null;
+            }
             if (type != "Oc.OcBldg_CraftingBench") return ResolveStation(type);
             // Runtime capture 2026-10-10: one class backs distinct stations.
             // Read the same item-data family used by the game's recipe lookup.

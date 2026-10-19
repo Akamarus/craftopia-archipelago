@@ -62,10 +62,11 @@ namespace CraftopiaArchipelago
         public long CheckedCount { get; private set; }
         public bool GoalComplete { get; private set; }
         public IReadOnlyList<string> ReceivedItems { get; private set; } = Array.Empty<string>();
+        public readonly ItemNoticeQueue ItemNotices = new ItemNoticeQueue();
         public void ClearActivity() {
             ActivityText = "Waiting for activity from bridge"; HistoryLimited = false; TotalChecks = -1;
             CheckedCount = 0; GoalComplete = false; ReceivedItems = Array.Empty<string>();
-            notices.Clear(); recent.Clear(); RecipeNotice = "";
+            notices.Clear(); recent.Clear(); RecipeNotice = ""; ItemNotices.Clear();
         }
         public void SetActivity(IEnumerable<object> received, IEnumerable<object> sent, long checkedCount, bool complete)
         {

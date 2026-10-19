@@ -2,7 +2,9 @@
 import json
 from pathlib import Path
 
-CATALOG_ID='milestones_20261016_r1'
+LEGACY_CATALOG_ID='milestones_20261016_r1'
+CATALOG_ID='milestones_20261017_r2'
+SUPPORTED_CATALOGS=(LEGACY_CATALOG_ID,CATALOG_ID)
 RANGES={'tower':(3000,3999),'age':(4000,4099),'dungeon':(4100,4199),'category':(4200,4999)}
 
 def integer(value,low,high):
@@ -11,11 +13,12 @@ def integer(value,low,high):
 def key(family,source_id,stage):
     return f'milestone:{family}:{source_id}:{stage}'
 
-def load_catalog():
-    return json.loads(Path(__file__).with_name(CATALOG_ID+'.json').read_text(encoding='utf-8'))
+def load_catalog(catalog_id=CATALOG_ID):
+    if catalog_id not in SUPPORTED_CATALOGS: raise ValueError('Unsupported milestone catalog')
+    return json.loads(Path(__file__).with_name(catalog_id+'.json').read_text(encoding='utf-8'))
 
 def validate_catalog(data):
-    if (not isinstance(data,dict) or data.get('catalog_id')!=CATALOG_ID or
+    if (not isinstance(data,dict) or data.get('catalog_id') not in SUPPORTED_CATALOGS or
         type(data.get('schema')) is not int or data['schema']!=1 or data.get('frozen_ids') is not True or
         not isinstance(data.get('provenance'),dict) or not data['provenance'].get('assembly_sha256')):
         raise ValueError('Invalid milestone catalog header')
@@ -43,12 +46,12 @@ def validate_catalog(data):
     return rows
 
 def validate_slot(data):
-    if (not isinstance(data,dict) or data.get('milestone_catalog')!=CATALOG_ID or
+    if (not isinstance(data,dict) or data.get('milestone_catalog') not in SUPPORTED_CATALOGS or
         type(data.get('milestone_schema')) is not int or data['milestone_schema']!=1):
         raise ValueError('Unsupported milestone session')
     allowed=data.get('milestone_locations')
     if not isinstance(allowed,dict) or not allowed: raise ValueError('Empty milestone session')
-    frozen={key(r['family'],r['source_id'],r['stage']):r['ap_location_id'] for r in validate_catalog(load_catalog())}
+    frozen={key(r['family'],r['source_id'],r['stage']):r['ap_location_id'] for r in validate_catalog(load_catalog(data['milestone_catalog']))}
     if any(type(v) is not int or frozen.get(k)!=v for k,v in allowed.items()): raise ValueError('Unknown milestone mapping')
     goals=data.get('goal_location_ids')
     if (not isinstance(goals,list) or not goals or any(type(g) is not int or g not in allowed.values() for g in goals)
@@ -57,9 +60,9 @@ def validate_slot(data):
 
 def resolve_milestone(slot_data,family,source_id,stage):
     if family not in RANGES or not integer(source_id,-2147483648,2147483647) or not integer(stage,0,99): return None
-    if not isinstance(slot_data,dict) or slot_data.get('milestone_catalog')!=CATALOG_ID or type(slot_data.get('milestone_schema')) is not int or slot_data['milestone_schema']!=1: return None
+    if not isinstance(slot_data,dict) or slot_data.get('milestone_catalog') not in SUPPORTED_CATALOGS or type(slot_data.get('milestone_schema')) is not int or slot_data['milestone_schema']!=1: return None
     allowed=slot_data.get('milestone_locations')
     if not isinstance(allowed,dict): return None
     loc=allowed.get(key(family,source_id,stage))
     if not integer(loc,*RANGES[family]): return None
-    return loc if any(r['family']==family and r['source_id']==source_id and r['stage']==stage and r['ap_location_id']==loc for r in validate_catalog(load_catalog())) else None
+    return loc if any(r['family']==family and r['source_id']==source_id and r['stage']==stage and r['ap_location_id']==loc for r in validate_catalog(load_catalog(slot_data['milestone_catalog']))) else None

@@ -75,4 +75,5 @@
     </EmbeddedResource>
     <EmbeddedResource Include="../../worlds/craftopia/milestones_20261016_r1.json" LogicalName="milestones_20261016_r1.json" />
   </ItemGroup>
+<ItemGroup><Reference Include="UnityEngine.UI"><HintPath>../refs/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference></ItemGroup>
 </Project>

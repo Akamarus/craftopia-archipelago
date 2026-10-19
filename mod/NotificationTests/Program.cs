@@ -3,6 +3,21 @@ using CraftopiaArchipelago;
 class Program {
  static void Assert(bool value,string name) { if(!value) throw new Exception(name); }
  static void Main() {
+  var cards = new ItemNoticeQueue();
+  for(int i=0;i<6;i++) cards.Add("item"+i, "Found Bow", "A very long location", false);
+  cards.Add("item0", "Duplicate", "", false);
+  cards.Advance(0, false);
+  Assert(cards.Visible.Count==3 && cards.PendingCount==3,"three cards, lossless backlog, permanent dedup");
+  cards.Advance(5, true);
+  Assert(cards.Visible[0].Remaining==6,"history or lost focus pauses displayed timers");
+  cards.Advance(6, false);
+  Assert(cards.Visible[0].Id=="item3" && cards.Visible[0].Remaining==6,"queued cards receive a full six seconds");
+  cards.Advance(6,false);
+  Assert(cards.Visible.Count==0 && cards.PendingCount==0,"all queued cards eventually shown");
+  cards.Add("old","Old item","Old location",false,true);
+  cards.Add("old","Old item","Old location",false);
+  cards.Advance(0,false);
+  Assert(cards.Visible.Count==0,"history replay does not flood cards");
   var d=new PlayerStatusDisplay(null,_=>throw new Exception("logger unavailable"));
   try { d.ShowBlockedAction("Requires Tamer"); } catch { throw new Exception("Blocked notice must contain logger exceptions"); }
   d=new PlayerStatusDisplay(null,null);

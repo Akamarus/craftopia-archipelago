@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('output', type=Path)
     parser.add_argument('--seed', type=int, default=20261016)
+    parser.add_argument('--ending', choices=('geezah', 'millewind'), default='geezah')
     args = parser.parse_args()
     output = args.output.resolve()
     root = Path(__file__).resolve().parents[1]
@@ -23,7 +24,10 @@ def main():
     temporary = output / 'tmp'
     temporary.mkdir(exist_ok=True)
     tempfile.tempdir = str(temporary)
-    shutil.copyfile(root / 'worlds/craftopia/test/regional_player.yaml', players / 'CraftopiaRegional.yaml')
+    template = (root / 'worlds/craftopia/test/regional_player.yaml').read_text()
+    template = template.replace('name: CraftopiaRegional', 'name: ' + args.ending.title() + 'Run')
+    template = template.replace('ending_region: geezah', 'ending_region: ' + args.ending)
+    (players / 'CraftopiaRegional.yaml').write_text(template)
     os.environ['SKIP_REQUIREMENTS_UPDATE'] = '1'
     sys.path.insert(0, str(root / 'worlds/craftopia/test'))
     from ap_runtime import load_world
@@ -39,7 +43,7 @@ def main():
     multiworld = Main.main(generated, seed)
     assert multiworld.can_beat_game()
     data = multiworld.worlds[1].fill_slot_data()
-    assert data['goal_location_ids'] == [3002, 4100]
+    assert data['goal_location_ids'] == ([3002, 4100] if args.ending == 'geezah' else [3012, 4101])
     print(f'Regional example generated: {multiworld.seed_name}, {len([l for l in multiworld.get_locations(1) if l.address is not None])} checks, tower AND dungeon goal')
 
 

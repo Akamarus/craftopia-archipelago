@@ -37,7 +37,7 @@ namespace CraftopiaArchipelago
                     return Refuse("Enrollment state changed");
                 var fresh = capture();
                 if (fresh == null || !first.SameBinding(fresh) || !fresh.Ready ||
-                    fresh.Input.Identity != IdentityStatus.Verified || !Zero(first) || !Zero(fresh))
+                    fresh.Input.Identity != IdentityStatus.Verified || !IsFreshBaseline(first) || !IsFreshBaseline(fresh))
                     return Refuse("Character changed or fresh zero-point baseline not proven");
                 // CreateNew prevents reuse. Flush before the enrollment write; a crash between
                 // these writes leaves a consumed approval and holds, never a reusable attestation.
@@ -51,7 +51,7 @@ namespace CraftopiaArchipelago
                 return true;
             } catch { return Refuse("Enrollment failed; review required"); }
         }
-        static bool Zero(ValidationSnapshot s) => s.Input.TotalsKnown && s.Input.Level == 1 &&
+        public static bool IsFreshBaseline(ValidationSnapshot s) => s != null && s.Ready && s.Input.TotalsKnown && s.Input.Level == 1 &&
             s.Input.K > 0 && s.Input.MissionPoints == 0 && s.Input.AssignedPoints == 0 && s.Input.UnspentPoints == 0;
         bool Refuse(string reason) { Status=reason; return false; }
     }

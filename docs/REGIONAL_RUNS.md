@@ -1,43 +1,48 @@
-# Regional runs — Geezah first
+# Regional runs: Geezah and cumulative Millewind
 
-Use `logic_mode: regional`, `ending_region: geezah`, and the instance mission catalog. The complete example is `worlds/craftopia/Regional.yaml`.
+Use `logic_mode: regional`, `ending_region: geezah` or `millewind`, and the instance mission catalog. These are experimental capability models for new seeds. The historical `geezah_pilot` remains separate with its original dungeon-only goal and original milestone catalog.
 
-Three Skill Point copies are progression for the modeled Tamer route. Surplus copies still award skill points but are classified as filler, allowing excluded locations to receive them. This classification change applies only to regional mode.
+Current profiles are `regional_geezah_20261017_r6` and `regional_millewind_20261017_r1`, using `milestones_20261017_r2`. Geezah selects 52 missions and 16 milestones (68 checks), optionally adding its 51 native-field soul orbs. Millewind includes every Geezah mission/milestone plus tower stages3010–3012, age4001 and dungeon4101 (73 checks before optional orbs). Millewind optionally includes88 native-field orbs across both regions, for161 total checks. Categories28 (members529/530) and141 (512/513) are included in both. Category141 is excluded as a source for mission513, preventing its own reward tutorial from proving itself. No additional unverified missions are selected.
 
-Victory requires AP confirmation of **both** Geezah Tower Repair Stage 3 (3002) and Ruin of Beginning (4100). Earlier tower stages alone do not satisfy tower completion. The generator models both requirements; the existing bridge checks the actual confirmed location IDs. Legacy objective/age/boss goal switches do not add extra conditions in this mode.
+Geezah victory requires tower stage3 (3002) and Ruin of Beginning (4100). Millewind victory requires Millewind tower stage3 (3012) and Old Garden of Undead (4101, native dungeon source2). Geezah completion alone never grants Millewind victory. The bridge requires actual server-confirmed goal locations. Legacy objective/age/boss goal switches add no extra requirements in regional mode.
 
-The current profile is `regional_geezah_20261016_r4`. See [v1.12.3 changes](VERIFIED_PROGRESSION_v1123.md) for exact construction dependencies, the bucket route and Bow tier2. It has 52 checks: 38 missions, nine category reward claims, three tower stages, Agricultural Age, and Ruin of Beginning. This includes the previously omitted mission-screen (512) and category-reward (513) tutorials. The latter requires a completable native category, regardless of where its AP reward is placed. No completed-category reward is granted automatically. Revision 2 adds the [explicit Goblin's Club rule](LOOT_EQUIPMENT_REVIEW.md) and requires the updated bridge and mod v1.12.1.
+## Identity and region evidence
 
-All selected milestones belong to Geezah, and mission routing contains only explicitly selected missions. Categories must have every member selected. The selection boundary limits randomized checks; it does not prevent physical travel outside Geezah. Soul orbs, respawning chests, Anubis and later-area checks are not included in this first regional profile.
+The installed native dungeon name term `800_DungeonName/2`, dungeon asset40808 (Story/Reaper20), establish its Story dungeon identity; the user-completed workbook sheet1 Q025 row31 identifies it Old Garden of Undead as Millewind's main dungeon (remembered region binding; native entrance coordinates were not established). See [Millewind evidence](research/millewind-20261017/README.md). The earlier guessed dungeon source1 is not reused for new sessions; historical catalog mappings remain frozen.
 
-## Progression rules
+Millewind membership uses native field `GrassField01`, not distance to a tower. Its environmental type does not require heat protection. Region membership limits selected checks, not physical travel. Orb membership does not establish traversal difficulty, so optional orb checks can only hold non-progression rewards; advancement permissions cannot be hidden on them.
 
-Rules are explicit for every selected mission and milestone; there is no catch-all unknown-mission access rule. Smelting and Cooking are restricted to 18 selected opening missions that require no AP permissions. Both remain randomized, not starting grants. Exclusions must leave enough distinct eligible destinations for both items. Placement constraints compose with AP location rules; impossible settings fail generation rather than widening the placement set.
+## Opening progression
 
-| Capability | Modeled requirements and evidence |
+Smelting and Cooking are randomized into 18 selected opening missions accessible without AP permissions. Exclusions must leave enough distinct eligible destinations. They are not starting grants. Four Skill Points are progression: three support the optional Geezah Tamer route and one supports healing magic. Surplus copies are filler.
+
+Tower3806 uses local Stone698, Sand752, Log746, Old Rag3400 from Straw2454, Sheep Wool758, Leather683, Copper Ore699 and Small Placeable Torch5123. Its recipes and source-age0 evolution costs come from `progression_audit_20261016_r2`. Stone/log gathering, wildlife, local sand and local age-material availability remain explicit repeatable-resource assumptions.
+
+Furnace construction requires raw age1, a workbench and materials; operating it requires Smelting. Copper ingots support the blacksmith and cooking pot. Farm use requires Farming, the wheat field and crafted buckets filled at water. Buckets are replenishable from stone/log recipes; cooking water consumes filled bucket839 and yields Water811, with no assumed guaranteed bucket return.
+
+Live observations corrected two earlier rules: mission67's campfire updraft does not require Cooking, and the Geezah dungeon Bow route can succeed at raw age0. Metal gear routes retain their actual station/age requirements. The model offers Sword, Bow and Tamer alternatives for Geezah. These combat estimates remain experimental.
+
+## Millewind materials and age
+
+The native tower UI enables age evolution on a completed world heritage tower without requiring a particular tower ID. A completed Geezah tower therefore supports raw age1→2; requiring completed Millewind tower3807 would incorrectly create a cycle with its raw-age2 recipes. This transition costs500 gold plus the audited local materials6575–6578. The model explicitly assumes renewable local-material sales through the constructed market can supply500 gold; this remains an experimental acquisition assumption, not a starting currency grant.
+
+| Capability | Requirements |
 | --- | --- |
-| Stone tools / workbench | Local stone/log gathering; opening playtest passed. |
-| Tower stage 1 | Stone 698, Sand 752, Log 746; local sand gathering. The smelting recipe for sand is not the only source. |
-| Tower stage 2 | Stage 1, Old Rag 3400 (Straw 2454 at the workbench), Sheep Wool 758, Leather 683. No invented Body armor permission requirement. |
-| Tower stage 3 | Stage 2, Copper Ore 699, Small Placeable Torch 5123 (log + old rag). Ore is not an ingot; the placeable torch is not a gated weapon. |
-| Agricultural Age | Completed Geezah tower plus local age-material gathering. Captured age items include Clover, Plateau Moonstone, Ironwood and Plateau Ancient Doll Fragment. Currency quantities remain vanilla. |
-| Stone Furnace | Agricultural Age, stone/logs and workbench; construction does not require Smelting. |
-| Copper ingots | Furnace + ore + Smelting. |
-| Blacksmith / Cooking Pot | Agricultural Age and copper ingots; both recipes require 10 ingots in the capture. These checks cannot hide the only Smelting unlock. |
-| Glider/updraft | Glider uses local wildlife materials; using the campfire updraft requires Cooking. |
-| Farming | Wheat Field construction at Agricultural Age plus crafted buckets filled at water; watering and harvesting require Farming. Well construction is not assumed. |
-| Dungeon | Agricultural Age and a Sword/Smelting, Bow, or vanilla Tamer route. These combat capability estimates remain experimental. |
+| Iron712 | Furnace, raw age2, Smelting, Iron Ore700; local ore harvesting remains an assumption. |
+| Aging Facility416 | Workbench, raw age2, iron, stone and Bone695; night skeleton combat uses the opening Sword route. |
+| Grease2458 | Aging facility, raw age2, Equipment Care, Raw Flesh2050 from wildlife. |
+| Bioethanol2452 | Aging facility, raw age2, Equipment Care, Wheat2055 from Farming. |
+| Paper2457 | Workbench, raw age2, straw and Cooking-produced Water811. |
+| Small Generator2000 | Workbench, raw age2, iron, Cogwheel2451 and logs. Player operation produces Battery2100; no Tamer or perpetual captured-enemy assumption. |
+| Cogwheel2451, Bolt3468, Spring3469 | Workbench, raw age2, audited iron/copper recipes. |
+| Ceramic3470 | Furnace, raw age2, Smelting, Clay3450 (sand/water) and Charcoal749 (logs). |
 
-Material names/recipes were read from the collector capture `craftopia_diag_20261016_181842_9364a392874f467b9334b501b2962ae0.json`; frozen tower and mission identities remain in their existing catalogs. The live pilot confirmed all three Geezah repair transitions, Agricultural Age, category claims, dungeon victory and reload deduplication. This does not prove every alternative resource route or combat threshold. Local wildlife, sand and age-material access are documented playtest assumptions, not claims inferred solely from crafting recipes. The graph models repeatable capabilities, not already-owned inventory quantities.
+Tower3807 stage1 costs Paper2457×20 and Grease2458×20; stage2 costs Battery2100×20 and Bioethanol2452×20; stage3 costs Cogwheel2451×20, Bolt3468×20, Spring3469×20 and Ceramic3470×20. Each stage requires its predecessor. The graph models renewable capabilities, while these quantities remain charged by vanilla gameplay.
 
-## Run-length readiness
+The generator output is tied to the inspected item2000 prefab, not Battery's inactive recipe metadata. See [utilities evidence](research/2026-10-16-remaining/utilities.md). Equipment Care is added to the Millewind permission pool. The modeled dungeon route uses Iron One-Handed Sword46: raw age2, blacksmith family20017, Iron712×3, Log746×2, Leather683×1 and three progressive Sword copies. The exact recipe is recorded in installed capture `craftopia_diag_20261016_181842_9364a392874f467b9334b501b2962ae0.json`; combat sufficiency remains an explicit conservative playtest assumption. Mandatory armor is not invented.
 
-Geezah is currently the only selectable ending. Another region needs an explicit check selection, its actual final tower stage, a captured main-dungeon identity, and reviewed recipe/resource/access rules before being added. Millewind's tower is captured, but its dungeon/end-to-end resource logic is not ready. Heat/cold item values and recipe capabilities are audited, but complete named-region routes remain unverified; no late-region access is invented. Nearest-tower orb proximity is not accepted as region membership.
+## Compatibility and validation
 
-## Compatibility and testing
+New contracts require newly generated seeds and fresh-character/world enrollment. Existing played slots, ledgers, frozen IDs and pilot sessions must not be rewritten. Protocol2 equipment behavior remains required. The new milestone catalog preserves historical catalog validation for old sessions while correcting only new-session dungeon identity.
 
-The `geezah_pilot` profile stays at 50 checks with its original dungeon-only goal. Existing IDs, ledgers, running sessions and saves are unchanged. The new regional mode requires a newly generated seed and the established fresh-character/world enrollment process; do not switch an existing played slot to this contract. Revision 2 requires equipment protocol 2; revision 1 retains the original equipment contract.
-
-Automated tests cover exact selection and routing, both goal conditions, recipe dependencies, zero-permission opening placements, exclusions including insufficient distinct slots, unsupported regions/options, full reachability spheres and 100 actual AP 0.6.8 fills. Passing these establishes reachability under the documented model, not a physical-game proof. A new regional playthrough remains the live acceptance step.
-
-Revision 3 uses the [audited progression catalog](AUDIT_INTEGRATION_20261016.md) for tower materials and age costs. Mod v1.12.2 also adds the audited station-family mappings. Existing live seeds are not rewritten.
+Tests cover exact cumulative selection, category-cycle prevention, all graph nodes under full permissions, production gates, both goal conditions and100 actual AP0.6.8 fills with full reachability spheres. Model reachability is not proof of physical-game combat or harvesting sufficiency; a new live playthrough remains the acceptance step.

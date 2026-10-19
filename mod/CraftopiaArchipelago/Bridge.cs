@@ -20,6 +20,7 @@ namespace CraftopiaArchipelago
         /// Called on character load (menu-first connect) and character switch.
         /// Must be called on the Unity main thread.
         /// </summary>
+        private readonly CharacterIdentitySync identitySync = new CharacterIdentitySync();
         public void SendIdentityUpdate(int guid, long epoch, string slot)
         {
             try
@@ -31,8 +32,9 @@ namespace CraftopiaArchipelago
                     ["epoch"] = epoch,
                     ["slot"] = slot,
                 };
-                outbox.Enqueue(MiniJson.Stringify(msg));
-                Plugin.Log.LogInfo($"[AP] queued identity update: guid={guid}, epoch={epoch}");
+                if (!IsConnected || epoch != Interlocked.Read(ref knownEpoch)) return;
+                if (identitySync.TryQueue(ConnectionId, guid, epoch, slot, () => outbox.Enqueue(MiniJson.Stringify(msg))))
+                    Plugin.Log.LogInfo($"[AP] queued identity update: guid={guid}, epoch={epoch}");
             }
             catch (Exception e)
             {
@@ -40,6 +42,13 @@ namespace CraftopiaArchipelago
             }
         }
 
+        internal void SendCharacterEnrollment(int guid,long epoch,string seed,string slot) {
+            if(guid==0 || !IsConnected || epoch!=Interlocked.Read(ref knownEpoch) || string.IsNullOrEmpty(knownToken))return;
+            outbox.Enqueue(MiniJson.Stringify(new Dictionary<string,object> {
+                {"cmd","character_enrollment"},{"character_guid",guid.ToString(System.Globalization.CultureInfo.InvariantCulture)},
+                {"epoch",epoch},{"seed_name",seed},{"slot",slot},{"connection_token",knownToken},{"local_enrollment_verified",true}
+            }));
+        }
         internal void SendMilestoneEnrollment(int guid,long epoch,string seed,string slot) {
             if(!IsConnected || epoch!=Interlocked.Read(ref knownEpoch) || string.IsNullOrEmpty(knownToken))return;
             outbox.Enqueue(MiniJson.Stringify(new Dictionary<string,object> {
@@ -47,11 +56,18 @@ namespace CraftopiaArchipelago
                 {"epoch",epoch},{"seed_name",seed},{"slot",slot},{"connection_token",knownToken},{"local_enrollment_verified",true}
             }));
         }
+        private readonly CancellationTokenSource stopping = new CancellationTokenSource();
+        private ClientWebSocket activeSocket;
+        private static int nextConnectionId;
         private Thread thread;
         private volatile bool running;
         private volatile bool connected;
         private int connectionId;
         private long knownEpoch;
+        private readonly bool fixedEpoch;
+        internal Bridge(long expectedEpoch = 0, bool fixedEpoch = false) {
+            knownEpoch = expectedEpoch; this.fixedEpoch = fixedEpoch;
+        }
         internal int ConnectionId { get { return Volatile.Read(ref connectionId); } }
         private readonly ConcurrentQueue<string> outbox = new ConcurrentQueue<string>();
         private ObservationJournal observations;
@@ -71,6 +87,11 @@ namespace CraftopiaArchipelago
         public void Stop()
         {
             running = false;
+            stopping.Cancel();
+            try { activeSocket?.Abort(); } catch { }
+            if (thread != null && thread != Thread.CurrentThread && !thread.Join(5000))
+                throw new InvalidOperationException("Previous bridge is still stopping; session change refused");
+            connected = false;
         }
 
         public void InitDurableOutbox(string path)
@@ -89,6 +110,14 @@ namespace CraftopiaArchipelago
                     MiniJson.GetLong(msg, "epoch") != Plugin.Validator.CurrentEpoch ||
                     MiniJson.GetString(msg, "slot") != Plugin.SlotName.Value ||
                     string.IsNullOrEmpty(knownToken) || MiniJson.GetString(msg, "connection_token") != knownToken) continue;
+                if (MiniJson.GetString(msg, "cmd") == "orb_map_snapshot") { OrbMapTracker.Snapshot(msg); continue; }
+                if (MiniJson.GetString(msg, "cmd") == "item_notice") {
+                    msg.TryGetValue("silent", out var silent);
+                    Plugin.StatusDisplay?.ItemNotices.Add(MiniJson.GetString(msg,"id"),
+                        MiniJson.GetString(msg,"title"), MiniJson.GetString(msg,"location"),
+                        MiniJson.GetString(msg,"kind") == "sent", silent is bool quiet && quiet);
+                    continue;
+                }
                 if (MiniJson.GetString(msg, "cmd") == "activity_snapshot") {
                     msg.TryGetValue("received", out var received);
                     msg.TryGetValue("sent", out var sent);
@@ -100,8 +129,7 @@ namespace CraftopiaArchipelago
                         Plugin.StatusDisplay.HistoryLimited = msg.TryGetValue("history_limited", out var limited) && limited is bool isLimited && isLimited;
                     continue;
                 }
-                Plugin.StatusDisplay?.Notify("confirmed:" + knownEpoch + ":" + MiniJson.GetLong(msg, "location_id"),
-                    "Check completed: " + PlayerStatusDisplay.CheckLabel(MiniJson.GetString(msg, "title")), PlayerStatusDisplay.Now);
+                // Item notices carry the reward and source. Check totals update in the snapshot.
             }
         }
 
@@ -122,8 +150,6 @@ namespace CraftopiaArchipelago
             // Durable: persist before queueing so a game exit doesn't lose it.
             if (observations != null && observations.Append(msg)) {
                 outbox.Enqueue(msg);
-                try { Plugin.StatusDisplay?.Notify("queued:" + epoch + ":" + missionId,
-                    "Check queued: " + missionTitle, PlayerStatusDisplay.Now); } catch { }
             }
             else Plugin.SafeError("[AP] observation not queued: durable journal unavailable; preserve files for review");
         }
@@ -136,6 +162,14 @@ namespace CraftopiaArchipelago
             outbox.Enqueue(text); return true;
         }
 
+        internal void RestoreOrbMapPending() {
+            foreach(var line in observations?.Snapshot(Interlocked.Read(ref knownEpoch),Plugin.SlotName.Value) ?? new List<string>()) {
+                var m=MiniJson.ParseObject(line);
+                if(MiniJson.GetString(m,"check_category")!="soul_orb")continue;
+                long guid=MiniJson.GetLong(m,"orb_guid");
+                if(guid>=int.MinValue&&guid<=int.MaxValue)OrbMapTracker.State.MarkCollected(OrbMapTracker.Identity(m),(int)guid);
+            }
+        }
         internal bool SendOrbCheck(int orb,string seed,string slot,long epoch,int guid)
         {
             if(guid==0 || epoch!=Interlocked.Read(ref knownEpoch) || slot!=Plugin.SlotName.Value) return false;
@@ -147,6 +181,7 @@ namespace CraftopiaArchipelago
             });
             if(observations==null || !observations.Append(message)) return false;
             outbox.Enqueue(message);
+            OrbMapTracker.State.MarkCollected(OrbMapTracker.Identity(MiniJson.ParseObject(message)),orb);
             // Server confirmation produces the collection popup; do not show a second queued popup.
             return true;
         }
@@ -186,9 +221,11 @@ namespace CraftopiaArchipelago
                 {
                     using (var ws = new ClientWebSocket())
                     {
+                        activeSocket = ws;
                         var uri = new Uri("ws://127.0.0.1:" + Plugin.LocalPort.Value + "/");
-                        await ws.ConnectAsync(uri, CancellationToken.None);
-                        Interlocked.Increment(ref connectionId);
+                        await ws.ConnectAsync(uri, stopping.Token);
+                        if (!running) break;
+                        Volatile.Write(ref connectionId, Interlocked.Increment(ref nextConnectionId));
                         connected = true;
                         Plugin.Log.LogInfo("[AP] connected to local bridge at " + uri);
 
@@ -259,10 +296,10 @@ namespace CraftopiaArchipelago
                     Plugin.Log.LogWarning("[AP] bridge connection failed, retrying: "
                         + e.GetType().Name + ": " + e.Message);
                 }
-                finally { connected = false; }
+                finally { connected = false; activeSocket = null; }
 
                 if (running)
-                    await Task.Delay(2000);
+                    try { await Task.Delay(2000, stopping.Token); } catch (OperationCanceledException) { }
             }
         }
 
@@ -286,8 +323,10 @@ namespace CraftopiaArchipelago
             switch (cmd)
             {
                 case "check_confirmed":
+                case "orb_map_snapshot":
                 case "activity_snapshot":
-                    if (notifications.Count < 64) notifications.Enqueue(msg);
+                case "item_notice":
+                    notifications.Enqueue(msg);
                     break;
                 case "observation_ack":
                     if (MiniJson.GetLong(msg, "epoch") == Interlocked.Read(ref knownEpoch) &&
@@ -336,6 +375,10 @@ namespace CraftopiaArchipelago
                     MiniJson.GetString(msg,"slot") != Plugin.SlotName.Value ||
                     string.IsNullOrWhiteSpace(MiniJson.GetString(msg,"connection_token"))) return;
                 long epoch = (long)epochRaw;
+                if (fixedEpoch && Interlocked.Read(ref knownEpoch) > 0 && epoch != Interlocked.Read(ref knownEpoch)) {
+                    Plugin.SafeError("[AP] conflicting managed session epoch refused; preserve existing session files");
+                    return;
+                }
                 Interlocked.Exchange(ref knownEpoch, epoch);
                 knownToken = MiniJson.GetString(msg, "connection_token");
                 if (observations != null)
@@ -382,6 +425,7 @@ namespace CraftopiaArchipelago
             if (indices.Count == 0) return;
 
             long epoch = MiniJson.GetLong(msg, "epoch");
+            if (epoch <= 0 || epoch != Interlocked.Read(ref knownEpoch)) return;
             try
             {
                 Plugin.Pipeline.EnqueueInbound(epoch, indices);

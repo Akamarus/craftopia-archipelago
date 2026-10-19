@@ -12,13 +12,26 @@ def fingerprint(value):
 
 class MilestoneDeliveryMixin:
     async def register_milestone_character(self,msg,token):
+        # Legacy command remains milestone-only; generic registration also
+        # supports currency sessions without a milestone catalog.
+        await self.register_verified_character(msg,token,require_milestones=True)
+
+    async def register_verified_character(self,msg,token,require_milestones=False):
+        actual_token = token if token is not None else self.connection_token
         if (self.recovery_hold or self.multiplayer_mode!=0 or not self._conn_validated(token) or
             not self._valid_conn_token(msg.get('connection_token')) or
+            msg.get('connection_token')!=actual_token or
             msg.get('local_enrollment_verified') is not True or
             type(msg.get('epoch')) is not int or msg['epoch']!=self.ledger['epoch'] or
             msg.get('slot')!=self.args.slot or msg.get('seed_name')!=self.ledger.get('seed_name')): return
-        try: catalog.validate_slot(self.slot_data)
-        except (ValueError,KeyError,TypeError): return
+        if require_milestones or any(key in self.slot_data for key in
+                ('milestone_catalog','milestone_schema','milestone_locations')):
+            try: catalog.validate_slot(self.slot_data)
+            except (ValueError,KeyError,TypeError): return
+        elif not self.currency_ready():
+            # currency_ready requires explicit protocol 1, negotiated client
+            # capabilities, a valid seed identity, and single-player mode.
+            return
         guid=self.normalize_guid(self._token_guid(token))
         if guid is None or msg.get('character_guid')!=guid: return
         if any(e['character_guid']!=guid or e['slot']!=self.args.slot for e in self.ledger.get('enrollments',[])): return

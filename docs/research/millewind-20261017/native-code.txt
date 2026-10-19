@@ -1,0 +1,58 @@
+550971:
+550972: 		public string DungeonName => LocalizationManager.GetTranslation(ZString.Concat<string, int>("800_DungeonName/", sourceId), true, 0, true, false, (GameObject)null, (string)null);
+550973: 	}
+569295:
+569296: 		public override void OnOpenUI()
+569297: 		{
+569298: 			bool flag = false;
+569299: 			if (UISceneSingleton<OcUI_MenuHandler>.InstUISS?.CurrentBuilding is OcBldg_WorldHeritage)
+569300: 			{
+569301: 				flag = !(UISceneSingleton<OcUI_MenuHandler>.InstUISS?.CurrentBuilding as OcBldg_WorldHeritage).IsUnderConstruction;
+569302: 			}
+569303: 			mainMenu.SetActiveIfRequired(isActive: true);
+569304: 			ageEvoUI.gameObject.SetActiveIfRequired(isActive: false);
+569305: 			towerRestoreUI.gameObject.SetActiveIfRequired(isActive: false);
+569306: 			ageEvoButton.SetActiveIfRequired(flag);
+569307: 			towerRestoreButton.SetActiveIfRequired(!flag);
+569308: 			warpGroundButton.SetActiveIfRequired(flag && isTowerTop);
+569309: 		}
+354094: 		{
+354095: 			if (ageLevel < 0 || ageLevel >= OcResidentData.AgeEvoData.Length)
+354096: 			{
+354097: 				return null;
+354098: 			}
+354099: 			return OcResidentData.AgeEvoData[ageLevel];
+354100: 		}
+354101:
+354102: 		public override void OnOpenUI()
+354103: 		{
+354104: 			scrollPanel.anchoredPosition = new Vector2(scrollPanel.anchoredPosition.x, 0f);
+354105: 			SingletonMonoBehaviour<OcInputTrack>.Inst.AddCallback("UI/WestButton", WestButtonCallback);
+354106: 			SingletonMonoBehaviour<OcInputTrack>.Inst.AddCallback("UI/L3", TrackButtonCallback);
+354161:
+354162: 		private bool CanEvo()
+354163: 		{
+354164: 			if (_currentAgeEvo == null || !_currentAgeEvo.IsEnabled)
+354165: 			{
+354166: 				return false;
+354167: 			}
+354168: 			if (SROptions.Current.DebugCraft)
+354169: 			{
+354170: 				return true;
+354171: 			}
+354172: 			ItemData[] requireItemData = _currentAgeEvo.RequireItemData;
+354173: 			int[] requireItemCounts = _currentAgeEvo.RequireItemCounts;
+354174: 			int requireGold = _currentAgeEvo.RequireGold;
+354175: 			if (OcPlMng.LocalPl.HealthPl.Money < requireGold)
+354176: 			{
+354177: 				return false;
+354178: 			}
+354179: 			for (int i = 0; i < requireItemData.Length; i++)
+354180: 			{
+354181: 				if (UISceneSingleton<OcItemUI_InventoryMng>.InstUISS?.GetItemCount(requireItemData[i]) < requireItemCounts[i])
+354182: 				{
+354183: 					return false;
+354184: 				}
+354185: 			}
+354186: 			return true;
+354187: 		}

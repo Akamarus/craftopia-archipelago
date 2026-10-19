@@ -1,0 +1,11 @@
+# Millewind dungeon identity and age tower eligibility
+
+Verified against installed game assets on 2026-10-17.
+
+- **Old Garden of Undead**, **sourceId 2**, Story (`battleDungeonType=0`), Reaper (`bossEmType=36`) level20: `sharedassets6.assets` OcDungeonSo path40808.
+- Runtime `DungeonName` reads localization key `800_DungeonName/` + sourceId (`native-code.txt`, original decompile line550972). Installed `resources.assets` byte303488240 contains term `800_DungeonName/2`, followed by English `Old Garden of Undead` at303488272. `identity.json` preserves offsets and the serialized record hex.
+- Region binding is the user's completed workbook `outputs/logic-review-20261016/Craftopia - Outstanding Logic and Items.xlsx`, sheet1 Q025 row31: C31 `Millewind Hill Tower`, E31 `Old Garden of Undead. No quest, items, or special requirements to access. The only limitation is combat gear.` G31 `Remembered`. This is explicit user-provided region evidence, not inference from source ordering. Native entrance coordinates were not established in this pass.
+- Repeat source202 has the same English name, but `battleDungeonType=1`; it must not be mistaken for the Story source2 milestone. Entrance source path40796 defaults to source path40808 and references repeat path40821 separately. The default entrance is not under development.
+- Age evolution is available at **any completed world-heritage tower**. `OcUI_OpenWorldTower.OnOpenUI` enables the age button when the current building is `OcBldg_WorldHeritage` and `!IsUnderConstruction`; it does not test tower item ID. Age UI indexes the global age data by world level; `CanEvo` tests enabled age data, gold and required item counts, with no tower-specific condition. Thus a completed Geezah tower can perform raw age1→2. Millewind completion must not be made a prerequisite for that evolution.
+
+`identity.json` is the minimal identity evidence; `sources.json` adds raw age1 advancement data; `native-code.txt` preserves the relevant decompiled conditions with original line numbers. Extraction reads assets only. The general localization type-tree decoder failed, so localization was parsed directly from the length-prefixed Unity record; the preserved bytes make that fallback independently auditable.

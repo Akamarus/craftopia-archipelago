@@ -1,0 +1,80 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>MilestoneCatalogTests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
+    <Reference Include="BepInEx">
+      <HintPath>..\refs\BepInEx.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>..\refs\0Harmony.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="AD__Overcraft">
+      <HintPath>..\refs\AD__Overcraft.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Mirror">
+      <HintPath>..\refs\Mirror.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\refs\UnityEngine.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\refs\UnityEngine.CoreModule.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\refs\MonoMod.Utils.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\refs\MonoMod.RuntimeDetour.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="../CraftopiaArchipelago/*.cs" />
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\refs\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\refs\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\refs\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <EmbeddedResource Include="../../worlds/craftopia/soul_orbs_20261015_r1.json">
+      <LogicalName>soul_orbs_20261015_r1.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../../worlds/craftopia/skill_catalog_20261008_r1.json">
+      <LogicalName>skill_catalog_20261008_r1.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../../worlds/craftopia/equipment_catalog_20261010_r1.json">
+      <LogicalName>equipment_catalog_20261010_r1.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="../../worlds/craftopia/milestones_20261016_r1.json" LogicalName="milestones_20261016_r1.json" />
+  </ItemGroup>
+<ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261017_r2.json" LogicalName="milestones_20261017_r2.json" /></ItemGroup>
+<ItemGroup><Reference Include="UnityEngine.UI"><HintPath>../refs/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+</Project>

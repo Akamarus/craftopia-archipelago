@@ -55,6 +55,7 @@ import os
 import random
 import sys
 import time
+from item_notices import ItemNotices
 
 # Held for process lifetime to ensure single bridge per session.
 _authority_lock_file = None
@@ -62,6 +63,7 @@ import uuid
 from delivery_state import candidate, validate, valid_unlock, integer, text as valid_text, COMBAT
 from currency_delivery import CurrencyDeliveryMixin
 from soul_orb_delivery import SoulOrbDeliveryMixin
+from orb_map import orb_map_payload
 from milestone_delivery import MilestoneDeliveryMixin
 
 try:
@@ -72,6 +74,9 @@ except ImportError:
 # Official AP 0.6.8 wire codec when available. Falls back to stdlib json,
 # which is protocol-compatible for the packet shapes we use.
 try:
+    if sys.flags.isolated:
+        # Packaged managed runtime must never import a developer's AP checkout.
+        raise ImportError('isolated bridge uses the built-in wire codec')
     sys.path.insert(0, os.path.expanduser("~/workspace/vendor/ap-0.6.8"))
     from NetUtils import encode as ap_encode, decode as ap_decode
     HAVE_AP_NETUTILS = True
@@ -163,6 +168,9 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         self.checked_locations = set()
         self.received_activity = {}  # Cosmetic AP-index keyed history; rebuilt by server replay.
         self.sent_activity = []
+        self.item_notices = ItemNotices()
+        self.pending_notice_messages = []
+        self.notice_sync_pending = True
         # Recovery hold: set if ledger was corrupt at startup. Blocks all
         # delivery until explicit recovery.
         self.recovery_hold = False
@@ -471,6 +479,11 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
 
     # ---------- Archipelago server side ----------
 
+    def report_connection_state(self, state, message):
+        callback = getattr(self.args, 'state_callback', None)
+        if callback is not None:
+            callback(state, message)
+
     async def ap_loop(self):
         while True:
             try:
@@ -502,6 +515,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
                 self.ap_ws = None
                 self.ap_connected = False
                 self.datapackage_ready = False
+                self.report_connection_state('reconnecting', 'Server connection closed; reconnecting.')
             await asyncio.sleep(3)
 
     async def send_ap(self, msg):
@@ -513,6 +527,11 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         cmd = msg.get("cmd") if isinstance(msg, dict) else None
         if cmd == "RoomInfo":
             seed = msg.get('seed_name')
+            expected = getattr(self.args, 'expected_seed', None)
+            if expected is not None and seed != expected:
+                self.recovery_hold = True
+                self.report_connection_state('error', 'Server seed changed. Reconnect from the main menu.')
+                return
             if not valid_text(seed):
                 self.recovery_hold = True
                 return
@@ -525,9 +544,15 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
             proposed['seed_name'] = seed
             if not self.commit(proposed): self.recovery_hold = True
         elif cmd == "ConnectionRefused":
+            self.ap_connected = False
+            self.report_connection_state('error', 'Server refused the connection. Check the slot and password.')
             print("[AP] connection refused:", msg.get("errors"), flush=True)
         elif cmd == "Connected":
             await self.on_connected(msg)
+            if not self.recovery_hold:
+                self.report_connection_state('connected', 'Connected to Archipelago.')
+            else:
+                self.report_connection_state('error', 'Session is in recovery hold; review existing delivery history.')
         elif cmd == "DataPackage":
             await self.on_datapackage(msg)
         elif cmd == "ReceivedItems":
@@ -535,10 +560,30 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         elif cmd == "RoomUpdate":
             await self.on_room_update(msg)
         elif cmd == "PrintJSON":
+            if msg.get('type') == 'ItemSend':
+                if not self.datapackage_ready:
+                    self.pending_notice_messages.append(msg)
+                else:
+                    await self.publish_item_notice(msg.get('item'), msg.get('receiving'))
             text = "".join(p.get("text", "") for p in msg.get("data", []))
             if text.strip():
                 print(f"[AP] {text.strip()}", flush=True)
         # other packets ignored
+
+    async def publish_item_notice(self, item, recipient, silent=False):
+        # A cosmetic failure must never alter item delivery or check acknowledgement.
+        try:
+            row = self.item_notices.event(item, recipient, silent)
+            if row is None or silent:
+                return
+            for token, _ in list(self._iter_conns()):
+                try:
+                    await self.send_mod(dict(row, cmd='item_notice', epoch=self.ledger['epoch'],
+                        slot=self.args.slot, connection_token=token), token=token)
+                except Exception:
+                    pass
+        except Exception:
+            pass
 
     async def on_room_update(self, msg):
         self.checked_locations.update(msg.get('checked_locations',[]))
@@ -603,6 +648,10 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
                 try:
                     await self.send_mod(dict(payload, cmd='activity_snapshot', epoch=self.ledger['epoch'],
                         slot=self.args.slot, connection_token=recipient), token=recipient)
+                    await self.send_mod(dict(orb_map_payload(self.slot_data, self.checked_locations,
+                        self.ledger.get('orb_checks', [])), cmd='orb_map_snapshot', epoch=self.ledger['epoch'],
+                        seed_name=self.ledger.get('seed_name'), slot=self.args.slot,
+                        connection_token=recipient), token=recipient)
                 except Exception:
                     pass
         except Exception:
@@ -615,6 +664,23 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
                 self.goal_announced = True
 
     async def on_connected(self, msg):
+        self.notice_sync_pending = True
+        infos = msg.get('slot_info', {})
+        names, games = {}, {}
+        for key, info in infos.items():
+            if isinstance(info, dict):
+                names[int(key)] = info.get('name', f'Player {key}')
+                games[int(key)] = info.get('game', GAME)
+            elif hasattr(info, 'game'):
+                names[int(key)], games[int(key)] = info.name, info.game
+        for player in msg.get('players', []):
+            if isinstance(player, dict):
+                if player.get('team') == msg.get('team'):
+                    names[player['slot']] = player.get('alias') or player.get('name')
+            elif hasattr(player, 'team') and player.team == msg.get('team'):
+                names[player.slot] = player.alias or player.name
+        games.setdefault(msg.get('slot'), GAME)
+        self.item_notices.bind(msg.get('slot'), names, games)
         # The ledger's seed/epoch binding rejects a different seed. Preserve the
         # announcement only for the same milestone goal on a socket reconnect.
         next_slot=msg.get('slot_data',{}) or {}
@@ -667,7 +733,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
                   "existing ledger.", flush=True)
 
         # Resolve location/item names to IDs before classifying anything.
-        await self.send_ap({"cmd": "GetDataPackage", "games": [GAME]})
+        await self.send_ap({"cmd": "GetDataPackage", "games": sorted(set(self.item_notices.games.values()) | {GAME})})
         await self.send_ap({"cmd": "Sync"})
         await self.reconcile_pending_checks()
         if self.multiplayer_mode == 1:
@@ -715,6 +781,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
 
     async def on_datapackage(self, msg):
         games = (msg.get("data") or {}).get("games", {}) or {}
+        self.item_notices.packages(games)
         craftopia = games.get(GAME, {}) or {}
         self.location_name_to_id = craftopia.get("location_name_to_id", {}) or {}
         self.item_name_to_id = craftopia.get("item_name_to_id", {}) or {}
@@ -737,6 +804,9 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         # Classify any items that arrived before the datapackage.
         pending = self.pending_item_messages
         self.pending_item_messages = []
+        pending_notices, self.pending_notice_messages = self.pending_notice_messages, []
+        for m in pending_notices:
+            await self.publish_item_notice(m.get('item'), m.get('receiving'))
         for m in pending:
             await self.process_received_items(m)
         await self.reconcile_pending_checks()
@@ -969,6 +1039,9 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         return [base + i for i in range(n)]
 
     async def on_received_items(self, msg):
+        msg = dict(msg)
+        msg['_notice_silent'] = self.notice_sync_pending and msg.get('index') == 0
+        self.notice_sync_pending = False
         # Cannot classify items until the DataPackage maps item names to IDs.
         if not self.datapackage_ready:
             self.pending_item_messages.append(msg)
@@ -999,6 +1072,8 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         if not integer(index) or not isinstance(items, list):
             print('[AP] invalid ReceivedItems envelope; ignoring', flush=True)
             return
+        for item in items:
+            await self.publish_item_notice(item, self.item_notices.slot, silent=msg.get('_notice_silent', index == 0))
         delivered = set(self.ledger["delivered"])
         to_grant = []
         for i, item in enumerate(items):
@@ -1892,6 +1967,8 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
             await self.send_session(token=token)
         elif cmd == "milestone_enrollment":
             await self.register_milestone_character(msg,token)
+        elif cmd == "character_enrollment":
+            await self.register_verified_character(msg,token)
         elif cmd == "register_character":
             # Shared-slot late registration for connections that handshook
             # without a character_guid.
@@ -1977,7 +2054,15 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
                                         self.args.port)
         print(f"[mod] local bridge listening on 127.0.0.1:{self.args.port}",
               flush=True)
-        await asyncio.gather(server.wait_closed(), self.ap_loop(), self.maintenance())
+        tasks = [asyncio.create_task(self.ap_loop()), asyncio.create_task(self.maintenance())]
+        try:
+            await asyncio.gather(server.wait_closed(), *tasks)
+        finally:
+            server.close()
+            for task in tasks:
+                task.cancel()
+            await asyncio.gather(*tasks, return_exceptions=True)
+            await server.wait_closed()
 
 
 def main():

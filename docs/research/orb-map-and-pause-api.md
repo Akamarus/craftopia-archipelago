@@ -1,0 +1,10 @@
+# Installed map/pause API evidence
+Assembly SHA256: 88DB99EBE9FBF1296C74465B6F32467CDBC71711235F925532D9BCF6F2CCEBEA; installed and compile-reference hashes match.
+Local decompilation: artifacts/harvesting-research/all.cs in workspace.
+
+Oc.Maps.OcUI_WorldMapMng: private iconHandler, CurrentScale; OnEnable/OnDisable; singleton Inst. Oc.Maps.OcUI_WorldMap_IconHandler: pf_icon (OcUI_Map_Icon_FullMap), iconFolder (RectTransform), RescaleIconSize(float), SetFullMapOffset(float,float). Native icon placement uses world X/Z as local X/Y. iconFolder owns negative world offsets and map scrolling/zoom. Clone pf_icon under iconFolder, assign own sprite/color/tag, do not join native lists or field-discovery filtering. SetPosition(Vector2), SetSize(Vector2), SetScale(Vector3), SetMassageTag(string,string) are native methods; inherited iconImage Image exposes color. Map lifecycle + model revision controls creation; scale changes update transforms only. Native hover is handled by OcUI_Map_Icon_FullMap.
+
+Oc.OcInput.OcInputTrack: DisableAllInputWithKey(object), TryEnableInputWithKey(object,float=-1). Key list prevents releasing another input owner's lock. GetLookValue/GetMoveValue/trigger accessors return zero/false while disabled. IMGUI and legacy Unity Input F8/Escape remain separate. Native Escape callback uses action system, so the keyed lock also prevents double Escape menu activation.
+No native single-player menu pause exists in inspected menu/input code. TimeScaleManager.Set rejects zero, while Fade alters unrelated tween ownership. Use scoped Time.timeScale=0 paired with native input lock; restore exact prior rate only if still at owned zero. Do not acquire time lease at main menu/loading/multiplayer. Close on world identity change/loading/focus loss. No disabling Plugin.Update, websocket bridge, or Unity UI.
+
+Review refinement: LateUpdate maintenance captures any new positive native time rate and reapplies owned zero, restoring the latest rate at close. Pre-existing zero and multiplayer never acquire time ownership.
