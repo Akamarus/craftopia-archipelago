@@ -41,6 +41,17 @@ class Program
             try { ProbeProtocol.Encode(invalid); } catch (ArgumentException) { rejected = true; }
             Check(rejected, "encoder rejects invalid frame");
         }
+        var session = new ProbeSession();
+        Check(!session.AcceptEcho(nonce), "unarmed echo");
+        session.Arm(nonce);
+        Check(!session.AcceptEcho(Guid.NewGuid()), "wrong nonce");
+        Check(session.AcceptEcho(nonce), "matching echo");
+        Check(!session.AcceptEcho(nonce), "duplicate echo");
+        session.Arm(nonce); session.Reset();
+        Check(!session.AcceptEcho(nonce), "reset rejects stale echo");
+        session.Arm(nonce); var replacement = Guid.NewGuid(); session.Arm(replacement);
+        Check(!session.AcceptEcho(nonce) && session.AcceptEcho(replacement), "replacement nonce");
+        TransportTests.Run();
         Console.WriteLine($"PASS: {checks} checks");
     }
 }

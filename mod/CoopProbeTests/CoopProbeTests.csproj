@@ -1,4 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework></PropertyGroup>
-  <ItemGroup><Compile Include="../CoopProbe/ProbeProtocol.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="../CoopProbe/ProbeProtocol.cs" /><Compile Include="../CoopProbe/ProbeSession.cs" /><Compile Include="../CoopProbe/ProbeTransport.cs" /></ItemGroup>
 </Project>
