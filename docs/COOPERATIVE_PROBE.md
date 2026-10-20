@@ -52,3 +52,13 @@ dotnet build mod/CoopProbe/CoopProbe.csproj -c Release
 The tests compile the protocol, session, and transport adapter against a small behavioral Mirror double. They check wire bytes, bounds, authentication gates, connection changes, timeouts, collisions, handler ownership, rate limiting, and adjacent frames in a batch. The plugin build compiles against the local real Mirror/BepInEx/Unity references, all marked `Private=false`. No game assemblies ship with the probe. These checks do not replace the two-client tests above.
 
 Production integration still needs safe capability discovery, durable enrollment identity, save acknowledgments, and full AP synchronization/delivery acceptance. Existing multiplayer guards and public packages remain unchanged.
+
+## Build validation — 2026-10-19
+
+- Probe: 67 assertions passed, covering the pure codec/session and simulated adapter behavior.
+- Existing cooperative progress/delivery: all 40 tests passed.
+- Release build against real installed references: zero warnings and errors. The Mirror reference hash matches the audited installation.
+- Independent review of `d8d4972..830e70c`: no actionable findings. Reviewer independently ran the 67 assertions and verified Mirror batching/serialization IL.
+- Private ZIP contains only the probe DLL, these instructions, and its SHA256 checksum. Nothing has been installed, pushed, or published.
+
+Implementation decisions: the adapter reads exactly 23 bytes from Mirror's shared batch reader, leaving following messages intact; requiring the entire reader to be 23 bytes would break batching. The adapter lives separately from the Unity plugin to exercise it with a behavioral double; that double can miss runtime differences, so live validation remains mandatory. Review deliberately leaves real Steam/EOS/UDP delivery, safe production mod discovery, persistent enrollment/save integration, and installed distribution behavior to their later gates. None is claimed as working here.

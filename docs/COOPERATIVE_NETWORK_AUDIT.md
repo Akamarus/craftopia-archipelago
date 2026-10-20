@@ -28,6 +28,6 @@ Local raw inspection output is in ignored `artifacts/multiplayer-network-audit/`
 
 ## Next gate
 
-Build an isolated, disabled-by-default hello/echo probe. It must not submit AP checks, deliver items, change saves, enroll characters, expose the bridge, or remove multiplayer guards. Verify connection/rejoin behavior with two supported game clients on disposable saves. Host loopback or simulated traffic alone does not establish native co-op readiness.
+An isolated, disabled-by-default hello/echo probe is now built; see [private test instructions](COOPERATIVE_PROBE.md). It does not submit AP checks, deliver items, change saves, enroll characters, expose the bridge, or remove multiplayer guards. Connection/rejoin behavior still needs verification with two supported game clients on disposable saves. Host loopback or simulated traffic alone does not establish native co-op readiness.
 
 Before production integration, resolve safe capability discovery, durable enrollment ownership, reliable save acknowledgments, and payload batching for full offline progress snapshots. Keep multiplayer unsupported in public distribution until the design's live acceptance matrix passes.
