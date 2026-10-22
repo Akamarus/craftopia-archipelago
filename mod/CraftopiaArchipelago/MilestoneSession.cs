@@ -12,6 +12,7 @@ namespace CraftopiaArchipelago
     {
         internal const string Catalog="milestones_20261016_r1";
         internal const string CurrentCatalog="milestones_20261017_r2";
+        internal const string YardenCatalog="milestones_20261022_r3";
         static string activeCatalog;
         internal static readonly Dictionary<string,long> Frozen=new Dictionary<string,long>();
         static readonly Dictionary<int,Dictionary<string,object>> towers=new Dictionary<int,Dictionary<string,object>>();
@@ -33,7 +34,7 @@ namespace CraftopiaArchipelago
             return null;
         }
         internal static void LoadCatalog(string catalog=Catalog) {
-            if(catalog!=Catalog && catalog!=CurrentCatalog) throw new FormatException("Unsupported milestone catalog");
+            if(catalog!=Catalog && catalog!=CurrentCatalog && catalog!=YardenCatalog) throw new FormatException("Unsupported milestone catalog");
             using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(catalog+".json"))
             using(var reader=new StreamReader(stream)) {
                 var d=MiniJson.ParseObject(reader.ReadToEnd());
@@ -78,7 +79,7 @@ namespace CraftopiaArchipelago
             if(!enabled) return;
             try {
                 string catalog=MiniJson.GetString(m,"milestone_catalog");
-                if((catalog!=Catalog && catalog!=CurrentCatalog) || !(m["milestone_schema"] is long schema) || schema!=1 ||
+                if((catalog!=Catalog && catalog!=CurrentCatalog && catalog!=YardenCatalog) || !(m["milestone_schema"] is long schema) || schema!=1 ||
                     !(m["multiplayer_mode"] is long mode) || mode!=0 || !(m["milestone_locations"] is Dictionary<string,object> map) || map.Count==0) return;
                 LoadCatalog(catalog);
                 var next=new HashSet<string>();

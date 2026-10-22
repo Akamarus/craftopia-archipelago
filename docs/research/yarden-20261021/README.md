@@ -21,7 +21,7 @@ The two tower/dungeon pairs support distinct proposed endpoints; this is not jus
 | --- | --- | --- |
 | 1 | Silver Ore701 ×50; Charcoal749 ×10 | Silver harvesting/source access; Charcoal is2 Log per unit in Furnace20018, raw age1/displayed Age2, Smelting |
 | 2 | Fang680 ×10; Bird Feather692 ×10; Bone695 ×10 | Existing specific goblin, chicken/phoechick and skeleton drop evidence; no invented crafting-age lock on loot |
-| 3 | Crystal2453 ×20; Sulfur763 ×20; Elemental Dust2460 ×20 | Existing wizard/skeleton drop routes for Crystal/Dust; sulfur gathering/trade access still needs a regional route |
+| 3 | Crystal2453 ×20; Sulfur763 ×20; Elemental Dust2460 ×20 | Existing wizard/skeleton drop routes for Crystal/Dust; player-confirmed Sulfur from Geezah caves and normal mining |
 
 The only active crafted ingredient in this tower's immediate list is Charcoal. Silver Ore's metadata age3 is **not** a recipe/acquisition gate: it is no-craft family20001. Do not force Age4 for this tower solely because its ore has that metadata. Combat, effective harvesting and travel may impose practical requirements independently.
 
@@ -39,21 +39,20 @@ All listed recipes output one per batch. The selected full crafting chain requir
 
 Age3→4 (raw2→3) costs2500 gold, Mandragora6580×5, Emerald of Hills6581×20, Ancient Wood6582×20, Hills Ancient Doll Fragment6583×5. These are the Hills set, not Meadow's next-transition set. A completed earlier tower can support evolution; requiring Yarden Ruin completion first would create a cycle. Renewable gold access needs an explicit economic assumption/route, as in the earlier profiles.
 
-Saltpeter2046 is an Aging Facility recipe at raw2, consuming Feces2048×1. The workbook's Material sources row34 reports natural player production **if enabled**. Existing decompiled `moveStoolTimer` checks `DisableStool`, while the player toilet path also checks `Option_NotStool` (which is populated from settings.NotStool). Do not assert unconditional supply or silently change user settings. A supported source/settings policy or verified alternative is required before this route is treated as guaranteed. This audit has not exhausted alternative shops/loot or proved that every source is disabled by that setting.
+Saltpeter2046 is an Aging Facility recipe at raw2, consuming Feces2048×1, under Equipment Care. On 2026-10-21 the player confirmed reliable renewable supply through breeding/farming animals and human feces. This resolves the practical supply question; a repeated supply playtest is not needed. Preserve the recipe conversion rather than interpreting animal farming as direct Saltpeter production. Exact animal-route prerequisites still need joining to the logic model; the phrase “farming animals” alone does not establish an AP Farming permission requirement. The workbook's Material sources row34 reports natural player production **if enabled**. Both natural player production and toilet use check `DisableStool` and `Option_NotStool` (populated from settings.NotStool). Do not silently change settings or assume those human-path checks also disable every animal source.
 
 ## Harvesting correction: age materials are already resolved in data
 
 The [prior harvesting audit](../2026-10-16-followup/harvesting.md) established source rarity0/1 for all nine age-material ore/wood sets. Stone Pickaxe56 and Stone Axe68 have attack rank0 and pass the actual tool comparison. Hills6581/6582 and Meadow6586/6587 therefore do not need invented higher tool tiers. A live trial would validate this operationally, but it is not an unanswered minimum-tier question.
 
-Ordinary Silver Ore701 is different from those age materials. Existing decoded drop definitions include silver-bearing static data71 (sharedassets0:80664) and473–475 (sharedassets13:197–199), rarity4. Under the audited damage comparison, rank3 Iron Pickaxe is sufficient to avoid bounce **if these are the targeted live resource definitions**; rank0 Stone and rank1 Copper are below that no-bounce threshold. This is not an absolute impossibility gate: the damage code reduces damage on bounce rather than proving zero drops. Exact live resource linkage and practical harvesting time remain useful targeted checks. Sulfur also occurs in multiple positive drop tables; the workbook's “Rocks / Everywhere” is too broad to encode literally.
+Ordinary Silver Ore701 is different from those age materials. Existing decoded drop definitions include silver-bearing static data71 (sharedassets0:80664) and473–475 (sharedassets13:197–199), rarity4. Under the audited damage comparison, rank3 Iron Pickaxe is sufficient to avoid bounce; rank0 Stone and rank1 Copper are below that no-bounce threshold. On 2026-10-21 the player confirmed Silver can be harvested throughout Yarden with an Iron Pickaxe. Adopt **Yarden access + usable Iron Pickaxe** as the supported harvesting route without requesting another silver trial. This is a conservative logic requirement, not proof that lower tools yield no drops: the damage code reduces damage on bounce. On 2026-10-21 the player also confirmed Sulfur763 is accessible as early as Geezah through caves and normal mining. Treat its regional source as available from Geezah, not gated by Yarden or a later region. This confirms source access, without asserting a specific minimum pickaxe tier or drop rate that the player did not supply.
 
 ## Short remaining gameplay packet
 
 No fresh character or full regional playthrough is needed. Prepare a separate diagnostic session before asking the player to do these; do not repurpose a finished AP slot silently.
 
-1. **Silver/sulfur source:** at one accessible Yarden silver node, record position/source, equipped tool and actual drops. Compare a lower tool only if practical efficiency matters to the chosen logic. Identify an accessible sulfur source in the same outing. No need to repeat age-material tiers across nine regions.
-2. **Dungeon evidence:** record each Yarden Story entrance and existing completion state with the advanced character. If a completion event has not been captured, clear that dungeon once and capture the forcefield-completion event; do not redo earlier regions. Use the event's source3/4 and reload persistence, not a nearby chest, to validate credit.
-3. **Saltpeter supply:** after inspecting alternative sources/settings code, confirm the selected enabled route yields Feces→Saltpeter at the Aging Facility. Record relevant settings; avoid an indefinite wait presented as a guaranteed resource source.
+Silver with Iron Pickaxe, Geezah sulfur access and renewable feces supply are player-confirmed; no repeat source trials are needed. No need to repeat age-material tiers across nine regions.
+1. **Dungeon evidence:** record each Yarden Story entrance and existing completion state with the advanced character. If a completion event has not been captured, clear that dungeon once and capture the forcefield-completion event; do not redo earlier regions. Use the event's source3/4 and reload persistence, not a nearby chest, to validate credit.
 
 Tower cost definitions and generic repair hooks need no six-stage replay just to re-prove already captured costs. Read existing stage state first; request a stage transition only if its identity or hook behavior remains uncertain.
 
@@ -61,4 +60,8 @@ Tower cost definitions and generic repair hooks need no six-stage replay just to
 
 Extraction completed with zero dungeon decode errors, four matching localization records, two Story and two repeat definitions, two default entrance joins, and31 recipe-closure items. Workbook SHA256 was identical before/after: `611c5e3997042e3523e6942c3a0cccc009e26450e04c5df1ef8b4b7a27d0bc76`.
 
-Still needed before enabling an ending: cumulative region/check membership, conservative combat/harvesting routes, sustainable saltpeter supply policy, and explicit profile/goal tests. Existing Geezah/Millewind profiles stay unchanged. This report resolves evidence gaps; it does not advertise Yarden as a playable generated endpoint.
+Still needed before enabling an ending: cumulative region/check membership, conservative combat routes, exact prerequisites for the confirmed renewable feces route, and explicit profile/goal tests. Silver's supported Iron Pickaxe route, early Geezah sulfur access and renewable saltpeter supply are player-confirmed. Existing Geezah/Millewind profiles stay unchanged. This report resolves evidence gaps; it does not advertise Yarden as a playable generated endpoint.
+
+## Implementation follow-up — 2026-10-22
+
+The experimental profiles are now implemented; see [Yarden runs](../../YARDEN_RUNS.md) for the chosen cumulative membership, source assumptions, settings and outstanding live checks. The audit conclusions above describe the evidence available before implementation. The human-feces route is modeled with stool enabled; exact animal alternatives remain unmodeled.

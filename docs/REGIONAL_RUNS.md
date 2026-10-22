@@ -1,4 +1,8 @@
-# Regional runs: Geezah and cumulative Millewind
+# Regional runs: Geezah, Millewind and experimental Yarden
+
+Yarden Mountain and Ruin endpoints are implemented for targeted testing. See
+[Yarden runs](YARDEN_RUNS.md) for check boundaries, material assumptions and required
+game settings. Existing Geezah/Millewind contracts described below remain unchanged.
 
 Use `logic_mode: regional`, `ending_region: geezah` or `millewind`, and the instance mission catalog. These are experimental capability models for new seeds. The historical `geezah_pilot` remains separate with its original dungeon-only goal and original milestone catalog.
 

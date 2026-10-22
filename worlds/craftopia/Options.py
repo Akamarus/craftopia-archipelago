@@ -171,13 +171,15 @@ class LogicMode(Choice):
 
 class EndingRegion(Choice):
     """Regional runs end after the selected region's tower and main dungeon.
-    Geezah and Millewind are supported endings. Later regions are not selectable
-    until their dungeon identities and prerequisite rules are established.
+    Geezah, Millewind and the experimental Yarden Mountain/Ruin endings are available.
+    Yarden dungeon combat and completion behavior still need targeted live validation.
     Only used with regional progression logic.
     """
     display_name = "Ending Region"
     option_geezah = 0
     option_millewind = 1
+    option_yarden_mountain = 2
+    option_yarden_ruin = 3
     default = 0
 
 

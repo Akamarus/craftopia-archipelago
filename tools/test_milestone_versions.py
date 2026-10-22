@@ -10,6 +10,25 @@ OLD='milestones_20261016_r1'
 NEW='milestones_20261017_r2'
 
 class CatalogVersionTests(unittest.TestCase):
+    def test_yarden_is_additive_and_isolated(self):
+        version = 'milestones_20261022_r3'
+        old = m.validate_catalog(m.load_catalog(NEW))
+        rows = m.validate_catalog(m.load_catalog(version))
+        self.assertEqual(rows[:len(old)], old)
+        self.assertEqual(len(rows) - len(old), 9)
+        for source, location in ((3, 4102), (4, 4103)):
+            slot = {'milestone_schema': 1, 'milestone_catalog': version,
+                    'milestone_locations': {f'milestone:dungeon:{source}:0': location},
+                    'goal_location_ids': [location]}
+            m.validate_slot(slot)
+            self.assertEqual(m.resolve_milestone(slot, 'dungeon', source, 0), location)
+            self.assertIsNone(m.resolve_milestone(slot, 'dungeon', source + 200, 0))
+            slot['milestone_catalog'] = NEW
+            with self.assertRaises(ValueError): m.validate_slot(slot)
+        towers = {r['definition_id']: r for r in rows if r['family'] == 'tower'}
+        self.assertEqual(towers[3808]['source_id'], -793448649)
+        self.assertEqual(towers[3809]['source_id'], 1309797564)
+
     def slot(self,catalog,source=28,location=4228):
         return {'milestone_schema':1,'milestone_catalog':catalog,
                 'milestone_locations':{f'milestone:category:{source}:0':location},'goal_location_ids':[location]}

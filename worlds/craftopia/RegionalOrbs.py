@@ -8,7 +8,8 @@ def regional_orbs(ending):
     rows = geezah_orbs()
     if ending == 'geezah':
         return rows
-    if ending != 'millewind':
+    # Yarden boundaries are not yet frozen. Reuse only earlier verified fields.
+    if ending not in ('millewind', 'yarden_mountain', 'yarden_ruin'):
         raise ValueError('Unsupported orb ending region')
     subset = json.loads(Path(__file__).with_name('millewind_orbs_20261017_r1.json').read_text())
     canonical = {r['guid']: r for r in validate_catalog(load_catalog())}
