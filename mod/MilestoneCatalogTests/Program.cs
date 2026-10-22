@@ -1,5 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using System.Reflection;
 using CraftopiaArchipelago;
 class Program {
  static void Check(bool ok,string message) { if(!ok)throw new Exception(message); }
@@ -26,6 +29,23 @@ class Program {
   }
   try { MilestoneSession.LoadCatalog("unknown");throw new Exception("Unknown catalog accepted"); }
   catch(FormatException) { }
+  var guids=new List<int>();
+  foreach(var name in new[]{"geezah_orbs_20261016_r1","millewind_orbs_20261017_r1","yarden_orbs_20261022_r1"}) {
+   using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(name+".json"))
+   using(var reader=new StreamReader(stream)) {
+    foreach(Dictionary<string,object> row in (List<object>)MiniJson.ParseObject(reader.ReadToEnd())["locations"])
+     guids.Add(checked((int)(long)row["guid"]));
+   }
+  }
+  var session=new Dictionary<string,object>{{"seed_name","test"},{"slot","Yarden"},{"epoch",1L}};
+  OrbMapTracker.Bind(session,guids);
+  Check(OrbMapTracker.State.Visible(false).Count()==137,"All regional map markers must appear immediately");
+  var yarden=OrbMapTracker.State.Visible(false).Last();
+  OrbMapTracker.State.MarkCollected(OrbMapTracker.Identity(session),yarden.Guid);
+  Check(OrbMapTracker.State.Visible(true).Count()==136,"Collected marker filtering");
+  session["seed_name"]="old";
+  OrbMapTracker.Bind(session,guids.Take(88));
+  Check(OrbMapTracker.State.Visible(false).Count()==88,"Older sessions must not show Yarden markers");
   Console.WriteLine("Milestone catalog compatibility: legacy, current and Yarden assertions passed");
  }
 }

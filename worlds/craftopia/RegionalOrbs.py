@@ -8,7 +8,6 @@ def regional_orbs(ending):
     rows = geezah_orbs()
     if ending == 'geezah':
         return rows
-    # Yarden boundaries are not yet frozen. Reuse only earlier verified fields.
     if ending not in ('millewind', 'yarden_mountain', 'yarden_ruin'):
         raise ValueError('Unsupported orb ending region')
     subset = json.loads(Path(__file__).with_name('millewind_orbs_20261017_r1.json').read_text())
@@ -22,4 +21,15 @@ def regional_orbs(ending):
         rows.append(frozen)
     if len({r['guid'] for r in rows}) != 88:
         raise ValueError('Duplicate regional orb')
+    if ending.startswith('yarden_'):
+        subset = json.loads(Path(__file__).with_name('yarden_orbs_20261022_r1.json').read_text())
+        if subset['region'] != 'yarden' or subset['native_field_id'] != 41588 or len(subset['locations']) != 49:
+            raise ValueError('Invalid Yarden native field subset')
+        for row in subset['locations']:
+            frozen = canonical[row['guid']]
+            if any(row[key] != frozen[key] for key in ('ap_location_id', 'position')):
+                raise ValueError('Yarden orb differs from frozen catalog')
+            rows.append(frozen)
+        if len({r['guid'] for r in rows}) != 137:
+            raise ValueError('Duplicate Yarden orb')
     return rows

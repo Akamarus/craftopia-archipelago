@@ -31,7 +31,13 @@ class YardenTests(unittest.TestCase):
             p, data = w.regional_profile, w.fill_slot_data()
             self.assertEqual(p['goal_location_ids'], goals)
             self.assertEqual(len(p['missions']) + len(p['milestones']), count)
-            self.assertEqual(len(data['soul_orb_locations']), 88)
+            self.assertEqual(len(data['soul_orb_locations']), 137)
+            self.assertEqual(len(w.multiworld.itempool), count + 137)
+            self.assertTrue(p['profile_id'].endswith('_20261022_r2'))
+            for loc in w.multiworld.get_locations(1):
+                if getattr(loc, 'check_category', None) == 'soul_orb':
+                    self.assertFalse(loc.item_rule(w.create_item('Production: smelting')))
+                    self.assertTrue(loc.item_rule(w.create_item('Soul Orb Currency')))
             self.assertEqual(data['equipment_catalog'], 'equipment_loot_20261016_r2')
             self.assertEqual(data['milestone_catalog'], 'milestones_20261022_r3')
             validate_slot(data)

@@ -10,7 +10,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from package_managed_bridge import ROOT, build, verify, validate_output
 import asyncio
 
-VERSION = '1.16.0-alpha.2'
+VERSION = '1.16.1-alpha.1'
 
 def stage_workshop(mod, workshop):
     # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
@@ -47,14 +47,18 @@ def package(output):
     shutil.copytree(bridge, mod / 'bridge')
     subprocess.run([sys.executable, str(ROOT / 'tools/package_apworld.py'), str(payload / 'craftopia.apworld')], check=True)
     shutil.copy2(ROOT / 'worlds/craftopia/test/regional_player.yaml', payload / 'Craftopia.yaml')
-    for name in ('INSTALLATION.md', 'RELEASE_v1.16.0.md', 'WORKSHOP.md'):
+    for name in ('INSTALLATION.md', 'RELEASE_v1.16.1.md', 'YARDEN_RUNS.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
     for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):
         shutil.copy2(ROOT / 'tools' / name, payload)
+    (payload / 'Install This Test Build.cmd').write_text(
+        '@echo off\ncd /d "%~dp0"\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Install-Mod.ps1" -Mode Manual\npause\n', encoding='ascii')
     (payload / 'START_HERE.txt').write_text(
         'Craftopia Archipelago ' + VERSION + '\n\n'
         'Windows x64, Seamless World, BepInEx 5 Mono. Experimental alpha.\n'
-        'Close Craftopia, then double-click Setup.cmd and press Enter to install.\n'
+        'For this Yarden test build: close Craftopia, then double-click Install This Test Build.cmd.\n'
+        'This installs the bundled version even if an older Workshop copy is present.\n'
+        'Setup.cmd is the normal automatic Workshop/manual selection path.\n'
         'Setup finds Steam libraries and downloads a verified modern BepInEx loader.\n'
         'If the AP Workshop item is downloaded, Setup uses it; otherwise it installs the bundled mod.\n'
         'Use Restore Previous Setup.cmd to undo setup without removing AP records.\n'

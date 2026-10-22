@@ -182,7 +182,7 @@ def build_run_profile(ending_region, item_table):
         pool.append('Progressive Equipment: Sword')
     profile = dict(schema=1, reviewed=False, experimental=True,
         profile_id=(PROFILE_ID if ending_region == 'geezah' else
-                    'regional_' + ending_region + ('_20261022_r1' if is_yarden else '_20261017_r1')),
+                    'regional_' + ending_region + ('_20261022_r2' if is_yarden else '_20261017_r1')),
         milestone_catalog=milestone_catalog,
         evidence='docs/REGIONAL_RUNS.md', region=ending_region, included_regions=included_regions,
         audited_progression_catalog=CATALOG_ID,

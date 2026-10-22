@@ -78,4 +78,9 @@
 <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261017_r2.json" LogicalName="milestones_20261017_r2.json" /></ItemGroup>
 <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261022_r3.json" LogicalName="milestones_20261022_r3.json" /></ItemGroup>
 <ItemGroup><Reference Include="UnityEngine.UI"><HintPath>../refs/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference></ItemGroup>
+<ItemGroup>
+<EmbeddedResource Include="../../worlds/craftopia/geezah_orbs_20261016_r1.json" LogicalName="geezah_orbs_20261016_r1.json" />
+<EmbeddedResource Include="../../worlds/craftopia/millewind_orbs_20261017_r1.json" LogicalName="millewind_orbs_20261017_r1.json" />
+<EmbeddedResource Include="../../worlds/craftopia/yarden_orbs_20261022_r1.json" LogicalName="yarden_orbs_20261022_r1.json" />
+</ItemGroup>
 </Project>

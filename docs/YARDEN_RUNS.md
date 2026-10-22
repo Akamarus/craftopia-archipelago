@@ -6,11 +6,13 @@ a completed Yarden playthrough. No existing slot is migrated.
 
 | Ending | Cumulative checks | Victory | Count without / with orbs |
 | --- | --- | --- | --- |
-| yarden_mountain | Existing Geezah/Millewind checks, Mountain stages3020–3022, Age4 check4002, Story dungeon4102 | Mountain Tower stage3 AND Ruin of Hunters (Story3) | 78 / 166 |
-| yarden_ruin | Mountain selection plus Ruin stages3030–3032 and Story dungeon4103 | Ruin Tower stage3 AND Old Garden of Storms (Story4) | 82 / 170 |
+| yarden_mountain | Existing Geezah/Millewind checks, Mountain stages3020–3022, Age4 check4002, Story dungeon4102 | Mountain Tower stage3 AND Ruin of Hunters (Story3) | 78 / 215 |
+| yarden_ruin | Mountain selection plus Ruin stages3030–3032 and Story dungeon4103 | Ruin Tower stage3 AND Old Garden of Storms (Story4) | 82 / 219 |
 
-Only the existing88 Geezah/Millewind orbs are included. Yarden orb boundaries and
-new regional missions are not yet frozen. Orb checks remain non-progression.
+The r2 profiles include137 orbs:51 Geezah,37 Millewind and49 Yarden. Both Yarden
+towers share one native field, so both endings include all49 Yarden orbs. See
+[membership evidence](research/yarden-20261021/orb-membership.md). New regional missions
+are not yet selected. Orb checks remain non-progression.
 Repeat dungeons203/204 cannot satisfy the Story checks. Both goals must be confirmed
 by the AP server before runtime victory. Earlier-region checks are included, but
 their completion is not an additional victory condition.
@@ -61,7 +63,7 @@ completion event is still missing; verify source3/4, one credit and persistence 
 reload. Read tower stage state first and request a repair only if the identity/hook
 remains uncertain. No full fresh-character regional replay is required.
 
-## Verification — 2026-10-22
+## Initial r1 verification — 2026-10-22 (before Yarden orbs)
 
 - Yarden: four tests passed, including100 real AP0.6.8 fills per ending with full
   reachability spheres, alternating optional orbs on/off.
@@ -76,3 +78,29 @@ remains uncertain. No full fresh-character regional replay is required.
 
 AP used its optional-speedup pure-Python fallback. Live dungeon and tower validation
 is still pending; these results validate the implementation and modeled progression.
+
+## Advanced-world saved-state check — 2026-10-22
+
+Capture `5ebf44fff52e4347844ea8c1c2226d33` from the loaded advanced world confirms
+Story dungeon3 (Ruin of Hunters) and4 (Old Garden of Storms) already cleared.
+Repeat203/204 are separate entries. Both Yarden towers are already at stage3.
+Their definition IDs and positions match the catalog; their world-specific GUIDs
+differ from the earlier capture, consistent with using definition/position matching.
+See [extracted evidence](research/yarden-20261021/live-state-20261022.json).
+
+Do not request a repeat clear or repair just to confirm these saved states. This
+validates loaded completion data, not a fresh first-clear event or AP delivery in
+an enrolled Yarden slot. Those transition checks remain pending until an appropriate
+uncleared test world is available; this character need not be reset.
+
+## Expanded r2 verification — 2026-10-22
+
+The expanded pool passed 100 real AP fills per Yarden ending (200 total), with full
+reachability spheres and optional orbs alternated on/off. Existing regional tests
+passed (17 tests), as did the focused Millewind cumulative check. Export and package
+tests passed. Native marker tests verified all 137 selected markers and compatibility
+with older 88-orb sessions. The Release mod built with zero warnings/errors.
+
+A 219-check Ruin seed generated with the expected tower/dungeon goal pair and passed
+beatability and archive checks. Fresh in-game transitions remain untested.
+

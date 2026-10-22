@@ -465,7 +465,7 @@ class CraftopiaWorld(World):
                 'soul_orb_locations':{str(r['guid']):r['ap_location_id'] for r in self.selected_soul_orbs()}}
                if self.options.enable_soul_orb_checks.value else {}),
             **({'equipment_catalog': ('equipment_loot_20261016_r2'
-                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1', 'regional_yarden_mountain_20261022_r1', 'regional_yarden_ruin_20261022_r1')
+                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1', 'regional_yarden_mountain_20261022_r1', 'regional_yarden_ruin_20261022_r1', 'regional_yarden_mountain_20261022_r2', 'regional_yarden_ruin_20261022_r2')
                     else 'equipment_loot_20261016_r1') if is_regional_run else 'equipment_20261010_r1',
                 'equipment_protocol': 2 if is_regional_run else 1,
                 'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),
