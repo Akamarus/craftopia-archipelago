@@ -1,0 +1,359 @@
+{
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "workbook_sha256": "611c5e3997042e3523e6942c3a0cccc009e26450e04c5df1ef8b4b7a27d0bc76",
+  "workbook_answers": [
+    {
+      "sheet": "Logic questions",
+      "row": 34,
+      "values": [
+        "Q028",
+        "Next",
+        "Owatatsu Archipelago Tower",
+        "What is this region’s main dungeon, and what is required to reach and clear it? Include key items/quests/protection.",
+        "Labyrinth of Torrent. No quest, items, or special requirements to access. The only limitation is combat gear.",
+        null,
+        "Remembered",
+        "Not answered",
+        "Tower ID 3810; all three repair cost lists verified. Main dungeon identity and route remain open."
+      ]
+    },
+    {
+      "sheet": "Logic questions",
+      "row": 35,
+      "values": [
+        "Q029",
+        "Next",
+        "Brigandine Valley Tower",
+        "What is this region’s main dungeon, and what is required to reach and clear it? Include key items/quests/protection.",
+        "Old Garden of Massacre. No quest, items, or special requirements to access. The only limitation is combat gear.",
+        null,
+        "Remembered",
+        "Not answered",
+        "Tower ID 3811; all three repair cost lists verified. Main dungeon identity and route remain open."
+      ]
+    }
+  ],
+  "localization": [
+    {
+      "term": "800_DungeonName/5",
+      "english": "Labyrinth of Torrent",
+      "offset": 303488596,
+      "record_hex": "110000003830305f44756e67656f6e4e616d652f350000000000000004000000140000004c61627972696e7468206f6620546f7272656e74"
+    },
+    {
+      "term": "800_DungeonName/6",
+      "english": "Old Garden of Massacre",
+      "offset": 303488716,
+      "record_hex": "110000003830305f44756e67656f6e4e616d652f360000000000000004000000160000004f6c642047617264656e206f66204d61737361637265"
+    },
+    {
+      "term": "800_DungeonName/205",
+      "english": "Labyrinth of Torrent",
+      "offset": 303507452,
+      "record_hex": "130000003830305f44756e67656f6e4e616d652f323035000000000004000000140000004c61627972696e7468206f6620546f7272656e74"
+    },
+    {
+      "term": "800_DungeonName/206",
+      "english": "Old Garden of Massacre",
+      "offset": 303507572,
+      "record_hex": "130000003830305f44756e67656f6e4e616d652f323036000000000004000000160000004f6c642047617264656e206f66204d61737361637265"
+    }
+  ],
+  "dungeons": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40811,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_005_WaterDungeon",
+        "sourceId": 5,
+        "dungeonPrefab": {
+          "m_AssetGUID": "06998cc5f9c634d46a08b595baa101f5",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 208,
+        "bossLevel": 45,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 12.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 2,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40812,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_006_IslandDungeon3",
+        "sourceId": 6,
+        "dungeonPrefab": {
+          "m_AssetGUID": "a6a3f1743e24ad94585a049984a5b746",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 94,
+        "bossLevel": 45,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 12.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40824,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_205_Waterdungeon_Repeat",
+        "sourceId": 205,
+        "dungeonPrefab": {
+          "m_AssetGUID": "ccdbe6a899d53d94996e9d9f0527b430",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 208,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 2,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40825,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_206_IslandDungeon3_Repeat",
+        "sourceId": 206,
+        "dungeonPrefab": {
+          "m_AssetGUID": "93a38749424351e42a101c6362fe4842",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 94,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 12.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80020
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    }
+  ],
+  "entrances": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40799,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_005_WaterDungeon",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40811
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40824
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 25,
+                "recommendLevel": 35,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 45,
+                "recommendLevel": 55,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40800,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_006_IslandDungeon3",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40812
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40825
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 25,
+                "recommendLevel": 35,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 45,
+                "recommendLevel": 55,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "decode_errors": []
+}

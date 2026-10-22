@@ -83,4 +83,5 @@
 <EmbeddedResource Include="../../worlds/craftopia/millewind_orbs_20261017_r1.json" LogicalName="millewind_orbs_20261017_r1.json" />
 <EmbeddedResource Include="../../worlds/craftopia/yarden_orbs_20261022_r1.json" LogicalName="yarden_orbs_20261022_r1.json" />
 </ItemGroup>
+<ItemGroup><EmbeddedResource Include="../../worlds/craftopia/milestones_20261022_r4.json" LogicalName="milestones_20261022_r4.json" /><EmbeddedResource Include="../../worlds/craftopia/owatatsu_orbs_20261022_r1.json" LogicalName="owatatsu_orbs_20261022_r1.json" /><EmbeddedResource Include="../../worlds/craftopia/brigandine_orbs_20261022_r1.json" LogicalName="brigandine_orbs_20261022_r1.json" /></ItemGroup>
 </Project>

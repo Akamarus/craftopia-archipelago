@@ -10,7 +10,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from package_managed_bridge import ROOT, build, verify, validate_output
 import asyncio
 
-VERSION = '1.16.1-alpha.1'
+VERSION = '1.17.0-rc.1'
 
 def stage_workshop(mod, workshop):
     # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
@@ -46,8 +46,8 @@ def package(output):
     shutil.copy2(ROOT / 'mod/CraftopiaArchipelago/bin/Release/netstandard2.1/CraftopiaArchipelago.dll', mod)
     shutil.copytree(bridge, mod / 'bridge')
     subprocess.run([sys.executable, str(ROOT / 'tools/package_apworld.py'), str(payload / 'craftopia.apworld')], check=True)
-    shutil.copy2(ROOT / 'worlds/craftopia/test/regional_player.yaml', payload / 'Craftopia.yaml')
-    for name in ('INSTALLATION.md', 'RELEASE_v1.16.1.md', 'YARDEN_RUNS.md', 'WORKSHOP.md'):
+    (payload / 'Craftopia.yaml').write_text((ROOT / 'worlds/craftopia/test/regional_player.yaml').read_text().replace('ending_region: geezah', 'ending_region: brigandine'), encoding='utf-8')
+    for name in ('INSTALLATION.md', 'RELEASE_v1.17.0.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
     for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):
         shutil.copy2(ROOT / 'tools' / name, payload)
@@ -55,8 +55,8 @@ def package(output):
         '@echo off\ncd /d "%~dp0"\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Install-Mod.ps1" -Mode Manual\npause\n', encoding='ascii')
     (payload / 'START_HERE.txt').write_text(
         'Craftopia Archipelago ' + VERSION + '\n\n'
-        'Windows x64, Seamless World, BepInEx 5 Mono. Experimental alpha.\n'
-        'For this Yarden test build: close Craftopia, then double-click Install This Test Build.cmd.\n'
+        'Windows x64, Seamless World, BepInEx 5 Mono. Release candidate; later-region live validation pending.\n'
+        'For this Brigandine release candidate: close Craftopia, then double-click Install This Test Build.cmd.\n'
         'This installs the bundled version even if an older Workshop copy is present.\n'
         'Setup.cmd is the normal automatic Workshop/manual selection path.\n'
         'Setup finds Steam libraries and downloads a verified modern BepInEx loader.\n'

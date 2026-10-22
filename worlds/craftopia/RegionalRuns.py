@@ -13,7 +13,7 @@ from .AuditedProgression import material_nodes, repair_nodes, evolution_node, to
 
 
 PROFILE_ID = 'regional_geezah_20261017_r6'
-SUPPORTED_ENDINGS = ('geezah', 'millewind', 'yarden_mountain', 'yarden_ruin')
+SUPPORTED_ENDINGS = ('geezah', 'millewind', 'yarden_mountain', 'yarden_ruin', 'owatatsu', 'brigandine')
 YARDEN_CATALOG = 'milestones_20261022_r3'
 
 
@@ -134,13 +134,20 @@ def build_run_profile(ending_region, item_table):
         _extend_millewind(nodes, raw_sources, ages, stations)
         selected.update((3010, 3011, 3012, 4001, 4101))
     included_regions = list(SUPPORTED_ENDINGS[:SUPPORTED_ENDINGS.index(ending_region)+1])
-    is_yarden = ending_region.startswith('yarden_')
+    is_valley = ending_region in ('owatatsu', 'brigandine')
+    is_yarden = ending_region.startswith('yarden_') or is_valley
     if is_yarden:
-        _extend_yarden(nodes, raw_sources, ages, stations, ending_region)
+        _extend_yarden(nodes, raw_sources, ages, stations, 'yarden_ruin' if is_valley else ending_region)
         selected.update((3020, 3021, 3022, 4002, 4102))
-        if ending_region == 'yarden_ruin':
+        if ending_region == 'yarden_ruin' or is_valley:
             selected.update((3030, 3031, 3032, 4103))
     milestone_catalog = YARDEN_CATALOG if is_yarden else MILESTONE_CATALOG_ID
+    if is_valley:
+        _extend_valley(nodes, raw_sources, ages, stations, ending_region)
+        selected.update((3040, 3041, 3042, 4003, 4104))
+        if ending_region == 'brigandine':
+            selected.update((3050, 3051, 3052, 4105))
+        milestone_catalog = 'milestones_20261022_r4'
     milestones = [r for r in validate_catalog(load_catalog(milestone_catalog)) if r['ap_location_id'] in selected]
     if {r['ap_location_id'] for r in milestones} != selected:
         raise ValueError('Missing selected regional milestone')
@@ -165,6 +172,9 @@ def build_run_profile(ending_region, item_table):
             elif row['region'].startswith('yarden_'):
                 name = ('tower_' + str(row['definition_id']) + '_' + str(row['stage'])
                         if family == 'tower' else 'age_3' if family == 'age' else 'dungeon_yarden')
+            elif row['region'] in ('owatatsu', 'brigandine'):
+                name = ('tower_' + str(row['definition_id']) + '_' + str(row['stage'])
+                        if family == 'tower' else 'age_4' if family == 'age' else 'dungeon_valley')
         rules[str(row['ap_location_id'])] = name
     nodes['claim_category'] = category_sources
     catalog = get_id_map()
@@ -180,6 +190,8 @@ def build_run_profile(ending_region, item_table):
         pool.extend(('Production: equipment_care', 'Progressive Equipment: Sword'))
     if is_yarden:
         pool.append('Progressive Equipment: Sword')
+    if is_valley:
+        pool.append('Progressive Equipment: Sword')
     profile = dict(schema=1, reviewed=False, experimental=True,
         profile_id=(PROFILE_ID if ending_region == 'geezah' else
                     'regional_' + ending_region + ('_20261022_r2' if is_yarden else '_20261017_r1')),
@@ -188,7 +200,8 @@ def build_run_profile(ending_region, item_table):
         audited_progression_catalog=CATALOG_ID,
         nodes=nodes, missions=missions, milestone_rules=rules, milestones=milestones,
         goal_location_ids={'geezah': [3002, 4100], 'millewind': [3012, 4101],
-                           'yarden_mountain': [3022, 4102], 'yarden_ruin': [3032, 4103]}[ending_region],
+                           'yarden_mountain': [3022, 4102], 'yarden_ruin': [3032, 4103],
+                           'owatatsu': [3042, 4104], 'brigandine': [3052, 4105]}[ending_region],
         goal_policy='regional_tower_and_dungeon',
         early_item_locations={name: list(early) for name in ('Production: smelting', 'Production: cooking')},
         pool=pool, equipment_tier_steps=build_profile(item_table)['equipment_tier_steps'])
@@ -270,6 +283,41 @@ def _extend_yarden(nodes, sources, ages, stations, ending):
     nodes['silver_sword'] = [[node('age_3'), node('blacksmith'), node('material_713'),
         node('material_746'), node('material_683'), {'item': 'Progressive Equipment: Sword', 'count': 4}]]
     nodes['dungeon_yarden'] = [[node('yarden_field'), node('silver_sword')]]
+
+
+def _extend_valley(nodes, sources, ages, stations, ending):
+    """Captured recipes and explicit user-confirmed regional gathering routes."""
+    def node(name): return {'node': name}
+    ages[4] = 'age_4'
+    stations.update({20013: 'machine_factory', 20020: 'furniture_workbench'})
+    nodes.update({
+        'owatatsu_field': [[node('field')]],
+        'brigandine_field': [[node('field')]],
+        'silver_pickaxe': [[node('age_3'), node('workbench'),
+                            node('material_713'), node('material_746')]],
+        'owatatsu_gold': [[node('owatatsu_field'), node('silver_pickaxe')]],
+        # User confirmed both herb pickups in these regions, 2026-10-22.
+        'regional_herbs': [[node('owatatsu_field')], [node('brigandine_field')]]
+            if ending == 'brigandine' else [[node('owatatsu_field')]],
+    })
+    sources.update({702: [[node('owatatsu_gold')]],
+                    723: [[node('regional_herbs')]], 735: [[node('regional_herbs')]]})
+    _, materials = age_cost(3)
+    sources.update({iid: [[node('yarden_field'), node('stone_tools')]] for iid in materials})
+    nodes['age_4'] = evolution_node(3, tower_node='tower_3', currency_node='market_gold')
+    nodes['age_4'][0].append(node('age_3'))
+    nodes.update(material_nodes(set(materials) | {209, 206, 714},
+        sources=sources, ages=ages, stations=stations))
+    nodes['machine_factory'] = [[node('material_209')]]
+    nodes['furniture_workbench'] = [[node('material_206')]]
+    nodes.update(repair_nodes(3810, sources=sources, ages=ages, stations=stations))
+    if ending == 'brigandine':
+        nodes.update(repair_nodes(3811, sources=sources, ages=ages, stations=stations))
+    # Captured item48; combat sufficiency is an explicit playtest assumption.
+    nodes['gold_sword'] = [[node('age_4'), node('blacksmith'), node('material_714'),
+        node('material_746'), node('material_683'),
+        {'item': 'Progressive Equipment: Sword', 'count': 5}]]
+    nodes['dungeon_valley'] = [[node('owatatsu_field'), node('gold_sword')]]
 
 
 def apply_early_placement_rules(world, locations, profile):

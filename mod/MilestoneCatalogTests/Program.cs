@@ -20,17 +20,20 @@ class Program {
   Check(MilestoneSession.Frozen[MilestoneSession.Key("dungeon",4,0)]==4103,"Storms Story missing");
   Check(!MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",203,0)) && !MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",204,0)),"Repeat dungeon leaked");
   Check(MilestoneSession.Frozen[MilestoneSession.Key("tower",-793448649,3)]==3022,"Mountain negative source lost");
-  foreach(var catalog in new[]{MilestoneSession.Catalog,MilestoneSession.CurrentCatalog,MilestoneSession.YardenCatalog,MilestoneSession.Catalog}) {
+  MilestoneSession.LoadCatalog(MilestoneSession.ValleyCatalog);
+  Check(MilestoneSession.Frozen[MilestoneSession.Key("dungeon",5,0)]==4104 && MilestoneSession.Frozen[MilestoneSession.Key("dungeon",6,0)]==4105,"Valley Story IDs missing");
+  Check(!MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",205,0)) && !MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",206,0)),"Valley repeat leaked");
+  foreach(var catalog in new[]{MilestoneSession.Catalog,MilestoneSession.CurrentCatalog,MilestoneSession.YardenCatalog,MilestoneSession.ValleyCatalog,MilestoneSession.Catalog}) {
    // Binding selects the catalog before evaluating seed/slot identity.
    MilestoneSession.Bind(new Dictionary<string,object>{{"milestone_catalog",catalog},{"milestone_schema",1L},
      {"multiplayer_mode",0L},{"milestone_locations",new Dictionary<string,object>{{old,4100L}}}});
    Check(MilestoneSession.Frozen.ContainsKey(added)==(catalog!=MilestoneSession.Catalog),"Bind used wrong frozen catalog");
-   Check(MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",3,0))==(catalog==MilestoneSession.YardenCatalog),"Yarden catalog leaked");
+   Check(MilestoneSession.Frozen.ContainsKey(MilestoneSession.Key("dungeon",3,0))==(catalog==MilestoneSession.YardenCatalog || catalog==MilestoneSession.ValleyCatalog),"Yarden catalog leaked");
   }
   try { MilestoneSession.LoadCatalog("unknown");throw new Exception("Unknown catalog accepted"); }
   catch(FormatException) { }
   var guids=new List<int>();
-  foreach(var name in new[]{"geezah_orbs_20261016_r1","millewind_orbs_20261017_r1","yarden_orbs_20261022_r1"}) {
+  foreach(var name in new[]{"geezah_orbs_20261016_r1","millewind_orbs_20261017_r1","yarden_orbs_20261022_r1","owatatsu_orbs_20261022_r1","brigandine_orbs_20261022_r1"}) {
    using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(name+".json"))
    using(var reader=new StreamReader(stream)) {
     foreach(Dictionary<string,object> row in (List<object>)MiniJson.ParseObject(reader.ReadToEnd())["locations"])
@@ -39,10 +42,13 @@ class Program {
   }
   var session=new Dictionary<string,object>{{"seed_name","test"},{"slot","Yarden"},{"epoch",1L}};
   OrbMapTracker.Bind(session,guids);
-  Check(OrbMapTracker.State.Visible(false).Count()==137,"All regional map markers must appear immediately");
+  Check(OrbMapTracker.State.Visible(false).Count()==239,"All regional map markers must appear immediately");
   var yarden=OrbMapTracker.State.Visible(false).Last();
   OrbMapTracker.State.MarkCollected(OrbMapTracker.Identity(session),yarden.Guid);
-  Check(OrbMapTracker.State.Visible(true).Count()==136,"Collected marker filtering");
+  Check(OrbMapTracker.State.Visible(true).Count()==238,"Collected marker filtering");
+  session["seed_name"]="yarden";
+  OrbMapTracker.Bind(session,guids.Take(137));
+  Check(OrbMapTracker.State.Visible(false).Count()==137,"Older Yarden sessions must retain 137 markers");
   session["seed_name"]="old";
   OrbMapTracker.Bind(session,guids.Take(88));
   Check(OrbMapTracker.State.Visible(false).Count()==88,"Older sessions must not show Yarden markers");

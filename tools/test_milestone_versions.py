@@ -10,6 +10,21 @@ OLD='milestones_20261016_r1'
 NEW='milestones_20261017_r2'
 
 class CatalogVersionTests(unittest.TestCase):
+    def test_valley_is_additive_and_isolated(self):
+        old = m.validate_catalog(m.load_catalog('milestones_20261022_r3'))
+        rows = m.validate_catalog(m.load_catalog('milestones_20261022_r4'))
+        self.assertEqual(rows[:len(old)], old)
+        self.assertEqual(len(rows) - len(old), 9)
+        for source, address in ((5, 4104), (6, 4105)):
+            slot = {'milestone_schema': 1, 'milestone_catalog': 'milestones_20261022_r4',
+                    'milestone_locations': {m.key('dungeon', source, 0): address},
+                    'goal_location_ids': [address]}
+            m.validate_slot(slot)
+            self.assertEqual(m.resolve_milestone(slot, 'dungeon', source, 0), address)
+            self.assertIsNone(m.resolve_milestone(slot, 'dungeon', source + 200, 0))
+            slot['milestone_catalog'] = 'milestones_20261022_r3'
+            with self.assertRaises(ValueError): m.validate_slot(slot)
+
     def test_yarden_is_additive_and_isolated(self):
         version = 'milestones_20261022_r3'
         old = m.validate_catalog(m.load_catalog(NEW))

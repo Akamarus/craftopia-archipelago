@@ -1,0 +1,1085 @@
+{
+  "sources": {
+    "public-repo\\craftopia-archipelago\\docs\\research\\2026-10-16\\environment.json": "7a7ce26391f0aab409e7140574c33a537b0448b82cf046f57284f7d8e029d8ad",
+    "public-repo\\craftopia-archipelago\\worlds\\craftopia\\soul_orbs_20261015_r1.json": "5e6a49d4166aae58b01797a27d06da827974b226323d1df342798913b217c274",
+    "evidence\\yarden-20261022\\craftopia_diag_20261022_064318_5ebf44fff52e4347844ea8c1c2226d33.json": "f7960b675fb5de5bd7afd520f481bdfd7dc911fb704aebd71915b6b4cbecf29d"
+  },
+  "towers": [
+    {
+      "guid": -27423557,
+      "stage": 3,
+      "is_tower": true,
+      "definition": {
+        "item_id": 3810,
+        "stages": [
+          {
+            "raw_stage_index": 0,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 714,
+                  "count": 20
+                },
+                {
+                  "item_id": 3402,
+                  "count": 10
+                }
+              ],
+              "truncated": false
+            }
+          },
+          {
+            "raw_stage_index": 1,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 723,
+                  "count": 5
+                },
+                {
+                  "item_id": 735,
+                  "count": 5
+                }
+              ],
+              "truncated": false
+            }
+          },
+          {
+            "raw_stage_index": 2,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 3463,
+                  "count": 20
+                },
+                {
+                  "item_id": 3464,
+                  "count": 20
+                }
+              ],
+              "truncated": false
+            }
+          }
+        ],
+        "count": 3,
+        "truncated": false
+      },
+      "identity_status": "candidate_not_verified_across_worlds",
+      "scene_position": {
+        "x": 920.6932,
+        "y": 170.2,
+        "z": -1502.136
+      }
+    },
+    {
+      "guid": 1283766509,
+      "stage": 0,
+      "is_tower": true,
+      "definition": {
+        "item_id": 3811,
+        "stages": [
+          {
+            "raw_stage_index": 0,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 723,
+                  "count": 10
+                },
+                {
+                  "item_id": 735,
+                  "count": 10
+                }
+              ],
+              "truncated": false
+            }
+          },
+          {
+            "raw_stage_index": 1,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 3464,
+                  "count": 20
+                },
+                {
+                  "item_id": 3465,
+                  "count": 20
+                }
+              ],
+              "truncated": false
+            }
+          },
+          {
+            "raw_stage_index": 2,
+            "costs": {
+              "count": 2,
+              "rows": [
+                {
+                  "item_id": 5305,
+                  "count": 20
+                },
+                {
+                  "item_id": 2459,
+                  "count": 20
+                }
+              ],
+              "truncated": false
+            }
+          }
+        ],
+        "count": 3,
+        "truncated": false
+      },
+      "identity_status": "candidate_not_verified_across_worlds",
+      "scene_position": {
+        "x": 1550.402,
+        "y": 278.1348,
+        "z": -216.7521
+      }
+    }
+  ],
+  "regions": [
+    {
+      "tower_definition_id": 3810,
+      "native_field_id": 41591,
+      "native_field_name": "so--SoOpenWorldMapFieldData_Spring",
+      "envDmgType": 0,
+      "traversal_verified": false,
+      "locations": [
+        {
+          "guid": -2025451646,
+          "ap_location_id": 2014,
+          "position": {
+            "x": 2548.859,
+            "y": 26.52895,
+            "z": -1957.884
+          }
+        },
+        {
+          "guid": -1782135875,
+          "ap_location_id": 2036,
+          "position": {
+            "x": 862.4453,
+            "y": 38.32421,
+            "z": -1327.429
+          }
+        },
+        {
+          "guid": -1514306416,
+          "ap_location_id": 2062,
+          "position": {
+            "x": 1157.714,
+            "y": 37.505,
+            "z": -1564.336
+          }
+        },
+        {
+          "guid": -1434823824,
+          "ap_location_id": 2068,
+          "position": {
+            "x": 748.8807,
+            "y": 40.26127,
+            "z": -2056.172
+          }
+        },
+        {
+          "guid": -1342286979,
+          "ap_location_id": 2076,
+          "position": {
+            "x": -282.2767,
+            "y": 11.32392,
+            "z": -1553.971
+          }
+        },
+        {
+          "guid": -1150001710,
+          "ap_location_id": 2097,
+          "position": {
+            "x": 1792.61,
+            "y": 56.08,
+            "z": -1404.84
+          }
+        },
+        {
+          "guid": -1092272461,
+          "ap_location_id": 2100,
+          "position": {
+            "x": 967.9588,
+            "y": 143.1612,
+            "z": -1017.699
+          }
+        },
+        {
+          "guid": -1059793475,
+          "ap_location_id": 2102,
+          "position": {
+            "x": 512.8153,
+            "y": 1.021846,
+            "z": -1510.524
+          }
+        },
+        {
+          "guid": -1017678785,
+          "ap_location_id": 2105,
+          "position": {
+            "x": -719.8662,
+            "y": 28.44838,
+            "z": -1637.992
+          }
+        },
+        {
+          "guid": -955876424,
+          "ap_location_id": 2109,
+          "position": {
+            "x": 578.8173,
+            "y": 13.60066,
+            "z": -1521.816
+          }
+        },
+        {
+          "guid": -755237092,
+          "ap_location_id": 2133,
+          "position": {
+            "x": 894.84,
+            "y": 118.96,
+            "z": -1934.89
+          }
+        },
+        {
+          "guid": -623633713,
+          "ap_location_id": 2152,
+          "position": {
+            "x": 2305.068,
+            "y": 112.3952,
+            "z": -1859.105
+          }
+        },
+        {
+          "guid": -621493939,
+          "ap_location_id": 2153,
+          "position": {
+            "x": 735.2376,
+            "y": 63.56736,
+            "z": -2007.86
+          }
+        },
+        {
+          "guid": -596446250,
+          "ap_location_id": 2158,
+          "position": {
+            "x": 392.3628,
+            "y": 5.190879,
+            "z": -1915.362
+          }
+        },
+        {
+          "guid": -584050853,
+          "ap_location_id": 2160,
+          "position": {
+            "x": 658.3545,
+            "y": 23.91927,
+            "z": -1539.863
+          }
+        },
+        {
+          "guid": -541543311,
+          "ap_location_id": 2165,
+          "position": {
+            "x": 1805.06,
+            "y": 95.923,
+            "z": -1186.932
+          }
+        },
+        {
+          "guid": -495184772,
+          "ap_location_id": 2170,
+          "position": {
+            "x": 313.2456,
+            "y": 5.356833,
+            "z": -2268.31
+          }
+        },
+        {
+          "guid": -407549705,
+          "ap_location_id": 2175,
+          "position": {
+            "x": -359.0893,
+            "y": 24.01237,
+            "z": -1890.99
+          }
+        },
+        {
+          "guid": -371432185,
+          "ap_location_id": 2177,
+          "position": {
+            "x": 1068.77,
+            "y": 42.49648,
+            "z": -1190.148
+          }
+        },
+        {
+          "guid": -210832631,
+          "ap_location_id": 2195,
+          "position": {
+            "x": 1511.482,
+            "y": 118.6134,
+            "z": -1270.036
+          }
+        },
+        {
+          "guid": -186066518,
+          "ap_location_id": 2200,
+          "position": {
+            "x": 488.72,
+            "y": 77.61,
+            "z": -1574.63
+          }
+        },
+        {
+          "guid": -153567751,
+          "ap_location_id": 2205,
+          "position": {
+            "x": 357.2487,
+            "y": 59.93081,
+            "z": -1578.516
+          }
+        },
+        {
+          "guid": -138431987,
+          "ap_location_id": 2207,
+          "position": {
+            "x": 1101.893,
+            "y": 17.13606,
+            "z": -1278.853
+          }
+        },
+        {
+          "guid": -14625745,
+          "ap_location_id": 2216,
+          "position": {
+            "x": 1543.096,
+            "y": 25.32832,
+            "z": -1497.126
+          }
+        },
+        {
+          "guid": 118560337,
+          "ap_location_id": 2229,
+          "position": {
+            "x": 1794.86,
+            "y": 79.35,
+            "z": -1100.98
+          }
+        },
+        {
+          "guid": 154407827,
+          "ap_location_id": 2232,
+          "position": {
+            "x": 1098.337,
+            "y": 17.567,
+            "z": -1281.541
+          }
+        },
+        {
+          "guid": 179452629,
+          "ap_location_id": 2236,
+          "position": {
+            "x": -279.6938,
+            "y": 6.229424,
+            "z": -1994.249
+          }
+        },
+        {
+          "guid": 231707430,
+          "ap_location_id": 2240,
+          "position": {
+            "x": 548.7851,
+            "y": 9.494502,
+            "z": -1912.957
+          }
+        },
+        {
+          "guid": 492903745,
+          "ap_location_id": 2261,
+          "position": {
+            "x": -212.6036,
+            "y": 16.74056,
+            "z": -1944.28
+          }
+        },
+        {
+          "guid": 498732487,
+          "ap_location_id": 2263,
+          "position": {
+            "x": 10.75745,
+            "y": 9.710789,
+            "z": -2273.862
+          }
+        },
+        {
+          "guid": 533599736,
+          "ap_location_id": 2272,
+          "position": {
+            "x": -193.6897,
+            "y": 5.327614,
+            "z": -2217.746
+          }
+        },
+        {
+          "guid": 607552319,
+          "ap_location_id": 2282,
+          "position": {
+            "x": 1098.641,
+            "y": 18.47646,
+            "z": -1278.739
+          }
+        },
+        {
+          "guid": 810844828,
+          "ap_location_id": 2296,
+          "position": {
+            "x": 1095.971,
+            "y": 17.8588,
+            "z": -1281.726
+          }
+        },
+        {
+          "guid": 921766497,
+          "ap_location_id": 2308,
+          "position": {
+            "x": 779.8002,
+            "y": 110.0345,
+            "z": -2033.564
+          }
+        },
+        {
+          "guid": 1083051533,
+          "ap_location_id": 2322,
+          "position": {
+            "x": 413.9932,
+            "y": 90.29784,
+            "z": -1474.55
+          }
+        },
+        {
+          "guid": 1101802616,
+          "ap_location_id": 2323,
+          "position": {
+            "x": 902.8427,
+            "y": 218.5119,
+            "z": -1909.204
+          }
+        },
+        {
+          "guid": 1268428828,
+          "ap_location_id": 2346,
+          "position": {
+            "x": 781.2018,
+            "y": 192.4089,
+            "z": -2061.364
+          }
+        },
+        {
+          "guid": 1585661056,
+          "ap_location_id": 2376,
+          "position": {
+            "x": 1556.19,
+            "y": 92.05,
+            "z": -1392.27
+          }
+        },
+        {
+          "guid": 1620468209,
+          "ap_location_id": 2383,
+          "position": {
+            "x": 971.4285,
+            "y": 121.3826,
+            "z": -1472.767
+          }
+        },
+        {
+          "guid": 1626495614,
+          "ap_location_id": 2385,
+          "position": {
+            "x": 453.14,
+            "y": 78.96,
+            "z": -1682.81
+          }
+        },
+        {
+          "guid": 1631673813,
+          "ap_location_id": 2386,
+          "position": {
+            "x": 2094.542,
+            "y": 75.409,
+            "z": -1305.238
+          }
+        },
+        {
+          "guid": 1662774378,
+          "ap_location_id": 2388,
+          "position": {
+            "x": 382.559,
+            "y": 22.15438,
+            "z": -2093.25
+          }
+        },
+        {
+          "guid": 1669265608,
+          "ap_location_id": 2390,
+          "position": {
+            "x": 1102.178,
+            "y": 17.90832,
+            "z": -1277.139
+          }
+        },
+        {
+          "guid": 1678548444,
+          "ap_location_id": 2392,
+          "position": {
+            "x": -713.0814,
+            "y": 27.62777,
+            "z": -1521.722
+          }
+        },
+        {
+          "guid": 1681377324,
+          "ap_location_id": 2393,
+          "position": {
+            "x": 1627.654,
+            "y": 122.6944,
+            "z": -1383.69
+          }
+        },
+        {
+          "guid": 1766068979,
+          "ap_location_id": 2405,
+          "position": {
+            "x": 467.4971,
+            "y": 29.1988,
+            "z": -1752.496
+          }
+        },
+        {
+          "guid": 1869638844,
+          "ap_location_id": 2416,
+          "position": {
+            "x": 748.2687,
+            "y": 40.06379,
+            "z": -2057.626
+          }
+        },
+        {
+          "guid": 1885239633,
+          "ap_location_id": 2418,
+          "position": {
+            "x": 1223.305,
+            "y": 18.22495,
+            "z": -1888.532
+          }
+        },
+        {
+          "guid": 1912734369,
+          "ap_location_id": 2422,
+          "position": {
+            "x": 941.944,
+            "y": 240.51,
+            "z": -1493.063
+          }
+        },
+        {
+          "guid": 2114205760,
+          "ap_location_id": 2436,
+          "position": {
+            "x": -223.8903,
+            "y": 77.6606,
+            "z": -2242.081
+          }
+        },
+        {
+          "guid": 2123182171,
+          "ap_location_id": 2438,
+          "position": {
+            "x": 447.89,
+            "y": 35,
+            "z": -1695.95
+          }
+        }
+      ]
+    },
+    {
+      "tower_definition_id": 3811,
+      "native_field_id": 41585,
+      "native_field_name": "so--SoOpenWorldMapFieldData_Autumn",
+      "envDmgType": 0,
+      "traversal_verified": false,
+      "locations": [
+        {
+          "guid": -2143919419,
+          "ap_location_id": 2001,
+          "position": {
+            "x": 2375.27,
+            "y": 344.96,
+            "z": -158.31
+          }
+        },
+        {
+          "guid": -2118644166,
+          "ap_location_id": 2005,
+          "position": {
+            "x": 1647.943,
+            "y": 295.4063,
+            "z": -139.6416
+          }
+        },
+        {
+          "guid": -2114532259,
+          "ap_location_id": 2006,
+          "position": {
+            "x": 2188.013,
+            "y": 294.9346,
+            "z": -48.37931
+          }
+        },
+        {
+          "guid": -1986431224,
+          "ap_location_id": 2020,
+          "position": {
+            "x": 2608.762,
+            "y": 77.713,
+            "z": 726.081
+          }
+        },
+        {
+          "guid": -1753849891,
+          "ap_location_id": 2037,
+          "position": {
+            "x": 1841.235,
+            "y": 257.9517,
+            "z": -221.3261
+          }
+        },
+        {
+          "guid": -1673276376,
+          "ap_location_id": 2044,
+          "position": {
+            "x": 1621.37,
+            "y": 218.1556,
+            "z": -54.33492
+          }
+        },
+        {
+          "guid": -1639133272,
+          "ap_location_id": 2048,
+          "position": {
+            "x": 1593.68,
+            "y": 292.656,
+            "z": -108.5791
+          }
+        },
+        {
+          "guid": -1606415265,
+          "ap_location_id": 2051,
+          "position": {
+            "x": 2270.59,
+            "y": 293.9531,
+            "z": -83.23424
+          }
+        },
+        {
+          "guid": -1506890000,
+          "ap_location_id": 2063,
+          "position": {
+            "x": 1966.732,
+            "y": 294.3936,
+            "z": -88.17242
+          }
+        },
+        {
+          "guid": -1373195119,
+          "ap_location_id": 2070,
+          "position": {
+            "x": 2068.24,
+            "y": 375.36,
+            "z": 268.35
+          }
+        },
+        {
+          "guid": -1261674103,
+          "ap_location_id": 2083,
+          "position": {
+            "x": 2874.74,
+            "y": 2.02,
+            "z": 668.81
+          }
+        },
+        {
+          "guid": -1201074653,
+          "ap_location_id": 2091,
+          "position": {
+            "x": 1461.799,
+            "y": 293.4259,
+            "z": -546.4077
+          }
+        },
+        {
+          "guid": -862042059,
+          "ap_location_id": 2120,
+          "position": {
+            "x": 1988.149,
+            "y": 347.4063,
+            "z": -636.1822
+          }
+        },
+        {
+          "guid": -835158791,
+          "ap_location_id": 2125,
+          "position": {
+            "x": 1644.642,
+            "y": 49.80761,
+            "z": 82.18959
+          }
+        },
+        {
+          "guid": -809008237,
+          "ap_location_id": 2127,
+          "position": {
+            "x": 1910.597,
+            "y": 295.0627,
+            "z": -752.943
+          }
+        },
+        {
+          "guid": -805658307,
+          "ap_location_id": 2128,
+          "position": {
+            "x": 2013.806,
+            "y": 311.0924,
+            "z": -925.7206
+          }
+        },
+        {
+          "guid": -683453094,
+          "ap_location_id": 2141,
+          "position": {
+            "x": 1945.209,
+            "y": 294.8969,
+            "z": 271.2882
+          }
+        },
+        {
+          "guid": -653742793,
+          "ap_location_id": 2148,
+          "position": {
+            "x": 2087.932,
+            "y": 348.463,
+            "z": -608.0391
+          }
+        },
+        {
+          "guid": -599274653,
+          "ap_location_id": 2156,
+          "position": {
+            "x": 1903.902,
+            "y": 290.8534,
+            "z": -122.0417
+          }
+        },
+        {
+          "guid": -597707934,
+          "ap_location_id": 2157,
+          "position": {
+            "x": 2139.26,
+            "y": 382.74,
+            "z": -474.14
+          }
+        },
+        {
+          "guid": -551084360,
+          "ap_location_id": 2162,
+          "position": {
+            "x": 1818.64,
+            "y": 289.0814,
+            "z": -297.3333
+          }
+        },
+        {
+          "guid": -531341953,
+          "ap_location_id": 2167,
+          "position": {
+            "x": 1784.652,
+            "y": 126.3,
+            "z": 240.9391
+          }
+        },
+        {
+          "guid": -473782915,
+          "ap_location_id": 2172,
+          "position": {
+            "x": 1662.34,
+            "y": 288.0132,
+            "z": 260.2365
+          }
+        },
+        {
+          "guid": -356780239,
+          "ap_location_id": 2180,
+          "position": {
+            "x": 2128.166,
+            "y": 333.1814,
+            "z": -337.289
+          }
+        },
+        {
+          "guid": -344770679,
+          "ap_location_id": 2181,
+          "position": {
+            "x": 2113.09,
+            "y": 389.91,
+            "z": 241.17
+          }
+        },
+        {
+          "guid": -344326076,
+          "ap_location_id": 2182,
+          "position": {
+            "x": 1907.329,
+            "y": 294.1001,
+            "z": -539.5573
+          }
+        },
+        {
+          "guid": -255567853,
+          "ap_location_id": 2190,
+          "position": {
+            "x": 1693.581,
+            "y": 257.5158,
+            "z": -755.5134
+          }
+        },
+        {
+          "guid": -251279542,
+          "ap_location_id": 2191,
+          "position": {
+            "x": 1582.342,
+            "y": 235.086,
+            "z": -582.7961
+          }
+        },
+        {
+          "guid": -189250300,
+          "ap_location_id": 2199,
+          "position": {
+            "x": 1779.11,
+            "y": 199.4989,
+            "z": -490.9464
+          }
+        },
+        {
+          "guid": -154346975,
+          "ap_location_id": 2204,
+          "position": {
+            "x": 1935.166,
+            "y": 175.485,
+            "z": -62.26503
+          }
+        },
+        {
+          "guid": -88875197,
+          "ap_location_id": 2212,
+          "position": {
+            "x": 1722.996,
+            "y": 240.3148,
+            "z": -368.254
+          }
+        },
+        {
+          "guid": 164629273,
+          "ap_location_id": 2233,
+          "position": {
+            "x": 1986.42,
+            "y": 209.5197,
+            "z": 423.7941
+          }
+        },
+        {
+          "guid": 275719628,
+          "ap_location_id": 2245,
+          "position": {
+            "x": 2067.225,
+            "y": 406.8945,
+            "z": -496.9463
+          }
+        },
+        {
+          "guid": 277791624,
+          "ap_location_id": 2247,
+          "position": {
+            "x": 2509.914,
+            "y": 231.4465,
+            "z": 403.1834
+          }
+        },
+        {
+          "guid": 603985318,
+          "ap_location_id": 2281,
+          "position": {
+            "x": 2062.96,
+            "y": 294.7181,
+            "z": -912.2999
+          }
+        },
+        {
+          "guid": 677111499,
+          "ap_location_id": 2288,
+          "position": {
+            "x": 1833.642,
+            "y": 0.111,
+            "z": 10.492
+          }
+        },
+        {
+          "guid": 1134690276,
+          "ap_location_id": 2327,
+          "position": {
+            "x": 2281.164,
+            "y": 408.5707,
+            "z": -255.7809
+          }
+        },
+        {
+          "guid": 1142019551,
+          "ap_location_id": 2328,
+          "position": {
+            "x": 2032.897,
+            "y": 324.2278,
+            "z": -752.0721
+          }
+        },
+        {
+          "guid": 1297753781,
+          "ap_location_id": 2348,
+          "position": {
+            "x": 1902.27,
+            "y": 47.01963,
+            "z": -19.86745
+          }
+        },
+        {
+          "guid": 1474584585,
+          "ap_location_id": 2366,
+          "position": {
+            "x": 1920.455,
+            "y": 83.37163,
+            "z": 22.81575
+          }
+        },
+        {
+          "guid": 1599241572,
+          "ap_location_id": 2378,
+          "position": {
+            "x": 2274.258,
+            "y": 409.5631,
+            "z": -474.2817
+          }
+        },
+        {
+          "guid": 1622691899,
+          "ap_location_id": 2384,
+          "position": {
+            "x": 1822.842,
+            "y": 299.4415,
+            "z": -828.8464
+          }
+        },
+        {
+          "guid": 1694479975,
+          "ap_location_id": 2394,
+          "position": {
+            "x": 2109.85,
+            "y": 286.051,
+            "z": -302.612
+          }
+        },
+        {
+          "guid": 1707725832,
+          "ap_location_id": 2397,
+          "position": {
+            "x": 2020.714,
+            "y": 331.726,
+            "z": -558.9846
+          }
+        },
+        {
+          "guid": 1728654045,
+          "ap_location_id": 2399,
+          "position": {
+            "x": 1848.662,
+            "y": 187.8085,
+            "z": -168.6463
+          }
+        },
+        {
+          "guid": 1765670492,
+          "ap_location_id": 2404,
+          "position": {
+            "x": 1668.453,
+            "y": 232.2158,
+            "z": -422.1045
+          }
+        },
+        {
+          "guid": 1771115153,
+          "ap_location_id": 2406,
+          "position": {
+            "x": 1690.14,
+            "y": 212.99,
+            "z": -707.42
+          }
+        },
+        {
+          "guid": 1805636196,
+          "ap_location_id": 2407,
+          "position": {
+            "x": 1571.863,
+            "y": 269.7249,
+            "z": -229.7414
+          }
+        },
+        {
+          "guid": 1857420540,
+          "ap_location_id": 2415,
+          "position": {
+            "x": 2150.778,
+            "y": 344.9799,
+            "z": -215.0608
+          }
+        },
+        {
+          "guid": 1912253734,
+          "ap_location_id": 2421,
+          "position": {
+            "x": 1740.417,
+            "y": 256.8645,
+            "z": -621.5146
+          }
+        },
+        {
+          "guid": 1961888831,
+          "ap_location_id": 2424,
+          "position": {
+            "x": 2038.974,
+            "y": 341.326,
+            "z": -474.651
+          }
+        }
+      ]
+    }
+  ]
+}

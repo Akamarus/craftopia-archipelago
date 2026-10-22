@@ -67,7 +67,7 @@ for _orb in _validate_orbs(_load_orbs()):
         raise ValueError('Soul orb location ID/name collision')
     _location_name_to_id[_orb['ap_location_name']] = _orb['ap_location_id']
 from .Milestones import load_catalog as _load_milestones, validate_catalog as _validate_milestones, key as _milestone_key
-for _row in _validate_milestones(_load_milestones('milestones_20261022_r3')):
+for _row in _validate_milestones(_load_milestones('milestones_20261022_r4')):
     if _row['ap_location_id'] in _location_name_to_id.values() or _row['ap_location_name'] in _location_name_to_id:
         raise ValueError('Milestone location ID/name collision')
     _location_name_to_id[_row['ap_location_name']] = _row['ap_location_id']
@@ -465,7 +465,7 @@ class CraftopiaWorld(World):
                 'soul_orb_locations':{str(r['guid']):r['ap_location_id'] for r in self.selected_soul_orbs()}}
                if self.options.enable_soul_orb_checks.value else {}),
             **({'equipment_catalog': ('equipment_loot_20261016_r2'
-                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1', 'regional_yarden_mountain_20261022_r1', 'regional_yarden_ruin_20261022_r1', 'regional_yarden_mountain_20261022_r2', 'regional_yarden_ruin_20261022_r2')
+                    if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1', 'regional_yarden_mountain_20261022_r1', 'regional_yarden_ruin_20261022_r1', 'regional_yarden_mountain_20261022_r2', 'regional_yarden_ruin_20261022_r2', 'regional_owatatsu_20261022_r2', 'regional_brigandine_20261022_r2')
                     else 'equipment_loot_20261016_r1') if is_regional_run else 'equipment_20261010_r1',
                 'equipment_protocol': 2 if is_regional_run else 1,
                 'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),

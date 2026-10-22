@@ -15,7 +15,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('output', type=Path)
     parser.add_argument('--seed', type=int, default=20261016)
-    parser.add_argument('--ending', choices=('geezah', 'millewind', 'yarden_mountain', 'yarden_ruin'), default='geezah')
+    parser.add_argument('--ending', choices=('geezah', 'millewind', 'yarden_mountain', 'yarden_ruin', 'owatatsu', 'brigandine'), default='geezah')
     args = parser.parse_args()
     output = args.output.resolve()
     root = Path(__file__).resolve().parents[1]
@@ -44,7 +44,7 @@ def main():
     assert multiworld.can_beat_game()
     data = multiworld.worlds[1].fill_slot_data()
     assert data['goal_location_ids'] == {'geezah': [3002, 4100], 'millewind': [3012, 4101],
-        'yarden_mountain': [3022, 4102], 'yarden_ruin': [3032, 4103]}[args.ending]
+        'yarden_mountain': [3022, 4102], 'yarden_ruin': [3032, 4103], 'owatatsu': [3042, 4104], 'brigandine': [3052, 4105]}[args.ending]
     print(f'Regional example generated: {multiworld.seed_name}, {len([l for l in multiworld.get_locations(1) if l.address is not None])} checks, tower AND dungeon goal')
 
 

@@ -4,9 +4,11 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia â€
 
 > **Experimental alpha.** Geezah and Millewind runs have reached victory in controlled playtests. Full-game logic and general compatibility are still in development. Use a separate character/world and keep backups of your saves.
 
+The current source prepares a **1.17.0 release candidate through Brigandine Valley**. Public downloads may still contain the earlier alpha. See [candidate scope and validation](docs/VALLEY_RUNS.md).
+
 ## Start here
 
-- **Playable scope:** regional runs ending in Geezah or Millewind, with missions, Soul Orbs, mission categories, tower repairs, age evolutions and main dungeon checks.
+- **Candidate scope:** cumulative regional runs ending anywhere from Geezah through Brigandine Valley, with missions, Soul Orbs, mission categories, tower repairs, age evolutions and main dungeon checks.
 - **Goal:** finish the ending region's tower **and** clear its main dungeon.
 - **Install:** extract the Windows release ZIP, double-click **Setup.cmd**, and press Enter. Setup detects Craftopia, installs the verified loader, and handles manual or subscribed Workshop copies.
 - **Connect:** F8 opens the Field Guide, including server/slot/password settings and character enrollment. A packaged build includes its own bridge runtime.
@@ -23,8 +25,12 @@ Steam Workshop distribution is being tested privately; use the GitHub release un
 | --- | --- | ---: | --- |
 | Geezah | Geezah | 119 | Tower complete + Ruin of Beginning |
 | Millewind | Geezah and Millewind | 161 | Millewind tower complete + Old Garden of Undead |
+| Yarden Mountain | Earlier regions and Yarden Mountain | 215 | Mountain tower + Ruin of Hunters |
+| Yarden Ruin | Earlier regions and both Yarden towers | 219 | Ruin tower + Old Garden of Storms |
+| Owatatsu | Earlier regions and Owatatsu | 275 | Owatatsu tower + Labyrinth of Torrent |
+| Brigandine | All above and Brigandine Valley | 330 | Brigandine tower + Old Garden of Massacre |
 
-These totals apply to the supplied regional configuration. Disabling Soul Orb checks gives 68 Geezah or 73 Millewind checks. Checks beyond the chosen ending region are excluded. Later endings are not selectable yet.
+These totals apply to the supplied regional configuration. Disabling Soul Orb checks gives 68 Geezah or 73 Millewind checks. Checks beyond the chosen ending region are excluded. Yarden and later endings are release-candidate content pending targeted live validation.
 
 ## What is randomized?
 
@@ -49,7 +55,7 @@ Regional logic uses vanilla Tamer capabilities. A separate Tamer mod is optional
 
 | Component | Baseline |
 | --- | --- |
-| Mod / player bundle | v1.16.0 experimental alpha |
+| Current source candidate | v1.17.0-rc.1; not yet published |
 | Archipelago | 0.6.8 |
 | Game scope | Windows PC, Seamless World; observed game build 20260825.1206 |
 | Loader | BepInEx 5, 64-bit Mono |
