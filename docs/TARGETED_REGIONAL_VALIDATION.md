@@ -29,8 +29,8 @@ The current regional tests already exercise many of these conditions for Geezah 
 
 | Priority | Target | Evidence already available | Specific remaining work |
 | --- | --- | --- | --- |
-| 1 | Yarden Mountain tower3808 and Ruin tower3809 | All six repair cost lists captured | Join ingredients to obtainable routes and age/station gates; resolve main-dungeon identity and which tower completion defines a Yarden ending before implementing it |
-| 1 | Regional age materials | Exact transition costs; user confirmed two pickups, one mined material and one chopped material per regional set | Test minimum viable pickaxe/axe on the mined/chopped sources, starting with the next required set; do not infer tiers from rarity or age |
+| 1 | Yarden Mountain tower3808 and Ruin tower3809 | [Yarden audit](research/yarden-20261021/README.md): six costs, recipe closure, Story dungeon IDs3/4 and user tower bindings | Define cumulative selection and combat routes; verify silver/sulfur access and saltpeter supply policy before implementation |
+| Resolved in data | Regional age materials | Prior harvesting audit establishes Stone tools pass the identified age ore/wood rank checks | Reuse evidence; optional operational spot-check only. Ordinary metal ores are a separate question |
 | 2 | Owatatsu3810 and Brigandine3811 | Repair costs and shared later age-transition ingredients captured | Establish whether the intended endpoint requires cross-region materials; join herbs, engine parts and manufacturing access |
 | 3 | Sherbert3812 | Tower costs; cold effects and height-dependent field rules; resistance recipes/items | Confirm named-region/route binding and practical protection route at the relevant age; test only then |
 | 3 | Unnefell3813, Miasma3814, Inferno3815 | Tower costs; fire/poison field rules and resistance evidence | Join actual travel and sustainable material/protection routes; Inferno also needs a verified Captured Anubis route |
@@ -42,7 +42,7 @@ Sources: [tower/age audit](research/2026-10-16/towers-ages.md), [environment aud
 
 Prepare one packet only after exhausting existing captures, workbook answers and installed-data evidence. Each packet names the exact object/action, expected observation and evidence to collect. Use the same advanced test character where possible; an existing completed AP seed is not a new test session.
 
-For the next material packet: identify the relevant ore/tree, try the lowest candidate tool, record whether it yields the target material, then try the next tier only if needed. A failure to damage or harvest and the equipped tool must be distinguishable in the capture. Collect screenshots/F9 evidence where the collector records the necessary state. A menu recipe alone does not prove harvestability.
+For the next material packet: identify an ordinary Yarden silver/sulfur source and verify practical harvesting with the proposed tool route. Regional age ore/wood thresholds are already resolved by the earlier code/asset audit; do not request nine repeated tier trials. Record drops and equipped tools separately from bounce feedback. Collect screenshots/F9 evidence where the collector records the necessary state. A menu recipe alone does not prove harvestability.
 
 For a new tower/dungeon hook: observe the relevant state before and after one repair/clear, check exactly one intended check, then reload and verify it does not duplicate. Do this in a deliberately prepared diagnostic/test session rather than silently repurposing a completed slot or changing personal save enrollment.
 
