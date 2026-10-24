@@ -205,6 +205,8 @@ def build_run_profile(ending_region, item_table):
         goal_policy='regional_tower_and_dungeon',
         early_item_locations={name: list(early) for name in ('Production: smelting', 'Production: cooking')},
         pool=pool, equipment_tier_steps=build_profile(item_table)['equipment_tier_steps'])
+    from .RegionalBalance import apply_balance
+    apply_balance(profile)
     model = ProgressionModel(profile, item_table, allow_experimental=True)
     if not all(model.can_complete(mid, lambda _: 0) for mid in opening):
         raise ValueError('Opening production destinations require randomized permissions')

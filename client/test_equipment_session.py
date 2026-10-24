@@ -70,6 +70,17 @@ class EquipmentSession(unittest.TestCase):
         self.b.slot_data['equipment_protocol'] = 1
         self.assertFalse(self.b.equipment_contract_ready())
 
+    def test_reviewed_balance_requires_matching_mod(self):
+        self.connect()
+        self.b.slot_data.update(equipment_catalog='equipment_reviewed_20261024_r1', equipment_protocol=3)
+        self.b.equipment_capabilities = {self.b.connection_token: 2}
+        self.assertFalse(self.b.equipment_contract_ready())
+        self.b.equipment_capabilities[self.b.connection_token] = 3
+        self.assertTrue(self.b.equipment_contract_ready())
+        run(self.b.send_session())
+        sessions = [m for m in self.b.mod_ws.sent if m.get('cmd') == 'session']
+        self.assertEqual(sessions[-1]['equipment_protocol'], 3)
+
     def test_multiplayer_not_advertised_as_supported(self):
         self.connect(); self.request()
         self.b.equipment_capabilities = {self.b.connection_token: 1}

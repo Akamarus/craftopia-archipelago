@@ -161,6 +161,7 @@ def build_item_table() -> Dict[str, CraftopiaItemDef]:
 
     # Append-only currency ID; one unit replaces each selected orb's vanilla unit.
     items['Soul Orb Currency'] = CraftopiaItemDef('Soul Orb Currency', 37, 'useful', 999)
+    items['Progressive Equipment: AssistEquip'] = CraftopiaItemDef('Progressive Equipment: AssistEquip', 38, 'useful', 1)
     return items
 
 

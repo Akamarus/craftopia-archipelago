@@ -1,0 +1,769 @@
+{
+  "schema": 1,
+  "basis": "Provisional user workbook and combat thresholds, 2026-10-24",
+  "entries": [
+    {
+      "item": "Skill Point",
+      "tier": null,
+      "receipt": null,
+      "deadline": null,
+      "notes": "Filler checks alongside Soul Orbs"
+    },
+    {
+      "item": "Skill Tree: Magic",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Life",
+      "tier": null,
+      "receipt": null,
+      "deadline": "Starting inventory",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Trick",
+      "tier": null,
+      "receipt": null,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Tamer",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Combat Tier 2",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Combat Tier 3",
+      "tier": null,
+      "receipt": null,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Combat Tier 4",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Skill Tree: Combat Tier 5",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Production: smelting",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Production: cooking",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Production: farming",
+      "tier": null,
+      "receipt": null,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Production: livestock_fishing",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Production: alchemy",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Production: recycling",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Production: water_processing",
+      "tier": null,
+      "receipt": null,
+      "deadline": "Unsure",
+      "notes": "What is this? What recipes does this give and what station does it affect?"
+    },
+    {
+      "item": "Production: equipment_care",
+      "tier": null,
+      "receipt": null,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Production: automation",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Production: creature_combining",
+      "tier": null,
+      "receipt": null,
+      "deadline": "yarden_mountain",
+      "notes": "This should be called breeding"
+    },
+    {
+      "item": "Victory",
+      "tier": null,
+      "receipt": null,
+      "deadline": null,
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 1,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 2,
+      "receipt": 2,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 3,
+      "receipt": 3,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 4,
+      "receipt": 4,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 5,
+      "receipt": 5,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 6,
+      "receipt": 6,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 7,
+      "receipt": 7,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 8,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 9,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Sword",
+      "tier": 10,
+      "receipt": 10,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 1,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 2,
+      "receipt": 2,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 3,
+      "receipt": 3,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 4,
+      "receipt": 4,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 5,
+      "receipt": 5,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 6,
+      "receipt": 6,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 7,
+      "receipt": 7,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 8,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 9,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Bow",
+      "tier": 10,
+      "receipt": 10,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 1,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 2,
+      "receipt": 2,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 3,
+      "receipt": 3,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 4,
+      "receipt": 4,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 5,
+      "receipt": 5,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 6,
+      "receipt": 6,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 7,
+      "receipt": 7,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 8,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 9,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Shield",
+      "tier": 10,
+      "receipt": 10,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 2,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 3,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 4,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 5,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 6,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 7,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 8,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 9,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Lance",
+      "tier": 10,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 2,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 3,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 4,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 5,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 6,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 7,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 8,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 9,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: SwordTwoHand",
+      "tier": 10,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 3,
+      "receipt": 1,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 4,
+      "receipt": 2,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 5,
+      "receipt": 3,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 6,
+      "receipt": 4,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 7,
+      "receipt": 5,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Gun",
+      "tier": 10,
+      "receipt": 6,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 2,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 3,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 4,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 5,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 6,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 7,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 8,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 9,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Katana",
+      "tier": 10,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 2,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 3,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 4,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 5,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 6,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 7,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 8,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 9,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: MagicStaff",
+      "tier": 10,
+      "receipt": 9,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: VacuumGun",
+      "tier": 10,
+      "receipt": 1,
+      "deadline": "Unsure",
+      "notes": "No Idea what this is"
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 2,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 3,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 4,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 5,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 6,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 7,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Head",
+      "tier": 10,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 1,
+      "receipt": 1,
+      "deadline": "geezah",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 2,
+      "receipt": 2,
+      "deadline": "millewind",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 3,
+      "receipt": 3,
+      "deadline": "yarden_mountain",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 4,
+      "receipt": 4,
+      "deadline": "yarden_ruin",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 5,
+      "receipt": 5,
+      "deadline": "owatatsu",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 6,
+      "receipt": 6,
+      "deadline": "brigandine",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 7,
+      "receipt": 7,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Progressive Equipment: Body",
+      "tier": 10,
+      "receipt": 8,
+      "deadline": "Later region",
+      "notes": null
+    },
+    {
+      "item": "Soul Orb Currency",
+      "tier": null,
+      "receipt": null,
+      "deadline": null,
+      "notes": "These can be spread out everywhere throughout the game. This and skill points are effectively the filler checks."
+    }
+  ]
+}

@@ -7,8 +7,8 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <DebugType>none</DebugType>
-    <AssemblyVersion>1.17.0</AssemblyVersion>
-    <Version>1.17.0</Version>
+    <AssemblyVersion>1.18.0</AssemblyVersion>
+    <Version>1.18.0</Version>
   </PropertyGroup>
 
   <!-- Versioned skill catalog from runtime capture (embedded). -->
@@ -21,6 +21,7 @@
 
   <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/equipment_catalog_20261010_r1.json"><LogicalName>equipment_catalog_20261010_r1.json</LogicalName></EmbeddedResource></ItemGroup>
   <!-- ValidationDecision is pure shared logic, compiled in. -->
+  <ItemGroup><EmbeddedResource Include="../../worlds/craftopia/equipment_reviewed_20261024_r1.json" LogicalName="equipment_reviewed_20261024_r1.json" /></ItemGroup>
   <ItemGroup>
     <Compile Include="..\ValidationDecision\ValidationDecision.cs" />
   </ItemGroup>

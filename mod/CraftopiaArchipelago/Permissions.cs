@@ -199,9 +199,9 @@ namespace CraftopiaArchipelago
         public List<string> GetGuideRows()
         {
             var rows = new List<string>();
-            foreach (string category in new[] { "Sword", "Bow", "Shield", "Lance", "SwordTwoHand", "Katana", "Gun", "MagicStaff", "VacuumGun", "Head", "Body" }) {
+            foreach (string category in new[] { "Sword", "Bow", "Shield", "Lance", "SwordTwoHand", "Katana", "Gun", "MagicStaff", "VacuumGun", "Head", "Body", "AssistEquip" }) {
                 equipmentTiers.TryGetValue(category, out int tier);
-                string name = category == "SwordTwoHand" ? "Two-handed weapon" : category == "MagicStaff" ? "Magic staff" : category == "VacuumGun" ? "Vacuum gun" : category == "Head" ? "Head armor" : category == "Body" ? "Body armor" : category;
+                string name = category == "SwordTwoHand" ? "Two-handed weapon" : category == "MagicStaff" ? "Magic staff" : category == "VacuumGun" ? "Vacuum gun" : category == "Head" ? "Head armor" : category == "Body" ? "Body armor" : category == "AssistEquip" ? "Combat support" : category;
                 rows.Add(name + "|" + (tier > 0 ? "Tier " + tier : "Locked"));
             }
             foreach (string group in new[] { "smelting", "cooking", "farming", "livestock_fishing", "alchemy", "recycling", "water_processing", "equipment_care", "automation", "creature_combining" }) {

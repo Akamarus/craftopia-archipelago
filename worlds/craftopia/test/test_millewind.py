@@ -44,7 +44,7 @@ class MillewindTests(unittest.TestCase):
                      'Production: farming', 'Production: equipment_care'):
             with self.subTest(permission=name):
                 self.assertFalse(self.reachable(w, 'tower_3807_3', name))
-        self.assertFalse(self.reachable(w, 'dungeon_millewind', 'Progressive Equipment: Sword'))
+        self.assertTrue(self.reachable(w, 'dungeon_millewind', 'Progressive Equipment: Sword'))
         self.assertTrue(self.reachable(w, 'dungeon_millewind', 'Progressive Equipment: Body'))
         self.assertTrue(self.reachable(w, 'generator_operation', 'Skill Tree: Tamer'))
         self.assertFalse(self.reachable(w, 'generator_operation', 'Production: smelting'))
@@ -64,7 +64,7 @@ class MillewindTests(unittest.TestCase):
         p['nodes'] = dict(p['nodes'], age_1=[[{'node': 'age_1'}]])
         p['missions'] = {'0': 'dungeon_geezah', '1': 'age_2', '2': 'tower_3807_1'}
         model = ProgressionModel(p, w.item_table, allow_experimental=True)
-        self.assertTrue(model.can_complete(0, lambda name: int(name == 'Progressive Equipment: Bow')))
+        self.assertFalse(model.can_complete(0, lambda name: int(name == 'Progressive Equipment: Bow')))
         self.assertFalse(model.can_complete(1, lambda _: 99))
         self.assertFalse(model.can_complete(2, lambda _: 99))
 

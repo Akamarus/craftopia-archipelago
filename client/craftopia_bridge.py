@@ -295,7 +295,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         protocol = self.slot_data.get('equipment_protocol')
         if not isinstance(self.slot_data.get('equipment_catalog'), str): return False
         expected = {'equipment_20261010_r1': 1, 'equipment_loot_20261016_r1': 2,
-                    'equipment_loot_20261016_r2': 2}.get(
+                    'equipment_loot_20261016_r2': 2, 'equipment_reviewed_20261024_r1': 3}.get(
             self.slot_data.get('equipment_catalog'))
         if (expected is None or type(protocol) is not int
                 or protocol != expected or self.multiplayer_mode != 0):
@@ -303,7 +303,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         capabilities = getattr(self, 'equipment_capabilities', {})
         tokens = self._all_conn_tokens()
         return bool(tokens) and all(type(capabilities.get(t)) is int
-                                   and protocol <= capabilities[t] <= 2 for t in tokens)
+                                   and protocol <= capabilities[t] <= 3 for t in tokens)
 
     def can_deliver_unlocks(self):
         return (self.equipment_contract_ready() and not self.recovery_hold and self.ap_connected
@@ -378,7 +378,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         if self.recovery_hold or not self.ledger['starters_applied']:
             return None
         if category not in ('Sword', 'Bow', 'Shield', 'Lance', 'SwordTwoHand',
-                            'Gun', 'Katana', 'MagicStaff', 'VacuumGun', 'Head', 'Body'):
+                            'Gun', 'Katana', 'MagicStaff', 'VacuumGun', 'Head', 'Body', 'AssistEquip'):
             return None
         old = next((u for u in self.ledger['unlocks'] if u['receipt_id'] == receipt_id), None)
         if old is not None:

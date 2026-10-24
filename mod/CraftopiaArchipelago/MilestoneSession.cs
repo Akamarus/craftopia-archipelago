@@ -24,7 +24,8 @@ namespace CraftopiaArchipelago
         static long epoch;
         static bool enabled,valid,eligible;
         static int boundCharacter;
-        static float nextRegistration;
+        static float nextRegistration, nextDungeonReconcile;
+        static readonly HashSet<string> reconciledDungeons = new HashSet<string>();
         static object boundWorld;
         internal static string Key(string family,int source,int stage) => "milestone:"+family+":"+source+":"+stage;
         internal static object Field(object value,string name) {
@@ -184,12 +185,23 @@ namespace CraftopiaArchipelago
                     }
                     if(!SoulOrbCharacterBinding.Mark(path,fingerprint)) { Notice("Milestone checks held: this character belongs to a different test world.");return; }
                     boundWorld=world;boundCharacter=character;worldHash=fingerprint;
+                    reconciledDungeons.Clear(); nextDungeonReconcile=0;
                 }
                 while(retry.Count>0) {
                     if(!Plugin.Bridge.SendMilestoneObservation(retry.Peek())) { Notice("Milestone check waiting for durable storage; preserve files for recovery.");return; }
                     retry.Dequeue();
                 }
                 eligible=true;Notice(null);
+                // Reconcile only after the persisted enrollment/world binding above is verified.
+                if(UnityEngine.Time.realtimeSinceStartup >= nextDungeonReconcile) {
+                    nextDungeonReconcile=UnityEngine.Time.realtimeSinceStartup+2f;
+                    foreach(var key in selected) {
+                        if(!key.StartsWith("milestone:dungeon:", StringComparison.Ordinal) || reconciledDungeons.Contains(key) || BaselineState(key)!=1) continue;
+                        Complete("dungeon",int.Parse(key.Split(':')[2]),0);
+                        if(!eligible) break;
+                        reconciledDungeons.Add(key);
+                    }
+                }
             } catch { Notice("Milestone checks held: world or storage could not be verified."); }
         }
         internal static bool Ready => enabled && valid && eligible && Plugin.IsDeliveryEligible() &&

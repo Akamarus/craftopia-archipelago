@@ -55,7 +55,7 @@ If generating yourself:
 
 1. Install the matching `craftopia.apworld` in your Archipelago `custom_worlds` folder and restart the launcher.
 2. Copy the release's `Craftopia.yaml` into your generation player-files folder.
-3. Change `name` to your slot name. The 1.17.0 candidate template defaults to `brigandine`. Set `ending_region` to `geezah`, `millewind`, `yarden_mountain`, `yarden_ruin`, `owatatsu`, or `brigandine` (see VALLEY_RUNS.md; later endings are experimental); keep `logic_mode: regional` and the template's other settings for this test profile.
+3. Change `name` to your slot name. The 1.18.0 candidate template defaults to `brigandine`. Set `ending_region` to `geezah`, `millewind`, `yarden_mountain`, `yarden_ruin`, `owatatsu`, or `brigandine` (see VALLEY_RUNS.md; later endings are experimental); keep `logic_mode: regional` and the template's other settings for this test profile.
 4. Generate the multiworld and host its resulting server data. For a source-based solo example, see the [developer commands](DEVELOPMENT.md#generate-a-solo-example).
 
 The APWorld is needed by the generator. It is not a file to put in BepInEx. Keep the generator and player components from the same source snapshot.

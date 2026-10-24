@@ -50,7 +50,8 @@ namespace CraftopiaArchipelago
             if(rejected || sessionEpoch<=0 || string.IsNullOrWhiteSpace(slot) || sessionSlot!=slot ||
                 (contractEpoch!=0 && contractEpoch!=sessionEpoch) || (Catalog!=null && Catalog!=catalog) ||
                 !((catalog==EquipmentCatalog.CatalogId && protocol==1) ||
-                  ((catalog==EquipmentCatalog.ReviewedLootCatalogId || catalog==EquipmentCatalog.ReviewedLootR2CatalogId) && protocol==2)) ||
+                  ((catalog==EquipmentCatalog.ReviewedLootCatalogId || catalog==EquipmentCatalog.ReviewedLootR2CatalogId) && protocol==2)
+                  || (catalog==EquipmentCatalog.ReviewedBalanceCatalogId && protocol==3)) ||
                 multiplayer!=0 || (!managed && !approved) ||
                 (approved && (guid==0 || epoch!=sessionEpoch || (approvedCatalog!=null && approvedCatalog!=catalog)))) {
                 rejected=true; return false;

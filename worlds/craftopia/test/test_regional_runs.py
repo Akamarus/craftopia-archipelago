@@ -25,8 +25,8 @@ class RegionalRunTests(unittest.TestCase):
         self.assertEqual(data['selected_region'], 'geezah')
         self.assertEqual(data['goal_location_ids'], [3002, 4100])
         self.assertEqual(data['goal_policy'], 'regional_tower_and_dungeon')
-        self.assertEqual(data['equipment_catalog'], 'equipment_loot_20261016_r2')
-        self.assertEqual(data['equipment_protocol'], 2)
+        self.assertEqual(data['equipment_catalog'], 'equipment_reviewed_20261024_r1')
+        self.assertEqual(data['equipment_protocol'], 3)
         self.assertEqual(len(mw.itempool), 68)
         self.assertEqual({r['region'] for r in w.regional_profile['milestones']}, {'geezah'})
         self.assertIn('512', data['game_id_to_location'])
@@ -72,7 +72,7 @@ class RegionalRunTests(unittest.TestCase):
     def test_bucket_route_and_audited_station_construction(self):
         mw = self.make(); w = mw.worlds[1]; state = CollectionState(mw)
         nodes = w.progression_model.nodes
-        self.assertEqual(w.regional_profile['profile_id'], 'regional_geezah_20261017_r6')
+        self.assertEqual(w.regional_profile['profile_id'], 'regional_geezah_20261024_r1')
         self.assertEqual(w.progression_model.missions['105'], 'water_bucket')
         self.assertNotIn('well', nodes)
         self.assertEqual(nodes['blacksmith'], [[{'node': 'material_272'}]])

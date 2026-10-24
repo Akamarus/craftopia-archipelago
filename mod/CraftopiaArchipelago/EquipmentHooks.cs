@@ -7,11 +7,13 @@ namespace CraftopiaArchipelago
 {
     internal static class EquipmentHooks
     {
-        static EquipmentCatalog originalCatalog, reviewedCatalog, reviewedR2Catalog;
-        static EquipmentCatalog catalog => Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedLootR2CatalogId
+        static EquipmentCatalog originalCatalog, reviewedCatalog, reviewedR2Catalog, reviewedBalanceCatalog;
+        static EquipmentCatalog catalog => Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedBalanceCatalogId
+            ? reviewedBalanceCatalog : Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedLootR2CatalogId
             ? reviewedR2Catalog : Plugin.EquipmentCatalogIdentity == EquipmentCatalog.ReviewedLootCatalogId
             ? reviewedCatalog : originalCatalog;
         [ThreadStatic] static int craftActionDepth;
+        [ThreadStatic] static int saveRestoreDepth;
         static readonly System.Collections.Generic.HashSet<string> diagnostics = new System.Collections.Generic.HashSet<string>();
         internal static void Diagnostic(string message)
         {
@@ -32,6 +34,9 @@ namespace CraftopiaArchipelago
                 originalCatalog = EquipmentCatalog.Parse(json);
                 reviewedCatalog = EquipmentCatalog.ParseReviewedLoot(json);
                 reviewedR2Catalog = EquipmentCatalog.ParseReviewedLootR2(json);
+                using (var overlayStream = typeof(Plugin).Assembly.GetManifestResourceStream("equipment_reviewed_20261024_r1.json"))
+                using (var overlayReader = new System.IO.StreamReader(overlayStream))
+                    reviewedBalanceCatalog = EquipmentCatalog.ParseReviewedBalance(json, overlayReader.ReadToEnd());
             }
             var craftAction = typeof(Oc.OcPlMaster).Assembly.GetType("Oc.Item.UI.OcItemUI_CraftMng",true)
                 .GetMethod("CraftButtonExecute",BindingFlags.Instance|BindingFlags.Public|BindingFlags.NonPublic);
@@ -48,6 +53,9 @@ namespace CraftopiaArchipelago
             InstallRecipeNotice(harmony,"Unselect",nameof(ClearRecipe));
             Patch(harmony,"Oc.Item.OcItem_CraftEnchantSelect","TryCraftItem",typeof(Oc.Item.OcItem),nameof(CraftItem),"Oc.Item.ItemData","System.Int32");
             Patch(harmony,"Oc.OcChestComponent","canAutoCraftNum",typeof(byte),nameof(AutoCraft),"Oc.Item.ItemData");
+            var register = AccessTools.Method(typeof(Oc.Item.UI.OcItemUI_EquipSlot), "TryRegister");
+            harmony.Patch(register, prefix: new HarmonyMethod(typeof(EquipmentHooks), nameof(BeginRestore)),
+                finalizer: new HarmonyMethod(typeof(EquipmentHooks), nameof(EndRestore)));
             Patch(harmony,"Oc.Item.UI.OcItemUI_EquipmentMng","CanEquipItem",typeof(bool),nameof(StackBool),"Oc.Item.OcItemStack","System.Boolean");
             Patch(harmony,"Oc.Item.UI.OcItemUI_EquipSlot","CanEquip",typeof(bool),nameof(StackBool),"Oc.Item.OcItemStack","System.Boolean");
             Patch(harmony,"Oc.Item.UI.OcItemUI_Equip_List","TryEquipItem",typeof(bool),nameof(StackBool),"Oc.Item.OcItemStack");
@@ -109,8 +117,12 @@ namespace CraftopiaArchipelago
             if (Allow(() => EquipmentRead.Item(__0),craftActionDepth>0)) return true;
             __result=false; return false;
         }
+        static void BeginRestore(bool __1, out int __state) { __state=saveRestoreDepth; if(__1) saveRestoreDepth++; }
+        static Exception EndRestore(Exception __exception, int __state) { saveRestoreDepth=__state; return __exception; }
         static bool StackBool(Oc.Item.OcItemStack __0, MethodBase __originalMethod, ref bool __result)
         {
+            // Preserve native save reconstruction; interactive equip/craft gates remain active.
+            if (saveRestoreDepth > 0) return true;
             // These polymorphic getters resolve assigned stacks; inspected as read-only.
             if (Allow(() => EquipmentRead.Item(__0.item.data),__originalMethod.Name == "TryEquipItem")) return true;
             __result=false; return false;

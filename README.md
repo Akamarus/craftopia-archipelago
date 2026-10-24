@@ -4,7 +4,7 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia â€
 
 > **Experimental alpha.** Geezah and Millewind runs have reached victory in controlled playtests. Full-game logic and general compatibility are still in development. Use a separate character/world and keep backups of your saves.
 
-The current source prepares a **1.17.0 release candidate through Brigandine Valley**. Public downloads may still contain the earlier alpha. See [candidate scope and validation](docs/VALLEY_RUNS.md).
+The current source prepares a **1.18.0 balance candidate through Brigandine Valley**. Public downloads may still contain the earlier alpha. See [candidate scope and validation](docs/VALLEY_RUNS.md).
 
 ## Start here
 
@@ -32,6 +32,10 @@ Steam Workshop distribution is being tested privately; use the GitHub release un
 
 These totals apply to the supplied regional configuration. Disabling Soul Orb checks gives 68 Geezah or 73 Millewind checks. Checks beyond the chosen ending region are excluded. Yarden and later endings are release-candidate content pending targeted live validation.
 
+## Reviewed balance update
+
+New seeds use the reviewed regional equipment thresholds (2/3/4/5/6/7), individual unlock-placement deadlines, and 206 additional equipment tier assignments. Life starts unlocked; Combat Support is a separate unlock. Tower repair recipes retain their existing requirements. Use the matching mod, bridge and APworld from the same build. Old seed equipment rules are preserved. See [1.18.0 notes](docs/RELEASE_v1.18.0.md).
+
 ## What is randomized?
 
 **Checks:** selected individual missions, mission-category reward claims, one-time regional Soul Orb pickups, each tower repair stage, age evolutions and main dungeon clears. Respawning chests are excluded.
@@ -55,7 +59,7 @@ Regional logic uses vanilla Tamer capabilities. A separate Tamer mod is optional
 
 | Component | Baseline |
 | --- | --- |
-| Current source candidate | v1.17.0-rc.1; not yet published |
+| Current source candidate | v1.18.0-rc.1; not yet published |
 | Archipelago | 0.6.8 |
 | Game scope | Windows PC, Seamless World; observed game build 20260825.1206 |
 | Loader | BepInEx 5, 64-bit Mono |

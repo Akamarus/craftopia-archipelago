@@ -122,6 +122,9 @@ class CraftopiaWorld(World):
                 self.regional_profile = build_regional_profile(load_profile(),self.item_table)
             self.opening_profile = self.regional_profile
             self.progression_model = ProgressionModel(self.opening_profile,self.item_table,allow_experimental=True)
+            for name in self.regional_profile.get('starting_items', []):
+                if not any(item.name == name for item in self.multiworld.precollected_items[self.player]):
+                    self.multiworld.push_precollected(self.create_item(name))
         if self.options.enable_soul_orb_checks.value and self.options.logic_mode.value not in (3, 5):
             raise ValueError('Soul Orbs currently require the experimental expedition profile; traversal is unverified.')
         if self.options.logic_mode.value == 3:
@@ -271,8 +274,11 @@ class CraftopiaWorld(World):
             currency=['Soul Orb Currency'] * sum(getattr(l,'check_category',None)=='soul_orb' for l in overworld.locations)
             if len(pool)+len(currency) > len(locations): raise ValueError('Opening pool exceeds location count')
             skill_points = 0
-            for name in pool + currency + ['Skill Point'] * (len(locations) - len(pool) - len(currency)):
+            for index, name in enumerate(pool + currency + ['Skill Point'] * (len(locations) - len(pool) - len(currency))):
                 item = self.create_item(name)
+                deadlines = self.opening_profile.get('pool_deadlines', [])
+                if index < len(deadlines):
+                    item.craftopia_deadline = deadlines[index]
                 if self.options.logic_mode.value == 5 and name == 'Skill Point':
                     skill_points += 1
                     # Tamer needs three points and the added Heal route needs one. Surplus still
@@ -355,6 +361,8 @@ class CraftopiaWorld(World):
                     loc.access_rule = lambda state: model.can_complete(67,
                         lambda name: state.count(name, self.player))
             apply_early_placement_rules(self, network, profile)
+            from .RegionalBalance import apply_deadline_rules
+            apply_deadline_rules(self, network, profile)
             goals=[loc for loc in network if loc.address in profile['goal_location_ids']]
             if not goals or len(goals) != len(profile['goal_location_ids']):
                 raise ValueError('Regional victory requires every selected goal location')
@@ -464,10 +472,11 @@ class CraftopiaWorld(World):
                 'soul_orb_currency_protocol':1,'soul_orb_access':('regional_optional_unverified_traversal' if self.options.logic_mode.value == 5 else 'unverified_candidates'),
                 'soul_orb_locations':{str(r['guid']):r['ap_location_id'] for r in self.selected_soul_orbs()}}
                if self.options.enable_soul_orb_checks.value else {}),
-            **({'equipment_catalog': ('equipment_loot_20261016_r2'
+            **({'equipment_catalog': self.regional_profile.get('equipment_catalog') if is_regional_run and self.regional_profile.get('profile_id', '').endswith('_20261024_r1') else ('equipment_loot_20261016_r2'
                     if self.regional_profile.get('profile_id') in ('regional_geezah_20261016_r4', 'regional_geezah_20261016_r5', 'regional_geezah_20261017_r6', 'regional_millewind_20261017_r1', 'regional_yarden_mountain_20261022_r1', 'regional_yarden_ruin_20261022_r1', 'regional_yarden_mountain_20261022_r2', 'regional_yarden_ruin_20261022_r2', 'regional_owatatsu_20261022_r2', 'regional_brigandine_20261022_r2')
                     else 'equipment_loot_20261016_r1') if is_regional_run else 'equipment_20261010_r1',
-                'equipment_protocol': 2 if is_regional_run else 1,
+                'equipment_protocol': (3 if self.regional_profile.get('equipment_catalog') == 'equipment_reviewed_20261024_r1'
+                    and self.regional_profile.get('profile_id', '').endswith('_20261024_r1') else 2) if is_regional_run else 1,
                 'progression_profile': self.opening_profile['profile_id']} if self.opening_profile else {}),
             **({'equipment_tier_steps': self.opening_profile['equipment_tier_steps'],
                 'tamer_scope': 'vanilla', 'logic_evidence': 'partial_experimental'}

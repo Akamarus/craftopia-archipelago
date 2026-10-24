@@ -2,6 +2,13 @@ from test_progressive_equipment import ProgressiveEquipment
 
 
 class EquipmentSteps(ProgressiveEquipment):
+    def test_combat_support_receipt(self):
+        self.start()
+        self.b.slot_data['equipment_tier_steps'] = {'AssistEquip': [1]}
+        self.receive(0, 'AssistEquip')
+        records = [r for r in self.b.ledger['unlocks'] if r['receipt_id'] >= 0]
+        self.assertEqual([(r['category'], r['tier']) for r in records], [('AssistEquip', 1)])
+
     def test_sparse_tiers_and_retry(self):
         self.start()
         self.b.slot_data['equipment_tier_steps'] = {'Gun': [3, 4, 5, 6, 7, 10]}

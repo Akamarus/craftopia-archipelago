@@ -23,7 +23,8 @@ class YardenTests(unittest.TestCase):
         p['missions'] = {'0': target}
         model = ProgressionModel(p, w.item_table, allow_experimental=True)
         return model.can_complete(0, lambda n: 0 if n == missing else
-                                  swords if n == 'Progressive Equipment: Sword' else 99)
+                                  swords if n == 'Progressive Equipment: Sword' else
+                                  0 if swords != 99 and n.startswith('Progressive Equipment:') else 99)
 
     def test_boundaries_and_slot_dispatch(self):
         for ending, goals, count in ((2, [3022, 4102], 78), (3, [3032, 4103], 82)):
@@ -33,12 +34,12 @@ class YardenTests(unittest.TestCase):
             self.assertEqual(len(p['missions']) + len(p['milestones']), count)
             self.assertEqual(len(data['soul_orb_locations']), 137)
             self.assertEqual(len(w.multiworld.itempool), count + 137)
-            self.assertTrue(p['profile_id'].endswith('_20261022_r2'))
+            self.assertTrue(p['profile_id'].endswith('_20261024_r1'))
             for loc in w.multiworld.get_locations(1):
                 if getattr(loc, 'check_category', None) == 'soul_orb':
                     self.assertFalse(loc.item_rule(w.create_item('Production: smelting')))
                     self.assertTrue(loc.item_rule(w.create_item('Soul Orb Currency')))
-            self.assertEqual(data['equipment_catalog'], 'equipment_loot_20261016_r2')
+            self.assertEqual(data['equipment_catalog'], 'equipment_reviewed_20261024_r1')
             self.assertEqual(data['milestone_catalog'], 'milestones_20261022_r3')
             validate_slot(data)
             self.assertEqual(resolve_milestone(data, 'dungeon', 3, 0), 4102)
@@ -61,8 +62,8 @@ class YardenTests(unittest.TestCase):
         self.assertTrue(self.reachable(w, 'tower_3808_3', blocked='age_3'))
         self.assertFalse(self.reachable(w, 'tower_3809_1', blocked='age_3'))
         self.assertTrue(self.reachable(w, 'age_3', blocked='tower_3809_3'))
-        self.assertFalse(self.reachable(w, 'dungeon_yarden', swords=3))
-        self.assertTrue(self.reachable(w, 'dungeon_yarden', swords=4))
+        self.assertFalse(self.reachable(w, 'dungeon_yarden', swords=4))
+        self.assertTrue(self.reachable(w, 'dungeon_yarden', swords=5))
 
     def test_goal_needs_selected_pair(self):
         for ending, goals in ((2, (3022, 4102)), (3, (3032, 4103))):

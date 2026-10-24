@@ -10,7 +10,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from package_managed_bridge import ROOT, build, verify, validate_output
 import asyncio
 
-VERSION = '1.17.0-rc.1'
+VERSION = '1.18.0-rc.1'
 
 def stage_workshop(mod, workshop):
     # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
@@ -47,7 +47,7 @@ def package(output):
     shutil.copytree(bridge, mod / 'bridge')
     subprocess.run([sys.executable, str(ROOT / 'tools/package_apworld.py'), str(payload / 'craftopia.apworld')], check=True)
     (payload / 'Craftopia.yaml').write_text((ROOT / 'worlds/craftopia/test/regional_player.yaml').read_text().replace('ending_region: geezah', 'ending_region: brigandine'), encoding='utf-8')
-    for name in ('INSTALLATION.md', 'RELEASE_v1.17.0.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
+    for name in ('INSTALLATION.md', 'RELEASE_v1.18.0.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
     for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):
         shutil.copy2(ROOT / 'tools' / name, payload)
