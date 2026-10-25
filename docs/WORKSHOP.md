@@ -1,6 +1,6 @@
-# Steam Workshop candidate
+# Steam Workshop installation
 
-Workshop distribution is **private and pending acceptance**. Players should use the GitHub release until the README supplies a public Workshop link.
+Subscribe to [Craftopia Archipelago](https://steamcommunity.com/sharedfiles/filedetails/?id=3823110766) and its official loader dependency. Download the Windows ZIP from [GitHub releases](https://github.com/Akamarus/craftopia-archipelago/releases), extract it, close Craftopia and run **Setup.cmd once**. No Python or compiler is needed. Steam supplies subsequent mod updates. Subscription alone is not sufficient.
 
 ## Maintainer procedure
 
@@ -20,7 +20,7 @@ Pocketpair's [official uploader](https://github.com/pocketpairjp/Craftopia_Offic
 
 Connect Craftopia Seamless World to an Archipelago multiworld. Complete missions, collect Soul Orbs, repair towers and clear dungeons to send items across games. Receive equipment permissions, production and skill unlocks, Skill Points and Soul Orb Currency.
 
-Choose a Geezah or Millewind run. Victory requires the ending region's completed tower and main dungeon. Later regions and native multiplayer are still in development.
+Choose an ending region from Geezah through Brigandine Valley. Victory requires that region's completed tower and main dungeon. Regions beyond Brigandine and native multiplayer remain in development.
 
 Press F8 for connection settings, character enrollment, unlocks and item history. The bridge runtime is included; Python and a compiler are not required. Your room host still needs the matching Craftopia APWorld and player YAML from GitHub.
 
@@ -48,7 +48,7 @@ WorkshopUpload.exe inspect ITEM_ID
 WorkshopUpload.exe unsubscribe ITEM_ID
 ```
 
-The helper always explicitly sets Private, adds the official loader dependency and saves the assigned ID immediately. Keep that ID file outside the uploaded content and reuse it for updates. A timeout is an unknown outcome: inspect the same item before retrying, never erase the ID file to try again. Legal agreement acceptance is left to the account owner.
+The upload command always explicitly sets Private, adds the official loader dependency and saves the assigned ID immediately. Keep that ID file outside the uploaded content and reuse it for updates. A timeout is an unknown outcome: inspect the same item before retrying, never erase the ID file to try again. Legal agreement acceptance is left to the account owner.
 
 ## Acceptance status — October 19, 2026
 
@@ -59,4 +59,10 @@ The helper always explicitly sets Private, adds the official loader dependency a
 - The new Setup.cmd automatically detected the real Steam installation, downloaded the pinned loader, installed Workshop support and passed a live startup. Its restore command restored the previous installation; all 48 AP records remained unchanged.
 - The downloaded bridge passed isolation, SSL, handshake, auth-refusal, credential-privacy and shutdown tests in a disposable copy.
 - The old official loader bootstrap produced no fresh AP startup evidence. Workshop users must run the modern setup once; subscription alone is not enough.
-- Visual Field Guide/real-session connection acceptance from the subscribed copy remains pending because screen capture repeatedly timed out. Keep the listing private until that last live check passes.
+- At that time, visual Field Guide/real-session connection acceptance remained pending; the October 25 test below resolves that limitation.
+
+## Publication smoke test — October 25, 2026
+
+The v1.18.0 subscribed DLL matched the verified package. Setup installed the modern loader, the Field Guide opened, and its Connect button recovered the existing Brigandine session at 330/330 with Goal complete. Craftopia was closed normally afterward. This verifies startup and existing-session connection, not a new full playthrough or multiplayer. Earlier unsubscribe/re-subscribe and portable-runtime tests remain documented above.
+
+Maintainers can inspect remote metadata with `WorkshopUpload.exe details ITEM_ID`. The separate `publish ITEM_ID` command verifies Craftopia identity and account ownership before changing only visibility to Public. It does not create an item or replace content. Uploads remain private by default.

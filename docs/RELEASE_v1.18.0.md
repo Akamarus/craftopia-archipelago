@@ -1,4 +1,4 @@
-# Craftopia Archipelago 1.18.0 balance candidate
+# Craftopia Archipelago 1.18.0-rc.1 regional alpha
 
 This build pairs the reviewed regional APworld with the mod and portable bridge that enforce it. New regional seeds use equipment catalog `equipment_reviewed_20261024_r1` and equipment protocol 3. Older seeds keep their original equipment rules.
 
@@ -10,8 +10,8 @@ This build pairs the reviewed regional APworld with the mod and portable bridge 
 
 ## Installation
 
-Close Craftopia, extract the complete Windows ZIP, and run **Install This Test Build.cmd**. It installs this exact mod and bridge even if an older Workshop copy is present. Give your AP host the matching **craftopia.apworld**. Open F8 to connect normally. Installing does not change your existing seed or enroll a different character.
+Close Craftopia, extract the complete Windows ZIP, and run **Setup.cmd**. Setup selects the subscribed Workshop copy when available, or installs the bundled mod and bridge. **Install This Test Build.cmd** remains available for an explicit manual installation. Give your AP host the matching **craftopia.apworld**. Open F8 to connect normally. Installing does not change your existing seed or enroll a different character.
 
 The new equipment assignments and placement rules require a newly generated regional seed. Current tier numbering is preserved; copper-first renumbering is not part of this build. Do not mix the new APworld with an older mod/bridge.
 
-This is an experimental candidate. Automated checks cover all 206 item boundaries, historical catalogs, protocol negotiation, delivery and regional generation. A live playthrough of this exact build is still needed. Workshop publication and multiplayer validation are separate.
+This is an experimental candidate. Automated checks cover all 206 item boundaries, historical catalogs, protocol negotiation, delivery and regional generation. A live playthrough of this exact build is still needed. Workshop startup, Field Guide and existing-session connection passed a live smoke test. Multiplayer validation remains pending.

@@ -4,7 +4,7 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia �
 
 > **Experimental alpha.** Geezah and Millewind runs have reached victory in controlled playtests. Full-game logic and general compatibility are still in development. Use a separate character/world and keep backups of your saves.
 
-The current source prepares a **1.18.0 balance candidate through Brigandine Valley**. Public downloads may still contain the earlier alpha. See [candidate scope and validation](docs/VALLEY_RUNS.md).
+The public **1.18.0-rc.1 regional alpha covers runs through Brigandine Valley**. See [candidate scope and validation](docs/VALLEY_RUNS.md).
 
 ## Start here
 
@@ -17,7 +17,7 @@ The current source prepares a **1.18.0 balance candidate through Brigandine Vall
 
 [Installation and setup](docs/INSTALLATION.md) · [Roadmap](docs/ROADMAP.md) · [Testing and issue reports](docs/TESTING.md) · [Developer guide](docs/DEVELOPMENT.md)
 
-Steam Workshop distribution is being tested privately; use the GitHub release until a public Workshop link is listed here.
+**[Subscribe on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3823110766)** and accept its official loader dependency. Then download the Windows release ZIP and run **Setup.cmd once**. Subscription alone does not install the required modern loader; Steam handles subsequent Workshop mod updates.
 
 ## Choose your run
 
@@ -59,7 +59,7 @@ Regional logic uses vanilla Tamer capabilities. A separate Tamer mod is optional
 
 | Component | Baseline |
 | --- | --- |
-| Current source candidate | v1.18.0-rc.1; not yet published |
+| Public prerelease | v1.18.0-rc.1 (experimental regional alpha) |
 | Archipelago | 0.6.8 |
 | Game scope | Windows PC, Seamless World; observed game build 20260825.1206 |
 | Loader | BepInEx 5, 64-bit Mono |

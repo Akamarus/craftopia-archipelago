@@ -27,6 +27,31 @@ class Program
         try
         {
             Require(SteamUtils.GetAppID().m_AppId==App && SteamUser.BLoggedOn(),"Craftopia Steam session");
+            if(args.Length==2 && (args[0]=="details" || args[0]=="publish"))
+            {
+                var id=new PublishedFileId_t(ulong.Parse(args[1]));
+                var query=SteamUGC.CreateQueryUGCDetailsRequest(new[]{id},1);
+                try
+                {
+                    Result(Wait<SteamUGCQueryCompleted_t>(SteamUGC.SendQueryUGCRequest(query)).m_eResult);
+                    Require(SteamUGC.GetQueryUGCResult(query,0,out SteamUGCDetails_t details),"Item details");
+                    Result(details.m_eResult);
+                    Require(details.m_nConsumerAppID.m_AppId==App,"Craftopia item identity");
+                    Console.WriteLine("item="+id+" visibility="+details.m_eVisibility+" title="+details.m_rgchTitle);
+                    if(args[0]=="publish")
+                    {
+                        Require(details.m_ulSteamIDOwner==SteamUser.GetSteamID().m_SteamID,"Item ownership");
+                        var handle=SteamUGC.StartItemUpdate(new AppId_t(App),id);
+                        Require(SteamUGC.SetItemVisibility(handle,ERemoteStoragePublishedFileVisibility.k_ERemoteStoragePublishedFileVisibilityPublic),"Public visibility");
+                        var result=Wait<SubmitItemUpdateResult_t>(SteamUGC.SubmitItemUpdate(handle,"Public regional alpha release"));
+                        Result(result.m_eResult);
+                        Require(!result.m_bUserNeedsToAcceptWorkshopLegalAgreement,"Workshop legal agreement already accepted");
+                        Console.WriteLine("Published existing item "+id);
+                    }
+                    return 0;
+                }
+                finally {SteamUGC.ReleaseQueryUGCRequest(query);}
+            }
             if(args.Length==2 && (args[0]=="inspect" || args[0]=="subscribe" || args[0]=="unsubscribe"))
             {
                 var id=new PublishedFileId_t(ulong.Parse(args[1]));
