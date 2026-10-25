@@ -65,6 +65,9 @@ namespace CraftopiaArchipelago
                 // Capture 2026-10-14: Blacksmith (item 272). Recipe benches
                 // retain vanilla costs/age checks and independent equipment gates.
                 case 20017: return "opening";
+                // F9 2026-10-23: Armory item 275, family 20025.
+                // Head/Body permission gates apply independently to each recipe.
+                case 20025: return "opening";
                 // Installed recipe-family audit 2026-10-16. Manual component
                 // and furniture recipes retain native age/material checks;
                 // automation is gated separately by the automation hook.

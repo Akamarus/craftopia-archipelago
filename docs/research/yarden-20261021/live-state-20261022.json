@@ -1,0 +1,60 @@
+{
+  "capture_id": "5ebf44fff52e4347844ea8c1c2226d33",
+  "timestamp": "2026-10-22T06:43:15.7744985Z",
+  "capture_sha256": "f7960b675fb5de5bd7afd520f481bdfd7dc911fb704aebd71915b6b4cbecf29d",
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "dungeon_progress": {
+    "status": "collected",
+    "observed_count": 1,
+    "truncated": false,
+    "scope": "active_scene_objects_only",
+    "rows": [
+      {
+        "type": "Oc.Dungeon.OcDungeonManager",
+        "fields": {
+          "DungeonClearedList": {
+            "count": 9,
+            "items": [
+              1,
+              2,
+              200,
+              3,
+              4,
+              5,
+              204,
+              202,
+              203
+            ],
+            "truncated": false
+          },
+          "<BossRushBestFloor>k__BackingField": 0
+        }
+      }
+    ]
+  },
+  "towers": [
+    {
+      "guid": 1820524826,
+      "stage": 3,
+      "scene_position": {
+        "x": 458.353,
+        "y": 126.75,
+        "z": 44.56429
+      },
+      "identity_status": "candidate_not_verified_across_worlds",
+      "definition_id": 3809
+    },
+    {
+      "guid": -703593718,
+      "stage": 3,
+      "scene_position": {
+        "x": -215.2045,
+        "y": 182.21,
+        "z": -708.4329
+      },
+      "identity_status": "candidate_not_verified_across_worlds",
+      "definition_id": 3808
+    }
+  ],
+  "interpretation": "Loaded advanced world records Story3 and Story4, separately from repeat203 and204. Existing saved completion validated; no new completion event or AP delivery observed."
+}

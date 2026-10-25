@@ -1,4 +1,8 @@
-# Regional runs: Geezah and cumulative Millewind
+# Regional runs: Geezah, Millewind and experimental Yarden
+
+Yarden Mountain and Ruin endpoints are implemented for targeted testing. See
+[Yarden runs](YARDEN_RUNS.md) for check boundaries, material assumptions and required
+game settings. Existing Geezah/Millewind contracts described below remain unchanged.
 
 Use `logic_mode: regional`, `ending_region: geezah` or `millewind`, and the instance mission catalog. These are experimental capability models for new seeds. The historical `geezah_pilot` remains separate with its original dungeon-only goal and original milestone catalog.
 
@@ -45,4 +49,4 @@ The generator output is tied to the inspected item2000 prefab, not Battery's ina
 
 New contracts require newly generated seeds and fresh-character/world enrollment. Existing played slots, ledgers, frozen IDs and pilot sessions must not be rewritten. Protocol2 equipment behavior remains required. The new milestone catalog preserves historical catalog validation for old sessions while correcting only new-session dungeon identity.
 
-Tests cover exact cumulative selection, category-cycle prevention, all graph nodes under full permissions, production gates, both goal conditions and100 actual AP0.6.8 fills with full reachability spheres. Model reachability is not proof of physical-game combat or harvesting sufficiency; a new live playthrough remains the acceptance step.
+Tests cover exact cumulative selection, category-cycle prevention, all graph nodes under full permissions, production gates, both goal conditions and100 actual AP0.6.8 fills with full reachability spheres. Model reachability is not proof of physical-game combat or harvesting sufficiency. Geezah and Millewind have reached victory in owner playtests; future expansion uses [targeted live validation](TARGETED_REGIONAL_VALIDATION.md) for new assumptions, with occasional representative full runs rather than a mandatory playthrough per region.

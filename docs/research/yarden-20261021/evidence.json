@@ -1,0 +1,1214 @@
+{
+  "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+  "workbook_sha256": "611c5e3997042e3523e6942c3a0cccc009e26450e04c5df1ef8b4b7a27d0bc76",
+  "workbook_answers": [
+    {
+      "sheet": "Logic questions",
+      "row": 8,
+      "values": [
+        "Q002",
+        "First",
+        "Elemental Dust",
+        "Where can you reliably obtain Elemental Dust? Include enemy, region, chest or trade and whether repeatable.",
+        "These can be reliably gotten from skeletons during night time as well as mage enemies like the wind mage. Skeletons can be found in Geezah and I know the mages can be found in the first dungeon and all around Yarden Meadow.",
+        null,
+        "Remembered",
+        "Not answered",
+        "Item 2460 has no active recipe; needed for Yarden tower and later crafting."
+      ]
+    },
+    {
+      "sheet": "Logic questions",
+      "row": 32,
+      "values": [
+        "Q026",
+        "Next",
+        "Yarden Meadow's Mountain Tower",
+        "What is this region’s main dungeon, and what is required to reach and clear it? Include key items/quests/protection.",
+        "Ruin of Hunters. No quest, items, or special requirements to access. The only limitation is combat gear.",
+        null,
+        "Remembered",
+        "Not answered",
+        "Tower ID 3808; all three repair cost lists verified. Main dungeon identity and route remain open."
+      ]
+    },
+    {
+      "sheet": "Logic questions",
+      "row": 33,
+      "values": [
+        "Q027",
+        "Next",
+        "Yarden Meadow's Ruin Tower",
+        "What is this region’s main dungeon, and what is required to reach and clear it? Include key items/quests/protection.",
+        "Old Garden of Storms. No quest, items, or special requirements to access. The only limitation is combat gear.",
+        null,
+        "Remembered",
+        "Not answered",
+        "Tower ID 3809; all three repair cost lists verified. Main dungeon identity and route remain open."
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 16,
+      "values": [
+        "701",
+        "Silver Ore",
+        "Yarden Meadow's Mountain Tower; Yarden Meadow's Ruin Tower; plus 2 other routes",
+        "Silver Rocks",
+        "Yarden Meadow",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 31,
+      "values": [
+        "763",
+        "Sulfur",
+        "Yarden Meadow's Mountain Tower; Yarden Meadow's Ruin Tower",
+        "Rocks",
+        "Everywhere",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "Trade definition exists; NPC, currency and stock not verified.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 34,
+      "values": [
+        "2048",
+        "Feces",
+        "Yarden Meadow's Ruin Tower",
+        "Player character produces on occasion naturally if enabled",
+        "Geezah",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 39,
+      "values": [
+        "2453",
+        "Crystal",
+        "Yarden Meadow's Mountain Tower; Yarden Meadow's Ruin Tower; plus 1 other routes",
+        "Elemental Mages drop, caves, rocks, boss rewards",
+        "Geezah",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "Trade definition exists; NPC, currency and stock not verified.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 41,
+      "values": [
+        "2460",
+        "Elemental Dust",
+        "Yarden Meadow's Mountain Tower; Sherbert Iceberg Tower",
+        "Mages and skeleton drop",
+        "Geezah",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 50,
+      "values": [
+        "6581",
+        "Emerald of Hills",
+        "Age 3 to 4",
+        "Overworld Pickup",
+        "Millewind Hills",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 51,
+      "values": [
+        "6582",
+        "Ancient Wood",
+        "Age 3 to 4",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 54,
+      "values": [
+        "6586",
+        "Alexandrite of Meadow",
+        "Age 4 to 5",
+        "Overworld Pickup",
+        "Yarden Meadow",
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    },
+    {
+      "sheet": "Material sources",
+      "row": 55,
+      "values": [
+        "6587",
+        "Petrified Wood",
+        "Age 4 to 5",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "Not answered",
+        "No verified repeatable source in the audited definitions.",
+        1
+      ]
+    }
+  ],
+  "towers": [
+    {
+      "item_id": 3808,
+      "name": "Yarden Meadow's Mountain Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 701,
+              "name": "Silver Ore",
+              "count": 50
+            },
+            {
+              "item_id": 749,
+              "name": "Charcoal",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 680,
+              "name": "Fang",
+              "count": 10
+            },
+            {
+              "item_id": 692,
+              "name": "Bird Feather",
+              "count": 10
+            },
+            {
+              "item_id": 695,
+              "name": "Bone",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 2453,
+              "name": "Crystal",
+              "count": 20
+            },
+            {
+              "item_id": 763,
+              "name": "Sulfur",
+              "count": 20
+            },
+            {
+              "item_id": 2460,
+              "name": "Elemental Dust",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "item_id": 3809,
+      "name": "Yarden Meadow's Ruin Tower",
+      "stages": [
+        {
+          "raw_stage_index": 0,
+          "costs": [
+            {
+              "item_id": 713,
+              "name": "Silver Ingot",
+              "count": 30
+            },
+            {
+              "item_id": 2455,
+              "name": "Rubber",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 1,
+          "costs": [
+            {
+              "item_id": 3373,
+              "name": "Scrap Parts",
+              "count": 10
+            },
+            {
+              "item_id": 769,
+              "name": "Glass",
+              "count": 10
+            }
+          ]
+        },
+        {
+          "raw_stage_index": 2,
+          "costs": [
+            {
+              "item_id": 764,
+              "name": "Black Gunpowder",
+              "count": 20
+            },
+            {
+              "item_id": 3466,
+              "name": "Electronic Circuit",
+              "count": 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "recipe_closure": {
+    "701": {
+      "name": "Silver Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 3,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "749": {
+      "name": "Charcoal",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "746": 2
+      },
+      "active_recipe": true
+    },
+    "680": {
+      "name": "Fang",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "692": {
+      "name": "Bird Feather",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "695": {
+      "name": "Bone",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2453": {
+      "name": "Crystal",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "763": {
+      "name": "Sulfur",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2460": {
+      "name": "Elemental Dust",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "713": {
+      "name": "Silver Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "701": 3
+      },
+      "active_recipe": true
+    },
+    "2455": {
+      "name": "Rubber",
+      "status": 1,
+      "family": 20206,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2452": 2
+      },
+      "active_recipe": true
+    },
+    "3373": {
+      "name": "Scrap Parts",
+      "status": 1,
+      "family": 20011,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "712": 5,
+        "3468": 5,
+        "3469": 5
+      },
+      "active_recipe": true
+    },
+    "769": {
+      "name": "Glass",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "752": 5
+      },
+      "active_recipe": true
+    },
+    "764": {
+      "name": "Black Gunpowder",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "763": 1,
+        "2046": 1,
+        "749": 1
+      },
+      "active_recipe": true
+    },
+    "3466": {
+      "name": "Electronic Circuit",
+      "status": 1,
+      "family": 20011,
+      "age": 3,
+      "output": 1,
+      "ingredients": {
+        "2453": 1,
+        "711": 1,
+        "3470": 1,
+        "2455": 1
+      },
+      "active_recipe": true
+    },
+    "746": {
+      "name": "Log",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2452": {
+      "name": "Bioethanol",
+      "status": 1,
+      "family": 20206,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2055": 2
+      },
+      "active_recipe": true
+    },
+    "712": {
+      "name": "Iron Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "700": 3
+      },
+      "active_recipe": true
+    },
+    "3468": {
+      "name": "Bolt",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 1,
+        "711": 1
+      },
+      "active_recipe": true
+    },
+    "3469": {
+      "name": "Spring",
+      "status": 1,
+      "family": 20011,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "712": 1,
+        "711": 1
+      },
+      "active_recipe": true
+    },
+    "752": {
+      "name": "Sand",
+      "status": 1,
+      "family": 20018,
+      "age": 0,
+      "output": 10,
+      "ingredients": {
+        "698": 1
+      },
+      "active_recipe": true
+    },
+    "2046": {
+      "name": "Saltpeter",
+      "status": 1,
+      "family": 20206,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "2048": 1
+      },
+      "active_recipe": true
+    },
+    "711": {
+      "name": "Copper Ingot",
+      "status": 1,
+      "family": 20018,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "699": 3
+      },
+      "active_recipe": true
+    },
+    "3470": {
+      "name": "Ceramic",
+      "status": 1,
+      "family": 20018,
+      "age": 2,
+      "output": 1,
+      "ingredients": {
+        "3450": 1,
+        "749": 2
+      },
+      "active_recipe": true
+    },
+    "2055": {
+      "name": "Wheat",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "700": {
+      "name": "Iron Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 2,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "698": {
+      "name": "Stone",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "2048": {
+      "name": "Feces",
+      "status": 1,
+      "family": 20001,
+      "age": 0,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "699": {
+      "name": "Copper Ore",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    },
+    "3450": {
+      "name": "Clay",
+      "status": 1,
+      "family": 20002,
+      "age": 1,
+      "output": 1,
+      "ingredients": {
+        "752": 2,
+        "811": 1
+      },
+      "active_recipe": true
+    },
+    "811": {
+      "name": "Water",
+      "status": 1,
+      "family": 20015,
+      "age": 1,
+      "output": 10,
+      "ingredients": {
+        "839": 1
+      },
+      "active_recipe": true
+    },
+    "839": {
+      "name": "Bucket(<color=#2980b9>Water</color>)",
+      "status": 1,
+      "family": 20001,
+      "age": 1,
+      "output": 1,
+      "ingredients": {},
+      "active_recipe": false
+    }
+  },
+  "age_transitions": [
+    {
+      "from_world_level": 2,
+      "to_world_level": 3,
+      "displayed_age_from": 3,
+      "displayed_age_to": 4,
+      "gold": 2500,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6580,
+          "name": "Mandragora",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6581,
+          "name": "Emerald of Hills",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6582,
+          "name": "Ancient Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6583,
+          "name": "Hills Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 105,
+          "name": "Flintlock Revolver"
+        },
+        {
+          "item_id": 5830,
+          "name": "Grenade"
+        },
+        {
+          "item_id": 1403,
+          "name": "Hoverboard"
+        },
+        {
+          "item_id": 1915,
+          "name": "Container"
+        },
+        {
+          "item_id": 209,
+          "name": "Machine Factory"
+        },
+        {
+          "item_id": 464,
+          "name": "Rotating Saws"
+        },
+        {
+          "item_id": 476,
+          "name": "Excavator"
+        },
+        {
+          "item_id": 1952,
+          "name": "Drone for Shooting"
+        },
+        {
+          "item_id": 3604,
+          "name": "Small Cure Life Potion"
+        }
+      ]
+    },
+    {
+      "from_world_level": 3,
+      "to_world_level": 4,
+      "displayed_age_from": 4,
+      "displayed_age_to": 5,
+      "gold": 20000,
+      "isEnabled": true,
+      "requirements": [
+        {
+          "item_id": 6585,
+          "name": "Carnivorous Plant",
+          "count": 5,
+          "status": 1
+        },
+        {
+          "item_id": 6586,
+          "name": "Alexandrite of Meadow",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6587,
+          "name": "Petrified Wood",
+          "count": 20,
+          "status": 1
+        },
+        {
+          "item_id": 6588,
+          "name": "Meadow Ancient Doll Fragment",
+          "count": 5,
+          "status": 1
+        }
+      ],
+      "featured_items": [
+        {
+          "item_id": 107,
+          "name": "Rifle I"
+        },
+        {
+          "item_id": 3181,
+          "name": "Poisonous Arrow"
+        },
+        {
+          "item_id": 1404,
+          "name": "Motorcycle"
+        },
+        {
+          "item_id": 777,
+          "name": "Cemented Carbide Chest"
+        },
+        {
+          "item_id": 201,
+          "name": "Improved Workbench"
+        },
+        {
+          "item_id": 1992,
+          "name": "Pipeline (Relay)"
+        },
+        {
+          "item_id": 3227,
+          "name": "Bank"
+        },
+        {
+          "item_id": 1916,
+          "name": "Automatic Assembly Machine"
+        },
+        {
+          "item_id": 1401,
+          "name": "Hot Air Balloon"
+        }
+      ]
+    }
+  ],
+  "localization": [
+    {
+      "term": "800_DungeonName/3",
+      "offset": 303488360,
+      "english": "Ruin of Hunters",
+      "record_hex": "110000003830305f44756e67656f6e4e616d652f3300000000000000040000000f0000005275696e206f662048756e74657273"
+    },
+    {
+      "term": "800_DungeonName/4",
+      "offset": 303488476,
+      "english": "Old Garden of Storms",
+      "record_hex": "110000003830305f44756e67656f6e4e616d652f340000000000000004000000140000004f6c642047617264656e206f662053746f726d73"
+    },
+    {
+      "term": "800_DungeonName/203",
+      "offset": 303507216,
+      "english": "Ruin of Hunters",
+      "record_hex": "130000003830305f44756e67656f6e4e616d652f3230330000000000040000000f0000005275696e206f662048756e74657273"
+    },
+    {
+      "term": "800_DungeonName/204",
+      "offset": 303507332,
+      "english": "Old Garden of Storms",
+      "record_hex": "130000003830305f44756e67656f6e4e616d652f323034000000000004000000140000004f6c642047617264656e206f662053746f726d73"
+    }
+  ],
+  "dungeons": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40809,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_003_Skydungeon2",
+        "sourceId": 3,
+        "dungeonPrefab": {
+          "m_AssetGUID": "67d0e60d7bf08284898913f260e1246f",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 101,
+        "bossLevel": 35,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 13.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 1,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40810,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_004_Islanddungeon2",
+        "sourceId": 4,
+        "dungeonPrefab": {
+          "m_AssetGUID": "c007c1d26a0bee3489ab7c1bd9716935",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 44,
+        "bossLevel": 35,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 0,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80019
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40822,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_203_Skydungeon2_Repeat",
+        "sourceId": 203,
+        "dungeonPrefab": {
+          "m_AssetGUID": "ac0a859fdc59c9345af4eca9a8dd54a0",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 101,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 13.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80020
+        },
+        "BGM": 1,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40823,
+      "cls": "OcDungeonSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 4193
+        },
+        "m_Name": "So--OcDungeonOpenWorld_204_Islanddungeon4th_Repeat",
+        "sourceId": 204,
+        "dungeonPrefab": {
+          "m_AssetGUID": "971c1f795fbb88440960fef2c07abad0",
+          "m_SubObjectName": "",
+          "m_SubObjectType": ""
+        },
+        "isCoveredDungerAirspace": 1,
+        "AdditionalTimer": 0.0,
+        "bossEmType": 44,
+        "bossLevel": 10,
+        "isCombatDungeon": 1,
+        "battleDungeonType": 1,
+        "_overwriteBossImage": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "_overwriteBossNameTerm": "",
+        "dungeontheme": 4,
+        "dungeonDayTime": 10.0,
+        "dungeonWeather": {
+          "m_FileID": 5,
+          "m_PathID": 80017
+        },
+        "BGM": 3,
+        "dmgType": 0,
+        "dmgLevel": 0
+      }
+    }
+  ],
+  "entrances": [
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40797,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_003_Skydungeon",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40809
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40822
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 20,
+                "recommendLevel": 30,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 40,
+                "recommendLevel": 50,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "asset": "sharedassets6.assets",
+      "path_id": 40798,
+      "cls": "OcDungeonEntranceSo",
+      "data": {
+        "m_GameObject": {
+          "m_FileID": 0,
+          "m_PathID": 0
+        },
+        "m_Enabled": 1,
+        "m_Script": {
+          "m_FileID": 1,
+          "m_PathID": 3369
+        },
+        "m_Name": "So--OcDungeonEntrance_004_Islanddungeon2",
+        "_underDevelop": 0,
+        "defaultDungeon": {
+          "m_FileID": 0,
+          "m_PathID": 40810
+        },
+        "subDungeonList": [
+          {
+            "dungeonSo": {
+              "m_FileID": 0,
+              "m_PathID": 40823
+            },
+            "repeatLevelList": [
+              {
+                "difficulty": 0,
+                "emLevelIncrease": 0,
+                "recommendLevel": 10,
+                "requireAgeLevel": 0,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 1,
+                "emLevelIncrease": 10,
+                "recommendLevel": 20,
+                "requireAgeLevel": 2,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 2,
+                "emLevelIncrease": 20,
+                "recommendLevel": 30,
+                "requireAgeLevel": 4,
+                "requireItem": 0
+              },
+              {
+                "difficulty": 3,
+                "emLevelIncrease": 40,
+                "recommendLevel": 50,
+                "requireAgeLevel": 6,
+                "requireItem": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "resource_tables": [
+    {
+      "asset": "sharedassets0.assets",
+      "path_id": 80664,
+      "id": 71,
+      "rarity": 4,
+      "drops": [
+        {
+          "item": 701,
+          "count": 1,
+          "rate": 1.0
+        },
+        {
+          "item": 763,
+          "count": 1,
+          "rate": 0.10000000149011612
+        }
+      ]
+    },
+    {
+      "asset": "sharedassets13.assets",
+      "path_id": 197,
+      "id": 473,
+      "rarity": 4,
+      "drops": [
+        {
+          "item": 701,
+          "count": 1,
+          "rate": 1.0
+        },
+        {
+          "item": 763,
+          "count": 1,
+          "rate": 0.20000000298023224
+        }
+      ]
+    },
+    {
+      "asset": "sharedassets13.assets",
+      "path_id": 198,
+      "id": 474,
+      "rarity": 4,
+      "drops": [
+        {
+          "item": 701,
+          "count": 1,
+          "rate": 1.0
+        },
+        {
+          "item": 763,
+          "count": 1,
+          "rate": 0.20000000298023224
+        }
+      ]
+    },
+    {
+      "asset": "sharedassets13.assets",
+      "path_id": 199,
+      "id": 475,
+      "rarity": 4,
+      "drops": [
+        {
+          "item": 701,
+          "count": 1,
+          "rate": 1.0
+        },
+        {
+          "item": 763,
+          "count": 1,
+          "rate": 0.20000000298023224
+        }
+      ]
+    }
+  ],
+  "stool_code": [
+    {
+      "first_line": 14130,
+      "last_line": 14137,
+      "text": "\t\tcurrent.TMPTextScale = config.FontSizeScale;\n\t\tcurrent.AutoSaveTime = settings.AutoSaveMinTime;\n\t\tOcCrashReportUtility.SetUserMetadata(MetaDataType.AutoSaveTime, current.AutoSaveTime);\n\t\tcurrent.AutoSaveHour = settings.AutoSaveHour;\n\t\tcurrent.Option_UsePhysicsSimulationField = settings.UsePhysicsSimulationField;\n\t\tcurrent.Option_NotStool = settings.NotStool;\n\t\tcurrent.Option_DialogSpeed = settings.DialogSpeed;\n\t\tcurrent.Option_TutorialSkip = settings.TutorialSkip;"
+    },
+    {
+      "first_line": 185822,
+      "last_line": 185861,
+      "text": "\t\tpublic void initStoolTimer()\n\t\t{\n\t\t\t_StoolTimer = UnityEngine.Random.Range(StoolInterval, StoolInterval * 2f);\n\t\t}\n\n\t\tprotected abstract int stoolEnchantId();\n\n\t\tpublic void moveStoolTimer()\n\t\t{\n\t\t\tif (SROptions_Player.Current.DisableStool || SingletonMonoBehaviour<OcNetMng>.Inst.needJoinWaitStop())\n\t\t\t{\n\t\t\t\treturn;\n\t\t\t}\n\t\t\t_StoolTimer -= Time.deltaTime * SROptions_Sub.Current.StoolTimeRate;\n\t\t\tif (_StoolTimer <= 0f)\n\t\t\t{\n\t\t\t\t_StoolTimer += StoolInterval;\n\t\t\t\tif (UnityEngine.Random.Range(0f, 1f) <= 0.3f)\n\t\t\t\t{\n\t\t\t\t\tOcDropItemActivateInfo ocDropItemActivateInfo = new OcDropItemActivateInfo();\n\t\t\t\t\tocDropItemActivateInfo.poolType = OcDropItemMng.PoolType.STOOL;\n\t\t\t\t\tocDropItemActivateInfo.pos = _TransSelf.localPosition + Vector3.up * 0.5f;\n\t\t\t\t\tocDropItemActivateInfo.item = createStoolItem();\n\t\t\t\t\tocDropItemActivateInfo.stockNum = 1;\n\t\t\t\t\tocDropItemActivateInfo.dropForward = -_TransSelf.forward;\n\t\t\t\t\tocDropItemActivateInfo.dropDeg = 10f;\n\t\t\t\t\tSingletonMonoBehaviour<OcDropItemMng>.Inst.activate(ocDropItemActivateInfo);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\tpublic OcItem createStoolItem()\n\t\t{\n\t\t\tOcItem ocItem = SingletonMonoBehaviour<OcItemDataMng>.Inst.CreateItem(2048, 0);\n\t\t\tif (stoolEnchantId() > 0)\n\t\t\t{\n\t\t\t\tSoEnchantment byId_OrNull = OcResidentData.EnchantDataList.GetById_OrNull(stoolEnchantId());\n\t\t\t\tif (byId_OrNull != null)\n\t\t\t\t{\n\t\t\t\t\tocItem.TryAttachEnchant(byId_OrNull);"
+    },
+    {
+      "first_line": 303800,
+      "last_line": 303820,
+      "text": "\t\t\t\tbase.PlLevelCtrl.move_RaceAbility();\n\t\t\t\tbase.move();\n\t\t\t\tSingletonMonoBehaviour<OcPlCam>.Inst.updateCamExternalOption(_Command, SingletonMonoBehaviour<OcPlMng>.Inst.InputSystem);\n\t\t\t\tif (_LookAtTrans != null)\n\t\t\t\t{\n\t\t\t\t\tbase.LookAt.pushLookAtTrans(_LookAtTrans);\n\t\t\t\t}\n\t\t\t\tif (base.HealthPl.SP > 1f && !SROptions_Sub.Current.Option_NotStool)\n\t\t\t\t{\n\t\t\t\t\tif (base.checkNeedToilet && !SROptions_Player.Current.DisableStool && (bool)base.ReqAct_ConstInstallObj && base.ReqAct_ConstInstallObj.IsToilet && isActCurr(As.InstallObjEmote_ChairSit))\n\t\t\t\t\t{\n\t\t\t\t\t\tbase.ReqAct_ConstInstallObj.successToilet_ForPlMaster();\n\t\t\t\t\t}\n\t\t\t\t\tmoveStoolTimer();\n\t\t\t\t}\n\t\t\t\tif (_LastAttackTargetTimer > 0f)\n\t\t\t\t{\n\t\t\t\t\t_LastAttackTargetTimer -= Time.deltaTime;\n\t\t\t\t\tif (_LastAttackTargetTimer <= 0f)\n\t\t\t\t\t{\n\t\t\t\t\t\t_LastAttackTarget = null;"
+    }
+  ],
+  "decode_errors": [],
+  "scope": "sharedassets6 dungeon definitions; resources localization; existing audited recipe catalog"
+}

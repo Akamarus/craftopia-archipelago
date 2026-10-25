@@ -236,7 +236,7 @@ namespace CraftopiaArchipelago
                             ["name"] = Plugin.SlotName.Value,
                             ["unlock_protocol"] = 2L,
                             ["equipment_protocol"] = 1L,
-                            ["equipment_protocol_max"] = 2L,
+                            ["equipment_protocol_max"] = 3L,
                             ["currency_protocol"] = 1L,
                             ["soul_orb_protocol"] = 1L
                         };

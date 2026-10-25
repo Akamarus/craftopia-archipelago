@@ -1,0 +1,1497 @@
+{
+  "active_in_game": true,
+  "basis": "User estimates, 2026-10-24; 206 eligible rows active in equipment_reviewed_20261024_r1; seven excluded rows remain inactive",
+  "entries": [
+    {
+      "id": 2521,
+      "name": "Assault Dragon Mail for Men",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 2522,
+      "name": "Assault Dragon Mail for Women",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 2523,
+      "name": "Magic Dragon Mail for Men",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 2524,
+      "name": "Magic Dragon Mail for Women",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 2525,
+      "name": "Mechanics Cargo for Men",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 2526,
+      "name": "Mechanics Cargo for Women",
+      "category": "Body armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6176,
+      "name": "Abyss Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 6160,
+      "name": "Composite Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6191,
+      "name": "Gigantes' Longbow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6192,
+      "name": "Gigantes' Longbow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6188,
+      "name": "Goblin's Bow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6189,
+      "name": "Goblin's Bow III",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6190,
+      "name": "Goblin's Bow IV",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6199,
+      "name": "Goblin's Flame Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6200,
+      "name": "Goblin's Flame Bow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6201,
+      "name": "Goblin's Flame Bow III",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6202,
+      "name": "Goblin's Flame Bow IV",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6211,
+      "name": "Goblin's Ice Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6212,
+      "name": "Goblin's Ice Bow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6213,
+      "name": "Goblin's Ice Bow III",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6214,
+      "name": "Goblin's Ice Bow IV",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6207,
+      "name": "Goblin's Poison Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6208,
+      "name": "Goblin's Poison Bow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6209,
+      "name": "Goblin's Poison Bow III",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6210,
+      "name": "Goblin's Poison Bow IV",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6203,
+      "name": "Goblin's Thunder Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6204,
+      "name": "Goblin's Thunder Bow II",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6205,
+      "name": "Goblin's Thunder Bow III",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6206,
+      "name": "Goblin's Thunder Bow IV",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6178,
+      "name": "Hayate's Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1851,
+      "name": "Killer Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6174,
+      "name": "Runic Bow",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6162,
+      "name": "Sharp Shooter",
+      "category": "Bow",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 3274,
+      "name": "Adamantite Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3275,
+      "name": "Adamantite Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5684,
+      "name": "Bipod II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5683,
+      "name": "Custom Grip II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5681,
+      "name": "Expansion Magazine II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3272,
+      "name": "Gold Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3273,
+      "name": "Gold Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3278,
+      "name": "High Mithril Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3279,
+      "name": "High Mithril Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3270,
+      "name": "Iron Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3271,
+      "name": "Iron Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5685,
+      "name": "Laser Sight II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3276,
+      "name": "Mithril Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3277,
+      "name": "Mithril Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3280,
+      "name": "Orichalcum Gauntlet",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3281,
+      "name": "Orichalcum Glove",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5682,
+      "name": "Quickloader II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5687,
+      "name": "Resin Stock II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5686,
+      "name": "Sling Belt II",
+      "category": "Combat support",
+      "status": "Unsupported equipment category",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6530,
+      "name": "Chicago Typewriter",
+      "category": "Gun",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6532,
+      "name": "Gungnir Storm",
+      "category": "Gun",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 5509,
+      "name": "Assault Dragon Helm for Men",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5510,
+      "name": "Assault Dragon Helm for Women",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1774,
+      "name": "Captain Hat",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1776,
+      "name": "Heir Crown I",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5511,
+      "name": "Magic Dragon Helm for Men",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 5512,
+      "name": "Magic Dragon Helm for Women",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1780,
+      "name": "Ruling Crown I",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1764,
+      "name": "Western Hat",
+      "category": "Head armor",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6463,
+      "name": "Abyss Sword",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6430,
+      "name": "Bokken",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1882,
+      "name": "Demon Sword Sakura-fubuki",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1881,
+      "name": "Dotanuki",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6433,
+      "name": "Kotetsu",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6465,
+      "name": "Murakumo",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6437,
+      "name": "Muramasa",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6432,
+      "name": "Nodachi",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6455,
+      "name": "Tanukigasaki",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 6431,
+      "name": "Uchigatana",
+      "category": "Katana",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6278,
+      "name": "Abyss Stinger",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6250,
+      "name": "Boa Spear Nagaraja",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1912,
+      "name": "Cross Lance",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6268,
+      "name": "Gigantes' Halberd",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6269,
+      "name": "Gigantes' Halberd II",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6266,
+      "name": "Glaive",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6264,
+      "name": "Halberd",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6277,
+      "name": "Obelisk",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1914,
+      "name": "Pitchfork",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1906,
+      "name": "Spear of Achilles",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 1913,
+      "name": "Steel Partisan",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6282,
+      "name": "Tombokiri",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6265,
+      "name": "Trident",
+      "category": "Lance",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6020,
+      "name": "Abyss Blade",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1821,
+      "name": "Broad Sword",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 1802,
+      "name": "Cutlass",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 1825,
+      "name": "Executioner I",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6043,
+      "name": "Flame Goblin Sword",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6044,
+      "name": "Flame Goblin Sword II",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6045,
+      "name": "Flame Goblin Sword III",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6046,
+      "name": "Flame Goblin Sword IV",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6008,
+      "name": "Flower Staff of Spirit Queen",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6009,
+      "name": "Frost Rose Edge",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1818,
+      "name": "Gladius",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6032,
+      "name": "Goblin's Club II",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6033,
+      "name": "Goblin's Club III",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6034,
+      "name": "Goblin's Club IV",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1843,
+      "name": "Gram",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 1826,
+      "name": "Grim Reaper I",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 1807,
+      "name": "Holy Sword of Gratitude",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6055,
+      "name": "Ice Goblin Sword",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6056,
+      "name": "Ice Goblin Sword II",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6057,
+      "name": "Ice Goblin Sword III",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6058,
+      "name": "Ice Goblin Sword IV",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1804,
+      "name": "Khopesh",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1808,
+      "name": "Kukri",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 1820,
+      "name": "Machete",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6051,
+      "name": "Poison Goblin Sword",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6052,
+      "name": "Poison Goblin Sword II",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6053,
+      "name": "Poison Goblin Sword III",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6054,
+      "name": "Poison Goblin Sword IV",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1823,
+      "name": "Rapier",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6030,
+      "name": "Satyr Blade",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6047,
+      "name": "Thunder Goblin Sword",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6048,
+      "name": "Thunder Goblin Sword II",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6049,
+      "name": "Thunder Goblin Sword III",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6050,
+      "name": "Thunder Goblin Sword IV",
+      "category": "One-handed sword",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 3300,
+      "name": "Fake Inscripted Sword",
+      "category": "One-handed sword",
+      "status": "Temporary skill equipment",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3303,
+      "name": "Nameless Sword",
+      "category": "One-handed sword",
+      "status": "Temporary skill equipment",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3302,
+      "name": "Sword of Repulsion",
+      "category": "One-handed sword",
+      "status": "Temporary skill equipment",
+      "proposed_tier": 1
+    },
+    {
+      "id": 3301,
+      "name": "Twitsted Sword",
+      "category": "One-handed sword",
+      "status": "Temporary skill equipment",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6351,
+      "name": "Abyss Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1876,
+      "name": "Bone Dragon's Shield I",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 1872,
+      "name": "Bone Lizard's Shield I",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6335,
+      "name": "Gremlin's Flame Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6336,
+      "name": "Gremlin's Flame Shield II",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6337,
+      "name": "Gremlin's Flame Shield III",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6338,
+      "name": "Gremlin's Flame Shield IV",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6331,
+      "name": "Gremlin's Greatshield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6332,
+      "name": "Gremlin's Greatshield II",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6333,
+      "name": "Gremlin's Greatshield III",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6334,
+      "name": "Gremlin's Greatshield IV",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6347,
+      "name": "Gremlin's Ice Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6348,
+      "name": "Gremlin's Ice Shield II",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6349,
+      "name": "Gremlin's Ice Shield III",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6350,
+      "name": "Gremlin's Ice Shield IV",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6343,
+      "name": "Gremlin's Poison Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6344,
+      "name": "Gremlin's Poison Shield II",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6345,
+      "name": "Gremlin's Poison Shield III",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6346,
+      "name": "Gremlin's Poison Shield IV",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6339,
+      "name": "Gremlin's Thunder Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6340,
+      "name": "Gremlin's Thunder Shield II",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6341,
+      "name": "Gremlin's Thunder Shield III",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6342,
+      "name": "Gremlin's Thunder Shield IV",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6330,
+      "name": "Satyr Shield",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 1864,
+      "name": "Shield of Aegis",
+      "category": "Shield",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6429,
+      "name": "Abyss Cane",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6377,
+      "name": "Branch of the World Tree",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6394,
+      "name": "Budded Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6392,
+      "name": "Crutch",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6391,
+      "name": "Golden Scepter of Anubis",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6390,
+      "name": "Magic Mace",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6393,
+      "name": "Magic Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6380,
+      "name": "Necro's Cane",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 6395,
+      "name": "Sage's Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6396,
+      "name": "Sorcerer's Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6381,
+      "name": "Wizard's Flame Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6382,
+      "name": "Wizard's Flame Staff II",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6383,
+      "name": "Wizard's Flame Staff III",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6384,
+      "name": "Wizard's Flame Staff IV",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6425,
+      "name": "Wizard's Ice Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 6426,
+      "name": "Wizard's Ice Staff II",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6427,
+      "name": "Wizard's Ice Staff III",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6428,
+      "name": "Wizard's Ice Staff IV",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 6415,
+      "name": "Wizard's Poison Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6416,
+      "name": "Wizard's Poison Staff II",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6417,
+      "name": "Wizard's Poison Staff III",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6418,
+      "name": "Wizard's Poison Staff IV",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6421,
+      "name": "Wizard's Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6422,
+      "name": "Wizard's Staff II",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6423,
+      "name": "Wizard's Staff III",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6424,
+      "name": "Wizard's Staff IV",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6385,
+      "name": "Wizard's Thunder Staff",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6386,
+      "name": "Wizard's Thunder Staff II",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6387,
+      "name": "Wizard's Thunder Staff III",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6388,
+      "name": "Wizard's Thunder Staff IV",
+      "category": "Staff",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6375,
+      "name": "Staff of Divine Punishment",
+      "category": "Staff",
+      "status": "Legacy - leave excluded",
+      "proposed_tier": 7
+    },
+    {
+      "id": 6414,
+      "name": "Sun Staff",
+      "category": "Staff",
+      "status": "Legacy - leave excluded",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6402,
+      "name": "Kayomart \u03a9",
+      "category": "Staff",
+      "status": "Unavailable metadata - leave excluded",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6086,
+      "name": "Abyss Claymore",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1706,
+      "name": "Bastard Sword",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 1707,
+      "name": "Claymore",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 1709,
+      "name": "Estoc",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 1727,
+      "name": "Flamberge",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 6105,
+      "name": "Gremlin's Flame Axe",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6106,
+      "name": "Gremlin's Flame Axe II",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6107,
+      "name": "Gremlin's Flame Axe III",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6108,
+      "name": "Gremlin's Flame Axe IV",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6101,
+      "name": "Gremlin's Greataxe",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6102,
+      "name": "Gremlin's Greataxe II",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6103,
+      "name": "Gremlin's Greataxe III",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6104,
+      "name": "Gremlin's Greataxe IV",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6117,
+      "name": "Gremlin's Ice Axe",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6118,
+      "name": "Gremlin's Ice Axe II",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6119,
+      "name": "Gremlin's Ice Axe III",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6120,
+      "name": "Gremlin's Ice Axe IV",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6113,
+      "name": "Gremlin's Poison Axe",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6114,
+      "name": "Gremlin's Poison Axe II",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6115,
+      "name": "Gremlin's Poison Axe III",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6116,
+      "name": "Gremlin's Poison Axe IV",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 6109,
+      "name": "Gremlin's Thunder Axe",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    },
+    {
+      "id": 6110,
+      "name": "Gremlin's Thunder Axe II",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 3
+    },
+    {
+      "id": 6111,
+      "name": "Gremlin's Thunder Axe III",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 4
+    },
+    {
+      "id": 6112,
+      "name": "Gremlin's Thunder Axe IV",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1733,
+      "name": "Knife of Gourmet",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1708,
+      "name": "Knight's sword",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 2
+    },
+    {
+      "id": 1724,
+      "name": "Mjolnir",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 7
+    },
+    {
+      "id": 1720,
+      "name": "Morgul Knife",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1705,
+      "name": "Night Stalker",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 5
+    },
+    {
+      "id": 1723,
+      "name": "Sting",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 6
+    },
+    {
+      "id": 1702,
+      "name": "Zweihander",
+      "category": "Two-handed weapon",
+      "status": "Needs tier review",
+      "proposed_tier": 1
+    }
+  ]
+}

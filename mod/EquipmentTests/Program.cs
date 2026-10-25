@@ -15,6 +15,7 @@ class Program
     {
         SessionTests.Run();
         var json = File.ReadAllText("worlds/craftopia/equipment_catalog_20261010_r1.json");
+        ReviewedBalanceTests.Run(json);
         var catalog = EquipmentCatalog.Parse(json);
         var reviewed = EquipmentCatalog.ParseReviewedLoot(json);
         var reviewedR2 = EquipmentCatalog.ParseReviewedLootR2(json);

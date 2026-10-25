@@ -9,7 +9,7 @@ Geezah and cumulative Geezah/Millewind runs have reached victory in owner playte
 - Verify v1.15.0 native map placement, unexplored-region visibility, pan/zoom, filtering and reconnect state.
 - Verify Field Guide pause, camera suppression, nested menus, focus changes and bridge connectivity in the game.
 - Exercise installation from the public source instructions on a clean setup.
-- Continue regional seed testing, including crafting dependencies, resource gathering and optional orb routes.
+- Expand automated regional validation and use targeted checks for new crafting dependencies, resource/tool thresholds and dungeon identities. Full playthroughs are occasional representative tests, not a requirement for every region. See [targeted validation](TARGETED_REGIONAL_VALIDATION.md).
 
 ## Expand the game
 

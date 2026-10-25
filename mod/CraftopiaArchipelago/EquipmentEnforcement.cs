@@ -21,6 +21,7 @@ namespace CraftopiaArchipelago
         public const string CatalogId = "equipment_20261010_r1";
         public const string ReviewedLootCatalogId = "equipment_loot_20261016_r1";
         public const string ReviewedLootR2CatalogId = "equipment_loot_20261016_r2";
+        public const string ReviewedBalanceCatalogId = "equipment_reviewed_20261024_r1";
         public const string AssemblyHash = "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea";
         private sealed class Rule
         {
@@ -153,6 +154,37 @@ namespace CraftopiaArchipelago
             bow.Decision = "progressive";
             bow.Tier = 2;
             bow.Age = 0;
+            return result;
+        }
+
+        public static EquipmentCatalog ParseReviewedBalance(string json, string overlay)
+        {
+            var result = ParseReviewedLootR2(json);
+            var root = MiniJson.ParseObject(overlay);
+            if (Integer(root,"schema_version") != 1 || Text(root,"catalog_id") != ReviewedBalanceCatalogId
+                || Text(root,"base_catalog") != CatalogId || !root.TryGetValue("items",out var raw)
+                || !(raw is List<object> rows) || rows.Count != 206)
+                throw new FormatException("Reviewed equipment identity mismatch");
+            var seen = new HashSet<int>();
+            foreach (var value in rows)
+            {
+                if (!(value is Dictionary<string,object> row)) throw new FormatException("Invalid reviewed row");
+                int id = Integer(row,"id"), tier = Integer(row,"tier"), age = Integer(row,"minimum_age");
+                if (!seen.Add(id) || !result.rules.TryGetValue(id,out var rule)) throw new FormatException("Duplicate or unknown reviewed item");
+                var expected = new EquipmentSnapshot {
+                    Id=id, Status=Integer(row,"status"), WeaponCategory=Integer(row,"wpCategory"), Slot=Integer(row,"equipSlot"),
+                    Workbench=Integer(row,"workbenchId"), WorkbenchLevel=Integer(row,"workbenchLv"), Prefab=Integer(row,"existPrefab"),
+                    InventoryTab=Integer(row,"inventoryTabId"), OldData=Boolean(row,"isOldData"), CannotUse=Boolean(row,"cantUse")
+                };
+                if (!rule.Item.Matches(expected) || rule.Category != Text(row,"category") || rule.Category == null
+                    || expected.OldData || expected.CannotUse || (expected.Status != 1 && expected.Status != 2)
+                    || tier < 1 || tier > 10 || age < 0 || age > 9)
+                    throw new FormatException("Reviewed equipment evidence mismatch");
+                int nativeAge = expected.Workbench > 0 && expected.Workbench != 20001
+                    && expected.WorkbenchLevel >= 0 && expected.WorkbenchLevel <= 9 ? expected.WorkbenchLevel : 0;
+                if (age != nativeAge) throw new FormatException("Reviewed equipment native age mismatch");
+                rule.Decision="progressive"; rule.Tier=tier; rule.Age=age;
+            }
             return result;
         }
 

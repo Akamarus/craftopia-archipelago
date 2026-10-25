@@ -9,7 +9,7 @@ namespace CraftopiaArchipelago {
   internal static string Identity(Dictionary<string,object> m)=>MiniJson.Stringify(new Dictionary<string,object>{{"seed",MiniJson.GetString(m,"seed_name")},{"slot",MiniJson.GetString(m,"slot")},{"epoch",MiniJson.GetLong(m,"epoch")}});
   static void Load(){
    if(coordinates!=null)return;var loaded=new Dictionary<int,OrbMarker>();
-   foreach(var name in new[]{"geezah_orbs_20261016_r1","millewind_orbs_20261017_r1"}){
+   foreach(var name in new[]{"geezah_orbs_20261016_r1","millewind_orbs_20261017_r1","yarden_orbs_20261022_r1","owatatsu_orbs_20261022_r1","brigandine_orbs_20261022_r1"}){
     using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(name+".json"))
     using(var reader=new StreamReader(stream)){
      var json=MiniJson.ParseObject(reader.ReadToEnd());

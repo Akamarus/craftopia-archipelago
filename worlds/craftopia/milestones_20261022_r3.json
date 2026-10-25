@@ -1,0 +1,564 @@
+{
+  "catalog_id": "milestones_20261022_r3",
+  "schema": 1,
+  "frozen_ids": true,
+  "provenance": {
+    "assembly_sha256": "88db99ebe9fbf1296c74465b6f32467cdbc71711235f925532d9bcf6f2ccebea",
+    "capture_sha256": "e1b5fd040199140b284526880322cc6b2b9ea69608371dadc5ce4df7f22ec092",
+    "category_capture_sha256": "fb3ce8a787c2d3f5ac85babc6c176a50c8f33eff114d5c048db12400b6ce2b8c",
+    "additional_category_capture_sha256": "aa8d5caa551d3f67646317dfcdb4ea292f86a1cf1f08ab5ad42a3446578fd6a8",
+    "yarden_capture_sha256": "bb2a049808c861f3cd9fd5acffecf611b97748af5fe4a436ea9593fbdf4db7da"
+  },
+  "locations": [
+    {
+      "family": "dungeon",
+      "source_id": 1,
+      "stage": 0,
+      "ap_location_id": 4100,
+      "ap_location_name": "Geezah Plateau: Ruin of Beginning",
+      "region": "geezah",
+      "evidence": "First clear list [] -> [1], 2026-10-16T17:42:14Z; user identified dungeon."
+    },
+    {
+      "family": "tower",
+      "source_id": 1519884039,
+      "stage": 1,
+      "ap_location_id": 3000,
+      "ap_location_name": "Geezah Plateau: Tower Repair Stage 1",
+      "region": "geezah",
+      "definition_id": 3806,
+      "position": {
+        "x": -2179.257,
+        "y": 137.47,
+        "z": -989.8522
+      },
+      "costs": [
+        {
+          "item_id": 698,
+          "count": 50
+        },
+        {
+          "item_id": 752,
+          "count": 10
+        },
+        {
+          "item_id": 746,
+          "count": 50
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "tower",
+      "source_id": 1519884039,
+      "stage": 2,
+      "ap_location_id": 3001,
+      "ap_location_name": "Geezah Plateau: Tower Repair Stage 2",
+      "region": "geezah",
+      "definition_id": 3806,
+      "position": {
+        "x": -2179.257,
+        "y": 137.47,
+        "z": -989.8522
+      },
+      "costs": [
+        {
+          "item_id": 3400,
+          "count": 10
+        },
+        {
+          "item_id": 758,
+          "count": 10
+        },
+        {
+          "item_id": 683,
+          "count": 10
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "tower",
+      "source_id": 1519884039,
+      "stage": 3,
+      "ap_location_id": 3002,
+      "ap_location_name": "Geezah Plateau: Tower Repair Stage 3",
+      "region": "geezah",
+      "definition_id": 3806,
+      "position": {
+        "x": -2179.257,
+        "y": 137.47,
+        "z": -989.8522
+      },
+      "costs": [
+        {
+          "item_id": 699,
+          "count": 20
+        },
+        {
+          "item_id": 5123,
+          "count": 5
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "tower",
+      "source_id": -1329457748,
+      "stage": 1,
+      "ap_location_id": 3010,
+      "ap_location_name": "Millewind Hill: Tower Repair Stage 1",
+      "region": "millewind",
+      "definition_id": 3807,
+      "position": {
+        "x": -1336.44,
+        "y": 102.5048,
+        "z": -494.6945
+      },
+      "costs": [
+        {
+          "item_id": 2457,
+          "count": 20
+        },
+        {
+          "item_id": 2458,
+          "count": 20
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "tower",
+      "source_id": -1329457748,
+      "stage": 2,
+      "ap_location_id": 3011,
+      "ap_location_name": "Millewind Hill: Tower Repair Stage 2",
+      "region": "millewind",
+      "definition_id": 3807,
+      "position": {
+        "x": -1336.44,
+        "y": 102.5048,
+        "z": -494.6945
+      },
+      "costs": [
+        {
+          "item_id": 2100,
+          "count": 20
+        },
+        {
+          "item_id": 2452,
+          "count": 20
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "tower",
+      "source_id": -1329457748,
+      "stage": 3,
+      "ap_location_id": 3012,
+      "ap_location_name": "Millewind Hill: Tower Repair Stage 3",
+      "region": "millewind",
+      "definition_id": 3807,
+      "position": {
+        "x": -1336.44,
+        "y": 102.5048,
+        "z": -494.6945
+      },
+      "costs": [
+        {
+          "item_id": 2451,
+          "count": 20
+        },
+        {
+          "item_id": 3468,
+          "count": 20
+        },
+        {
+          "item_id": 3469,
+          "count": 20
+        },
+        {
+          "item_id": 3470,
+          "count": 20
+        }
+      ],
+      "evidence": "F9 authored definition and loaded tower; live completion verified for Millewind stage 1 only."
+    },
+    {
+      "family": "age",
+      "source_id": 0,
+      "stage": 1,
+      "ap_location_id": 4000,
+      "ap_location_name": "Age Evolution: Agricultural Age",
+      "region": "geezah",
+      "evidence": "User age progression and zero-based worldLevel; live 1 -> 2 captured 2026-10-16."
+    },
+    {
+      "family": "age",
+      "source_id": 0,
+      "stage": 2,
+      "ap_location_id": 4001,
+      "ap_location_name": "Age Evolution: Frontier Age",
+      "region": "geezah",
+      "evidence": "User age progression and zero-based worldLevel; live 1 -> 2 captured 2026-10-16."
+    },
+    {
+      "family": "category",
+      "source_id": 2,
+      "stage": 0,
+      "ap_location_id": 4202,
+      "ap_location_name": "Category: Gather Trees",
+      "region": "geezah",
+      "members": [
+        50,
+        51,
+        52,
+        53,
+        514
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 3,
+      "stage": 0,
+      "ap_location_id": 4203,
+      "ap_location_name": "Category: Gather Rocks",
+      "region": "geezah",
+      "members": [
+        54,
+        55,
+        56,
+        57
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 4,
+      "stage": 0,
+      "ap_location_id": 4204,
+      "ap_location_name": "Category: Glider",
+      "region": "geezah",
+      "members": [
+        10,
+        59,
+        63,
+        67,
+        79
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 5,
+      "stage": 0,
+      "ap_location_id": 4205,
+      "ap_location_name": "Category: Combat",
+      "region": "geezah",
+      "members": [
+        7,
+        60,
+        565,
+        566
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 7,
+      "stage": 0,
+      "ap_location_id": 4207,
+      "ap_location_name": "Category: Market",
+      "region": "geezah",
+      "members": [
+        16,
+        36,
+        516
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 8,
+      "stage": 0,
+      "ap_location_id": 4208,
+      "ap_location_name": "Category: Building",
+      "region": "geezah",
+      "members": [
+        95,
+        96,
+        97,
+        98
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 14,
+      "stage": 0,
+      "ap_location_id": 4214,
+      "ap_location_name": "Category: Rookie Farmer",
+      "region": "geezah",
+      "members": [
+        15,
+        105,
+        106,
+        107
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 152,
+      "stage": 0,
+      "ap_location_id": 4352,
+      "ap_location_name": "Category: Basic Item Crafting",
+      "region": "geezah",
+      "members": [
+        30,
+        58,
+        563,
+        564
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 154,
+      "stage": 0,
+      "ap_location_id": 4354,
+      "ap_location_name": "Category: Workshop",
+      "region": "geezah",
+      "members": [
+        70,
+        72,
+        78
+      ],
+      "evidence": "Active mission membership captured 2026-10-16; native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 28,
+      "stage": 0,
+      "ap_location_id": 4228,
+      "ap_location_name": "Category: Basic Cooking 101",
+      "region": "geezah",
+      "members": [
+        529,
+        530
+      ],
+      "source_title": "料理の基本_基礎編",
+      "evidence": "Active mission membership and authored category title captured 2026-10-16T18:18:40Z (9364a392874f467b9334b501b2962ae0); native successful reward claim required."
+    },
+    {
+      "family": "category",
+      "source_id": 141,
+      "stage": 0,
+      "ap_location_id": 4341,
+      "ap_location_name": "Category: Mission Tutorial",
+      "region": "geezah",
+      "members": [
+        512,
+        513
+      ],
+      "source_title": "ミッションの確認",
+      "evidence": "Active mission membership and authored category title captured 2026-10-16T18:18:40Z (9364a392874f467b9334b501b2962ae0); native successful reward claim required."
+    },
+    {
+      "family": "dungeon",
+      "source_id": 2,
+      "stage": 0,
+      "ap_location_id": 4101,
+      "ap_location_name": "Millewind Hill: Old Garden of Undead",
+      "region": "millewind",
+      "evidence": "Installed resources.assets localization800_DungeonName/2 at byte 303488240; sharedassets6 path 40808 Story/Reaper20; workbook sheet1 Q025 row31 confirms Millewind. See docs/research/millewind-20261017. Repeat dungeon 202 is excluded."
+    },
+    {
+      "family": "tower",
+      "source_id": 1309797564,
+      "stage": 1,
+      "ap_location_id": 3030,
+      "ap_location_name": "Yarden Meadow: Ruin Tower Repair Stage 1",
+      "region": "yarden_ruin",
+      "definition_id": 3809,
+      "position": {
+        "x": 458.353,
+        "y": 126.75,
+        "z": 44.56429
+      },
+      "costs": [
+        {
+          "item_id": 713,
+          "count": 30
+        },
+        {
+          "item_id": 2455,
+          "count": 10
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "tower",
+      "source_id": 1309797564,
+      "stage": 2,
+      "ap_location_id": 3031,
+      "ap_location_name": "Yarden Meadow: Ruin Tower Repair Stage 2",
+      "region": "yarden_ruin",
+      "definition_id": 3809,
+      "position": {
+        "x": 458.353,
+        "y": 126.75,
+        "z": 44.56429
+      },
+      "costs": [
+        {
+          "item_id": 3373,
+          "count": 10
+        },
+        {
+          "item_id": 769,
+          "count": 10
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "tower",
+      "source_id": 1309797564,
+      "stage": 3,
+      "ap_location_id": 3032,
+      "ap_location_name": "Yarden Meadow: Ruin Tower Repair Stage 3",
+      "region": "yarden_ruin",
+      "definition_id": 3809,
+      "position": {
+        "x": 458.353,
+        "y": 126.75,
+        "z": 44.56429
+      },
+      "costs": [
+        {
+          "item_id": 764,
+          "count": 20
+        },
+        {
+          "item_id": 3466,
+          "count": 20
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "tower",
+      "source_id": -793448649,
+      "stage": 1,
+      "ap_location_id": 3020,
+      "ap_location_name": "Yarden Meadow: Mountain Tower Repair Stage 1",
+      "region": "yarden_mountain",
+      "definition_id": 3808,
+      "position": {
+        "x": -215.2045,
+        "y": 182.21,
+        "z": -708.4329
+      },
+      "costs": [
+        {
+          "item_id": 701,
+          "count": 50
+        },
+        {
+          "item_id": 749,
+          "count": 10
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "tower",
+      "source_id": -793448649,
+      "stage": 2,
+      "ap_location_id": 3021,
+      "ap_location_name": "Yarden Meadow: Mountain Tower Repair Stage 2",
+      "region": "yarden_mountain",
+      "definition_id": 3808,
+      "position": {
+        "x": -215.2045,
+        "y": 182.21,
+        "z": -708.4329
+      },
+      "costs": [
+        {
+          "item_id": 680,
+          "count": 10
+        },
+        {
+          "item_id": 692,
+          "count": 10
+        },
+        {
+          "item_id": 695,
+          "count": 10
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "tower",
+      "source_id": -793448649,
+      "stage": 3,
+      "ap_location_id": 3022,
+      "ap_location_name": "Yarden Meadow: Mountain Tower Repair Stage 3",
+      "region": "yarden_mountain",
+      "definition_id": 3808,
+      "position": {
+        "x": -215.2045,
+        "y": 182.21,
+        "z": -708.4329
+      },
+      "costs": [
+        {
+          "item_id": 2453,
+          "count": 20
+        },
+        {
+          "item_id": 763,
+          "count": 20
+        },
+        {
+          "item_id": 2460,
+          "count": 20
+        }
+      ],
+      "evidence": "F9 0312114d9ed4418f839ef6e7d2b126d9, 2026-10-16: loaded tower identity, position and costs; live Yarden repair transition pending."
+    },
+    {
+      "family": "dungeon",
+      "source_id": 3,
+      "stage": 0,
+      "ap_location_id": 4102,
+      "ap_location_name": "Yarden Meadow: Ruin of Hunters",
+      "region": "yarden_mountain",
+      "evidence": "Installed Story definition and entrance; user workbook tower binding. docs/research/yarden-20261021. Repeat source 203 excluded; live completion pending."
+    },
+    {
+      "family": "dungeon",
+      "source_id": 4,
+      "stage": 0,
+      "ap_location_id": 4103,
+      "ap_location_name": "Yarden Meadow: Old Garden of Storms",
+      "region": "yarden_ruin",
+      "evidence": "Installed Story definition and entrance; user workbook tower binding. docs/research/yarden-20261021. Repeat source 204 excluded; live completion pending."
+    },
+    {
+      "family": "age",
+      "source_id": 0,
+      "stage": 3,
+      "ap_location_id": 4002,
+      "ap_location_name": "Age Evolution: World Age 4",
+      "region": "yarden_mountain",
+      "evidence": "Audited raw2 -> raw3 transition. Displayed Age4; Hills materials and2500gold."
+    }
+  ]
+}

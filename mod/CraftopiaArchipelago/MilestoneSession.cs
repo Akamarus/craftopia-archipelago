@@ -12,6 +12,8 @@ namespace CraftopiaArchipelago
     {
         internal const string Catalog="milestones_20261016_r1";
         internal const string CurrentCatalog="milestones_20261017_r2";
+        internal const string YardenCatalog="milestones_20261022_r3";
+        internal const string ValleyCatalog="milestones_20261022_r4";
         static string activeCatalog;
         internal static readonly Dictionary<string,long> Frozen=new Dictionary<string,long>();
         static readonly Dictionary<int,Dictionary<string,object>> towers=new Dictionary<int,Dictionary<string,object>>();
@@ -22,7 +24,8 @@ namespace CraftopiaArchipelago
         static long epoch;
         static bool enabled,valid,eligible;
         static int boundCharacter;
-        static float nextRegistration;
+        static float nextRegistration, nextDungeonReconcile;
+        static readonly HashSet<string> reconciledDungeons = new HashSet<string>();
         static object boundWorld;
         internal static string Key(string family,int source,int stage) => "milestone:"+family+":"+source+":"+stage;
         internal static object Field(object value,string name) {
@@ -33,7 +36,7 @@ namespace CraftopiaArchipelago
             return null;
         }
         internal static void LoadCatalog(string catalog=Catalog) {
-            if(catalog!=Catalog && catalog!=CurrentCatalog) throw new FormatException("Unsupported milestone catalog");
+            if(catalog!=Catalog && catalog!=CurrentCatalog && catalog!=YardenCatalog && catalog!=ValleyCatalog) throw new FormatException("Unsupported milestone catalog");
             using(var stream=Assembly.GetExecutingAssembly().GetManifestResourceStream(catalog+".json"))
             using(var reader=new StreamReader(stream)) {
                 var d=MiniJson.ParseObject(reader.ReadToEnd());
@@ -78,7 +81,7 @@ namespace CraftopiaArchipelago
             if(!enabled) return;
             try {
                 string catalog=MiniJson.GetString(m,"milestone_catalog");
-                if((catalog!=Catalog && catalog!=CurrentCatalog) || !(m["milestone_schema"] is long schema) || schema!=1 ||
+                if((catalog!=Catalog && catalog!=CurrentCatalog && catalog!=YardenCatalog && catalog!=ValleyCatalog) || !(m["milestone_schema"] is long schema) || schema!=1 ||
                     !(m["multiplayer_mode"] is long mode) || mode!=0 || !(m["milestone_locations"] is Dictionary<string,object> map) || map.Count==0) return;
                 LoadCatalog(catalog);
                 var next=new HashSet<string>();
@@ -182,12 +185,23 @@ namespace CraftopiaArchipelago
                     }
                     if(!SoulOrbCharacterBinding.Mark(path,fingerprint)) { Notice("Milestone checks held: this character belongs to a different test world.");return; }
                     boundWorld=world;boundCharacter=character;worldHash=fingerprint;
+                    reconciledDungeons.Clear(); nextDungeonReconcile=0;
                 }
                 while(retry.Count>0) {
                     if(!Plugin.Bridge.SendMilestoneObservation(retry.Peek())) { Notice("Milestone check waiting for durable storage; preserve files for recovery.");return; }
                     retry.Dequeue();
                 }
                 eligible=true;Notice(null);
+                // Reconcile only after the persisted enrollment/world binding above is verified.
+                if(UnityEngine.Time.realtimeSinceStartup >= nextDungeonReconcile) {
+                    nextDungeonReconcile=UnityEngine.Time.realtimeSinceStartup+2f;
+                    foreach(var key in selected) {
+                        if(!key.StartsWith("milestone:dungeon:", StringComparison.Ordinal) || reconciledDungeons.Contains(key) || BaselineState(key)!=1) continue;
+                        Complete("dungeon",int.Parse(key.Split(':')[2]),0);
+                        if(!eligible) break;
+                        reconciledDungeons.Add(key);
+                    }
+                }
             } catch { Notice("Milestone checks held: world or storage could not be verified."); }
         }
         internal static bool Ready => enabled && valid && eligible && Plugin.IsDeliveryEligible() &&
