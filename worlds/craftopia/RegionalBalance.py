@@ -1,6 +1,7 @@
 """Provisional player-reviewed regional timing; frozen runtime tiers stay intact."""
 import json
 from pathlib import Path
+from Options import OptionError
 
 REGIONS = ('geezah', 'millewind', 'yarden_mountain', 'yarden_ruin', 'owatatsu', 'brigandine')
 COMBAT_TIERS = dict(zip(REGIONS, (2, 3, 4, 5, 6, 7)))
@@ -8,7 +9,7 @@ WEAPONS = ('Sword', 'Bow', 'Lance', 'SwordTwoHand', 'Gun', 'Katana', 'MagicStaff
 
 
 def apply_balance(profile):
-    entries = json.loads(Path(__file__).with_name('regional_balance_20261024.json').read_text())['entries']
+    entries = json.loads(__loader__.get_data(str(Path(__file__).with_name('regional_balance_20261024.json'))).decode("utf-8"))['entries']
     end = REGIONS.index(profile['region'])
     selected = [r for r in entries if r['deadline'] in REGIONS
                 and REGIONS.index(r['deadline']) <= end]
@@ -76,10 +77,11 @@ def apply_deadline_rules(world, locations, profile):
         region = regions.get(loc.address, 'geezah')
         rank = REGIONS.index(region)
         add_item_rule(loc, lambda item, rank=rank:
-            not getattr(item, 'craftopia_deadline', None) or
+            item.player != world.player or not getattr(item, 'craftopia_deadline', None) or
             (item.player == world.player and rank <= REGIONS.index(item.craftopia_deadline)))
     items = [i for i in world.multiworld.itempool if i.player == world.player
-             and getattr(i, 'craftopia_deadline', None)]
+             and getattr(i, 'craftopia_deadline', None)
+             and (world.multiworld.players == 1 or i.name in world.options.local_items.value)]
     choices = [(item, [loc for loc in locations if loc.name not in world.options.exclude_locations.value
                       and loc.item_rule(item)]) for item in items]
     choices.sort(key=lambda pair: len(pair[1]))
@@ -93,4 +95,4 @@ def apply_deadline_rules(world, locations, profile):
                 return True
         return False
     if any(not place(i, set()) for i in range(len(choices))):
-        raise ValueError('Not enough eligible checks for regional unlock deadlines after exclusions')
+        raise OptionError('Not enough eligible checks for regional unlock deadlines after exclusions')

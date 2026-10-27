@@ -37,7 +37,13 @@ Use an official CPython installation; the bridge packager copies its runtime and
 py -3.13 -m venv .venv
 ./.venv/Scripts/python.exe -m pip install websockets==13.1
 ./.venv/Scripts/python.exe tools/package_managed_bridge.py --output artifacts/player-package --verify
-./.venv/Scripts/python.exe tools/package_apworld.py artifacts/craftopia.apworld
+```
+
+The APworld packager uses Archipelago's official container writer. Prepare an AP **0.6.8 source checkout** and its dependencies, then use that environment (not the bridge-only environment):
+
+```powershell
+$env:CRAFTOPIA_AP_SOURCE = 'D:\Development\Archipelago-0.6.8'
+& "$env:CRAFTOPIA_AP_SOURCE/.venv/Scripts/python.exe" tools/package_apworld.py artifacts/craftopia.apworld
 ```
 
 The bridge output is `artifacts/player-package/bridge/`. Install that entire folder beside the compiled DLL as described in [installation](INSTALLATION.md). The packager includes runtime provenance and redistribution licenses. It does not include BepInEx, game files, private ledgers or generated seeds. If rebuilding into the same output directory, use `--overwrite`; it replaces that build output only.

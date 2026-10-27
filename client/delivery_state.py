@@ -10,8 +10,10 @@ def text(value):
     return isinstance(value, str) and bool(value.strip()) and value == value.strip()
 
 def valid_unlock(record):
-    if not isinstance(record, dict) or not integer(record.get('receipt_id'), -7):
+    if not isinstance(record, dict) or not integer(record.get('receipt_id'), -8):
         return False
+    if record['receipt_id'] == -8:
+        return record == {'cmd':'unlock_skill_tree','tree_id':'Magic','receipt_id':-8}
     cmd = record.get('cmd')
     if record['receipt_id'] < 0 and (cmd != 'unlock_equipment' or record.get('tier') != 1 or record.get('category') not in COMBAT):
         return False

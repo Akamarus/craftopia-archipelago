@@ -31,6 +31,25 @@ class ProgressionModelTests(unittest.TestCase):
         p = self.profile(); p['nodes']['ore'] = [[{'node': 'ingot'}]]
         self.assertFalse(self.model(p).can_complete(72, {'Production: smelting': 1}.get))
 
+    def test_repeated_locations_reuse_inventory_result_without_stale_unlocks(self):
+        model = self.model()
+        inventory = {'Production: smelting': 1, 'Progressive Equipment: Sword': 2}
+        self.assertTrue(model.can_complete(99, inventory.get))
+        self.assertTrue(model.can_complete(72, dict(inventory).get))
+        self.assertEqual(model._reachable_cached.cache_info().misses, 1)
+        inventory['Progressive Equipment: Sword'] = 1
+        self.assertFalse(model.can_complete(99, inventory.get))
+        inventory['Production: smelting'] = 0
+        self.assertFalse(model.can_complete(72, inventory.get))
+        self.assertTrue(model.can_complete(99, {'Production: smelting': 1,
+                                              'Progressive Equipment: Sword': 2}.get))
+
+    def test_invalid_inventory_counts_cannot_unlock_cached_results(self):
+        model = self.model()
+        for count in (None, True, -1, '2', 2.0):
+            self.assertFalse(model.can_complete(99, {'Production: smelting': 1,
+                                                   'Progressive Equipment: Sword': count}.get))
+
     def test_alternative_verified_source_breaks_cycle(self):
         p = self.profile(); p['nodes']['ore'] = [[{'node': 'ingot'}], []]
         self.assertTrue(self.model(p).can_complete(72, {'Production: smelting': 1}.get))

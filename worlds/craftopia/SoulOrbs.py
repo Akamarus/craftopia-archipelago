@@ -16,7 +16,7 @@ def _int(value, minimum, maximum):
 
 
 def load_catalog():
-    return json.loads(Path(__file__).with_name(CATALOG_ID + '.json').read_text(encoding='utf-8'))
+    return json.loads(__loader__.get_data(str(Path(__file__).with_name(CATALOG_ID + '.json'))).decode("utf-8"))
 
 
 def validate_catalog(data):

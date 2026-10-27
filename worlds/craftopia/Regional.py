@@ -7,7 +7,7 @@ from .mission_id_mapper import get_id_map
 
 
 def load_profile():
-    return json.loads(Path(__file__).with_name('geezah_pilot_20261016_r1.json').read_text(encoding='utf-8'))
+    return json.loads(__loader__.get_data(str(Path(__file__).with_name('geezah_pilot_20261016_r1.json'))).decode("utf-8"))
 
 
 def build_regional_profile(data,item_table):

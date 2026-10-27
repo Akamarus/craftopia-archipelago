@@ -4,19 +4,22 @@ from pathlib import Path
 import types
 import unittest
 from typing import Dict, List
+from ap_runtime import load_world
+load_world()
+from Options import OptionError
 
 path=Path(__file__).resolve().parents[1]/'__init__.py'
 tree=ast.parse(path.read_text(encoding='utf-8-sig'))
 cls=next(n for n in tree.body if isinstance(n,ast.ClassDef) and n.name=='CraftopiaWorld')
 cls.bases=[]
 cls.body=[n for n in cls.body if isinstance(n,ast.FunctionDef) and n.name in ('set_rules','fill_slot_data')]
-ns={'Dict':Dict,'List':List}
+ns={'Dict':Dict,'List':List,'OptionError':OptionError}
 exec(compile(ast.Module(body=[cls],type_ignores=[]),str(path),'exec'),ns)
 
 class GoalContract(unittest.TestCase):
     def world(self):
         w=ns['CraftopiaWorld'](); w.player=1; w.opening_profile=None
-        opts=dict(goal_boss=0,goal_age=0,goal_objectives=1,goal_objective_count=30,goal_boss_choice=0,
+        opts=dict(logic_mode=0,goal_boss=0,goal_age=0,goal_objectives=1,goal_objective_count=30,goal_boss_choice=0,
                   goal_age_target=5,starting_combat=0,mission_catalog_version=0,skill_points_per_check=1,multiplayer_mode=0,
                   **{'enable_'+n+'_checks':1 for n in ('mission','age','soul_orb','chest','challenge','anubis','shop','boss')})
         w.options=types.SimpleNamespace(**{k:types.SimpleNamespace(value=v) for k,v in opts.items()})

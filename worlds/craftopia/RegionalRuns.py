@@ -5,6 +5,7 @@ boundary, not an invented combat-level barrier. Resource and combat assumptions
 remain experimental even when the corresponding checks have passed live tests.
 """
 from collections import Counter
+from Options import OptionError
 from .Expedition import build_profile
 from .Milestones import load_catalog, validate_catalog, CATALOG_ID as MILESTONE_CATALOG_ID
 from .mission_id_mapper import get_id_map
@@ -335,7 +336,7 @@ def apply_early_placement_rules(world, locations, profile):
         eligible = {loc.address for loc in locations if loc.address in addresses
                     and loc.name not in world.options.exclude_locations.value
                     and loc.item_rule(world.create_item(name))}
-        if not eligible: raise ValueError(f'No eligible opening {name} destination')
+        if not eligible: raise OptionError(f'No eligible opening {name} destination')
         remaining.extend((name, eligible) for _ in range(counts[name]))
     assigned = {}
     def place(index, visited):
@@ -347,10 +348,10 @@ def apply_early_placement_rules(world, locations, profile):
                 return True
         return False
     if any(not place(i, set()) for i in range(len(remaining))):
-        raise ValueError('Not enough distinct opening production destinations after exclusions')
+        raise OptionError('Not enough distinct opening production destinations after exclusions')
     for loc in locations:
         add_item_rule(loc, lambda item, address=loc.address:
-            item.name not in restrictions or
+            item.player != world.player or item.name not in restrictions or
             (item.player == world.player and address in restrictions[item.name]))
 
 
@@ -359,7 +360,7 @@ def geezah_orbs():
     import json
     from pathlib import Path
     from .SoulOrbs import load_catalog, validate_catalog
-    subset = json.loads(Path(__file__).with_name('geezah_orbs_20261016_r1.json').read_text())
+    subset = json.loads(__loader__.get_data(str(Path(__file__).with_name('geezah_orbs_20261016_r1.json'))).decode("utf-8"))
     canonical = {r['guid']: r for r in validate_catalog(load_catalog())}
     rows = []
     for row in subset['locations']:

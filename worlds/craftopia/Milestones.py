@@ -17,7 +17,7 @@ def key(family,source_id,stage):
 
 def load_catalog(catalog_id=CATALOG_ID):
     if catalog_id not in SUPPORTED_CATALOGS: raise ValueError('Unsupported milestone catalog')
-    return json.loads(Path(__file__).with_name(catalog_id+'.json').read_text(encoding='utf-8'))
+    return json.loads(__loader__.get_data(str(Path(__file__).with_name(catalog_id+'.json'))).decode("utf-8"))
 
 def validate_catalog(data):
     if (not isinstance(data,dict) or data.get('catalog_id') not in SUPPORTED_CATALOGS or

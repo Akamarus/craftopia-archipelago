@@ -60,6 +60,10 @@ If generating yourself:
 
 The APWorld is needed by the generator. It is not a file to put in BepInEx. Keep the generator and player components from the same source snapshot.
 
+For the unreleased 1.18.2 generator fix, the host needs **Archipelago 0.6.8** and the updated `craftopia.apworld` before generation. Keep the filename unchanged and restart the generator after replacing an older copy. Both `game: Craftopia` and the `Craftopia:` settings key are case-sensitive; do not change either to lowercase. A “No functional world found” error can mean the APworld failed to load: inspect the earlier load traceback rather than changing YAML capitalization.
+
+Mixed-game AP rooms are supported by this update. Cooking and smelting remain local opening unlocks; other progression may be in other games. Native Craftopia co-op is a separate feature and is not established by these generation tests. Starter-weapon delivery requires a newly generated regional seed and the matching starter-kit client update; older seeds retain their original behavior.
+
 ## 3. Connect and start
 
 1. Launch Craftopia. At the main menu press **F8**, then select **Connection**.

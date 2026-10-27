@@ -18,6 +18,7 @@ namespace CraftopiaArchipelago
         readonly string slot;
         readonly long epoch;
         readonly int guid;
+        readonly int itemId;
         readonly Dictionary<long,int> committed = new Dictionary<long,int>();
         string persisted;
         long? pending;
@@ -31,12 +32,12 @@ namespace CraftopiaArchipelago
         static bool Exact(Dictionary<string,object> d,string key,long expected) =>
             d.TryGetValue(key,out var value) && value is long n && n==expected;
         static Dictionary<string,object> Document(string slot,long epoch,int guid,
-            Dictionary<long,int> receipts,long? pending,int amount)
+            Dictionary<long,int> receipts,long? pending,int amount,int itemId)
         {
             var rows=new List<object>();
             foreach(var pair in receipts) rows.Add(new Dictionary<string,object>{{"index",pair.Key},{"amount",(long)pair.Value}});
             return new Dictionary<string,object> {
-                {"schema",1L},{"slot",slot},{"epoch",epoch},{"guid",(long)guid},{"item_id",3840L},
+                {"schema",1L},{"slot",slot},{"epoch",epoch},{"guid",(long)guid},{"item_id",(long)itemId},
                 {"receipts",rows},{"pending",pending.HasValue ? (object)new Dictionary<string,object>
                     {{"index",pending.Value},{"amount",(long)amount}} : null}
             };
@@ -47,22 +48,22 @@ namespace CraftopiaArchipelago
                 !row.TryGetValue("amount",out var a) || !(a is long count) || count<1 || count>999) return false;
             index=n; amount=(int)count; return true;
         }
-        public static bool InitializeFresh(ICurrencyReceiptStore store,string slot,long epoch,int guid) {
+        public static bool InitializeFresh(ICurrencyReceiptStore store,string slot,long epoch,int guid,int itemId=3840) {
             // Caller must establish explicit fresh enrollment; never called on a missing-file fallback.
             if(!Identity(slot,epoch,guid)) return false;
             try { return store.Read()==null && store.CompareExchange(null,
-                MiniJson.Stringify(Document(slot,epoch,guid,new Dictionary<long,int>(),null,0))); }
+                MiniJson.Stringify(Document(slot,epoch,guid,new Dictionary<long,int>(),null,0,itemId))); }
             catch { return false; }
         }
-        public CurrencyDelivery(ICurrencyReceiptStore store,string slot,long epoch,int guid) {
-            this.store=store; this.slot=slot; this.epoch=epoch; this.guid=guid;
+        public CurrencyDelivery(ICurrencyReceiptStore store,string slot,long epoch,int guid,int itemId=3840) {
+            this.store=store; this.slot=slot; this.epoch=epoch; this.guid=guid; this.itemId=itemId;
             try {
                 if(!Identity(slot,epoch,guid)) throw new FormatException();
                 persisted=store.Read();
                 var d=MiniJson.ParseObject(persisted);
                 if(d==null || !d.TryGetValue("schema",out var schema) || !(schema is long ver) || ver!=1 ||
                     MiniJson.GetString(d,"slot")!=slot || !Exact(d,"epoch",epoch) ||
-                    !Exact(d,"guid",guid) || !Exact(d,"item_id",3840) ||
+                    !Exact(d,"guid",guid) || !Exact(d,"item_id",itemId) ||
                     !d.TryGetValue("receipts",out var rows) || !(rows is List<object> list) ||
                     !d.ContainsKey("pending")) throw new FormatException();
                 foreach(var row in list) {
@@ -76,7 +77,7 @@ namespace CraftopiaArchipelago
         }
         bool Save(Dictionary<long,int> receipts,long? nextPending,int amount) {
             try {
-                string next=MiniJson.Stringify(Document(slot,epoch,guid,receipts,nextPending,amount));
+                string next=MiniJson.Stringify(Document(slot,epoch,guid,receipts,nextPending,amount,itemId));
                 if(!store.CompareExchange(persisted,next)) return false;
                 persisted=next; return true;
             } catch { return false; }

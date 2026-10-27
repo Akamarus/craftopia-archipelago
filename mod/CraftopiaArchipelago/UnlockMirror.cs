@@ -46,20 +46,20 @@ namespace CraftopiaArchipelago
             if (held || token == null || sourceConnection != connection ||
                 !Long(msg,"epoch",out e) || e != epoch ||
                 MiniJson.GetString(msg,"slot") != slot || MiniJson.GetString(msg,"connection_token") != token ||
-                !Long(msg,"receipt_id",out receipt) || receipt < -7) return false;
+                !Long(msg,"receipt_id",out receipt) || receipt < -8) return false;
             string cmd=MiniJson.GetString(msg,"cmd");
             var record=new Dictionary<string,object> { ["cmd"]=cmd, ["receipt_id"]=receipt };
             if (cmd=="unlock_equipment")
             {
                 long tier; string category=MiniJson.GetString(msg,"category");
-                if (!Text(category) || !Long(msg,"tier",out tier) || tier < 1 || tier > int.MaxValue) return false;
+                if (receipt == -8 || !Text(category) || !Long(msg,"tier",out tier) || tier < 1 || tier > int.MaxValue) return false;
                 record["category"]=category; record["tier"]=tier;
             }
             else if (cmd=="unlock_production" || cmd=="unlock_skill_tree")
             {
                 string key=cmd=="unlock_production" ? "station_id" : "tree_id";
                 string value=MiniJson.GetString(msg,key);
-                if (!Text(value) || receipt < 0) return false;
+                if (!Text(value) || (receipt < 0 && !(receipt == -8 && cmd == "unlock_skill_tree" && value == "Magic"))) return false;
                 record[key]=value;
             }
             else return false;

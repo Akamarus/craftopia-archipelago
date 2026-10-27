@@ -5,6 +5,7 @@ alternative is a conjunction; an explicit empty conjunction is a verified free
 source. Computing the least fixed point prevents a recipe cycle proving itself.
 """
 from copy import deepcopy
+from functools import lru_cache
 
 
 def load_reviewed_profile():
@@ -52,6 +53,11 @@ class ProgressionModel:
                 raise ValueError('Mission IDs must be canonical nonnegative integers with known nodes')
         self.nodes = deepcopy(nodes)
         self.missions = dict(missions)
+        self._items = tuple(sorted({req['item'] for sources in self.nodes.values()
+                                    for source in sources for req in source if 'item' in req}))
+        # Cache inventory values, never CollectionState identity: AP copies states
+        # and removes items during fill and spoiler construction.
+        self._reachable_cached = lru_cache(maxsize=128)(self._reachable)
 
     def require_coverage(self, mission_ids):
         missing = [str(mid) for mid in mission_ids if type(mid) is not int or str(mid) not in self.missions]
@@ -60,23 +66,25 @@ class ProgressionModel:
 
     def can_complete(self, mission_id, item_count):
         self.require_coverage([mission_id])
+        values = (item_count(name) for name in self._items)
+        snapshot = tuple(value if type(value) is int and value >= 0 else 0 for value in values)
+        return self.missions[str(mission_id)] in self._reachable_cached(snapshot)
+
+    def _reachable(self, snapshot):
         reachable = set()
-        counts = {}
+        counts = dict(zip(self._items, snapshot))
 
         def satisfied(requirement):
             if 'node' in requirement:
                 return requirement['node'] in reachable
             name = requirement['item']
-            if name not in counts:
-                value = item_count(name)
-                counts[name] = value if type(value) is int and value >= 0 else 0
             return counts[name] >= requirement['count']
 
         while True:
             added = {name for name, sources in self.nodes.items() if name not in reachable
                      and any(all(satisfied(req) for req in source) for source in sources)}
             if not added:
-                return self.missions[str(mission_id)] in reachable
+                return frozenset(reachable)
             reachable.update(added)
 
 

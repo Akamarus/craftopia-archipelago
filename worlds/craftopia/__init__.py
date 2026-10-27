@@ -13,6 +13,7 @@ ID mappings are initialized at class definition time (module level), not
 in stage_assert_generate, so the AutoWorld metaclass sees them.
 """
 from typing import Dict, List
+from Options import OptionError
 
 from BaseClasses import Tutorial, CollectionState
 from worlds.AutoWorld import World, WebWorld
@@ -110,41 +111,50 @@ class CraftopiaWorld(World):
 
     def generate_early(self):
         if self.options.logic_mode.value in (4, 5):
-            if (self.multiworld.players != 1 or self.options.multiplayer_mode.value != 0 or
+            if (self.options.multiplayer_mode.value != 0 or
                     self.options.mission_catalog_version.value != 1 or not self.options.enable_mission_checks.value or
                     not self.options.enable_age_checks.value or not self.options.enable_boss_checks.value):
-                raise ValueError('Regional runs require one player, instance missions, age and dungeon checks')
+                raise OptionError('Regional runs require separate slots, instance missions, age and dungeon checks')
             if self.options.logic_mode.value == 5:
                 from .RegionalRuns import build_run_profile
                 self.regional_profile = build_run_profile(self.options.ending_region.current_key, self.item_table)
             else:
                 from .Regional import load_profile, build_regional_profile
                 self.regional_profile = build_regional_profile(load_profile(),self.item_table)
+            essentials = set(self.regional_profile.get('early_item_locations',
+                {'Production: smelting': self.regional_profile.get('smelting_locations', [])}))
+            if essentials & self.options.non_local_items.value:
+                raise OptionError('Opening production unlocks must remain local: ' + ', '.join(sorted(essentials & self.options.non_local_items.value)))
+            self.options.local_items.value.update(essentials)
             self.opening_profile = self.regional_profile
             self.progression_model = ProgressionModel(self.opening_profile,self.item_table,allow_experimental=True)
             for name in self.regional_profile.get('starting_items', []):
                 if not any(item.name == name for item in self.multiworld.precollected_items[self.player]):
                     self.multiworld.push_precollected(self.create_item(name))
         if self.options.enable_soul_orb_checks.value and self.options.logic_mode.value not in (3, 5):
-            raise ValueError('Soul Orbs currently require the experimental expedition profile; traversal is unverified.')
+            raise OptionError('Soul Orbs currently require the experimental expedition profile; traversal is unverified.')
         if self.options.logic_mode.value == 3:
             if self.options.mission_catalog_version.value != 1 or self.options.multiplayer_mode.value != 0:
-                raise ValueError('Expedition requires instance missions and separate slots')
+                raise OptionError('Expedition requires instance missions and separate slots')
             from .Expedition import build_profile
             self.opening_profile = build_profile(self.item_table)
             self.progression_model = ProgressionModel(self.opening_profile, self.item_table,
                                                       allow_experimental=True)
         if self.options.logic_mode.value == 2:
             if self.options.mission_catalog_version.value != 1 or self.options.multiplayer_mode.value != 0:
-                raise ValueError('Opening profile requires instance missions and separate slots')
+                raise OptionError('Opening profile requires instance missions and separate slots')
             import json
             from pathlib import Path
-            self.opening_profile = json.loads(Path(__file__).with_name('opening_20261014_r1.json').read_text())
+            self.opening_profile = json.loads(__loader__.get_data(str(Path(__file__).with_name('opening_20261014_r1.json'))).decode("utf-8"))
             self.progression_model = ProgressionModel(self.opening_profile, self.item_table)
         if self.options.logic_mode.value == 1:
             if self.options.mission_catalog_version.value != 1:
-                raise ValueError('Verified progression requires numeric mission instances')
-            self.progression_model = ProgressionModel(load_reviewed_profile(), self.item_table)
+                raise OptionError('Verified progression requires numeric mission instances')
+            try:
+                profile = load_reviewed_profile()
+            except ValueError as exc:
+                raise OptionError(str(exc)) from exc
+            self.progression_model = ProgressionModel(profile, self.item_table)
 
     def create_item(self, name: str) -> CraftopiaItem:
         if name == "Completed Objective":
@@ -156,6 +166,13 @@ class CraftopiaWorld(World):
             idef.ap_id,
             self.player,
         )
+
+    def collect_item(self, state, item, remove=False):
+        # Surplus copies can fill excluded locations, but still grant the same
+        # skill point. Track them identically to items reconstructed by clients.
+        if item.name == 'Skill Point':
+            return item.name
+        return super().collect_item(state, item, remove)
 
     def create_regions(self):
         from BaseClasses import Region
@@ -252,7 +269,7 @@ class CraftopiaWorld(World):
         if getattr(self, 'regional_profile', None) is None and not (self.options.goal_boss.value or
                 self.options.goal_age.value or
                 self.options.goal_objectives.value):
-            raise Exception(
+            raise OptionError(
                 "Craftopia: at least one victory condition must be enabled "
                 "(Goal Boss, Goal Age, or Goal Objective Count).")
 
@@ -272,7 +289,7 @@ class CraftopiaWorld(World):
         if self.opening_profile is not None:
             pool = self.opening_profile['pool']
             currency=['Soul Orb Currency'] * sum(getattr(l,'check_category',None)=='soul_orb' for l in overworld.locations)
-            if len(pool)+len(currency) > len(locations): raise ValueError('Opening pool exceeds location count')
+            if len(pool)+len(currency) > len(locations): raise OptionError('Opening pool exceeds location count')
             skill_points = 0
             for index, name in enumerate(pool + currency + ['Skill Point'] * (len(locations) - len(pool) - len(currency))):
                 item = self.create_item(name)
@@ -313,7 +330,7 @@ class CraftopiaWorld(World):
         n_progression = len(skill_tree_items) + len(production_items)
         n_remaining = len(locations) - n_progression
         if n_remaining < 0:
-            raise Exception(
+            raise OptionError(
                 f"Craftopia: not enough locations ({len(locations)}) for "
                 f"progression items ({n_progression}).")
         # Fill remaining with Skill Points (the verified grant mechanism).
@@ -338,7 +355,7 @@ class CraftopiaWorld(World):
                     mid, lambda name: state.count(name, self.player))
 
         if n_locations == 0:
-            raise Exception(
+            raise OptionError(
                 "Craftopia: zero locations generated. Enable at least one "
                 "check category to generate a playable seed.")
 
@@ -373,7 +390,7 @@ class CraftopiaWorld(World):
         if not (self.options.goal_boss.value or
                 self.options.goal_age.value or
                 self.options.goal_objectives.value):
-            raise Exception(
+            raise OptionError(
                 "Craftopia: at least one victory condition must be enabled "
                 "(Goal Boss, Goal Age, or Goal Objective Count).")
 
@@ -398,13 +415,13 @@ class CraftopiaWorld(World):
         if self.options.goal_boss.value:
             # No boss locations are generated yet. The boss catalog and
             # detection hooks are pending runtime verification.
-            raise Exception(
+            raise OptionError(
                 "Craftopia: Goal Boss is not yet supported (no boss locations "
                 "generated). Disable Goal Boss or wait for boss catalog.")
 
         if self.options.goal_age.value:
             # No age locations are generated yet.
-            raise Exception(
+            raise OptionError(
                 "Craftopia: Goal Age is not yet supported (no age locations "
                 "generated). Disable Goal Age or wait for age system.")
 
@@ -412,7 +429,7 @@ class CraftopiaWorld(World):
             required = self.options.goal_objective_count.value
             achievable = n_locations  # Each location is a potential objective
             if required > achievable:
-                raise Exception(
+                raise OptionError(
                     f"Craftopia: goal objective count ({required}) exceeds "
                     f"achievable locations ({achievable}). Reduce the count "
                     f"or enable more check categories.")
@@ -503,6 +520,7 @@ class CraftopiaWorld(World):
             "goal_objective_count": self.options.goal_objective_count.value,
             # Starting
             "starting_combat": self.options.starting_combat.value,
+            "starter_kit_protocol": 1 if self.options.logic_mode.value == 5 else 0,
             # Check categories
             "enable_mission_checks": self.options.enable_mission_checks.value,
             "enable_age_checks": self.options.enable_age_checks.value,
