@@ -7,14 +7,14 @@ from test.general import setup_multiworld
 
 class SoulOrbReadiness(unittest.TestCase):
     def test_reserved_ids_do_not_activate_checks(self):
-        mw = setup_multiworld(World, seed=1)
+        mw = setup_multiworld(World, seed=1, options={'logic_mode': 0, 'mission_catalog_version': 0})
         self.assertIn('Soul Orb -1595765594', World.location_name_to_id)
         self.assertEqual(len([l for l in mw.get_locations(1) if l.address is not None]), 53)
         self.assertEqual(mw.worlds[1].fill_slot_data()['enable_soul_orb_checks'], 0)
 
     def test_experimental_scope_is_explicit(self):
         with self.assertRaisesRegex(ValueError, 'experimental expedition'):
-            setup_multiworld(World, seed=1, options={'enable_soul_orb_checks': 1})
+            setup_multiworld(World, seed=1, options={'enable_soul_orb_checks': 1, 'logic_mode': 0, 'mission_catalog_version': 0})
 
     def test_currency_supply_and_separate_objectives(self):
         from collections import Counter

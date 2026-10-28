@@ -149,7 +149,7 @@ class MissionCatalogVersion(Choice):
     display_name = "Mission Catalog Version"
     option_legacy = 0
     option_20261007_r1 = 1
-    default = 0
+    default = 1
 
 
 class LogicMode(Choice):
@@ -166,7 +166,7 @@ class LogicMode(Choice):
     option_expedition = 3
     option_geezah_pilot = 4
     option_regional = 5
-    default = 0
+    default = 5
 
 
 class EndingRegion(Choice):
@@ -198,7 +198,7 @@ class CraftopiaOptions(PerGameCommonOptions):
     starting_combat: StartingCombat
     # Check categories
     enable_mission_checks: EnableMissionChecks
-    # Catalog version (instance-based mapping is opt-in)
+    # Catalog version (current instance-based mapping by default)
     mission_catalog_version: MissionCatalogVersion
     logic_mode: LogicMode
     ending_region: EndingRegion

@@ -31,6 +31,8 @@ These totals apply to the supplied regional configuration. Disabling Soul Orb ch
 
 ## What's new in 1.18.2
 
+- Simplified player YAML with working regional defaults. Use the refreshed APworld and YAML together.
+
 - Archipelago **0.6.8** packaging and mixed-game generation fixes. Cooking and smelting remain local opening unlocks; ordinary progression can appear in other games. Placement deadlines apply to items placed in your own Craftopia world.
 - New regional seeds grant the selected class's starting weapon. Bow also receives arrows; Staff receives **Magic Tier 1 and a skill point**. Reconnect/reload delivery is recorded to prevent duplicate starter rewards.
 - Corrected Staff's Magic unlock and Field Guide session display. The owner confirmed the updated starter flow works in game.

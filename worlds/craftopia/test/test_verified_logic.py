@@ -28,8 +28,8 @@ class VerifiedLogicTests(unittest.TestCase):
         self.assertTrue(check.can_reach(state))
         self.assertEqual(world.fill_slot_data()['logic_mode'], 'verified')
 
-    def test_legacy_default_is_unchanged(self):
-        mw = setup_solo_multiworld(World, seed=1)
+    def test_explicit_legacy_mode_is_unchanged(self):
+        mw = setup_solo_multiworld(World, seed=1, options={'logic_mode': 0, 'mission_catalog_version': 0})
         self.assertEqual(len(mw.itempool), 53)
         self.assertEqual(mw.worlds[1].fill_slot_data()['logic_mode'], 'candidate')
 

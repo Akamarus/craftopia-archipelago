@@ -4,9 +4,9 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).parent))
 from ap_runtime import load_world
 World=load_world()
-from test.general import setup_solo_multiworld
+from test.general import setup_multiworld as setup_solo_multiworld
 from BaseClasses import CollectionState
-mw=setup_solo_multiworld(World,seed=1)
+mw=setup_solo_multiworld(World,seed=1,options={'logic_mode':0,'mission_catalog_version':0})
 w=mw.worlds[1]
 network=[l for l in mw.get_locations(1) if l.address is not None]
 events=[l for l in mw.get_locations(1) if l.address is None]

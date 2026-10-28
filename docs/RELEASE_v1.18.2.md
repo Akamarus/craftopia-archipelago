@@ -12,6 +12,8 @@ Existing saves and AP records should be backed up. Do not erase delivery records
 
 ## Changes
 
+- Simplified player YAML: only slot name, ending region, starting combat, skill-point amount and Soul Orb toggle are exposed. Regional logic and the current mission catalog now default correctly. Download the refreshed APworld together with this YAML; older builds require explicit internal settings.
+
 - Fix APworld container loading and AP 0.6.8 generation compatibility.
 - Allow ordinary progression to cross games in a multiworld. Opening cooking and smelting remain local. Regional placement deadlines apply only within the recipient's Craftopia world.
 - Correct Universal Tracker Skill Point reconstruction and bound progression reachability caching.
@@ -21,6 +23,8 @@ Existing saves and AP records should be backed up. Do not erase delivery records
 - Retain reviewed equipment tiers, tower recipe requirements, region goals and progression safeguards from the previous regional build.
 
 ## Validation
+
+- Refreshed simplified-YAML build: all 91 source tests passed, plus 24 full packaged generations covering all six endings in four player layouts. This defaults change postdates the Ionium/50-game runs below; those results describe the preceding build.
 
 - APworld source suite: 89 tests passed before the preceding main-branch merge.
 - Packaged generation matrix: 72 cases covering six endings, three starting modes and four player layouts; three additional 16-player generations passed.

@@ -40,7 +40,7 @@ def main():
     assert '.apworld' in craftopia.__file__,craftopia.__file__
     import Generate,Main,yaml
     root=Path(__file__).resolve().parents[1]
-    template=yaml.safe_load((root/'worlds/craftopia/test/regional_player.yaml').read_text())
+    template=yaml.safe_load((root/'worlds/craftopia/Craftopia.yaml').read_text())
     results=[]
     for region in REGIONS if args.matrix else ('geezah',):
       for mode in ('solo','mixed','two_craftopia','craftopia_second') if args.matrix else (('mixed',) if args.mixed else ('solo',)):
