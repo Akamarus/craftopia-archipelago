@@ -50,8 +50,7 @@ def load_mission_data() -> List[dict]:
     import json
     import os
     path = os.path.join(os.path.dirname(__file__), "data", "missions.json")
-    with open(path) as f:
-        data = json.load(f)
+    data = json.loads(__loader__.get_data(path).decode("utf-8"))
     return data.get("missions", [])
 
 

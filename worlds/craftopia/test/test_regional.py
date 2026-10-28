@@ -52,6 +52,7 @@ class RegionalTests(unittest.TestCase):
         early=next(l for l in mw.get_locations(1) if l.address in w.regional_profile['smelting_locations'])
         self.assertTrue(early.item_rule(item))
         item.player=2
-        self.assertFalse(early.item_rule(item))
+        self.assertTrue(early.item_rule(item))
+        self.assertTrue(boss.item_rule(item))
 
 if __name__=='__main__':unittest.main()

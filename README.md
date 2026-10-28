@@ -34,6 +34,10 @@ These totals apply to the supplied regional configuration. Disabling Soul Orb ch
 
 ## Reviewed balance update
 
+The unreleased 1.18.2 APworld update requires Archipelago 0.6.8 and supports mixed-game multiworld generation. Opening cooking and smelting unlocks stay local; other progression can appear in other games. Regional placement deadlines apply only to your items placed in your own Craftopia world. This is separate from native Craftopia co-op support, which still needs host/guest validation. Do not use the older public APworld for a sync expecting these fixes.
+
+New regional seeds also support a starting weapon for the selected combat class with the matching 1.18.1 mod and updated bridge. Bow receives arrows; Staff receives Magic access and a starting skill point. Delivery is recorded to prevent duplicates on reconnect. Existing seeds retain their original behavior. Automated delivery tests pass; live starter delivery remains unverified. See the [AP 0.6.8 generation audit](docs/GENERATION_AUDIT_20261027.md) for coverage and limitations.
+
 New seeds use the reviewed regional equipment thresholds (2/3/4/5/6/7), individual unlock-placement deadlines, and 206 additional equipment tier assignments. Life starts unlocked; Combat Support is a separate unlock. Tower repair recipes retain their existing requirements. Use the matching mod, bridge and APworld from the same build. Old seed equipment rules are preserved. See [1.18.0 notes](docs/RELEASE_v1.18.0.md).
 
 ## What is randomized?

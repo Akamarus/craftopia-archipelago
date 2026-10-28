@@ -50,6 +50,8 @@ class BalanceTests(unittest.TestCase):
         final=mw.get_location('Brigandine Valley: Tower Repair Stage 3',1)
         self.assertFalse(final.item_rule(copies[0]))
         self.assertTrue(final.item_rule(copies[-1]))
+        copies[0].player = 2
+        self.assertTrue(final.item_rule(copies[0]))
 
     def test_new_contract_keeps_runtime_equipment_mapping(self):
         w=self.make().worlds[1]

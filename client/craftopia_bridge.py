@@ -289,6 +289,11 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
 
     def equipment_contract_ready(self):
         if not self.currency_contract_ready(): return False
+        if self.slot_data.get('starter_kit_protocol', 0) != 0:
+            tokens = self._all_conn_tokens()
+            caps = getattr(self, 'starter_capabilities', {})
+            if self.slot_data.get('starter_kit_protocol') != 1 or not tokens or not all(caps.get(t) == 1 for t in tokens):
+                return False
         requested = 'equipment_catalog' in self.slot_data or 'equipment_protocol' in self.slot_data
         if not requested:
             return True
@@ -431,7 +436,7 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         if (type(msg.get('epoch')) is not int or msg['epoch'] != self.ledger['epoch']
                 or msg.get('slot') != self.args.slot
                 or not self._valid_conn_token(msg.get('connection_token'))
-                or not integer(msg.get('receipt_id'), -7)): return
+                or not integer(msg.get('receipt_id'), -8)): return
         proposed=candidate(self.ledger)
         proposed['pending_unlocks']=[u for u in proposed['pending_unlocks'] if u['receipt_id']!=msg['receipt_id']]
         self.commit(proposed)  # History is NEVER removed by an ack.
@@ -778,8 +783,12 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
         for i, category in enumerate(categories):
             record={'cmd':'unlock_equipment','category':category,'tier':1,'receipt_id':-i-1}
             proposed['unlocks'].append(record); proposed['pending_unlocks'].append(record)
+        if self.slot_data.get('starter_kit_protocol') == 1 and 'MagicStaff' in categories:
+            magic={'cmd':'unlock_skill_tree','tree_id':'Magic','receipt_id':-8}
+            proposed['unlocks'].append(magic); proposed['pending_unlocks'].append(magic)
         proposed['starters_applied']=True; proposed['starter_choice']=chosen
-        self.commit(proposed)
+        if self.commit(proposed):
+            await self.send_session()
 
     async def on_datapackage(self, msg):
         games = (msg.get("data") or {}).get("games", {}) or {}
@@ -1810,6 +1819,8 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
             conn["validated"] = True
             conn["guid"] = guid
         self_token = token if token is not None else self.connection_token
+        if not hasattr(self, 'starter_capabilities'): self.starter_capabilities = {}
+        self.starter_capabilities[self_token] = msg.get('starter_kit_protocol')
         if not hasattr(self, 'equipment_capabilities'): self.equipment_capabilities = {}
         capability = msg.get('equipment_protocol_max', msg.get('equipment_protocol'))
         self.equipment_capabilities[self_token] = capability if type(capability) is int else 0
@@ -1873,6 +1884,10 @@ class Bridge(CurrencyDeliveryMixin, SoulOrbDeliveryMixin, MilestoneDeliveryMixin
             "enrolled_guids": enrolled,
             "multiplayer_mode": self.multiplayer_mode,
         }
+        if self.slot_data.get('starter_kit_protocol') == 1:
+            msg['starter_kit_protocol'] = 1
+            msg['starter_choice'] = self.ledger.get('starter_choice')
+            msg['seed_name'] = self.ledger.get('seed_name')
         if 'equipment_catalog' in self.slot_data:
             msg['equipment_catalog'] = self.slot_data['equipment_catalog']
             msg['equipment_protocol'] = self.slot_data['equipment_protocol']

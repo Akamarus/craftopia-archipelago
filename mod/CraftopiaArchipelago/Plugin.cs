@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.18.0";
+        public const string VERSION = "1.18.1";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -491,7 +491,7 @@ namespace CraftopiaArchipelago
             Bridge = null;
             CancelEnrollment();
             if (!same) {
-                CurrencyRuntime.ResetSession();
+                CurrencyRuntime.ResetSession(); StarterKitRuntime.ResetSession();
                 MilestoneSession.Bind(null);
                 lock (pendingSessions) pendingSessions.Clear();
                 lock (pendingUnlocks) pendingUnlocks.Clear();
@@ -530,7 +530,7 @@ namespace CraftopiaArchipelago
             fieldGuide.Dispose();
             orbMap.Dispose();
             OrbMapTracker.State.Clear();
-            CurrencyRuntime.Suspend();
+            CurrencyRuntime.Suspend(); StarterKitRuntime.Suspend();
             instance = null;
             try
             {
@@ -593,6 +593,7 @@ namespace CraftopiaArchipelago
                 ProductionHooks.Install(harmony);
                 EquipmentHooks.Install(harmony);
                 CurrencySaveObserver.Install(harmony);
+                StarterKitSaveObserver.Install(harmony);
                 SoulOrbHooks.Install(harmony);
                 MilestoneHooks.Install(harmony);
             }
@@ -696,7 +697,7 @@ namespace CraftopiaArchipelago
         internal static LoadInvocation OnLoadStart(Oc.OcPlMaster instance)
         {
             CancelEnrollment();
-            CurrencyRuntime.Suspend();
+            CurrencyRuntime.Suspend(); StarterKitRuntime.Suspend();
             unlockMirror?.Suspend();
             ++loadEventCounter;
             loadCompletedFlag = false;
@@ -868,6 +869,7 @@ namespace CraftopiaArchipelago
                     // Persist session binding separately from socket connectivity.
                     SetSessionBound(s.Epoch, SlotName?.Value);
                     CurrencyRuntime.ApplySession(s.CurrencySession,s.Connection);
+                    StarterKitRuntime.ApplySession(s.CurrencySession,s.Connection);
                     MilestoneSession.Bind(s.CurrencySession);
                     sessionSeed = s.CurrencySession == null ? null : MiniJson.GetString(s.CurrencySession,"seed_name");
                     PublishLoadedIdentity();
@@ -1031,6 +1033,7 @@ namespace CraftopiaArchipelago
                     return enrollmentStatus = "Enrollment recorded, but equipment approval failed. Delivery held for review.";
                 }
                 CurrencyRuntime.AttestNew(observed.Input.Guid);
+                    StarterKitRuntime.AttestNew(observed.Input.Guid);
                 Validator.Invalidate();
                 return enrollmentStatus = "Fresh character enrolled. World baseline and reward validation will run before delivery.";
             } catch {
@@ -1051,6 +1054,7 @@ namespace CraftopiaArchipelago
                     EnrollmentHasHistory(), recoveryHold || Validator.IsHeld(observed.Input.Guid,observed.Input.Epoch)))
                 {
                     CurrencyRuntime.AttestNew(observed.Input.Guid);
+                    StarterKitRuntime.AttestNew(observed.Input.Guid);
                     Validator.Invalidate(); // Eligibility still requires fresh read-only validation below.
                 }
                 if (enrollmentStatus != enrollmentCoordinator.Status) {
@@ -1222,6 +1226,7 @@ namespace CraftopiaArchipelago
             bool equipmentAdmitted = equipmentSession != null && equipmentSession.Admit(equipmentIdentityReady,EquipmentHooks.CurrentEquipmentAllowed);
             TryRegisterEnrolledCharacter(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
             CurrencyRuntime.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
+            StarterKitRuntime.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
             MilestoneSession.Pump(validationAllows && identityEligible && !recoveryHold && equipmentAdmitted);
 
             System.Collections.Generic.List<long> acks =

@@ -10,7 +10,7 @@ from .mission_id_mapper import get_id_map
 
 
 def build_profile(item_table):
-    catalog = json.loads(Path(__file__).with_name('equipment_catalog_20261010_r1.json').read_text())
+    catalog = json.loads(__loader__.get_data(str(Path(__file__).with_name('equipment_catalog_20261010_r1.json'))).decode("utf-8"))
     steps = {}
     for row in catalog['items']:
         if row['decision'] == 'progressive':

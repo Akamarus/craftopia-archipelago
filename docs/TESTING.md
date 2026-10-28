@@ -4,6 +4,8 @@ Use a separate character/world for each new seed. Keep backups of saves and AP s
 
 ## Useful checks
 
+For generator/package validation, use the [27 October audit and reproduction commands](GENERATION_AUDIT_20261027.md). Always test the actual `.apworld` archive with normal AP discovery and a mixed-game generation; a source-folder test alone cannot establish that the downloadable package works.
+
 - Fresh setup can connect and enroll without editing configuration.
 - A mission sends one check; a reconnect does not duplicate its reward.
 - Equipment and production remain blocked until their required unlocks arrive.

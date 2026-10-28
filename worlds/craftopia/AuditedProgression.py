@@ -9,7 +9,7 @@ PRODUCTION = {20002: None, 20011: None, 20017: None, 20013: None, 20020: None,
 
 
 def load_catalog():
-    data = json.loads(Path(__file__).with_name(CATALOG_ID + '.json').read_text(encoding='utf-8'))
+    data = json.loads(__loader__.get_data(str(Path(__file__).with_name(CATALOG_ID + '.json'))).decode("utf-8"))
     if data.get('schema') != 1 or data.get('catalog_id') != CATALOG_ID:
         raise ValueError('Unsupported audited progression catalog')
     return data

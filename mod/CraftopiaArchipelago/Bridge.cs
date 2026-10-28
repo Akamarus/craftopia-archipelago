@@ -238,6 +238,7 @@ namespace CraftopiaArchipelago
                             ["equipment_protocol"] = 1L,
                             ["equipment_protocol_max"] = 3L,
                             ["currency_protocol"] = 1L,
+                            ["starter_kit_protocol"] = 1L,
                             ["soul_orb_protocol"] = 1L
                         };
                         // Include character GUID if a character is loaded.

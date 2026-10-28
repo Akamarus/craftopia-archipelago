@@ -19,14 +19,14 @@ namespace CraftopiaArchipelago
         CurrencySaveProof(string token,int guid,string player,string inventory) {
             this.token=token; this.guid=guid; this.player=player; this.inventory=inventory;
         }
-        public static CurrencySaveProof Create(string token,int guid,int expectedCount,string player,string inventory) {
+        public static CurrencySaveProof Create(string token,int guid,int expectedCount,string player,string inventory,int targetItemId=3840,string inventoryList="importantList") {
             try {
                 if(string.IsNullOrWhiteSpace(token) || guid==0 || expectedCount<1) return null;
                 var p=MiniJson.ParseObject(player);
                 if(p==null || !p.TryGetValue("GUID",out var g) || !(g is long id) || id!=guid) return null;
                 var d=MiniJson.ParseObject(inventory);
                 if(d==null || !d.TryGetValue("inventorySaveData",out var inv) || !(inv is Dictionary<string,object> data) ||
-                    !data.TryGetValue("importantList",out var items) || !(items is List<object> boxes)) return null;
+                    !data.TryGetValue(inventoryList,out var items) || !(items is List<object> boxes)) return null;
                 long count=0;
                 foreach(var box in boxes) {
                     if(!(box is Dictionary<string,object> b) || !b.TryGetValue("itemInBox",out var rows) || !(rows is List<object> list)) return null;
@@ -34,7 +34,7 @@ namespace CraftopiaArchipelago
                         if(!(row is Dictionary<string,object> r) || !r.TryGetValue("item",out var item) || !(item is Dictionary<string,object> detail) ||
                             !detail.TryGetValue("itemId",out var rawId) || !(rawId is long itemId) ||
                             !r.TryGetValue("count",out var rawCount) || !(rawCount is long n) || n<0 || n>int.MaxValue) return null;
-                        if(itemId==3840) count=checked(count+n);
+                        if(itemId==targetItemId) count=checked(count+n);
                     }
                 }
                 if(count!=expectedCount) return null;

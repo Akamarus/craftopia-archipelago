@@ -24,8 +24,7 @@ INSTANCE_BASE_ID = 1000
 def load_catalog():
     """Load the versioned runtime mission catalog."""
     path = Path(__file__).parent / f"mission_catalog_{CATALOG_VERSION}.json"
-    with open(path) as f:
-        return json.load(f)
+    return json.loads(__loader__.get_data(str(path)).decode("utf-8"))
 
 def build_id_map():
     """Build mission_id -> AP location_id mapping.

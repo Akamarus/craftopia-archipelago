@@ -9,6 +9,40 @@ from Fill import distribute_items_restrictive
 
 
 class RegionalRunTests(unittest.TestCase):
+    def test_pilot_multiworld_keeps_opening_smelting_local(self):
+        from Options import OptionError
+        options = dict(logic_mode=4, mission_catalog_version=1)
+        mw = setup_multiworld([World, World], options=options)
+        for world in mw.worlds.values():
+            self.assertIn('Production: smelting', world.options.local_items.value)
+        with self.assertRaisesRegex(OptionError, 'must remain local'):
+            setup_multiworld([World, World], options=dict(
+                **options, non_local_items={'Production: smelting'}))
+
+    def test_surplus_skill_points_match_network_reconstruction(self):
+        mw = self.make(); w = mw.worlds[1]
+        surplus = next(i for i in mw.itempool if i.name == 'Skill Point' and not i.advancement)
+        server, tracker = CollectionState(mw), CollectionState(mw)
+        for state in (server, tracker):
+            state.collect(w.create_item('Skill Tree: Magic'), prevent_sweep=True)
+        server.collect(surplus, prevent_sweep=True)
+        tracker.collect(w.create_item('Skill Point'), prevent_sweep=True)
+        self.assertEqual(server.count('Skill Point', 1), tracker.count('Skill Point', 1))
+        mission = mw.get_location('Mission 99: Use the skill points to learn a skill', 1)
+        self.assertTrue(mission.can_reach(server))
+        server.remove(surplus)
+        self.assertEqual(server.count('Skill Point', 1), 0)
+        self.assertFalse(mission.can_reach(server))
+
+    def test_opening_essentials_stay_local_but_equipment_can_cross_games(self):
+        from Options import OptionError
+        mw = self.make(); w = mw.worlds[1]
+        self.assertEqual(w.options.local_items.value,
+                         {'Production: cooking', 'Production: smelting'})
+        self.assertNotIn('Progressive Equipment: Sword', w.options.local_items.value)
+        with self.assertRaisesRegex(OptionError, 'must remain local'):
+            self.make(non_local_items={'Production: cooking'})
+
     def test_equipment_contract_preserves_prior_profiles(self):
         mw = self.make(); w = mw.worlds[1]
         for revision, contract in [('r2', 'r1'), ('r3', 'r1'), ('r4', 'r2'), ('r5', 'r2')]:
