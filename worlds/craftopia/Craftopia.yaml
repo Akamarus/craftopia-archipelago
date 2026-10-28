@@ -43,24 +43,3 @@ Craftopia:
 
   # Use the current mission ID catalog. Leave unchanged for regional runs.
   mission_catalog_version: 20261007_r1
-
-  # Legacy boss-only victory rule; leave false because regional mode defines the goal.
-  goal_boss: false
-
-  # Legacy age-only victory rule; leave false because regional mode defines the goal.
-  goal_age: false
-
-  # Legacy objective-count victory rule; leave false for tower-and-dungeon victory.
-  goal_objectives: false
-
-  # Chest checks are not supported by this regional profile. Leave false.
-  enable_chest_checks: false
-
-  # Challenge checks are not supported by this regional profile. Leave false.
-  enable_challenge_checks: false
-
-  # Anubis exchange checks are not included in this regional profile. Leave false.
-  enable_anubis_checks: false
-
-  # Shop purchase checks are not included in this regional profile. Leave false.
-  enable_shop_checks: false
