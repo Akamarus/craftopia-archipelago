@@ -11,10 +11,10 @@
 
 ## 1. Install the game files
 
-With Craftopia closed, **double-click `Setup.cmd`**, then press Enter to install. Setup finds the game in your Steam libraries; if it cannot choose a single installation, select the folder containing `Craftopia.exe`.
+With Craftopia closed, **double-click `Install Bundled Build.cmd`**, then press Enter to install this release. This selects the bundled version even if an older Workshop version is downloaded. Setup finds the game in your Steam libraries; if it cannot choose a single installation, select the folder containing `Craftopia.exe`.
 
-- If the Craftopia AP Workshop item is already downloaded, Setup enables that copy. Steam handles subsequent mod updates. Wait for its official loader dependency to finish downloading too; Setup uses its Workshop discovery component with the tested modern loader.
-- Otherwise, Setup installs the mod included in this ZIP. Run Setup from a newer release to update it.
+- Optional: `Setup.cmd` automatically selects Workshop when the Craftopia AP Workshop item is already downloaded. Steam handles subsequent mod updates. Wait for its official loader dependency to finish downloading too; Setup uses its Workshop discovery component with the tested modern loader.
+- Without a downloaded Workshop copy, `Setup.cmd` installs the mod included in this ZIP. Run Setup from a newer release to update it.
 - Existing manual AP installations are updated in place or disabled when switching to Workshop. Old records and other mods are retained.
 
 Launch Craftopia normally after Setup finishes. You do not need to install Python, compile anything, or launch a separate bridge.
@@ -55,12 +55,12 @@ If generating yourself:
 
 1. Install the matching `craftopia.apworld` in your Archipelago `custom_worlds` folder and restart the launcher.
 2. Copy the release's `Craftopia.yaml` into your generation player-files folder.
-3. Change `name` to your slot name. The 1.18.0 candidate template defaults to `brigandine`. Set `ending_region` to `geezah`, `millewind`, `yarden_mountain`, `yarden_ruin`, `owatatsu`, or `brigandine` (see VALLEY_RUNS.md; later endings are experimental); keep `logic_mode: regional` and the template's other settings for this test profile.
+3. Change `name` to your slot name. The supplied template defaults to `brigandine`. Set `ending_region` to `geezah`, `millewind`, `yarden_mountain`, `yarden_ruin`, `owatatsu`, or `brigandine` (see VALLEY_RUNS.md; later endings are experimental); keep `logic_mode: regional` and the template's other settings for this test profile.
 4. Generate the multiworld and host its resulting server data. For a source-based solo example, see the [developer commands](DEVELOPMENT.md#generate-a-solo-example).
 
 The APWorld is needed by the generator. It is not a file to put in BepInEx. Keep the generator and player components from the same source snapshot.
 
-For the unreleased 1.18.2 generator fix, the host needs **Archipelago 0.6.8** and the updated `craftopia.apworld` before generation. Keep the filename unchanged and restart the generator after replacing an older copy. Both `game: Craftopia` and the `Craftopia:` settings key are case-sensitive; do not change either to lowercase. A “No functional world found” error can mean the APworld failed to load: inspect the earlier load traceback rather than changing YAML capitalization.
+For 1.18.2, the host needs **Archipelago 0.6.8** and the updated `craftopia.apworld` before generation. Keep the filename unchanged and restart the generator after replacing an older copy. Both `game: Craftopia` and the `Craftopia:` settings key are case-sensitive; do not change either to lowercase. A “No functional world found” error can mean the APworld failed to load: inspect the earlier load traceback rather than changing YAML capitalization.
 
 Mixed-game AP rooms are supported by this update. Cooking and smelting remain local opening unlocks; other progression may be in other games. Native Craftopia co-op is a separate feature and is not established by these generation tests. Starter-weapon delivery requires a newly generated regional seed and the matching starter-kit client update; older seeds retain their original behavior.
 
@@ -79,7 +79,7 @@ No F9 capture, manual GUID editing or enrollment restart is needed. If setup rep
 
 Connect to the same slot at the main menu, then load the same character and world. Enrollment is remembered; you do not need to enroll again. Change seed/slot only at the main menu. A new seed needs its own fresh character/world.
 
-F8 expands or closes the guide. The collapsed badge keeps gameplay running; the expanded guide pauses single-player gameplay in v1.15.0. Native map/pause acceptance is still pending.
+F8 expands or closes the guide. The collapsed badge keeps gameplay running; the expanded guide pauses single-player gameplay in v1.15.0. Map marker and pause coverage still needs broader gameplay validation.
 
 ## Troubleshooting
 

@@ -59,7 +59,9 @@ namespace CraftopiaArchipelago
             {
                 string key=cmd=="unlock_production" ? "station_id" : "tree_id";
                 string value=MiniJson.GetString(msg,key);
-                if (!Text(value) || (receipt < 0 && !(receipt == -8 && cmd == "unlock_skill_tree" && value == "Magic"))) return false;
+                if (!Text(value) || (receipt < 0 && !(receipt == -8 && cmd == "unlock_skill_tree" && (value == "Magic" || value == "Skill Tree: Magic")))) return false;
+                // Preserve old starter receipts while exposing the canonical skill key.
+                if (receipt == -8 && value == "Magic") value = "Skill Tree: Magic";
                 record[key]=value;
             }
             else return false;

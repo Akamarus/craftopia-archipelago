@@ -13,7 +13,7 @@ namespace CraftopiaArchipelago
     {
         public const string GUID = "com.craftopia.archipelago";
         public const string NAME = "CraftopiaArchipelago";
-        public const string VERSION = "1.18.1";
+        public const string VERSION = "1.18.2";
 
         internal static ManualLogSource Log;
         internal static Bridge Bridge;
@@ -860,7 +860,7 @@ namespace CraftopiaArchipelago
                     if (grantTransaction != null && Validator.CurrentEpoch != s.Epoch)
                         grantTransaction.ClearCommittedForNewSession();
                     // Update validator.
-                    StatusDisplay?.ClearActivity();
+                    if (Validator.CurrentEpoch != s.Epoch) StatusDisplay?.ClearActivity();
                     Validator.CurrentEpoch = s.Epoch;
                     var guids = s.EnrolledGuids; // capture for lambda
                     Validator.IsEnrolled = g => guids != null && guids.Contains(g);
@@ -1333,7 +1333,8 @@ namespace CraftopiaArchipelago
                 if(!fieldGuide.IsOpen) orbMap.DrawToggle();
                 float scale = GuideScale();
                 fieldGuide.Draw(StatusDisplay, Permissions, SlotName?.Value ?? "Unknown",
-                    Bridge != null && Bridge.IsConnected && (!managedMode || Connection?.IsConnected == true), recoveryHold, enrollmentStatus,
+                    Bridge != null && Bridge.IsConnected && (!managedMode || Connection?.IsConnected == true), recoveryHold,
+                    enrollmentStatus ?? (Validator != null && Validator.CurrentEpoch > 0 ? "Validation: " + Validator.LastOutcome.Outcome : null),
                     hudDrag.Active ? hudDrag.X / scale : hudX?.Value ?? 220,
                     hudDrag.Active ? hudDrag.Y / scale : hudY?.Value ?? 20, scale);
             } catch (Exception ex) {

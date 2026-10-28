@@ -49,4 +49,8 @@ Use a new output directory per run. The archive harness installs the ZIP into an
 
 ## Limits
 
-Passing generation proves the modeled rules admit completion; it does not prove every modeled route works in the game. Native Craftopia co-op and live starter-kit delivery still require gameplay validation. The final host error cannot be identified without its traceback. This audit records the validated source update. Merging it into GitHub main does not itself publish a new downloadable release or update Steam Workshop.
+Passing generation proves the modeled rules admit completion; it does not prove every modeled route works in the game. Native Craftopia co-op still requires host/guest validation. On October 28, the owner confirmed the Staff starter flow after the 1.18.2 Magic-key and session-display fixes; other starter classes retain automated coverage. The final host error cannot be identified without its traceback. This audit records the validated source update. Merging it into GitHub main does not itself publish a new downloadable release or update Steam Workshop.
+
+## October 28 large-room follow-up
+
+The same final APworld passed a full 50-player generation with 50 distinct games (Craftopia plus 49 others), including fill, balancing, accessibility and playthrough generation. The generated server data contained exactly the reviewed 119-item Geezah pool, with no missing or extra copies and all checks represented in reachable spheres. Opening cooking and smelting stayed local. Of the 119 incoming items, 117 were placed across 37 other games. This was a generation test, not a 50-person live session. Local evidence: `artifacts/fifty-distinct-20261028/results.json` and `craftopia-item-audit.json`.

@@ -50,6 +50,18 @@ class Program
         var noisy=new UnlockMirror(noisyPermissions); noisy.BeginSession("TestPlayer",1,"token",1); noisy.Accept(Message(),1);
         before=acks.Count; noisy.Flush(true,1,acks.Add);
         Check(noisyPermissions.CanUseProduction("Refiner") && acks.Count==before+1,"diagnostic failures cannot prevent accepted mirror delivery");
+        foreach (string tree in new[]{"Magic", "Skill Tree: Magic"}) {
+            var starterPermissions=new PermissionManager(_=>{},_=>{});
+            var starter=new UnlockMirror(starterPermissions);
+            starter.BeginSession("TestPlayer",1,"token",1);
+            var msg=Message(); msg["cmd"]="unlock_skill_tree"; msg.Remove("station_id");
+            msg["tree_id"]=tree; msg["receipt_id"]=-8L;
+            Check(starter.Accept(msg,1),"starter Magic receipt accepted: "+tree);
+            starter.Flush(true,1,_=>{});
+            Check(starterPermissions.IsSkillTreeUnlocked("Magic",1),"starter enables actual Magic skill gate: "+tree);
+            starter.Suspend(); starter.Flush(true,1,_=>{});
+            Check(starterPermissions.IsSkillTreeUnlocked("Magic",1),"starter Magic survives reload: "+tree);
+        }
         Console.WriteLine("Assertions: "+assertions);
     }
 }

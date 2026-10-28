@@ -10,7 +10,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 from package_managed_bridge import ROOT, build, verify, validate_output
 import asyncio
 
-VERSION = '1.18.0-rc.1'
+VERSION = '1.18.2'
 
 def stage_workshop(mod, workshop):
     # Pocketpair's MultiFolderLoader indexes <item>/plugins, not the item root.
@@ -47,16 +47,16 @@ def package(output):
     shutil.copytree(bridge, mod / 'bridge')
     subprocess.run([sys.executable, str(ROOT / 'tools/package_apworld.py'), str(payload / 'craftopia.apworld')], check=True)
     (payload / 'Craftopia.yaml').write_text((ROOT / 'worlds/craftopia/test/regional_player.yaml').read_text().replace('ending_region: geezah', 'ending_region: brigandine'), encoding='utf-8')
-    for name in ('INSTALLATION.md', 'RELEASE_v1.18.0.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
+    for name in ('INSTALLATION.md', 'RELEASE_v1.18.2.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
     for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):
         shutil.copy2(ROOT / 'tools' / name, payload)
-    (payload / 'Install This Test Build.cmd').write_text(
+    (payload / 'Install Bundled Build.cmd').write_text(
         '@echo off\ncd /d "%~dp0"\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0Install-Mod.ps1" -Mode Manual\npause\n', encoding='ascii')
     (payload / 'START_HERE.txt').write_text(
         'Craftopia Archipelago ' + VERSION + '\n\n'
-        'Windows x64, Seamless World, BepInEx 5 Mono. Release candidate; later-region live validation pending.\n'
-        'For this Brigandine release candidate: close Craftopia, then double-click Install This Test Build.cmd.\n'
+        'Windows x64, Seamless World, BepInEx 5 Mono. Experimental regional alpha.\n'
+        'Close Craftopia, then double-click Install Bundled Build.cmd.\n'
         'This installs the bundled version even if an older Workshop copy is present.\n'
         'Setup.cmd is the normal automatic Workshop/manual selection path.\n'
         'Setup finds Steam libraries and downloads a verified modern BepInEx loader.\n'
@@ -64,6 +64,7 @@ def package(output):
         'Use Restore Previous Setup.cmd to undo setup without removing AP records.\n'
         'Read INSTALLATION.md. F8 > Connection sets your server/slot/password.\n'
         'The included craftopia.apworld and Craftopia.yaml are for your AP host.\n'
+        'The host needs Archipelago 0.6.8. The YAML defaults to Brigandine; choose geezah for a short run.\n'
         'No Python or compiler installation is required.\n'
         'AP records: %LOCALAPPDATA%/CraftopiaArchipelago. Back up with your saves.\n', encoding='utf-8')
     workshop = output / 'workshop'
