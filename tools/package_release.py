@@ -46,7 +46,7 @@ def package(output):
     shutil.copy2(ROOT / 'mod/CraftopiaArchipelago/bin/Release/netstandard2.1/CraftopiaArchipelago.dll', mod)
     shutil.copytree(bridge, mod / 'bridge')
     subprocess.run([sys.executable, str(ROOT / 'tools/package_apworld.py'), str(payload / 'craftopia.apworld')], check=True)
-    (payload / 'Craftopia.yaml').write_text((ROOT / 'worlds/craftopia/test/regional_player.yaml').read_text().replace('ending_region: geezah', 'ending_region: brigandine'), encoding='utf-8')
+    shutil.copy2(ROOT / 'worlds/craftopia/Craftopia.yaml', payload / 'Craftopia.yaml')
     for name in ('INSTALLATION.md', 'RELEASE_v1.18.2.md', 'YARDEN_RUNS.md', 'VALLEY_RUNS.md', 'WORKSHOP.md'):
         shutil.copy2(ROOT / 'docs' / name, payload / name)
     for name in ('Install-Mod.ps1', 'Setup-Core.ps1', 'Setup.cmd', 'Restore Previous Setup.cmd'):

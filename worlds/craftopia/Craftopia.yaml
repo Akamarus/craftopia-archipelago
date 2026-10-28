@@ -1,16 +1,66 @@
-# Craftopia player YAML for Archipelago 0.6.8
-# Copy to your Archipelago Players/ folder and edit.
+# Craftopia Archipelago - regional run example (Archipelago 0.6.8)
+# Edit your slot name and preferences, then give this file to your host.
+# Keep the capitalization of "Craftopia" in both places below.
 
+# Your AP slot name. Enter this same name in the in-game connection menu.
 name: CraftopiaPlayer
-game: Craftopia
-Craftopia:
-  # Victory condition.
-  # 0 = complete the designated goal mission, 1 = complete all missions.
-  goal: 0
 
-  # How many skill points each mission check grants in-game.
-  # Range 1-5.
+# The game this player will play. Leave this unchanged.
+game: Craftopia
+
+# All settings below apply to Craftopia. Keep this heading unchanged.
+Craftopia:
+  # Use the supported regional progression rules. Leave this as regional.
+  logic_mode: regional
+
+  # End after this region's tower AND main dungeon; earlier regions are included.
+  # Choices: geezah, millewind, yarden_mountain, yarden_ruin, owatatsu, brigandine.
+  # Geezah is the shortest run; Brigandine includes all currently supported regions.
+  ending_region: brigandine
+
+  # Starting weapon class: player_choice (pick in game), random_category, or all_basic.
+  # New seeds grant the matching starter kit; Staff includes Magic access and a skill point.
+  starting_combat: player_choice
+
+  # Skill points granted by each received Skill Point item. Allowed values: 1 through 5.
   skill_points_per_check: 1
 
-  # Enable mission-completion checks.
+  # Include one-time Soul Orb pickups as AP checks; respawning chests are separate.
+  enable_soul_orb_checks: true
+
+  # Include mission completion checks. Keep enabled for the supported regional profile.
   enable_mission_checks: true
+
+  # Include age advancement checks. Keep enabled for the supported regional profile.
+  enable_age_checks: true
+
+  # Include the dungeon milestone checks used by regional runs. Keep enabled.
+  enable_boss_checks: true
+
+  # Give this player their own AP slot, including in mixed-game rooms. Keep this value.
+  # This does not enable or validate native Craftopia shared-world co-op.
+  multiplayer_mode: separate_slots
+
+  # Use the current mission ID catalog. Leave unchanged for regional runs.
+  mission_catalog_version: 20261007_r1
+
+  # Legacy boss-only victory rule; leave false because regional mode defines the goal.
+  goal_boss: false
+
+  # Legacy age-only victory rule; leave false because regional mode defines the goal.
+  goal_age: false
+
+  # Legacy objective-count victory rule; leave false for tower-and-dungeon victory.
+  goal_objectives: false
+
+  # Chest checks are not supported by this regional profile. Leave false.
+  enable_chest_checks: false
+
+  # Challenge checks are not supported by this regional profile. Leave false.
+  enable_challenge_checks: false
+
+  # Anubis exchange checks are not included in this regional profile. Leave false.
+  enable_anubis_checks: false
+
+  # Shop purchase checks are not included in this regional profile. Leave false.
+  enable_shop_checks: false
