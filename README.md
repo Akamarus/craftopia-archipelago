@@ -90,8 +90,4 @@ Native Craftopia host/guest co-op is still under development. Support for an AP 
 | `tools/` | Packaging, generation and evidence tools |
 | `docs/` | Player guides, developer notes and historical research |
 
-## Development disclosure
-
-This project is developed with AI-assisted code and documentation under the project owner's direction. The owner guides design decisions, performs gameplay testing and accepts or rejects changes. Automated tests support that process; they do not replace in-game verification.
-
 Game assemblies, saves, credentials, local configuration and delivery ledgers are not distributed in source. See the [developer guide](docs/DEVELOPMENT.md) for building and validation.
