@@ -13,15 +13,15 @@
 
 With Craftopia closed, **double-click `Install Bundled Build.cmd`**, then press Enter to install this release. This selects the bundled version even if an older Workshop version is downloaded. Setup finds the game in your Steam libraries; if it cannot choose a single installation, select the folder containing `Craftopia.exe`.
 
-- Optional: `Setup.cmd` automatically selects Workshop when the Craftopia AP Workshop item is already downloaded. Steam handles subsequent mod updates. Wait for its official loader dependency to finish downloading too; Setup uses its Workshop discovery component with the tested modern loader.
-- Without a downloaded Workshop copy, `Setup.cmd` installs the mod included in this ZIP. Run Setup from a newer release to update it.
-- Existing manual AP installations are updated in place or disabled when switching to Workshop. Old records and other mods are retained.
+- Workshop distribution is retired. Use GitHub Releases for installation and updates.
+- Previous subscribers must use `Install Bundled Build.cmd`. Avoid the legacy `Setup.cmd`, which can select an older downloaded Workshop copy.
+- The bundled installer prevents duplicate AP loading while preserving AP records and other mods. Run it from a newer release to update.
 
 Launch Craftopia normally after Setup finishes. You do not need to install Python, compile anything, or launch a separate bridge.
 
 **Undo setup:** close Craftopia and run `Restore Previous Setup.cmd`. This restores the files from before the first setup run, including any previous AP version. Saves and `%LOCALAPPDATA%\CraftopiaArchipelago` are left alone. Backups live in the game's `CraftopiaAP-Setup` folder. Restore stops if a managed file has been changed afterward, so it does not silently overwrite a newer modification.
 
-Advanced: `Install-Mod.ps1 -Mode Manual` selects the bundled copy; `-Mode Workshop` selects the subscribed copy. The command wrappers set execution policy only for their own PowerShell process; they do not change the machine's policy. A folder permission error is reported without changing permissions.
+Advanced: `Install-Mod.ps1 -Mode Manual` selects the bundled copy. The command wrappers set execution policy only for their own PowerShell process; they do not change the machine's policy. A folder permission error is reported without changing permissions.
 
 For a manual install, first install [BepInEx 5 Windows x64 Mono](https://docs.bepinex.dev/articles/user_guide/installation/index.html), then copy the contents of the release’s `mod` folder into the following folder (or your existing AP plugin folder):
 

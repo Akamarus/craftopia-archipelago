@@ -8,13 +8,13 @@ Unofficial [Archipelago](https://archipelago.gg/) integration for **Craftopia �
 
 ## Play in three steps
 
-1. **Install:** download `Craftopia-Archipelago-1.18.2-Windows.zip` from the release above and extract it. With Craftopia closed, double-click **Install Bundled Build.cmd**. It installs this release even if you subscribe to an older Workshop copy. No compiler or Python installation is required.
+1. **Install:** download `Craftopia-Archipelago-1.18.2-Windows.zip` from the release above and extract it. With Craftopia closed, double-click **Install Bundled Build.cmd**. No compiler or Python installation is required.
 2. **Generate:** give your host the included **craftopia.apworld** and your edited **Craftopia.yaml**. The host needs **Archipelago 0.6.8**. Set your slot name and ending region; choose `geezah` for a short first run. The supplied template defaults to `brigandine`. Keep `game: Craftopia` and `Craftopia:` capitalized exactly.
 3. **Connect:** launch Craftopia, press **F8 → Connection**, and enter the server address, slot and password. Create a fresh character/world, then select **Start this seed with this character**. Enrollment is remembered when returning to that run.
 
 Use a separate character/world and back up your saves and AP records. GitHub's **Code → Download ZIP** contains source code, not the playable release. See [installation](docs/INSTALLATION.md) for returning to a run, uninstalling and troubleshooting.
 
-**Steam Workshop:** [subscription](https://steamcommunity.com/sharedfiles/filedetails/?id=3823110766) is optional. Workshop and GitHub updates are published separately. Use **Install Bundled Build.cmd** for this exact GitHub build; **Setup.cmd** instead automatically selects a downloaded Workshop copy when one is present.
+**Distribution:** install and update through GitHub Releases. Steam Workshop distribution is retired. Previous subscribers should run **Install Bundled Build.cmd** to switch to the bundled release; the legacy `Setup.cmd` can select an old Workshop copy.
 
 ## Choose your run
 
