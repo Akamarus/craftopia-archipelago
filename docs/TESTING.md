@@ -12,7 +12,7 @@ For generator/package validation, use the [27 October audit and reproduction com
 - Tower stages and main dungeon completion satisfy the chosen region's goal.
 - Save/reload preserves received items and check state.
 
-For v1.15.0, also test full-map orb visibility, pan/zoom, hover text, hide-collected, and F8 pause/camera behavior. These remain pending native acceptance. A completed seed can be used for UI checks; it does not need more progression testing.
+For the current build, also test full-map orb visibility, pan/zoom, hover text, hide-collected, and F8 pause/camera behavior. These remain pending native acceptance. A completed seed can be used for UI checks; it does not need more progression testing.
 
 ## Report a problem
 

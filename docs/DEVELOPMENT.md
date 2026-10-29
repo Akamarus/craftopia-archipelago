@@ -94,9 +94,9 @@ Record live observations separately from automated results. Historical research 
 Build the mod in Release, then run with the approved Windows AP Python environment:
 
 ```text
-python tools/package_release.py --output artifacts/release-v1.16.0
+python tools/package_release.py --output artifacts/release-v1.18.2
 ```
 
-Use a fresh output directory. The command verifies the bundled bridge and produces a player ZIP, matching APWorld, checksums and separate Workshop content. The runtime inputs are explicitly selected; the validator rejects personal state and game assemblies. Review the manifest before uploading. The manifest records the source commit; build from a clean committed tree.
+Use a fresh output directory. The command verifies the bundled bridge and produces a player ZIP, matching APWorld, checksums and legacy Workshop staging content. Only the bundled GitHub release is distributed; Workshop publication is retired. The runtime inputs are explicitly selected; the validator rejects personal state and game assemblies. Review the manifest before uploading. The manifest records the source commit; build from a clean committed tree.
 
 Managed records now live in `%LOCALAPPDATA%\CraftopiaArchipelago`. `UserStorage` migrates prior configuration and bundle state atomically on first launch. The standalone developer bridge keeps its old directory unless `CRAFTOPIA_AP_DATA_DIR` is explicitly set. Never point test processes at live user data.

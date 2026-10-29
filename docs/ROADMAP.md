@@ -1,27 +1,27 @@
 # Roadmap
 
-## Playable regional baseline
+The current release is **v1.18.2**, an experimental Windows integration with cumulative regional runs through Brigandine Valley. See the [project overview](../README.md) for supported features and [release notes](RELEASE_v1.18.2.md) for version-specific changes.
 
-Geezah and cumulative Geezah/Millewind runs have reached victory in owner playtests. Current source includes missions, one-time orbs, category rewards, tower repair stages, ages and main dungeon checks; equipment/production/skill permissions; durable delivery; in-game connection and enrollment.
+## Strengthen the current release
 
-## Next validation
+- Verify clean installation, updates and restoration through the bundled installer, including migration from old Workshop installations.
+- Complete native acceptance of Soul Orb map placement, unexplored-region visibility, pan/zoom, filtering and reconnect state.
+- Verify Field Guide pause and camera suppression across nested menus, focus changes and live bridge connections.
+- Continue targeted checks of regional crafting dependencies, resource/tool thresholds and combat requirements. Generation tests do not establish every physical route. See [targeted validation](TARGETED_REGIONAL_VALIDATION.md).
 
-- Verify v1.15.0 native map placement, unexplored-region visibility, pan/zoom, filtering and reconnect state.
-- Verify Field Guide pause, camera suppression, nested menus, focus changes and bridge connectivity in the game.
-- Exercise installation from the public source instructions on a clean setup.
-- Expand automated regional validation and use targeted checks for new crafting dependencies, resource/tool thresholds and dungeon identities. Full playthroughs are occasional representative tests, not a requirement for every region. See [targeted validation](TARGETED_REGIONAL_VALIDATION.md).
+## Native shared-world multiplayer
 
-## Expand the game
+Two co-op models are under development:
 
-- Establish each later region's tower stages, main dungeon identity and repair dependencies.
-- Verify cold/heat protection recipes and material sources before adding environmental requirements to logic.
-- Resolve remaining acquisition/tool requirements from current Seamless evidence. Presumed legacy-only equipment stays parked unless evidence changes.
-- Add region endings only after their checks and goal prerequisites are established.
+- Multiple players sharing one Archipelago slot.
+- Separate Archipelago slots in a shared Craftopia world.
 
-## Distribution and compatibility
+The intended team-credit model includes permanent world accomplishments and Soul Orb collection, with recovery for enrolled players who were offline. Host/guest behavior, reconnection and item delivery still require live multiplayer validation. These modes are not part of the validated single-player baseline.
 
-- Publish a versioned player package with matching APWorld after acceptance.
-- Broaden compatibility testing beyond the current Windows single-player baseline.
-- Investigate native multiplayer separately; connecting single-player Craftopia to an AP multiworld is not proof of native co-op support.
+## Extend regional coverage
 
-No dates are promised. Historical candidate/expedition modes are development material, not equivalent to the regional baseline.
+- Verify later regions' tower stages, dungeon identities and repair dependencies before adding new endings.
+- Confirm environmental protection recipes, material sources and access requirements against the current Seamless version.
+- Resolve outstanding equipment acquisition and tool requirements. Presumed legacy-only items remain excluded unless new evidence establishes a current source.
+
+Dates are not committed. Historical candidate and expedition modes are research material, not equivalent to the published regional configuration.
